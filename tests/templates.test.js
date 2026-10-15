@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import { recall, templates } from '../content/templates/index.js';
+import { ALIASES, RANK } from '../js/diagnose.js';
 import { grade, parseAnswer } from '../js/grade.js';
 import { diagnose, formatAnswer, formatInput, generateFromSeed } from '../js/generate.js';
 
@@ -172,6 +173,15 @@ describe('template library', () => {
     assert.ok(first >= 15, `first reactant limited ${first}/50`);
     assert.ok(second >= 15, `second reactant limited ${second}/50`);
     assert.ok(close >= 15 && close <= 35, `close ratio on ${close}/50 draws`);
+  });
+
+  it('resolves every template mistake id through the diagnosis rank', () => {
+    for (const spec of templates) {
+      for (const mistake of spec.mistakes) {
+        const resolved = RANK.has(mistake.id) ? mistake.id : ALIASES.get(mistake.id);
+        assert.ok(RANK.has(resolved), `${spec.id} mistake ${mistake.id} does not resolve`);
+      }
+    }
   });
 
   it('rounds printed inputs before solving', () => {
