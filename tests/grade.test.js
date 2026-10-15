@@ -109,6 +109,18 @@ test('a sig fig mismatch returns a hint and still counts', () => {
   assert.match(result.hint, /3/);
 });
 
+test('scientific notation accepts a times sign and a superscript exponent', () => {
+  const energy = { kind: 'numeric', value: 4.307e-19, sigFigs: 4, unit: 'J' };
+  for (const input of ['4.307×10⁻¹⁹ J', '4.307 x 10^-19 J']) {
+    const parsed = parseAnswer(input);
+    assert.equal(parsed.unit, 'J');
+    assert.equal(parsed.sigFigs, 4);
+    assert.equal(parsed.coefficient, '4.307');
+    assert.ok(Math.abs(parsed.value - 4.307e-19) / 4.307e-19 < 1e-9, input);
+    assert.deepEqual(grade(input, energy), { ok: true });
+  }
+});
+
 test('sig fig counts follow the written coefficient', () => {
   assert.equal(countSigFigs('0.00450'), 3);
   assert.equal(countSigFigs('100'), 1);

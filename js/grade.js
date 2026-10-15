@@ -268,13 +268,12 @@ function splitSetItems(raw) {
 }
 
 export function parseAnswer(raw) {
-  const text = String(raw ?? '')
-    .trim()
-    .replaceAll('−', '-')
-    .replaceAll('×', 'x')
-    .replaceAll('·', 'x')
-    .replace(/\s+/g, ' ');
-  const match = text.match(/^([+-]?(?:\d+\.?\d*|\.\d+))(?:\s*(?:e|x\s*10\s*\^)\s*([+-]?\d+))?\s*([^\d\s].*)?$/i);
+  const text = collapseWhitespace(
+    normalizeSymbols(raw)
+      .replaceAll('×', 'x')
+      .replaceAll('·', 'x'),
+  );
+  const match = text.match(/^([+-]?(?:\d+\.?\d*|\.\d+))(?:\s*(?:e|x\s*10\s*\^?)\s*([+-]?\d+))?\s*([^\d\s].*)?$/i);
   if (!match) return null;
   const coefficient = match[1];
   const exponent = match[2] == null ? 0 : Number(match[2]);
