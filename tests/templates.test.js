@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import { recall, templates } from '../content/templates/index.js';
-import { grade } from '../js/grade.js';
-import { diagnose, formatAnswer, generateFromSeed } from '../js/generate.js';
+import { grade, parseAnswer } from '../js/grade.js';
+import { diagnose, formatAnswer, formatInput, generateFromSeed } from '../js/generate.js';
 
 const SECTIONS = {
   1: [1, 2, 3, 4, 5, 6],
@@ -149,6 +149,64 @@ describe('template library', () => {
       assert.ok(unique.size >= 45, `${spec.id} only ${unique.size} different questions in 50 seeds`);
     });
   }
+
+  it('lets either reactant limit ch07-limiting-product-moles', () => {
+    const spec = templates.find((item) => item.id === 'ch07-limiting-product-moles');
+    let first = 0;
+    let second = 0;
+    let close = 0;
+    for (let seed = 1; seed <= 50; seed += 1) {
+      const problem = generateFromSeed(spec, seed);
+      const extA = problem.vars.molesA / problem.vars.ca;
+      const extB = problem.vars.molesB / problem.vars.cb;
+      assert.ok(extA !== extB, `seed ${seed} is a tie`);
+      if (extA < extB) first += 1;
+      else second += 1;
+      const ratio = Math.min(extA, extB) / Math.max(extA, extB);
+      if (ratio >= 0.85) close += 1;
+      assert.equal(
+        problem.hints[0],
+        "Divide each reactant's moles by its coefficient, and the smaller result is the limiting reactant.",
+      );
+    }
+    assert.ok(first >= 15, `first reactant limited ${first}/50`);
+    assert.ok(second >= 15, `second reactant limited ${second}/50`);
+    assert.ok(close >= 15 && close <= 35, `close ratio on ${close}/50 draws`);
+  });
+
+  it('rounds printed inputs before solving', () => {
+    const spec = {
+      id: 'round-before-solve',
+      vars: { x: { min: 1.004, max: 1.004, step: 1, sigFigs: 3 } },
+      template: 'Double {x}.',
+      solve: (v) => v.x * 2,
+      unit: null,
+      sigFigs: 3,
+      hints: () => ['Double the number shown.'],
+      why: (_v, x) => `2 × the shown value = ${x}.`,
+      mistakes: [],
+    };
+    const problem = generateFromSeed(spec, 1);
+    assert.match(problem.q, /1\.00/);
+    assert.equal(problem.vars.x, 1);
+    assert.equal(problem.a, '2.00');
+
+    for (const item of templates) {
+      const drawn = generateFromSeed(item, 7);
+      for (const match of item.template.matchAll(/\{(\w+)\}/g)) {
+        const name = match[1];
+        const digits = item.vars?.[name]?.sigFigs ?? item.format?.[name];
+        if (typeof digits !== 'number' || typeof drawn.vars[name] !== 'number') continue;
+        const printed = formatInput(drawn.vars[name], digits);
+        assert.ok(drawn.q.includes(printed), `${item.id} ${name} ${printed}`);
+        assert.equal(parseAnswer(printed).value, drawn.vars[name], `${item.id} ${name}`);
+      }
+      if (item.kind === 'exact' || item.kind === 'set') continue;
+      const digits = drawn.check.sigFigs ?? 3;
+      const again = formatAnswer(item.solve(drawn.vars), digits, item.unit ?? null);
+      assert.equal(again, drawn.a, item.id);
+    }
+  });
 });
 
 describe('recall deck', () => {

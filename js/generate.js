@@ -96,9 +96,13 @@ export function diagnose(input, problem) {
 
 function generateTemplate(spec, random) {
   const vars = sampleVars(spec, random);
+  // Shown inputs are rounded before derive, and again after, so solve() uses
+  // the same digits the question prints.
+  roundShownInputs(spec, vars);
   if (typeof spec.derive === 'function') {
     const extra = spec.derive(vars) ?? {};
     Object.assign(vars, extra);
+    roundShownInputs(spec, vars);
   }
   const q = spec.template.replaceAll(/\{(\w+)\}/g, (_, name) => renderVar(name, vars[name], spec));
   const solved = spec.solve(vars);
@@ -155,12 +159,30 @@ function sampleVars(spec, random) {
 }
 
 function renderVar(name, value, spec) {
-  if (typeof value === 'number') {
-    const range = spec.vars?.[name];
-    const sigFigs = range?.sigFigs ?? spec.format?.[name];
-    if (typeof sigFigs === 'number') return formatInput(value, sigFigs);
-  }
+  const sigFigs = shownSigFigs(spec, name);
+  if (typeof value === 'number' && sigFigs != null) return formatInput(value, sigFigs);
   return String(value);
+}
+
+function shownNames(spec) {
+  return new Set([...String(spec.template ?? '').matchAll(/\{(\w+)\}/g)].map((match) => match[1]));
+}
+
+function shownSigFigs(spec, name) {
+  const fromVar = spec.vars?.[name]?.sigFigs;
+  if (typeof fromVar === 'number') return fromVar;
+  const fromFormat = spec.format?.[name];
+  if (typeof fromFormat === 'number') return fromFormat;
+  return null;
+}
+
+function roundShownInputs(spec, vars) {
+  for (const name of shownNames(spec)) {
+    const digits = shownSigFigs(spec, name);
+    if (typeof vars[name] !== 'number' || digits == null) continue;
+    const parsed = parseAnswer(formatSigFigs(vars[name], digits));
+    if (parsed) vars[name] = parsed.value;
+  }
 }
 
 export function resolveSigFigs(spec) {

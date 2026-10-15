@@ -39,6 +39,7 @@ Output = `generateProblem` output plus `seed`, `templateId` and `mistakes: [{id,
 ## Rules (from Chemistry Tutor)
 - Only physically real values: K > 0, masses 0.100–500 g, P 0.100–10.0 atm, V 0.100–50.0 L, T 250–500 K (or the °C equivalent when asked), molarity 0.0100–6.00 M, yields ≤ 100%. Add a `valid(vars)` guard; regenerate (deterministically, seed+1) when it fails.
 - Inputs use 3–4 sig figs and are rendered with trailing zeros (`toPrecision`, not `String()`, so 2.50 stays "2.50").
+- Shown inputs are rounded to the sig figs in the prompt before derive and solve, so a student who uses the printed digits gets the same last digit.
 - The answer is rounded to the input sig figs. The value is computed in code, never typed in.
 - Masses come only from `js/masses.js`.
 
@@ -65,7 +66,7 @@ Total 82. Final-guide topics (gases, thermo, molarity/dilution, grams–moles, s
 - **VSEPR:** group count + lone pairs → shape and angle.
 - **Gas laws:** "Charles's law" → V1/T1 = V2/T2.
 
-Feeds the existing Cards and drill queue (replaces the hard-coded DECK and DRILL_ITEMS, which closes #39 findings 3 and 4). +5 XP once per card, via `reviewCard`.
+The recall list stays in the repo and is not wired into Cards or Drill. The glossary’s decks are the ones on the site.
 
 ## Required tests (`npm test`)
 For every template × seeds 1..50:
@@ -87,11 +88,10 @@ Recall deck: each item's answer passes its check, and a lowercase formula fails.
 Lane A does not edit Drill, Cards, or the map. The integrator wires the exports below.
 
 ```js
-import { templates, templateById, templatesForSection, recall } from './content/templates/index.js';
+import { templates, templateById, templatesForSection } from './content/templates/index.js';
 import { generateFromSeed, diagnose, generateProblem } from './js/generate.js';
 import { grade } from './js/grade.js';
 import { mulberry32 } from './js/rng.js';
-import { reviewCard } from './js/progress.js';
 ```
 
 - `templates` is the full list (chapters 1–9, more than 80). Each item matches the schema above. `kind: 'exact'` is used for empirical formulas, the limiting-reactant formula, and bond classification. Oxidation numbers stay numeric with one significant figure.
@@ -99,7 +99,7 @@ import { reviewCard } from './js/progress.js';
 - `generateFromSeed(spec, seed)` returns `{ q, a, why, hints, check, vars, seed, templateId, mistakes }`. `mistakes` is `[{ id, value, message }]` with the values already computed. If `valid(vars)` fails, the same function tries `seed + 1`, then `seed + 2`, up to 40 steps.
 - `generateProblem(spec, mulberry32(seed))` is the lower-level draw. Prefer `generateFromSeed` so the seed and the mistakes travel with the problem.
 - `diagnose(input, problem)` returns `{ id, message }` when the answer matches a mistake, or `null`. Numeric matches allow the rounding that sig-fig formatting introduces. A correct answer is not reported as a mistake.
-- `recall` is `{ id, front, back, check, topic }`. Formula cards use `case: 'formula'`, so `hcl` does not match `HCl`.
+- `recall` is an unwired bonus list, `{ id, front, back, check, topic }`. Formula cards use `case: 'formula'`, so `hcl` does not match `HCl`. Do not put this deck on Cards or in the drill queue. The glossary’s decks are the ones on the site.
 
 `check` is ready for the existing `grade(input, check)` call. Do not change `js/grade.js`.
 
@@ -125,6 +125,6 @@ Group templates by `spec.ch`. On a lesson row, attach every template whose `open
 
 ### Cards
 
-Append `recall` to the deck produced from the lessons. Each card id is `card.id`. When the learner flips to the back, call `reviewCard(progress, card.id)`. That awards +5 XP the first time and 0 XP after that. A typed answer uses `grade(input, card.check)`.
+Leave `recall` unwired. The glossary’s decks are the cards on the site.
 
-No network calls and no accounts. Seeds, generated problems, and review XP stay in `localStorage` with the rest of the site.
+No network calls and no accounts. Seeds and generated problems stay in `localStorage` with the rest of the site.

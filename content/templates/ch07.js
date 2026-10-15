@@ -50,6 +50,13 @@ function limitingProductMoles(v) {
   return v.molesA * (rxn.cp / rxn.ca);
 }
 
+function eitherLimitingProductMoles(v) {
+  const rxn = reaction(v.rxn);
+  const extA = v.molesA / rxn.ca;
+  const extB = v.molesB / rxn.cb;
+  return Math.min(extA, extB) * rxn.cp;
+}
+
 function limitingGrams(v) {
   const rxn = reaction(v.rxn);
   return limitingProductMoles(v) * molarMass(rxn.fp);
@@ -256,31 +263,60 @@ export const templates = [
     topic: 'limiting reagent',
     vars: {
       rxn: { choices: productNames },
-      molesA: span(0.2, 0.5, 0.001, 3),
-      molesB: span(3, 4.5, 0.01, 3),
+      extent: { min: 0.5, max: 1.2, step: 0.01 },
+      tick: { min: 0, max: 1, step: 0.01 },
+      band: { choices: ['close', 'wide'] },
+      who: { choices: ['first', 'second'] },
     },
     derive(v) {
-      return { product: reaction(v.rxn).p };
+      const rxn = reaction(v.rxn);
+      const gap = v.band === 'close' ? 0.08 + v.tick * 0.06 : 0.22 + v.tick * 0.18;
+      const short = 1 - gap;
+      const molesA = v.who === 'first' ? v.extent * rxn.ca * short : v.extent * rxn.ca;
+      const molesB = v.who === 'second' ? v.extent * rxn.cb * short : v.extent * rxn.cb;
+      return {
+        product: rxn.p,
+        molesA,
+        molesB,
+        ca: rxn.ca,
+        cb: rxn.cb,
+        cp: rxn.cp,
+      };
     },
+    format: { molesA: 3, molesB: 3 },
     template: 'For {rxn}, {molesA} mol of the first reactant is mixed with {molesB} mol of the second. How many moles of {product} form?',
-    solve: limitingProductMoles,
+    solve: eitherLimitingProductMoles,
     unit: 'mol',
-    sigFigs: 'min',
+    sigFigs: 3,
     tolerance: 0.5,
+    valid(v) {
+      const extA = v.molesA / v.ca;
+      const extB = v.molesB / v.cb;
+      const low = Math.min(extA, extB);
+      const high = Math.max(extA, extB);
+      if (!(low > 0 && high >= low * 1.05)) return false;
+      const firstLimits = extA < extB;
+      return v.who === 'first' ? firstLimits : !firstLimits;
+    },
     hints: () => [
-      'The first reactant runs out first in these mixtures. Base the product on that reactant.',
-      'Multiply its moles by the product coefficient over its own coefficient.',
+      "Divide each reactant's moles by its coefficient, and the smaller result is the limiting reactant.",
     ],
     why: (v, x) => {
       const rxn = reaction(v.rxn);
-      return `${rxn.a} is limiting. ${num(v.molesA, 3)} × ${rxn.cp}/${rxn.ca} = ${num(x, 3)} mol ${rxn.p}.`;
+      const extA = v.molesA / rxn.ca;
+      const extB = v.molesB / rxn.cb;
+      const limiting = extA < extB ? rxn.a : rxn.b;
+      return `${rxn.a}: ${num(v.molesA, 3)}/${rxn.ca} = ${num(extA, 3)}. ${rxn.b}: ${num(v.molesB, 3)}/${rxn.cb} = ${num(extB, 3)}. ${limiting} is smaller, so moles of ${rxn.p} = ${num(Math.min(extA, extB), 3)} × ${rxn.cp} = ${num(x, 3)}.`;
     },
     mistakes: [
-      alt(limitingProductMoles, 'used-excess', 'The excess reactant was used to predict the product.', (v) => {
+      alt(eitherLimitingProductMoles, 'used-excess', 'The excess reactant was used to predict the product.', (v) => {
         const rxn = reaction(v.rxn);
-        return v.molesB * (rxn.cp / rxn.cb);
+        return Math.max(v.molesA / rxn.ca, v.molesB / rxn.cb) * rxn.cp;
       }),
-      alt(limitingProductMoles, 'no-ratio', 'The limiting moles were reported without the product ratio.', (v) => v.molesA),
+      alt(eitherLimitingProductMoles, 'no-coefficient', 'The smaller result was left as the answer. Multiply it by the product coefficient.', (v) => {
+        const rxn = reaction(v.rxn);
+        return Math.min(v.molesA / rxn.ca, v.molesB / rxn.cb);
+      }),
     ],
   },
   {

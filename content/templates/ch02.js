@@ -4,7 +4,7 @@ const average = (v) => v.fraction * v.light + (1 - v.fraction) * v.heavy;
 const neutrons = (v) => v.massNumber - v.protons;
 const electrons = (v) => v.protons - v.charge;
 const shownAverage = (v) => Number(average(v).toPrecision(4));
-const percentLight = (v) => ((shownAverage(v) - v.heavy) / (v.light - v.heavy)) * 100;
+const percentLight = (v) => ((v.average - v.heavy) / (v.light - v.heavy)) * 100;
 
 export const templates = [
   {
@@ -109,7 +109,7 @@ export const templates = [
       'Let x be the lighter fraction. Then x(m1) + (1 − x)(m2) = average.',
       'Percent is the fraction times 100. The heavier percent is what is left over.',
     ],
-    why: (v, x) => `The lighter fraction is ${num(v.fraction, 3)}, so the percent is ${num(x, 3)}%.`,
+    why: (v, x) => `Lighter fraction = (${num(v.average, 4)} − ${num(v.heavy, 4)}) / (${num(v.light, 4)} − ${num(v.heavy, 4)}). × 100 = ${num(x, 3)}%.`,
     mistakes: [
       alt(percentLight, 'other-isotope', 'That is the percent of the heavier isotope.', (v) => (1 - v.fraction) * 100),
       scaled(percentLight, 0.01, 'forgot-percent', 'That is the fraction, not the percent. Multiply by 100.'),
