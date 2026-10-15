@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import { grade } from '../js/grade.js';
@@ -8,6 +9,7 @@ import {
   bindGuided,
   createSession,
   ctxFor,
+  guidedInner,
   lastStepMatchesProblem,
   renderGuided,
   stepExpected,
@@ -182,85 +184,156 @@ test('ctxFor copies step fields used by diagnose', () => {
   assert.deepEqual(ctx.coefficients, [5]);
 });
 
-test('the guided form reveals after three misses and focuses the next input', async () => {
-  const { JSDOM } = await import('jsdom');
-  const problem = sampleProblem();
-  const dom = new JSDOM(`<!doctype html><html><body>${renderGuided(problem)}</body></html>`, {
-    pretendToBeVisual: true,
+/**
+ * Same shape of stub as tests/learn.test.js: a plain object with the few DOM
+ * methods bindGuided calls. No DOM library.
+ */
+function mountGuided(problem) {
+  const form = {
+    dataset: {},
+    html: guidedInner(problem, createSession(problem)),
+    focused: null,
+    prevented: false,
+    listeners: {},
+    input: null,
+    matches(selector) {
+      return selector === 'form.mm-guided';
+    },
+    addEventListener(type, handler) {
+      this.listeners[type] = handler;
+    },
+    requestSubmit() {
+      this.listeners.submit?.({ preventDefault() {} });
+    },
+    querySelector(selector) {
+      if (selector !== '.mm-guided-step[data-state="active"] input') return null;
+      const step = this.html.match(/<li class="mm-guided-step" data-step="\d+" data-state="active">[\s\S]*?<\/li>/);
+      const id = step?.[0].match(/<input id="([^"]+)"/)?.[1];
+      if (!id) return null;
+      if (this.input?.id === id && this.input.source === this.html) return this.input;
+      const node = {
+        id,
+        tagName: 'INPUT',
+        value: '',
+        disabled: false,
+        source: this.html,
+        focus: () => {
+          form.focused = id;
+        },
+      };
+      this.input = node;
+      return node;
+    },
+  };
+  Object.defineProperty(form, 'innerHTML', {
+    get() {
+      return form.html;
+    },
+    set(value) {
+      form.html = value;
+      form.input = null;
+    },
   });
-  const { document, HTMLElement } = dom.window;
-  if (HTMLElement.prototype.focus && !document.activeElement) {
-    document.documentElement.tabIndex = 0;
-  }
+  return form;
+}
+
+function enter(form, value) {
+  const input = form.querySelector('.mm-guided-step[data-state="active"] input');
+  input.value = value;
+  form.listeners.keydown({
+    key: 'Enter',
+    target: input,
+    preventDefault() {
+      form.prevented = true;
+    },
+  });
+}
+
+test('the guided form reveals after three misses and focuses the next input', () => {
+  const problem = sampleProblem();
+  const html = renderGuided(problem);
+  assert.match(html, /<label for="mm-step-input-demo-guided-0">Your answer \(g\)<\/label>/);
+  assert.match(html, /inputmode="decimal"/);
+  assert.match(html, /aria-describedby="mm-step-live-demo-guided-0"/);
+  assert.match(html, /<p class="feedback" id="mm-step-live-demo-guided-0" aria-live="polite">/);
+  assert.match(html, /Not open yet/);
+  assert.match(html, /<button type="submit">Check<\/button>/);
+
   const memory = new Map();
   const storage = {
     getItem: (key) => (memory.has(key) ? memory.get(key) : null),
     setItem: (key, value) => memory.set(key, String(value)),
     removeItem: (key) => memory.delete(key),
   };
-  bindGuided(document.body, problem, { storage });
+  const form = mountGuided(problem);
+  bindGuided(form, problem, { storage });
 
-  const active = () => document.querySelector('.mm-guided-step[data-state="active"] input');
-  const field = active();
-  assert.equal(field.getAttribute('inputmode'), 'decimal');
-  assert.ok(field.labels?.[0] || document.querySelector(`label[for="${field.id}"]`));
-  const label = document.querySelector(`label[for="${field.id}"]`);
-  assert.match(label.textContent, /Your answer \(g\)/);
-  const live = document.getElementById(field.getAttribute('aria-describedby'));
-  assert.equal(live.classList.contains('feedback'), true);
-  assert.equal(live.getAttribute('aria-live'), 'polite');
-  assert.match(document.querySelector('.mm-guided-step[data-step="1"]').textContent, /Not open yet/);
+  enter(form, '40 g');
+  assert.equal(form.prevented, true);
+  assert.match(form.html, /Not yet\. Divide grams by molar mass\./);
+  assert.match(form.html, /Convert to moles first/);
+  assert.match(form.html, /data-step="0" data-state="active"/);
 
-  function enter(value) {
-    const input = active();
-    input.value = value;
-    input.focus();
-    input.dispatchEvent(new dom.window.KeyboardEvent('keydown', {
-      key: 'Enter',
-      bubbles: true,
-      cancelable: true,
-    }));
-  }
+  enter(form, '40 g');
+  enter(form, '40 g');
+  assert.match(form.html, /data-step="0" data-state="revealed"/);
+  assert.match(form.html, /Revealed\. Solution: 4\.000 g/);
+  assert.match(form.html, /data-step="1" data-state="active"/);
+  assert.equal(form.focused, 'mm-step-input-demo-guided-1');
 
-  enter('40 g');
-  const pending = document.querySelector('.mm-guided-step[data-state="active"] .feedback');
-  assert.match(pending.textContent, /Divide grams by molar mass/);
-  assert.match(pending.textContent, /Convert to moles first/);
-
-  enter('40 g');
-  enter('40 g');
-
-  const first = document.querySelector('.mm-guided-step[data-step="0"]');
-  assert.equal(first.dataset.state, 'revealed');
-  assert.match(first.textContent, /Revealed/);
-  assert.match(first.textContent, /Solution: 4\.000 g/);
-  const next = active();
-  assert.equal(next.id, 'mm-step-input-demo-guided-1');
-  assert.equal(document.activeElement, next);
-
-  enter('4.000 g');
-  assert.match(document.querySelector('.mm-guided-final').textContent, /Final answer/);
-  assert.match(document.querySelector('.mm-guided-final').textContent, /4\.000 g/);
-  assert.match(document.querySelector('.mm-guided-xp').textContent, /\+0/);
+  enter(form, '4.000 g');
+  assert.match(form.html, /Final answer/);
+  assert.match(form.html, /4\.000 g/);
+  assert.match(form.html, /Practice points: \+0/);
   assert.equal(readProgress(storage).xp, 0);
 
-  const cleanDom = new JSDOM(`<!doctype html><html><body>${renderGuided(problem)}</body></html>`, {
-    pretendToBeVisual: true,
-  });
   const cleanStore = {
     getItem: (key) => (memory.has(`clean:${key}`) ? memory.get(`clean:${key}`) : null),
     setItem: (key, value) => memory.set(`clean:${key}`, String(value)),
     removeItem: (key) => memory.delete(`clean:${key}`),
   };
-  bindGuided(cleanDom.window.document.body, problem, { storage: cleanStore });
-  const cleanActive = () => cleanDom.window.document.querySelector('.mm-guided-step[data-state="active"] input');
-  for (const value of ['4.000 g', '4.000 g']) {
-    const input = cleanActive();
-    input.value = value;
-    input.closest('form').querySelector('button[type="submit"]').click();
-  }
-  assert.match(cleanDom.window.document.querySelector('.mm-guided-xp').textContent, /\+10/);
+  const clean = mountGuided(problem);
+  bindGuided(clean, problem, { storage: cleanStore });
+  enter(clean, '4.000 g');
+  assert.equal(clean.focused, 'mm-step-input-demo-guided-1');
+  enter(clean, '4.000 g');
+  assert.match(clean.html, /Practice points: \+10/);
   assert.equal(readProgress(cleanStore).xp, PROBLEM_XP);
+});
+
+const MAIN_LESSON_HASHES = {
+  'content/ch05/5a-hybridization.json': '89898cce77a7430a0ce4da5bf08dad7b04579bc28bd0b2d2bbb5192d717a0bf8',
+  'content/ch05/5b-sigma-pi.json': '3765196db18303ee44c28947a7c5d357bd77db301e734dd0baf07ace67be4f1b',
+  'content/ch05/5c-molecular-orbitals.json': '109fac5534887dd6f36a426282605606fef7d8794b65dffb5a63fcd088afe732',
+  'content/ch05/5d-multiple-bonds.json': 'd6090d826dc000757511d7abbb48e6f8ca2c6d48faa02b2fd9058c805dc70cff',
+  'content/ch07/7-1-balancing.json': '9359e2096a912cec2ed39cf625cfeab679499b66c6aac08a54fb87f0e4907e52',
+  'content/ch07/7-2-classifying.json': '5df23d01ad75b0a0f5a1deba191db4f61e95b0cd8290325bdd27b9109f70c32c',
+  'content/ch07/7-3-stoichiometry.json': 'e04ac5e74f5ff9a7f8c2f6b3bd627479078f0e884d82194dd3ff5dbc5986cb97',
+  'content/ch07/7-4-yields.json': '53ce9b009fbd5b3ceacd0615d430d096ab5aa77a398e3ccaf4cf6c7edd4ff591',
+  'content/ch07/7-5-analysis.json': '5352245ba29f87c0c16614ff7e87620000333d8c8f8319faba7ffd531a70364f',
+  'content/ch07/cards.json': 'b681c96550bd16376c9c11fdb1be943c38bf9d719699ad435ba71d29b878a22c',
+  'content/ch08/8.1-pressure.json': '987c09b57fbc4be5b5ea89f6a0a98bdb49265238bad50ecac93e05a6009e4aa6',
+  'content/ch08/8.2-ideal-gas.json': '9fd704a5bf78b23cb57a13186f773216d43cac828c5fd4d27a79e3e7d4fb9118',
+  'content/ch08/8.3-mixtures.json': '92e67bcb1719184db633437517c61b3d2dcda3448d55f7406e0323f30fcf1a04',
+  'content/ch08/8.4-effusion.json': 'f102db3dc84f80f0a1491a553a6fdf80b5af6381c9a654c1873c55ed3318a750',
+  'content/ch08/8.5-kinetic.json': '8cfbf051ac3f2ac70e6d33140a30d9c5465682dfd1c16919a642f03be58b5adf',
+  'content/ch08/8.6-real-gases.json': 'a31e57ab0a281bbb3a75c3b48c99b526ccbb44e9dca0ce2961dca2280268642f',
+  'content/ch09/9-1-energy.json': 'b697709eab59a0b87e82a538833b174e6d4df81e425abf3a697be9554645f643',
+  'content/ch09/9-2-calorimetry.json': '9529f63342c142823281e90cb5efe66a45ae9299aabfdbdc245b617cb8d7b80e',
+  'content/ch09/9-3-enthalpy.json': '4bde59f4d86c91d7c075c8c83bed85ec51c1c9691f5426f8c1300f834a784001',
+  'content/ch09/9-4-bonds.json': '196d694a172e2d411d9876172d127fcaaf2a69e1126d106446fea266768cb1b3',
+};
+
+test('chapter 5, 7, 8, and 9 keep every existing answer, check, and value', () => {
+  for (const [rel, expected] of Object.entries(MAIN_LESSON_HASHES)) {
+    const lesson = JSON.parse(readFileSync(new URL(`../${rel}`, import.meta.url), 'utf8'));
+    for (const problem of lesson.problems ?? []) {
+      delete problem.guided;
+      delete problem.mistakes;
+    }
+    const hash = createHash('sha256').update(JSON.stringify(lesson)).digest('hex');
+    assert.equal(hash, expected, `${rel} changed more than guided and mistakes since main e57d6a9`);
+  }
 });
 
 test('step controls meet the tap-target size in CSS', () => {

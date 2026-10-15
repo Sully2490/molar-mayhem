@@ -48,7 +48,7 @@ Course top-5 (Chemistry Tutor) must each have a named message: skip-moles, flip-
 - Synthetic: −v → `sign`, 10v → `exponent`, v+273.15 → `kelvin`, ratio flip → `flip-ratio`. A random wrong value (×1.37) → `null`, so there are no false diagnoses.
 - Rule order is deterministic. Correct answers are never diagnosed.
 - Count: ≥ 60 guided problems, ≥ 20 in Ch5 and ≥ 20 in Ch7.
-- UI (jsdom): 3 misses reveal the step and unlock the next one; focus moves to the next step's input.
+- UI: 3 misses reveal the step and unlock the next one; focus moves to the next step's input.
 
 ## Accessibility
 Feedback and diagnosis text go to the existing `aria-live="polite"` feedback `<p>`. Each step input has a `<label>` and `aria-describedby` pointing at its feedback. Revealed and completed steps stay readable as text (no color-only state). Everything works by keyboard (Enter submits), with no motion or timer.
@@ -63,6 +63,8 @@ Feedback and diagnosis text go to the existing `aria-live="polite"` feedback `<p
 | Lane A templates | `js/gen/` (optional) | `loadLaneAMistakes(problem)` imports `js/gen/mistakes.js` and returns `[]` if that module is missing. A mistake may be `{id, describe, wrongAnswerFn}`. A throwing `wrongAnswerFn` is skipped. |
 | Step session | `js/steps/engine.js` | `submitStep(problem, session, input)` |
 | Step UI | `js/steps/index.js` | `renderGuided(problem)` then `bindGuided(root, problem, { storage })` |
+
+The form test stubs `querySelector`, `addEventListener`, and `innerHTML` the same way `tests/learn.test.js` does. This lane does not add a DOM library.
 | Styles | `css/steps/steps.css` | Link this stylesheet next to `css/styles.css`. |
 
 When Learn grows a hook, render `renderGuided` for any practice problem whose `guided` array has steps, instead of the single answer box in `renderProblem`. Pass the problem's `mistakes` through. Build `ctx` with `ctxFor(problem, step)` so `overcount`, `ratio`, and `coefficients` on a step reach `diagnose`. Do not grade a correct answer with `diagnose`.
