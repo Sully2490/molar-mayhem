@@ -1,0 +1,240 @@
+{
+  "id": "8.1-pressure",
+  "ch": 8,
+  "openstax_section": "OpenStax AF2e §8.1",
+  "guide_line": "Convert pressure units and read a manometer height.",
+  "steps": [
+    "Pressure is force divided by area: P = F / A. A bigger force, or a smaller area, makes a higher pressure.",
+    "Common gas units are atm, torr, mm Hg, kPa, Pa, bar, and psi. Use 1 atm = 760 torr = 760 mm Hg = 101.325 kPa = 101325 Pa = 1.01325 bar = 14.70 psi. One bar is exactly 100000 Pa.",
+    "A closed-end mercury manometer has a vacuum on the closed side. The gas pressure equals the height difference. Change cm of mercury to mm, and use 1 mm Hg = 1 torr.",
+    "An open-end manometer compares the gas with the outside air. If the mercury is higher on the open side, add that height to the air pressure. If the mercury is higher on the gas side, subtract it.",
+    "A liquid column pushes with P = hρg. Multiply height, density, and g. Divide pascals by 1000 to get kPa."
+  ],
+  "worked_example": {
+    "q": "A gauge reads 0.6400 atm. What is that pressure in kPa? Use 1 atm = 101.325 kPa.",
+    "steps": [
+      "The reading is already in atmospheres.",
+      "Multiply by 101.325 kPa per atm.",
+      "0.6400 × 101.325 = 64.85 kPa."
+    ],
+    "answer": "64.85 kPa"
+  },
+  "similar_problem": {
+    "q": "A gas sample is at 1.180 atm. What is that pressure in kPa? Use 1 atm = 101.325 kPa.",
+    "hint": "Multiply 1.180 by 101.325 kPa for each atmosphere.",
+    "answer": "119.6 kPa"
+  },
+  "sources": [
+    "OpenStax AF2e §8.1"
+  ],
+  "problems": [
+    {
+      "id": "8.1-01",
+      "q": "Convert 1.250 atm to torr. Use 1 atm = 760 torr.",
+      "a": "950.0 torr",
+      "why": "1.250 atm × 760 torr/atm = 950.0 torr.",
+      "hints": [
+        "Multiply 1.250 by 760 torr in each atmosphere."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 950,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "torr"
+      }
+    },
+    {
+      "id": "8.1-02",
+      "q": "Convert 642.0 torr to atm. Use 760 torr = 1 atm.",
+      "a": "0.8447 atm",
+      "why": "642.0 torr × (1 atm / 760 torr) = 0.8447 atm.",
+      "hints": [
+        "Divide 642.0 torr by 760 torr in 1 atm."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.8447368421052631,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "8.1-03",
+      "q": "Convert 0.9250 atm to kPa. Use 1 atm = 101.325 kPa.",
+      "a": "93.73 kPa",
+      "why": "0.9250 atm × 101.325 kPa/atm = 93.73 kPa.",
+      "hints": [
+        "Multiply 0.9250 by 101.325 kPa per atm."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 93.72562500000001,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "kPa"
+      }
+    },
+    {
+      "id": "8.1-04",
+      "q": "Convert 88.50 kPa to atm. Use 101.325 kPa = 1 atm.",
+      "a": "0.8734 atm",
+      "why": "88.50 / 101.325 = 0.8734 atm.",
+      "hints": [
+        "Divide 88.50 kPa by 101.325 kPa in 1 atm."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.8734270910436713,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "8.1-05",
+      "q": "Convert 1.500 atm to bar. Use 1 atm = 1.01325 bar.",
+      "a": "1.520 bar",
+      "why": "1.500 atm × 1.01325 bar/atm = 1.520 bar.",
+      "hints": [
+        "Multiply 1.500 by 1.01325 bar per atm."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.5198749999999999,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "bar"
+      }
+    },
+    {
+      "id": "8.1-06",
+      "q": "Convert 2.150 bar to Pa. Use 1 bar = 100000 Pa.",
+      "a": "2.150e5 Pa",
+      "why": "2.150 bar × 100000 Pa/bar = 2.150 × 10^5 Pa.",
+      "hints": [
+        "One bar is exactly 100000 Pa, so multiply 2.150 by 100000."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 215000,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "Pa"
+      }
+    },
+    {
+      "id": "8.1-07",
+      "q": "Convert 1.000 atm to psi. Use 1 atm = 14.70 psi.",
+      "a": "14.70 psi",
+      "why": "1.000 atm × 14.70 psi/atm = 14.70 psi.",
+      "hints": [
+        "Multiply 1.000 atm by 14.70 psi per atm."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 14.7,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "psi"
+      }
+    },
+    {
+      "id": "8.1-08",
+      "q": "Convert 32.50 psi to atm. Use 14.70 psi = 1 atm.",
+      "a": "2.211 atm",
+      "why": "32.50 / 14.70 = 2.211 atm.",
+      "hints": [
+        "Divide 32.50 psi by 14.70 psi in 1 atm."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2.2108843537414966,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "8.1-09",
+      "q": "A closed-end mercury manometer shows a height difference of 31.75 cm. What is the gas pressure in torr? Use 1 mm Hg = 1 torr.",
+      "a": "317.5 torr",
+      "why": "31.75 cm = 317.5 mm. With 1 mm Hg = 1 torr, the gas pressure is 317.5 torr.",
+      "hints": [
+        "Change 31.75 cm of mercury into millimeters. Each millimeter of mercury is 1 torr."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 317.5,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "torr"
+      }
+    },
+    {
+      "id": "8.1-10",
+      "q": "An open-end mercury manometer is used where the air pressure is 760.0 torr. The mercury stands 12.40 cm higher on the open side than on the gas side. What is the gas pressure in torr?",
+      "a": "884.0 torr",
+      "why": "12.40 cm = 124.0 mm = 124.0 torr. The gas is pushing harder than the air, so P = 760.0 + 124.0 = 884.0 torr.",
+      "hints": [
+        "The open side is higher, so add 124.0 torr to the air pressure of 760.0 torr."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 884,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "torr"
+      }
+    },
+    {
+      "id": "8.1-11",
+      "q": "An open-end mercury manometer is used where the air pressure is 752.0 torr. The mercury stands 4.800 cm higher on the gas side than on the open side. What is the gas pressure in torr?",
+      "a": "704.0 torr",
+      "why": "4.800 cm = 48.00 torr. The air is pushing harder than the gas, so P = 752.0 − 48.00 = 704.0 torr.",
+      "hints": [
+        "The gas side is higher, so subtract 48.00 torr from 752.0 torr."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 704,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "torr"
+      }
+    },
+    {
+      "id": "8.1-12",
+      "q": "A piston presses with a force of 250.0 N on a gas. The piston face has area 0.01250 m^2. What is the pressure in kPa?",
+      "a": "20.00 kPa",
+      "why": "P = 250.0 N / 0.01250 m^2 = 20000 Pa = 20.00 kPa.",
+      "hints": [
+        "Divide 250.0 N by 0.01250 m^2 to get pascals, then divide by 1000 for kPa."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 20,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "kPa"
+      }
+    },
+    {
+      "id": "8.1-13",
+      "q": "A water column is 10.30 m tall. The water density is 997.0 kg/m^3 and g is 9.807 m/s^2. What is the pressure at the bottom, in kPa? Use P = hρg.",
+      "a": "100.7 kPa",
+      "why": "P = (10.30)(997.0)(9.807) = 1.007 × 10^5 Pa = 100.7 kPa.",
+      "hints": [
+        "Multiply 10.30 m by 997.0 kg/m^3 and by 9.807 m/s^2, then divide the pascals by 1000."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 100.70906370000002,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "kPa"
+      }
+    }
+  ]
+}
