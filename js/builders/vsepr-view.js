@@ -2,6 +2,7 @@ import { escapeHtml, formulaText } from './html.js';
 import { ensureBuilderCss, on, reducedFrom, restoreFocus } from './dom.js';
 import { motionMode } from './motion.js';
 import { missFeedback } from './feedback.js';
+import { boot3d, shapeStage, shapeTools } from '../three-d/index.js';
 import {
   BOND_ANGLES,
   ELECTRON_GEOMETRIES,
@@ -138,7 +139,10 @@ export function renderVsepr(state, motion = 'still') {
         </label>
       </div>
       <div class="b-split">
-        <canvas class="b-canvas" data-rotate tabindex="0" data-focus="viewer" width="360" height="300" role="application" aria-label="3D ${escapeHtml(entry.mg)} model. ${frame} Bond angle ${escapeHtml(entry.angle)} degrees. Hybridization ${escapeHtml(entry.hybrid)}. Arrow keys rotate. Home resets." aria-describedby="vsepr-summary" aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown Home"></canvas>
+        <div class="mm-3d-stack" data-mm-stack="vsepr">
+          <canvas class="b-canvas" data-rotate tabindex="0" data-focus="viewer" width="360" height="300" role="application" aria-label="3D ${escapeHtml(entry.mg)} model. ${frame} Bond angle ${escapeHtml(entry.angle)} degrees. Hybridization ${escapeHtml(entry.hybrid)}. Arrow keys rotate. Home resets." aria-describedby="vsepr-summary" aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown Home"></canvas>
+          ${shapeStage({ source: 'build', shapeId: entry.id, yaw: state.view.yaw, pitch: state.view.pitch, spin: motion === 'run' ? 'on' : 'off' })}
+        </div>
         <div class="b-side">
           <p><b>Electron geometry:</b> ${escapeHtml(entry.eg)}</p>
           <p><b>Molecular shape:</b> ${escapeHtml(entry.mg)}</p>
@@ -148,7 +152,8 @@ export function renderVsepr(state, motion = 'still') {
             <button type="button" data-action="spin" data-focus="spin" aria-pressed="${motion === 'run' ? 'true' : 'false'}" ${state.locked ? 'disabled' : ''}>${state.locked ? 'Still' : motion === 'run' ? 'Hold still' : 'Spin'}</button>
             <button type="button" data-action="reset-view" data-focus="reset-view">Reset view</button>
           </div>
-          <p class="b-fine">Arrow keys turn the model. Home resets it. A finger drag does the same thing.</p>
+          ${shapeTools(entry.id)}
+          <p class="b-fine">Arrow keys turn the model. Home resets it. A finger drag does the same thing. Zoom in and Zoom out move the camera.</p>
         </div>
       </div>
       ${choices('eg', 'Electron geometry', ELECTRON_GEOMETRIES, state.answer.eg)}
@@ -165,6 +170,7 @@ export function renderVsepr(state, motion = 'still') {
 
 export function mount(el, opts = {}) {
   ensureBuilderCss();
+  boot3d();
   const reduced = reducedFrom(opts);
   let state = createVsepr(opts.challenge || 'water');
   state.locked = reduced;
@@ -190,6 +196,13 @@ export function mount(el, opts = {}) {
     canvas.height = Math.round(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     drawVsepr(ctx, shapeById(state.shapeId), state.view, width, height);
+    const stage = el.querySelector('mm-3d-stage');
+    if (stage) {
+      stage.setAttribute('data-yaw', String(state.view.yaw));
+      stage.setAttribute('data-pitch', String(state.view.pitch));
+      stage.setAttribute('data-shape', state.shapeId);
+      stage.setAttribute('data-spin', mode() === 'run' ? 'on' : 'off');
+    }
   }
 
   function kick() {

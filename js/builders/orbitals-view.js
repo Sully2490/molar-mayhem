@@ -1,6 +1,7 @@
 import { escapeHtml } from './html.js';
 import { ensureBuilderCss, on, reducedFrom, restoreFocus } from './dom.js';
 import { missFeedback } from './feedback.js';
+import { boot3d, orbitalBlock } from '../three-d/index.js';
 import { ELEMENTS } from '../elements.js';
 import {
   addElectron,
@@ -16,7 +17,7 @@ import {
 
 const SPIN = ['·', '↑', '↑↓'];
 
-export function renderOrbitals(state, motion = 'still') {
+export function renderOrbitals(state, motion = 'still', picture = {}) {
   const element = elementByZ(state.z);
   const options = ELEMENTS.filter((item) => item.z <= 36).map((item) => (
     `<option value="${item.z}" ${item.z === state.z ? 'selected' : ''}>${item.z} ${item.sym} ${item.name}</option>`
@@ -32,7 +33,8 @@ export function renderOrbitals(state, motion = 'still') {
   return `
     <section class="b-tool" data-builder="orbitals" data-motion="${motion}">
       <h2>Orbital filling</h2>
-      <p class="b-cite">OpenStax Chemistry: Atoms First 2e §3.4. Aufbau order, Hund’s rule, and the Pauli limit of two electrons in a box.</p>
+      <p class="b-cite">OpenStax Chemistry: Atoms First 2e §3.3 and §3.4. Aufbau order, Hund’s rule, and the Pauli limit of two electrons in a box.</p>
+      ${orbitalBlock(picture.id || '2pz', { reduced: picture.reduced === true })}
       <p id="orb-summary" class="b-summary" aria-live="polite">${escapeHtml(describeOrbitals(state))}</p>
       <div class="b-controls">
         <label class="b-field">Element
@@ -56,14 +58,16 @@ export function renderOrbitals(state, motion = 'still') {
 
 export function mount(el, opts = {}) {
   ensureBuilderCss();
-  reducedFrom(opts);
+  boot3d();
+  const reduced = reducedFrom(opts);
+  let picture = opts.orbital || '2pz';
   let state = createOrbitals(opts.z || 8);
   let alive = true;
   const stops = [];
 
   function paint(focusId) {
     if (!alive) return;
-    el.innerHTML = renderOrbitals(state, 'still');
+    el.innerHTML = renderOrbitals(state, 'still', { id: picture, reduced });
     restoreFocus(el, focusId);
   }
 
@@ -114,10 +118,15 @@ export function mount(el, opts = {}) {
   }));
 
   stops.push(on(el, 'change', (event) => {
-    if (event.target.getAttribute?.('data-action') === 'element') {
+    const action = event.target.getAttribute?.('data-action');
+    if (action === 'element') {
       const z = Number(event.target.value);
       state = createOrbitals(z);
       paint('element');
+    }
+    if (action === 'orbital-picture') {
+      picture = event.target.value;
+      paint('orbital-picture');
     }
   }));
 
