@@ -14,8 +14,11 @@ test('unit entry uses separate value and unit fields', () => {
   assert.match(html, /data-route="Drill"/);
   assert.match(html, /for="value-i1-gold"/);
   assert.match(html, />Value</);
+  assert.match(html, /id="value-i1-gold"[^>]*inputmode="decimal"/);
+  assert.match(html, /class="answer-field">\s*<label class="answer-label" for="unit-i1-gold">Unit<\/label>/);
   assert.match(html, /for="unit-i1-gold"/);
   assert.match(html, />Unit</);
+  assert.equal(/id="unit-i1-gold"[^>]*inputmode=/.test(html), false);
   assert.match(html, /aria-live="polite"/);
   assert.equal(UNIT_PROBLEMS[0].check.value, roundSig(19.3 * 2.5, 3));
   assert.equal(UNIT_PROBLEMS[1].check.value, roundSig(50 / 0.789, 3));

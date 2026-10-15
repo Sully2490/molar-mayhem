@@ -156,15 +156,40 @@ h1 { font-size: clamp(2rem, 5vw, 2.7rem); margin: 0 0 0.6rem; }
 
 .route-card:hover { border-color: var(--teal); }
 
-.problem { margin: 1.2rem 0; padding: 0.9rem 0; border-top: 1px solid var(--line); }
-.answer-label { display: block; font-weight: 700; margin-top: 0.6rem; }
-.answer-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: end; }
-.answer-row input { font: inherit; padding: 0.4rem 0.5rem; border: 1px solid var(--line); border-radius: 0.4rem; }
-.feedback { min-height: 1.4rem; font-weight: 700; }
+.lesson-list, .problem {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  padding: 0.85rem 0.95rem;
+  margin: 0.8rem 0;
+}
+
+.lesson-list a { color: var(--teal-deep); font-weight: 700; }
+
+.answer-field { display: flex; flex-direction: column; gap: 0.25rem; }
+
+.answer-label { display: block; font-weight: 700; }
+
+.answer-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: end; }
+
+.answer-row input {
+  font: inherit;
+  min-height: 44px;
+  min-width: 12rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  background: white;
+}
+
+.feedback { min-height: 1.4rem; margin: 0.4rem 0 0; font-weight: 700; }
+
 .feedback[data-status="correct"] { color: var(--teal-deep); }
-.feedback[data-status="sig"] { color: var(--focus); }
+
+.feedback[data-status="sig"],
 .feedback[data-status="unit"],
 .feedback[data-status="miss"],
+.feedback[data-status="near"],
 .feedback[data-status="solution"] { color: var(--focus); }
 
 .site-footer {

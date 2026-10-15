@@ -63,10 +63,14 @@ function renderProblem(problem) {
     <form class="problem" data-unit-problem="${escapeHtml(problem.id)}">
       <p id="q-${escapeHtml(problem.id)}">${escapeHtml(problem.q)}</p>
       <div class="answer-row">
-        <label class="answer-label" for="${valueId}">Value</label>
-        <input id="${valueId}" name="value" inputmode="decimal" autocomplete="off" aria-describedby="${liveId}">
-        <label class="answer-label" for="${unitId}">Unit</label>
-        <input id="${unitId}" name="unit" autocomplete="off" aria-describedby="${liveId}">
+        <div class="answer-field">
+          <label class="answer-label" for="${valueId}">Value</label>
+          <input id="${valueId}" name="value" inputmode="decimal" autocomplete="off" aria-describedby="${liveId}">
+        </div>
+        <div class="answer-field">
+          <label class="answer-label" for="${unitId}">Unit</label>
+          <input id="${unitId}" name="unit" autocomplete="off" aria-describedby="${liveId}">
+        </div>
         <button type="submit">Check</button>
       </div>
       <p class="feedback" id="${liveId}" aria-live="polite"></p>

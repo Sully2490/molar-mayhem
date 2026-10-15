@@ -1,4 +1,5 @@
-import { renderRoute, routeFromHash, routeTitle } from './routes.js';
+import { bindLearn, loadLessons, renderLearn } from './learn.js';
+import { lessonIdFromHash, renderRoute, routeFromHash, routeTitle } from './routes.js';
 import { renderTable } from './periodic.js';
 import { bindUnitEntry, renderDrill } from './unit-entry.js';
 
@@ -12,15 +13,24 @@ const closeButton = document.querySelector('#close-tray');
 let trendId = 'radius';
 let selectedZ = null;
 let lastFocus = null;
+let paintGeneration = 0;
 
-function paintRoute() {
+async function paintRoute() {
+  const generation = ++paintGeneration;
   const id = routeFromHash(location.hash);
-  if (id === 'Drill') {
+  if (id === 'Learn') {
+    const lessons = await loadLessons();
+    if (generation !== paintGeneration) return;
+    view.innerHTML = renderLearn(lessons, lessonIdFromHash(location.hash));
+    bindLearn(view, lessons);
+  } else if (id === 'Drill') {
+    if (generation !== paintGeneration) return;
     view.innerHTML = renderDrill();
     bindUnitEntry(view);
   } else {
     view.innerHTML = renderRoute(id);
   }
+  if (generation !== paintGeneration) return;
   document.title = id === 'Home' ? 'Molar Mayhem' : `${routeTitle(id)} — Molar Mayhem`;
   for (const link of navLinks) {
     if (link.getAttribute('data-nav') === id) link.setAttribute('aria-current', 'page');
