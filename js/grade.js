@@ -30,6 +30,10 @@ const UNIT_ALIASES = new Map([
   ['s', 's'],
   ['sec', 's'],
   ['min', 'min'],
+  ['cm', 'cm'],
+  ['mm', 'mm'],
+  ['nm', 'nm'],
+  ['km', 'km'],
   ['c', '°C'],
   ['°c', '°C'],
   ['celsius', '°C'],
@@ -296,9 +300,35 @@ function foldUnit(unit) {
   return String(unit)
     .trim()
     .replace(/\s+/g, '')
+    .replace(/[·•⋅*x]/gi, '')
+    .replace(/[()]/g, '')
     .replace(/³/g, '3')
     .replace(/²/g, '2')
     .replace(/\^/g, '');
+}
+
+const PRODUCT_KEYS = [...UNIT_ALIASES.keys()].sort((left, right) => right.length - left.length);
+
+function peelProduct(side) {
+  if (!side) return null;
+  let rest = side;
+  const parts = [];
+  while (rest.length > 0) {
+    const lower = rest.toLowerCase();
+    const key = PRODUCT_KEYS.find((item) => lower.startsWith(item));
+    if (!key) return null;
+    parts.push(UNIT_ALIASES.get(key));
+    rest = rest.slice(key.length);
+  }
+  return parts;
+}
+
+function canonicalPart(part) {
+  const whole = UNIT_ALIASES.get(part.toLowerCase());
+  if (whole) return whole;
+  const pieces = peelProduct(part);
+  if (!pieces) return part;
+  return pieces.join('·');
 }
 
 export function canonicalUnit(unit) {
@@ -307,8 +337,8 @@ export function canonicalUnit(unit) {
   const whole = UNIT_ALIASES.get(compact.toLowerCase());
   if (whole) return whole;
   const slash = compact.indexOf('/');
-  if (slash <= 0 || slash !== compact.lastIndexOf('/')) return compact;
-  const numerator = canonicalUnit(compact.slice(0, slash));
-  const denominator = canonicalUnit(compact.slice(slash + 1));
+  if (slash <= 0 || slash !== compact.lastIndexOf('/')) return canonicalPart(compact);
+  const numerator = canonicalPart(compact.slice(0, slash));
+  const denominator = canonicalPart(compact.slice(slash + 1));
   return `${numerator}/${denominator}`;
 }
