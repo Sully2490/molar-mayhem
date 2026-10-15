@@ -1,0 +1,267 @@
+[data-route="Lab"] { max-width: 76rem; }
+
+mm-lab { display: block; }
+
+.lab { color: var(--ink); }
+
+.lab h1 { margin-bottom: 0.4rem; }
+
+.lab-cite,
+.lab-fine { color: var(--muted); font-size: 0.92rem; }
+
+.lab-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.8rem 0 1rem;
+}
+
+.lab button,
+.lab select,
+.lab-tab,
+.lab-key,
+.lab-box,
+.lab-el {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+.lab-tab,
+.lab button,
+.lab select {
+  font: inherit;
+  border: 1px solid var(--teal);
+  background: white;
+  color: var(--teal-deep);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  cursor: pointer;
+}
+
+.lab-tab[aria-selected="true"],
+.lab button[aria-pressed="true"] {
+  background: var(--teal);
+  color: white;
+}
+
+.lab select { border-radius: 0.7rem; background: white; }
+
+.lab-tool h2 {
+  font-family: Georgia, "Iowan Old Style", Palatino, serif;
+  margin: 0 0 0.4rem;
+}
+
+.lab-desc {
+  margin: 0 0 0.8rem;
+  padding: 0.75rem 0.9rem;
+  background: #e7f3f1;
+  border-radius: 0.8rem;
+}
+
+.lab-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.8rem;
+  align-items: end;
+  margin-bottom: 0.8rem;
+}
+
+.lab-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: min(100%, 16rem);
+  font-weight: 600;
+}
+
+.lab input[type="range"] {
+  width: 100%;
+  min-height: 44px;
+  accent-color: var(--teal);
+  touch-action: manipulation;
+}
+
+.lab-check {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 0.45rem !important;
+  min-height: 44px;
+}
+
+.lab input[type="checkbox"] {
+  width: 44px;
+  height: 44px;
+  margin: 0;
+}
+
+.lab-stage,
+.lab-split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.lab-lewis,
+.lab-svg,
+.lab-spectrum,
+.lab-rotate,
+.lab-orbital {
+  width: min(100%, 640px);
+  height: auto;
+  background: var(--card);
+  border-radius: 1rem;
+  touch-action: manipulation;
+}
+
+.lab-rotate,
+.lab-spectrum { touch-action: none; cursor: grab; }
+
+.lab-rotate:active { cursor: grabbing; }
+
+.lab-side { flex: 1; min-width: min(100%, 16rem); }
+
+.lab-palette,
+.lab-aufbau { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.lab-key { padding: 0.2rem 0.7rem; }
+
+.lab-msg {
+  margin-top: 0.6rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.7rem;
+  background: #f3efe4;
+}
+
+.lab-msg[data-tone="ok"] { background: #e5f6ee; }
+.lab-msg[data-tone="bad"] { background: #fee2e2; }
+.lab-msg[data-tone="hint"] { background: #fff7e0; }
+
+.lab-readout { font-weight: 700; }
+
+.lab-sub { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
+
+.lab-boxes { display: flex; }
+
+.lab-box {
+  width: 44px;
+  border: 2px solid var(--teal);
+  background: white;
+  color: var(--teal-deep);
+  font: inherit;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-right: -2px;
+}
+
+.lab-box[aria-pressed="true"] { outline: 3px solid var(--focus); }
+
+.lab-formula {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+  margin: 0.4rem 0;
+}
+
+.lab-ion {
+  padding: 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: white;
+}
+
+.lab-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  margin: 0.15rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #e7f3f1;
+  font-weight: 700;
+}
+
+.lab-chip[data-tone="neg"] { background: #fee2e2; }
+
+.lab-plus { font-size: 1.4rem; font-weight: 700; }
+
+.lab-formula-out {
+  margin: 0;
+  font-family: Georgia, "Iowan Old Style", Palatino, serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.lab-scroll { overflow-x: auto; padding-bottom: 0.4rem; touch-action: pan-x; }
+
+.lab-frame { position: relative; width: max-content; }
+
+.lab-ptable {
+  display: grid;
+  grid-template-columns: repeat(18, 2.7rem);
+  grid-auto-rows: 2.7rem;
+  gap: 3px;
+  width: max-content;
+}
+
+.lab-fblock { grid-template-columns: repeat(15, 2.7rem); margin-top: 0.35rem; }
+
+.lab-el {
+  border: 0;
+  border-radius: 5px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.05;
+  cursor: pointer;
+}
+
+.lab-el span { font-size: 0.58rem; }
+.lab-el b { font-size: 0.86rem; }
+
+.lab-el.is-empty { background: var(--empty); color: var(--ink); }
+.lab-el[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--ink); }
+
+.lab-marker {
+  display: grid;
+  place-items: center;
+  font-size: 0.62rem;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  border-radius: 5px;
+}
+
+.lab-arrows {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.lab :focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .lab-lewis,
+  .lab-svg,
+  .lab-rotate,
+  .lab-orbital,
+  .lab-spectrum { width: 100%; }
+  .lab-controls label { min-width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab *,
+  .lab *::before,
+  .lab *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
