@@ -8,7 +8,7 @@ _Last updated: 2026-10-15. This branch is the grader and dialog cleanup._
 - `npm test` and `npm run check:content` run locally. GitHub Actions runs `npm test`.
 - `check:content` parses any `content/*.json` files and skips the coverage manifest when `MM_SOURCES` is unset. The manifest mapping itself is F01.
 - Course source material and the coverage manifest stay outside the repo, at the path set in `MM_SOURCES`.
-- Numeric tolerance is a relative percent (default 0.5%). A sig-fig mismatch returns a hint and still counts. Exact checks fold Unicode subscripts, superscripts, and charges (Fe³⁺ = Fe3+) into ASCII, collapse whitespace, follow a case rule, and accept any listed answer. Formula case keeps element-symbol capitalization, so Co and CO do not match, and molar M does not match meter m. An unordered set can mark near-miss items. A config check expands [He] through [Rn] and matches orbitals in any order.
+- Numeric tolerance is a relative percent (default 0.5%). A sig-fig mismatch returns a hint and still counts. Exact checks fold Unicode subscripts, superscripts, and charges (Fe³⁺ = Fe3+, O²⁻ = O2-) into ASCII. The default case is formula, so Co, CO, and co stay different, and NaCl does not match nacl. Use insensitive case only for element names and ordinary words. An unordered set can mark near-miss items. A config check expands [He] through [Rn] and matches orbitals in any order.
 - The test workflow has `permissions: contents: read`, pins checkout and setup-node to commit SHAs, and runs push builds on main only. The periodic-table dialog marks the page behind it inert. Element numbers are 0.7rem at full opacity.
 
 ## Priorities

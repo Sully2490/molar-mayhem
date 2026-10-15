@@ -43,8 +43,9 @@ const SUPERSCRIPTS = '⁰¹²³⁴⁵⁶⁷⁸⁹';
 /**
  * Grade a student answer against a check descriptor.
  * Numeric tolerance is a relative percent. Sig-fig mismatches hint instead of failing.
- * Exact checks fold Unicode digits and charges, collapse whitespace, and follow a case rule.
- * Formula case keeps element-symbol capitalization, so Co and CO stay different.
+ * Exact checks fold Unicode digits and charges. The default case is formula:
+ * element symbols stay capitalized, so Co, CO, and co are different.
+ * Use case "insensitive" only for element names and ordinary words.
  * Set checks compare unordered lists and can flag near-miss items.
  * Config checks expand noble-gas cores and compare orbitals, ignoring order.
  * @param {string} input
@@ -95,7 +96,7 @@ export function withinRelativePercent(actual, expected, percent) {
 }
 
 export function gradeExact(input, check) {
-  const caseRule = check.case ?? 'insensitive';
+  const caseRule = check.case ?? 'formula';
   const actual = normalizeAnswer(input, caseRule);
   if (!actual) return { ok: false, reason: 'format' };
   const accepted = acceptedAnswers(check).map((item) => normalizeAnswer(item, caseRule));

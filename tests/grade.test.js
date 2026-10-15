@@ -80,11 +80,39 @@ test('sig fig counts follow the written coefficient', () => {
   assert.ok(Math.abs(parsed.value - 6.02e23) / 6.02e23 < 1e-9);
 });
 
-test('exact answers ignore case and extra spaces', () => {
-  const check = { kind: 'exact', text: 'sp3' };
-  assert.deepEqual(grade('  SP3 ', check), { ok: true });
-  assert.equal(grade('sp2', check).reason, 'exact');
-  assert.equal(grade('   ', check).reason, 'format');
+test('exact answers are case-sensitive for symbols and ignore case only for words', () => {
+  const symbol = { kind: 'exact', text: 'sp3' };
+  assert.equal(grade('sp3', symbol).ok, true);
+  assert.equal(grade('SP3', symbol).reason, 'exact');
+  assert.equal(grade('sp2', symbol).reason, 'exact');
+  assert.equal(grade('   ', symbol).reason, 'format');
+
+  const name = { kind: 'exact', text: 'sodium', case: 'insensitive' };
+  assert.equal(grade('Sodium', name).ok, true);
+  assert.equal(grade('SODIUM', name).ok, true);
+  assert.equal(grade('  sodium ', name).ok, true);
+});
+
+test('default exact checks tell Co, CO, and NaCl apart', () => {
+  const cobalt = { kind: 'exact', text: 'Co' };
+  assert.equal(grade('Co', cobalt).ok, true);
+  assert.equal(grade('CO', cobalt).reason, 'exact');
+  assert.equal(grade('co', cobalt).reason, 'exact');
+
+  const salt = { kind: 'exact', text: 'NaCl' };
+  assert.equal(grade('NaCl', salt).ok, true);
+  assert.equal(grade('nacl', salt).reason, 'exact');
+  assert.equal(grade('Nacl', salt).reason, 'exact');
+});
+
+test('superscript charges match plain ion formulas', () => {
+  assert.equal(grade('Fe³⁺', { kind: 'exact', text: 'Fe3+' }).ok, true);
+  assert.equal(grade('Fe3+', { kind: 'exact', text: 'Fe3+' }).ok, true);
+  assert.equal(grade('SO4 2-', { kind: 'exact', text: 'SO42-' }).ok, true);
+  assert.equal(grade('SO₄²⁻', { kind: 'exact', text: 'SO4 2-' }).ok, true);
+  assert.equal(grade('O²⁻', { kind: 'exact', text: 'O2-' }).ok, true);
+  assert.equal(grade('O2-', { kind: 'exact', text: 'O2-' }).ok, true);
+  assert.equal(grade('o2-', { kind: 'exact', text: 'O2-' }).reason, 'exact');
 });
 
 test('exact answers fold Unicode digits, follow case rules, and accept any listed answer', () => {
