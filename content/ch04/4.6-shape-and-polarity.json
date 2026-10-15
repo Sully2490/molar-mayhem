@@ -7,9 +7,10 @@
     "An electron region is a bond or a lone pair on the central atom. A double bond or a triple bond counts as one region.",
     "Regions stay as far apart as they can. Two regions are linear (180°). Three are trigonal planar (120°). Four are tetrahedral (109.5°). Five are trigonal bipyramidal (90° and 120°). Six are octahedral (90°).",
     "The electron-pair geometry counts every region. The molecular shape counts only the atoms. Lone pairs change the shape name.",
-    "Four regions: 0 lone pairs is tetrahedral, 1 is trigonal pyramidal, and 2 is bent. Three regions with 1 lone pair is also bent. Five regions: 1 lone pair is seesaw, 2 is T-shaped, and 3 is linear.",
+    "Four regions: 0 lone pairs is tetrahedral, 1 is trigonal pyramidal, and 2 is bent. Three regions with 1 lone pair is also bent. Five regions: 1 lone pair is seesaw, 2 is T-shaped, and 3 is linear. Six regions: 2 lone pairs is square planar.",
+    "A lone pair takes more room than a bonding pair, so it squeezes the bond angle below the ideal angle. The H–O–H angle in water and the H–N–H angle in ammonia are both smaller than 109.5°.",
     "A bond is polar when the two atoms differ in electronegativity. The molecule is polar when those bond dipoles do not cancel.",
-    "Identical outer atoms on a symmetric shape cancel: linear CO2, trigonal planar BF3, tetrahedral CH4 and CCl4, trigonal bipyramidal PCl5, and octahedral SF6. A bent or pyramidal molecule, or a tetrahedron with different outer atoms, does not cancel."
+    "Identical outer atoms on a symmetric shape cancel: linear CO2 and XeF2, trigonal planar BF3, tetrahedral CH4 and CCl4, trigonal bipyramidal PCl5, octahedral SF6, and square planar XeF4. A bent, pyramidal, seesaw, or T-shaped molecule, or a tetrahedron with different outer atoms such as CH2Cl2, does not cancel."
   ],
   "worked_example": {
     "q": "What is the molecular shape of CH4, and is the molecule polar or nonpolar?",
@@ -294,6 +295,224 @@
       "check": {
         "kind": "exact",
         "text": "bent",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-23",
+      "q": "What is the electron-pair geometry of NH3?",
+      "a": "tetrahedral",
+      "why": "Nitrogen has three bonds and one lone pair. Four regions make the electron-pair geometry tetrahedral, even though the molecular shape is trigonal pyramidal.",
+      "hints": ["Count the lone pair on nitrogen with the three bonds. Four regions name the electron-pair geometry, not the shape."],
+      "check": {
+        "kind": "exact",
+        "text": "tetrahedral",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-24",
+      "q": "What is the electron-pair geometry of SO2?",
+      "a": "trigonal planar",
+      "why": "Sulfur in SO2 has two bonding regions and one lone pair. Three regions make the electron-pair geometry trigonal planar. The molecular shape is bent.",
+      "hints": ["SO2 has two bonding regions and one lone pair. Three regions set the electron-pair geometry, which is not the bent shape name."],
+      "check": {
+        "kind": "exact",
+        "text": "trigonal planar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-25",
+      "q": "What is the electron-pair geometry of SF4?",
+      "a": "trigonal bipyramidal",
+      "why": "Sulfur in SF4 has four bonds and one lone pair. Five regions make the electron-pair geometry trigonal bipyramidal. The molecular shape is seesaw.",
+      "hints": ["Add the four S–F bonds to the one lone pair. Five regions use the five-region geometry, not the seesaw name."],
+      "check": {
+        "kind": "exact",
+        "text": "trigonal bipyramidal",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-26",
+      "q": "What is the electron-pair geometry of BF3?",
+      "a": "trigonal planar",
+      "why": "Boron has three bonds and no lone pair. With no leftover pair, the electron-pair geometry is trigonal planar, the same as the molecular shape.",
+      "hints": ["Boron has three bonds and no lone pair. With nothing left over, the electron-pair geometry matches the flat three-region shape."],
+      "check": {
+        "kind": "exact",
+        "text": "trigonal planar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-27",
+      "q": "Is the H–O–H angle in water larger or smaller than 109.5°?",
+      "a": "smaller",
+      "why": "Water has four electron regions, so the starting angle is 109.5°. Two lone pairs on oxygen repel more than the bonds and close the H–O–H angle. The angle is smaller.",
+      "hints": ["Water’s oxygen has two lone pairs. Those pairs take more room than bonds and close the H–O–H angle."],
+      "check": {
+        "kind": "exact",
+        "text": "smaller",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-28",
+      "q": "Is the H–N–H angle in NH3 larger or smaller than 109.5°?",
+      "a": "smaller",
+      "why": "Ammonia has four electron regions and one lone pair. That lone pair pushes the three bonds closer together than 109.5°. The angle is smaller.",
+      "hints": ["Ammonia has one lone pair on nitrogen. That pair pushes the three bonds closer than the tetrahedral angle."],
+      "check": {
+        "kind": "exact",
+        "text": "smaller",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-29",
+      "q": "Is BF3 polar or nonpolar?",
+      "a": "nonpolar",
+      "why": "Each B–F bond is polar, but the three identical bonds sit 120° apart in a plane. The bond dipoles cancel, so BF3 is nonpolar.",
+      "hints": ["Each B–F bond is polar, and the three outer atoms are identical. Check whether a flat triangle lets those dipoles cancel."],
+      "check": {
+        "kind": "exact",
+        "text": "nonpolar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-30",
+      "q": "Is SO2 polar or nonpolar?",
+      "a": "polar",
+      "why": "SO2 is bent, so the two S–O bond dipoles do not point opposite each other. A net dipole remains. SO2 is polar.",
+      "hints": ["SO2 is bent, so the two S–O dipoles are not in a straight line. Decide whether a net pull remains."],
+      "check": {
+        "kind": "exact",
+        "text": "polar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-31",
+      "q": "Is XeF2 polar or nonpolar?",
+      "a": "nonpolar",
+      "why": "XeF2 is linear with two identical Xe–F bonds pointing opposite ways. The bond dipoles cancel, so XeF2 is nonpolar.",
+      "hints": ["XeF2 is linear with two identical outer atoms. Opposite dipoles on a straight line cancel."],
+      "check": {
+        "kind": "exact",
+        "text": "nonpolar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-32",
+      "q": "Is SF4 polar or nonpolar?",
+      "a": "polar",
+      "why": "SF4 is seesaw. The lone pair keeps the bond dipoles from canceling, so SF4 is polar.",
+      "hints": ["SF4 is seesaw, not a symmetric shape with no lone pair. The leftover pair stops the dipoles from canceling."],
+      "check": {
+        "kind": "exact",
+        "text": "polar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-33",
+      "q": "Is PCl5 polar or nonpolar?",
+      "a": "nonpolar",
+      "why": "PCl5 is trigonal bipyramidal with five identical P–Cl bonds and no lone pair. The bond dipoles cancel, so PCl5 is nonpolar.",
+      "hints": ["PCl5 has five identical outer atoms and no lone pair. That symmetric shape cancels the bond dipoles."],
+      "check": {
+        "kind": "exact",
+        "text": "nonpolar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-34",
+      "q": "Is CH2Cl2 polar or nonpolar?",
+      "a": "polar",
+      "why": "CH2Cl2 is tetrahedral, but the outer atoms are not all the same. Two C–Cl dipoles and two C–H dipoles do not cancel. CH2Cl2 is polar.",
+      "hints": ["The carbon center is tetrahedral, but two outer atoms are H and two are Cl. Different outer atoms leave a net dipole."],
+      "check": {
+        "kind": "exact",
+        "text": "polar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-35",
+      "q": "What is the molecular shape of ClF3?",
+      "a": "t-shaped",
+      "why": "Chlorine has three bonds and two lone pairs. Five regions with two lone pairs give a T-shaped molecule.",
+      "hints": ["Chlorine in ClF3 has three bonds and two lone pairs. Five regions with two lone pairs make a T, not a flat triangle."],
+      "check": {
+        "kind": "exact",
+        "text": "t-shaped",
+        "answers": ["t shaped"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-36",
+      "q": "What is the electron-pair geometry of ClF3?",
+      "a": "trigonal bipyramidal",
+      "why": "Three bonds plus two lone pairs is five regions. The electron-pair geometry is trigonal bipyramidal, while the molecular shape is T-shaped.",
+      "hints": ["Add the three bonds to the two lone pairs on chlorine. Five regions set the electron-pair geometry."],
+      "check": {
+        "kind": "exact",
+        "text": "trigonal bipyramidal",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-37",
+      "q": "What is the molecular shape of XeF4?",
+      "a": "square planar",
+      "why": "Xenon has four bonds and two lone pairs. The lone pairs sit opposite each other, and the four fluorines lie in a square. The molecular shape is square planar.",
+      "hints": ["Xenon has four bonds and two lone pairs. The lone pairs sit across from each other, and the four fluorines make a square."],
+      "check": {
+        "kind": "exact",
+        "text": "square planar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-38",
+      "q": "Is XeF4 polar or nonpolar?",
+      "a": "nonpolar",
+      "why": "XeF4 is square planar with four identical Xe–F bonds. Opposite dipoles cancel, so XeF4 is nonpolar.",
+      "hints": ["Square planar XeF4 has four identical bonds across from each other. Opposite dipoles in that square cancel."],
+      "check": {
+        "kind": "exact",
+        "text": "nonpolar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-39",
+      "q": "How many lone pairs are on the nitrogen atom in NH3?",
+      "a": "1",
+      "why": "Nitrogen has 5 valence electrons and uses 3 of them to bond to hydrogen. One pair is left unshared.",
+      "hints": ["Nitrogen forms three bonds and started with five valence electrons. One pair is left unshared."],
+      "check": {
+        "kind": "numeric",
+        "value": 1,
+        "tolerance": 0,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-46-40",
+      "q": "What is the electron-pair geometry of XeF4?",
+      "a": "octahedral",
+      "why": "Four bonds plus two lone pairs is six regions. Six regions make the electron-pair geometry octahedral. The molecular shape is square planar.",
+      "hints": ["Four bonds plus two lone pairs is six regions. Six regions are octahedral even when the shape name is square planar."],
+      "check": {
+        "kind": "exact",
+        "text": "octahedral",
         "case": "insensitive"
       }
     }

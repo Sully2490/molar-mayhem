@@ -4,7 +4,8 @@
   "openstax_section": "OpenStax AF2e §4.4",
   "guide_line": "Count the valence electrons, join the atoms with pairs, and give each atom an octet except hydrogen.",
   "steps": [
-    "Add the valence electrons. For main-group atoms, that count is the group number of valence electrons. A negative charge adds electrons. A positive charge removes electrons.",
+    "A Lewis symbol is the element symbol plus one dot for each valence electron. For a main-group atom, that count is the group number of valence electrons. Pair the dots, and the unpaired dots show how many bonds the atom usually forms.",
+    "For a molecule or ion, add those valence electrons. A negative charge adds electrons. A positive charge removes electrons.",
     "The central atom is usually the atom that is not hydrogen and is less electronegative.",
     "Draw a single bond to each outside atom. Each bond uses two electrons.",
     "Place leftover electrons on the outside atoms first, in pairs, until each outside atom has an octet. Hydrogen only needs two electrons.",
@@ -203,6 +204,145 @@
         "kind": "exact",
         "text": "yes",
         "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-44-15",
+      "q": "How many dots are in the Lewis symbol of a neutral carbon atom?",
+      "a": "4",
+      "why": "Carbon is in group 14 and has 4 valence electrons. Its Lewis symbol has 4 dots.",
+      "hints": ["Use carbon’s main-group number. The Lewis symbol has one dot for each valence electron."],
+      "check": {
+        "kind": "numeric",
+        "value": 4,
+        "tolerance": 0,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-44-16",
+      "q": "How many unpaired electrons are shown in the Lewis symbol of a nitrogen atom?",
+      "a": "3",
+      "why": "Nitrogen has 5 valence electrons. Two form a pair, and the other three stay unpaired. The Lewis symbol shows 3 unpaired electrons.",
+      "hints": ["Nitrogen has five valence dots. Pair as many as you can, then count the dots that are still alone."],
+      "check": {
+        "kind": "numeric",
+        "value": 3,
+        "tolerance": 0,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-44-17",
+      "q": "How many dots are in the Lewis symbol of a neutral oxygen atom?",
+      "a": "6",
+      "why": "Oxygen is in group 16 and has 6 valence electrons. Its Lewis symbol has 6 dots.",
+      "hints": ["Oxygen is in group 16. Put one dot in the Lewis symbol for each of those valence electrons."],
+      "check": {
+        "kind": "numeric",
+        "value": 6,
+        "tolerance": 0,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-44-18",
+      "q": "How many unpaired electrons are shown in the Lewis symbol of a chlorine atom?",
+      "a": "1",
+      "why": "Chlorine has 7 valence electrons. Six of them make three lone pairs, and one electron stays unpaired.",
+      "hints": ["Chlorine has seven valence dots. Six of them form three pairs, so count the dot that is left single."],
+      "check": {
+        "kind": "numeric",
+        "value": 1,
+        "tolerance": 0,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-44-19",
+      "q": "BF3 breaks the octet rule. Does boron have fewer than eight electrons, an odd electron count, or more than eight? Answer fewer, odd, or more.",
+      "a": "fewer",
+      "why": "Boron forms three bonds and has no lone pair. That is 6 electrons, an even count short of an octet. The exception is fewer.",
+      "hints": ["Three bonds around boron supply six electrons. The count is even, and it is short of eight."],
+      "check": {
+        "kind": "exact",
+        "text": "fewer",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-44-20",
+      "q": "NO breaks the octet rule. Is the exception fewer than eight on every atom, an odd total of valence electrons, or an expanded octet? Answer fewer, odd, or expanded.",
+      "a": "odd",
+      "why": "Nitrogen contributes 5 valence electrons and oxygen contributes 6. The total is 11, so NO is an odd-electron molecule. The exception is odd.",
+      "hints": ["Add nitrogen’s 5 valence electrons to oxygen’s 6. That total cannot be divided into pairs with nothing left over."],
+      "check": {
+        "kind": "exact",
+        "text": "odd",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-44-21",
+      "q": "PCl5 breaks the octet rule. Does phosphorus have fewer than eight electrons, an odd count, or more than eight? Answer fewer, odd, or more.",
+      "a": "more",
+      "why": "Phosphorus forms five bonds in PCl5. Five pairs are 10 electrons. Phosphorus is in period 3, so this expanded octet is allowed. The exception is more.",
+      "hints": ["Phosphorus forms five bonds here. Five pairs is past an octet, and phosphorus is in period 3."],
+      "check": {
+        "kind": "exact",
+        "text": "more",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-44-22",
+      "q": "How many electrons surround the phosphorus atom in PCl5?",
+      "a": "10",
+      "why": "Each of the five P–Cl bonds contributes 2 electrons around phosphorus. 5 × 2 = 10.",
+      "hints": ["Each P–Cl bond places two electrons next to phosphorus. Multiply that pair by five bonds."],
+      "check": {
+        "kind": "numeric",
+        "value": 10,
+        "tolerance": 0,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-44-23",
+      "q": "In BeCl2, does beryllium have a full octet? Answer yes or no.",
+      "a": "no",
+      "why": "Beryllium forms two bonds and has no lone pair. Two pairs are only 4 electrons, so beryllium does not have an octet. The answer is no.",
+      "hints": ["Beryllium forms two bonds and keeps no lone pair. Two pairs are only four electrons."],
+      "check": {
+        "kind": "exact",
+        "text": "no",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-44-24",
+      "q": "How many shared electron pairs are between carbon and nitrogen in HCN?",
+      "a": "3",
+      "why": "HCN has 1 + 4 + 5 = 10 valence electrons. A single C–N bond leaves both C and N short of an octet. The structure that completes both octets uses a triple bond, so there are 3 shared pairs.",
+      "hints": ["A single C–N bond leaves carbon and nitrogen short of eight. The octet on both atoms needs a triple bond."],
+      "check": {
+        "kind": "numeric",
+        "value": 3,
+        "tolerance": 0,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-44-25",
+      "q": "How many dots are in the Lewis symbol of a neutral fluorine atom?",
+      "a": "7",
+      "why": "Fluorine is in group 17 and has 7 valence electrons. Its Lewis symbol has 7 dots.",
+      "hints": ["Fluorine is in group 17. Its Lewis symbol uses one dot for each valence electron."],
+      "check": {
+        "kind": "numeric",
+        "value": 7,
+        "tolerance": 0,
+        "unit": null
       }
     }
   ]

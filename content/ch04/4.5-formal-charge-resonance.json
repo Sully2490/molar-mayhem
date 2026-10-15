@@ -188,6 +188,43 @@
         "tolerance": 0,
         "unit": null
       }
+    },
+    {
+      "id": "ch04-45-14",
+      "q": "In the resonance hybrid of O3, are the two O–O bonds the same length? Answer yes or no.",
+      "a": "yes",
+      "why": "The two resonance forms swap which O–O link is double. The hybrid averages them, so the two bonds are the same length. The answer is yes.",
+      "hints": ["The two forms trade which bond is double. The hybrid averages those drawings, so the lengths match."],
+      "check": {
+        "kind": "exact",
+        "text": "yes",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-45-15",
+      "q": "When two Lewis structures are otherwise equal, should a negative formal charge sit on the more electronegative atom or the less electronegative atom? Answer more or less.",
+      "a": "more",
+      "why": "A negative formal charge means extra electron density. That charge is more stable on the atom that already pulls electrons harder. The answer is more.",
+      "hints": ["Extra electron density belongs on the atom that pulls harder. Choose more or less from that idea."],
+      "check": {
+        "kind": "exact",
+        "text": "more",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-45-16",
+      "q": "In NO3−, nitrogen has four bonds and no lone pair. What is the formal charge on nitrogen? Write the sign.",
+      "a": "+1",
+      "why": "Nitrogen has 5 valence electrons, 0 lone electrons, and 4 bonds. Formal charge = 5 − 0 − 4 = +1.",
+      "hints": ["Nitrate’s nitrogen is drawn with four bonds and no lone pair. Start from 5 valence electrons and subtract one per bond."],
+      "check": {
+        "kind": "exact",
+        "text": "+1",
+        "answers": ["1+"],
+        "case": "insensitive"
+      }
     }
   ]
 }

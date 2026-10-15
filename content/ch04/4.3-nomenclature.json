@@ -6,7 +6,8 @@
   "steps": [
     "Ionic names start with the cation and end with the anion. Group 1, group 2, aluminum, zinc, silver, and cadmium have fixed charges, so they get no Roman numeral and no prefix.",
     "Iron, copper, tin, lead, chromium, cobalt, and mercury need a Roman numeral for the cation charge. The numeral is the charge, not the subscript. FeCl3 is iron(III) chloride.",
-    "A monatomic anion uses a stem plus -ide: chloride, oxide, sulfide, nitride, phosphide. Polyatomic ions keep their own names: nitrate, nitrite, sulfate, sulfite, phosphate, hydroxide, carbonate, ammonium, acetate, cyanide, perchlorate, chlorate, chlorite, hypochlorite.",
+    "A monatomic anion uses a stem plus -ide: chloride, oxide, sulfide, nitride, phosphide. Polyatomic ions keep their own names: nitrate, nitrite, sulfate, sulfite, phosphate, hydroxide, carbonate, hydrogen carbonate, ammonium, acetate, cyanide, chromate, dichromate, perchlorate, chlorate, chlorite, hypochlorite.",
+    "If the formula starts with a metal or with ammonium, name it as ionic and skip prefixes. If it is only nonmetals, use prefixes. NO2 is nitrogen dioxide. NaNO2 is sodium nitrite.",
     "Parentheses group a polyatomic ion. They do not appear in the name. Mg(NO3)2 is magnesium nitrate.",
     "O2− is oxide, as in Na2O. O2^2− is peroxide, as in Na2O2, sodium peroxide. The mercury(I) ion is Hg2^2+, so mercury(I) chloride is Hg2Cl2.",
     "Two nonmetals use prefixes: mono, di, tri, tetra, penta, hexa, hepta, octa, nona, deca. Skip mono on the first element only. Drop the last a or o of a prefix before oxide: monoxide, tetroxide, pentoxide.",
@@ -421,6 +422,334 @@
         "tolerance": 0.05,
         "sigFigs": 4,
         "unit": "g/mol"
+      }
+    },
+    {
+      "id": "ch04-43-33",
+      "q": "Name NaCN.",
+      "a": "sodium cyanide",
+      "why": "Sodium is Na+ and CN− is cyanide. The charges match, and sodium needs no Roman numeral. NaCN is sodium cyanide.",
+      "hints": ["CN− keeps the name cyanide. Sodium’s charge is fixed, so add no numeral and no prefix."],
+      "check": {
+        "kind": "exact",
+        "text": "sodium cyanide",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-34",
+      "q": "Name KOH.",
+      "a": "potassium hydroxide",
+      "why": "K+ is potassium and OH− is hydroxide. KOH is potassium hydroxide.",
+      "hints": ["OH− is hydroxide. Potassium is a group 1 metal, so the name has no Roman numeral."],
+      "check": {
+        "kind": "exact",
+        "text": "potassium hydroxide",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-35",
+      "q": "Name NaNO2.",
+      "a": "sodium nitrite",
+      "why": "The formula starts with sodium, a metal, so it is ionic. NO2− is nitrite. NaNO2 is sodium nitrite.",
+      "hints": ["NO2− is nitrite, one oxygen fewer than nitrate. The metal at the front means you do not write di."],
+      "check": {
+        "kind": "exact",
+        "text": "sodium nitrite",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-36",
+      "q": "Name K2SO3.",
+      "a": "potassium sulfite",
+      "why": "SO3^2− is sulfite. Two K+ ions balance it. Potassium has a fixed charge, so K2SO3 is potassium sulfite.",
+      "hints": ["SO3^2− is sulfite, not sulfate. The subscript on potassium stays out of an ionic name."],
+      "check": {
+        "kind": "exact",
+        "text": "potassium sulfite",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-37",
+      "q": "Name NaHCO3.",
+      "a": "sodium hydrogen carbonate",
+      "why": "HCO3− is hydrogen carbonate. With Na+, the name is sodium hydrogen carbonate.",
+      "hints": ["HCO3− is hydrogen carbonate. Sodium stays first, and the hydrogen belongs in the anion name."],
+      "check": {
+        "kind": "exact",
+        "text": "sodium hydrogen carbonate",
+        "answers": ["sodium bicarbonate"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-38",
+      "q": "Name K2CrO4.",
+      "a": "potassium chromate",
+      "why": "CrO4^2− is chromate. Two potassium ions balance the 2− charge. K2CrO4 is potassium chromate.",
+      "hints": ["CrO4^2− is chromate. Two potassium ions balance the charge, but di is not part of this name."],
+      "check": {
+        "kind": "exact",
+        "text": "potassium chromate",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-39",
+      "q": "Name Na2Cr2O7.",
+      "a": "sodium dichromate",
+      "why": "Cr2O7^2− is the dichromate ion. Two sodium ions balance it. Na2Cr2O7 is sodium dichromate.",
+      "hints": ["Cr2O7^2− is one ion named dichromate. The di is already inside that ion name, not a prefix on sodium."],
+      "check": {
+        "kind": "exact",
+        "text": "sodium dichromate",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-40",
+      "q": "Name NaCH3COO.",
+      "a": "sodium acetate",
+      "why": "CH3COO− is acetate. Paired with Na+, the name is sodium acetate.",
+      "hints": ["CH3COO− is acetate. The carbons and hydrogens stay inside that ion’s name."],
+      "check": {
+        "kind": "exact",
+        "text": "sodium acetate",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-41",
+      "q": "Write the formula of calcium hydroxide.",
+      "a": "Ca(OH)2",
+      "why": "Calcium is Ca2+ and hydroxide is OH−. Two hydroxide ions balance one calcium ion. The formula is Ca(OH)2.",
+      "hints": ["Calcium is 2+ and each hydroxide is 1−. Put parentheses around OH before the subscript 2."],
+      "check": {
+        "kind": "exact",
+        "text": "Ca(OH)2",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-43-42",
+      "q": "Write the formula of aluminum hydroxide.",
+      "a": "Al(OH)3",
+      "why": "Aluminum is Al3+ and hydroxide is OH−. Three hydroxide ions balance one aluminum ion. The formula is Al(OH)3.",
+      "hints": ["Aluminum is 3+ and each hydroxide is 1−. Parentheses go around OH, then the subscript is 3."],
+      "check": {
+        "kind": "exact",
+        "text": "Al(OH)3",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-43-43",
+      "q": "Write the formula of potassium cyanide.",
+      "a": "KCN",
+      "why": "Potassium is K+ and cyanide is CN−. The charges already match, so the formula is KCN.",
+      "hints": ["Potassium is 1+ and cyanide is 1−. Both subscripts stay 1, so neither number is written."],
+      "check": {
+        "kind": "exact",
+        "text": "KCN",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-43-44",
+      "q": "Write the formula of sodium sulfite.",
+      "a": "Na2SO3",
+      "why": "Sulfite is SO3^2−. Two Na+ ions balance that charge. The formula is Na2SO3.",
+      "hints": ["Sulfite is SO3^2−, one oxygen fewer than sulfate. Two sodium ions balance the 2− charge."],
+      "check": {
+        "kind": "exact",
+        "text": "Na2SO3",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-43-45",
+      "q": "Name CO2.",
+      "a": "carbon dioxide",
+      "why": "CO2 is two nonmetals, so prefixes are required. One carbon gets no mono. Two oxygens make dioxide. The name is carbon dioxide.",
+      "hints": ["Carbon and oxygen are both nonmetals. Leave the first element unnumbered, and use di for two oxygens."],
+      "check": {
+        "kind": "exact",
+        "text": "carbon dioxide",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-46",
+      "q": "Name NO2.",
+      "a": "nitrogen dioxide",
+      "why": "NO2 has no metal, so it is molecular. One nitrogen is named without mono, and two oxygens need di. The name is nitrogen dioxide.",
+      "hints": ["There is no metal in NO2, so this is not nitrite. Two oxygen atoms need the prefix di."],
+      "check": {
+        "kind": "exact",
+        "text": "nitrogen dioxide",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-47",
+      "q": "Name N2O5.",
+      "a": "dinitrogen pentoxide",
+      "why": "Two nitrogen atoms need di. Five oxygen atoms need penta, and the final a drops before oxide. N2O5 is dinitrogen pentoxide.",
+      "hints": ["Count two nitrogens and five oxygens. Drop the final a of penta when the next word is oxide."],
+      "check": {
+        "kind": "exact",
+        "text": "dinitrogen pentoxide",
+        "answers": ["dinitrogen pentaoxide"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-48",
+      "q": "Name the acid HNO3.",
+      "a": "nitric acid",
+      "why": "HNO3 comes from nitrate. The -ate ending becomes -ic acid, and an oxyacid does not use hydro. The name is nitric acid.",
+      "hints": ["Nitrate ends in -ate, so the acid ends in -ic. Leave hydro off an acid that contains oxygen."],
+      "check": {
+        "kind": "exact",
+        "text": "nitric acid",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-49",
+      "q": "Name the acid H3PO4.",
+      "a": "phosphoric acid",
+      "why": "H3PO4 comes from phosphate. The -ate ending becomes -ic acid. The name is phosphoric acid.",
+      "hints": ["Phosphate ends in -ate, so this oxyacid ends in -ic. Spell the stem phosphoric."],
+      "check": {
+        "kind": "exact",
+        "text": "phosphoric acid",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-50",
+      "q": "Name SnCl4.",
+      "a": "tin(IV) chloride",
+      "why": "Tin is a metal with more than one charge, and four chloride ions total 4−. The tin charge is 4+. SnCl4 is tin(IV) chloride.",
+      "hints": ["Four chloride ions total 4−. Tin’s charge is the Roman numeral, and tetra is the wrong tool here."],
+      "check": {
+        "kind": "exact",
+        "text": "tin(IV) chloride",
+        "answers": ["tin (IV) chloride"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-51",
+      "q": "Name FeSO4.",
+      "a": "iron(II) sulfate",
+      "why": "Sulfate is SO4^2−, so the iron ion is Fe2+. FeSO4 is iron(II) sulfate.",
+      "hints": ["Sulfate is 2−. The iron charge that balances one sulfate ion is written as a Roman numeral."],
+      "check": {
+        "kind": "exact",
+        "text": "iron(II) sulfate",
+        "answers": ["iron (II) sulfate"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-52",
+      "q": "Name NH4Cl.",
+      "a": "ammonium chloride",
+      "why": "NH4+ is ammonium and Cl− is chloride. NH4Cl is ammonium chloride.",
+      "hints": ["NH4+ is ammonium and Cl− is chloride. Neither ion takes a Greek prefix."],
+      "check": {
+        "kind": "exact",
+        "text": "ammonium chloride",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-53",
+      "q": "Name Ba(NO3)2.",
+      "a": "barium nitrate",
+      "why": "Barium is always Ba2+, so no Roman numeral is used. NO3− is nitrate. Ba(NO3)2 is barium nitrate.",
+      "hints": ["Barium’s charge is fixed at 2+. The parentheses only show two nitrate ions, and they stay out of the name."],
+      "check": {
+        "kind": "exact",
+        "text": "barium nitrate",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-54",
+      "q": "Write the formula of ammonium nitrate.",
+      "a": "NH4NO3",
+      "why": "Ammonium is NH4+ and nitrate is NO3−. One of each ion balances. The formula is NH4NO3.",
+      "hints": ["Ammonium is 1+ and nitrate is 1−. One of each ion already balances, so no extra subscript is written."],
+      "check": {
+        "kind": "exact",
+        "text": "NH4NO3",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-43-55",
+      "q": "Name KClO3.",
+      "a": "potassium chlorate",
+      "why": "ClO3− is chlorate. With K+, the name is potassium chlorate.",
+      "hints": ["ClO3− is chlorate, the -ate ion with three oxygens. Potassium needs no numeral."],
+      "check": {
+        "kind": "exact",
+        "text": "potassium chlorate",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-56",
+      "q": "Name KClO2.",
+      "a": "potassium chlorite",
+      "why": "ClO2− is chlorite, one oxygen fewer than chlorate. KClO2 is potassium chlorite.",
+      "hints": ["Two oxygens on chlorine make the -ite ion, chlorite. Do not drop down to hypo or up to chlorate."],
+      "check": {
+        "kind": "exact",
+        "text": "potassium chlorite",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-57",
+      "q": "Name KClO.",
+      "a": "potassium hypochlorite",
+      "why": "ClO− is hypochlorite. KClO is potassium hypochlorite.",
+      "hints": ["One oxygen on chlorine is the hypo…ite ion. Attach that anion name after potassium."],
+      "check": {
+        "kind": "exact",
+        "text": "potassium hypochlorite",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-58",
+      "q": "Name KClO4.",
+      "a": "potassium perchlorate",
+      "why": "ClO4− is perchlorate, one oxygen more than chlorate. KClO4 is potassium perchlorate.",
+      "hints": ["Four oxygens on chlorine add the prefix per to chlorate. The metal name stays potassium."],
+      "check": {
+        "kind": "exact",
+        "text": "potassium perchlorate",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-43-59",
+      "q": "Name SCl2.",
+      "a": "sulfur dichloride",
+      "why": "Sulfur and chlorine are both nonmetals, so prefixes are required. One sulfur gets no mono, and two chlorines need di. SCl2 is sulfur dichloride.",
+      "hints": ["Sulfur and chlorine are both nonmetals. Two chlorines need di, and the first element stays singular."],
+      "check": {
+        "kind": "exact",
+        "text": "sulfur dichloride",
+        "case": "insensitive"
       }
     }
   ]

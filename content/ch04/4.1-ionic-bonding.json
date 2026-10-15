@@ -237,6 +237,30 @@
         "text": "[Ne]",
         "answers": ["1s2 2s2 2p6"]
       }
+    },
+    {
+      "id": "ch04-41-19",
+      "q": "What is the formula of aluminum oxide?",
+      "a": "Al2O3",
+      "why": "Aluminum forms Al3+ and oxygen forms O2−. Two aluminum ions are 6+, and three oxide ions are 6−. The formula is Al2O3.",
+      "hints": ["Aluminum is 3+ and oxide is 2−. Use two aluminum ions and three oxide ions so the charges cancel."],
+      "check": {
+        "kind": "exact",
+        "text": "Al2O3",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-41-20",
+      "q": "What is the formula of sodium nitride?",
+      "a": "Na3N",
+      "why": "Sodium forms Na+ and nitrogen forms N3−. Three sodium ions balance one nitride ion. The formula is Na3N.",
+      "hints": ["Sodium is 1+ and nitride is 3−. Only three sodium ions cancel one nitride ion."],
+      "check": {
+        "kind": "exact",
+        "text": "Na3N",
+        "case": "sensitive"
+      }
     }
   ]
 }
