@@ -69,7 +69,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 44.51739130434782,
+        "value": 44.52,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "atm"
@@ -85,7 +85,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 49.236,
+        "value": 49.24,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "atm"
@@ -101,7 +101,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 0.9042164270046309,
+        "value": 0.9042,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": null
@@ -117,7 +117,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 1.2277417334669338,
+        "value": 1.228,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "atm"
@@ -133,7 +133,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 1.2308999999999999,
+        "value": 1.231,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "atm"
@@ -149,7 +149,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 0.9976440003249655,
+        "value": 0.9976,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": null

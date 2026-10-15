@@ -130,6 +130,9 @@ for (const lesson of lessons) {
         const parsed = parseAnswer(problem.a);
         assert.equal(parsed.sigFigs, 4);
         assert.equal(problem.check.sigFigs, 4);
+        const keyed = Number(problem.check.value.toPrecision(problem.check.sigFigs));
+        assert.equal(problem.check.value, keyed, `${problem.id} value is not rounded to ${problem.check.sigFigs} sig figs`);
+        assert.equal(problem.check.value, parsed.value);
       }
 
       const symbols = formulaItems(problem.check);

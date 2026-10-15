@@ -54,7 +54,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 0.8447368421052631,
+        "value": 0.8447,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "atm"
@@ -70,7 +70,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 93.72562500000001,
+        "value": 93.73,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "kPa"
@@ -86,7 +86,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 0.8734270910436713,
+        "value": 0.8734,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "atm"
@@ -102,7 +102,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 1.5198749999999999,
+        "value": 1.52,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "bar"
@@ -150,7 +150,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 2.2108843537414966,
+        "value": 2.211,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "atm"
@@ -230,7 +230,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 100.70906370000002,
+        "value": 100.7,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "kPa"

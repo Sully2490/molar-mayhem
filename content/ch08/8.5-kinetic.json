@@ -36,7 +36,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 1363.0505073746622,
+        "value": 1363,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "m/s"
@@ -52,7 +52,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 515.2232847976563,
+        "value": 515.2,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "m/s"
@@ -68,7 +68,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 624.2940885066181,
+        "value": 624.3,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "m/s"
@@ -84,7 +84,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 3741.3,
+        "value": 3741,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "J"
@@ -100,7 +100,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 7482.6,
+        "value": 7483,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "J"
@@ -133,7 +133,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 3.159194939658932,
+        "value": 3.159,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": null
@@ -149,7 +149,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 297.89163459225404,
+        "value": 297.9,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "K"
@@ -165,7 +165,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 1.1547005383792515,
+        "value": 1.155,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": null
@@ -215,7 +215,7 @@
       ],
       "check": {
         "kind": "numeric",
-        "value": 412.9702049873204,
+        "value": 413,
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "m/s"
