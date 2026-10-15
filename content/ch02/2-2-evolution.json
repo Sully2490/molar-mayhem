@@ -2,12 +2,12 @@
   "id": "ch2-evolution",
   "ch": 2,
   "openstax_section": "OpenStax AF2e §2.2",
-  "guide_line": "Match each experiment to the particle or idea it established.",
+  "guide_line": "Say where each particle sits, and what the gold foil showed about the atom.",
   "steps": [
-    "Thomson's cathode-ray tube showed a negative particle inside the atom: the electron.",
-    "Millikan's oil-drop experiment showed that electric charge comes in a smallest packet, the charge of one electron.",
-    "Rutherford shot positive alpha particles at gold foil. Most went straight through, so the atom is mostly empty space. A few bounced back, so the positive mass sits in a tiny nucleus.",
-    "That nucleus holds protons, each with charge 1+. Chadwick found the neutron, which has no charge. Soddy showed that one element can have atoms of different mass. Those atoms are isotopes."
+    "Thomson's cathode-ray tube found a negative particle, the electron. It stays outside the nucleus and has far less mass than a proton or a neutron.",
+    "Rutherford shot positive alpha particles at gold foil. Most went straight through, so the atom is mostly empty space. A few bounced back off a tiny, heavy, positive nucleus.",
+    "Protons and neutrons sit in that nucleus. A proton has charge 1+. A neutron has no charge. Their masses are nearly the same, and each is about 1 amu.",
+    "One element can have atoms of different mass. Those atoms are isotopes. They share a proton count and differ in neutrons."
   ],
   "worked_example": {
     "q": "In the gold-foil experiment, a few alpha particles bounced backward. What part of the atom did they hit?",
@@ -33,12 +33,12 @@
       "check": { "kind": "exact", "text": "Thomson", "case": "insensitive" }
     },
     {
-      "id": "ch2-22-millikan",
-      "q": "Who measured the charge of one electron with falling oil drops?",
-      "a": "Millikan",
-      "why": "Millikan's oil drops picked up charge in equal steps. The size of one step is the electron charge.",
-      "hints": ["Charged oil drops changed by the same tiny packet of charge. Name the scientist who measured that packet."],
-      "check": { "kind": "exact", "text": "Millikan", "case": "insensitive" }
+      "id": "ch2-22-electron-place",
+      "q": "Where are electrons found, compared with the nucleus?",
+      "a": "outside the nucleus",
+      "why": "Electrons are outside the nucleus. They are not packed into the positive center.",
+      "hints": ["Electrons make the negative region around the atom. They are not inside the positive center. Say where they stay."],
+      "check": { "kind": "exact", "text": "outside the nucleus", "case": "insensitive" }
     },
     {
       "id": "ch2-22-rutherford",
@@ -57,12 +57,12 @@
       "check": { "kind": "exact", "text": "Chadwick", "case": "insensitive" }
     },
     {
-      "id": "ch2-22-soddy",
-      "q": "Who showed that atoms of one element can have different masses?",
-      "a": "Soddy",
-      "why": "Soddy showed that one element can include atoms of different mass. Those atoms are isotopes.",
-      "hints": ["One element showed atoms with different masses. Name the scientist who demonstrated that."],
-      "check": { "kind": "exact", "text": "Soddy", "case": "insensitive" }
+      "id": "ch2-22-lightest",
+      "q": "Which of the proton, neutron, and electron has the smallest mass?",
+      "a": "electron",
+      "why": "A proton and a neutron each have a mass near 1 amu. An electron is far lighter.",
+      "hints": ["The proton and the neutron are each about 1 amu. Pick the particle that is far lighter."],
+      "check": { "kind": "exact", "text": "electron", "case": "insensitive" }
     },
     {
       "id": "ch2-22-isotopes",

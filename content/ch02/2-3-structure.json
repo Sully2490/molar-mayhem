@@ -2,12 +2,12 @@
   "id": "ch2-structure",
   "ch": 2,
   "openstax_section": "OpenStax AF2e §2.3",
-  "guide_line": "From Z and A, find protons, neutrons, electrons, the symbol, and the average mass.",
+  "guide_line": "Count protons, neutrons, and electrons for atoms and ions, then average the isotope masses.",
   "steps": [
-    "The atomic number Z is the proton count. It names the element. A neutral atom has the same number of electrons as protons.",
+    "The atomic number Z is the proton count. It names the element and does not change when the atom becomes an ion. A neutral atom has the same number of electrons as protons.",
     "The mass number A is protons plus neutrons. Neutrons = A − Z. Type an isotope as Cl-35: symbol, hyphen, mass number. Only the first letter of a symbol is capital, so Co is cobalt and CO is carbon monoxide.",
-    "Charge = protons − electrons. A 3+ ion lost 3 electrons. A 2− ion gained 2. Type the charge as 3+ or 2-.",
-    "Average atomic mass is each isotope's fraction times its mass, added together. Keep the isotope masses you are given, then round the result to 4 significant figures. One electron has charge 1.602×10^−19 C, so a measured charge divided by that value is a whole number of electrons."
+    "Charge = protons − electrons. Losing electrons makes a positive ion, a cation. Gaining electrons makes a negative ion, an anion. Type the charge as 3+ or 2-.",
+    "Average atomic mass uses each isotope's fraction times its isotopic mass, not the whole-number mass number. Round the result to 4 significant figures. One electron has charge 1.602×10^−19 C."
   ],
   "worked_example": {
     "q": "A neutral atom has 19 protons and 20 neutrons. What is its mass number?",
@@ -94,7 +94,7 @@
       "a": "10.76 amu",
       "why": "(0.2500 × 10.0129) + (0.7500 × 11.0093) = 2.503225 + 8.256975 = 10.7602 amu, which rounds to 10.76 amu.",
       "hints": ["Take 0.2500 times 10.0129 amu and 0.7500 times 11.0093 amu. Add them, then round to 4 significant figures."],
-      "check": { "kind": "numeric", "value": 10.76, "tolerance": 0.05, "sigFigs": 4, "unit": "amu" }
+      "check": { "kind": "numeric", "value": 10.76, "tolerance": 0.02, "sigFigs": 4, "unit": "amu" }
     },
     {
       "id": "ch2-23-avg-ne",
@@ -102,7 +102,7 @@
       "a": "20.19 amu",
       "why": "(0.9000 × 19.9924) + (0.1000 × 21.9914) = 17.99316 + 2.19914 = 20.1923 amu, which rounds to 20.19 amu.",
       "hints": ["Take 0.9000 times 19.9924 amu and 0.1000 times 21.9914 amu. Add them, then round to 4 significant figures."],
-      "check": { "kind": "numeric", "value": 20.19, "tolerance": 0.05, "sigFigs": 4, "unit": "amu" }
+      "check": { "kind": "numeric", "value": 20.19, "tolerance": 0.02, "sigFigs": 4, "unit": "amu" }
     },
     {
       "id": "ch2-23-percent-ne",
@@ -135,6 +135,46 @@
       "why": "Divide the drop's charge by the electron charge. 9.612×10^−19 / 1.602×10^−19 = 6 extra electrons.",
       "hints": ["Divide 9.612×10^−19 by 1.602×10^−19. The quotient is the extra-electron count on this drop."],
       "check": { "kind": "numeric", "value": 6, "tolerance": 0, "unit": null }
+    },
+    {
+      "id": "ch2-23-cation",
+      "q": "An atom loses electrons and the ion is positive. What is this kind of ion called?",
+      "a": "cation",
+      "why": "Losing electrons leaves more protons than electrons, so the ion is positive. A positive ion is a cation.",
+      "hints": ["This ion lost electrons, so protons outnumber electrons. Name the positive ion."],
+      "check": { "kind": "exact", "text": "cation", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-23-anion",
+      "q": "An atom gains electrons and the ion is negative. What is this kind of ion called?",
+      "a": "anion",
+      "why": "Gaining electrons makes the charge negative. A negative ion is an anion.",
+      "hints": ["This ion gained electrons, so the charge is negative. Name the negative ion."],
+      "check": { "kind": "exact", "text": "anion", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-23-symbol-o2",
+      "q": "An ion has 8 protons and 10 electrons. Type the symbol with the charge, as in Na+ or Cl-.",
+      "a": "O2-",
+      "why": "8 protons is oxygen. Charge = 8 − 10 = 2−. The symbol is O2-.",
+      "hints": ["8 protons is oxygen. Two extra electrons make the charge 2-. Type O2-, not O2+."],
+      "check": { "kind": "exact", "text": "O2-", "case": "sensitive" }
+    },
+    {
+      "id": "ch2-23-protons-ca",
+      "q": "Calcium has atomic number 20. One calcium atom loses 2 electrons. How many protons are in the ion?",
+      "a": "20",
+      "why": "Losing electrons changes the charge, not the atomic number. The ion still has 20 protons.",
+      "hints": ["Electrons left the atom. The atomic number does not change, so the proton count stays 20."],
+      "check": { "kind": "numeric", "value": 20, "tolerance": 0, "unit": null }
+    },
+    {
+      "id": "ch2-23-avg-ne3",
+      "q": "A neon sample is 70.00% neon-20 (19.9924 amu), 1.000% neon-21 (20.9938 amu), and 29.00% neon-22 (21.9914 amu). What is the average atomic mass? Round to 4 significant figures.",
+      "a": "20.58 amu",
+      "why": "(0.7000 × 19.9924) + (0.01000 × 20.9938) + (0.2900 × 21.9914) = 13.99468 + 0.209938 + 6.377506 = 20.5821 amu, which rounds to 20.58 amu.",
+      "hints": ["Turn 70.00%, 1.000%, and 29.00% into decimals. Multiply each by its isotopic mass, not by 20, 21, or 22, then add and round to 4 significant figures."],
+      "check": { "kind": "numeric", "value": 20.58, "tolerance": 0.02, "sigFigs": 4, "unit": "amu" }
     }
   ]
 }

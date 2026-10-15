@@ -19,6 +19,7 @@ const AMU = {
   N: 14.007,
   O: 15.999,
   Na: 22.990,
+  Mg: 24.305,
   S: 32.06,
   Cl: 35.45,
 };
@@ -57,6 +58,8 @@ const NUMERIC = {
   'ch2-23-mass-number': () => 20 + 20,
   'ch2-23-avg-b': () => 0.25 * 10.0129 + 0.75 * 11.0093,
   'ch2-23-avg-ne': () => 0.9 * 19.9924 + 0.1 * 21.9914,
+  'ch2-23-avg-ne3': () => 0.7 * 19.9924 + 0.01 * 20.9938 + 0.29 * 21.9914,
+  'ch2-23-protons-ca': () => 20,
   'ch2-23-percent-ne': () => (100 * (21.9914 - 20.1923)) / (21.9914 - 19.9924),
   'ch2-23-electrons-fe3': () => 26 - 3,
   'ch2-23-oil-drop': () => 9.612e-19 / 1.602e-19,
@@ -67,6 +70,10 @@ const NUMERIC = {
   'ch2-24-molecules': () => 0.25 * 6.022e23,
   'ch2-24-mass-nacl': () => 2.5 * 58.44,
   'ch2-24-atoms': () => 0.1 * 6.022e23,
+  'ch2-24-mm-mgcl2': () => AMU.Mg + 2 * AMU.Cl,
+  'ch2-24-moles-carbon': () => 24.02 / AMU.C,
+  'ch2-24-atoms-to-moles': () => 3.011e23 / 6.022e23,
+  'ch2-24-na-atoms': () => (11.5 / AMU.Na) * 6.022e23,
 };
 
 const SHOWN = {
@@ -206,6 +213,20 @@ test('formula and element-symbol answers keep case', () => {
   const sulfur = grade('H2, N2, O2, F2, Cl2, Br2, I2, S8', diatomic.check);
   assert.equal(sulfur.ok, false);
   assert.equal(sulfur.reason, 'nearMiss');
+
+  const oxide = byId('ch2-23-symbol-o2');
+  assert.equal(grade('O2-', oxide.check).ok, true);
+  assert.equal(grade('O2+', oxide.check).ok, false);
+  assert.equal(grade('o2-', oxide.check).ok, false);
+});
+
+test('common chapter 2 traps fail', () => {
+  assert.equal(grade('18', byId('ch2-23-protons-ca').check).ok, false);
+  assert.equal(grade('20.20 amu', byId('ch2-23-avg-ne').check).ok, false);
+  assert.equal(grade('20.59 amu', byId('ch2-23-avg-ne3').check).ok, false);
+  assert.equal(grade('59.76 g/mol', byId('ch2-24-mm-mgcl2').check).ok, false);
+  assert.equal(grade('288.5 mol', byId('ch2-24-moles-carbon').check).ok, false);
+  assert.equal(grade('2H', byId('ch2-24-hydrogen-molecule').check).ok, false);
 });
 
 test('every problem has its own hint', () => {
