@@ -14,6 +14,9 @@ const UNIT_ALIASES = new Map([
   ['ml', 'mL'],
   ['milliliter', 'mL'],
   ['milliliters', 'mL'],
+  ['cm3', 'mL'],
+  ['cc', 'mL'],
+  ['dm3', 'L'],
   ['mol/l', 'M'],
   ['molar', 'M'],
   ['m', 'm'],
@@ -289,9 +292,23 @@ export function countSigFigs(coefficient) {
   return trimmed.length;
 }
 
+function foldUnit(unit) {
+  return String(unit)
+    .trim()
+    .replace(/\s+/g, '')
+    .replace(/³/g, '3')
+    .replace(/²/g, '2')
+    .replace(/\^/g, '');
+}
+
 export function canonicalUnit(unit) {
-  const compact = String(unit).trim().replace(/\s+/g, '');
+  const compact = foldUnit(unit);
   if (compact === 'M') return 'M';
-  const key = compact.toLowerCase();
-  return UNIT_ALIASES.get(key) ?? compact;
+  const whole = UNIT_ALIASES.get(compact.toLowerCase());
+  if (whole) return whole;
+  const slash = compact.indexOf('/');
+  if (slash <= 0 || slash !== compact.lastIndexOf('/')) return compact;
+  const numerator = canonicalUnit(compact.slice(0, slash));
+  const denominator = canonicalUnit(compact.slice(slash + 1));
+  return `${numerator}/${denominator}`;
 }

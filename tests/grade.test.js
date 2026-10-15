@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { countSigFigs, grade, parseAnswer } from '../js/grade.js';
+import { canonicalUnit, countSigFigs, grade, parseAnswer } from '../js/grade.js';
 import { generateProblem } from '../js/generate.js';
 import { LESSON_FIELDS, validateLesson, validateProblem } from '../js/schema.js';
 
@@ -48,6 +48,26 @@ test('grade accepts tolerance, scientific notation, sig figs, and units', () => 
   assert.equal(grade('1.50 kg', numeric).reason, 'unit');
   assert.equal(grade('1.50', numeric).reason, 'unit');
   assert.equal(grade('about one gram', numeric).reason, 'format');
+});
+
+test('unit aliases match names, cubic centimeters, and compound units', () => {
+  const density = { kind: 'numeric', value: 7.958, unit: 'g/mL' };
+  assert.equal(grade('7.958 g/ml', density).ok, true);
+  assert.equal(grade('7.958 g/cm3', density).ok, true);
+  assert.equal(grade('7.958 g/cm³', density).ok, true);
+  assert.equal(grade('7.958 g/cm^3', density).ok, true);
+  assert.equal(grade('7.958 kg/mL', density).reason, 'unit');
+  const volume = { kind: 'numeric', value: 1250, unit: 'mL' };
+  assert.equal(grade('1250 ml', volume).ok, true);
+  assert.equal(grade('1250 milliliters', volume).ok, true);
+  assert.equal(grade('1250 cm3', volume).ok, true);
+  const molar = { kind: 'numeric', value: 0.5, unit: 'M' };
+  assert.equal(grade('0.5 mol/L', molar).ok, true);
+  assert.equal(grade('0.5 mol/l', molar).ok, true);
+  assert.equal(grade('0.5 m', molar).reason, 'unit');
+  assert.equal(canonicalUnit('kJ/mol'), 'kJ/mol');
+  assert.equal(canonicalUnit('kj/mol'), 'kJ/mol');
+  assert.equal(canonicalUnit('M'), 'M');
 });
 
 test('numeric tolerance is a relative percent and defaults to about 0.5%', () => {
