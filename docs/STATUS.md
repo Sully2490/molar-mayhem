@@ -4,7 +4,7 @@ _Last updated: 2026-10-15. This branch folds compound unit aliases._
 
 ## State
 - Features passing: F00, F03. See `feature_list.json`.
-- Static site loads from `index.html` with no build step. Hash routes `#Map`, `#Learn`, `#Drill`, `#Prep`, and `#Cards` show placeholders. The periodic-table tray colors atomic radius, ionization energy, and electronegativity.
+- Static site loads from `index.html` with no build step. Hash routes `#Map`, `#Drill`, `#Prep`, and `#Cards` show placeholders. `#Learn` loads each lesson in `content/chNN/` and grades practice in a labeled answer box. The periodic-table tray colors atomic radius, ionization energy, and electronegativity.
 - `npm test` and `npm run check:content` run locally. GitHub Actions runs `npm test`.
 - `check:content` walks `content/` including chapter folders, checks each lesson against the lesson schema, and skips the coverage manifest when `MM_SOURCES` is unset. `schema.json` and `coverage.json` are parsed only. The manifest mapping itself is F01.
 - Course source material and the coverage manifest stay outside the repo, at the path set in `MM_SOURCES`.
@@ -16,7 +16,7 @@ Chapters are built in parallel. Each chapter pull request may add only `content/
 
 F01 and F02 stay on hold.
 
-The first chapter with answer boxes must give every input a visible label and put feedback in an aria-live region.
+Practice on `#Learn` uses a visible "Your answer" label and an `aria-live="polite"` region. A miss shows a hint. The third miss shows the solution and disables the box.
 
 ## Blockers
-- F01 and F02 are on hold. This branch does not add a chapter.
+- F01 and F02 are on hold. This branch does not add chapter content.
