@@ -1,0 +1,207 @@
+{
+  "sources": [
+    "OpenStax AF2e §1.2"
+  ],
+  "id": "ch1-matter",
+  "ch": 1,
+  "openstax_section": "OpenStax AF2e §1.2",
+  "guide_line": "Classify matter as an element, compound, or mixture.",
+  "steps": [
+    "An element is one kind of atom, such as O₂ or Hg.",
+    "A compound is two or more elements in a fixed ratio, such as NaCl or H₂O.",
+    "Elements and compounds are pure substances.",
+    "A mixture can be separated by physical means. If it looks the same everywhere, it is homogeneous.",
+    "If you can see different parts, the mixture is heterogeneous. An alloy such as brass is a homogeneous mixture."
+  ],
+  "worked_example": {
+    "q": "Classify oxygen gas, O₂.",
+    "steps": [
+      "One kind of atom.",
+      "It is a pure element."
+    ],
+    "answer": "Element"
+  },
+  "similar_problem": {
+    "q": "Classify table salt, NaCl.",
+    "hint": "Two elements are locked in a fixed ratio.",
+    "answer": "Compound"
+  },
+  "problems": [
+    {
+      "id": "ch1-mat-o2",
+      "q": "Classify oxygen gas, O₂.",
+      "a": "Element",
+      "why": "O₂ contains only oxygen atoms. It is an element.",
+      "hints": [
+        "One kind of atom means an element."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Element"
+        ]
+      }
+    },
+    {
+      "id": "ch1-mat-nacl",
+      "q": "Classify table salt, NaCl.",
+      "a": "Compound",
+      "why": "Sodium and chlorine are in a fixed 1:1 ratio. NaCl is a compound.",
+      "hints": [
+        "A fixed formula of two elements is a compound."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Compound"
+        ]
+      }
+    },
+    {
+      "id": "ch1-mat-saltwater",
+      "q": "Classify salt water.",
+      "a": "Homogeneous mixture",
+      "why": "Salt water is the same throughout and can be separated by evaporating the water.",
+      "hints": [
+        "A solution looks uniform. It is a homogeneous mixture."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Homogeneous mixture"
+        ]
+      }
+    },
+    {
+      "id": "ch1-mat-sand",
+      "q": "Classify sand in water.",
+      "a": "Heterogeneous mixture",
+      "why": "You can see the sand and the water as different parts.",
+      "hints": [
+        "Visible parts mean a heterogeneous mixture."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Heterogeneous mixture"
+        ]
+      }
+    },
+    {
+      "id": "ch1-mat-air",
+      "q": "Classify filtered air.",
+      "a": "Homogeneous mixture",
+      "why": "Filtered air is a uniform mixture of gases, not one pure substance.",
+      "hints": [
+        "Several gases mixed evenly make a homogeneous mixture."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Homogeneous mixture"
+        ]
+      }
+    },
+    {
+      "id": "ch1-mat-water",
+      "q": "Classify distilled water.",
+      "a": "Compound",
+      "why": "Distilled water is H₂O, a pure compound.",
+      "hints": [
+        "One formula, H₂O, means a compound."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Compound"
+        ]
+      }
+    },
+    {
+      "id": "ch1-mat-granite",
+      "q": "Classify granite.",
+      "a": "Heterogeneous mixture",
+      "why": "Granite shows different mineral grains. It is heterogeneous.",
+      "hints": [
+        "If you can see the parts, it is heterogeneous."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Heterogeneous mixture"
+        ]
+      }
+    },
+    {
+      "id": "ch1-mat-brass",
+      "q": "Classify brass, a copper-zinc alloy.",
+      "a": "Homogeneous mixture",
+      "why": "Brass is a uniform mixture of metals. An alloy is not a compound.",
+      "hints": [
+        "An alloy can be separated in principle and has no single fixed formula."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Homogeneous mixture"
+        ]
+      }
+    },
+    {
+      "id": "ch1-mat-hg",
+      "q": "Classify mercury, Hg.",
+      "a": "Element",
+      "why": "Hg is one kind of atom. It is an element.",
+      "hints": [
+        "A single symbol means an element."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Element"
+        ]
+      }
+    },
+    {
+      "id": "ch1-mat-dressing",
+      "q": "Classify Italian salad dressing that has separated.",
+      "a": "Heterogeneous mixture",
+      "why": "Oil and vinegar sit in layers you can see.",
+      "hints": [
+        "Layers you can see mean a heterogeneous mixture."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Heterogeneous mixture"
+        ]
+      }
+    },
+    {
+      "id": "ch1-mat-co2",
+      "q": "Classify carbon dioxide.",
+      "a": "Compound",
+      "why": "CO₂ is carbon and oxygen in a fixed ratio. It is a compound.",
+      "hints": [
+        "Two elements in one formula make a compound."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Compound"
+        ]
+      }
+    }
+  ]
+}

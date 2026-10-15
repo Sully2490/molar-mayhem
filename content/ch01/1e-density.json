@@ -1,0 +1,180 @@
+{
+  "sources": [
+    "OpenStax AF2e §1.4"
+  ],
+  "id": "ch1-density",
+  "ch": 1,
+  "openstax_section": "OpenStax AF2e §1.4",
+  "guide_line": "Find density from mass and volume.",
+  "steps": [
+    "Density is mass divided by volume: d = m / V.",
+    "Mass is d × V. Volume is m / d.",
+    "For an irregular solid, the volume is the rise in the water level.",
+    "1 mL = 1 cm³."
+  ],
+  "worked_example": {
+    "q": "A 25.0 g sample has a volume of 9.26 cm³. What is its density?",
+    "steps": [
+      "Divide mass by volume.",
+      "25.0 / 9.26 = 2.70 g/cm³."
+    ],
+    "answer": "2.70 g/cm³"
+  },
+  "similar_problem": {
+    "q": "A 13.6 g sample has a volume of 1.00 cm³. What is its density?",
+    "hint": "Divide mass by volume. The volume has three significant figures.",
+    "answer": "13.6 g/cm³"
+  },
+  "problems": [
+    {
+      "id": "ch1-d-270",
+      "q": "A 25.0 g sample has a volume of 9.26 cm³. What is its density?",
+      "a": "2.70 g/cm³",
+      "why": "25.0 g / 9.26 cm³ = 2.70 g/cm³.",
+      "hints": [
+        "Divide mass by volume, not volume by mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2.7,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-d-136",
+      "q": "A 13.6 g sample has a volume of 1.00 cm³. What is its density?",
+      "a": "13.6 g/cm³",
+      "why": "13.6 g / 1.00 cm³ = 13.6 g/cm³. A volume written as 1.0 cm³ would limit the answer to 14 g/cm³.",
+      "hints": [
+        "Use three significant figures because 1.00 cm³ has three."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 13.6,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-d-079",
+      "q": "A 5.0 g sample has a volume of 6.33 cm³. What is its density?",
+      "a": "0.79 g/cm³",
+      "why": "5.0 / 6.33 = 0.7899, which rounds to 0.79 g/cm³. The 5.0 has only 2 significant figures.",
+      "hints": [
+        "The less precise factor is 5.0, with 2 significant figures."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.79,
+        "unit": null,
+        "sigFigs": 2
+      }
+    },
+    {
+      "id": "ch1-d-113",
+      "q": "A 48.2 g sample has a volume of 4.26 cm³. What is its density?",
+      "a": "11.3 g/cm³",
+      "why": "48.2 / 4.26 = 11.3 g/cm³.",
+      "hints": [
+        "Divide mass by volume."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 11.3,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-d-787",
+      "q": "A 100.0 g sample has a volume of 12.7 cm³. What is its density?",
+      "a": "7.87 g/cm³",
+      "why": "100.0 / 12.7 = 7.87 g/cm³.",
+      "hints": [
+        "12.7 has 3 significant figures."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 7.87,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-d-disp1",
+      "q": "A 30.5 g metal makes the water rise from 20.0 mL to 23.9 mL. What is its density?",
+      "a": "7.8 g/mL",
+      "why": "The volume change is 23.9 − 20.0 = 3.9 mL. 30.5 / 3.9 = 7.8 g/mL. Using 23.9 mL as the volume is the usual miss.",
+      "hints": [
+        "Subtract the two volumes before you divide."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 7.8,
+        "unit": null,
+        "sigFigs": 2
+      }
+    },
+    {
+      "id": "ch1-d-disp2",
+      "q": "A 15.2 g metal makes the water rise from 50.0 mL to 55.6 mL. What is its density?",
+      "a": "2.7 g/mL",
+      "why": "The volume change is 5.6 mL. 15.2 / 5.6 = 2.7 g/mL.",
+      "hints": [
+        "The volume is the rise, 5.6 mL, and it has 2 significant figures."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2.7,
+        "unit": null,
+        "sigFigs": 2
+      }
+    },
+    {
+      "id": "ch1-d-disp3",
+      "q": "An 88.0 g metal makes the water rise from 10.0 mL to 21.3 mL. What is its density?",
+      "a": "7.79 g/mL",
+      "why": "The volume change is 11.3 mL. 88.0 / 11.3 = 7.79 g/mL.",
+      "hints": [
+        "Subtract 10.0 from 21.3 first."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 7.79,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-d-gold",
+      "q": "Gold has density 19.3 g/cm³. What is the mass of 2.50 cm³?",
+      "a": "48.3 g",
+      "why": "m = 19.3 g/cm³ × 2.50 cm³ = 48.25 g, which rounds to 48.3 g.",
+      "hints": [
+        "Multiply density by volume. 19.3 × 2.50 rounds to 48.3, not 48.2."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 48.3,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-d-eth",
+      "q": "Ethanol has density 0.789 g/mL. What volume holds 50.0 g?",
+      "a": "63.4 mL",
+      "why": "V = 50.0 g / 0.789 g/mL = 63.4 mL.",
+      "hints": [
+        "A lower density means a larger volume for the same mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 63.4,
+        "unit": null,
+        "sigFigs": 3
+      }
+    }
+  ]
+}

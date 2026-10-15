@@ -1,0 +1,180 @@
+{
+  "sources": [
+    "OpenStax AF2e §1.6"
+  ],
+  "id": "ch1-dimensions",
+  "ch": 1,
+  "openstax_section": "OpenStax AF2e §1.6",
+  "guide_line": "Cancel units, and convert temperature with a formula.",
+  "steps": [
+    "Write the given measurement, then multiply by conversion factors so unwanted units cancel.",
+    "1 in = 2.54 cm exactly. 1 lb = 453.6 g. 1 L = 1.057 qt. 1 mi = 1609 m.",
+    "Temperature is not a conversion factor. K = °C + 273.15.",
+    "°F = 1.8(°C) + 32. To go the other way, subtract 32, then divide by 1.8."
+  ],
+  "worked_example": {
+    "q": "Convert 12.0 in to cm.",
+    "steps": [
+      "Multiply by 2.54 cm / 1 in.",
+      "12.0 × 2.54 = 30.5 cm."
+    ],
+    "answer": "30.5 cm"
+  },
+  "similar_problem": {
+    "q": "Convert 155 lb to kg.",
+    "hint": "Go from pounds to grams, then from grams to kilograms.",
+    "answer": "70.3 kg"
+  },
+  "problems": [
+    {
+      "id": "ch1-da-in",
+      "q": "Convert 12.0 in to cm. Use 1 in = 2.54 cm.",
+      "a": "30.5 cm",
+      "why": "12.0 in × 2.54 cm/in = 30.48 cm, which rounds to 30.5 cm. The inch-centimeter factor is exact.",
+      "hints": [
+        "The inch unit must cancel."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 30.5,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-da-lb",
+      "q": "Convert 155 lb to kg. Use 1 lb = 453.6 g.",
+      "a": "70.3 kg",
+      "why": "155 lb × 453.6 g/lb × 1 kg/1000 g = 70.3 kg.",
+      "hints": [
+        "Pounds to grams, then grams to kilograms."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 70.3,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-da-qt",
+      "q": "Convert 2.00 qt to L. Use 1 L = 1.057 qt.",
+      "a": "1.89 L",
+      "why": "2.00 qt × 1 L / 1.057 qt = 1.89 L.",
+      "hints": [
+        "Quarts are the smaller-looking number per liter, so divide."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.89,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-da-mph",
+      "q": "Convert 65.0 mi/h to m/s. Use 1 mi = 1609 m.",
+      "a": "29.1 m/s",
+      "why": "65.0 mi/h × 1609 m/mi × 1 h/3600 s = 29.1 m/s.",
+      "hints": [
+        "Miles go to meters on top. Hours go to seconds on the bottom."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 29.1,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-da-days",
+      "q": "How many seconds are in 3.50 days?",
+      "a": "3.02e5 s",
+      "why": "3.50 days × 24 h/day × 60 min/h × 60 s/min = 3.02×10⁵ s.",
+      "hints": [
+        "Day to hour to minute to second."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 302000,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-da-k",
+      "q": "Convert 25.0 °C to K.",
+      "a": "298.15 K",
+      "why": "K = 25.0 + 273.15 = 298.15. Rounded to the tenths place of 25.0, that is 298.2 K. The addition itself is 298.15.",
+      "hints": [
+        "Add 273.15. Do not multiply."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 298.15,
+        "unit": null,
+        "sigFigs": 5
+      }
+    },
+    {
+      "id": "ch1-da-f",
+      "q": "Convert 98.6 °F to °C.",
+      "a": "37.0 °C",
+      "why": "(98.6 − 32) / 1.8 = 37.0 °C.",
+      "hints": [
+        "Subtract 32 first, then divide by 1.8."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 37,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-da-neg",
+      "q": "Convert −40.0 °C to °F.",
+      "a": "-40.0 °F",
+      "why": "°F = 1.8(−40.0) + 32 = −40.0 °F.",
+      "hints": [
+        "This is the temperature where the two scales meet."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -40,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-da-c",
+      "q": "Convert 350. K to °C.",
+      "a": "76.85 °C",
+      "why": "°C = 350. − 273.15 = 76.85. To the ones place, that rounds to 77 °C.",
+      "hints": [
+        "Subtract 273.15."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 76.85,
+        "unit": null,
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch1-da-fuel",
+      "q": "A car uses 8.50 L per 100 km. How many liters does it use in 340 km?",
+      "a": "28.9 L",
+      "why": "340 km × 8.50 L / 100 km = 28.9 L.",
+      "hints": [
+        "Use 8.50 L / 100 km as the factor."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 28.9,
+        "unit": null,
+        "sigFigs": 3
+      }
+    }
+  ]
+}

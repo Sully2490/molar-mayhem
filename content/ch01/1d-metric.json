@@ -1,0 +1,180 @@
+{
+  "sources": [
+    "OpenStax AF2e §1.4"
+  ],
+  "id": "ch1-metric",
+  "ch": 1,
+  "openstax_section": "OpenStax AF2e §1.4",
+  "guide_line": "Convert metric units with a factor that cancels.",
+  "steps": [
+    "Write the starting number with its unit.",
+    "Multiply by a fraction equal to 1 so the old unit cancels.",
+    "k means 10³, c means 10⁻², m means 10⁻³, µ means 10⁻⁶, n means 10⁻⁹, and G means 10⁹.",
+    "If you convert to a smaller unit, the number gets bigger. If you convert to a bigger unit, the number gets smaller."
+  ],
+  "worked_example": {
+    "q": "Convert 2.5 km to m.",
+    "steps": [
+      "1 km = 1000 m.",
+      "2.5 km × 1000 m/km = 2500 m."
+    ],
+    "answer": "2500 m"
+  },
+  "similar_problem": {
+    "q": "Convert 450 mg to g.",
+    "hint": "1 mg = 0.001 g. The number should get smaller.",
+    "answer": "0.45 g"
+  },
+  "problems": [
+    {
+      "id": "ch1-m-km",
+      "q": "Convert 2.5 km to m.",
+      "a": "2500 m",
+      "why": "2.5 km × 1000 m/km = 2500 m.",
+      "hints": [
+        "1 km = 1000 m. The number gets bigger."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2500,
+        "unit": null,
+        "sigFigs": 2
+      }
+    },
+    {
+      "id": "ch1-m-mg",
+      "q": "Convert 450 mg to g.",
+      "a": "0.45 g",
+      "why": "450 mg × 0.001 g/mg = 0.45 g. The written 0.450 in some keys adds a significant figure that 450 does not have.",
+      "hints": [
+        "1 mg = 0.001 g. The number gets smaller."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.45,
+        "unit": null,
+        "sigFigs": 2
+      }
+    },
+    {
+      "id": "ch1-m-l",
+      "q": "Convert 0.035 L to mL.",
+      "a": "35 mL",
+      "why": "0.035 L × 1000 mL/L = 35 mL. The number 0.035 has 2 significant figures, so 35.0 mL would claim one too many.",
+      "hints": [
+        "1 L = 1000 mL. The number gets bigger."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 35,
+        "unit": null,
+        "sigFigs": 2
+      }
+    },
+    {
+      "id": "ch1-m-nm",
+      "q": "Convert 625 nm to m.",
+      "a": "6.25e-7 m",
+      "why": "625 nm × 1×10⁻⁹ m/nm = 6.25×10⁻⁷ m.",
+      "hints": [
+        "1 nm = 10⁻⁹ m."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 6.25e-7,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-m-ug",
+      "q": "Convert 3.2 µg to g.",
+      "a": "3.2e-6 g",
+      "why": "3.2 µg × 1×10⁻⁶ g/µg = 3.2×10⁻⁶ g. Do not write 3.20×10⁻⁶. That adds a digit.",
+      "hints": [
+        "1 µg = 10⁻⁶ g."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.0000032,
+        "unit": null,
+        "sigFigs": 2
+      }
+    },
+    {
+      "id": "ch1-m-cm",
+      "q": "Convert 12.5 cm to m.",
+      "a": "0.125 m",
+      "why": "12.5 cm × 0.01 m/cm = 0.125 m.",
+      "hints": [
+        "1 cm = 0.01 m. The number gets smaller."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.125,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-m-mm",
+      "q": "Convert 7.80×10⁵ mm to km.",
+      "a": "0.780 km",
+      "why": "7.80×10⁵ mm × 1×10⁻⁶ km/mm = 0.780 km.",
+      "hints": [
+        "1 mm = 10⁻⁶ km."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.78,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-m-kg",
+      "q": "Convert 0.0042 kg to mg.",
+      "a": "4200 mg",
+      "why": "0.0042 kg × 1×10⁶ mg/kg = 4200 mg.",
+      "hints": [
+        "1 kg = 10⁶ mg. The number gets bigger."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4200,
+        "unit": null,
+        "sigFigs": 2
+      }
+    },
+    {
+      "id": "ch1-m-ml",
+      "q": "Convert 250. mL to L.",
+      "a": "0.250 L",
+      "why": "250. mL × 0.001 L/mL = 0.250 L.",
+      "hints": [
+        "1 mL = 0.001 L."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.25,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-m-ghz",
+      "q": "Convert 1.5 GHz to Hz.",
+      "a": "1.5e9 Hz",
+      "why": "1.5 GHz × 1×10⁹ Hz/GHz = 1.5×10⁹ Hz. The coefficient 1.5 has 2 significant figures.",
+      "hints": [
+        "1 GHz = 10⁹ Hz."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1500000000,
+        "unit": null,
+        "sigFigs": 2
+      }
+    }
+  ]
+}

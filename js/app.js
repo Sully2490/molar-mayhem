@@ -1,4 +1,5 @@
-import { renderRoute, routeFromHash, routeTitle } from './routes.js';
+import { bindLearn, loadLessons, renderLearn } from './learn.js';
+import { lessonIdFromHash, renderRoute, routeFromHash, routeTitle } from './routes.js';
 import { renderTable } from './periodic.js';
 
 const view = document.querySelector('#view');
@@ -12,9 +13,15 @@ let trendId = 'radius';
 let selectedZ = null;
 let lastFocus = null;
 
-function paintRoute() {
+async function paintRoute() {
   const id = routeFromHash(location.hash);
-  view.innerHTML = renderRoute(id);
+  if (id === 'Learn') {
+    const lessons = await loadLessons();
+    view.innerHTML = renderLearn(lessons, lessonIdFromHash(location.hash));
+    bindLearn(view, lessons);
+  } else {
+    view.innerHTML = renderRoute(id);
+  }
   document.title = id === 'Home' ? 'Molar Mayhem' : `${routeTitle(id)} — Molar Mayhem`;
   for (const link of navLinks) {
     if (link.getAttribute('data-nav') === id) link.setAttribute('aria-current', 'page');

@@ -1,0 +1,207 @@
+{
+  "sources": [
+    "OpenStax AF2e §1.3"
+  ],
+  "id": "ch1-physical",
+  "ch": 1,
+  "openstax_section": "OpenStax AF2e §1.3",
+  "guide_line": "Tell a physical change from a chemical change.",
+  "steps": [
+    "A physical change alters form or state. The substance is still the same.",
+    "A chemical change makes a new substance. Look for a new color, a gas, heat, light, or a solid forming.",
+    "A physical property can be measured without changing what the substance is. Density and boiling point are physical.",
+    "A chemical property describes a reaction, such as burning or rusting.",
+    "Intensive properties, such as density, do not depend on how much you have. Extensive properties, such as mass, do."
+  ],
+  "worked_example": {
+    "q": "Ice melts into water. Physical or chemical change?",
+    "steps": [
+      "The substance is still water.",
+      "Only the state changed."
+    ],
+    "answer": "Physical change"
+  },
+  "similar_problem": {
+    "q": "An iron nail rusts. Physical or chemical change?",
+    "hint": "Rust is iron oxide, a new substance.",
+    "answer": "Chemical change"
+  },
+  "problems": [
+    {
+      "id": "ch1-phys-melt",
+      "q": "Ice melts into water. Physical or chemical change?",
+      "a": "Physical change",
+      "why": "Melting leaves the substance as water. A change of state is physical.",
+      "hints": [
+        "A change of state is not a new substance."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Physical change"
+        ]
+      }
+    },
+    {
+      "id": "ch1-phys-rust",
+      "q": "An iron nail rusts. Physical or chemical change?",
+      "a": "Chemical change",
+      "why": "Rust is iron oxide. A new substance formed, so the change is chemical.",
+      "hints": [
+        "Rust is a new substance, not just a new shape."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Chemical change"
+        ]
+      }
+    },
+    {
+      "id": "ch1-phys-sugar",
+      "q": "Sugar dissolves in tea. Physical or chemical change?",
+      "a": "Physical change",
+      "why": "Evaporate the water and the sugar is still sugar. Dissolving is physical.",
+      "hints": [
+        "Dissolving does not make a new substance."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Physical change"
+        ]
+      }
+    },
+    {
+      "id": "ch1-phys-wood",
+      "q": "Wood burns. Physical or chemical change?",
+      "a": "Chemical change",
+      "why": "Burning makes ash, carbon dioxide, and heat. Those are new substances.",
+      "hints": [
+        "A flame that makes new products is chemical."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Chemical change"
+        ]
+      }
+    },
+    {
+      "id": "ch1-phys-bp",
+      "q": "The boiling point of water is 100 °C. What kind of property is that?",
+      "a": "Physical property",
+      "why": "Measuring the boiling point leaves the water as water. It is a physical property.",
+      "hints": [
+        "A property you can measure without a new substance is physical."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Physical property"
+        ]
+      }
+    },
+    {
+      "id": "ch1-phys-flame",
+      "q": "Gasoline is flammable. What kind of property is that?",
+      "a": "Chemical property",
+      "why": "Flammability describes a reaction with oxygen. It is a chemical property.",
+      "hints": [
+        "A reaction description is a chemical property."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Chemical property"
+        ]
+      }
+    },
+    {
+      "id": "ch1-phys-conduct",
+      "q": "Copper conducts electricity. What kind of property is that?",
+      "a": "Physical property",
+      "why": "Conducting electricity does not change copper into a new substance.",
+      "hints": [
+        "No new substance forms, so the property is physical."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Physical property"
+        ]
+      }
+    },
+    {
+      "id": "ch1-phys-fizz",
+      "q": "Baking soda fizzes in vinegar. Physical or chemical change?",
+      "a": "Chemical change",
+      "why": "The bubbles are carbon dioxide, a new substance. The change is chemical.",
+      "hints": [
+        "A new gas means a chemical change."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Chemical change"
+        ]
+      }
+    },
+    {
+      "id": "ch1-phys-density",
+      "q": "The density of aluminum is 2.70 g/cm³. Intensive or extensive?",
+      "a": "Intensive",
+      "why": "A bigger piece of aluminum still has the same density. Density is intensive.",
+      "hints": [
+        "Ask whether a bigger sample changes the value. Density does not."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Intensive"
+        ]
+      }
+    },
+    {
+      "id": "ch1-phys-mass",
+      "q": "The mass of a sample is 25 g. Intensive or extensive?",
+      "a": "Extensive",
+      "why": "Twice as much sample has twice the mass. Mass is extensive.",
+      "hints": [
+        "Mass changes when the amount changes."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Extensive"
+        ]
+      }
+    },
+    {
+      "id": "ch1-phys-tarnish",
+      "q": "Silver tarnishes black. Physical or chemical change?",
+      "a": "Chemical change",
+      "why": "Tarnish is silver sulfide, a new substance. The change is chemical.",
+      "hints": [
+        "A new dark compound is not just a color of the same silver."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": [
+          "Chemical change"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "sources": [
+    "OpenStax AF2e §1.5"
+  ],
+  "id": "ch1-sigfigs",
+  "ch": 1,
+  "openstax_section": "OpenStax AF2e §1.5",
+  "guide_line": "Count significant figures and round a calculated answer.",
+  "steps": [
+    "Nonzero digits always count. Zeros between them count.",
+    "Leading zeros never count. They only hold the decimal place.",
+    "Trailing zeros count only when the number has a decimal point.",
+    "For multiplication and division, keep the fewest significant figures.",
+    "For addition and subtraction, keep the fewest decimal places."
+  ],
+  "worked_example": {
+    "q": "How many significant figures are in 0.00450?",
+    "steps": [
+      "Leading zeros do not count.",
+      "4, 5, and the trailing 0 do count."
+    ],
+    "answer": "3"
+  },
+  "similar_problem": {
+    "q": "How many significant figures are in 1200?",
+    "hint": "There is no decimal point, so the trailing zeros do not count.",
+    "answer": "2"
+  },
+  "problems": [
+    {
+      "id": "ch1-sf-00450",
+      "q": "How many significant figures are in 0.00450?",
+      "a": "3",
+      "why": "Leading zeros drop out. 4, 5, and the trailing 0 remain, so there are 3 significant figures.",
+      "hints": [
+        "Leading zeros are placeholders."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 3,
+        "unit": null,
+        "sigFigs": 1
+      }
+    },
+    {
+      "id": "ch1-sf-1200",
+      "q": "How many significant figures are in 1200?",
+      "a": "2",
+      "why": "Without a decimal point, the trailing zeros in 1200 do not count. The 1 and 2 do, so there are 2.",
+      "hints": [
+        "Trailing zeros without a decimal point do not count."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2,
+        "unit": null,
+        "sigFigs": 1
+      }
+    },
+    {
+      "id": "ch1-sf-1200dot",
+      "q": "How many significant figures are in 1200.?",
+      "a": "4",
+      "why": "The decimal point makes the trailing zeros count. 1200. has 4 significant figures.",
+      "hints": [
+        "A decimal point makes trailing zeros significant."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4,
+        "unit": null,
+        "sigFigs": 1
+      }
+    },
+    {
+      "id": "ch1-sf-30070",
+      "q": "How many significant figures are in 30.070?",
+      "a": "5",
+      "why": "The zero between 3 and 7 counts, and the trailing zero after the decimal counts. There are 5.",
+      "hints": [
+        "Zeros between nonzero digits count."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 5,
+        "unit": null,
+        "sigFigs": 1
+      }
+    },
+    {
+      "id": "ch1-sf-sci",
+      "q": "How many significant figures are in 5.0×10³?",
+      "a": "2",
+      "why": "Count the digits in the coefficient 5.0. That is 2 significant figures.",
+      "hints": [
+        "Count the coefficient, not the power of ten."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2,
+        "unit": null,
+        "sigFigs": 1
+      }
+    },
+    {
+      "id": "ch1-sf-0102",
+      "q": "How many significant figures are in 0.0102?",
+      "a": "3",
+      "why": "Leading zeros drop out. 1, 0, and 2 remain, so there are 3.",
+      "hints": [
+        "The zero between 1 and 2 counts. The zeros before 1 do not."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 3,
+        "unit": null,
+        "sigFigs": 1
+      }
+    },
+    {
+      "id": "ch1-sf-100",
+      "q": "How many significant figures are in 100.0?",
+      "a": "4",
+      "why": "The decimal point makes every trailing zero count. 100.0 has 4 significant figures.",
+      "hints": [
+        "Trailing zeros after a decimal point count."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4,
+        "unit": null,
+        "sigFigs": 1
+      }
+    },
+    {
+      "id": "ch1-sf-7",
+      "q": "How many significant figures are in 7?",
+      "a": "1",
+      "why": "A single nonzero digit has 1 significant figure.",
+      "hints": [
+        "A lone nonzero digit counts as one."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1,
+        "unit": null,
+        "sigFigs": 1
+      }
+    },
+    {
+      "id": "ch1-sf-mul",
+      "q": "Calculate 4.56 × 1.4 and round to the correct significant figures.",
+      "a": "6.4",
+      "why": "4.56 × 1.4 = 6.384. The factor 1.4 has 2 significant figures, so the result is 6.4.",
+      "hints": [
+        "Keep the fewest significant figures, not every calculator digit."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 6.4,
+        "unit": null,
+        "sigFigs": 2
+      }
+    },
+    {
+      "id": "ch1-sf-add",
+      "q": "Calculate 12.11 + 3.2 and round to the correct decimal place.",
+      "a": "15.3",
+      "why": "12.11 + 3.2 = 15.31. The 3.2 stops at tenths, so the sum is 15.3.",
+      "hints": [
+        "Addition uses decimal places, not a count of significant figures."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 15.3,
+        "unit": null,
+        "sigFigs": 3
+      }
+    },
+    {
+      "id": "ch1-sf-div",
+      "q": "Calculate 0.0840 ÷ 2.0 and round to the correct significant figures.",
+      "a": "0.042",
+      "why": "0.0840 ÷ 2.0 = 0.042. The 2.0 has 2 significant figures, so the result is 0.042.",
+      "hints": [
+        "Leading zeros in 0.042 do not count. The result still has 2 significant figures."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.042,
+        "unit": null,
+        "sigFigs": 2
+      }
+    }
+  ]
+}
