@@ -113,3 +113,105 @@ export function reviewCard(progress, id, day = todayKey()) {
   next.xp += 5;
   return { progress: next, awarded: 5 };
 }
+
+function lessonRows(lessons) {
+  return (lessons ?? []).filter((lesson) => lesson && typeof lesson.id === 'string' && lesson.id);
+}
+
+function lessonMap(progress) {
+  const lessons = progress?.lessons;
+  return lessons && typeof lessons === 'object' ? lessons : {};
+}
+
+/** '', 'practicing', or 'mastered'. Other stored values count as not started. */
+export function lessonState(progress, id) {
+  const state = lessonMap(progress)[id];
+  return state === 'mastered' || state === 'practicing' ? state : '';
+}
+
+/** Counts for one chapter. Mastered lessons fill the progress ring. */
+export function chapterStats(progress, lessonIds) {
+  const ids = Array.isArray(lessonIds) ? lessonIds : [];
+  let mastered = 0;
+  let practicing = 0;
+  for (const id of ids) {
+    const state = lessonState(progress, id);
+    if (state === 'mastered') mastered += 1;
+    else if (state === 'practicing') practicing += 1;
+  }
+  const total = ids.length;
+  return {
+    total,
+    mastered,
+    practicing,
+    notStarted: total - mastered - practicing,
+    fraction: total === 0 ? 0 : mastered / total,
+  };
+}
+
+/** The practicing lesson added most recently. Null when none are in progress. */
+export function continueLesson(lessons, progress) {
+  const states = lessonMap(progress);
+  const order = Object.keys(states);
+  const practicing = lessonRows(lessons).filter((lesson) => states[lesson.id] === 'practicing');
+  if (!practicing.length) return null;
+  practicing.sort((left, right) => order.indexOf(right.id) - order.indexOf(left.id));
+  return practicing[0];
+}
+
+/**
+ * Earliest open lesson. A practicing lesson ranks ahead of one not started,
+ * because that is the spot the student has already found hard.
+ */
+export function weakestLesson(lessons, progress) {
+  const states = lessonMap(progress);
+  const open = lessonRows(lessons).filter((lesson) => states[lesson.id] !== 'mastered');
+  if (!open.length) return null;
+  open.sort((left, right) => {
+    const rank = (lesson) => (states[lesson.id] === 'practicing' ? 0 : 1);
+    return rank(left) - rank(right)
+      || (Number(left.ch) || 0) - (Number(right.ch) || 0)
+      || String(left.id).localeCompare(String(right.id));
+  });
+  return open[0];
+}
+
+/** First lesson in the given order that is not mastered. */
+export function nextLesson(lessons, progress) {
+  const states = lessonMap(progress);
+  return lessonRows(lessons).find((lesson) => states[lesson.id] !== 'mastered') ?? null;
+}
+
+/**
+ * Card on the Learn modules page.
+ * kind is continue, next, done, or empty.
+ */
+export function continueTarget(lessons, progress) {
+  const current = continueLesson(lessons, progress);
+  if (current) return { lesson: current, kind: 'continue' };
+  const upcoming = nextLesson(lessons, progress);
+  if (upcoming) return { lesson: upcoming, kind: 'next' };
+  if (!lessonRows(lessons).length) return { lesson: null, kind: 'empty' };
+  return { lesson: null, kind: 'done' };
+}
+
+/**
+ * Home "Start here" card.
+ * A practicing lesson is the weak spot. Otherwise the next unmastered lesson.
+ * kind is weak, next, done, or empty.
+ */
+export function startHere(lessons, progress) {
+  if (!lessonRows(lessons).length) return { kind: 'empty', lesson: null, alt: null };
+  const weak = weakestLesson(lessons, progress);
+  const upcoming = nextLesson(lessons, progress);
+  const states = lessonMap(progress);
+  if (weak && states[weak.id] === 'practicing') {
+    return {
+      kind: 'weak',
+      lesson: weak,
+      alt: upcoming && upcoming.id !== weak.id ? upcoming : null,
+    };
+  }
+  if (upcoming) return { kind: 'next', lesson: upcoming, alt: null };
+  return { kind: 'done', lesson: null, alt: null };
+}

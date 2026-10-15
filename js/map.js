@@ -1,5 +1,8 @@
 import { showConfetti, showToast, toastHtml } from './celebrate.js';
-import { masterLesson, readProgress, writeProgress } from './progress.js';
+import { CHAPTERS, sectionLabel, shortTitle } from './home/chapters.js';
+import { ensureLearnCss } from './home/css.js';
+import { progressRingHtml } from './home/ring.js';
+import { chapterStats, masterLesson, readProgress, writeProgress } from './progress.js';
 import { bindSync, exportCode, renderSyncForm } from './sync.js';
 
 export function masteryLabel(state) {
@@ -16,30 +19,52 @@ function escapeHtml(text) {
     .replaceAll('"', '&quot;');
 }
 
-export function renderMap(lessons, progress) {
-  const saved = progress ?? { xp: 0, streak: 0, lessons: {} };
-  const items = (lessons ?? []).map((lesson) => {
-    const state = saved.lessons?.[lesson.id] ?? '';
-    const href = `#Learn/${encodeURIComponent(lesson.id)}`;
-    return `
-      <li>
-        <a href="${href}">${escapeHtml(lesson.guide_line)}</a>
-        <span>Ch ${escapeHtml(lesson.ch)}</span>
-        <span data-mastery="${escapeHtml(lesson.id)}">${masteryLabel(state)}</span>
-        <button type="button" data-master="${escapeHtml(lesson.id)}">Mark mastered</button>
-      </li>
-    `;
-  }).join('');
-  const list = items
-    ? `<ul class="lesson-list">${items}</ul>`
-    : '<p>No lessons are in the chapter folders yet.</p>';
+function lessonRow(lesson, saved) {
+  const state = saved.lessons?.[lesson.id] ?? '';
+  const href = `#Learn/${encodeURIComponent(lesson.id)}`;
+  const section = sectionLabel(lesson);
   return `
-    <section class="page" data-route="Map" data-xp="${saved.xp ?? 0}" data-streak="${saved.streak ?? 0}">
+    <li>
+      <a href="${href}">${escapeHtml(shortTitle(lesson))}</a>
+      ${section ? `<span>${escapeHtml(section)}</span>` : ''}
+      <span data-mastery="${escapeHtml(lesson.id)}">${masteryLabel(state)}</span>
+      <button type="button" data-master="${escapeHtml(lesson.id)}">Mark mastered</button>
+    </li>
+  `;
+}
+
+function chapterBlocks(lessons, saved) {
+  const rows = lessons ?? [];
+  if (!rows.length) return '<p>No lessons are in the chapter folders yet.</p>';
+  const known = new Set(CHAPTERS.map((chapter) => chapter.number));
+  const blocks = CHAPTERS.map((chapter) => {
+    const inChapter = rows.filter((lesson) => Number(lesson.ch) === chapter.number);
+    if (!inChapter.length) return '';
+    const stats = chapterStats(saved, inChapter.map((lesson) => lesson.id));
+    return `<section class="map-chapter" data-chapter="${chapter.number}" style="--accent:${chapter.accent};--wash:${chapter.wash}">
+      <h2><span class="map-ch-num" aria-hidden="true">${chapter.number}</span> ${escapeHtml(chapter.title)}</h2>
+      <p class="map-chapter-meta">${escapeHtml(chapter.sections)}</p>
+      <div class="map-chapter-ring" aria-hidden="true">${progressRingHtml(stats.mastered, stats.total)}<span class="module-fraction">${stats.mastered}/${stats.total}</span></div>
+      <ul class="lesson-list">${inChapter.map((lesson) => lessonRow(lesson, saved)).join('')}</ul>
+    </section>`;
+  }).join('');
+  const extras = rows.filter((lesson) => !known.has(Number(lesson.ch)));
+  const extra = extras.length
+    ? `<section class="map-chapter" data-chapter="other"><h2>More</h2><ul class="lesson-list">${extras.map((lesson) => lessonRow(lesson, saved)).join('')}</ul></section>`
+    : '';
+  return `${blocks}${extra}`;
+}
+
+export function renderMap(lessons, progress) {
+  ensureLearnCss();
+  const saved = progress ?? { xp: 0, streak: 0, lessons: {} };
+  return `
+    <section class="page mm-map" data-route="Map" data-xp="${saved.xp ?? 0}" data-streak="${saved.streak ?? 0}">
       <h1>Map</h1>
       <p>Skip ahead any time. A later lesson stays open.</p>
       <p><strong data-xp-text>${saved.xp ?? 0} XP</strong> · <span data-streak-text>Streak ${saved.streak ?? 0}</span></p>
       ${toastHtml()}
-      ${list}
+      ${chapterBlocks(lessons, saved)}
       ${renderSyncForm()}
     </section>
   `;
@@ -48,6 +73,7 @@ export function renderMap(lessons, progress) {
 const bound = new WeakSet();
 
 export function bindMap(root, storage) {
+  ensureLearnCss();
   bindSync(root, {
     onImported(progress) {
       const xp = root.querySelector('[data-xp-text]');

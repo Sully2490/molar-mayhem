@@ -1,0 +1,398 @@
+/* Chapter modules, the continue card, and the map grouped by chapter. */
+
+.learn-page,
+.mm-map,
+.home-page {
+  max-width: 72rem;
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
+  gap: 0.85rem;
+  margin: 0.4rem 0 1.4rem;
+}
+
+.module-tile {
+  --accent: var(--teal);
+  --wash: #e7f4f1;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  min-height: 7.4rem;
+  padding: 0.95rem 1rem 0.95rem 1.15rem;
+  border-radius: 1.15rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--line));
+  background:
+    linear-gradient(165deg, var(--wash), var(--card) 58%);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 1px 0 rgb(28 36 48 / 4%), 0 10px 24px rgb(28 36 48 / 4%);
+  position: relative;
+  overflow: hidden;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.module-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 7px;
+  background: var(--accent);
+}
+
+.module-tile:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 14px 28px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.module-tile:focus-visible,
+.module-item:focus-visible,
+.learn-row:focus-visible,
+.learn-continue-link:focus-visible,
+.module-subnav a:focus-visible,
+.term-pills a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.module-num {
+  font-family: Georgia, "Iowan Old Style", Palatino, serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+  width: 1.6rem;
+}
+
+.module-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  min-width: 0;
+}
+
+.module-kicker,
+.learn-row-section {
+  color: var(--accent, var(--focus));
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.module-title {
+  font-family: Georgia, "Iowan Old Style", Palatino, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.module-meta,
+.module-cite,
+.map-chapter-meta,
+.learn-objective {
+  color: var(--muted);
+  margin: 0.15rem 0 0;
+}
+
+.module-ring,
+.module-head-ring,
+.map-chapter-ring {
+  display: grid;
+  justify-items: center;
+  gap: 0.05rem;
+}
+
+.module-fraction {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent, var(--teal));
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.progress-ring {
+  width: 3.35rem;
+  height: 3.35rem;
+  display: block;
+}
+
+.progress-ring-track,
+.progress-ring-value {
+  fill: none;
+  stroke-width: 3.4;
+}
+
+.progress-ring-track { stroke: color-mix(in srgb, var(--accent, var(--teal)) 18%, var(--empty)); }
+
+.progress-ring-value {
+  stroke: var(--accent, var(--teal));
+  stroke-linecap: round;
+}
+
+.learn-continue {
+  --accent: var(--teal);
+  --wash: #e7f4f1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem 1rem;
+  align-items: center;
+  margin: 1rem 0 1.15rem;
+  padding: 1.05rem 1.15rem 1.15rem;
+  border-radius: 1.2rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--line));
+  background:
+    linear-gradient(120deg, var(--wash), var(--card) 62%);
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.learn-continue h2 { margin: 0; font-size: clamp(1.45rem, 3vw, 1.9rem); }
+
+.learn-continue p { margin: 0; }
+
+.learn-continue-link,
+.home-start-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 0.45rem;
+  padding: 0.35rem 1.05rem;
+  border-radius: 999px;
+  background: var(--accent, var(--teal));
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  justify-self: start;
+}
+
+.learn-continue-link:hover,
+.home-start-link:hover { filter: brightness(1.08); }
+
+.module-head {
+  --accent: var(--teal);
+  --wash: #e7f4f1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.8rem;
+  align-items: center;
+  margin: 0.4rem 0 0.8rem;
+  padding: 1rem 1.1rem;
+  border-radius: 1.15rem;
+  background: linear-gradient(160deg, var(--wash), var(--card) 70%);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line));
+}
+
+.module-head h1 { margin-bottom: 0.35rem; }
+
+.module-head p { margin: 0.2rem 0 0; }
+
+.module-open { color: var(--muted); }
+
+.module-items {
+  list-style: none;
+  margin: 0.4rem 0 1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.module-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.8rem;
+  align-items: center;
+  min-height: 4.6rem;
+  padding: 0.75rem 0.95rem;
+  border-radius: 1rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 1px 0 rgb(28 36 48 / 3%);
+}
+
+.module-item:hover { border-color: var(--accent, var(--teal)); }
+
+.module-item-index {
+  width: 2.6rem;
+  height: 2.6rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--wash, #e7f4f1);
+  color: var(--accent, var(--teal-deep));
+  font-weight: 700;
+}
+
+.module-item-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.module-item-copy span,
+.home-tile span { color: var(--muted); font-size: 0.92rem; }
+
+.module-item-go {
+  color: var(--accent, var(--teal));
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.module-subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.2rem 0 1rem;
+}
+
+.module-subnav a,
+.term-pills a,
+.learn-row {
+  text-decoration: none;
+}
+
+.module-subnav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.module-subnav a[aria-current="page"] {
+  background: var(--accent, var(--teal));
+  border-color: transparent;
+  color: white;
+}
+
+.learn-rows,
+.term-pills {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+.learn-rows { display: grid; gap: 0.55rem; }
+
+.learn-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.1rem;
+  min-height: 3.5rem;
+  padding: 0.7rem 0.95rem;
+  border-radius: 0.95rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: inherit;
+}
+
+.learn-row:hover,
+.term-pills a:hover { border-color: var(--teal); }
+
+.learn-row-title { font-weight: 700; color: var(--teal-deep); }
+
+.term-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.term-pills a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.15rem 0.85rem;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--teal-deep);
+  font-weight: 700;
+}
+
+.learn-crumbs { margin-top: 0; }
+
+.learn-crumbs a { color: var(--teal-deep); font-weight: 700; }
+
+.learn-example h2 { font-size: 1.25rem; }
+
+.map-chapter {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 0.8rem;
+  align-items: center;
+  margin: 1.3rem 0;
+}
+
+.map-chapter h2 {
+  grid-column: 1;
+  margin: 0;
+  font-size: 1.45rem;
+}
+
+.map-ch-num {
+  display: inline-grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-right: 0.35rem;
+  border-radius: 999px;
+  background: var(--wash, #e7f4f1);
+  color: var(--accent, var(--teal));
+  font-size: 0.95rem;
+}
+
+.map-chapter-meta { grid-column: 1; }
+
+.map-chapter-ring { grid-column: 2; grid-row: 1 / span 2; }
+
+.map-chapter .lesson-list { grid-column: 1 / -1; margin-top: 0.45rem; }
+
+@media (min-width: 760px) {
+  .learn-continue {
+    grid-template-columns: 1fr auto;
+  }
+
+  .learn-continue .kicker,
+  .learn-continue h2,
+  .learn-continue p { grid-column: 1; }
+
+  .learn-continue-link {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 599px) {
+  .module-grid { grid-template-columns: 1fr; }
+
+  .module-head,
+  .map-chapter { grid-template-columns: 1fr; }
+
+  .map-chapter-ring { grid-column: 1; grid-row: auto; justify-self: start; }
+
+  .module-item-go { display: none; }
+
+  .module-tile,
+  .module-item,
+  .learn-continue-link,
+  .home-start-link,
+  .module-subnav a,
+  .term-pills a { min-height: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .module-tile { transition: none; }
+  .module-tile:hover { transform: none; }
+}
