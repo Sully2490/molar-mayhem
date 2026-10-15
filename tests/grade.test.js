@@ -107,6 +107,32 @@ test('exact answers fold Unicode digits, follow case rules, and accept any liste
   assert.throws(() => grade('sp3', { kind: 'exact', text: 'sp3', case: 'title' }), /Unknown case rule: title/);
 });
 
+test('formula answers keep element-symbol case and fold superscript charges', () => {
+  const cobalt = { kind: 'exact', text: 'Co', case: 'formula' };
+  assert.equal(grade('Co', cobalt).ok, true);
+  assert.equal(grade('CO', cobalt).reason, 'exact');
+  assert.equal(grade('co', cobalt).reason, 'exact');
+
+  const iron = { kind: 'exact', text: 'Fe3+', case: 'formula' };
+  assert.equal(grade('Fe³⁺', iron).ok, true);
+  assert.equal(grade('Fe^3+', iron).ok, true);
+  assert.equal(grade('Fe{3+}', iron).ok, true);
+  assert.equal(grade('Fe+3', iron).ok, true);
+  assert.equal(grade('fe3+', iron).reason, 'exact');
+
+  const oxide = { kind: 'exact', text: 'SO42-', case: 'formula' };
+  assert.equal(grade('SO₄²⁻', oxide).ok, true);
+  assert.equal(grade('SO4^2-', oxide).ok, true);
+  assert.equal(grade('SO4 2-', oxide).ok, true);
+  assert.equal(grade('SO4-2', oxide).ok, true);
+  assert.equal(grade('Fe³⁺, SO₄²⁻', { kind: 'set', answers: ['SO42-', 'Fe3+'] }).ok, true);
+
+  const molar = { kind: 'numeric', value: 1.5, sigFigs: 2, unit: 'M' };
+  assert.equal(grade('1.5 M', molar).ok, true);
+  assert.equal(grade('1.5 mol/L', molar).ok, true);
+  assert.equal(grade('1.5 m', molar).reason, 'unit');
+});
+
 test('unordered sets ignore order and flag near-miss items', () => {
   const strongAcids = {
     kind: 'set',
