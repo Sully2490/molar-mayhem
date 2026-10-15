@@ -1,0 +1,188 @@
+{
+  "id": "ch7-ionic",
+  "ch": 7,
+  "openstax_section": "OpenStax AF2e §7.2",
+  "guide_line": "Predict a precipitate and write the net ionic equation.",
+  "steps": [
+    "Nitrate and Group 1 salts dissolve. Chloride dissolves except AgCl, PbCl2, and Hg2Cl2.",
+    "Sulfate dissolves except BaSO4, PbSO4, and SrSO4. Carbonate does not, unless it is Group 1 or ammonium.",
+    "Swap the ion partners. A solid stays together in the net ionic equation.",
+    "Spectator ions appear the same on both sides. Leave them out.",
+    "Type yes or no for solubility. For a net ionic equation, use symbols and a hyphen for the charge."
+  ],
+  "worked_example": {
+    "q": "Is AgCl soluble?",
+    "steps": [
+      "Chlorides dissolve, with a short exception list.",
+      "AgCl is on that list."
+    ],
+    "answer": "no"
+  },
+  "similar_problem": {
+    "q": "Net ionic equation for AgNO3(aq) + NaCl(aq)?",
+    "hint": "AgCl is the solid. Na+ and NO3- stay in solution.",
+    "answer": "Ag+(aq) + Cl-(aq) -> AgCl(s)"
+  },
+  "sources": [
+    "OpenStax AF2e §7.2"
+  ],
+  "problems": [
+    {
+      "id": "ch7-sol-agcl",
+      "q": "Is AgCl soluble in water? Type yes or no.",
+      "a": "no",
+      "why": "This salt is an exception and forms a solid.",
+      "hints": [
+        "Check Group 1, nitrate, chloride, sulfate, and carbonate."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "no"
+      }
+    },
+    {
+      "id": "ch7-sol-kno",
+      "q": "Is KNO3 soluble in water? Type yes or no.",
+      "a": "yes",
+      "why": "This salt follows a soluble rule.",
+      "hints": [
+        "Check Group 1, nitrate, chloride, sulfate, and carbonate."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "yes"
+      }
+    },
+    {
+      "id": "ch7-sol-baso",
+      "q": "Is BaSO4 soluble in water? Type yes or no.",
+      "a": "no",
+      "why": "This salt is an exception and forms a solid.",
+      "hints": [
+        "Check Group 1, nitrate, chloride, sulfate, and carbonate."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "no"
+      }
+    },
+    {
+      "id": "ch7-sol-na",
+      "q": "Is Na2CO3 soluble in water? Type yes or no.",
+      "a": "yes",
+      "why": "This salt follows a soluble rule.",
+      "hints": [
+        "Check Group 1, nitrate, chloride, sulfate, and carbonate."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "yes"
+      }
+    },
+    {
+      "id": "ch7-sol-ca",
+      "q": "Is CaCO3 soluble in water? Type yes or no.",
+      "a": "no",
+      "why": "This salt is an exception and forms a solid.",
+      "hints": [
+        "Check Group 1, nitrate, chloride, sulfate, and carbonate."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "no"
+      }
+    },
+    {
+      "id": "ch7-net-ag",
+      "q": "Net ionic equation for AgNO3(aq) + NaCl(aq)?",
+      "a": "Ag+(aq) + Cl-(aq) -> AgCl(s)",
+      "why": "Drop the spectator ions. Keep the solid or the water together.",
+      "hints": [
+        "Spectators are aqueous ions that do not change."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "Ag+(aq) + Cl-(aq) -> AgCl(s)"
+      }
+    },
+    {
+      "id": "ch7-net-ba",
+      "q": "Net ionic equation for BaCl2(aq) + Na2SO4(aq)?",
+      "a": "Ba2+(aq) + SO4 2-(aq) -> BaSO4(s)",
+      "why": "Drop the spectator ions. Keep the solid or the water together.",
+      "hints": [
+        "Spectators are aqueous ions that do not change."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "Ba2+(aq) + SO4 2-(aq) -> BaSO4(s)"
+      }
+    },
+    {
+      "id": "ch7-net-hcl",
+      "q": "Net ionic equation for HCl(aq) + NaOH(aq)?",
+      "a": "H+(aq) + OH-(aq) -> H2O(l)",
+      "why": "Drop the spectator ions. Keep the solid or the water together.",
+      "hints": [
+        "Spectators are aqueous ions that do not change."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "H+(aq) + OH-(aq) -> H2O(l)"
+      }
+    },
+    {
+      "id": "ch7-net-ca",
+      "q": "Net ionic equation for Na2CO3(aq) + CaCl2(aq)?",
+      "a": "Ca2+(aq) + CO3 2-(aq) -> CaCO3(s)",
+      "why": "Drop the spectator ions. Keep the solid or the water together.",
+      "hints": [
+        "Spectators are aqueous ions that do not change."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "Ca2+(aq) + CO3 2-(aq) -> CaCO3(s)"
+      }
+    },
+    {
+      "id": "ch7-spec-k",
+      "q": "Spectator ions when Pb(NO3)2 reacts with KI to make PbI2? Separate them with a comma.",
+      "a": "K+, NO3-",
+      "why": "Pb2+ and I- make the solid. K+ and NO3- stay dissolved.",
+      "hints": [
+        "The spectators are the ions that do not form the precipitate."
+      ],
+      "check": {
+        "kind": "set",
+        "case": "formula",
+        "answers": [
+          "K+",
+          "NO3-"
+        ]
+      }
+    },
+    {
+      "id": "ch7-mix-no",
+      "q": "Do KCl(aq) and NaNO3(aq) make a precipitate? Type yes or no.",
+      "a": "no",
+      "why": "The swapped products are KNO3 and NaCl. Both dissolve.",
+      "hints": [
+        "Group 1 salts and nitrates dissolve."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "no"
+      }
+    }
+  ]
+}

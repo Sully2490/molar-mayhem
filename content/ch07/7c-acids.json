@@ -1,0 +1,226 @@
+{
+  "id": "ch7-acids",
+  "ch": 7,
+  "openstax_section": "OpenStax AF2e §7.2",
+  "guide_line": "Recall the strong acids and strong bases.",
+  "steps": [
+    "Six strong acids: HCl, HBr, HI, HNO3, H2SO4, and HClO4.",
+    "HClO3 is close, and it is not on this list.",
+    "If an acid is not one of those six, call it weak for this course. That includes HF, CH3COOH, H2CO3, and H3PO4.",
+    "Strong bases: LiOH, NaOH, KOH, RbOH, CsOH, Ca(OH)2, Sr(OH)2, and Ba(OH)2.",
+    "Type symbols separated by commas for a list. Type strong or weak for one compound."
+  ],
+  "worked_example": {
+    "q": "Is HCl strong or weak?",
+    "steps": [
+      "HCl is on the list of six."
+    ],
+    "answer": "strong"
+  },
+  "similar_problem": {
+    "q": "Is HF strong or weak?",
+    "hint": "Check the list of six before you decide.",
+    "answer": "weak"
+  },
+  "sources": [
+    "OpenStax AF2e §7.2"
+  ],
+  "problems": [
+    {
+      "id": "ch7-strong-acids",
+      "q": "Type the six strong acids, separated by commas.",
+      "a": "HCl, HBr, HI, HNO3, H2SO4, HClO4",
+      "why": "The six are HCl, HBr, HI, HNO3, H2SO4, and HClO4.",
+      "hints": [
+        "HClO3 is not on the list."
+      ],
+      "check": {
+        "kind": "set",
+        "case": "formula",
+        "answers": [
+          "HCl",
+          "HBr",
+          "HI",
+          "HNO3",
+          "H2SO4",
+          "HClO4"
+        ],
+        "nearMiss": [
+          {
+            "text": "HClO3",
+            "hint": "HClO3 is close. The strong list uses HClO4, not HClO3."
+          }
+        ]
+      }
+    },
+    {
+      "id": "ch7-strong-bases",
+      "q": "Type the eight strong bases, separated by commas.",
+      "a": "LiOH, NaOH, KOH, RbOH, CsOH, Ca(OH)2, Sr(OH)2, Ba(OH)2",
+      "why": "Group 1 hydroxides, plus Ca(OH)2, Sr(OH)2, and Ba(OH)2.",
+      "hints": [
+        "Include the three heavy Group 2 hydroxides."
+      ],
+      "check": {
+        "kind": "set",
+        "case": "formula",
+        "answers": [
+          "LiOH",
+          "NaOH",
+          "KOH",
+          "RbOH",
+          "CsOH",
+          "Ca(OH)2",
+          "Sr(OH)2",
+          "Ba(OH)2"
+        ]
+      }
+    },
+    {
+      "id": "ch7-sw-hf",
+      "q": "Is HF strong or weak?",
+      "a": "weak",
+      "why": "HF is not one of the six strong acids.",
+      "hints": [
+        "Strong acids are only the six on the list."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "weak"
+      }
+    },
+    {
+      "id": "ch7-sw-acetic",
+      "q": "Is CH3COOH strong or weak?",
+      "a": "weak",
+      "why": "Acetic acid is a weak acid.",
+      "hints": [
+        "Strong acids are only the six on the list."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "weak"
+      }
+    },
+    {
+      "id": "ch7-sw-carbonic",
+      "q": "Is H2CO3 strong or weak?",
+      "a": "weak",
+      "why": "Carbonic acid is a weak acid.",
+      "hints": [
+        "Strong acids are only the six on the list."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "weak"
+      }
+    },
+    {
+      "id": "ch7-sw-phosphoric",
+      "q": "Is H3PO4 strong or weak?",
+      "a": "weak",
+      "why": "Phosphoric acid is a weak acid.",
+      "hints": [
+        "Strong acids are only the six on the list."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "weak"
+      }
+    },
+    {
+      "id": "ch7-sw-hno3",
+      "q": "Is HNO3 strong or weak?",
+      "a": "strong",
+      "why": "Nitric acid is one of the six strong acids.",
+      "hints": [
+        "Strong acids are only the six on the list."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "strong"
+      }
+    },
+    {
+      "id": "ch7-sw-nh3",
+      "q": "Is NH3 strong or weak?",
+      "a": "weak",
+      "why": "Ammonia is a weak base.",
+      "hints": [
+        "Strong acids are only the six on the list."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "weak"
+      }
+    },
+    {
+      "id": "ch7-sw-ba",
+      "q": "Is Ba(OH)2 strong or weak?",
+      "a": "strong",
+      "why": "Barium hydroxide is a strong base.",
+      "hints": [
+        "Strong acids are only the six on the list."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "strong"
+      }
+    },
+    {
+      "id": "ch7-type-zn",
+      "q": "Reaction type of Zn + 2HCl -> ZnCl2 + H2?",
+      "a": "single displacement",
+      "why": "One element replaces another.",
+      "hints": [
+        "Look at what swaps."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "single displacement",
+        "answers": [
+          "single replacement"
+        ]
+      }
+    },
+    {
+      "id": "ch7-type-burn",
+      "q": "Reaction type of CH4 + 2O2 -> CO2 + 2H2O?",
+      "a": "combustion",
+      "why": "A hydrocarbon reacts with oxygen.",
+      "hints": [
+        "Oxygen is a reactant and CO2 and H2O are products."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "combustion"
+      }
+    },
+    {
+      "id": "ch7-type-neut",
+      "q": "Reaction type of HNO3 + KOH -> KNO3 + H2O?",
+      "a": "neutralization",
+      "why": "An acid and a base make a salt and water.",
+      "hints": [
+        "Look for H+ and OH- becoming water."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "neutralization",
+        "answers": [
+          "acid base"
+        ]
+      }
+    }
+  ]
+}

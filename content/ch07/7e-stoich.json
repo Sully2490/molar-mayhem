@@ -1,0 +1,182 @@
+{
+  "id": "ch7-stoich",
+  "ch": 7,
+  "openstax_section": "OpenStax AF2e §7.3",
+  "guide_line": "Convert a reactant mass into a product mass.",
+  "steps": [
+    "Change grams of the known substance to moles. Divide by its molar mass.",
+    "Multiply by the mole ratio from the coefficients: wanted over known.",
+    "Change moles of the product back to grams.",
+    "Use H 1.008, C 12.01, N 14.01, O 16.00, Na 22.99, Al 26.98, Cl 35.45, K 39.10, Fe 55.85.",
+    "Type the number of grams."
+  ],
+  "worked_example": {
+    "q": "Grams of H2O from 10.0 g H2 in 2H2 + O2 -> 2H2O?",
+    "steps": [
+      "10.0 / 2.016 mol H2.",
+      "The ratio to H2O is 1.",
+      "Times 18.02 g/mol = 89.4 g."
+    ],
+    "answer": "89.4 g"
+  },
+  "similar_problem": {
+    "q": "Grams of H2O from 16.0 g O2 in the same reaction?",
+    "hint": "The ratio is 2 mol H2O per 1 mol O2.",
+    "answer": "18.0 g"
+  },
+  "sources": [
+    "OpenStax AF2e §7.3"
+  ],
+  "problems": [
+    {
+      "id": "ch7-st-h2",
+      "q": "2H2 + O2 -> 2H2O. Grams of H2O from 10.0 g H2?",
+      "a": "89.4",
+      "why": "Grams to moles, times the coefficient ratio, then back to grams.",
+      "hints": [
+        "Use the coefficient ratio. Do not assume 1 to 1."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 89.4,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-st-o2",
+      "q": "2H2 + O2 -> 2H2O. Grams of H2O from 16.0 g O2?",
+      "a": "18",
+      "why": "Grams to moles, times the coefficient ratio, then back to grams.",
+      "hints": [
+        "Use the coefficient ratio. Do not assume 1 to 1."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 18,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-st-ch4c",
+      "q": "CH4 + 2O2 -> CO2 + 2H2O. Grams of CO2 from 8.00 g CH4?",
+      "a": "21.9",
+      "why": "Grams to moles, times the coefficient ratio, then back to grams.",
+      "hints": [
+        "Use the coefficient ratio. Do not assume 1 to 1."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 21.9,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-st-ch4h",
+      "q": "CH4 + 2O2 -> CO2 + 2H2O. Grams of H2O from 8.00 g CH4?",
+      "a": "18",
+      "why": "Grams to moles, times the coefficient ratio, then back to grams.",
+      "hints": [
+        "Use the coefficient ratio. Do not assume 1 to 1."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 18,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-st-al",
+      "q": "4Al + 3O2 -> 2Al2O3. Grams of Al2O3 from 5.40 g Al?",
+      "a": "10.2",
+      "why": "Grams to moles, times the coefficient ratio, then back to grams.",
+      "hints": [
+        "Use the coefficient ratio. Do not assume 1 to 1."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 10.2,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-st-n2",
+      "q": "N2 + 3H2 -> 2NH3. Grams of NH3 from 14.0 g N2?",
+      "a": "17",
+      "why": "Grams to moles, times the coefficient ratio, then back to grams.",
+      "hints": [
+        "Use the coefficient ratio. Do not assume 1 to 1."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 17,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-st-k",
+      "q": "2KClO3 -> 2KCl + 3O2. Grams of O2 from 12.3 g KClO3?",
+      "a": "4.82",
+      "why": "Grams to moles, times the coefficient ratio, then back to grams.",
+      "hints": [
+        "Use the coefficient ratio. Do not assume 1 to 1."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4.82,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-st-c3",
+      "q": "C3H8 + 5O2 -> 3CO2 + 4H2O. Grams of CO2 from 22.0 g C3H8?",
+      "a": "65.9",
+      "why": "Grams to moles, times the coefficient ratio, then back to grams.",
+      "hints": [
+        "Use the coefficient ratio. Do not assume 1 to 1."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 65.9,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-st-fe",
+      "q": "Fe2O3 + 3CO -> 2Fe + 3CO2. Grams of Fe from 100.0 g Fe2O3?",
+      "a": "69.9",
+      "why": "Grams to moles, times the coefficient ratio, then back to grams.",
+      "hints": [
+        "Use the coefficient ratio. Do not assume 1 to 1."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 69.9,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-st-na",
+      "q": "2Na + Cl2 -> 2NaCl. Grams of NaCl from 4.60 g Na?",
+      "a": "11.7",
+      "why": "Grams to moles, times the coefficient ratio, then back to grams.",
+      "hints": [
+        "Use the coefficient ratio. Do not assume 1 to 1."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 11.7,
+        "sigFigs": 3,
+        "unit": null
+      }
+    }
+  ]
+}

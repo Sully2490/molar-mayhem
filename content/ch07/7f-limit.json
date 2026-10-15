@@ -1,0 +1,177 @@
+{
+  "id": "ch7-limit",
+  "ch": 7,
+  "openstax_section": "OpenStax AF2e §7.4",
+  "guide_line": "Find the limiting reactant and the percent yield.",
+  "steps": [
+    "Change each reactant to moles of product, using its own coefficient ratio.",
+    "The reactant that makes less product is limiting. Mass alone does not decide.",
+    "Theoretical yield is the product mass from the limiting reactant.",
+    "Percent yield = actual / theoretical × 100."
+  ],
+  "worked_example": {
+    "q": "Which reactant limits: 4.00 g H2 and 32.0 g O2 making water?",
+    "steps": [
+      "H2 can make about 2 mol H2O.",
+      "O2 can make 2 mol H2O from 1 mol, and 32 g is 1 mol, so 2 mol.",
+      "They are close; H2 makes slightly less."
+    ],
+    "answer": "H2"
+  },
+  "similar_problem": {
+    "q": "Which reactant limits: 10.0 g Na and 10.0 g Cl2 making NaCl?",
+    "hint": "Compare moles of NaCl from each, not the two masses.",
+    "answer": "Cl2"
+  },
+  "sources": [
+    "OpenStax AF2e §7.4"
+  ],
+  "problems": [
+    {
+      "id": "ch7-lim-water",
+      "q": "2H2 + O2 -> 2H2O with 4.00 g H2 and 32.0 g O2. Which reactant is limiting? Type its formula.",
+      "a": "H2",
+      "why": "The limiting reactant produces fewer moles of product.",
+      "hints": [
+        "Compare product amounts, not reactant masses."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "H2"
+      }
+    },
+    {
+      "id": "ch7-th-water",
+      "q": "2H2 + O2 -> 2H2O with 4.00 g H2 and 32.0 g O2. Theoretical yield of H2O in grams?",
+      "a": "35.7",
+      "why": "Use only the limiting reactant.",
+      "hints": [
+        "The excess reactant does not set the yield."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 35.7,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-py-water",
+      "q": "2H2 + O2 -> 2H2O with 4.00 g H2 and 32.0 g O2. Percent yield if 30 g of H2O is collected?",
+      "a": "83.9",
+      "why": "Divide the actual mass by the theoretical mass, then times 100.",
+      "hints": [
+        "Percent yield uses the theoretical mass from the limiting reactant."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 83.9,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-lim-ammonia",
+      "q": "N2 + 3H2 -> 2NH3 with 28.0 g N2 and 9.00 g H2. Which reactant is limiting? Type its formula.",
+      "a": "N2",
+      "why": "The limiting reactant produces fewer moles of product.",
+      "hints": [
+        "Compare product amounts, not reactant masses."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "N2"
+      }
+    },
+    {
+      "id": "ch7-th-ammonia",
+      "q": "N2 + 3H2 -> 2NH3 with 28.0 g N2 and 9.00 g H2. Theoretical yield of NH3 in grams?",
+      "a": "34",
+      "why": "Use only the limiting reactant.",
+      "hints": [
+        "The excess reactant does not set the yield."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 34,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-py-ammonia",
+      "q": "N2 + 3H2 -> 2NH3 with 28.0 g N2 and 9.00 g H2. Percent yield if 25 g of NH3 is collected?",
+      "a": "73.4",
+      "why": "Divide the actual mass by the theoretical mass, then times 100.",
+      "hints": [
+        "Percent yield uses the theoretical mass from the limiting reactant."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 73.4,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-lim-salt",
+      "q": "2Na + Cl2 -> 2NaCl with 10.0 g Na and 10.0 g Cl2. Which reactant is limiting? Type its formula.",
+      "a": "Cl2",
+      "why": "The limiting reactant produces fewer moles of product.",
+      "hints": [
+        "Compare product amounts, not reactant masses."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "Cl2"
+      }
+    },
+    {
+      "id": "ch7-th-salt",
+      "q": "2Na + Cl2 -> 2NaCl with 10.0 g Na and 10.0 g Cl2. Theoretical yield of NaCl in grams?",
+      "a": "16.5",
+      "why": "Use only the limiting reactant.",
+      "hints": [
+        "The excess reactant does not set the yield."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 16.5,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-py-salt",
+      "q": "2Na + Cl2 -> 2NaCl with 10.0 g Na and 10.0 g Cl2. Percent yield if 14 g of NaCl is collected?",
+      "a": "84.9",
+      "why": "Divide the actual mass by the theoretical mass, then times 100.",
+      "hints": [
+        "Percent yield uses the theoretical mass from the limiting reactant."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 84.9,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-lim-rule",
+      "q": "Does the smaller reactant mass have to be limiting? Type yes or no.",
+      "a": "no",
+      "why": "A small mass can still be excess if its coefficient and molar mass make more product.",
+      "hints": [
+        "Compare moles of product."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "no"
+      }
+    }
+  ]
+}

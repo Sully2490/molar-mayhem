@@ -1,0 +1,181 @@
+{
+  "id": "ch7-analysis",
+  "ch": 7,
+  "openstax_section": "OpenStax AF2e §7.5",
+  "guide_line": "Solve a titration or a combustion analysis.",
+  "steps": [
+    "Moles of NaOH = M × V, with V in liters.",
+    "HCl, HNO3, and CH3COOH need one OH- each. H2SO4 needs two.",
+    "Molarity of the acid = moles of acid / liters of acid.",
+    "In AgCl, moles of Cl equal moles of AgCl. In CO2, moles of C equal moles of CO2. In H2O, moles of H are twice moles of water.",
+    "Type the number, or a formula such as CH3."
+  ],
+  "worked_example": {
+    "q": "25.0 mL of 0.100 M NaOH neutralizes 20.0 mL of HCl. Molarity of HCl?",
+    "steps": [
+      "Moles OH- = 0.00250.",
+      "Same moles of HCl.",
+      "0.00250 / 0.0200 L = 0.125 M."
+    ],
+    "answer": "0.125 M"
+  },
+  "similar_problem": {
+    "q": "30.0 mL of 0.200 M NaOH neutralizes 15.0 mL of H2SO4. Molarity of the acid?",
+    "hint": "H2SO4 takes two OH-.",
+    "answer": "0.200 M"
+  },
+  "sources": [
+    "OpenStax AF2e §7.5"
+  ],
+  "problems": [
+    {
+      "id": "ch7-ti-hcl",
+      "q": "25.0 mL of 0.100 M NaOH neutralizes 20.0 mL HCl. Acid molarity?",
+      "a": "0.125",
+      "why": "One-to-one. Divide moles by liters of acid.",
+      "hints": [
+        "Convert mL to L."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.125,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-ti-hno",
+      "q": "18.4 mL of 0.250 M NaOH neutralizes 25.0 mL HNO3. Acid molarity?",
+      "a": "0.184",
+      "why": "HNO3 is one-to-one with NaOH.",
+      "hints": [
+        "Convert mL to L."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.184,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-ti-h2so",
+      "q": "30.0 mL of 0.200 M NaOH neutralizes 15.0 mL H2SO4. Acid molarity?",
+      "a": "0.2",
+      "why": "Divide moles of NaOH by 2.",
+      "hints": [
+        "Sulfuric acid needs two hydroxide ions."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.2,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-ti-hcl2",
+      "q": "12.5 mL of 0.150 M NaOH neutralizes 10.0 mL HCl. Acid molarity?",
+      "a": "0.188",
+      "why": "One-to-one.",
+      "hints": [
+        "Convert mL to L."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.188,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-ti-h2so2",
+      "q": "22.0 mL of 0.500 M NaOH neutralizes 40.0 mL H2SO4. Acid molarity?",
+      "a": "0.137",
+      "why": "Divide moles of NaOH by 2.",
+      "hints": [
+        "Sulfuric acid needs two hydroxide ions."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.137,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-ti-ac",
+      "q": "35.6 mL of 0.120 M NaOH neutralizes 25.0 mL CH3COOH. Acid molarity?",
+      "a": "0.171",
+      "why": "Acetic acid donates one H+.",
+      "hints": [
+        "Convert mL to L."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.171,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-ag",
+      "q": "0.500 g of a chloride sample gives 1.00 g AgCl. Mass percent Cl?",
+      "a": "49.5",
+      "why": "Moles of AgCl equal moles of Cl.",
+      "hints": [
+        "Do not treat the AgCl mass as chlorine."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 49.5,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-c",
+      "q": "A sample produces 8.80 g CO2. Grams of C in the sample?",
+      "a": "2.4",
+      "why": "One C atom per CO2.",
+      "hints": [
+        "Change CO2 to moles before you change to grams of C."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2.4,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-h",
+      "q": "A sample produces 5.40 g H2O. Moles of H in the sample?",
+      "a": "0.599",
+      "why": "Each water molecule has two H atoms.",
+      "hints": [
+        "Multiply moles of water by 2."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.599,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-emp",
+      "q": "Combustion gives 0.200 mol CO2 and 0.300 mol H2O. Empirical formula?",
+      "a": "CH3",
+      "why": "Moles of C = 0.200. Moles of H = 0.600. The ratio is 1 to 3.",
+      "hints": [
+        "H atoms are twice the moles of water."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "CH3"
+      }
+    }
+  ]
+}

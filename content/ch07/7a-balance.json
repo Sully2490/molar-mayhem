@@ -1,0 +1,217 @@
+{
+  "id": "ch7-balance",
+  "ch": 7,
+  "openstax_section": "OpenStax AF2e §7.1",
+  "guide_line": "Balance a chemical equation.",
+  "steps": [
+    "A coefficient changes how many units you have. A subscript changes the substance, so leave subscripts alone.",
+    "Count each element on both sides.",
+    "Balance metals and other atoms first. Save O and H for last in combustion.",
+    "Type the coefficients in order, like 2, 1, 2."
+  ],
+  "worked_example": {
+    "q": "Balance H2 + O2 -> H2O.",
+    "steps": [
+      "Two H on the right need 2 H2.",
+      "That needs 2 H2O, so 1 O2."
+    ],
+    "answer": "2, 1, 2"
+  },
+  "similar_problem": {
+    "q": "Balance CH4 + O2 -> CO2 + H2O.",
+    "hint": "One C, then four H, then oxygen last.",
+    "answer": "1, 2, 1, 2"
+  },
+  "sources": [
+    "OpenStax AF2e §7.1"
+  ],
+  "problems": [
+    {
+      "id": "ch7-b-water",
+      "q": "Coefficients for H2 + O2 -> H2O?",
+      "a": "2, 1, 2",
+      "why": "The same atoms must appear on both sides, and only coefficients change.",
+      "hints": [
+        "Do not change a subscript to force a balance."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "2, 1, 2",
+        "answers": [
+          "2,1,2"
+        ]
+      }
+    },
+    {
+      "id": "ch7-b-ch4",
+      "q": "Coefficients for CH4 + O2 -> CO2 + H2O?",
+      "a": "1, 2, 1, 2",
+      "why": "The same atoms must appear on both sides, and only coefficients change.",
+      "hints": [
+        "Do not change a subscript to force a balance."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "1, 2, 1, 2",
+        "answers": [
+          "1,2,1,2"
+        ]
+      }
+    },
+    {
+      "id": "ch7-b-al",
+      "q": "Coefficients for Al + O2 -> Al2O3?",
+      "a": "4, 3, 2",
+      "why": "The same atoms must appear on both sides, and only coefficients change.",
+      "hints": [
+        "Do not change a subscript to force a balance."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "4, 3, 2",
+        "answers": [
+          "4,3,2"
+        ]
+      }
+    },
+    {
+      "id": "ch7-b-fe",
+      "q": "Coefficients for Fe + Cl2 -> FeCl3?",
+      "a": "2, 3, 2",
+      "why": "The same atoms must appear on both sides, and only coefficients change.",
+      "hints": [
+        "Do not change a subscript to force a balance."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "2, 3, 2",
+        "answers": [
+          "2,3,2"
+        ]
+      }
+    },
+    {
+      "id": "ch7-b-c3",
+      "q": "Coefficients for C3H8 + O2 -> CO2 + H2O?",
+      "a": "1, 5, 3, 4",
+      "why": "The same atoms must appear on both sides, and only coefficients change.",
+      "hints": [
+        "Do not change a subscript to force a balance."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "1, 5, 3, 4",
+        "answers": [
+          "1,5,3,4"
+        ]
+      }
+    },
+    {
+      "id": "ch7-b-na",
+      "q": "Coefficients for Na + H2O -> NaOH + H2?",
+      "a": "2, 2, 2, 1",
+      "why": "The same atoms must appear on both sides, and only coefficients change.",
+      "hints": [
+        "Do not change a subscript to force a balance."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "2, 2, 2, 1",
+        "answers": [
+          "2,2,2,1"
+        ]
+      }
+    },
+    {
+      "id": "ch7-b-n2",
+      "q": "Coefficients for N2 + H2 -> NH3?",
+      "a": "1, 3, 2",
+      "why": "The same atoms must appear on both sides, and only coefficients change.",
+      "hints": [
+        "Do not change a subscript to force a balance."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "1, 3, 2",
+        "answers": [
+          "1,3,2"
+        ]
+      }
+    },
+    {
+      "id": "ch7-b-ag",
+      "q": "Coefficients for AgNO3 + CaCl2 -> AgCl + Ca(NO3)2?",
+      "a": "2, 1, 2, 1",
+      "why": "The same atoms must appear on both sides, and only coefficients change.",
+      "hints": [
+        "Do not change a subscript to force a balance."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "2, 1, 2, 1",
+        "answers": [
+          "2,1,2,1"
+        ]
+      }
+    },
+    {
+      "id": "ch7-b-c2",
+      "q": "Coefficients for C2H6 + O2 -> CO2 + H2O?",
+      "a": "2, 7, 4, 6",
+      "why": "The same atoms must appear on both sides, and only coefficients change.",
+      "hints": [
+        "Do not change a subscript to force a balance."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "2, 7, 4, 6",
+        "answers": [
+          "2,7,4,6"
+        ]
+      }
+    },
+    {
+      "id": "ch7-b-k",
+      "q": "Coefficients for KClO3 -> KCl + O2?",
+      "a": "2, 2, 3",
+      "why": "The same atoms must appear on both sides, and only coefficients change.",
+      "hints": [
+        "Do not change a subscript to force a balance."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "2, 2, 3",
+        "answers": [
+          "2,2,3"
+        ]
+      }
+    },
+    {
+      "id": "ch7-b-oxide",
+      "q": "Coefficients for Fe2O3 + CO -> Fe + CO2?",
+      "a": "1, 3, 2, 3",
+      "why": "The same atoms must appear on both sides, and only coefficients change.",
+      "hints": [
+        "Do not change a subscript to force a balance."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "1, 3, 2, 3",
+        "answers": [
+          "1,3,2,3"
+        ]
+      }
+    }
+  ]
+}

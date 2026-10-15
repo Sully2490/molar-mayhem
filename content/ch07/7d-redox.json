@@ -1,0 +1,184 @@
+{
+  "id": "ch7-redox",
+  "ch": 7,
+  "openstax_section": "OpenStax AF2e §7.2",
+  "guide_line": "Assign oxidation numbers and spot redox.",
+  "steps": [
+    "An element alone is 0. H is +1 with nonmetals. O is -2, except -1 in peroxide.",
+    "The oxidation numbers in a formula add up to the charge.",
+    "Oxidation is a loss of electrons: the oxidation number goes up.",
+    "The oxidizing agent is the substance that gets reduced.",
+    "Type an oxidation number as a plain number, such as 6 or -2."
+  ],
+  "worked_example": {
+    "q": "Oxidation number of S in H2SO4?",
+    "steps": [
+      "2(+1) + S + 4(-2) = 0.",
+      "S = +6."
+    ],
+    "answer": "6"
+  },
+  "similar_problem": {
+    "q": "Oxidation number of Mn in MnO4-?",
+    "hint": "Four oxygens are -8, and the ion is -1.",
+    "answer": "7"
+  },
+  "sources": [
+    "OpenStax AF2e §7.2"
+  ],
+  "problems": [
+    {
+      "id": "ch7-ox-s",
+      "q": "Oxidation number of S in H2SO4?",
+      "a": "6",
+      "why": "H is +1 each, O is -2 each. 2(+1) + x + 4(-2) = 0, so x = +6.",
+      "hints": [
+        "The numbers must add up to the charge. Multiply by each subscript."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 6,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-ox-mn",
+      "q": "Oxidation number of Mn in MnO4-?",
+      "a": "7",
+      "why": "Four O are -8. The ion is -1, so Mn is +7.",
+      "hints": [
+        "The numbers must add up to the charge. Multiply by each subscript."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 7,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-ox-cr",
+      "q": "Oxidation number of Cr in Cr2O7 2-?",
+      "a": "6",
+      "why": "Seven O are -14. The ion is -2, so two Cr total +12 and each Cr is +6.",
+      "hints": [
+        "The numbers must add up to the charge. Multiply by each subscript."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 6,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-ox-n",
+      "q": "Oxidation number of N in NH4+?",
+      "a": "-3",
+      "why": "Four H are +4. The ion is +1, so N is -3.",
+      "hints": [
+        "The numbers must add up to the charge. Multiply by each subscript."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -3,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-ox-c",
+      "q": "Oxidation number of C in CO2?",
+      "a": "4",
+      "why": "Two O are -4, so C is +4.",
+      "hints": [
+        "The numbers must add up to the charge. Multiply by each subscript."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-ox-fe",
+      "q": "Oxidation number of Fe in Fe2O3?",
+      "a": "3",
+      "why": "Three O are -6, so two Fe total +6 and each Fe is +3.",
+      "hints": [
+        "The numbers must add up to the charge. Multiply by each subscript."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 3,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-ox-o",
+      "q": "Oxidation number of O in H2O2?",
+      "a": "-1",
+      "why": "Peroxide oxygen is -1, not -2. Two H are +2, so two O are -2.",
+      "hints": [
+        "The numbers must add up to the charge. Multiply by each subscript."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -1,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch7-ox-zn",
+      "q": "In Zn + Cu2+ -> Zn2+ + Cu, which species is oxidized?",
+      "a": "Zn",
+      "why": "Zn goes from 0 to +2. It loses electrons.",
+      "hints": [
+        "The oxidation number that goes up is oxidized."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "Zn"
+      }
+    },
+    {
+      "id": "ch7-ox-agent",
+      "q": "In Zn + Cu2+ -> Zn2+ + Cu, which species is the oxidizing agent?",
+      "a": "Cu2+",
+      "why": "Cu2+ is reduced, so it is the oxidizing agent.",
+      "hints": [
+        "The agent is the species that causes oxidation by being reduced."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "Cu2+",
+        "answers": [
+          "Cu2+"
+        ]
+      }
+    },
+    {
+      "id": "ch7-red-mn",
+      "q": "Coefficients only, in order, for MnO4- + Fe2+ + H+ -> Mn2+ + Fe3+ + H2O in acid? Type 1, 5, 8, 1, 5, 4.",
+      "a": "1, 5, 8, 1, 5, 4",
+      "why": "Mn gains 5 electrons. Five Fe2+ lose those electrons. Eight H+ make four water.",
+      "hints": [
+        "Balance electrons before H and O."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "1, 5, 8, 1, 5, 4",
+        "answers": [
+          "1,5,8,1,5,4"
+        ]
+      }
+    }
+  ]
+}
