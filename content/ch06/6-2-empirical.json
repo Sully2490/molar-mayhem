@@ -1,0 +1,162 @@
+{
+  "id": "ch06-empirical",
+  "ch": 6,
+  "openstax_section": "OpenStax AF2e §6.2",
+  "guide_line": "Find the percent of each element, then turn masses into an empirical formula and, if you have a molar mass, a molecular formula.",
+  "steps": [
+    "6.2 Determining Empirical and Molecular Formulas: percent of an element = (mass of that element in 1 mol / molar mass) × 100.",
+    "A lab percent uses the mass of one element divided by the mass of the whole sample, times 100.",
+    "If the data are moles, multiply by atomic masses first. A mass percent is not the mole percent.",
+    "To turn a molecular formula into an empirical formula, divide every subscript by the largest whole number that goes into all of them.",
+    "For an empirical formula, assume 100 g when you are given percents. Grams of each element equal the percent number. Divide each mass by its atomic mass to get moles.",
+    "Divide every mole count by the smallest one. If a result is near 1.5, 1.33, or 1.25, multiply all of the counts by 2, 3, or 4.",
+    "A molecular formula needs one more number. n = given molar mass / empirical formula mass. Multiply each subscript by that whole number.",
+    "Use the OpenStax AF2e atomic masses from the formula-mass lesson. Round a percent to 4 significant figures. Write element symbols with a capital letter, and omit a subscript of 1."
+  ],
+  "worked_example": {
+    "q": "A sample is 2.402 g C, 0.4032 g H, and 3.200 g O. What is the empirical formula? Use C 12.011, H 1.00794, and O 15.9994. Write C, then H, then O.",
+    "steps": [
+      "Moles of C = 2.402 / 12.011 = 0.2000 mol.",
+      "Moles of H = 0.4032 / 1.00794 = 0.4000 mol.",
+      "Moles of O = 3.200 / 15.9994 = 0.2000 mol.",
+      "Divide by 0.2000. The ratio is 1 : 2 : 1, so the empirical formula is CH2O."
+    ],
+    "answer": "CH2O"
+  },
+  "similar_problem": {
+    "q": "A sample is 2.402 g C, 0.6048 g H, and 1.600 g O. What is the empirical formula? Use C 12.011, H 1.00794, and O 15.9994. Write C, then H, then O.",
+    "hint": "Treat 2.402 g C, 0.6048 g H, and 1.600 g O as the whole sample. Divide each mass by its atomic mass, then divide all three mole counts by the smallest.",
+    "answer": "C2H6O"
+  },
+  "sources": ["OpenStax AF2e §6.2"],
+  "problems": [
+    {
+      "id": "ch06-pct-o-co2",
+      "q": "What is the percent oxygen by mass in CO2? C is 12.011 and O is 15.9994. Give 4 significant figures.",
+      "a": "72.71 %",
+      "why": "Molar mass = 12.011 + 2(15.9994) = 44.0098 g/mol. Percent O = (31.9988 / 44.0098) × 100 = 72.71%.",
+      "hints": ["Put 2 times 15.9994 g in the numerator and the full CO2 molar mass in the denominator, then multiply by 100."],
+      "check": { "kind": "numeric", "value": 72.71, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch06-pct-n-nitrate",
+      "q": "What is the percent nitrogen by mass in NH4NO3? N is 14.0067, H is 1.00794, and O is 15.9994. Give 4 significant figures.",
+      "a": "35.00 %",
+      "why": "Molar mass = 2(14.0067) + 4(1.00794) + 3(15.9994) = 80.04336 g/mol. Percent N = (28.0134 / 80.04336) × 100 = 35.00%.",
+      "hints": ["NH4NO3 has two nitrogen atoms. Use 2 times 14.0067 g over the molar mass of the whole salt."],
+      "check": { "kind": "numeric", "value": 35, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch06-pct-water-soda",
+      "q": "What is the percent water by mass in Na2CO3·10H2O? Na is 22.989769, C is 12.011, O is 15.9994, and H is 1.00794. Give 4 significant figures.",
+      "a": "62.96 %",
+      "why": "Na2CO3 is 105.9887 g/mol and 10 H2O is 180.1528 g/mol. The hydrate is 286.1415 g/mol. Percent water = (180.1528 / 286.1415) × 100 = 62.96%.",
+      "hints": ["Ten water units are the part you want. The denominator is Na2CO3 plus those ten waters."],
+      "check": { "kind": "numeric", "value": 62.96, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch06-emp-fe2o3",
+      "q": "An iron oxide is 69.94% Fe and 30.06% O by mass. What is the empirical formula? Fe is 55.845 and O is 15.9994. Write Fe, then O.",
+      "a": "Fe2O3",
+      "why": "In 100 g: Fe = 69.94 / 55.845 = 1.252 mol and O = 30.06 / 15.9994 = 1.879 mol. Divide by 1.252 to get 1 : 1.500. Multiply by 2. The formula is Fe2O3.",
+      "hints": ["In 100 g, divide 69.94 g by 55.845 and 30.06 g by 15.9994. The oxygen-to-iron ratio is 1.5, so clear the fraction."],
+      "check": { "kind": "exact", "text": "Fe2O3", "case": "sensitive" }
+    },
+    {
+      "id": "ch06-emp-ch2",
+      "q": "A sample contains 2.402 g C and 0.4032 g H only. What is the empirical formula? C is 12.011 and H is 1.00794. Write C, then H.",
+      "a": "CH2",
+      "why": "Moles of C = 2.402 / 12.011 = 0.2000. Moles of H = 0.4032 / 1.00794 = 0.4000. Divide by 0.2000. The ratio is 1 : 2, so the formula is CH2.",
+      "hints": ["These are raw grams, not percents. Divide 2.402 g by 12.011 and 0.4032 g by 1.00794, then compare."],
+      "check": { "kind": "exact", "text": "CH2", "case": "sensitive" }
+    },
+    {
+      "id": "ch06-mf-c2h4o2",
+      "q": "A compound has empirical formula CH2O and a molar mass of 60.05 g/mol. What is the molecular formula? Use C 12.011, H 1.00794, and O 15.9994. Write C, then H, then O.",
+      "a": "C2H4O2",
+      "why": "Empirical mass = 12.011 + 2(1.00794) + 15.9994 = 30.02628 g/mol. n = 60.05 / 30.02628 = 2. Multiply CH2O by 2. The molecular formula is C2H4O2.",
+      "hints": ["Divide 60.05 g/mol by the mass of one CH2O unit, near 30.03 g/mol. Multiply each subscript by that whole number."],
+      "check": { "kind": "exact", "text": "C2H4O2", "case": "sensitive" }
+    },
+    {
+      "id": "ch06-emp-combust",
+      "q": "A 1.203 g sample made of only carbon and hydrogen burns to 3.521 g of CO2 and 2.162 g of H2O. What is the empirical formula? C is 12.011, H is 1.00794, and O is 15.9994. Write C, then H.",
+      "a": "CH3",
+      "why": "Mass of C = 3.521 g CO2 × (12.011 / 44.0098) = 0.9609 g, so moles of C = 0.08000. Mass of H = 2.162 g H2O × (2.01588 / 18.01528) = 0.2419 g, so moles of H = 0.2400. Divide by 0.08000. The ratio is 1 : 3, so the formula is CH3.",
+      "hints": ["Turn 3.521 g of CO2 into moles of C and 2.162 g of H2O into moles of H. Divide both mole counts by the smaller one."],
+      "check": { "kind": "exact", "text": "CH3", "case": "sensitive" }
+    },
+    {
+      "id": "ch06-pct-s-k2so4",
+      "q": "What is the percent sulfur by mass in K2SO4? K is 39.0983, S is 32.066, and O is 15.9994. Give 4 significant figures.",
+      "a": "18.40 %",
+      "why": "Molar mass = 2(39.0983) + 32.066 + 4(15.9994) = 174.2602 g/mol. Percent S = (32.066 / 174.2602) × 100 = 18.40%.",
+      "hints": ["Only the one sulfur belongs in the numerator. Potassium and the four oxygens stay in the K2SO4 molar mass."],
+      "check": { "kind": "numeric", "value": 18.4, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch06-pct-ca-caco3",
+      "q": "What is the percent calcium by mass in CaCO3? Ca is 40.078, C is 12.011, and O is 15.9994. Give 4 significant figures.",
+      "a": "40.04 %",
+      "why": "Molar mass = 40.078 + 12.011 + 3(15.9994) = 100.0872 g/mol. Percent Ca = (40.078 / 100.0872) × 100 = 40.04%.",
+      "hints": ["One calcium is the numerator. Divide its atomic mass by the CaCO3 molar mass and multiply by 100."],
+      "check": { "kind": "numeric", "value": 40.04, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch06-mf-c2h4",
+      "q": "A compound has empirical formula CH2 and a molar mass of 28.05 g/mol. What is the molecular formula? Use C 12.011 and H 1.00794. Write C, then H.",
+      "a": "C2H4",
+      "why": "Empirical mass = 12.011 + 2(1.00794) = 14.02688 g/mol. n = 28.05 / 14.02688 = 2. Multiply CH2 by 2. The molecular formula is C2H4.",
+      "hints": ["Divide 28.05 g/mol by the CH2 unit mass, near 14.03 g/mol. Double both subscripts."],
+      "check": { "kind": "exact", "text": "C2H4", "case": "sensitive" }
+    },
+    {
+      "id": "ch06-emp-no2",
+      "q": "A gas is 30.45% N and 69.55% O by mass. What is the empirical formula? N is 14.0067 and O is 15.9994. Write N, then O.",
+      "a": "NO2",
+      "why": "In 100 g: N = 30.45 / 14.0067 = 2.174 mol and O = 69.55 / 15.9994 = 4.347 mol. Divide by 2.174. The ratio is 1 : 2, so the formula is NO2.",
+      "hints": ["In 100 g, divide 30.45 g by 14.0067 and 69.55 g by 15.9994. Divide the larger mole count by the smaller."],
+      "check": { "kind": "exact", "text": "NO2", "case": "sensitive" }
+    },
+    {
+      "id": "ch06-pct-water-zinc",
+      "q": "What is the percent water by mass in ZnSO4·7H2O? Zn is 65.38, S is 32.066, O is 15.9994, and H is 1.00794. Give 4 significant figures.",
+      "a": "43.86 %",
+      "why": "ZnSO4 is 161.4436 g/mol and 7 H2O is 126.1070 g/mol. The hydrate is 287.5506 g/mol. Percent water = (126.1070 / 287.5506) × 100 = 43.86%.",
+      "hints": ["Seven waters go in the numerator. Add them to ZnSO4 before you divide, or the percent is too high."],
+      "check": { "kind": "numeric", "value": 43.86, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch06-symbol-zn",
+      "q": "What is the element symbol of the metal in ZnSO4·7H2O?",
+      "a": "Zn",
+      "why": "The formula starts with Zn. Zinc's symbol is a capital Z and a lowercase n.",
+      "hints": ["The metal symbol is the first element in ZnSO4. Keep the capital Z and the lowercase n."],
+      "check": { "kind": "exact", "text": "Zn", "case": "sensitive" }
+    },
+    {
+      "id": "ch06-emp-reduce",
+      "q": "What is the empirical formula of a compound whose molecular formula is C6H14? Write C, then H.",
+      "a": "C3H7",
+      "why": "The subscripts 6 and 14 share a factor of 2. Divide both by 2. The empirical formula is C3H7.",
+      "hints": ["Both subscripts in C6H14 can be divided by 2. Keep carbon before hydrogen."],
+      "check": { "kind": "exact", "text": "C3H7", "case": "sensitive" }
+    },
+    {
+      "id": "ch06-pct-lab-c",
+      "q": "A 4.800 g sample of a carbon compound contains 1.920 g of carbon. The rest of the sample is oxygen. What is the percent carbon by mass? Give 4 significant figures.",
+      "a": "40.00 %",
+      "why": "Percent C = (1.920 g / 4.800 g) × 100 = 40.00%. The oxygen is part of the sample, so the denominator is 4.800 g, not the oxygen mass alone.",
+      "hints": ["Divide 1.920 g of carbon by the 4.800 g sample, then multiply by 100. Leave the oxygen mass out of the denominator."],
+      "check": { "kind": "numeric", "value": 40, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch06-pct-from-moles",
+      "q": "A sample contains 0.2500 mol of C and 0.5000 mol of O. What is the percent carbon by mass? C is 12.011 and O is 15.9994. Give 4 significant figures.",
+      "a": "27.29 %",
+      "why": "Mass of C = 0.2500 mol × 12.011 g/mol = 3.00275 g. Mass of O = 0.5000 mol × 15.9994 g/mol = 7.9997 g. Total = 11.00245 g. Percent C = (3.00275 / 11.00245) × 100 = 27.29%. Dividing the moles, 0.2500 / 0.7500, gives 33.33%, which is not the mass percent.",
+      "hints": ["Change 0.2500 mol of C and 0.5000 mol of O into grams with their atomic masses before you divide. A ratio of the moles is not the mass percent."],
+      "check": { "kind": "numeric", "value": 27.29, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    }
+  ]
+}
