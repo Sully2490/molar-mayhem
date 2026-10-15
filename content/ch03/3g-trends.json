@@ -1,0 +1,177 @@
+{
+  "id": "ch3-trends",
+  "ch": 3,
+  "openstax_section": "OpenStax AF2e §3.5",
+  "guide_line": "Compare radius and ionization energy.",
+  "steps": [
+    "Atomic radius grows down a group and shrinks left to right across a period.",
+    "Ionization energy and electronegativity do the opposite: higher toward the top right.",
+    "A cation is smaller than its atom. An anion is larger than its atom.",
+    "Type the element name, or a ranking like O < S < Se."
+  ],
+  "worked_example": {
+    "q": "Largest radius: Na, Mg, or Cl?",
+    "steps": [
+      "Same period.",
+      "Radius shrinks to the right.",
+      "Na is largest."
+    ],
+    "answer": "sodium"
+  },
+  "similar_problem": {
+    "q": "Largest radius: F, Cl, or Br?",
+    "hint": "They are in one group. Look down.",
+    "answer": "bromine"
+  },
+  "sources": [
+    "OpenStax AF2e §3.5"
+  ],
+  "problems": [
+    {
+      "id": "ch3-t-na",
+      "q": "Largest radius: Na, Mg, or Cl?",
+      "a": "sodium",
+      "why": "Across a period, more protons pull the cloud in. Na is farthest left.",
+      "hints": [
+        "Bigger atoms sit toward the bottom left. Higher ionization energy sits toward the top right."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "sodium"
+      }
+    },
+    {
+      "id": "ch3-t-br",
+      "q": "Largest radius: F, Cl, or Br?",
+      "a": "bromine",
+      "why": "Down a group, a new shell makes the atom larger.",
+      "hints": [
+        "Bigger atoms sit toward the bottom left. Higher ionization energy sits toward the top right."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "bromine"
+      }
+    },
+    {
+      "id": "ch3-t-cl",
+      "q": "Highest ionization energy: Na, Al, or Cl?",
+      "a": "chlorine",
+      "why": "Ionization energy rises toward the top right. Cl is farthest right.",
+      "hints": [
+        "Bigger atoms sit toward the bottom left. Higher ionization energy sits toward the top right."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "chlorine"
+      }
+    },
+    {
+      "id": "ch3-t-li",
+      "q": "Highest ionization energy: Li, Na, or K?",
+      "a": "lithium",
+      "why": "Ionization energy falls down a group. Li is highest.",
+      "hints": [
+        "Bigger atoms sit toward the bottom left. Higher ionization energy sits toward the top right."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "lithium"
+      }
+    },
+    {
+      "id": "ch3-t-rank-r",
+      "q": "Rank by radius, small to large: O, S, Se. Type O < S < Se.",
+      "a": "O < S < Se",
+      "why": "Down group 16, the atoms get larger.",
+      "hints": [
+        "Bigger atoms sit toward the bottom left. Higher ionization energy sits toward the top right."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "O < S < Se",
+        "answers": [
+          "O, S, Se"
+        ]
+      }
+    },
+    {
+      "id": "ch3-t-rank-ie",
+      "q": "Rank by ionization energy, low to high: K, Ca, Br. Type K < Ca < Br.",
+      "a": "K < Ca < Br",
+      "why": "K is lower-left of these three, so it holds its electron most loosely.",
+      "hints": [
+        "Bigger atoms sit toward the bottom left. Higher ionization energy sits toward the top right."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "K < Ca < Br",
+        "answers": [
+          "K, Ca, Br"
+        ]
+      }
+    },
+    {
+      "id": "ch3-t-na-ion",
+      "q": "Which is larger, the Na atom or Na+? Type sodium atom or sodium ion.",
+      "a": "sodium atom",
+      "why": "Na+ lost the 3s electron, so it lost a shell.",
+      "hints": [
+        "Bigger atoms sit toward the bottom left. Higher ionization energy sits toward the top right."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "sodium atom"
+      }
+    },
+    {
+      "id": "ch3-t-cl-ion",
+      "q": "Which is larger, the Cl atom or Cl-? Type chlorine atom or chloride ion.",
+      "a": "chloride ion",
+      "why": "Cl- has one extra electron and more repulsion in the same shell.",
+      "hints": [
+        "Bigger atoms sit toward the bottom left. Higher ionization energy sits toward the top right."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "chloride ion"
+      }
+    },
+    {
+      "id": "ch3-t-f",
+      "q": "Highest electronegativity: N, O, or F?",
+      "a": "fluorine",
+      "why": "Electronegativity rises toward fluorine, skipping the noble gases.",
+      "hints": [
+        "Bigger atoms sit toward the bottom left. Higher ionization energy sits toward the top right."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "fluorine"
+      }
+    },
+    {
+      "id": "ch3-t-cs",
+      "q": "Lowest ionization energy: Cs, Rb, or Ba?",
+      "a": "cesium",
+      "why": "Cs is the farthest down and left of these three.",
+      "hints": [
+        "Bigger atoms sit toward the bottom left. Higher ionization energy sits toward the top right."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "cesium"
+      }
+    }
+  ]
+}

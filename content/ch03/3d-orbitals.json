@@ -1,0 +1,216 @@
+{
+  "id": "ch3-orbitals",
+  "ch": 3,
+  "openstax_section": "OpenStax AF2e §3.4",
+  "guide_line": "Count unpaired electrons and name an orbital shape.",
+  "steps": [
+    "An s orbital is a sphere. A p orbital is a dumbbell. There are three p orbitals in a shell.",
+    "One orbital holds at most two electrons, with opposite spins.",
+    "Hund’s rule: in one subshell, give every orbital one electron before any gets a pair.",
+    "Count the singles left in the last subshell. Those are the unpaired electrons."
+  ],
+  "worked_example": {
+    "q": "How many unpaired electrons does carbon have? Its last subshell is 2p2.",
+    "steps": [
+      "Three p boxes.",
+      "Two electrons go in two different boxes.",
+      "Two unpaired."
+    ],
+    "answer": "2"
+  },
+  "similar_problem": {
+    "q": "How many unpaired electrons does nitrogen have? Its last subshell is 2p3.",
+    "hint": "Three electrons and three p boxes.",
+    "answer": "3"
+  },
+  "sources": [
+    "OpenStax AF2e §3.3",
+    "OpenStax AF2e §3.4"
+  ],
+  "problems": [
+    {
+      "id": "ch3-shape-s",
+      "q": "What is the shape of an s orbital?",
+      "a": "sphere",
+      "why": "Every s orbital is a sphere.",
+      "hints": [
+        "s is not a dumbbell."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "sphere",
+        "answers": [
+          "spherical"
+        ]
+      }
+    },
+    {
+      "id": "ch3-shape-p",
+      "q": "What is the shape of a p orbital?",
+      "a": "dumbbell",
+      "why": "A p orbital has two lobes.",
+      "hints": [
+        "There are three p orbitals, each a dumbbell."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "dumbbell",
+        "answers": [
+          "dumbbells"
+        ]
+      }
+    },
+    {
+      "id": "ch3-o-c",
+      "q": "How many unpaired electrons does C have in its ground state?",
+      "a": "2",
+      "why": "Fill the last subshell one electron per orbital before pairing.",
+      "hints": [
+        "Do not pair electrons until every box in that subshell has one."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-o-n",
+      "q": "How many unpaired electrons does N have in its ground state?",
+      "a": "3",
+      "why": "Fill the last subshell one electron per orbital before pairing.",
+      "hints": [
+        "Do not pair electrons until every box in that subshell has one."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 3,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-o-o",
+      "q": "How many unpaired electrons does O have in its ground state?",
+      "a": "2",
+      "why": "Fill the last subshell one electron per orbital before pairing.",
+      "hints": [
+        "Do not pair electrons until every box in that subshell has one."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-o-p",
+      "q": "How many unpaired electrons does P have in its ground state?",
+      "a": "3",
+      "why": "Fill the last subshell one electron per orbital before pairing.",
+      "hints": [
+        "Do not pair electrons until every box in that subshell has one."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 3,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-o-s",
+      "q": "How many unpaired electrons does S have in its ground state?",
+      "a": "2",
+      "why": "Fill the last subshell one electron per orbital before pairing.",
+      "hints": [
+        "Do not pair electrons until every box in that subshell has one."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-o-fe",
+      "q": "How many unpaired electrons does Fe have in its ground state?",
+      "a": "4",
+      "why": "Fill the last subshell one electron per orbital before pairing.",
+      "hints": [
+        "Do not pair electrons until every box in that subshell has one."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-o-f",
+      "q": "How many unpaired electrons does F have in its ground state?",
+      "a": "1",
+      "why": "Fill the last subshell one electron per orbital before pairing.",
+      "hints": [
+        "Do not pair electrons until every box in that subshell has one."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-o-ti",
+      "q": "How many unpaired electrons does Ti have in its ground state?",
+      "a": "2",
+      "why": "Fill the last subshell one electron per orbital before pairing.",
+      "hints": [
+        "Do not pair electrons until every box in that subshell has one."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-o-cr",
+      "q": "How many unpaired electrons does Cr have in its ground state?",
+      "a": "6",
+      "why": "Fill the last subshell one electron per orbital before pairing.",
+      "hints": [
+        "Do not pair electrons until every box in that subshell has one."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 6,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-o-mn",
+      "q": "How many unpaired electrons does Mn have in its ground state?",
+      "a": "5",
+      "why": "Fill the last subshell one electron per orbital before pairing.",
+      "hints": [
+        "Do not pair electrons until every box in that subshell has one."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 5,
+        "sigFigs": 1,
+        "unit": null
+      }
+    }
+  ]
+}

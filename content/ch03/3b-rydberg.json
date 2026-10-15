@@ -1,0 +1,181 @@
+{
+  "id": "ch3-rydberg",
+  "ch": 3,
+  "openstax_section": "OpenStax AF2e §3.2",
+  "guide_line": "Use the Rydberg equation for a hydrogen line.",
+  "steps": [
+    "A hydrogen electron emits light when it falls to a lower n.",
+    "1/λ = R (1/n_low² − 1/n_high²). R = 1.097×10⁷ m⁻¹.",
+    "The lower level goes first. A swapped pair gives a negative wavelength.",
+    "λ comes out in meters. Multiply by 10⁹ to get nm.",
+    "Lines that end on n = 2 are the visible Balmer lines."
+  ],
+  "worked_example": {
+    "q": "Wavelength for n = 3 → 2 in hydrogen?",
+    "steps": [
+      "1/λ = 1.097×10⁷ (1/4 − 1/9).",
+      "λ = 6.56×10⁻⁷ m = 656 nm."
+    ],
+    "answer": "656 nm"
+  },
+  "similar_problem": {
+    "q": "Wavelength for n = 4 → 2 in hydrogen?",
+    "hint": "n_low = 2 and n_high = 4.",
+    "answer": "486 nm"
+  },
+  "sources": [
+    "OpenStax AF2e §3.2"
+  ],
+  "problems": [
+    {
+      "id": "ch3-ry-32",
+      "q": "Wavelength in nm for a hydrogen electron falling from n = 3 to n = 2?",
+      "a": "656 nm",
+      "why": "1/λ = R (1/2² − 1/3²), then convert meters to nm.",
+      "hints": [
+        "Put the lower n first so the wavelength is positive."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 656,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-ry-42",
+      "q": "Wavelength in nm for a hydrogen electron falling from n = 4 to n = 2?",
+      "a": "486 nm",
+      "why": "1/λ = R (1/2² − 1/4²), then convert meters to nm.",
+      "hints": [
+        "Put the lower n first so the wavelength is positive."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 486,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-ry-52",
+      "q": "Wavelength in nm for a hydrogen electron falling from n = 5 to n = 2?",
+      "a": "434 nm",
+      "why": "1/λ = R (1/2² − 1/5²), then convert meters to nm.",
+      "hints": [
+        "Put the lower n first so the wavelength is positive."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 434,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-ry-62",
+      "q": "Wavelength in nm for a hydrogen electron falling from n = 6 to n = 2?",
+      "a": "410 nm",
+      "why": "1/λ = R (1/2² − 1/6²), then convert meters to nm.",
+      "hints": [
+        "Put the lower n first so the wavelength is positive."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 410,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-ry-21",
+      "q": "Wavelength in nm for a hydrogen electron falling from n = 2 to n = 1?",
+      "a": "122 nm",
+      "why": "1/λ = R (1/1² − 1/2²), then convert meters to nm.",
+      "hints": [
+        "Put the lower n first so the wavelength is positive."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 122,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-ry-31",
+      "q": "Wavelength in nm for a hydrogen electron falling from n = 3 to n = 1?",
+      "a": "103 nm",
+      "why": "1/λ = R (1/1² − 1/3²), then convert meters to nm.",
+      "hints": [
+        "Put the lower n first so the wavelength is positive."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 103,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-ry-43",
+      "q": "Wavelength in nm for a hydrogen electron falling from n = 4 to n = 3?",
+      "a": "1880 nm",
+      "why": "1/λ = R (1/3² − 1/4²), then convert meters to nm.",
+      "hints": [
+        "Put the lower n first so the wavelength is positive."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1880,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-ry-53",
+      "q": "Wavelength in nm for a hydrogen electron falling from n = 5 to n = 3?",
+      "a": "1280 nm",
+      "why": "1/λ = R (1/3² − 1/5²), then convert meters to nm.",
+      "hints": [
+        "Put the lower n first so the wavelength is positive."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1280,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-ry-41",
+      "q": "Wavelength in nm for a hydrogen electron falling from n = 4 to n = 1?",
+      "a": "97.2 nm",
+      "why": "1/λ = R (1/1² − 1/4²), then convert meters to nm.",
+      "hints": [
+        "Put the lower n first so the wavelength is positive."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 97.2,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-ry-54",
+      "q": "Wavelength in nm for a hydrogen electron falling from n = 5 to n = 4?",
+      "a": "4050 nm",
+      "why": "1/λ = R (1/4² − 1/5²), then convert meters to nm.",
+      "hints": [
+        "Put the lower n first so the wavelength is positive."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4050,
+        "sigFigs": 3,
+        "unit": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "id": "ch3-light",
+  "ch": 3,
+  "openstax_section": "OpenStax AF2e §3.1",
+  "guide_line": "Find frequency and photon energy from a wavelength.",
+  "steps": [
+    "Light speed c = 2.998×10⁸ m/s. Planck’s constant h = 6.626×10⁻³⁴ J·s.",
+    "Convert nm to m: multiply by 10⁻⁹.",
+    "Frequency ν = c / λ.",
+    "Energy of one photon E = hν = hc / λ.",
+    "A shorter wavelength means a higher frequency and a higher energy.",
+    "Type the number only."
+  ],
+  "worked_example": {
+    "q": "What is the frequency of 400 nm light?",
+    "steps": [
+      "λ = 4.00×10⁻⁷ m.",
+      "ν = 2.998×10⁸ / 4.00×10⁻⁷ = 7.50×10¹⁴ Hz."
+    ],
+    "answer": "7.50×10¹⁴ Hz"
+  },
+  "similar_problem": {
+    "q": "What is the energy of one 400 nm photon?",
+    "hint": "E = hc / λ. You already have λ in meters.",
+    "answer": "4.97×10⁻¹⁹ J"
+  },
+  "sources": [
+    "OpenStax AF2e §3.1"
+  ],
+  "problems": [
+    {
+      "id": "ch3-nu-400",
+      "q": "Frequency of 400 nm light, in hertz?",
+      "a": "7.49×10^14 Hz",
+      "why": "ν = c / λ. Convert 400 nm to meters first.",
+      "hints": [
+        "1 nm = 10⁻⁹ m. Then divide c by λ."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 749000000000000,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-e-400",
+      "q": "Energy of one 400 nm photon, in joules?",
+      "a": "4.97×10^-19 J",
+      "why": "E = hc / λ, with λ in meters.",
+      "hints": [
+        "Use E = hc / λ, not h × λ."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4.97e-19,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-nu-486",
+      "q": "Frequency of 486 nm light, in hertz?",
+      "a": "6.17×10^14 Hz",
+      "why": "ν = c / λ. Convert 486 nm to meters first.",
+      "hints": [
+        "1 nm = 10⁻⁹ m. Then divide c by λ."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 617000000000000,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-e-486",
+      "q": "Energy of one 486 nm photon, in joules?",
+      "a": "4.09×10^-19 J",
+      "why": "E = hc / λ, with λ in meters.",
+      "hints": [
+        "Use E = hc / λ, not h × λ."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4.09e-19,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-nu-550",
+      "q": "Frequency of 550 nm light, in hertz?",
+      "a": "5.45×10^14 Hz",
+      "why": "ν = c / λ. Convert 550 nm to meters first.",
+      "hints": [
+        "1 nm = 10⁻⁹ m. Then divide c by λ."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 545000000000000,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-e-550",
+      "q": "Energy of one 550 nm photon, in joules?",
+      "a": "3.61×10^-19 J",
+      "why": "E = hc / λ, with λ in meters.",
+      "hints": [
+        "Use E = hc / λ, not h × λ."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 3.61e-19,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-nu-656",
+      "q": "Frequency of 656 nm light, in hertz?",
+      "a": "4.57×10^14 Hz",
+      "why": "ν = c / λ. Convert 656 nm to meters first.",
+      "hints": [
+        "1 nm = 10⁻⁹ m. Then divide c by λ."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 457000000000000,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-e-656",
+      "q": "Energy of one 656 nm photon, in joules?",
+      "a": "3.03×10^-19 J",
+      "why": "E = hc / λ, with λ in meters.",
+      "hints": [
+        "Use E = hc / λ, not h × λ."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 3.03e-19,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-nu-700",
+      "q": "Frequency of 700 nm light, in hertz?",
+      "a": "4.28×10^14 Hz",
+      "why": "ν = c / λ. Convert 700 nm to meters first.",
+      "hints": [
+        "1 nm = 10⁻⁹ m. Then divide c by λ."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 428000000000000,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-e-700",
+      "q": "Energy of one 700 nm photon, in joules?",
+      "a": "2.84×10^-19 J",
+      "why": "E = hc / λ, with λ in meters.",
+      "hints": [
+        "Use E = hc / λ, not h × λ."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2.84e-19,
+        "sigFigs": 3,
+        "unit": null
+      }
+    }
+  ]
+}

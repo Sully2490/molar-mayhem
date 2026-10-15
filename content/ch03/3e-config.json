@@ -1,0 +1,241 @@
+{
+  "id": "ch3-config",
+  "ch": 3,
+  "openstax_section": "OpenStax AF2e §3.4",
+  "guide_line": "Write an electron configuration.",
+  "steps": [
+    "Fill in order: 1s 2s 2p 3s 3p 4s 3d 4p.",
+    "Superscripts must add up to the number of electrons.",
+    "Cr is 4s1 3d5. Cu is 4s1 3d10.",
+    "A noble-gas core is fine: [Ne] means 1s2 2s2 2p6.",
+    "For a cation, remove electrons from the highest n first. 4s leaves before 3d."
+  ],
+  "worked_example": {
+    "q": "Write the configuration of N.",
+    "steps": [
+      "Z = 7.",
+      "1s2 2s2 2p3."
+    ],
+    "answer": "1s2 2s2 2p3"
+  },
+  "similar_problem": {
+    "q": "Write the configuration of Al.",
+    "hint": "Z = 13. Fill through 3p.",
+    "answer": "1s2 2s2 2p6 3s2 3p1"
+  },
+  "sources": [
+    "OpenStax AF2e §3.4"
+  ],
+  "problems": [
+    {
+      "id": "ch3-c-n",
+      "q": "Electron configuration of N.",
+      "a": "1s2 2s2 2p3",
+      "why": "Fill in aufbau order until the superscripts equal Z.",
+      "hints": [
+        "Check that the superscripts add up, and watch Cr and Cu."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "1s2 2s2 2p3"
+      }
+    },
+    {
+      "id": "ch3-c-al",
+      "q": "Electron configuration of Al.",
+      "a": "1s2 2s2 2p6 3s2 3p1",
+      "why": "Fill in aufbau order until the superscripts equal Z.",
+      "hints": [
+        "Check that the superscripts add up, and watch Cr and Cu."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "1s2 2s2 2p6 3s2 3p1"
+      }
+    },
+    {
+      "id": "ch3-c-s",
+      "q": "Electron configuration of S.",
+      "a": "1s2 2s2 2p6 3s2 3p4",
+      "why": "Fill in aufbau order until the superscripts equal Z.",
+      "hints": [
+        "Check that the superscripts add up, and watch Cr and Cu."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "1s2 2s2 2p6 3s2 3p4"
+      }
+    },
+    {
+      "id": "ch3-c-ca",
+      "q": "Electron configuration of Ca.",
+      "a": "1s2 2s2 2p6 3s2 3p6 4s2",
+      "why": "Fill in aufbau order until the superscripts equal Z.",
+      "hints": [
+        "Check that the superscripts add up, and watch Cr and Cu."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "1s2 2s2 2p6 3s2 3p6 4s2"
+      }
+    },
+    {
+      "id": "ch3-c-fe",
+      "q": "Electron configuration of Fe.",
+      "a": "1s2 2s2 2p6 3s2 3p6 4s2 3d6",
+      "why": "Fill in aufbau order until the superscripts equal Z.",
+      "hints": [
+        "Check that the superscripts add up, and watch Cr and Cu."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "1s2 2s2 2p6 3s2 3p6 4s2 3d6"
+      }
+    },
+    {
+      "id": "ch3-c-cr",
+      "q": "Electron configuration of Cr.",
+      "a": "1s2 2s2 2p6 3s2 3p6 4s1 3d5",
+      "why": "Chromium is 4s1 3d5, not 4s2 3d4.",
+      "hints": [
+        "Check that the superscripts add up, and watch Cr and Cu."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "1s2 2s2 2p6 3s2 3p6 4s1 3d5"
+      }
+    },
+    {
+      "id": "ch3-c-cu",
+      "q": "Electron configuration of Cu.",
+      "a": "1s2 2s2 2p6 3s2 3p6 4s1 3d10",
+      "why": "Copper is 4s1 3d10, not 4s2 3d9.",
+      "hints": [
+        "Check that the superscripts add up, and watch Cr and Cu."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "1s2 2s2 2p6 3s2 3p6 4s1 3d10"
+      }
+    },
+    {
+      "id": "ch3-c-br",
+      "q": "Electron configuration of Br.",
+      "a": "1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p5",
+      "why": "Fill in aufbau order until the superscripts equal Z.",
+      "hints": [
+        "Check that the superscripts add up, and watch Cr and Cu."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p5"
+      }
+    },
+    {
+      "id": "ch3-c-na",
+      "q": "Electron configuration of Na.",
+      "a": "1s2 2s2 2p6 3s1",
+      "why": "Fill in aufbau order until the superscripts equal Z.",
+      "hints": [
+        "Check that the superscripts add up, and watch Cr and Cu."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "1s2 2s2 2p6 3s1"
+      }
+    },
+    {
+      "id": "ch3-c-zn",
+      "q": "Electron configuration of Zn.",
+      "a": "1s2 2s2 2p6 3s2 3p6 4s2 3d10",
+      "why": "Fill in aufbau order until the superscripts equal Z.",
+      "hints": [
+        "Check that the superscripts add up, and watch Cr and Cu."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "1s2 2s2 2p6 3s2 3p6 4s2 3d10"
+      }
+    },
+    {
+      "id": "ch3-i-fe2",
+      "q": "Electron configuration of Fe2+.",
+      "a": "[Ar] 3d6",
+      "why": "Remove the 4s electrons before 3d.",
+      "hints": [
+        "Cations of transition metals lose 4s before 3d."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Ar] 3d6",
+        "answers": [
+          "1s2 2s2 2p6 3s2 3p6 3d6"
+        ]
+      }
+    },
+    {
+      "id": "ch3-i-cl",
+      "q": "Electron configuration of Cl-.",
+      "a": "1s2 2s2 2p6 3s2 3p6",
+      "why": "Add one electron to chlorine’s 3p5.",
+      "hints": [
+        "Cations of transition metals lose 4s before 3d."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "1s2 2s2 2p6 3s2 3p6",
+        "answers": [
+          "[Ne] 3s2 3p6"
+        ]
+      }
+    },
+    {
+      "id": "ch3-i-na",
+      "q": "Electron configuration of Na+.",
+      "a": "1s2 2s2 2p6",
+      "why": "Remove the one 3s electron.",
+      "hints": [
+        "Cations of transition metals lose 4s before 3d."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "1s2 2s2 2p6",
+        "answers": [
+          "[Ne]"
+        ]
+      }
+    },
+    {
+      "id": "ch3-i-o",
+      "q": "Electron configuration of O2-.",
+      "a": "1s2 2s2 2p6",
+      "why": "Add two electrons to oxygen’s 2p4.",
+      "hints": [
+        "Cations of transition metals lose 4s before 3d."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "1s2 2s2 2p6",
+        "answers": [
+          "[He] 2s2 2p6"
+        ]
+      }
+    },
+    {
+      "id": "ch3-i-zn",
+      "q": "Electron configuration of Zn2+.",
+      "a": "[Ar] 3d10",
+      "why": "Remove both 4s electrons. The 3d shell stays full.",
+      "hints": [
+        "Cations of transition metals lose 4s before 3d."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Ar] 3d10",
+        "answers": [
+          "1s2 2s2 2p6 3s2 3p6 3d10"
+        ]
+      }
+    }
+  ]
+}

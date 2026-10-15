@@ -1,0 +1,184 @@
+{
+  "id": "ch3-backward",
+  "ch": 3,
+  "openstax_section": "OpenStax AF2e §3.4",
+  "guide_line": "Name the element from its configuration.",
+  "steps": [
+    "Add every superscript. That sum is Z for a neutral atom.",
+    "A noble-gas core counts too: He 2, Ne 10, Ar 18, Kr 36.",
+    "The element with that atomic number is the answer.",
+    "Type the element name, such as iron."
+  ],
+  "worked_example": {
+    "q": "Which element is 1s2 2s2 2p5?",
+    "steps": [
+      "2 + 2 + 5 = 9.",
+      "Z = 9 is fluorine."
+    ],
+    "answer": "fluorine"
+  },
+  "similar_problem": {
+    "q": "Which element is [Ne] 3s2?",
+    "hint": "Ne is 10. Add the two 3s electrons.",
+    "answer": "magnesium"
+  },
+  "sources": [
+    "OpenStax AF2e §3.4"
+  ],
+  "problems": [
+    {
+      "id": "ch3-z-f",
+      "q": "Which neutral element has the configuration 1s2 2s2 2p5?",
+      "a": "fluorine",
+      "why": "Add the core and the superscripts to get Z, then name that element.",
+      "hints": [
+        "Include the noble-gas core in the electron count."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "fluorine"
+      }
+    },
+    {
+      "id": "ch3-z-mg",
+      "q": "Which neutral element has the configuration [Ne] 3s2?",
+      "a": "magnesium",
+      "why": "Add the core and the superscripts to get Z, then name that element.",
+      "hints": [
+        "Include the noble-gas core in the electron count."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "magnesium"
+      }
+    },
+    {
+      "id": "ch3-z-p",
+      "q": "Which neutral element has the configuration [Ne] 3s2 3p3?",
+      "a": "phosphorus",
+      "why": "Add the core and the superscripts to get Z, then name that element.",
+      "hints": [
+        "Include the noble-gas core in the electron count."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "phosphorus"
+      }
+    },
+    {
+      "id": "ch3-z-cl",
+      "q": "Which neutral element has the configuration [Ne] 3s2 3p5?",
+      "a": "chlorine",
+      "why": "Add the core and the superscripts to get Z, then name that element.",
+      "hints": [
+        "Include the noble-gas core in the electron count."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "chlorine"
+      }
+    },
+    {
+      "id": "ch3-z-k",
+      "q": "Which neutral element has the configuration [Ar] 4s1?",
+      "a": "potassium",
+      "why": "Add the core and the superscripts to get Z, then name that element.",
+      "hints": [
+        "Include the noble-gas core in the electron count."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "potassium"
+      }
+    },
+    {
+      "id": "ch3-z-v",
+      "q": "Which neutral element has the configuration [Ar] 4s2 3d3?",
+      "a": "vanadium",
+      "why": "Add the core and the superscripts to get Z, then name that element.",
+      "hints": [
+        "Include the noble-gas core in the electron count."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "vanadium"
+      }
+    },
+    {
+      "id": "ch3-z-fe",
+      "q": "Which neutral element has the configuration [Ar] 4s2 3d6?",
+      "a": "iron",
+      "why": "Add the core and the superscripts to get Z, then name that element.",
+      "hints": [
+        "Include the noble-gas core in the electron count."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "iron"
+      }
+    },
+    {
+      "id": "ch3-z-ga",
+      "q": "Which neutral element has the configuration [Ar] 4s2 3d10 4p1?",
+      "a": "gallium",
+      "why": "Add the core and the superscripts to get Z, then name that element.",
+      "hints": [
+        "Include the noble-gas core in the electron count."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "gallium"
+      }
+    },
+    {
+      "id": "ch3-z-se",
+      "q": "Which neutral element has the configuration [Ar] 4s2 3d10 4p4?",
+      "a": "selenium",
+      "why": "Add the core and the superscripts to get Z, then name that element.",
+      "hints": [
+        "Include the noble-gas core in the electron count."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "selenium"
+      }
+    },
+    {
+      "id": "ch3-z-kr",
+      "q": "Which neutral element has the configuration [Ar] 4s2 3d10 4p6?",
+      "a": "krypton",
+      "why": "Add the core and the superscripts to get Z, then name that element.",
+      "hints": [
+        "Include the noble-gas core in the electron count."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "krypton"
+      }
+    },
+    {
+      "id": "ch3-z-si",
+      "q": "Which neutral element has the configuration [Ne] 3s2 3p2?",
+      "a": "silicon",
+      "why": "Add the core and the superscripts to get Z, then name that element.",
+      "hints": [
+        "Include the noble-gas core in the electron count."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "silicon"
+      }
+    }
+  ]
+}

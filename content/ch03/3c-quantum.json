@@ -1,0 +1,177 @@
+{
+  "id": "ch3-quantum",
+  "ch": 3,
+  "openstax_section": "OpenStax AF2e §3.3",
+  "guide_line": "Check a set of quantum numbers.",
+  "steps": [
+    "n is the shell: 1, 2, 3, …",
+    "l is the shape: 0 = s, 1 = p, 2 = d, 3 = f. l stops at n − 1.",
+    "ml picks the orbital: any integer from −l to +l.",
+    "ms is the spin: +1/2 or −1/2 only.",
+    "A subshell has 2l + 1 orbitals. A shell holds at most 2n² electrons."
+  ],
+  "worked_example": {
+    "q": "Is (2, 1, 0, +1/2) allowed?",
+    "steps": [
+      "l = 1 < 2.",
+      "ml = 0 is between −1 and +1.",
+      "Spin is +1/2."
+    ],
+    "answer": "valid"
+  },
+  "similar_problem": {
+    "q": "Is (2, 2, 0, +1/2) allowed?",
+    "hint": "Compare l with n − 1.",
+    "answer": "invalid"
+  },
+  "sources": [
+    "OpenStax AF2e §3.3"
+  ],
+  "problems": [
+    {
+      "id": "ch3-q-ok",
+      "q": "Is (n, l, ml, ms) = (2, 1, 0, +1/2) allowed? Type valid or invalid.",
+      "a": "valid",
+      "why": "l = 1 is less than n = 2, and ml = 0 is inside ±1.",
+      "hints": [
+        "Check l < n, then |ml| ≤ l, then the spin."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "valid"
+      }
+    },
+    {
+      "id": "ch3-q-l",
+      "q": "Is (n, l, ml, ms) = (2, 2, 0, +1/2) allowed? Type valid or invalid.",
+      "a": "invalid",
+      "why": "l must be 0, 1, …, n − 1. Here l = n, which is not allowed.",
+      "hints": [
+        "Check l < n, then |ml| ≤ l, then the spin."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "invalid"
+      }
+    },
+    {
+      "id": "ch3-q-ml",
+      "q": "Is (n, l, ml, ms) = (3, 2, -3, -1/2) allowed? Type valid or invalid.",
+      "a": "invalid",
+      "why": "|ml| cannot be larger than l. l = 2, so ml stops at ±2.",
+      "hints": [
+        "Check l < n, then |ml| ≤ l, then the spin."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "invalid"
+      }
+    },
+    {
+      "id": "ch3-q-1s",
+      "q": "Is (n, l, ml, ms) = (1, 0, 0, -1/2) allowed? Type valid or invalid.",
+      "a": "valid",
+      "why": "This is a 1s electron. l = 0 and ml = 0.",
+      "hints": [
+        "Check l < n, then |ml| ≤ l, then the spin."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "valid"
+      }
+    },
+    {
+      "id": "ch3-q-4f",
+      "q": "Is (n, l, ml, ms) = (4, 3, 2, +1/2) allowed? Type valid or invalid.",
+      "a": "valid",
+      "why": "l = 3 is an f orbital, and ml = 2 is inside ±3.",
+      "hints": [
+        "Check l < n, then |ml| ≤ l, then the spin."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "valid"
+      }
+    },
+    {
+      "id": "ch3-q-spin",
+      "q": "Is (n, l, ml, ms) = (3, 1, 1, 0) allowed? Type valid or invalid.",
+      "a": "invalid",
+      "why": "ms is only +1/2 or −1/2. Zero is not a spin.",
+      "hints": [
+        "Check l < n, then |ml| ≤ l, then the spin."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "invalid"
+      }
+    },
+    {
+      "id": "ch3-q-ls",
+      "q": "List the allowed l values for n = 3. Type them like 0, 1, 2.",
+      "a": "0, 1, 2",
+      "why": "l runs from 0 up to n − 1. That is 3s, 3p, and 3d.",
+      "hints": [
+        "Check l < n, then |ml| ≤ l, then the spin."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "0, 1, 2",
+        "answers": [
+          "0,1,2"
+        ]
+      }
+    },
+    {
+      "id": "ch3-q-sub",
+      "q": "What subshell has n = 4 and l = 1? Type 4s, 4p, 4d, or 4f.",
+      "a": "4p",
+      "why": "l = 0, 1, 2, 3 means s, p, d, f.",
+      "hints": [
+        "Check l < n, then |ml| ≤ l, then the spin."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "4p"
+      }
+    },
+    {
+      "id": "ch3-q-orb",
+      "q": "How many orbitals are in a 4d subshell?",
+      "a": "5",
+      "why": "l = 2, so orbitals = 2(2) + 1 = 5. Ten would count electrons.",
+      "hints": [
+        "Use 2l + 1, not 2(2l + 1)."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 5,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch3-q-e",
+      "q": "Maximum electrons in n = 3?",
+      "a": "18",
+      "why": "2n² = 2(9) = 18.",
+      "hints": [
+        "2n² counts electrons. n² counts orbitals."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 18,
+        "sigFigs": 2,
+        "unit": null
+      }
+    }
+  ]
+}
