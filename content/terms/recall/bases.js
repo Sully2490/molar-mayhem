@@ -4,7 +4,7 @@ export const bases = {
   title: 'Strong bases',
   chapter: 7,
   lesson: 'ch07-cards',
-  intro: 'These hydroxides release OH− completely. Mg(OH)2 and ammonia are not on the list.',
+  intro: 'Group 1 hydroxides dissolve and give all of their OH−. Calcium, strontium, and barium hydroxides dissolve only slightly, and the part that does dissolve gives all of its OH−. Mg(OH)2 and ammonia are not on the list.',
   cards: [
     {
       id: 'list',
