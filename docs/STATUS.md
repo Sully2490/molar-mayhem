@@ -1,10 +1,11 @@
 # STATUS
 
-_Last updated: 2026-10-15. F00 is on main. This branch is the F03 grader after review._
+_Last updated: 2026-10-15. This branch adds the exam-prep screen. Questions stay in content/final/._
 
 ## State
 - Features passing: F00, F03. See `feature_list.json`.
-- Static site loads from `index.html` with no build step. Hash routes `#Map`, `#Learn`, `#Drill`, `#Prep`, and `#Cards` show placeholders. The periodic-table tray colors atomic radius, ionization energy, and electronegativity.
+- Static site loads from `index.html` with no build step. `#Prep` is an untimed practice final that loads chapter-schema problems from `content/final/index.json`. This screen does not contain the questions. `#Map`, `#Learn`, `#Drill`, and `#Cards` are still placeholders. The periodic-table tray colors atomic radius, ionization energy, and electronegativity.
+- `content/final/index.json` may be a list of problem objects, a list of file names in that folder, `{ "files": [...] }`, or `{ "problems": [...] }`. A named file may be one problem or `{ "problems": [...] }`. Each problem uses `id`, `q`, `a`, `why`, `hints`, and `check`. P1 stays `passing: false` because GF, I1, and I3 are still open.
 - `npm test` and `npm run check:content` run locally. GitHub Actions runs `npm test`.
 - `check:content` parses any `content/*.json` files and skips the coverage manifest when `MM_SOURCES` is unset. The manifest mapping itself is F01.
 - Course source material and the coverage manifest stay outside the repo, at the path set in `MM_SOURCES`.
