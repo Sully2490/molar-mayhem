@@ -1,4 +1,5 @@
 import { normalizeProgress, readProgress, writeProgress } from './progress.js';
+import { setBehindInert } from './glossary.js';
 
 let pendingNote = '';
 let pendingImport = null;
@@ -183,6 +184,7 @@ function commitImport(root, progress) {
   if (field) field.value = exportCode(progress);
   if (status) status.textContent = 'Code imported. This browser now uses that progress.';
   if (dialog) dialog.hidden = true;
+  if (dialog) setBehindInert(dialog, !dialog.hidden);
   pendingByRoot.delete(root);
   syncHooks.get(root)?.onImported?.(progress);
 }
@@ -196,6 +198,7 @@ function stageConfirm(root, progress) {
   }
   if (!dialog) return;
   dialog.hidden = false;
+  if (dialog) setBehindInert(dialog, !dialog.hidden);
   dialog.querySelector('[data-import-cancel]')?.focus();
 }
 
@@ -226,6 +229,7 @@ export function bindSync(root, hooks = {}) {
     if (cancelButton) {
       pendingByRoot.delete(root);
       if (dialog) dialog.hidden = true;
+      if (dialog) setBehindInert(dialog, !dialog.hidden);
       if (status) status.textContent = 'Kept your saved progress.';
       field?.focus();
       return;
@@ -266,6 +270,7 @@ export function bindSync(root, hooks = {}) {
     event.stopPropagation();
     pendingByRoot.delete(root);
     dialog.hidden = true;
+    if (dialog) setBehindInert(dialog, !dialog.hidden);
     const status = root.querySelector('[data-sync-status]');
     if (status) status.textContent = 'Kept your saved progress.';
     root.querySelector('#sync-code')?.focus();

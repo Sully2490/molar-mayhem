@@ -78,7 +78,7 @@ function closeDialog(root, opener) {
 }
 
 // Keep Tab inside the open dialog: make everything else on the page inert.
-function setBehindInert(dialog, on) {
+export function setBehindInert(dialog, on) {
   if (typeof document === 'undefined') return;
   let node = dialog;
   while (node && node.parentElement) {
