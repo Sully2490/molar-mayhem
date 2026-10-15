@@ -42,7 +42,7 @@
         "Script writes OCR text into $MM_SOURCES only, never into the repo",
         "Ask the owner before adding any paid OCR service"
       ],
-      "passing": false
+      "passing": true
     },
     {
       "id": "F03",
