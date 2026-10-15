@@ -1,0 +1,486 @@
+{
+  "project": "Molar Mayhem",
+  "repo": "Sully2490/molar-mayhem",
+  "features": [
+    {
+      "id": "F00",
+      "title": "Scaffold static site + test runner",
+      "category": "infra",
+      "depends_on": [],
+      "acceptance_criteria": [
+        "index.html loads with no build step on GitHub Pages",
+        "package.json with npm run dev / npm test / npm run check:content",
+        "node --test runs at least one sample test",
+        "Hash routes #Map #Learn #Drill #Prep #Cards render placeholders",
+        "Periodic-table tray with trend heat maps"
+      ],
+      "passing": false
+    },
+    {
+      "id": "F01",
+      "title": "Coverage check against external source manifest",
+      "category": "content",
+      "depends_on": [
+        "F00"
+      ],
+      "acceptance_criteria": [
+        "npm run check:content reads a manifest from $MM_SOURCES (outside the repo) listing course files with chapter and status",
+        "Fails if any in-scope manifest entry is not mapped to at least one lesson or problem set via an id in content/coverage.json",
+        "content/coverage.json holds only manifest ids and lesson ids, with no source text or file names",
+        "Skips cleanly with a warning when MM_SOURCES is unset (e.g. CI)"
+      ],
+      "passing": false
+    },
+    {
+      "id": "F02",
+      "title": "Local OCR helper for image-only source PDFs",
+      "category": "content",
+      "depends_on": [
+        "F01"
+      ],
+      "acceptance_criteria": [
+        "Script writes OCR text into $MM_SOURCES only, never into the repo",
+        "Ask the owner before adding any paid OCR service"
+      ],
+      "passing": false
+    },
+    {
+      "id": "F03",
+      "title": "Lesson + problem schema and grader core",
+      "category": "engine",
+      "depends_on": [
+        "F00"
+      ],
+      "acceptance_criteria": [
+        "content/schema.json defines lesson {id,ch,openstax_section,guide_line,steps[],worked_example,similar_problem{q,hint,answer},sources[]}",
+        "Problem generator returns {q,a,why,hints[],check}",
+        "grade() handles numeric tolerance, sci notation, sig figs, units",
+        "Unit tests for grader"
+      ],
+      "passing": false
+    },
+    {
+      "id": "C1",
+      "title": "Ch 1 content: Essential Ideas (sig figs, units, density, dimensional analysis)",
+      "category": "content",
+      "depends_on": [
+        "F01",
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "One lesson per OpenStax AF2e section 1.1-1.6 relevant to the study guides, each citing its section",
+        "Every in-scope manifest entry for this chapter is mapped in content/coverage.json",
+        "Each lesson: steps from scratch, worked example, similar problem with hint",
+        "At least 10 original practice problems per lesson with full solutions",
+        "Beginner-level, concise wording"
+      ],
+      "passing": false
+    },
+    {
+      "id": "C2",
+      "title": "Ch 2 content: Atoms, Molecules, Ions (isotopes, atomic mass, naming)",
+      "category": "content",
+      "depends_on": [
+        "F01",
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "One lesson per OpenStax AF2e section 2.1-2.7 relevant to the study guides, each citing its section",
+        "Every in-scope manifest entry for this chapter is mapped in content/coverage.json",
+        "Each lesson: steps from scratch, worked example, similar problem with hint",
+        "At least 10 original practice problems per lesson with full solutions",
+        "Beginner-level, concise wording"
+      ],
+      "passing": false
+    },
+    {
+      "id": "C3",
+      "title": "Ch 3 content: Electronic Structure & Periodic Properties",
+      "category": "content",
+      "depends_on": [
+        "F01",
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "One lesson per OpenStax AF2e section 3.1-3.5 relevant to the study guides, each citing its section",
+        "Every in-scope manifest entry for this chapter is mapped in content/coverage.json",
+        "Each lesson: steps from scratch, worked example, similar problem with hint",
+        "At least 10 original practice problems per lesson with full solutions",
+        "Beginner-level, concise wording"
+      ],
+      "passing": false
+    },
+    {
+      "id": "C4",
+      "title": "Ch 4 content: Chemical Bonding & Molecular Geometry",
+      "category": "content",
+      "depends_on": [
+        "F01",
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "One lesson per OpenStax AF2e section 4.1-4.6 relevant to the study guides, each citing its section",
+        "Every in-scope manifest entry for this chapter is mapped in content/coverage.json",
+        "Each lesson: steps from scratch, worked example, similar problem with hint",
+        "At least 10 original practice problems per lesson with full solutions",
+        "Beginner-level, concise wording"
+      ],
+      "passing": false
+    },
+    {
+      "id": "C5",
+      "title": "Ch 5 content: Advanced Bonding Theories (hybridization, MO, bond order)",
+      "category": "content",
+      "depends_on": [
+        "F01",
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "One lesson per OpenStax AF2e section 5.1-5.3 relevant to the study guides, each citing its section",
+        "Every in-scope manifest entry for this chapter is mapped in content/coverage.json",
+        "Each lesson: steps from scratch, worked example, similar problem with hint",
+        "At least 10 original practice problems per lesson with full solutions",
+        "Beginner-level, concise wording"
+      ],
+      "passing": false
+    },
+    {
+      "id": "C6",
+      "title": "Ch 6 content: Composition of Substances & Solutions (moles, % comp, empirical, molarity, dilution, ppm)",
+      "category": "content",
+      "depends_on": [
+        "F01",
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "One lesson per OpenStax AF2e section 6.1-6.4 relevant to the study guides, each citing its section",
+        "Every in-scope manifest entry for this chapter is mapped in content/coverage.json",
+        "Each lesson: steps from scratch, worked example, similar problem with hint",
+        "At least 10 original practice problems per lesson with full solutions",
+        "Beginner-level, concise wording"
+      ],
+      "passing": false
+    },
+    {
+      "id": "C7",
+      "title": "Ch 7 content: Stoichiometry of Reactions (balancing, net ionic, acid/base, redox, limiting reagent, yield, titration)",
+      "category": "content",
+      "depends_on": [
+        "F01",
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "One lesson per OpenStax AF2e section 7.1-7.5 relevant to the study guides, each citing its section",
+        "Every in-scope manifest entry for this chapter is mapped in content/coverage.json",
+        "Each lesson: steps from scratch, worked example, similar problem with hint",
+        "At least 10 original practice problems per lesson with full solutions",
+        "Beginner-level, concise wording"
+      ],
+      "passing": false
+    },
+    {
+      "id": "C8",
+      "title": "Ch 8 content: Gases (pressure units, gas laws, PV=nRT, STP)",
+      "category": "content",
+      "depends_on": [
+        "F01",
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "One lesson per OpenStax AF2e section 8.1-8.4 relevant to the study guides, each citing its section",
+        "Every in-scope manifest entry for this chapter is mapped in content/coverage.json",
+        "Each lesson: steps from scratch, worked example, similar problem with hint",
+        "At least 10 original practice problems per lesson with full solutions",
+        "Beginner-level, concise wording"
+      ],
+      "passing": false
+    },
+    {
+      "id": "C9",
+      "title": "Ch 9 content: Thermochemistry (q=mcΔT, calorimetry, ΔHf°, Hess)",
+      "category": "content",
+      "depends_on": [
+        "F01",
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "One lesson per OpenStax AF2e section 9.1-9.4 relevant to the study guides, each citing its section",
+        "Every in-scope manifest entry for this chapter is mapped in content/coverage.json",
+        "Each lesson: steps from scratch, worked example, similar problem with hint",
+        "At least 10 original practice problems per lesson with full solutions",
+        "Beginner-level, concise wording"
+      ],
+      "passing": false
+    },
+    {
+      "id": "G3",
+      "title": "Unit 3 (Ch 5, 7) topic checklist",
+      "category": "guide",
+      "depends_on": [
+        "C5",
+        "C7"
+      ],
+      "acceptance_criteria": [
+        "Unit 3 checklist of topics written in original wording, each linked to its lesson and drill",
+        "Progress ring per line (no locking)",
+        "Priority: built first"
+      ],
+      "passing": false
+    },
+    {
+      "id": "GF",
+      "title": "Cumulative final topic checklist",
+      "category": "guide",
+      "depends_on": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "acceptance_criteria": [
+        "Cumulative final checklist of topics in original wording, each linked",
+        "High-emphasis topics flagged as priority",
+        "Covers Ch 1-9"
+      ],
+      "passing": false
+    },
+    {
+      "id": "W1",
+      "title": "Drill: electron configuration (element → configuration, incl. ions, Cr/Cu)",
+      "category": "weak-spot",
+      "depends_on": [
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "Random Z≤36 plus ions",
+        "Accepts full and noble-gas notation",
+        "Hint names the first wrong subshell",
+        "Step-by-step teach screen first, then similar problem with hint",
+        "Adaptive: misses are re-queued"
+      ],
+      "passing": false
+    },
+    {
+      "id": "W2",
+      "title": "Drill: configuration → element (backward)",
+      "category": "weak-spot",
+      "depends_on": [
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "Given full, noble-gas, or orbital-box configuration, pick the element",
+        "Hint: count electrons / find the last subshell on the table",
+        "Highlights the answer on the periodic tray after answering",
+        "Step-by-step teach screen first, then similar problem with hint",
+        "Adaptive: misses are re-queued"
+      ],
+      "passing": false
+    },
+    {
+      "id": "W3",
+      "title": "Drill: quantum numbers",
+      "category": "weak-spot",
+      "depends_on": [
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "Valid/invalid sets, allowed l and ml for n, max electrons",
+        "Set of 4 numbers → element",
+        "Hint cites the rule broken (l<n, |ml|≤l)",
+        "Step-by-step teach screen first, then similar problem with hint",
+        "Adaptive: misses are re-queued"
+      ],
+      "passing": false
+    },
+    {
+      "id": "W4",
+      "title": "Drill: orbitals (s/p/d/f shapes, subshells, orbital diagrams, Hund, Pauli, unpaired e-)",
+      "category": "weak-spot",
+      "depends_on": [
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "Drag-electrons orbital box input",
+        "Instant feedback on Hund/Pauli violations",
+        "Step-by-step teach screen first, then similar problem with hint",
+        "Adaptive: misses are re-queued"
+      ],
+      "passing": false
+    },
+    {
+      "id": "W5",
+      "title": "Drill: ionic vs covalent",
+      "category": "weak-spot",
+      "depends_on": [
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "Classify compounds, incl. Mg/Ca/Na compounds and polyatomic ions",
+        "Hint: 'metal + nonmetal → ionic'; then the ΔEN check",
+        "Includes examples like MgCl2, MgO, Mg(NO3)2",
+        "Step-by-step teach screen first, then similar problem with hint",
+        "Adaptive: misses are re-queued"
+      ],
+      "passing": false
+    },
+    {
+      "id": "W6",
+      "title": "Drill: bond and molecular polarity",
+      "category": "weak-spot",
+      "depends_on": [
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "ΔEN bond classification (<0.4 nonpolar)",
+        "Molecule polarity from geometry + dipoles, with dipole visual",
+        "Hint walks: Lewis → shape → symmetric?",
+        "Step-by-step teach screen first, then similar problem with hint",
+        "Adaptive: misses are re-queued"
+      ],
+      "passing": false
+    },
+    {
+      "id": "I1",
+      "title": "Interactive: numeric entry with units and sig figs",
+      "category": "interactive",
+      "depends_on": [
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "Separate value + unit fields",
+        "Feedback distinguishes wrong number, wrong unit, wrong sig figs"
+      ],
+      "passing": false
+    },
+    {
+      "id": "I2",
+      "title": "Interactive: dimensional analysis builder",
+      "category": "interactive",
+      "depends_on": [
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "Tap-to-place conversion factors (click-select then click-destination)",
+        "Units cancel visually",
+        "Final answer checked"
+      ],
+      "passing": false
+    },
+    {
+      "id": "I3",
+      "title": "Interactive: equation balancer",
+      "category": "interactive",
+      "depends_on": [
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "Coefficient boxes per species",
+        "Live atom count table per element both sides",
+        "Supports redox and combustion; physical states"
+      ],
+      "passing": false
+    },
+    {
+      "id": "I4",
+      "title": "Interactive: Lewis structure + VSEPR",
+      "category": "interactive",
+      "depends_on": [
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "Full-screen Lewis editor with element picker, bond and lone-pair controls",
+        "Feedback on central atom, valence count, octet, formal charge",
+        "Follow-up: geometry, angle, hybridization, polarity"
+      ],
+      "passing": false
+    },
+    {
+      "id": "I5",
+      "title": "Interactive: multi-part step-wise problems",
+      "category": "interactive",
+      "depends_on": [
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "Parts unlock in order (a→b→c), later parts use earlier answer",
+        "Per-part attempts and hints"
+      ],
+      "passing": false
+    },
+    {
+      "id": "I6",
+      "title": "Interactive: MO diagram filler",
+      "category": "interactive",
+      "depends_on": [
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "Fill σ/π bonding/antibonding for 2nd-row diatomics",
+        "Computes bond order and para/diamagnetic"
+      ],
+      "passing": false
+    },
+    {
+      "id": "I7",
+      "title": "Interactive: net ionic + solubility chart",
+      "category": "interactive",
+      "depends_on": [
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "Select spectator ions to strike out",
+        "Solubility chart reference"
+      ],
+      "passing": false
+    },
+    {
+      "id": "I8",
+      "title": "Attempts, hints, and solution policy",
+      "category": "interactive",
+      "depends_on": [
+        "F03"
+      ],
+      "acceptance_criteria": [
+        "Default 3 attempts per problem",
+        "Hint after each miss, worked solution after last attempt",
+        "Progress saved to localStorage, syncable via #sync= link"
+      ],
+      "passing": false
+    },
+    {
+      "id": "P1",
+      "title": "Practice final (cumulative)",
+      "category": "assessment",
+      "depends_on": [
+        "GF",
+        "I1",
+        "I3"
+      ],
+      "acceptance_criteria": [
+        "Original cumulative items covering Ch 1-9",
+        "Timed mode, no-phone/calculator reminder",
+        "Score report by chapter, links to lessons for misses",
+        "Full worked answers"
+      ],
+      "passing": false
+    },
+    {
+      "id": "P2",
+      "title": "Study plan page",
+      "category": "guide",
+      "depends_on": [
+        "F00"
+      ],
+      "acceptance_criteria": [
+        "Exam 3 first, then final",
+        "Checkboxes saved locally"
+      ],
+      "passing": false
+    }
+  ]
+}

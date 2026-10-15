@@ -1,0 +1,9 @@
+sources/
+content/sources/
+*.docx
+*.pptx
+*.pdf
+*.doc
+node_modules/
+.env
+.DS_Store
