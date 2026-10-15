@@ -1,0 +1,218 @@
+{
+  "id": "ch03-electromagnetic",
+  "ch": 3,
+  "openstax_section": "OpenStax AF2e §3.1",
+  "guide_line": "Find frequency, wavelength, or photon energy from c = λν and E = hν.",
+  "steps": [
+    "A wave has a wavelength and a frequency. Wavelength is the distance from one peak to the next, in meters. Frequency is how many peaks pass a point in one second. Its unit is the hertz, Hz.",
+    "Light in empty space moves at c = 2.998e8 m/s. The link is c = λν. 2.998e8 means 2.998 × 10^8. Convert nanometers before you divide: 1 nm = 1e-9 m.",
+    "Light also comes in packets called photons. One photon has energy E = hν. Planck's constant is h = 6.626e-34 J·s. The same energy is E = hc/λ.",
+    "A shorter wavelength means a higher frequency and a higher photon energy."
+  ],
+  "worked_example": {
+    "q": "A photon has wavelength 650.0 nm. Use c = 2.998e8 m/s and h = 6.626e-34 J·s. What is the energy of one photon? Type the number and the unit J.",
+    "steps": [
+      "650.0 nm = 650.0e-9 m = 6.500e-7 m.",
+      "E = hc/λ = (6.626e-34)(2.998e8) / 6.500e-7."
+    ],
+    "answer": "3.056e-19 J"
+  },
+  "similar_problem": {
+    "q": "A photon has wavelength 420.0 nm. Use c = 2.998e8 m/s and h = 6.626e-34 J·s. What is the energy of one photon? Type the number and the unit J.",
+    "hint": "Change 420.0 nm into 4.200e-7 m, then divide h times c by that length.",
+    "answer": "4.730e-19 J"
+  },
+  "sources": [
+    "OpenStax AF2e §3.1"
+  ],
+  "problems": [
+    {
+      "id": "ch03-s31-p01",
+      "q": "A wave has wavelength 515.0 nm. Use c = 2.998e8 m/s. What is the frequency? Type the number and the unit Hz.",
+      "a": "5.821e14 Hz",
+      "why": "515.0 nm is 5.150e-7 m. ν = c/λ = 2.998e8 / 5.150e-7 = 5.821e14 Hz.",
+      "hints": [
+        "Change 515.0 nm into 5.150e-7 m, then divide 2.998e8 by that length."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 582135922330097,
+        "tolerance": 0.5,
+        "unit": "Hz",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s31-p02",
+      "q": "A radio wave has frequency 9.450e7 Hz. Use c = 2.998e8 m/s. What is the wavelength? Type the number and the unit m.",
+      "a": "3.172 m",
+      "why": "λ = c/ν = 2.998e8 / 9.450e7 = 3.172 m.",
+      "hints": [
+        "Divide 2.998e8 by 9.450e7. The wavelength comes out in meters."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 3.1724867724867725,
+        "tolerance": 0.5,
+        "unit": "m",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s31-p03",
+      "q": "A photon has frequency 6.500e14 Hz. Use h = 6.626e-34 J·s. What is the energy of one photon? Type the number and the unit J.",
+      "a": "4.307e-19 J",
+      "why": "E = hν = (6.626e-34)(6.500e14) = 4.307e-19 J.",
+      "hints": [
+        "Multiply h by 6.500e14. Do not convert the frequency first."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4.3068999999999997e-19,
+        "tolerance": 0.5,
+        "unit": "J",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s31-p04",
+      "q": "A photon has wavelength 375.0 nm. Use c = 2.998e8 m/s and h = 6.626e-34 J·s. What is the energy of one photon? Type the number and the unit J.",
+      "a": "5.297e-19 J",
+      "why": "375.0 nm is 3.750e-7 m. E = hc/λ = 5.297e-19 J.",
+      "hints": [
+        "Change 375.0 nm into 3.750e-7 m, then use E = hc/λ."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 5.297266133333333e-19,
+        "tolerance": 0.5,
+        "unit": "J",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s31-p05",
+      "q": "One photon carries 3.250e-19 J. Use c = 2.998e8 m/s and h = 6.626e-34 J·s. What is its wavelength? Type the number and the unit m.",
+      "a": "6.112e-7 m",
+      "why": "λ = hc/E = (6.626e-34)(2.998e8) / 3.250e-19 = 6.112e-7 m.",
+      "hints": [
+        "Rearrange E = hc/λ to λ = hc/E, and use 3.250e-19 J as E."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 6.112230153846153e-7,
+        "tolerance": 0.5,
+        "unit": "m",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s31-p06",
+      "q": "One photon carries 4.800e-19 J. Use h = 6.626e-34 J·s. What is its frequency? Type the number and the unit Hz.",
+      "a": "7.244e14 Hz",
+      "why": "ν = E/h = 4.800e-19 / 6.626e-34 = 7.244e14 Hz.",
+      "hints": [
+        "Divide 4.800e-19 by h. Frequency is energy divided by Planck's constant."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 724418955629339,
+        "tolerance": 0.5,
+        "unit": "Hz",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s31-p07",
+      "q": "A flash delivers 2.500e-16 J. Each photon in the flash carries 5.000e-19 J. How many photons are in the flash? Type the number only, with four significant figures, and no unit.",
+      "a": "500.0",
+      "why": "Count = 2.500e-16 / 5.000e-19 = 500.0.",
+      "hints": [
+        "Divide the total energy 2.500e-16 J by the energy of one photon, 5.000e-19 J."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 500,
+        "tolerance": 0.5,
+        "unit": null,
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s31-p08",
+      "q": "An infrared wave has wavelength 1.250e-6 m. Use c = 2.998e8 m/s. What is the frequency? Type the number and the unit Hz.",
+      "a": "2.398e14 Hz",
+      "why": "ν = c/λ = 2.998e8 / 1.250e-6 = 2.398e14 Hz.",
+      "hints": [
+        "The wavelength is already in meters. Divide 2.998e8 by 1.250e-6."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 239839999999999.97,
+        "tolerance": 0.5,
+        "unit": "Hz",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s31-p09",
+      "q": "Find the energy of 1.000 mol of photons of wavelength 475.0 nm, in kJ/mol. Use c = 2.998e8 m/s, h = 6.626e-34 J·s, and 6.022e23 mol−1. Type the number and the unit kJ/mol.",
+      "a": "251.8 kJ/mol",
+      "why": "E = hc/λ for 475.0 nm, times 6.022e23, divided by 1000 = 251.8 kJ/mol.",
+      "hints": [
+        "Find one photon's energy from 475.0 nm, multiply by 6.022e23, then divide by 1000 to get kJ/mol."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 251.84318411789474,
+        "tolerance": 0.5,
+        "unit": "kJ/mol",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s31-p10",
+      "q": "A signal has frequency 2.800e9 Hz. Use c = 2.998e8 m/s. What is the wavelength? Type the number and the unit m.",
+      "a": "0.1071 m",
+      "why": "λ = c/ν = 2.998e8 / 2.800e9 = 0.1071 m.",
+      "hints": [
+        "Divide 2.998e8 by 2.800e9. This wavelength is a fraction of a meter."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.10707142857142857,
+        "tolerance": 0.5,
+        "unit": "m",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s31-p11",
+      "q": "Which photon has the higher energy, a 620 nm photon or a 410 nm photon? Type 620 nm or 410 nm.",
+      "a": "410 nm",
+      "why": "Energy goes up as wavelength goes down. 410 nm is the shorter wavelength, so that photon has more energy.",
+      "hints": [
+        "The shorter wavelength carries more energy per photon. Compare 410 with 620."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "410 nm",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s31-p12",
+      "q": "Put these in order of increasing photon energy: red light, ultraviolet, microwave. Separate the three names with < and put spaces around the sign.",
+      "a": "microwave < red light < ultraviolet",
+      "why": "Microwave has the longest wavelength, then red light, then ultraviolet. Energy increases as wavelength decreases, so the order is microwave < red light < ultraviolet.",
+      "hints": [
+        "List the longest wavelength first. Microwave is longer than red light, and red light is longer than ultraviolet."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "microwave < red light < ultraviolet",
+        "case": "insensitive"
+      }
+    }
+  ]
+}

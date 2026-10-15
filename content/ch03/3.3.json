@@ -1,0 +1,336 @@
+{
+  "id": "ch03-quantum",
+  "ch": 3,
+  "openstax_section": "OpenStax AF2e §3.3",
+  "guide_line": "Check the four quantum numbers, then count the orbitals and electrons in a shell.",
+  "steps": [
+    "A moving electron has a wavelength λ = h/(mv). Put the mass in kilograms. Use h = 6.626e-34 J·s.",
+    "Four quantum numbers label an electron. n is the shell: 1, 2, 3, and so on.",
+    "l is the subshell shape. l runs from 0 up to n − 1. The letters are s for 0, p for 1, d for 2, and f for 3.",
+    "ml picks one orbital. It runs from −l to +l, so an s subshell has 1 orbital, p has 3, d has 5, and f has 7. ms is the spin, +1/2 or −1/2. One orbital holds two electrons only if their spins are opposite.",
+    "A set is allowed only when every rule holds. Shell n has n^2 orbitals and at most 2n^2 electrons."
+  ],
+  "worked_example": {
+    "q": "Is this set allowed for an electron: n = 3, l = 1, ml = 0, ms = +1/2? Type allowed or not allowed.",
+    "steps": [
+      "l = 1 is allowed because it is between 0 and n − 1 = 2.",
+      "ml = 0 is between −1 and +1, and the spin is +1/2."
+    ],
+    "answer": "allowed"
+  },
+  "similar_problem": {
+    "q": "Is this set allowed for an electron: n = 2, l = 2, ml = 0, ms = +1/2? Type allowed or not allowed.",
+    "hint": "For n = 2, l can be 0 or 1 only. Compare the given l with n − 1.",
+    "answer": "not allowed"
+  },
+  "sources": [
+    "OpenStax AF2e §3.3"
+  ],
+  "problems": [
+    {
+      "id": "ch03-s33-p01",
+      "q": "An electron moves at 1.85e6 m/s. Use m = 9.109e-31 kg and h = 6.626e-34 J·s. What is its de Broglie wavelength? Type the number and the unit m.",
+      "a": "3.932e-10 m",
+      "why": "λ = h/(mv) = 6.626e-34 / ((9.109e-31)(1.85e6)) = 3.932e-10 m.",
+      "hints": [
+        "Divide h by the product of 9.109e-31 kg and 1.85e6 m/s."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 3.931959185005623e-10,
+        "tolerance": 0.5,
+        "unit": "m",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s33-p02",
+      "q": "An electron moves at 4.20e5 m/s. Use m = 9.109e-31 kg and h = 6.626e-34 J·s. What is its de Broglie wavelength? Type the number and the unit m.",
+      "a": "1.732e-9 m",
+      "why": "λ = h/(mv) = 6.626e-34 / ((9.109e-31)(4.20e5)) = 1.732e-9 m.",
+      "hints": [
+        "This speed is 4.20e5 m/s, slower than 1.85e6, so the wavelength is longer. Divide h by m times this speed."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.7319344029191435e-9,
+        "tolerance": 0.5,
+        "unit": "m",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s33-p03",
+      "q": "One mole of iron atoms has mass 55.845 g. Use Avogadro's number 6.022e23 mol−1. What is the mass of one iron atom? Type the number and the unit g.",
+      "a": "9.273e-23 g",
+      "why": "Mass of one atom = 55.845 / 6.022e23 = 9.273e-23 g.",
+      "hints": [
+        "Divide 55.845 g by 6.022e23. Leave the answer in grams."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 9.273497177017601e-23,
+        "tolerance": 0.5,
+        "unit": "g",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s33-p04",
+      "q": "One iron atom (55.845 g/mol, Avogadro's number 6.022e23 mol−1) moves at 250.0 m/s. Use h = 6.626e-34 J·s. What is its de Broglie wavelength? Type the number and the unit m.",
+      "a": "2.858e-11 m",
+      "why": "Mass = 55.845 / 6.022e23 g = that value / 1000 kg. λ = h/(mv) = 2.858e-11 m.",
+      "hints": [
+        "Convert the atom's mass from grams to kilograms before you multiply by 250.0 m/s."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2.8580372101351957e-11,
+        "tolerance": 0.5,
+        "unit": "m",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s33-p05",
+      "q": "One mole of helium atoms has mass 4.0026 g. Use Avogadro's number 6.022e23 mol−1. What is the mass of one helium atom? Type the number and the unit g.",
+      "a": "6.647e-24 g",
+      "why": "Mass of one atom = 4.0026 / 6.022e23 = 6.647e-24 g.",
+      "hints": [
+        "Divide 4.0026 g by 6.022e23 to get the mass of a single He atom."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 6.646629026901362e-24,
+        "tolerance": 0.5,
+        "unit": "g",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s33-p06",
+      "q": "One helium atom (4.0026 g/mol, Avogadro's number 6.022e23 mol−1) moves at 425.0 m/s. Use h = 6.626e-34 J·s. What is its de Broglie wavelength? Type the number and the unit m.",
+      "a": "2.346e-10 m",
+      "why": "Mass in kg = 4.0026 / 6.022e23 / 1000. λ = h/(mv) at 425.0 m/s = 2.346e-10 m.",
+      "hints": [
+        "Use 4.0026 g/mol, change one atom to kilograms, then divide h by mass times 425.0."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2.345638393867515e-10,
+        "tolerance": 0.5,
+        "unit": "m",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s33-p07",
+      "q": "Is this set allowed: n = 3, l = 2, ml = 2, ms = +1/2? Type allowed or not allowed.",
+      "a": "allowed",
+      "why": "n = 3 allows l from 0 to 2. l = 2 allows ml from −2 to +2. ml = 2 fits, and ms = +1/2 is a real spin. The set is allowed.",
+      "hints": [
+        "For n = 3, l = 2 is the top allowed value. Then check that ml = 2 is inside −2 to +2."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "allowed",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p08",
+      "q": "Is this set allowed: n = 2, l = 2, ml = 0, ms = +1/2? Type allowed or not allowed.",
+      "a": "not allowed",
+      "why": "For n = 2, l must be from 0 to 1. l = 2 is too large, so the set is not allowed.",
+      "hints": [
+        "n = 2 stops at l = 1. An l of 2 does not fit in that shell."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "not allowed",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p09",
+      "q": "Is this set allowed: n = 3, l = 1, ml = -2, ms = +1/2? Type allowed or not allowed.",
+      "a": "not allowed",
+      "why": "l = 1 only allows ml from −1 to +1. ml = -2 is outside that range, so the set is not allowed.",
+      "hints": [
+        "l = 1 only allows ml = −1, 0, or +1. ml = −2 is past that range."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "not allowed",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p10",
+      "q": "What is the subshell label for n = 4 and l = 2? Type the label, like 2p.",
+      "a": "4d",
+      "why": "The subshell letter for l = 2 is d, so n = 4 gives the label 4d.",
+      "hints": [
+        "l = 2 uses the letter d. Put the n value in front of that letter."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "4d",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p11",
+      "q": "What is the subshell label for n = 3 and l = 1? Type the label, like 2p.",
+      "a": "3p",
+      "why": "l = 1 is p, and the shell is n = 3, so the label is 3p.",
+      "hints": [
+        "l = 1 uses the letter p. This electron is in shell 3."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "3p",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p12",
+      "q": "What letter names the subshell with l = 2? Type s, p, d, or f.",
+      "a": "d",
+      "why": "The letters s, p, d, and f match l = 0, 1, 2, and 3, so l = 2 is d.",
+      "hints": [
+        "Count from s at l = 0. The third letter is the one for l = 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "d",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p13",
+      "q": "What is the l value of an f subshell? Type the number only.",
+      "a": "3",
+      "why": "The letters run s, p, d, f as l runs 0, 1, 2, 3. An f subshell has l = 3.",
+      "hints": [
+        "f is the fourth letter in s, p, d, f. l starts at 0."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 3,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s33-p14",
+      "q": "How many orbitals are in the n = 4 shell? Type the number only.",
+      "a": "16",
+      "why": "A shell holds n^2 orbitals. 4^2 = 16.",
+      "hints": [
+        "Square the shell number. Do not stop at the s, p, and d count."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 16,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s33-p15",
+      "q": "What is the most electrons the n = 4 shell can hold? Type the number only.",
+      "a": "32",
+      "why": "Each orbital holds 2 electrons, and the shell has n^2 orbitals. 2 × 16 = 32.",
+      "hints": [
+        "Use 2n^2. For n = 4 that is twice 16."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 32,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s33-p16",
+      "q": "How many orbitals are in the n = 3 shell? Type the number only.",
+      "a": "9",
+      "why": "A shell holds n squared orbitals. For n = 3 that is 9: one 3s, three 3p, and five 3d.",
+      "hints": [
+        "Square 3. Include the d orbitals, not only s and p."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 9,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s33-p17",
+      "q": "How many electrons can a d subshell hold? Type the number only.",
+      "a": "10",
+      "why": "A d subshell has 5 orbitals, and each holds 2 electrons. 5 × 2 = 10.",
+      "hints": [
+        "Count the ml values from −2 to +2, then put two electrons in each."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 10,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s33-p18",
+      "q": "How many electrons can one orbital hold? Type the number only.",
+      "a": "2",
+      "why": "One orbital is one set of n, l, and ml. The two allowed spins fill it with 2 electrons.",
+      "hints": [
+        "Only ms = +1/2 and ms = −1/2 fit in the same orbital."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s33-p19",
+      "q": "List every ml value for a p subshell. Separate the values with commas, and use a plain hyphen for a negative number.",
+      "a": "-1, 0, 1",
+      "why": "A p subshell has l = 1, so ml runs from −1 to +1: −1, 0, and 1.",
+      "hints": [
+        "l for p is 1. Write every integer from −l to +l."
+      ],
+      "check": {
+        "kind": "set",
+        "answers": [
+          "-1",
+          "0",
+          "1"
+        ],
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p20",
+      "q": "Give one allowed set n, l, ml, ms for an electron in a 3p orbital with ml = 0 and spin up. Type the four values separated by commas, and write spin up as +1/2.",
+      "a": "3, 1, 0, +1/2",
+      "why": "3p means n = 3 and l = 1. ml is given as 0, and spin up is ms = +1/2. One allowed set is 3, 1, 0, +1/2.",
+      "hints": [
+        "3p fixes n and l. Keep ml at 0 and write the positive spin as +1/2."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "3, 1, 0, +1/2",
+        "case": "sensitive",
+        "answers": [
+          "3,1,0,+1/2"
+        ]
+      }
+    }
+  ]
+}
