@@ -1,0 +1,117 @@
+.mm-exam {
+  max-width: 46rem;
+}
+
+.mm-exam .mm-problem {
+  margin: 0 0 1.25rem;
+  padding: 0.9rem 1rem;
+  background: var(--card, #fffaf2);
+  border: 1px solid var(--line, #ddd4c3);
+  border-radius: 12px;
+}
+
+.mm-exam .mm-problem legend {
+  font-weight: 700;
+  padding: 0 0.25rem;
+}
+
+.mm-answer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.6rem 0;
+}
+
+.mm-answer-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 8rem;
+  flex: 1;
+}
+
+.mm-exam .answer-label {
+  font-weight: 650;
+}
+
+.mm-exam input {
+  font: inherit;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--line, #ddd4c3);
+  border-radius: 8px;
+  background: white;
+  color: var(--ink, #1c2430);
+}
+
+.mm-exam input:focus-visible,
+.mm-exam button:focus-visible,
+.mm-exam a:focus-visible {
+  outline: 3px solid var(--focus, #9a3412);
+  outline-offset: 2px;
+}
+
+.mm-exam button {
+  font: inherit;
+  margin-top: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 0;
+  background: var(--teal, #0f5c56);
+  color: white;
+  cursor: pointer;
+}
+
+.mm-exam .feedback {
+  min-height: 1.4rem;
+}
+
+.mm-setup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin-top: 0.5rem;
+}
+
+.mm-check,
+.mm-minutes {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.mm-minutes input {
+  width: 5rem;
+}
+
+.mm-exam [role="timer"] {
+  font-variant-numeric: tabular-nums;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--teal-deep, #0a3d39);
+}
+
+.mm-exam [data-score] {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0.2rem 0 0.8rem;
+}
+
+.mm-exam [data-weak-sections] {
+  padding-left: 1.1rem;
+}
+
+.mm-exam [data-weak-sections] li {
+  margin: 0.45rem 0;
+}
+
+.mm-exam [data-weak-sections] a,
+.mm-exam .lesson-list a {
+  color: var(--teal, #0f5c56);
+}
+
+@media (max-width: 640px) {
+  .mm-answer-row {
+    flex-direction: column;
+  }
+}
