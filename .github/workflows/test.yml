@@ -20,3 +20,12 @@ jobs:
           node-version: 22
       - name: Run tests
         run: npm test
+      # pull_request only. Fetch origin/<base> deep enough for a merge base, then
+      # git diff --name-only origin/<base>...HEAD. Fail with
+      # "Bump DEPLOY_SALT in sw.js" when a served or cached file changed and the
+      # DEPLOY_SALT line did not.
+      - name: Require a DEPLOY_SALT bump when cached files change
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: node tests/deploy-salt.test.js --check
