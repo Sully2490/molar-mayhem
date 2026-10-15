@@ -12,6 +12,7 @@ import { openLesson, readProgress, writeProgress } from './progress.js';
 import { drillTargetFromHash, lessonIdFromHash, renderRoute, routeFromHash, routeTitle } from './routes.js';
 import { bindGuided, renderGuided } from './steps/index.js';
 import { applySyncHash, rememberNote, rememberPending } from './sync.js';
+import { bindCompactNav } from './nav.js';
 import {
   allFlashcards,
   bindRecall,
@@ -29,6 +30,7 @@ import { templateById, templates, templatesForSection } from '../content/templat
 
 const view = document.querySelector('#view');
 const navLinks = [...document.querySelectorAll('[data-nav]')];
+const compactNav = bindCompactNav(document);
 const tray = document.querySelector('#tray');
 const backdrop = document.querySelector('#tray-backdrop');
 const trayBody = document.querySelector('#tray-body');
@@ -59,6 +61,7 @@ function finish(id) {
     if (link.getAttribute('data-nav') === id) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
   }
+  compactNav.syncRoute(id);
 }
 
 function cssAttr(value) {
