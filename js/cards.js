@@ -1,16 +1,21 @@
 import { showToast, toastHtml } from './celebrate.js';
 import { readProgress, reviewCard, writeProgress } from './progress.js';
 
-export const DECK = [
-  { id: 'card-protons', front: 'What does the atomic number count?', back: 'The protons in one atom of that element.' },
-  { id: 'card-ion', front: 'How does an atom become a positive ion?', back: 'It loses one or more electrons.' },
-  { id: 'card-covalent', front: 'What is a covalent bond?', back: 'A bond where atoms share electrons.' },
-  { id: 'card-ionic', front: 'What holds an ionic compound together?', back: 'The pull between a positive ion and a negative ion.' },
-  { id: 'card-mole', front: 'How many particles are in one mole?', back: '6.022 × 10²³ particles.' },
-  { id: 'card-ideal', front: 'What does the ideal gas law connect?', back: 'Pressure, volume, moles, and temperature: PV = nRT.' },
-  { id: 'card-neutral', front: 'What is the pH of neutral water at 25 °C?', back: '7.' },
-  { id: 'card-enthalpy', front: 'What is enthalpy?', back: 'Heat exchanged at constant pressure.' },
-];
+const PH_CARD = /\bpH\b/i;
+
+export function cardsFromLessons(lessons) {
+  const cards = [];
+  for (const lesson of lessons ?? []) {
+    const similar = lesson?.similar_problem;
+    if (!similar || typeof similar.q !== 'string' || typeof similar.answer !== 'string') continue;
+    const front = similar.q.trim();
+    const back = similar.answer.trim();
+    if (!front || !back) continue;
+    if (PH_CARD.test(front) || PH_CARD.test(back) || PH_CARD.test(lesson.guide_line ?? '')) continue;
+    cards.push({ id: `card-${lesson.id}`, front, back });
+  }
+  return cards;
+}
 
 export function cardAction(key) {
   if (key === 'ArrowRight') return 'next';
@@ -27,11 +32,13 @@ function escapeHtml(text) {
     .replaceAll('"', '&quot;');
 }
 
-export function renderCards(index = 0, face = 'front') {
-  const card = DECK[index] ?? DECK[0];
-  const text = face === 'back' ? card.back : card.front;
+export function renderCards(deck = [], index = 0, face = 'front') {
+  const card = deck[index] ?? deck[0];
+  const text = !card
+    ? 'No cards are in the chapter folders yet.'
+    : (face === 'back' ? card.back : card.front);
   return `
-    <section class="page" data-route="Cards" data-card-index="${index}" data-card-face="${face}">
+    <section class="page" data-route="Cards" data-card-index="${card ? index : 0}" data-card-face="${face}">
       <h1>Cards</h1>
       <p>Flip a card, then move on. Arrow keys work when a card is focused.</p>
       <article class="study-card" tabindex="0" data-card aria-live="polite">
@@ -50,15 +57,16 @@ export function renderCards(index = 0, face = 'front') {
 
 const bound = new WeakSet();
 
-export function bindCards(root, storage) {
+export function bindCards(root, deck = [], storage) {
   if (bound.has(root)) return;
   bound.add(root);
+  const cards = deck;
   let index = 0;
   let face = 'front';
 
   function paint() {
     const page = root.querySelector('[data-route="Cards"]');
-    const card = DECK[index];
+    const card = cards[index];
     if (!page || !card) return;
     page.dataset.cardIndex = String(index);
     page.dataset.cardFace = face;
@@ -68,11 +76,11 @@ export function bindCards(root, storage) {
 
   function run(action) {
     const page = root.querySelector('[data-route="Cards"]');
-    if (!page) return;
+    if (!page || cards.length === 0) return;
     if (action === 'flip') {
       face = face === 'front' ? 'back' : 'front';
       if (face === 'back') {
-        const result = reviewCard(readProgress(storage), DECK[index].id);
+        const result = reviewCard(readProgress(storage), cards[index].id);
         writeProgress(result.progress, storage);
         if (result.awarded) {
           const status = page.querySelector('[data-card-status]');
@@ -81,10 +89,10 @@ export function bindCards(root, storage) {
         }
       }
     } else if (action === 'next') {
-      index = (index + 1) % DECK.length;
+      index = (index + 1) % cards.length;
       face = 'front';
     } else if (action === 'prev') {
-      index = (index - 1 + DECK.length) % DECK.length;
+      index = (index - 1 + cards.length) % cards.length;
       face = 'front';
     }
     paint();
