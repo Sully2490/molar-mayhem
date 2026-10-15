@@ -79,5 +79,5 @@ test('check:content command exits 0 when MM_SOURCES is unset', () => {
 test('F00 and F03 are marked passing', () => {
   const list = JSON.parse(read('feature_list.json'));
   const passing = new Set(list.features.filter((feature) => feature.passing).map((feature) => feature.id));
-  assert.deepEqual([...passing].sort(), ['F00', 'F03']);
+  assert.deepEqual([...passing].sort(), ['F00', 'F03', 'I1']);
 });

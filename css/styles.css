@@ -166,9 +166,11 @@ h1 { font-size: clamp(2rem, 5vw, 2.7rem); margin: 0 0 0.6rem; }
 
 .lesson-list a { color: var(--teal-deep); font-weight: 700; }
 
-.answer-label { display: block; font-weight: 700; margin-top: 0.6rem; }
+.answer-field { display: flex; flex-direction: column; gap: 0.25rem; }
 
-.answer-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.answer-label { display: block; font-weight: 700; }
+
+.answer-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: end; }
 
 .answer-row input {
   font: inherit;
@@ -180,10 +182,12 @@ h1 { font-size: clamp(2rem, 5vw, 2.7rem); margin: 0 0 0.6rem; }
   background: white;
 }
 
-.feedback { min-height: 1.4rem; margin: 0.4rem 0 0; }
+.feedback { min-height: 1.4rem; margin: 0.4rem 0 0; font-weight: 700; }
 
-.feedback[data-status="correct"] { color: var(--teal-deep); font-weight: 700; }
+.feedback[data-status="correct"] { color: var(--teal-deep); }
 
+.feedback[data-status="sig"],
+.feedback[data-status="unit"],
 .feedback[data-status="miss"],
 .feedback[data-status="near"],
 .feedback[data-status="solution"] { color: var(--focus); }

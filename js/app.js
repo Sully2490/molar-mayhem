@@ -1,6 +1,7 @@
 import { bindLearn, loadLessons, renderLearn } from './learn.js';
 import { lessonIdFromHash, renderRoute, routeFromHash, routeTitle } from './routes.js';
 import { renderTable } from './periodic.js';
+import { bindUnitEntry, renderDrill } from './unit-entry.js';
 
 const view = document.querySelector('#view');
 const navLinks = [...document.querySelectorAll('[data-nav]')];
@@ -22,6 +23,10 @@ async function paintRoute() {
     if (generation !== paintGeneration) return;
     view.innerHTML = renderLearn(lessons, lessonIdFromHash(location.hash));
     bindLearn(view, lessons);
+  } else if (id === 'Drill') {
+    if (generation !== paintGeneration) return;
+    view.innerHTML = renderDrill();
+    bindUnitEntry(view);
   } else {
     view.innerHTML = renderRoute(id);
   }
