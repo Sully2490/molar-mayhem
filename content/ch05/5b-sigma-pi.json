@@ -30,8 +30,8 @@
       "a": "1 sigma, 0 pi",
       "why": "H2 has one single bond. That is 1 sigma and 0 pi.",
       "hints": [
-        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
-        "A single bond is only a sigma bond."
+        "H2 has one single bond, so count only a sigma bond.",
+        "That one H–H bond is 1 sigma and 0 pi."
       ],
       "check": {
         "kind": "exact",
@@ -45,8 +45,8 @@
       "a": "1 sigma, 1 pi",
       "why": "O2 has one double bond. A double bond is 1 sigma and 1 pi.",
       "hints": [
-        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
-        "Count one sigma for the bond, then one pi for the second overlap."
+        "O2 has one double bond: 1 sigma plus 1 pi.",
+        "Count the second overlap of O=O as the pi bond."
       ],
       "check": {
         "kind": "exact",
@@ -60,8 +60,8 @@
       "a": "1 sigma, 2 pi",
       "why": "N2 has one triple bond. A triple bond is 1 sigma and 2 pi.",
       "hints": [
-        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
-        "A triple bond has one sigma and two pi bonds."
+        "N2 has one triple bond: 1 sigma plus 2 pi.",
+        "The two extra overlaps in N≡N are both pi bonds."
       ],
       "check": {
         "kind": "exact",
@@ -75,8 +75,8 @@
       "a": "2 sigma, 2 pi",
       "why": "CO2 is O=C=O, two double bonds. Each double bond is 1 sigma and 1 pi, so the molecule has 2 sigma and 2 pi.",
       "hints": [
-        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
-        "CO2 has two double bonds. Add them."
+        "Each C=O in CO2 is 1 sigma and 1 pi. Add both double bonds.",
+        "Two double bonds give CO2 two sigma bonds and two pi bonds."
       ],
       "check": {
         "kind": "exact",
@@ -90,8 +90,8 @@
       "a": "5 sigma, 1 pi",
       "why": "C2H4 has four C–H single bonds and one C=C double bond. The double bond adds 1 sigma and 1 pi, so the total is 5 sigma and 1 pi.",
       "hints": [
-        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
-        "Count four C–H sigma bonds plus the C=C bond."
+        "C2H4 has four C–H single bonds plus one C=C. Only the double bond adds a pi.",
+        "Four C–H sigma bonds plus one C=C sigma make 5 sigma and 1 pi."
       ],
       "check": {
         "kind": "exact",
@@ -105,8 +105,8 @@
       "a": "3 sigma, 2 pi",
       "why": "C2H2 has two C–H single bonds and one C≡C triple bond. The triple bond is 1 sigma and 2 pi, so the total is 3 sigma and 2 pi.",
       "hints": [
-        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
-        "A triple bond is 1 sigma and 2 pi. Add the two C–H sigma bonds."
+        "C2H2 has two C–H single bonds and one C≡C triple bond.",
+        "The triple bond is 1 sigma and 2 pi. Add the two C–H sigma bonds."
       ],
       "check": {
         "kind": "exact",
@@ -120,8 +120,8 @@
       "a": "2 sigma, 2 pi",
       "why": "HCN is H–C≡N. The C–H bond is 1 sigma. The triple bond is 1 sigma and 2 pi. The total is 2 sigma and 2 pi.",
       "hints": [
-        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
-        "A triple bond is 1 sigma and 2 pi. The C–H bond is another sigma."
+        "HCN has one C–H single bond and one C≡N triple bond.",
+        "The C–H is one sigma. The triple bond adds one more sigma and two pi bonds."
       ],
       "check": {
         "kind": "exact",
@@ -135,8 +135,8 @@
       "a": "3 sigma, 1 pi",
       "why": "CH2O has two C–H single bonds and one C=O double bond. That is 3 sigma and 1 pi.",
       "hints": [
-        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
-        "Count two C–H sigma bonds plus the C=O bond."
+        "CH2O has two C–H single bonds and one C=O double bond.",
+        "The C=O adds one sigma and one pi on top of the two C–H sigma bonds."
       ],
       "check": {
         "kind": "exact",
@@ -150,8 +150,8 @@
       "a": "4 sigma, 0 pi",
       "why": "CH4 has four C–H single bonds and no multiple bond. That is 4 sigma and 0 pi.",
       "hints": [
-        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
-        "Each single bond is one sigma."
+        "CH4 has four C–H single bonds and no multiple bond.",
+        "Each C–H bond is one sigma, so CH4 has 4 sigma and 0 pi."
       ],
       "check": {
         "kind": "exact",
@@ -165,8 +165,8 @@
       "a": "7 sigma, 0 pi",
       "why": "C2H6 has six C–H single bonds and one C–C single bond. That is 7 sigma and 0 pi.",
       "hints": [
-        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
-        "Ethane has only single bonds. Count all seven."
+        "Ethane has six C–H single bonds and one C–C single bond.",
+        "All seven bonds in C2H6 are sigma bonds, so there is no pi bond."
       ],
       "check": {
         "kind": "exact",
@@ -180,8 +180,8 @@
       "a": "2 sigma, 0 pi",
       "why": "H2O has two O–H single bonds. Lone pairs are not bonds, so the total is 2 sigma and 0 pi.",
       "hints": [
-        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
-        "Lone pairs are not sigma or pi bonds."
+        "Water has two O–H single bonds. Lone pairs are not bonds.",
+        "Those two O–H bonds are both sigma, so H2O has 0 pi."
       ],
       "check": {
         "kind": "exact",

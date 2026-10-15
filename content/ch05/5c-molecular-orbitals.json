@@ -30,8 +30,8 @@
       "a": "1",
       "why": "H2 has 2 valence electrons in the bonding sigma orbital and 0 in the antibonding orbital. Bond order = 1/2 (2 − 0) = 1.",
       "hints": [
-        "Use valence electrons only, and include the charge.",
-        "Bond order = 1/2 (bonding electrons − antibonding electrons)."
+        "H2 has 2 valence electrons, both in the bonding sigma orbital.",
+        "Bond order of H2 is 1/2 (2 bonding − 0 antibonding)."
       ],
       "check": { "kind": "numeric", "value": 1, "unit": null }
     },
@@ -41,8 +41,8 @@
       "a": "diamagnetic",
       "why": "Both electrons in H2 are paired in the bonding orbital. Paired electrons make it diamagnetic.",
       "hints": [
-        "Paramagnetic means at least one electron is unpaired.",
-        "H2 has one filled bonding orbital."
+        "Both electrons in H2 sit together in one bonding orbital.",
+        "A filled bonding orbital in H2 means every electron is paired."
       ],
       "check": { "kind": "exact", "text": "diamagnetic", "case": "insensitive" }
     },
@@ -52,8 +52,8 @@
       "a": "0.5",
       "why": "H2+ has 1 valence electron in the bonding orbital and 0 in the antibonding orbital. Bond order = 1/2 (1 − 0) = 0.5.",
       "hints": [
-        "Use valence electrons only, and include the charge.",
-        "H2+ has one electron, not two."
+        "H2+ has one valence electron, not two.",
+        "That one electron stays in the bonding orbital, so the bond order is 1/2."
       ],
       "check": { "kind": "numeric", "value": 0.5, "unit": null }
     },
@@ -63,8 +63,8 @@
       "a": "paramagnetic",
       "why": "The one electron in H2+ is unpaired. An unpaired electron makes it paramagnetic.",
       "hints": [
-        "Paramagnetic means at least one electron is unpaired.",
-        "One electron cannot be paired."
+        "H2+ has a single electron in the bonding orbital.",
+        "One electron in H2+ cannot form a pair."
       ],
       "check": { "kind": "exact", "text": "paramagnetic", "case": "insensitive" }
     },
@@ -74,8 +74,8 @@
       "a": "0",
       "why": "He2 has 2 bonding electrons and 2 antibonding electrons. Bond order = 1/2 (2 − 2) = 0, so He2 is not a stable molecule.",
       "hints": [
-        "Use valence electrons only, and include the charge.",
-        "Antibonding electrons cancel bonding electrons."
+        "He2 has 4 valence electrons: 2 bonding and 2 antibonding.",
+        "Those counts cancel, so the bond order of He2 is 0."
       ],
       "check": { "kind": "numeric", "value": 0, "unit": null }
     },
@@ -85,8 +85,8 @@
       "a": "diamagnetic",
       "why": "The 4 electrons of He2 fill the bonding and antibonding sigma orbitals in pairs. All electrons are paired, so it is diamagnetic.",
       "hints": [
-        "Paramagnetic means at least one electron is unpaired.",
-        "A filled bonding orbital and a filled antibonding orbital have no unpaired electron."
+        "He2 fills both the bonding and antibonding sigma orbitals.",
+        "Each of those orbitals in He2 holds a pair, so none is unpaired."
       ],
       "check": { "kind": "exact", "text": "diamagnetic", "case": "insensitive" }
     },
@@ -96,8 +96,8 @@
       "a": "1",
       "why": "Li2 has 2 valence electrons in the bonding sigma 2s orbital and 0 in the antibonding orbital. Bond order = 1/2 (2 − 0) = 1.",
       "hints": [
-        "Use valence electrons only, and include the charge.",
-        "Each Li atom contributes 1 valence electron."
+        "Each Li atom contributes 1 valence electron, so Li2 has 2.",
+        "Both electrons of Li2 go into the bonding sigma 2s orbital."
       ],
       "check": { "kind": "numeric", "value": 1, "unit": null }
     },
@@ -107,8 +107,8 @@
       "a": "diamagnetic",
       "why": "The 2 valence electrons of Li2 are paired in sigma 2s. Paired electrons make it diamagnetic.",
       "hints": [
-        "Paramagnetic means at least one electron is unpaired.",
-        "Two electrons in one sigma orbital are paired."
+        "Li2 puts its two valence electrons in one sigma orbital.",
+        "Those two electrons in Li2 are paired."
       ],
       "check": { "kind": "exact", "text": "diamagnetic", "case": "insensitive" }
     },
@@ -118,8 +118,8 @@
       "a": "1",
       "why": "B2 has 6 valence electrons: 4 bonding and 2 antibonding. Bond order = 1/2 (4 − 2) = 1.",
       "hints": [
-        "Use valence electrons only, and include the charge.",
-        "For B2 the pi 2p orbitals fill before sigma 2p."
+        "B2 has 6 valence electrons, and pi 2p fills before sigma 2p.",
+        "After the sigma 2s pair and the sigma 2s* pair, two electrons remain in the pi 2p set."
       ],
       "check": { "kind": "numeric", "value": 1, "unit": null }
     },
@@ -129,8 +129,8 @@
       "a": "paramagnetic",
       "why": "The last 2 valence electrons of B2 sit alone in the two pi 2p orbitals. Unpaired electrons make B2 paramagnetic.",
       "hints": [
-        "Paramagnetic means at least one electron is unpaired.",
-        "For B2, the pi 2p set gets one electron in each orbital."
+        "B2 puts one electron in each pi 2p orbital.",
+        "Those two electrons in B2 stay unpaired."
       ],
       "check": { "kind": "exact", "text": "paramagnetic", "case": "insensitive" }
     },
@@ -140,8 +140,8 @@
       "a": "2",
       "why": "C2 has 8 valence electrons: 6 bonding and 2 antibonding. Bond order = 1/2 (6 − 2) = 2.",
       "hints": [
-        "Use valence electrons only, and include the charge.",
-        "For C2 the pi 2p orbitals fill before sigma 2p."
+        "C2 has 8 valence electrons, and pi 2p fills before sigma 2p.",
+        "The pi 2p set of C2 holds four electrons and sigma 2p stays empty."
       ],
       "check": { "kind": "numeric", "value": 2, "unit": null }
     },
@@ -151,8 +151,8 @@
       "a": "diamagnetic",
       "why": "The pi 2p set in C2 is full, with 4 paired electrons. No electron is unpaired, so C2 is diamagnetic.",
       "hints": [
-        "Paramagnetic means at least one electron is unpaired.",
-        "A full pi 2p set has two pairs."
+        "C2 fills the pi 2p set with two pairs.",
+        "A full pi 2p set in C2 has no unpaired electron."
       ],
       "check": { "kind": "exact", "text": "diamagnetic", "case": "insensitive" }
     },
@@ -162,8 +162,8 @@
       "a": "3",
       "why": "N2 has 10 valence electrons: 8 bonding and 2 antibonding. Bond order = 1/2 (8 − 2) = 3.",
       "hints": [
-        "Use valence electrons only, and include the charge.",
-        "For N2 the pi 2p orbitals fill before sigma 2p."
+        "N2 has 10 valence electrons, and pi 2p fills before sigma 2p.",
+        "N2 fills pi 2p and then sigma 2p, with no electrons in antibonding 2p orbitals."
       ],
       "check": { "kind": "numeric", "value": 3, "unit": null }
     },
@@ -173,8 +173,8 @@
       "a": "diamagnetic",
       "why": "Every valence orbital that N2 uses is full. All 10 electrons are paired, so N2 is diamagnetic.",
       "hints": [
-        "Paramagnetic means at least one electron is unpaired.",
-        "A bond order of 3 with filled orbitals has no unpaired electron."
+        "N2 fills every occupied 2p orbital with a pair.",
+        "A bond order of 3 for N2 comes from filled orbitals, so it is diamagnetic."
       ],
       "check": { "kind": "exact", "text": "diamagnetic", "case": "insensitive" }
     },
@@ -184,8 +184,8 @@
       "a": "2",
       "why": "O2 has 12 valence electrons: 8 bonding and 4 antibonding. Bond order = 1/2 (8 − 4) = 2.",
       "hints": [
-        "Use valence electrons only, and include the charge.",
-        "For O2, sigma 2p is below pi 2p. The count of bonding electrons is still 8."
+        "O2 has 12 valence electrons, and sigma 2p is below pi 2p.",
+        "O2 still has 8 bonding and 4 antibonding valence electrons."
       ],
       "check": { "kind": "numeric", "value": 2, "unit": null }
     },
@@ -195,8 +195,8 @@
       "a": "paramagnetic",
       "why": "The last 2 valence electrons of O2 sit alone in the two pi-star orbitals. Unpaired electrons make O2 paramagnetic.",
       "hints": [
-        "Paramagnetic means at least one electron is unpaired.",
-        "O2 puts one electron in each pi-star orbital."
+        "O2 puts one electron in each pi-star orbital.",
+        "Those two pi-star electrons in O2 are unpaired."
       ],
       "check": { "kind": "exact", "text": "paramagnetic", "case": "insensitive" }
     },
@@ -206,8 +206,8 @@
       "a": "1.5",
       "why": "O2− has 13 valence electrons: 8 bonding and 5 antibonding. Bond order = 1/2 (8 − 5) = 1.5.",
       "hints": [
-        "Use valence electrons only, and include the charge.",
-        "The extra electron goes into a pi-star orbital."
+        "O2− has 13 valence electrons. The extra electron goes into a pi-star orbital.",
+        "That extra antibonding electron drops the bond order of O2− to 1.5."
       ],
       "check": { "kind": "numeric", "value": 1.5, "unit": null }
     },
@@ -217,8 +217,8 @@
       "a": "paramagnetic",
       "why": "O2− has 3 electrons in the pi-star set, so one electron is unpaired. That makes it paramagnetic.",
       "hints": [
-        "Paramagnetic means at least one electron is unpaired.",
-        "The added electron pairs one pi-star electron and leaves the other alone."
+        "O2− adds one electron to the two unpaired pi-star electrons of O2.",
+        "One pi-star electron pairs and the other stays alone, so O2− is still paramagnetic."
       ],
       "check": { "kind": "exact", "text": "paramagnetic", "case": "insensitive" }
     },
@@ -228,8 +228,8 @@
       "a": "1",
       "why": "F2 has 14 valence electrons: 8 bonding and 6 antibonding. Bond order = 1/2 (8 − 6) = 1.",
       "hints": [
-        "Use valence electrons only, and include the charge.",
-        "For F2, sigma 2p is below pi 2p."
+        "F2 has 14 valence electrons, and sigma 2p is below pi 2p.",
+        "F2 fills the pi-star set, leaving 8 bonding and 6 antibonding electrons."
       ],
       "check": { "kind": "numeric", "value": 1, "unit": null }
     },
@@ -239,8 +239,8 @@
       "a": "diamagnetic",
       "why": "The pi-star set in F2 is full. All 14 valence electrons are paired, so F2 is diamagnetic.",
       "hints": [
-        "Paramagnetic means at least one electron is unpaired.",
-        "A full pi-star set has no unpaired electron."
+        "F2 fills both pi-star orbitals with pairs.",
+        "A full pi-star set in F2 has no unpaired electron."
       ],
       "check": { "kind": "exact", "text": "diamagnetic", "case": "insensitive" }
     },
@@ -250,8 +250,8 @@
       "a": "2.5",
       "why": "N2+ has 9 valence electrons: 7 bonding and 2 antibonding. Bond order = 1/2 (7 − 2) = 2.5.",
       "hints": [
-        "Use valence electrons only, and include the charge.",
-        "N2+ has one less electron than N2. Remove it from a bonding orbital."
+        "N2+ has 9 valence electrons, one fewer than N2. Remove it from a bonding orbital.",
+        "Losing one bonding electron drops the bond order of N2+ to 2.5."
       ],
       "check": { "kind": "numeric", "value": 2.5, "unit": null }
     },
@@ -261,8 +261,8 @@
       "a": "paramagnetic",
       "why": "Removing one electron from N2 leaves a single electron in sigma 2p. That unpaired electron makes N2+ paramagnetic.",
       "hints": [
-        "Paramagnetic means at least one electron is unpaired.",
-        "N2+ has an odd number of valence electrons."
+        "N2+ has an odd number of valence electrons.",
+        "Removing one electron from a filled bonding orbital of N2 leaves that electron unpaired."
       ],
       "check": { "kind": "exact", "text": "paramagnetic", "case": "insensitive" }
     },
@@ -272,8 +272,8 @@
       "a": "1",
       "why": "O2^2− has 14 valence electrons: 8 bonding and 6 antibonding. Bond order = 1/2 (8 − 6) = 1.",
       "hints": [
-        "Use valence electrons only, and include the charge.",
-        "Two extra electrons fill the pi-star set."
+        "O2^2− has 14 valence electrons. Both extra electrons go into the pi-star set.",
+        "Filling both pi-star orbitals gives O2^2− a bond order of 1."
       ],
       "check": { "kind": "numeric", "value": 1, "unit": null }
     },
@@ -283,8 +283,8 @@
       "a": "diamagnetic",
       "why": "O2^2− fills the pi-star set. All 14 valence electrons are paired, so it is diamagnetic.",
       "hints": [
-        "Paramagnetic means at least one electron is unpaired.",
-        "A 2− charge adds two electrons to O2, which pairs the pi-star electrons."
+        "A 2− charge adds two electrons to O2 and pairs both pi-star electrons.",
+        "Once both pi-star orbitals of O2^2− are full, every electron is paired."
       ],
       "check": { "kind": "exact", "text": "diamagnetic", "case": "insensitive" }
     }

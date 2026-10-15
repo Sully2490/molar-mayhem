@@ -187,3 +187,22 @@ test('bond orders and magnetism come from the MO electron fill', () => {
   assert.equal(MO_SPECIES['ch5-mo-o2'].order, 2);
   assert.equal(MO_SPECIES['ch5-mo-he2'].order, 0);
 });
+
+test('no two problems in chapter 5 share an identical first hint', () => {
+  const firstHints = [];
+  for (const lesson of lessons) {
+    const hintSets = new Set();
+    for (const problem of lesson.problems) {
+      const first = problem.hints?.[0];
+      assert.equal(typeof first, 'string', problem.id);
+      assert.ok(first.trim().length > 0, problem.id);
+      firstHints.push(first);
+      hintSets.add(JSON.stringify(problem.hints));
+    }
+    assert.equal(hintSets.size, lesson.problems.length, lesson.id);
+  }
+  assert.equal(new Set(firstHints).size, firstHints.length);
+  for (const id of ['ch5-hyb-ch4', 'ch5-sig-ch4']) {
+    assert.doesNotMatch(byId(id).hints[0], /double bond/i, id);
+  }
+});
