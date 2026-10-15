@@ -14,7 +14,7 @@
         "Hash routes #Map #Learn #Drill #Prep #Cards render placeholders",
         "Periodic-table tray with trend heat maps"
       ],
-      "passing": false
+      "passing": true
     },
     {
       "id": "F01",
