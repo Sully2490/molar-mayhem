@@ -27,12 +27,16 @@ test('index.html is a static Molar Mayhem page', () => {
 });
 
 test('hash routes render placeholders', () => {
-  for (const route of ['Map', 'Learn', 'Drill', 'Prep', 'Cards']) {
+  for (const route of ['Map', 'Learn', 'Drill', 'Cards']) {
     const html = renderRoute(route);
     assert.match(html, new RegExp(`data-route="${route}"`));
     assert.match(html, new RegExp(`<h1>${route}</h1>`));
     assert.match(html, /Coming soon/);
   }
+  const prep = renderRoute('Prep');
+  assert.match(prep, /data-route="Prep"/);
+  assert.match(prep, /Practice final/);
+  assert.equal(/Coming soon/.test(prep), false);
   assert.equal(routeFromHash('#Map'), 'Map');
   assert.equal(routeFromHash('#learn'), 'Learn');
   assert.equal(routeFromHash(''), 'Home');

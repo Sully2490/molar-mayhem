@@ -1,3 +1,5 @@
+import { renderPrep } from './prep.js';
+
 export const ROUTE_IDS = ['Home', 'Map', 'Learn', 'Drill', 'Prep', 'Cards'];
 
 const ROUTES = {
@@ -43,11 +45,7 @@ const ROUTES = {
   },
   Prep: {
     title: 'Prep',
-    body: `
-      <p class="kicker">Coming soon</p>
-      <h1>Prep</h1>
-      <p>Exam prep is not here yet. It will hold a study plan and a practice final.</p>
-    `,
+    body: '',
   },
   Cards: {
     title: 'Cards',
@@ -71,6 +69,7 @@ export function routeTitle(id) {
 }
 
 export function renderRoute(id) {
+  if (id === 'Prep') return renderPrep();
   const route = ROUTES[id] ?? ROUTES.Home;
   const routeId = ROUTES[id] ? id : 'Home';
   return `<section class="page" data-route="${routeId}">${route.body}</section>`;

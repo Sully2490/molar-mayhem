@@ -1,3 +1,4 @@
+import { bindPrep } from './prep.js';
 import { renderRoute, routeFromHash, routeTitle } from './routes.js';
 import { renderTable } from './periodic.js';
 
@@ -15,6 +16,7 @@ let lastFocus = null;
 function paintRoute() {
   const id = routeFromHash(location.hash);
   view.innerHTML = renderRoute(id);
+  if (id === 'Prep') bindPrep(view);
   document.title = id === 'Home' ? 'Molar Mayhem' : `${routeTitle(id)} — Molar Mayhem`;
   for (const link of navLinks) {
     if (link.getAttribute('data-nav') === id) link.setAttribute('aria-current', 'page');

@@ -1,10 +1,11 @@
 # STATUS
 
-_Last updated: 2026-10-15. F00 is on main. This branch is the F03 grader after review._
+_Last updated: 2026-10-15. This branch adds the untimed cumulative practice final._
 
 ## State
 - Features passing: F00, F03. See `feature_list.json`.
-- Static site loads from `index.html` with no build step. Hash routes `#Map`, `#Learn`, `#Drill`, `#Prep`, and `#Cards` show placeholders. The periodic-table tray colors atomic radius, ionization energy, and electronegativity.
+- Static site loads from `index.html` with no build step. `#Prep` is an untimed cumulative practice final for chapters 1–9, with more items in chapters 5 and 7. `#Map`, `#Learn`, `#Drill`, and `#Cards` are still placeholders. The periodic-table tray colors atomic radius, ionization energy, and electronegativity.
+- P1 stays `passing: false` here because its listed dependencies (GF, I1, I3) are still open. The final itself grades every written key.
 - `npm test` and `npm run check:content` run locally. GitHub Actions runs `npm test`.
 - `check:content` parses any `content/*.json` files and skips the coverage manifest when `MM_SOURCES` is unset. The manifest mapping itself is F01.
 - Course source material and the coverage manifest stay outside the repo, at the path set in `MM_SOURCES`.
