@@ -1,0 +1,181 @@
+{
+  "id": "ch9-dh",
+  "ch": 9,
+  "openstax_section": "OpenStax AF2e §9.3",
+  "guide_line": "Scale a thermochemical equation.",
+  "steps": [
+    "ΔH belongs to the equation as written, including its coefficients.",
+    "Heat = moles of the reaction × ΔH. Find moles from the mass and the coefficient.",
+    "Reversing the equation flips the sign of ΔH.",
+    "Cutting every coefficient in half cuts ΔH in half.",
+    "Heat released is negative."
+  ],
+  "worked_example": {
+    "q": "CH4 + 2O2 -> CO2 + 2H2O, ΔH = -890 kJ. Heat from 32.0 g CH4?",
+    "steps": [
+      "32.0 / 16.04 = 1.995 mol.",
+      "1.995 × -890 = -1775 kJ."
+    ],
+    "answer": "-1775 kJ"
+  },
+  "similar_problem": {
+    "q": "2H2 + O2 -> 2H2O, ΔH = -572 kJ. Heat from 10.0 g H2?",
+    "hint": "The equation uses 2 mol H2 for -572 kJ.",
+    "answer": "-1419 kJ"
+  },
+  "sources": [
+    "OpenStax AF2e §9.3"
+  ],
+  "problems": [
+    {
+      "id": "ch9-h-ch4",
+      "q": "Heat in kJ from 32.0 g CH4. CH4 + 2O2 -> CO2 + 2H2O, ΔH = -890 kJ. CH4 is 16.04 g/mol.",
+      "a": "-1776",
+      "why": "One mole of CH4 matches the equation.",
+      "hints": [
+        "Do not forget the sign."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -1776,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-h-h2",
+      "q": "Heat in kJ from 10.0 g H2. 2H2 + O2 -> 2H2O, ΔH = -572 kJ. H2 is 2.016 g/mol.",
+      "a": "-1419",
+      "why": "The equation’s -572 kJ is for 2 mol H2.",
+      "hints": [
+        "Divide ΔH by 2 before you scale by moles of H2."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -1419,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-h-nh3",
+      "q": "Heat in kJ per mol NH3. N2 + 3H2 -> 2NH3, ΔH = -92.2 kJ.",
+      "a": "-46.1",
+      "why": "The equation produces 2 mol NH3.",
+      "hints": [
+        "Divide by the coefficient."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -46.1,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-h-c",
+      "q": "Heat in kJ from 1.00 kg C. C + O2 -> CO2, ΔH = -393.5 kJ. C is 12.01 g/mol.",
+      "a": "-32764",
+      "why": "1.00 kg is 1000 g.",
+      "hints": [
+        "Change kilograms to grams first."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -32764,
+        "sigFigs": 5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-h-mol",
+      "q": "ΔH in kJ/mol if 0.250 mol releases 12.5 kJ.",
+      "a": "-50",
+      "why": "Released heat is negative. Divide by moles.",
+      "hints": [
+        "Include the minus sign."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -50,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-h-rev",
+      "q": "ΔH in kJ for 2SO3 -> 2SO2 + O2 if the forward ΔH is -198 kJ.",
+      "a": "198",
+      "why": "Reversing flips the sign.",
+      "hints": [
+        "The reverse is endothermic."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 198,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-h-half",
+      "q": "ΔH in kJ for SO2 + 1/2 O2 -> SO3 if 2SO2 + O2 -> 2SO3 is -198 kJ.",
+      "a": "-99",
+      "why": "Half the equation means half the ΔH.",
+      "hints": [
+        "Divide by 2."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -99,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-h-salt",
+      "q": "ΔH in kJ/mol if 5.00 g NH4NO3 absorbs 1.69 kJ. Molar mass 80.04 g/mol.",
+      "a": "27.1",
+      "why": "Absorbed heat is positive. Divide by moles.",
+      "hints": [
+        "Moles = 5.00 / 80.04."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 27.1,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-h-fuel",
+      "q": "Grams of propane to release 1.00×10^4 kJ. C3H8 combustion ΔH = -2220 kJ. Molar mass 44.09 g/mol.",
+      "a": "199",
+      "why": "Moles = heat released / 2220, then times the molar mass.",
+      "hints": [
+        "Use the magnitude, 2220 kJ per mole."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 199,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-h-cao",
+      "q": "Heat in kJ from 100. g CaO. CaO + H2O -> Ca(OH)2, ΔH = -65.2 kJ. CaO is 56.08 g/mol.",
+      "a": "-116",
+      "why": "Moles of CaO times -65.2.",
+      "hints": [
+        "Keep the sign."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -116,
+        "sigFigs": 3,
+        "unit": null
+      }
+    }
+  ]
+}

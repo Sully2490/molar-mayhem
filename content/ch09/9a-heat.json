@@ -1,0 +1,181 @@
+{
+  "id": "ch9-heat",
+  "ch": 9,
+  "openstax_section": "OpenStax AF2e §9.2",
+  "guide_line": "Use q = mcΔT, and switch joules and calories.",
+  "steps": [
+    "q = m c ΔT. ΔT is final minus initial.",
+    "Water’s specific heat is 4.184 J/g·°C.",
+    "A temperature drop makes q negative. The system lost heat.",
+    "1 cal = 4.184 J. 1 Cal (food) = 1 kcal = 4184 J.",
+    "Type the number only. Include a minus sign when heat is lost."
+  ],
+  "worked_example": {
+    "q": "Heat to warm 50.0 g water from 20.0 to 45.0 °C?",
+    "steps": [
+      "ΔT = 25.0.",
+      "q = 50.0 × 4.184 × 25.0 = 5230 J."
+    ],
+    "answer": "5230 J"
+  },
+  "similar_problem": {
+    "q": "Specific heat if 150. J raises 10.0 g of metal by 33.0 °C?",
+    "hint": "c = q / (m ΔT).",
+    "answer": "0.455 J/g·°C"
+  },
+  "sources": [
+    "OpenStax AF2e §9.2"
+  ],
+  "problems": [
+    {
+      "id": "ch9-q-warm",
+      "q": "Heat in J to warm 50.0 g water from 20.0 to 45.0 °C?",
+      "a": "5230",
+      "why": "ΔT = 25.0 °C.",
+      "hints": [
+        "q = m c ΔT."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 5230,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-q-cool",
+      "q": "Heat in J when 100. g water cools from 80.0 to 25.0 °C?",
+      "a": "-23012",
+      "why": "ΔT is negative, so q is negative.",
+      "hints": [
+        "Final minus initial."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -23012,
+        "sigFigs": 5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-q-c",
+      "q": "Specific heat if 150. J raises 10.0 g of metal by 33.0 °C?",
+      "a": "0.455",
+      "why": "c = q / (m ΔT).",
+      "hints": [
+        "Divide by both the mass and the temperature change."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.455,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-q-tf",
+      "q": "Final temperature of 25.0 g water at 22.0 °C after it absorbs 1.50 kJ?",
+      "a": "36.3",
+      "why": "ΔT = q / (m c), then add it to 22.0.",
+      "hints": [
+        "1.50 kJ is 1500 J."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 36.3,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-q-al",
+      "q": "Heat in J for 200. g Al (c = 0.897) from 25.0 to 100.0 °C?",
+      "a": "13455",
+      "why": "ΔT = 75.0 °C.",
+      "hints": [
+        "Use the metal’s c, not water’s."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 13455,
+        "sigFigs": 5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-q-cal",
+      "q": "250. cal in joules?",
+      "a": "1046",
+      "why": "Multiply by 4.184.",
+      "hints": [
+        "Calories to joules is a multiply."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1046,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-q-kcal",
+      "q": "1.00×10^4 J in kcal?",
+      "a": "2.39",
+      "why": "1 kcal = 4184 J.",
+      "hints": [
+        "Divide joules by 4184."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2.39,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-q-food",
+      "q": "150 Cal in kJ?",
+      "a": "628",
+      "why": "One food Calorie is 1 kcal, which is 4.184 kJ.",
+      "hints": [
+        "Multiply by 4.184."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 628,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-q-mass",
+      "q": "Mass of water warmed 10.0 °C by 4184 J?",
+      "a": "100",
+      "why": "m = q / (c ΔT).",
+      "hints": [
+        "4184 J is 1 kcal."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 100,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-q-back",
+      "q": "5.00 kJ in calories?",
+      "a": "1195",
+      "why": "Divide joules by 4.184.",
+      "hints": [
+        "5.00 kJ is 5000 J."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1195,
+        "sigFigs": 4,
+        "unit": null
+      }
+    }
+  ]
+}

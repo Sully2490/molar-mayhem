@@ -1,0 +1,181 @@
+{
+  "id": "ch9-hess",
+  "ch": 9,
+  "openstax_section": "OpenStax AF2e §9.4",
+  "guide_line": "Add reactions for Hess’s law.",
+  "steps": [
+    "Arrange the given steps so each species ends on the side it has in the target.",
+    "Flip a step and flip the sign of its ΔH.",
+    "Multiply a step and multiply its ΔH by the same number.",
+    "Add the ΔH values. Intermediates that appear on both sides cancel."
+  ],
+  "worked_example": {
+    "q": "C + O2 -> CO2 is -393.5 kJ. CO + 1/2 O2 -> CO2 is -283.0 kJ. Find C + 1/2 O2 -> CO.",
+    "steps": [
+      "Keep the first step.",
+      "Flip the second: +283.0.",
+      "Add: -110.5 kJ."
+    ],
+    "answer": "-110.5 kJ"
+  },
+  "similar_problem": {
+    "q": "A -> B is +50.0 kJ and B -> C is -80.0 kJ. Find C -> A.",
+    "hint": "The path C to A is the reverse of A to C.",
+    "answer": "30.0 kJ"
+  },
+  "sources": [
+    "OpenStax AF2e §9.4"
+  ],
+  "problems": [
+    {
+      "id": "ch9-z-co",
+      "q": "ΔH for C + 1/2 O2 -> CO. Given C + O2 -> CO2 (-393.5) and CO + 1/2 O2 -> CO2 (-283.0).",
+      "a": "-110.5",
+      "why": "Flip the CO2-from-CO step and add.",
+      "hints": [
+        "Flipping changes the sign."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -110.5,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-z-so",
+      "q": "ΔH for 2S + 3O2 -> 2SO3. Given S + O2 -> SO2 (-296.8) and 2SO2 + O2 -> 2SO3 (-197.8).",
+      "a": "-791.4",
+      "why": "Double the first step, then add the second.",
+      "hints": [
+        "Doubling the step doubles ΔH."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -791.4,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-z-no",
+      "q": "ΔH for N2 + 2O2 -> 2NO2. Given N2 + O2 -> 2NO (+180.6) and 2NO + O2 -> 2NO2 (-114.1).",
+      "a": "66.5",
+      "why": "Add the two steps. NO cancels.",
+      "hints": [
+        "Keep both signs."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 66.5,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-z-water",
+      "q": "ΔH for H2 + 1/2 O2 -> H2O(g). Given H2 + 1/2 O2 -> H2O(l) (-285.8) and H2O(l) -> H2O(g) (+44.0).",
+      "a": "-241.8",
+      "why": "Add the vaporization step.",
+      "hints": [
+        "Liquid to gas is positive here."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -241.8,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-z-back",
+      "q": "ΔH for C -> A. Given A -> B (+50.0) and B -> C (-80.0).",
+      "a": "30",
+      "why": "A to C is -30, so C to A is +30.",
+      "hints": [
+        "The reverse of a sum flips the sum."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 30,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-z-flip",
+      "q": "ΔH for B -> 2A if 2A -> B is -120. kJ.",
+      "a": "120",
+      "why": "Reverse the step.",
+      "hints": [
+        "Only the sign changes."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 120,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-z-triple",
+      "q": "ΔH for 3X -> 3Y if X -> Y is +30.0 kJ.",
+      "a": "90",
+      "why": "Multiply by 3.",
+      "hints": [
+        "The enthalpy scales with the coefficients."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 90,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-z-diamond",
+      "q": "ΔH for C(graphite) -> C(diamond). Graphite combustion -393.5. Diamond combustion -395.4.",
+      "a": "1.9",
+      "why": "Keep graphite’s combustion and flip diamond’s.",
+      "hints": [
+        "The two CO2 cancel."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.9,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-z-ch4",
+      "q": "ΔH for C + 2H2 -> CH4. Given CH4 combustion -890.3, C combustion -393.5, and H2 + 1/2 O2 -> H2O -285.8.",
+      "a": "-74.8",
+      "why": "Flip the methane combustion. Water’s step is used twice.",
+      "hints": [
+        "The target has methane as a product."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -74.8,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-z-half",
+      "q": "ΔH for H2O -> H2 + 1/2 O2 if 2H2 + O2 -> 2H2O is -571.6 kJ.",
+      "a": "285.8",
+      "why": "Reverse, then divide by 2.",
+      "hints": [
+        "Half of the reverse is +285.8."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 285.8,
+        "sigFigs": 4,
+        "unit": null
+      }
+    }
+  ]
+}

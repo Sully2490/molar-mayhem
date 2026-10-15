@@ -1,0 +1,181 @@
+{
+  "id": "ch9-formation",
+  "ch": 9,
+  "openstax_section": "OpenStax AF2e §9.4",
+  "guide_line": "Find ΔH from formation values.",
+  "steps": [
+    "ΔH°rxn = Σ ΔH°f(products) − Σ ΔH°f(reactants).",
+    "Multiply each formation value by its coefficient.",
+    "Elements in their standard state are zero: O2, N2, H2, Fe, Al, C(graphite).",
+    "Use these kJ/mol values: CO2 -393.5, H2O(l) -285.8, CH4 -74.8, C3H8 -103.8, SO2 -296.8, SO3 -395.7, NH3 -46.1, NO 90.3, NO2 33.2, CO -110.5, Fe2O3 -824.2, Al2O3 -1675.7, C2H5OH -277.4, C6H12O6 -1273.8, C2H6 -84.9."
+  ],
+  "worked_example": {
+    "q": "ΔH for CH4 + 2O2 -> CO2 + 2H2O(l)?",
+    "steps": [
+      "Products: -393.5 + 2(-285.8).",
+      "Minus CH4: -74.8.",
+      "ΔH = -890.3 kJ."
+    ],
+    "answer": "-890.3 kJ"
+  },
+  "similar_problem": {
+    "q": "ΔH for 2SO2 + O2 -> 2SO3?",
+    "hint": "Oxygen is zero. Two SO3 minus two SO2.",
+    "answer": "-197.8 kJ"
+  },
+  "sources": [
+    "OpenStax AF2e §9.4"
+  ],
+  "problems": [
+    {
+      "id": "ch9-f-ch4",
+      "q": "ΔH in kJ for CH4 + 2O2 -> CO2 + 2H2O(l).",
+      "a": "-890.3",
+      "why": "Products minus reactants. O2 is zero.",
+      "hints": [
+        "Include both water molecules."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -890.3,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-f-c3",
+      "q": "ΔH in kJ for C3H8 + 5O2 -> 3CO2 + 4H2O(l).",
+      "a": "-2220",
+      "why": "Three CO2 and four water, minus propane.",
+      "hints": [
+        "Oxygen is zero."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -2220,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-f-so",
+      "q": "ΔH in kJ for 2SO2 + O2 -> 2SO3.",
+      "a": "-197.8",
+      "why": "2(-395.7) − 2(-296.8).",
+      "hints": [
+        "Multiply both sulfur oxides by 2."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -197.8,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-f-nh",
+      "q": "ΔH in kJ for N2 + 3H2 -> 2NH3.",
+      "a": "-92.2",
+      "why": "Only ammonia has a nonzero formation value.",
+      "hints": [
+        "Elements are zero."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -92.2,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-f-no",
+      "q": "ΔH in kJ for 2NO + O2 -> 2NO2.",
+      "a": "-114.2",
+      "why": "2(33.2) − 2(90.3).",
+      "hints": [
+        "NO is positive."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -114.2,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-f-fe",
+      "q": "ΔH in kJ for Fe2O3 + 3CO -> 2Fe + 3CO2.",
+      "a": "-24.8",
+      "why": "Iron metal is zero.",
+      "hints": [
+        "Keep the three CO and three CO2."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -24.8,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-f-et",
+      "q": "ΔH in kJ for C2H5OH + 3O2 -> 2CO2 + 3H2O(l).",
+      "a": "-1367",
+      "why": "Products minus ethanol.",
+      "hints": [
+        "Oxygen is zero."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -1367,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-f-al",
+      "q": "ΔH in kJ for 2Al + Fe2O3 -> Al2O3 + 2Fe.",
+      "a": "-851.5",
+      "why": "Al and Fe are zero.",
+      "hints": [
+        "Al2O3 minus Fe2O3."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -851.5,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-f-glu",
+      "q": "ΔH in kJ for C6H12O6 + 6O2 -> 6CO2 + 6H2O(l).",
+      "a": "-2802",
+      "why": "Six of each product, minus glucose.",
+      "hints": [
+        "Oxygen is zero."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -2802,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-f-c2",
+      "q": "ΔH in kJ for 2C2H6 + 7O2 -> 4CO2 + 6H2O(l).",
+      "a": "-3119",
+      "why": "Four CO2 and six water, minus two ethane.",
+      "hints": [
+        "Multiply ethane’s formation value by 2."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -3119,
+        "sigFigs": 4,
+        "unit": null
+      }
+    }
+  ]
+}

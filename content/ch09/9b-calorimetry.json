@@ -1,0 +1,181 @@
+{
+  "id": "ch9-cal",
+  "ch": 9,
+  "openstax_section": "OpenStax AF2e §9.2",
+  "guide_line": "Set heat lost equal to heat gained.",
+  "steps": [
+    "In a coffee-cup mix, the hot object’s heat loss equals the water’s heat gain.",
+    "m c (T_hot − T_final) for the metal equals m c (T_final − T_cold) for the water.",
+    "If a reaction warms the water, q of the reaction is negative.",
+    "If the water cools, the reaction absorbed heat and q is positive.",
+    "A bomb calorimeter uses q = C ΔT. C is the calorimeter constant."
+  ],
+  "worked_example": {
+    "q": "50.0 g Cu (c = 0.385) at 100. °C drops into 100. g water at 20.0 °C. Final temperature?",
+    "steps": [
+      "Set the two q values equal.",
+      "T_final = 23.5 °C."
+    ],
+    "answer": "23.5 °C"
+  },
+  "similar_problem": {
+    "q": "A reaction in 100. g solution raises the temperature 5.20 °C. q of the reaction?",
+    "hint": "The water gained heat, so the reaction’s q is negative.",
+    "answer": "-2176 J"
+  },
+  "sources": [
+    "OpenStax AF2e §9.2"
+  ],
+  "problems": [
+    {
+      "id": "ch9-c-cu",
+      "q": "Final °C: 50.0 g Cu (c = 0.385) at 100.0 °C in 100. g water at 20.0 °C.",
+      "a": "23.5",
+      "why": "Heat lost by copper equals heat gained by water.",
+      "hints": [
+        "The final temperature is between the two starts."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 23.5,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-c-fe",
+      "q": "Final °C: 25.0 g Fe (c = 0.449) at 90.0 °C in 50.0 g water at 22.0 °C.",
+      "a": "25.5",
+      "why": "Same heat-balance setup as the copper problem.",
+      "hints": [
+        "Use iron’s specific heat, 0.449."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 25.5,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-c-metal",
+      "q": "Specific heat: 30.0 g metal at 95.0 °C in 80.0 g water at 21.0 °C ends at 25.0 °C.",
+      "a": "0.638",
+      "why": "Water’s heat gain divided by the metal’s mass and temperature drop.",
+      "hints": [
+        "ΔT of the metal is 70.0 °C."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.638,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-c-rxn",
+      "q": "q of reaction in J: 100. g solution, c = 4.184, temperature up 5.20 °C.",
+      "a": "-2176",
+      "why": "The solution gained heat, so the reaction’s q is negative.",
+      "hints": [
+        "Include the minus sign."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -2176,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-c-salt",
+      "q": "q of reaction in J: 50.0 g water cools by 3.00 °C.",
+      "a": "628",
+      "why": "The water lost heat, so the dissolving absorbed it.",
+      "hints": [
+        "A temperature drop means positive q for the salt."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 628,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-c-bomb",
+      "q": "q of reaction in kJ: bomb constant 10.5 kJ/°C and ΔT = +2.40 °C.",
+      "a": "-25.2",
+      "why": "The calorimeter warmed, so the reaction’s q is negative.",
+      "hints": [
+        "Multiply C by ΔT, then change the sign."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -25.2,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-c-mix",
+      "q": "Final °C when 100. g water at 80.0 °C mixes with 100. g water at 20.0 °C.",
+      "a": "50",
+      "why": "Equal masses of water meet in the middle.",
+      "hints": [
+        "Average the two temperatures."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 50,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-c-fuel",
+      "q": "Heat released per gram in kJ: 1.00 g fuel, bomb constant 8.00 kJ/°C, ΔT = 4.25 °C.",
+      "a": "34",
+      "why": "Magnitude is C × ΔT. The question asks for heat released.",
+      "hints": [
+        "A temperature rise means the fuel released heat."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 34,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-c-pb",
+      "q": "Final °C: 200. g Pb (c = 0.128) at 150. °C in 50.0 g water at 25.0 °C.",
+      "a": "38.6",
+      "why": "Lead’s heat loss equals the water’s heat gain.",
+      "hints": [
+        "Lead’s specific heat is small, so the water does not get very hot."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 38.6,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch9-c-neut",
+      "q": "Heat released in kJ: neutralization in 200. g solution, c = 4.184, temperature up 6.80 °C.",
+      "a": "5.69",
+      "why": "This asks for the magnitude of the heat released.",
+      "hints": [
+        "Change joules to kilojoules."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 5.69,
+        "sigFigs": 3,
+        "unit": null
+      }
+    }
+  ]
+}
