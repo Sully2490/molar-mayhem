@@ -1,0 +1,142 @@
+{
+  "id": "ch07-classify",
+  "ch": 7,
+  "openstax_section": "OpenStax AF2e §7.2",
+  "guide_line": "Sort a reaction as precipitation, acid-base, or redox, and find oxidation numbers.",
+  "steps": [
+    "Precipitation: two aqueous solutions produce an insoluble solid. Check the solubility shortcuts before you name the solid.",
+    "Acid-base: H+ moves from an acid to a base. A strong acid plus a strong base makes water, and the net ionic equation is H+ + OH- -> H2O.",
+    "Only six common acids are strong: HCl, HBr, HI, HNO3, H2SO4, and HClO4. Every other acid is weak.",
+    "Redox: one element's oxidation number goes up (it is oxidized) and another goes down (it is reduced).",
+    "A free element is 0. Group 1 is +1, group 2 is +2, fluorine is -1, oxygen is -2, and hydrogen with a nonmetal is +1. The numbers in a formula add up to the charge."
+  ],
+  "worked_example": {
+    "q": "What is the oxidation number of S in H2SO4? Enter the number only.",
+    "steps": [
+      "Each H is +1, so two H atoms contribute +2.",
+      "Each O is -2, so four O atoms contribute -8.",
+      "The molecule is neutral: S + 2 - 8 = 0, so S is +6."
+    ],
+    "answer": "6"
+  },
+  "similar_problem": {
+    "q": "What is the oxidation number of N in HNO3? Enter the number only.",
+    "hint": "The hydrogen is +1 and the three oxygen atoms are -6. Nitrogen must cancel that -5.",
+    "answer": "5"
+  },
+  "sources": ["OpenStax AF2e §7.2"],
+  "problems": [
+    {
+      "id": "ch07-ox-sulfur",
+      "q": "What is the oxidation number of S in H2SO4? Enter the number only.",
+      "a": "6",
+      "why": "Two H are +2 and four O are -8. The molecule is neutral, so S is +6. Enter 6.",
+      "hints": ["Two H are +2 and four O are -8. Sulfur is whatever makes a neutral molecule."],
+      "check": { "kind": "numeric", "value": 6, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch07-ox-nitric",
+      "q": "What is the oxidation number of N in HNO3? Enter the number only.",
+      "a": "5",
+      "why": "H is +1 and three O are -6. The molecule is neutral, so N is +5. Enter 5.",
+      "hints": ["In HNO3 the atoms must sum to 0. Assign +1 to H and -2 to each O, then solve for N."],
+      "check": { "kind": "numeric", "value": 5, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch07-class-precip",
+      "q": "AgNO3(aq) + KCl(aq) -> AgCl(s) + KNO3(aq). What type is this? Answer precipitation, acid-base, or redox.",
+      "a": "precipitation",
+      "why": "Two dissolved salts produce solid AgCl. No oxidation number changes, and no H+ is transferred. This is precipitation.",
+      "hints": ["Look for a solid forming from two dissolved salts, with no element changing its oxidation number."],
+      "check": { "kind": "exact", "text": "precipitation", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-class-acid",
+      "q": "HBr(aq) + KOH(aq) -> KBr(aq) + H2O(l). What type is this? Answer precipitation, acid-base, or redox.",
+      "a": "acid-base",
+      "why": "HBr gives H+ and KOH gives OH-. They make water and a dissolved salt. This is acid-base.",
+      "hints": ["A hydrogen ion moves onto hydroxide and the products are a salt plus water."],
+      "check": { "kind": "exact", "text": "acid-base", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-class-redox",
+      "q": "Mg(s) + CuSO4(aq) -> MgSO4(aq) + Cu(s). What type is this? Answer precipitation, acid-base, or redox.",
+      "a": "redox",
+      "why": "Mg goes from 0 to +2 and Cu goes from +2 to 0. Electrons move, so this is redox.",
+      "hints": ["Magnesium metal becomes an ion while Cu2+ becomes copper metal, so electrons move."],
+      "check": { "kind": "exact", "text": "redox", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-ox-chromium",
+      "q": "What is the oxidation number of Cr in K2Cr2O7? Enter the number only.",
+      "a": "6",
+      "why": "Two K are +2 and seven O are -14. The two Cr atoms must total +12, so each Cr is +6. Enter 6.",
+      "hints": ["Two potassium atoms contribute +2 and seven oxygens contribute -14. Split the remainder across two Cr atoms."],
+      "check": { "kind": "numeric", "value": 6, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch07-ox-ammonium",
+      "q": "What is the oxidation number of N in NH4+? Enter the number only.",
+      "a": "-3",
+      "why": "Four H are +4. The ion charge is +1, so N + 4 = +1 and N is -3. Enter -3.",
+      "hints": ["Four hydrogen atoms contribute +4 and the ion charge is +1, so nitrogen is negative."],
+      "check": { "kind": "numeric", "value": -3, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch07-oxidized-magnesium",
+      "q": "In 2 Mg + O2 -> 2 MgO, which element is oxidized?",
+      "a": "Mg",
+      "why": "Mg changes from 0 to +2. That increase of oxidation number is oxidation, so Mg is oxidized. Oxygen goes from 0 to -2, so it is reduced.",
+      "hints": ["Magnesium changes from 0 in the free element to +2 in MgO, and an increase is oxidation."],
+      "check": { "kind": "exact", "text": "Mg", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-reduced-hydrogen",
+      "q": "In Zn + 2 H+ -> Zn2+ + H2, which species is reduced? Write the ion as H+.",
+      "a": "H+",
+      "why": "H+ changes from +1 to 0 in H2, so it gains electrons and is reduced. Zn changes from 0 to +2, so zinc is oxidized.",
+      "hints": ["Hydrogen changes from +1 in H+ to 0 in H2, and a decrease is reduction."],
+      "check": { "kind": "exact", "text": "H+", "answers": ["H+"], "case": "sensitive" }
+    },
+    {
+      "id": "ch07-class-combustion",
+      "q": "Propane burns: C3H8 + 5 O2 -> 3 CO2 + 4 H2O. What type is this? Answer precipitation, acid-base, or redox.",
+      "a": "redox",
+      "why": "Carbon's oxidation number rises as CO2 forms, and oxygen's falls as O2 becomes part of CO2 and H2O. Combustion is redox.",
+      "hints": ["Carbon in propane is not +4 yet, and carbon in CO2 is +4, so this combustion is redox."],
+      "check": { "kind": "exact", "text": "redox", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-ox-permanganate",
+      "q": "What is the oxidation number of Mn in MnO4-? Enter the number only.",
+      "a": "7",
+      "why": "Four O are -8. The ion is -1, so Mn - 8 = -1 and Mn is +7. Enter 7.",
+      "hints": ["Four oxygens contribute -8 and the ion is -1, so manganese makes up +7."],
+      "check": { "kind": "numeric", "value": 7, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch07-permanganate-electrons",
+      "q": "In acid, MnO4- is reduced to Mn2+. How many electrons does one manganese gain? Enter the number only.",
+      "a": "5",
+      "why": "Mn is +7 in MnO4- and +2 in Mn2+. The drop is 5, so the half-reaction gains 5 electrons.",
+      "hints": ["The manganese oxidation number falls from +7 to +2, which is a gain of 5 electrons."],
+      "check": { "kind": "numeric", "value": 5, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch07-permanganate-protons",
+      "q": "Balance the acid half-reaction MnO4- -> Mn2+. How many H+ are on the reactant side? Enter the number only.",
+      "a": "8",
+      "why": "Four oxygen atoms become four H2O, and each water needs 2 H+. The half-reaction is MnO4- + 8 H+ + 5 e- -> Mn2+ + 4 H2O. Enter 8.",
+      "hints": ["The four oxygen atoms of MnO4- become four water molecules, and each water needs two H+."],
+      "check": { "kind": "numeric", "value": 8, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch07-class-hf",
+      "q": "Is HF a strong acid or a weak acid? Answer strong or weak.",
+      "a": "weak",
+      "why": "The six strong acids are HCl, HBr, HI, HNO3, H2SO4, and HClO4. HF is not one of them, so it is weak.",
+      "hints": ["Check HF against HCl, HBr, HI, HNO3, H2SO4, and HClO4. It is not on that list."],
+      "check": { "kind": "exact", "text": "weak", "case": "insensitive" }
+    }
+  ]
+}

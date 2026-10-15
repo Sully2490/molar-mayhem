@@ -1,0 +1,150 @@
+{
+  "id": "ch07-yield",
+  "ch": 7,
+  "openstax_section": "OpenStax AF2e §7.4",
+  "guide_line": "Find the limiting reactant, the theoretical yield, and the percent yield.",
+  "steps": [
+    "Convert each reactant to moles.",
+    "Divide each mole amount by its coefficient. The smaller result is the limiting reactant. The other reactant is in excess.",
+    "Use the limiting reactant and the mole ratio to find moles of product, then grams. That mass is the theoretical yield.",
+    "Percent yield = (actual mass / theoretical mass) times 100.",
+    "Mass of excess reactant left = starting mass minus the mass that actually reacts. Use the OpenStax atomic masses from the stoichiometry lesson, plus P 30.974. Round the final answer to 4 significant figures."
+  ],
+  "worked_example": {
+    "q": "10.00 g of N2 is mixed with 3.000 g of H2. N2 + 3 H2 -> 2 NH3. Which reactant is limiting?",
+    "steps": [
+      "Moles of N2 = 10.00 / 28.014 = 0.3570 mol. Moles of H2 = 3.000 / 2.016 = 1.488 mol.",
+      "N2 would need 0.3570 times 3 = 1.071 mol of H2.",
+      "1.488 mol of H2 is more than 1.071 mol, so H2 is left over and N2 is limiting."
+    ],
+    "answer": "N2"
+  },
+  "similar_problem": {
+    "q": "20.00 g of N2 is mixed with 4.000 g of H2. N2 + 3 H2 -> 2 NH3. Which reactant is limiting?",
+    "hint": "Turn both gram amounts into moles before you compare them with the 1-to-3 ratio.",
+    "answer": "H2"
+  },
+  "sources": ["OpenStax AF2e §7.4"],
+  "problems": [
+    {
+      "id": "ch07-limit-nitrogen",
+      "q": "10.00 g of N2 is mixed with 3.000 g of H2. N2 + 3 H2 -> 2 NH3. Which reactant is limiting? Write its formula.",
+      "a": "N2",
+      "why": "Moles of N2 = 10.00 / 28.014 = 0.3570 mol, which needs 1.071 mol of H2. Moles of H2 on hand = 3.000 / 2.016 = 1.488 mol. H2 is in excess, so N2 is limiting.",
+      "hints": ["10.00 g of N2 is less than a mole. Check whether 3.000 g of H2 is more than three times that mole amount."],
+      "check": { "kind": "exact", "text": "N2", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-limit-hydrogen",
+      "q": "20.00 g of N2 is mixed with 4.000 g of H2. N2 + 3 H2 -> 2 NH3. Which reactant is limiting? Write its formula.",
+      "a": "H2",
+      "why": "Moles of N2 = 20.00 / 28.014 = 0.7143 mol, which needs 2.143 mol of H2. Moles of H2 on hand = 4.000 / 2.016 = 1.984 mol. H2 runs out first.",
+      "hints": ["20.00 g of N2 needs three times its moles in H2. H2 is only 2.016 g/mol, so convert 4.000 g and compare."],
+      "check": { "kind": "exact", "text": "H2", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-yield-ammonia-mass",
+      "q": "20.00 g of N2 is mixed with 4.000 g of H2. N2 + 3 H2 -> 2 NH3. What is the theoretical yield of NH3 in grams?",
+      "a": "22.53 g",
+      "why": "H2 is limiting at 4.000 / 2.016 = 1.984 mol. Moles of NH3 = 1.984 times (2/3) = 1.323 mol. Molar mass of NH3 = 14.007 + 3(1.008) = 17.031 g/mol. Mass = 1.323 times 17.031 = 22.53 g.",
+      "hints": ["The limiting reactant is H2. Every 3 mol H2 makes 2 mol NH3, and NH3 is 14.007 + 3(1.008) g/mol."],
+      "check": { "kind": "numeric", "value": 22.53, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch07-yield-ammonia-percent",
+      "q": "The theoretical yield of NH3 from 20.00 g of N2 and 4.000 g of H2 is 22.53 g. If 18.50 g of NH3 is collected, what is the percent yield?",
+      "a": "82.12 %",
+      "why": "Percent yield = (18.50 / 22.53) times 100 = 82.12%.",
+      "hints": ["The actual mass is 18.50 g. Divide by the theoretical ammonia mass and multiply by 100."],
+      "check": { "kind": "numeric", "value": 82.12, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch07-limit-chlorine",
+      "q": "3.500 g of Al is mixed with 8.000 g of Cl2. 2 Al + 3 Cl2 -> 2 AlCl3. Which reactant is limiting? Write its formula.",
+      "a": "Cl2",
+      "why": "Moles of Al = 3.500 / 26.982 = 0.1297 mol, which needs 0.1946 mol of Cl2. Moles of Cl2 = 8.000 / 70.90 = 0.1128 mol. Cl2 runs out first.",
+      "hints": ["Convert 3.500 g of Al with 26.982 g/mol and 8.000 g of Cl2 with 70.90 g/mol, then apply the 2-to-3 ratio."],
+      "check": { "kind": "exact", "text": "Cl2", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-yield-aluminum-chloride",
+      "q": "3.500 g of Al is mixed with 8.000 g of Cl2. 2 Al + 3 Cl2 -> 2 AlCl3. What is the theoretical yield of AlCl3 in grams?",
+      "a": "10.03 g",
+      "why": "Cl2 is limiting at 8.000 / 70.90 = 0.1128 mol. Moles of AlCl3 = 0.1128 times (2/3) = 0.07522 mol. Molar mass of AlCl3 = 26.982 + 3(35.45) = 133.332 g/mol. Mass = 10.03 g.",
+      "hints": ["Cl2 limits the reaction. Two AlCl3 form from three Cl2, and AlCl3 is 26.982 + 3(35.45) g/mol."],
+      "check": { "kind": "numeric", "value": 10.03, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch07-yield-aluminum-chloride-percent",
+      "q": "The theoretical yield of AlCl3 from 3.500 g of Al and 8.000 g of Cl2 is 10.03 g. If 9.000 g of AlCl3 is collected, what is the percent yield?",
+      "a": "89.73 %",
+      "why": "Percent yield = (9.000 / 10.03) times 100 = 89.73%.",
+      "hints": ["9.000 g was collected. Divide that actual mass by the theoretical mass of AlCl3."],
+      "check": { "kind": "numeric", "value": 89.73, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch07-excess-aluminum",
+      "q": "3.500 g of Al is mixed with 8.000 g of Cl2. 2 Al + 3 Cl2 -> 2 AlCl3. How many grams of Al are left over?",
+      "a": "1.470 g",
+      "why": "Cl2 is limiting at 0.1128 mol, so moles of Al used = 0.1128 times (2/3) = 0.07522 mol. Mass used = 0.07522 times 26.982 = 2.030 g. Left over = 3.500 - 2.030 = 1.470 g.",
+      "hints": ["Moles of Al that react are 2/3 of the moles of Cl2. Subtract that mass from the 3.500 g you started with."],
+      "check": { "kind": "numeric", "value": 1.47, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch07-limit-oxygen",
+      "q": "0.5000 mol of P4 is mixed with 2.000 mol of O2. P4 + 5 O2 -> P4O10. Which reactant is limiting? Write its formula.",
+      "a": "O2",
+      "why": "0.5000 mol of P4 needs 2.500 mol of O2. Only 2.000 mol of O2 is available, so O2 is limiting.",
+      "hints": ["0.5000 mol of P4 would need 2.500 mol of O2, and the flask has only 2.000 mol of O2."],
+      "check": { "kind": "exact", "text": "O2", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-yield-tetroxide",
+      "q": "0.5000 mol of P4 is mixed with 2.000 mol of O2. P4 + 5 O2 -> P4O10. What is the theoretical yield of P4O10 in grams?",
+      "a": "113.6 g",
+      "why": "O2 is limiting. Moles of P4O10 = 2.000 / 5 = 0.4000 mol. Molar mass = 4(30.974) + 10(15.999) = 283.886 g/mol. Mass = 0.4000 times 283.886 = 113.6 g.",
+      "hints": ["The 2.000 mol of O2 produces 0.4000 mol of P4O10. Use 4(30.974) + 10(15.999) g/mol."],
+      "check": { "kind": "numeric", "value": 113.6, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch07-yield-tetroxide-percent",
+      "q": "The theoretical yield of P4O10 from 0.5000 mol of P4 and 2.000 mol of O2 is 113.6 g. If 96.50 g is isolated, what is the percent yield?",
+      "a": "84.98 %",
+      "why": "Percent yield = (96.50 / 113.6) times 100 = 84.98%.",
+      "hints": ["96.50 g was isolated. Divide by the theoretical mass of P4O10 and convert to a percent."],
+      "check": { "kind": "numeric", "value": 84.98, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch07-limit-ethanol",
+      "q": "15.00 g of C2H5OH is burned with 20.00 g of O2. C2H5OH + 3 O2 -> 2 CO2 + 3 H2O. Which reactant is limiting? Write its formula.",
+      "a": "O2",
+      "why": "Molar mass of ethanol = 2(12.011) + 6(1.008) + 15.999 = 46.069 g/mol. Moles of ethanol = 15.00 / 46.069 = 0.3256 mol, which needs 0.9768 mol of O2. Moles of O2 = 20.00 / 31.998 = 0.6250 mol. O2 runs out first.",
+      "hints": ["Ethanol is 2(12.011) + 6(1.008) + 15.999 g/mol and needs 3 mol O2, while O2 is 31.998 g/mol."],
+      "check": { "kind": "exact", "text": "O2", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-yield-ethanol-co2",
+      "q": "15.00 g of C2H5OH is burned with 20.00 g of O2. C2H5OH + 3 O2 -> 2 CO2 + 3 H2O. What is the theoretical yield of CO2 in grams?",
+      "a": "18.34 g",
+      "why": "O2 is limiting at 20.00 / 31.998 = 0.6250 mol. Moles of CO2 = 0.6250 times (2/3) = 0.4167 mol. Mass = 0.4167 times 44.009 = 18.34 g.",
+      "hints": ["O2 is limiting. Two CO2 form for every three O2, and CO2 is 44.009 g/mol."],
+      "check": { "kind": "numeric", "value": 18.34, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch07-yield-ethanol-percent",
+      "q": "The theoretical yield of CO2 from 15.00 g of ethanol and 20.00 g of O2 is 18.34 g. If 14.20 g of CO2 is collected, what is the percent yield?",
+      "a": "77.43 %",
+      "why": "Percent yield = (14.20 / 18.34) times 100 = 77.43%.",
+      "hints": ["14.20 g of CO2 was collected. Divide by the theoretical CO2 mass from the limiting reactant."],
+      "check": { "kind": "numeric", "value": 77.43, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch07-excess-ethanol",
+      "q": "15.00 g of C2H5OH is burned with 20.00 g of O2. C2H5OH + 3 O2 -> 2 CO2 + 3 H2O. How many grams of ethanol are left over?",
+      "a": "5.402 g",
+      "why": "O2 is limiting at 0.6250 mol, so moles of ethanol used = 0.6250 / 3 = 0.2083 mol. Mass used = 0.2083 times 46.069 = 9.598 g. Left over = 15.00 - 9.598 = 5.402 g.",
+      "hints": ["Ethanol used, in moles, is one third of the moles of O2. Subtract that mass from 15.00 g."],
+      "check": { "kind": "numeric", "value": 5.402, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "id": "ch07-balance",
+  "ch": 7,
+  "openstax_section": "OpenStax AF2e §7.1",
+  "guide_line": "Balance an equation, then cancel spectator ions to leave the net ionic equation.",
+  "steps": [
+    "Write the correct formulas first. Change coefficients, never subscripts, to balance.",
+    "Count atoms of one element at a time. Match metals and other elements that appear once on each side before H and O.",
+    "In water, a soluble ionic compound is written as separate ions. Ions that stay dissolved on both sides are spectators.",
+    "Cross the spectators out. The equation that remains is the net ionic equation.",
+    "Solubility shortcuts: nitrates, ammonium, and group 1 salts dissolve. Chlorides and iodides dissolve except with Ag+, Pb2+, and Hg2+. Sulfates dissolve except with Ba2+, Pb2+, Sr2+, and Ca2+. Carbonates do not dissolve except with group 1 ions and ammonium."
+  ],
+  "worked_example": {
+    "q": "Balance C2H6 + O2 -> CO2 + H2O. Give the coefficients in order, separated by commas.",
+    "steps": [
+      "One ethane has 2 C and 6 H, so the carbon dioxide coefficient is 2 and the water coefficient is 3.",
+      "That puts 4 + 3 = 7 oxygen atoms on the right, which is not a whole number of O2.",
+      "Double every coefficient: 2 C2H6 + 7 O2 -> 4 CO2 + 6 H2O. Carbon, hydrogen, and oxygen now match."
+    ],
+    "answer": "2, 7, 4, 6"
+  },
+  "similar_problem": {
+    "q": "Balance C3H8 + O2 -> CO2 + H2O. Give the coefficients in order, separated by commas.",
+    "hint": "Balance the three carbon atoms and the eight hydrogen atoms before you touch oxygen.",
+    "answer": "1, 5, 3, 4"
+  },
+  "sources": ["OpenStax AF2e §7.1"],
+  "problems": [
+    {
+      "id": "ch07-balance-ethane",
+      "q": "Balance C2H6 + O2 -> CO2 + H2O. Give the smallest whole-number coefficients in order, separated by commas.",
+      "a": "2, 7, 4, 6",
+      "why": "C2H6 gives 2 CO2 and 3 H2O, but that needs 7/2 O2. Multiply through by 2: 2 C2H6 + 7 O2 -> 4 CO2 + 6 H2O.",
+      "hints": ["Two C2H6 give 4 CO2 and 6 H2O. The oxygen atoms on the right then total 14, so the O2 coefficient is 7."],
+      "check": {
+        "kind": "exact",
+        "text": "2, 7, 4, 6",
+        "answers": ["2,7,4,6"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch07-balance-propane",
+      "q": "Balance C3H8 + O2 -> CO2 + H2O. Give the smallest whole-number coefficients in order, separated by commas.",
+      "a": "1, 5, 3, 4",
+      "why": "Propane has 3 C and 8 H, so the products are 3 CO2 and 4 H2O. The right side then has 10 oxygen atoms, which is 5 O2. Coefficients: 1, 5, 3, 4.",
+      "hints": ["One propane makes 3 CO2 and 4 H2O. That is 6 + 4 = 10 oxygen atoms, so the O2 coefficient is 5."],
+      "check": {
+        "kind": "exact",
+        "text": "1, 5, 3, 4",
+        "answers": ["1,5,3,4"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch07-balance-ammonia",
+      "q": "Balance N2 + H2 -> NH3. Give the smallest whole-number coefficients in order, separated by commas.",
+      "a": "1, 3, 2",
+      "why": "N2 already supplies two N atoms, so the ammonia coefficient is 2. Two NH3 hold six H atoms, so the H2 coefficient is 3. Coefficients: 1, 3, 2.",
+      "hints": ["Nitrogen is already matched. Six hydrogen atoms in two ammonia molecules need three H2."],
+      "check": {
+        "kind": "exact",
+        "text": "1, 3, 2",
+        "answers": ["1,3,2"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch07-balance-iron-oxide",
+      "q": "Balance Fe2O3 + CO -> Fe + CO2. Give the smallest whole-number coefficients in order, separated by commas.",
+      "a": "1, 3, 2, 3",
+      "why": "Fe2O3 has two Fe atoms, so the iron metal coefficient is 2. It also has three O atoms, and each CO takes one O to become CO2, so both CO and CO2 get coefficient 3. Coefficients: 1, 3, 2, 3.",
+      "hints": ["One Fe2O3 holds three oxygen atoms, and each CO takes one of them to become CO2."],
+      "check": {
+        "kind": "exact",
+        "text": "1, 3, 2, 3",
+        "answers": ["1,3,2,3"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch07-balance-butane",
+      "q": "Balance C4H10 + O2 -> CO2 + H2O. Give the smallest whole-number coefficients in order, separated by commas.",
+      "a": "2, 13, 8, 10",
+      "why": "Use 2 C4H10 so the hydrogen count is even for whole O2. That makes 8 CO2 and 10 H2O. Oxygen atoms on the right: 16 + 10 = 26, so 13 O2. Coefficients: 2, 13, 8, 10.",
+      "hints": ["Start from 2 C4H10 so the 20 hydrogen atoms make 10 water molecules, then count the oxygen atoms."],
+      "check": {
+        "kind": "exact",
+        "text": "2, 13, 8, 10",
+        "answers": ["2,13,8,10"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch07-balance-aluminum-acid",
+      "q": "Balance Al + HCl -> AlCl3 + H2. Give the smallest whole-number coefficients in order, separated by commas.",
+      "a": "2, 6, 2, 3",
+      "why": "AlCl3 takes Cl in threes and H2 takes H in twos, so use 6 HCl. That makes 2 AlCl3 and 3 H2, and the Al coefficient is 2. Coefficients: 2, 6, 2, 3.",
+      "hints": ["AlCl3 needs chlorine in threes and H2 needs hydrogen in twos, so the HCl coefficient to try is 6."],
+      "check": {
+        "kind": "exact",
+        "text": "2, 6, 2, 3",
+        "answers": ["2,6,2,3"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch07-balance-chlorate",
+      "q": "Solid potassium chlorate, KClO3, decomposes to solid KCl and O2 gas. Write the balanced equation using -> between reactants and products.",
+      "a": "2 KClO3 -> 2 KCl + 3 O2",
+      "why": "K and Cl are already 1 to 1. Oxygen is 3 on the left and 2 on the right, so use 2 KClO3 and 3 O2: 2 KClO3 -> 2 KCl + 3 O2.",
+      "hints": ["Do not change the subscripts. Two KClO3 hold six oxygen atoms, which is three O2."],
+      "check": {
+        "kind": "exact",
+        "text": "2 KClO3 -> 2 KCl + 3 O2",
+        "answers": [
+          "2KClO3 -> 2KCl + 3O2",
+          "2 KClO3 → 2 KCl + 3 O2",
+          "2KClO3 → 2KCl + 3O2"
+        ],
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch07-net-silver-chloride",
+      "q": "Aqueous silver nitrate is mixed with aqueous sodium chloride, and solid silver chloride forms. Write the net ionic equation. Use -> and write ions as Ag+ and Cl-.",
+      "a": "Ag+ + Cl- -> AgCl",
+      "why": "AgNO3 and NaCl split into ions. Na+ and NO3- stay dissolved, so they cancel. The net ionic equation is Ag+ + Cl- -> AgCl.",
+      "hints": ["Na+ and NO3- are aqueous on both sides, so only Ag+ and Cl- stay in the net ionic equation."],
+      "check": {
+        "kind": "exact",
+        "text": "Ag+ + Cl- -> AgCl",
+        "answers": [
+          "Cl- + Ag+ -> AgCl",
+          "Ag+ + Cl- → AgCl",
+          "Cl- + Ag+ → AgCl",
+          "Ag+ + Cl- -> AgCl(s)",
+          "Cl- + Ag+ -> AgCl(s)"
+        ],
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch07-spectators-barium-sulfate",
+      "q": "Aqueous barium chloride is mixed with aqueous sodium sulfate, and solid barium sulfate forms. List the spectator ions.",
+      "a": "Na+, Cl-",
+      "why": "Ba2+ and SO42- form solid BaSO4. Na+ and Cl- remain in the solution, so those two are the spectators.",
+      "hints": ["Ba2+ and SO42- are locked in the solid BaSO4. The ions still dissolved are the spectators."],
+      "check": {
+        "kind": "set",
+        "case": "sensitive",
+        "answers": ["Na+", "Cl-"]
+      }
+    },
+    {
+      "id": "ch07-net-strong-neutralization",
+      "q": "Aqueous HCl is mixed with aqueous NaOH. Write the net ionic equation. Use H+, OH-, and ->.",
+      "a": "H+ + OH- -> H2O",
+      "why": "Both reactants are strong, so they are ions in water. Na+ and Cl- cancel. What remains is H+ + OH- -> H2O.",
+      "hints": ["Na+ and Cl- appear on both sides and cancel. H+ and OH- are what make the water."],
+      "check": {
+        "kind": "exact",
+        "text": "H+ + OH- -> H2O",
+        "answers": [
+          "OH- + H+ -> H2O",
+          "H+ + OH- → H2O",
+          "OH- + H+ → H2O",
+          "H+ + OH- -> H2O(l)"
+        ],
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch07-precip-lead-iodide",
+      "q": "Aqueous lead(II) nitrate is mixed with aqueous potassium iodide. What is the formula of the solid that forms?",
+      "a": "PbI2",
+      "why": "Lead(II) iodide is insoluble. The other product, potassium nitrate, dissolves. The solid is PbI2.",
+      "hints": ["Potassium nitrate stays dissolved. Lead(II) and iodide are the pair that forms the solid."],
+      "check": {
+        "kind": "exact",
+        "text": "PbI2",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch07-no-precipitate",
+      "q": "Aqueous potassium nitrate is mixed with aqueous sodium chloride. Does a precipitate form? Answer yes or no.",
+      "a": "no",
+      "why": "Swapping partners would give KCl and NaNO3. Group 1 salts and nitrates both dissolve, so no solid forms.",
+      "hints": ["The swapped products would be KCl and NaNO3, and both a group 1 salt and a nitrate dissolve."],
+      "check": {
+        "kind": "exact",
+        "text": "no",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch07-precip-calcium-carbonate",
+      "q": "Aqueous calcium chloride is mixed with aqueous sodium carbonate. What is the formula of the precipitate?",
+      "a": "CaCO3",
+      "why": "Carbonates do not dissolve with calcium. The other product, NaCl, dissolves. The precipitate is CaCO3.",
+      "hints": ["Sodium stays with chloride in solution. Calcium and carbonate are the pair that does not dissolve."],
+      "check": {
+        "kind": "exact",
+        "text": "CaCO3",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch07-net-zinc-copper",
+      "q": "Zinc metal is placed in aqueous copper(II) sulfate, and copper metal forms. Write the net ionic equation. Use Cu2+, Zn2+, and ->.",
+      "a": "Zn + Cu2+ -> Zn2+ + Cu",
+      "why": "Sulfate stays dissolved, so it is a spectator. Zinc metal gives electrons to Cu2+. The net ionic equation is Zn + Cu2+ -> Zn2+ + Cu.",
+      "hints": ["Sulfate is aqueous before and after the reaction, so cancel it and keep the zinc and copper."],
+      "check": {
+        "kind": "exact",
+        "text": "Zn + Cu2+ -> Zn2+ + Cu",
+        "answers": [
+          "Cu2+ + Zn -> Zn2+ + Cu",
+          "Zn + Cu2+ -> Cu + Zn2+",
+          "Zn + Cu2+ → Zn2+ + Cu",
+          "Cu2+ + Zn → Cu + Zn2+"
+        ],
+        "case": "sensitive"
+      }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "ch07-analysis",
+  "ch": 7,
+  "openstax_section": "OpenStax AF2e §7.5",
+  "guide_line": "Use a titration volume or a weighed precipitate to find concentration or percent composition.",
+  "steps": [
+    "Write the balanced equation so you know how many H+ or OH- each formula supplies.",
+    "Moles of titrant = molarity times liters. At the endpoint, convert those moles to moles of analyte with the mole ratio.",
+    "Molarity of the analyte = moles of analyte divided by liters of analyte.",
+    "In a gravimetric analysis, moles of the weighed solid equal moles of the ion you are tracking. Change that to grams, then to a percent of the sample mass.",
+    "Round the final answer to 4 significant figures. Atomic masses, at OpenStax full precision: H 1.008, C 12.011, O 15.999, Na 22.990, S 32.06, Cl 35.45, Ba 137.33, Ag 107.868."
+  ],
+  "worked_example": {
+    "q": "25.00 mL of HCl is titrated with 18.40 mL of 0.1000 M NaOH. What is the molarity of the HCl? HCl + NaOH -> NaCl + H2O.",
+    "steps": [
+      "Moles of NaOH = 0.01840 L times 0.1000 mol/L = 0.001840 mol.",
+      "The ratio is 1 to 1, so moles of HCl = 0.001840 mol.",
+      "Molarity = 0.001840 mol / 0.02500 L = 0.07360 M."
+    ],
+    "answer": "0.07360 M"
+  },
+  "similar_problem": {
+    "q": "22.50 mL of KOH is titrated with 15.00 mL of 0.1800 M HCl. What is the molarity of the KOH? KOH + HCl -> KCl + H2O.",
+    "hint": "Moles of acid equal moles of base. Divide those moles by the analyte volume in liters.",
+    "answer": "0.1200 M"
+  },
+  "sources": ["OpenStax AF2e §7.5"],
+  "problems": [
+    {
+      "id": "ch07-titrate-hcl",
+      "q": "25.00 mL of HCl is titrated with 18.40 mL of 0.1000 M NaOH. HCl + NaOH -> NaCl + H2O. What is the molarity of the HCl?",
+      "a": "0.07360 M",
+      "why": "Moles of NaOH = 0.01840 times 0.1000 = 0.001840 mol. The ratio is 1 to 1. Molarity of HCl = 0.001840 / 0.02500 = 0.07360 M.",
+      "hints": ["Moles of NaOH are 0.01840 L times 0.1000 mol/L. The HCl sample volume is 0.02500 L."],
+      "check": { "kind": "numeric", "value": 0.0736, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
+    },
+    {
+      "id": "ch07-titrate-koh",
+      "q": "22.50 mL of KOH is titrated with 15.00 mL of 0.1800 M HCl. KOH + HCl -> KCl + H2O. What is the molarity of the KOH?",
+      "a": "0.1200 M",
+      "why": "Moles of HCl = 0.01500 times 0.1800 = 0.002700 mol. The ratio is 1 to 1. Molarity of KOH = 0.002700 / 0.02250 = 0.1200 M.",
+      "hints": ["Moles of HCl are 0.01500 L times 0.1800 mol/L. Divide by 0.02250 L of the KOH sample."],
+      "check": { "kind": "numeric", "value": 0.12, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
+    },
+    {
+      "id": "ch07-titrate-sulfuric",
+      "q": "What volume, in mL, of 0.4000 M NaOH reacts with 20.00 mL of 0.2500 M H2SO4? H2SO4 + 2 NaOH -> Na2SO4 + 2 H2O.",
+      "a": "25.00 mL",
+      "why": "Moles of H2SO4 = 0.02000 times 0.2500 = 0.005000 mol. Moles of NaOH = 0.01000 mol. Volume = 0.01000 / 0.4000 = 0.02500 L = 25.00 mL.",
+      "hints": ["20.00 mL of 0.2500 M H2SO4 contains 0.005000 mol, and the base ratio is 2 NaOH per acid."],
+      "check": { "kind": "numeric", "value": 25, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
+    },
+    {
+      "id": "ch07-titrate-lime",
+      "q": "What volume, in mL, of 0.1800 M HCl reacts with 15.00 mL of 0.1200 M Ca(OH)2? Ca(OH)2 + 2 HCl -> CaCl2 + 2 H2O.",
+      "a": "20.00 mL",
+      "why": "Moles of Ca(OH)2 = 0.01500 times 0.1200 = 0.001800 mol. Moles of HCl = 0.003600 mol. Volume = 0.003600 / 0.1800 = 0.02000 L = 20.00 mL.",
+      "hints": ["15.00 mL of 0.1200 M Ca(OH)2 contains 0.001800 mol, and each mole needs 2 mol HCl."],
+      "check": { "kind": "numeric", "value": 20, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
+    },
+    {
+      "id": "ch07-titrate-barium",
+      "q": "What volume, in mL, of 0.1500 M Ba(OH)2 reacts with 25.00 mL of 0.2000 M HNO3? 2 HNO3 + Ba(OH)2 -> Ba(NO3)2 + 2 H2O.",
+      "a": "16.67 mL",
+      "why": "Moles of HNO3 = 0.02500 times 0.2000 = 0.005000 mol. Moles of Ba(OH)2 = half of that = 0.002500 mol. Volume = 0.002500 / 0.1500 = 0.01667 L = 16.67 mL.",
+      "hints": ["25.00 mL of 0.2000 M HNO3 contains 0.005000 mol of H+. Each Ba(OH)2 supplies two OH-."],
+      "check": { "kind": "numeric", "value": 16.67, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
+    },
+    {
+      "id": "ch07-titrate-oxalic",
+      "q": "What volume, in mL, of 0.1000 M NaOH reacts with 15.00 mL of 0.08000 M H2C2O4? H2C2O4 + 2 NaOH -> Na2C2O4 + 2 H2O.",
+      "a": "24.00 mL",
+      "why": "Moles of oxalic acid = 0.01500 times 0.08000 = 0.001200 mol. Moles of NaOH = 0.002400 mol. Volume = 0.002400 / 0.1000 = 0.02400 L = 24.00 mL.",
+      "hints": ["15.00 mL of 0.08000 M H2C2O4 contains 0.001200 mol, and oxalic acid donates two H+."],
+      "check": { "kind": "numeric", "value": 24, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
+    },
+    {
+      "id": "ch07-grav-chloride",
+      "q": "A 0.8500 g chloride sample gives 1.240 g of AgCl. What is the mass percent of Cl in the sample?",
+      "a": "36.08 %",
+      "why": "Moles of AgCl = 1.240 / 143.318 = 0.008652 mol. Mass of Cl = 0.008652 times 35.45 = 0.3067 g. Percent = (0.3067 / 0.8500) times 100 = 36.08%.",
+      "hints": ["Convert 1.240 g of AgCl to moles with 143.318 g/mol, then to grams of Cl with 35.45 g/mol."],
+      "check": { "kind": "numeric", "value": 36.08, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch07-vinegar",
+      "q": "A 10.00 g vinegar sample needs 16.50 mL of 0.5000 M NaOH. CH3COOH + NaOH -> NaCH3COO + H2O. What is the mass percent of acetic acid?",
+      "a": "4.954 %",
+      "why": "Moles of acetic acid = 0.01650 times 0.5000 = 0.008250 mol. Molar mass = 2(12.011) + 4(1.008) + 2(15.999) = 60.052 g/mol. Mass = 0.4954 g. Percent = (0.4954 / 10.00) times 100 = 4.954%.",
+      "hints": ["16.50 mL of 0.5000 M NaOH equals the moles of CH3COOH. The acid molar mass is 60.052 g/mol, and the sample is 10.00 g."],
+      "check": { "kind": "numeric", "value": 4.954, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch07-soda-ash",
+      "q": "A 0.4200 g sample of impure Na2CO3 needs 32.10 mL of 0.2000 M HCl. Na2CO3 + 2 HCl -> 2 NaCl + CO2 + H2O. What is the mass percent of Na2CO3?",
+      "a": "81.01 %",
+      "why": "Moles of HCl = 0.03210 times 0.2000 = 0.006420 mol. Moles of Na2CO3 = 0.003210 mol. Molar mass = 2(22.990) + 12.011 + 3(15.999) = 105.988 g/mol. Mass = 0.3402 g. Percent = (0.3402 / 0.4200) times 100 = 81.01%.",
+      "hints": ["32.10 mL of 0.2000 M HCl is 0.006420 mol of acid, and the carbonate takes two HCl. Na2CO3 is 105.988 g/mol."],
+      "check": { "kind": "numeric", "value": 81.01, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch07-grav-sulfur",
+      "q": "A 1.200 g sample yields 0.9800 g of BaSO4. What is the mass percent of S in the sample?",
+      "a": "11.22 %",
+      "why": "Molar mass of BaSO4 = 137.33 + 32.06 + 4(15.999) = 233.386 g/mol. Moles = 0.9800 / 233.386 = 0.004199 mol of S. Mass of S = 0.004199 times 32.06 = 0.1346 g. Percent = (0.1346 / 1.200) times 100 = 11.22%.",
+      "hints": ["0.9800 g of BaSO4 over 233.386 g/mol is the moles of S. Multiply by 32.06 g/mol and compare with 1.200 g."],
+      "check": { "kind": "numeric", "value": 11.22, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch07-flask-naoh",
+      "q": "10.00 mL of a NaOH solution needs 14.20 mL of 0.1000 M HCl. How many grams of NaOH are in 250.0 mL of that same solution?",
+      "a": "1.420 g",
+      "why": "Moles in the 10.00 mL aliquot = 0.01420 times 0.1000 = 0.001420 mol. The 250.0 mL flask holds 25 times that aliquot, so 0.03550 mol. Molar mass of NaOH = 22.990 + 15.999 + 1.008 = 39.997 g/mol. Mass = 1.420 g.",
+      "hints": ["The 10.00 mL aliquot is 1/25 of 250.0 mL. Find moles in the aliquot from 14.20 mL of 0.1000 M HCl, then scale up."],
+      "check": { "kind": "numeric", "value": 1.42, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch07-endpoint-moles",
+      "q": "A monoprotic acid sample needs 24.50 mL of 0.1050 M NaOH to reach the endpoint. How many moles of acid were in the sample?",
+      "a": "0.002573 mol",
+      "why": "The ratio is 1 to 1. Moles of acid = 0.02450 L times 0.1050 mol/L = 0.002573 mol.",
+      "hints": ["A 1-to-1 titration means the acid moles equal 0.02450 L times 0.1050 mol/L of NaOH."],
+      "check": { "kind": "numeric", "value": 0.002573, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
+    }
+  ]
+}

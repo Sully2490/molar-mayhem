@@ -1,0 +1,245 @@
+{
+  "id": "ch07-cards",
+  "ch": 7,
+  "openstax_section": "OpenStax AF2e §7.2",
+  "guide_line": "Drill the six strong acids, remember that every other acid is weak, and list the strong bases.",
+  "steps": [
+    "A strong acid gives all of its H+ to water. Memorize six: HCl, HBr, HI, HNO3, H2SO4, and HClO4.",
+    "Every other acid is weak. That includes HF, CH3COOH, H2CO3, and H3PO4.",
+    "HClO3 is the near miss. It is not the chlorine oxyacid on the strong list. That formula is HClO4.",
+    "A strong base releases OH- completely. The list is LiOH, NaOH, KOH, RbOH, CsOH, Ca(OH)2, Sr(OH)2, and Ba(OH)2.",
+    "Mg(OH)2 is not on the strong-base list. NH3 is a weak base, not a metal hydroxide."
+  ],
+  "worked_example": {
+    "q": "Is HNO3 strong or weak?",
+    "steps": [
+      "HNO3 is nitric acid.",
+      "Nitric acid is one of the six strong acids.",
+      "So HNO3 is strong."
+    ],
+    "answer": "strong"
+  },
+  "similar_problem": {
+    "q": "Is HF strong or weak?",
+    "hint": "Look for HF beside HCl, HBr, HI, HNO3, H2SO4, and HClO4. It is absent.",
+    "answer": "weak"
+  },
+  "sources": ["OpenStax AF2e §7.2"],
+  "problems": [
+    {
+      "id": "ch07-cards-strong-acids",
+      "q": "List the six strong acids. Give the formulas.",
+      "a": "HCl, HBr, HI, HNO3, H2SO4, HClO4",
+      "why": "The six strong acids are HCl, HBr, HI, HNO3, H2SO4, and HClO4. HClO3 is not on this list.",
+      "hints": ["The six are three haloacids without oxygen, plus nitric, sulfuric, and perchloric acid."],
+      "check": {
+        "kind": "set",
+        "case": "sensitive",
+        "answers": ["HCl", "HBr", "HI", "HNO3", "H2SO4", "HClO4"],
+        "nearMiss": [
+          {
+            "text": "HClO3",
+            "hint": "HClO3 is close. The chlorine oxyacid on the strong list is HClO4."
+          }
+        ]
+      }
+    },
+    {
+      "id": "ch07-cards-hf",
+      "q": "A bottle is labeled HF. Is this acid strong or weak?",
+      "a": "weak",
+      "why": "HF is not one of the six strong acids. Every other acid is weak, so HF is weak.",
+      "hints": ["Hydrofluoric acid is not hydrochloric acid, and only HCl from that pair is strong."],
+      "check": { "kind": "exact", "text": "weak", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-cards-ch3cooh",
+      "q": "Is CH3COOH strong or weak?",
+      "a": "weak",
+      "why": "CH3COOH is acetic acid. It is not one of the six, so it is weak.",
+      "hints": ["CH3COOH is the acid in vinegar. Vinegar is sour because this acid is only partly ionized."],
+      "check": { "kind": "exact", "text": "weak", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-cards-h2co3",
+      "q": "Is H2CO3 strong or weak?",
+      "a": "weak",
+      "why": "H2CO3 is carbonic acid. It is not one of the six, so it is weak.",
+      "hints": ["H2CO3 is what you get when CO2 dissolves. It does not ionize completely."],
+      "check": { "kind": "exact", "text": "weak", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-cards-h3po4",
+      "q": "Is H3PO4 strong or weak?",
+      "a": "weak",
+      "why": "H3PO4 is phosphoric acid. It is not one of the six, so it is weak.",
+      "hints": ["H3PO4 is used in soda, and an acid mild enough for that is not one of the six."],
+      "check": { "kind": "exact", "text": "weak", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-cards-other-weak",
+      "q": "An acid is not HCl, HBr, HI, HNO3, H2SO4, or HClO4. Is it strong or weak?",
+      "a": "weak",
+      "why": "Every acid outside those six is weak.",
+      "hints": ["Memorize the six. If a formula is anything else, the answer word is weak."],
+      "check": { "kind": "exact", "text": "weak", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-cards-weak-set",
+      "q": "Which of these acids are weak? HF, HCl, CH3COOH, HNO3, H2CO3, H3PO4, HClO4.",
+      "a": "HF, CH3COOH, H2CO3, H3PO4",
+      "why": "HCl, HNO3, and HClO4 are three of the six strong acids. The weak ones left in the list are HF, CH3COOH, H2CO3, and H3PO4.",
+      "hints": ["Delete every formula that is one of the six strong acids. Four formulas in the list survive."],
+      "check": {
+        "kind": "set",
+        "case": "sensitive",
+        "answers": ["HF", "CH3COOH", "H2CO3", "H3PO4"],
+        "nearMiss": [
+          { "text": "HCl", "hint": "HCl is one of the six strong acids, so take it off the weak list." },
+          { "text": "HNO3", "hint": "HNO3 is nitric acid, and nitric acid is strong." },
+          { "text": "HClO4", "hint": "HClO4 is perchloric acid, one of the six strong acids." },
+          { "text": "HClO3", "hint": "HClO3 is the near miss for the strong-acid list. It is not one of the weak acids asked for here." }
+        ]
+      }
+    },
+    {
+      "id": "ch07-cards-strong-bases",
+      "q": "List the strong bases: the group 1 hydroxides from Li through Cs, plus Ca(OH)2, Sr(OH)2, and Ba(OH)2.",
+      "a": "LiOH, NaOH, KOH, RbOH, CsOH, Ca(OH)2, Sr(OH)2, Ba(OH)2",
+      "why": "The strong bases are LiOH, NaOH, KOH, RbOH, CsOH, Ca(OH)2, Sr(OH)2, and Ba(OH)2. Mg(OH)2 and NH3 are not on this list.",
+      "hints": ["List five group-1 hydroxides, Li through Cs, then the three soluble heavier group-2 hydroxides."],
+      "check": {
+        "kind": "set",
+        "case": "sensitive",
+        "answers": ["LiOH", "NaOH", "KOH", "RbOH", "CsOH", "Ca(OH)2", "Sr(OH)2", "Ba(OH)2"],
+        "nearMiss": [
+          {
+            "text": "Mg(OH)2",
+            "hint": "Mg(OH)2 is close. It is a group 2 hydroxide, but it does not dissolve well, so it is not on this list."
+          },
+          {
+            "text": "NH3",
+            "hint": "NH3 is a base, but it is weak. This list is metal hydroxides only."
+          }
+        ]
+      }
+    },
+    {
+      "id": "ch07-cards-hclo3",
+      "q": "Is HClO3 one of the six strong acids? Answer yes or no.",
+      "a": "no",
+      "why": "The chlorine oxyacid on the strong list is HClO4, not HClO3. Answer no.",
+      "hints": ["Count the oxygen atoms. The strong chlorine oxyacid has four, not three."],
+      "check": { "kind": "exact", "text": "no", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-cards-formula-hcl",
+      "q": "Write the formula of hydrochloric acid.",
+      "a": "HCl",
+      "why": "Hydrochloric acid is HCl, one of the six strong acids.",
+      "hints": ["Binary acids of the halogens are just H plus the halogen, so hydrochloric acid has no oxygen."],
+      "check": { "kind": "exact", "text": "HCl", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-cards-formula-hclo4",
+      "q": "Write the formula of perchloric acid.",
+      "a": "HClO4",
+      "why": "Perchloric acid is HClO4. It is the strong chlorine oxyacid.",
+      "hints": ["The prefix per- and the ending -ic on chlorine means four oxygen atoms."],
+      "check": { "kind": "exact", "text": "HClO4", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-cards-formula-h2so4",
+      "q": "Write the formula of sulfuric acid.",
+      "a": "H2SO4",
+      "why": "Sulfuric acid is H2SO4, one of the six strong acids.",
+      "hints": ["Sulfate is SO4 with charge 2-, so sulfuric acid has two hydrogens in front."],
+      "check": { "kind": "exact", "text": "H2SO4", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-cards-formula-hno3",
+      "q": "Write the formula of nitric acid.",
+      "a": "HNO3",
+      "why": "Nitric acid is HNO3, one of the six strong acids.",
+      "hints": ["Nitrate is NO3-, so nitric acid is that ion plus one hydrogen."],
+      "check": { "kind": "exact", "text": "HNO3", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-cards-formula-hf",
+      "q": "Write the formula of hydrofluoric acid.",
+      "a": "HF",
+      "why": "Hydrofluoric acid is HF. It is weak.",
+      "hints": ["The element fluorine makes hydrofluoric acid the same way chlorine makes HCl."],
+      "check": { "kind": "exact", "text": "HF", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-cards-formula-acetic",
+      "q": "Write the formula of acetic acid.",
+      "a": "CH3COOH",
+      "why": "Acetic acid is CH3COOH. It is weak.",
+      "hints": ["Acetic acid has a CH3 group attached to COOH."],
+      "check": {
+        "kind": "exact",
+        "text": "CH3COOH",
+        "answers": ["CH3CO2H", "HC2H3O2"],
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch07-cards-formula-carbonic",
+      "q": "Write the formula of carbonic acid.",
+      "a": "H2CO3",
+      "why": "Carbonic acid is H2CO3. It is weak.",
+      "hints": ["Carbonic acid is H2CO3: two H, one C, three O."],
+      "check": { "kind": "exact", "text": "H2CO3", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-cards-formula-phosphoric",
+      "q": "Write the formula of phosphoric acid.",
+      "a": "H3PO4",
+      "why": "Phosphoric acid is H3PO4. It is weak.",
+      "hints": ["Phosphoric acid is H3PO4: three H, one P, four O."],
+      "check": { "kind": "exact", "text": "H3PO4", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-cards-formula-hbr",
+      "q": "Write the formula of hydrobromic acid.",
+      "a": "HBr",
+      "why": "Hydrobromic acid is HBr, one of the six strong acids.",
+      "hints": ["Swap bromine into the hydrochloric acid pattern: one H and one Br."],
+      "check": { "kind": "exact", "text": "HBr", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-cards-formula-hi",
+      "q": "Write the formula of hydroiodic acid.",
+      "a": "HI",
+      "why": "Hydroiodic acid is HI, one of the six strong acids.",
+      "hints": ["Hydroiodic acid is the iodine member of the HCl, HBr, HI set."],
+      "check": { "kind": "exact", "text": "HI", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-cards-baoh",
+      "q": "Is Ba(OH)2 a strong base? Answer yes or no.",
+      "a": "yes",
+      "why": "Ba(OH)2 is on the strong-base list with Ca(OH)2 and Sr(OH)2. Answer yes.",
+      "hints": ["Barium is in the same family as calcium and strontium, and its hydroxide is on the strong list."],
+      "check": { "kind": "exact", "text": "yes", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-cards-mgoh",
+      "q": "Is Mg(OH)2 on the strong-base list? Answer yes or no.",
+      "a": "no",
+      "why": "The group 2 hydroxides on the list are Ca(OH)2, Sr(OH)2, and Ba(OH)2. Mg(OH)2 is not one of them. Answer no.",
+      "hints": ["Milk of magnesia is Mg(OH)2. It does not dissolve well, so leave it off the strong-base list."],
+      "check": { "kind": "exact", "text": "no", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-cards-ammonia",
+      "q": "Is NH3 a strong base? Answer yes or no.",
+      "a": "no",
+      "why": "NH3 reacts only partly with water, so it is a weak base. Answer no.",
+      "hints": ["Ammonia is not a metal hydroxide. It is the usual example of a weak base."],
+      "check": { "kind": "exact", "text": "no", "case": "insensitive" }
+    }
+  ]
+}
