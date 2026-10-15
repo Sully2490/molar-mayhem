@@ -1,0 +1,58 @@
+{
+  "problems": [
+    {
+      "id": "final-ch5-sp3d2",
+      "ch": 5,
+      "q": "What is the hybridization of sulfur in SF6? Sulfur has six single bonds and no lone pairs.",
+      "a": "sp3d2",
+      "why": "Six electron groups need six hybrid orbitals. That set is one s, three p, and two d orbitals: sp3d2. The angles are 90°. OpenStax AF2e §5.3.",
+      "hints": ["Count the groups on sulfur. Six groups are not sp3."],
+      "check": { "kind": "exact", "text": "sp3d2", "case": "insensitive" }
+    },
+    {
+      "id": "final-ch5-sp2",
+      "ch": 5,
+      "q": "What hybridization does each carbon use in C2H4? Each carbon has three groups: two C–H bonds and one C=C bond.",
+      "a": "sp2",
+      "why": "A double bond counts as one group. Three groups use sp2 hybrids, and the leftover p orbital makes the pi bond. The bond angles are about 120°. OpenStax AF2e §5.3.",
+      "hints": ["Count groups, not lines. The C=C bond is one group plus a pi bond from an unhybridized p orbital."],
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+    },
+    {
+      "id": "final-ch5-pi",
+      "ch": 5,
+      "q": "A pi bond is the side-by-side overlap of two unhybridized p orbitals. Which orbitals overlap that way? Answer p.",
+      "a": "p",
+      "why": "Sigma bonds form by end-to-end overlap along the line between the nuclei. A pi bond forms when two unhybridized p orbitals overlap above and below that line. OpenStax AF2e §5.2.",
+      "hints": ["The sideways overlap uses the p orbitals that were left out of the hybrid set."],
+      "check": { "kind": "exact", "text": "p", "case": "insensitive" }
+    },
+    {
+      "id": "final-ch5-f2",
+      "ch": 5,
+      "q": "What is the bond order of F2 from molecular orbital theory?",
+      "a": "1",
+      "why": "F2 has 14 valence electrons: 8 in bonding orbitals and 6 in antibonding orbitals. Bond order = (8 − 6) / 2 = 1. OpenStax AF2e §5.4.",
+      "hints": ["Bond order is half the difference between bonding and antibonding electrons. F2 fills the pi-star set more than O2 does."],
+      "check": { "kind": "numeric", "value": 1, "unit": null }
+    },
+    {
+      "id": "final-ch5-o2",
+      "ch": 5,
+      "q": "Liquid oxygen is drawn into a magnetic field. Is O2 paramagnetic or diamagnetic?",
+      "a": "paramagnetic",
+      "why": "O2 places one electron in each of two pi-star orbitals. Those unpaired electrons make O2 paramagnetic. OpenStax AF2e §5.4.",
+      "hints": ["Look at the pi-star electrons in O2. They do not pair in one orbital."],
+      "check": { "kind": "exact", "text": "paramagnetic", "case": "insensitive" }
+    },
+    {
+      "id": "final-ch5-antibond",
+      "ch": 5,
+      "q": "Which sigma molecular orbital is higher in energy, the bonding orbital or the antibonding orbital?",
+      "a": "antibonding",
+      "why": "A bonding orbital has no node between the nuclei and sits lower in energy. The antibonding orbital has a node between the nuclei and sits higher. OpenStax AF2e §5.4.",
+      "hints": ["The orbital with a node between the nuclei is the higher one."],
+      "check": { "kind": "exact", "text": "antibonding", "case": "insensitive" }
+    }
+  ]
+}

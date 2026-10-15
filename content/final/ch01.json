@@ -1,0 +1,31 @@
+{
+  "problems": [
+    {
+      "id": "final-ch1-sig",
+      "ch": 1,
+      "q": "How many significant figures are in 0.07060?",
+      "a": "4",
+      "why": "The zeros before 7 only place the decimal. Count 7, the captive 0, 6, and the last 0. That is 4 significant figures. OpenStax AF2e §1.5.",
+      "hints": ["Start at the 7. The zero after 6 still counts because it comes after the decimal."],
+      "check": { "kind": "numeric", "value": 4, "unit": null }
+    },
+    {
+      "id": "final-ch1-density",
+      "ch": 1,
+      "q": "A dry solid has a mass of 24.0 g. Dropped into a graduated cylinder, it raises the water level from 15.0 mL to 21.0 mL. What is the density of the solid?",
+      "a": "4.00 g/mL",
+      "why": "The solid displaces 21.0 mL − 15.0 mL = 6.00 mL. Density = 24.0 g / 6.00 mL = 4.00 g/mL. OpenStax AF2e §1.4.",
+      "hints": ["The volume of the solid is the rise in the water level, not the starting reading."],
+      "check": { "kind": "numeric", "value": 4, "unit": "g/mL", "sigFigs": 3 }
+    },
+    {
+      "id": "final-ch1-change",
+      "ch": 1,
+      "q": "A strip of magnesium burns in air and leaves a white powder that was not there before. Is that a physical change or a chemical change?",
+      "a": "chemical change",
+      "why": "The white powder is a new substance, magnesium oxide. Forming a new substance is a chemical change. OpenStax AF2e §1.3.",
+      "hints": ["Ask whether the powder is still the same magnesium you started with."],
+      "check": { "kind": "exact", "text": "chemical change", "case": "insensitive" }
+    }
+  ]
+}

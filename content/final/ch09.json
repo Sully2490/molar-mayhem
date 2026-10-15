@@ -1,0 +1,22 @@
+{
+  "problems": [
+    {
+      "id": "final-ch9-heat",
+      "ch": 9,
+      "q": "How much heat, in joules, warms 40.0 g of water by 5.00 °C? Use c = 4.184 J/g°C (OpenStax AF2e) and round to three significant figures.",
+      "a": "837 J",
+      "why": "q = m c ΔT = (40.0 g)(4.184 J/g°C)(5.00 °C) = 836.8 J. Three significant figures rounds that to 837 J. OpenStax AF2e §9.1.",
+      "hints": ["Multiply the mass, 4.184, and the temperature change. Then keep three figures."],
+      "check": { "kind": "numeric", "value": 837, "unit": "J", "sigFigs": 3 }
+    },
+    {
+      "id": "final-ch9-sign",
+      "ch": 9,
+      "q": "A reaction has ΔH = −120 kJ. Is the reaction exothermic or endothermic?",
+      "a": "exothermic",
+      "why": "A negative ΔH means the system gives off heat. The reaction is exothermic. OpenStax AF2e §9.3.",
+      "hints": ["Watch the sign. Heat leaving the system is a negative enthalpy change."],
+      "check": { "kind": "exact", "text": "exothermic", "case": "insensitive" }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "problems": [
+    {
+      "id": "final-ch3-config",
+      "ch": 3,
+      "q": "Write the noble-gas electron configuration of Mg2+. Magnesium is atomic number 12, and the ion has lost two electrons.",
+      "a": "[Ne]",
+      "why": "A neutral Mg atom is [Ne] 3s2. The 2+ ion loses both 3s electrons, so Mg2+ is [Ne]. OpenStax AF2e §3.4.",
+      "hints": ["Remove the two outermost electrons. Do not leave them in 3s."],
+      "check": { "kind": "config", "text": "[Ne]" }
+    },
+    {
+      "id": "final-ch3-valence",
+      "ch": 3,
+      "q": "How many valence electrons does a neutral phosphorus atom have? Phosphorus is in group 15.",
+      "a": "5",
+      "why": "Group 15 atoms have 5 valence electrons. Phosphorus uses the configuration [Ne] 3s2 3p3. OpenStax AF2e §3.4.",
+      "hints": ["For a main-group atom, the group number tells you the valence count. Group 15 is five past the previous noble gas."],
+      "check": { "kind": "numeric", "value": 5, "unit": null }
+    },
+    {
+      "id": "final-ch3-radius",
+      "ch": 3,
+      "q": "Which atom is larger, K or Br? Both are in period 4. Answer with the element symbol.",
+      "a": "K",
+      "why": "Atomic radius decreases from left to right across a period. Potassium is farther left than bromine, so K is larger. OpenStax AF2e §3.5.",
+      "hints": ["In one period, the atom farther to the left is larger."],
+      "check": { "kind": "exact", "text": "K", "case": "formula" }
+    }
+  ]
+}

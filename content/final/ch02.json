@@ -1,0 +1,22 @@
+{
+  "problems": [
+    {
+      "id": "final-ch2-neutrons",
+      "ch": 2,
+      "q": "How many neutrons are in one atom of sulfur-34? Sulfur has atomic number 16.",
+      "a": "18",
+      "why": "Neutrons = mass number − atomic number = 34 − 16 = 18. OpenStax AF2e §2.3.",
+      "hints": ["The 34 is the mass number. Subtract the 16 protons."],
+      "check": { "kind": "numeric", "value": 18, "unit": null }
+    },
+    {
+      "id": "final-ch2-average",
+      "ch": 2,
+      "q": "An element has two isotopes. 80.0% of the atoms have mass 20.00 u and 20.0% have mass 22.00 u. What is the average atomic mass, in u?",
+      "a": "20.40",
+      "why": "Average = (0.800)(20.00 u) + (0.200)(22.00 u) = 16.00 u + 4.40 u = 20.40 u. OpenStax AF2e §2.3.",
+      "hints": ["Turn each percent into a decimal before you multiply it by that isotope’s mass."],
+      "check": { "kind": "numeric", "value": 20.4, "unit": null, "sigFigs": 4 }
+    }
+  ]
+}

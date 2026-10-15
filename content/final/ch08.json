@@ -1,0 +1,22 @@
+{
+  "problems": [
+    {
+      "id": "final-ch8-pressure",
+      "ch": 8,
+      "q": "A gas sample is at 1520 mmHg. What is that pressure in atm? Use 760 mmHg = 1 atm.",
+      "a": "2.00 atm",
+      "why": "1520 mmHg / 760 mmHg per atm = 2.00 atm. OpenStax AF2e §8.1.",
+      "hints": ["Divide by 760. A larger mmHg reading means more than 1 atm."],
+      "check": { "kind": "numeric", "value": 2, "unit": "atm", "sigFigs": 3 }
+    },
+    {
+      "id": "final-ch8-charles",
+      "ch": 8,
+      "q": "A gas sample occupies 1.50 L at 27 °C. The pressure stays the same and the temperature becomes 127 °C. What is the new volume? Convert each temperature with K = °C + 273.",
+      "a": "2.00 L",
+      "why": "Charles’s law needs kelvin: 27 + 273 = 300 K and 127 + 273 = 400 K. V2 = 1.50 L × (400 K / 300 K) = 2.00 L. OpenStax AF2e §8.2.",
+      "hints": ["Do not put 27 and 127 straight into the ratio. Add 273 to each Celsius temperature first."],
+      "check": { "kind": "numeric", "value": 2, "unit": "L", "sigFigs": 3 }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "problems": [
+    {
+      "id": "final-ch4-shape",
+      "ch": 4,
+      "q": "What is the molecular shape of NH3? Nitrogen has three bonds and one lone pair.",
+      "a": "trigonal pyramidal",
+      "why": "Four electron groups arrange as a tetrahedron. One group is a lone pair, so the shape made by the atoms is trigonal pyramidal. OpenStax AF2e §4.6.",
+      "hints": ["Name the shape from the atoms only. The lone pair still pushes the bonds into a pyramid."],
+      "check": { "kind": "exact", "text": "trigonal pyramidal", "case": "insensitive" }
+    },
+    {
+      "id": "final-ch4-molecule",
+      "ch": 4,
+      "q": "CO2 is a linear molecule and the two C–O bonds pull in opposite directions. Is the molecule polar or nonpolar?",
+      "a": "nonpolar",
+      "why": "Each C–O bond is polar, but the two pulls are equal and opposite in a straight line. They cancel, so CO2 is nonpolar. OpenStax AF2e §4.6.",
+      "hints": ["A polar bond does not always make a polar molecule. Check whether the bond pulls cancel."],
+      "check": { "kind": "exact", "text": "nonpolar", "case": "insensitive" }
+    },
+    {
+      "id": "final-ch4-bond",
+      "ch": 4,
+      "q": "The electronegativity difference for a C–F bond is 1.43. A difference below 0.4 is treated as nonpolar covalent. Is the C–F bond polar covalent or nonpolar covalent?",
+      "a": "polar covalent",
+      "why": "1.43 is greater than 0.4, and the atoms still share electrons. The bond is polar covalent. OpenStax AF2e §4.2.",
+      "hints": ["Compare 1.43 with 0.4. Sharing is still covalent; the size of the difference decides polar or nonpolar."],
+      "check": { "kind": "exact", "text": "polar covalent", "case": "insensitive" }
+    }
+  ]
+}

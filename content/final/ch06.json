@@ -1,0 +1,31 @@
+{
+  "problems": [
+    {
+      "id": "final-ch6-moles",
+      "ch": 6,
+      "q": "How many moles are in 44.01 g of CO2? Use 44.01 g/mol for CO2.",
+      "a": "1.000 mol",
+      "why": "Moles = mass / molar mass = 44.01 g / 44.01 g/mol = 1.000 mol. OpenStax AF2e §6.1.",
+      "hints": ["Divide the gram amount by the molar mass. Do not multiply."],
+      "check": { "kind": "numeric", "value": 1, "unit": "mol", "sigFigs": 4 }
+    },
+    {
+      "id": "final-ch6-dilute",
+      "ch": 6,
+      "q": "You dilute 50.0 mL of 0.800 M NaCl to 200.0 mL. What is the new concentration?",
+      "a": "0.200 M",
+      "why": "Moles of solute stay the same: M1V1 = M2V2. (0.800 M)(50.0 mL) / 200.0 mL = 0.200 M. OpenStax AF2e §6.3.",
+      "hints": ["The volume gets larger, so the molarity gets smaller. Keep the volume units the same on both sides."],
+      "check": { "kind": "numeric", "value": 0.2, "unit": "M", "sigFigs": 3 }
+    },
+    {
+      "id": "final-ch6-empirical",
+      "ch": 6,
+      "q": "A sample contains 0.150 mol C, 0.450 mol H, and 0.150 mol N. What is the empirical formula? Write C, then H, then N.",
+      "a": "CH3N",
+      "why": "Divide each amount by 0.150 mol. The ratio is 1 mol C : 3 mol H : 1 mol N, so the empirical formula is CH3N. OpenStax AF2e §6.2.",
+      "hints": ["Divide all three mole counts by the smallest one, 0.150 mol."],
+      "check": { "kind": "exact", "text": "CH3N", "case": "formula" }
+    }
+  ]
+}

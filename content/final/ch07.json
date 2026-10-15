@@ -1,0 +1,79 @@
+{
+  "problems": [
+    {
+      "id": "final-ch7-balance",
+      "ch": 7,
+      "q": "Balance P4 + O2 → P4O10. Give the coefficients of P4, O2, and P4O10 in that order, separated by commas.",
+      "a": "1, 5, 1",
+      "why": "P4O10 already has 4 P, so the P4 coefficient is 1. It has 10 O, so O2 needs a coefficient of 5. The coefficients are 1, 5, 1. OpenStax AF2e §7.1.",
+      "hints": ["The phosphorus is already balanced by one P4 on each side. Count the oxygen atoms next."],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["1, 5, 1", "1,5,1", "1 5 1"]
+      }
+    },
+    {
+      "id": "final-ch7-spectators",
+      "ch": 7,
+      "q": "KBr(aq) and AgNO3(aq) form AgBr(s) and KNO3(aq). Which ions are spectators? Separate the formulas with a comma.",
+      "a": "K+, NO3-",
+      "why": "Ag+ and Br− join to make the solid. K+ and NO3− stay dissolved on both sides, so they are the spectators. OpenStax AF2e §7.2.",
+      "hints": ["The spectator ions are the ones that do not end up in the solid."],
+      "check": {
+        "kind": "set",
+        "case": "formula",
+        "answers": ["K+", "NO3-"],
+        "nearMiss": [
+          { "text": "Ag+", "hint": "Ag+ is in the solid, so it is not a spectator." },
+          { "text": "Br-", "hint": "Br− is in the solid, so it is not a spectator." }
+        ]
+      }
+    },
+    {
+      "id": "final-ch7-strong",
+      "ch": 7,
+      "q": "Is HNO3 a strong acid or a weak acid?",
+      "a": "strong",
+      "why": "Nitric acid is one of the six strong acids, with HCl, HBr, HI, H2SO4, and HClO4. HNO3 is strong. OpenStax AF2e §7.2.",
+      "hints": ["Check the six-acid list before you call an acid weak."],
+      "check": { "kind": "exact", "text": "strong", "case": "insensitive" }
+    },
+    {
+      "id": "final-ch7-limit",
+      "ch": 7,
+      "q": "The reaction is N2 + 3 H2 → 2 NH3. You start with 3.00 mol N2 and 6.00 mol H2. Which reactant is limiting? Answer with its formula.",
+      "a": "H2",
+      "why": "3.00 mol N2 would need 9.00 mol H2. Only 6.00 mol H2 is present, so H2 runs out first. OpenStax AF2e §7.4.",
+      "hints": ["Use the 1-to-3 mole ratio. Compare how much H2 the nitrogen would require with how much H2 you have."],
+      "check": { "kind": "exact", "text": "H2", "case": "formula" }
+    },
+    {
+      "id": "final-ch7-grams",
+      "ch": 7,
+      "q": "How many grams of H2O form when 4.00 g of H2 burns in excess O2? The equation is 2 H2 + O2 → 2 H2O. Use 2.016 g/mol for H2 and 18.02 g/mol for H2O.",
+      "a": "35.8 g",
+      "why": "Moles of H2 = 4.00 g / 2.016 g/mol = 1.984 mol. The mole ratio of H2 to H2O is 1 to 1, so the water mass is 1.984 mol × 18.02 g/mol = 35.8 g. OpenStax AF2e §7.3.",
+      "hints": ["Change 4.00 g of H2 into moles, then use the 2-to-2 ratio before you convert back to grams."],
+      "check": { "kind": "numeric", "value": 35.8, "unit": "g", "sigFigs": 3 }
+    },
+    {
+      "id": "final-ch7-yield",
+      "ch": 7,
+      "q": "A reaction should make 25.0 g of product. You collect 18.5 g. What is the percent yield?",
+      "a": "74.0%",
+      "why": "Percent yield = (actual / theoretical) × 100 = (18.5 g / 25.0 g) × 100 = 74.0%. OpenStax AF2e §7.4.",
+      "hints": ["Divide the mass you collected by the mass the equation predicts, then multiply by 100."],
+      "check": { "kind": "numeric", "value": 74, "unit": "%", "sigFigs": 3 }
+    },
+    {
+      "id": "final-ch7-redox",
+      "ch": 7,
+      "q": "In 2 H2 + O2 → 2 H2O, is oxygen oxidized or reduced?",
+      "a": "reduced",
+      "why": "Oxygen in O2 has oxidation number 0. Oxygen in H2O has oxidation number −2. The number goes down, so oxygen is reduced. OpenStax AF2e §7.2.",
+      "hints": ["Reduction is a drop in oxidation number. Compare O in O2 with O in H2O."],
+      "check": { "kind": "exact", "text": "reduced", "case": "insensitive" }
+    }
+  ]
+}
