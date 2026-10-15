@@ -60,11 +60,8 @@ test('check:content command exits 0 when MM_SOURCES is unset', () => {
   assert.match(`${result.stdout}\n${result.stderr}`, /MM_SOURCES is unset/);
 });
 
-test('only F00 is marked passing', () => {
+test('F00 and F03 are marked passing', () => {
   const list = JSON.parse(read('feature_list.json'));
-  const f00 = list.features.find((feature) => feature.id === 'F00');
-  assert.equal(f00.passing, true);
-  for (const feature of list.features) {
-    if (feature.id !== 'F00') assert.equal(feature.passing, false, feature.id);
-  }
+  const passing = new Set(list.features.filter((feature) => feature.passing).map((feature) => feature.id));
+  assert.deepEqual([...passing].sort(), ['F00', 'F03']);
 });
