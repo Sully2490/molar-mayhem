@@ -258,11 +258,12 @@ test('every hint is specific to one problem', () => {
     }
     for (const problem of lesson.problems) assert.ok(problem.hints.length >= 1);
   }
-  assert.equal(seen.size, 147);
+  const expected = lessons.reduce((sum, { lesson }) => sum + 1 + lesson.problems.length, 0);
+  assert.equal(seen.size, expected);
 });
 
 test('lesson text stays free of course-private wording', () => {
-  const banned = /canvas|instructor|syllabus|gradebook/i;
+  const banned = /canvas|instructor|syllabus|gradebook|aktiv|worksheet/i;
   for (const { lesson } of lessons) assert.equal(banned.test(JSON.stringify(lesson)), false, lesson.id);
 });
 
@@ -370,6 +371,7 @@ test('counts, groups, and quantum-number rules are exact', () => {
     'ch03-s33-p16': 9,
     'ch03-s33-p17': 10,
     'ch03-s33-p18': 2,
+    'ch03-s33-p27': 2,
     'ch03-s34-unpaired-O': 2,
     'ch03-s34-unpaired-N': 3,
     'ch03-s34-unpaired-Fe': 4,
@@ -401,6 +403,23 @@ test('counts, groups, and quantum-number rules are exact', () => {
   assert.equal(grade('-1, 0, 1', byId('ch03-s33-p19').check).ok, true);
   assert.equal(grade('1, 0, -1', byId('ch03-s33-p19').check).ok, true);
   assert.equal(grade('2, 0, -1', byId('ch03-s33-p19').check).ok, false);
+  assert.equal(byId('ch03-s33-p21').a, 'Na');
+  assert.equal(byId('ch03-s33-p22').a, 'Al');
+  assert.equal(byId('ch03-s33-p23').a, 'N');
+  assert.equal(byId('ch03-s33-p24').a, 'no');
+  assert.equal(byId('ch03-s33-p25').a, 'no');
+  assert.equal(byId('ch03-s33-p26').a, 'no');
+  assert.equal(byId('ch03-s33-p28').a, 'sphere');
+  assert.equal(byId('ch03-s33-p29').a, 'dumbbell');
+  assert.equal(byId('ch03-s33-p30').a, 'no');
+  assert.equal(byId('ch03-s31-p13').a, 'both');
+  assert.equal(byId('ch03-s31-p14').a, 'higher');
+  assert.equal(byId('ch03-s32-p15').a, 'absorption');
+  assert.equal(byId('ch03-s32-p16').a, 'no');
+  const spins = byId('ch03-s33-p31');
+  assert.equal(grade('+1/2, -1/2', spins.check).ok, true);
+  assert.equal(grade('-1/2, +1/2', spins.check).ok, true);
+  assert.equal(grade('+1/2', spins.check).ok, false);
 });
 
 const CONFIG_JOBS = [
@@ -482,12 +501,14 @@ test('orbital-box diagrams follow Hund and the Cr and Cu exceptions', () => {
     'ch03-s34-box-C': orbitalBoxes(configuration(6, 0)),
     'ch03-s34-box-Cr': orbitalBoxes(configuration(24, 0), ['4s', '3d']),
     'ch03-s34-box-Cu': orbitalBoxes(configuration(29, 0), ['4s', '3d']),
+    'ch03-s34-box-F': orbitalBoxes(configuration(9, 0)),
   };
   assert.equal(expected['ch03-s34-box-O'], '1s ↑↓ | 2s ↑↓ | 2p ↑↓ ↑ ↑');
   assert.equal(expected['ch03-s34-box-N'], '1s ↑↓ | 2s ↑↓ | 2p ↑ ↑ ↑');
   assert.equal(expected['ch03-s34-box-C'], '1s ↑↓ | 2s ↑↓ | 2p ↑ ↑ []');
   assert.equal(expected['ch03-s34-box-Cr'], '4s ↑ | 3d ↑ ↑ ↑ ↑ ↑');
   assert.equal(expected['ch03-s34-box-Cu'], '4s ↑ | 3d ↑↓ ↑↓ ↑↓ ↑↓ ↑↓');
+  assert.equal(expected['ch03-s34-box-F'], '1s ↑↓ | 2s ↑↓ | 2p ↑↓ ↑↓ ↑');
   for (const [id, diagram] of Object.entries(expected)) {
     const problem = byId(id);
     assert.equal(problem.a, diagram, id);
@@ -498,6 +519,7 @@ test('orbital-box diagrams follow Hund and the Cr and Cu exceptions', () => {
   assert.equal(grade('1s ↑↓ | 2s ↑↓ | 2p ↑↓ [] []', byId('ch03-s34-box-C').check).ok, false);
   assert.equal(grade('4s ↑↓ | 3d ↑ ↑ ↑ ↑', byId('ch03-s34-box-Cr').check).ok, false);
   assert.equal(grade('4s ↑↓ | 3d ↑↓ ↑↓ ↑↓ ↑↓ ↑', byId('ch03-s34-box-Cu').check).ok, false);
+  assert.equal(grade('1s ↑↓ | 2s ↑↓ | 2p ↑↓ ↑ ↑ ↑', byId('ch03-s34-box-F').check).ok, false);
   const readOxygen = byId('ch03-s34-box-read-O');
   sameConfig(readOxygen.a, fullConfig(configuration(8, 0)));
   assert.equal(grade('1s2 2s2 2p4', readOxygen.check).ok, true);
@@ -506,4 +528,18 @@ test('orbital-box diagrams follow Hund and the Cr and Cu exceptions', () => {
   const arrows = (text) => (text.match(/[↑↓]/g) ?? []).length;
   assert.equal(arrows(byId('ch03-s34-box-who-N').q), 7);
   assert.equal(18 + arrows(byId('ch03-s34-box-who-Cr').q), 24);
+  assert.equal(arrows(byId('ch03-s34-box-F').a), 9);
+  assert.equal(byId('ch03-s34-valid-s3').a, 'no');
+  assert.equal(byId('ch03-s34-valid-core').a, 'no');
+  assert.equal(grade('[Ar] 5s2', byId('ch03-s34-valid-kr').check).ok, false);
+  assert.equal(grade('[Kr] 5s2', byId('ch03-s34-valid-kr').check).ok, true);
+  assert.equal(byId('ch03-s34-valid-order').a, '4s');
+  assert.equal(grade('4S', byId('ch03-s34-valid-order').check).ok, false);
+  assert.equal(grade('3d', byId('ch03-s34-valid-order').check).ok, false);
+  assert.equal(byId('ch03-s35-p20').a, 'Be');
+  assert.equal(byId('ch03-s35-p21').a, 'N < P < As');
+  assert.equal(byId('ch03-s35-p22').a, 'negative');
+  assert.equal(grade('positive', byId('ch03-s35-p22').check).ok, false);
+  assert.equal(byId('ch03-s35-p23').a, 'Br');
+  assert.equal(grade('Kr', byId('ch03-s35-p23').check).ok, false);
 });

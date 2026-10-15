@@ -7,7 +7,8 @@
     "A wave has a wavelength and a frequency. Wavelength is the distance from one peak to the next, in meters. Frequency is how many peaks pass a point in one second. Its unit is the hertz, Hz.",
     "Light in empty space moves at c = 2.998e8 m/s. The link is c = λν. 2.998e8 means 2.998 × 10^8. Convert nanometers before you divide: 1 nm = 1e-9 m.",
     "Light also comes in packets called photons. One photon has energy E = hν. Planck's constant is h = 6.626e-34 J·s. The same energy is E = hc/λ.",
-    "A shorter wavelength means a higher frequency and a higher photon energy."
+    "A shorter wavelength means a higher frequency and a higher photon energy.",
+    "Light is both a wave and a stream of photons. A standing wave can fit only certain lengths. The points that stay still are nodes, and more nodes means higher energy."
   ],
   "worked_example": {
     "q": "A photon has wavelength 650.0 nm. Use c = 2.998e8 m/s and h = 6.626e-34 J·s. What is the energy of one photon? Type the number and the unit J.",
@@ -211,6 +212,34 @@
       "check": {
         "kind": "exact",
         "text": "microwave < red light < ultraviolet",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s31-p13",
+      "q": "Light travels as a wave and also arrives as separate photons. Type wave, particle, or both.",
+      "a": "both",
+      "why": "A light wave has a wavelength and a frequency, and the same light is a stream of photons. The answer is both.",
+      "hints": [
+        "Use the wave equation for wavelength and frequency, and E = hν for one photon. Both pictures are used."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "both",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s31-p14",
+      "q": "Two standing waves fit the same length. One has more nodes than the other. Which has the higher energy? Type higher or lower for the wave with more nodes.",
+      "a": "higher",
+      "why": "A node is a point that stays still. Fitting more nodes into the same length takes a shorter wavelength and more energy. The wave with more nodes is higher.",
+      "hints": [
+        "More nodes means a shorter wavelength between peaks. Shorter wavelength means higher energy."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "higher",
         "case": "insensitive"
       }
     }

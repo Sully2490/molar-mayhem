@@ -2,13 +2,14 @@
   "id": "ch03-quantum",
   "ch": 3,
   "openstax_section": "OpenStax AF2e §3.3",
-  "guide_line": "Check the four quantum numbers, then count the orbitals and electrons in a shell.",
+  "guide_line": "Use the four quantum numbers to test a set, name an s or p electron, and picture the orbital.",
   "steps": [
-    "A moving electron has a wavelength λ = h/(mv). Put the mass in kilograms. Use h = 6.626e-34 J·s.",
-    "Four quantum numbers label an electron. n is the shell: 1, 2, 3, and so on.",
-    "l is the subshell shape. l runs from 0 up to n − 1. The letters are s for 0, p for 1, d for 2, and f for 3.",
-    "ml picks one orbital. It runs from −l to +l, so an s subshell has 1 orbital, p has 3, d has 5, and f has 7. ms is the spin, +1/2 or −1/2. One orbital holds two electrons only if their spins are opposite.",
-    "A set is allowed only when every rule holds. Shell n has n^2 orbitals and at most 2n^2 electrons."
+    "A moving electron has a wavelength λ = h/(mv). Put the mass in kilograms. Use h = 6.626e-34 J·s. An orbital is the region where that electron is likely to be found.",
+    "You cannot know both the exact position and the exact momentum of an electron at the same time. The map of likely places is the orbital, not a tiny orbiting planet.",
+    "Four quantum numbers label an electron. n is the shell: 1, 2, 3, and so on. l is the subshell shape and runs from 0 up to n − 1. The letters are s for 0, p for 1, d for 2, and f for 3.",
+    "An s orbital is a sphere. A p orbital is a dumbbell. A d orbital looks like a cloverleaf. A label such as 1p or 2d is impossible because l would be too big for that n.",
+    "ml picks one orbital and runs from −l to +l. ms is the spin, +1/2 or −1/2. The Pauli principle says two electrons in one atom never share all four numbers, so one orbital holds two electrons only when their spins are opposite.",
+    "The last electron added to an s or p subshell is often enough to name the element. Shell n has n^2 orbitals and at most 2n^2 electrons."
   ],
   "worked_example": {
     "q": "Is this set allowed for an electron: n = 3, l = 1, ml = 0, ms = +1/2? Type allowed or not allowed.",
@@ -330,6 +331,164 @@
         "answers": [
           "3,1,0,+1/2"
         ]
+      }
+    },
+    {
+      "id": "ch03-s33-p21",
+      "q": "The last electron added to a neutral atom is the only electron in its subshell. Its numbers are n = 3, l = 0, ml = 0, ms = +1/2. Write the element symbol with a capital letter, like He.",
+      "a": "Na",
+      "why": "n = 3 and l = 0 is the 3s subshell. One electron there, after a finished neon core, is sodium. The symbol is Na.",
+      "hints": [
+        "l = 0 means an s subshell. One electron in the 3s subshell is the alkali metal of period 3."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Na",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p22",
+      "q": "The last electron added to a neutral atom is the only electron in its subshell. Its numbers are n = 3, l = 1, ml = -1, ms = +1/2. Write the element symbol with a capital letter, like He.",
+      "a": "Al",
+      "why": "n = 3 and l = 1 is a 3p electron. The first 3p electron, after 3s2, belongs to aluminum. The symbol is Al.",
+      "hints": [
+        "l = 1 is a p subshell in shell 3. The first electron in that subshell comes right after magnesium."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Al",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p23",
+      "q": "A neutral atom has three electrons in a subshell whose last electron has n = 2 and l = 1. Write the element symbol with a capital letter, like He.",
+      "a": "N",
+      "why": "n = 2 and l = 1 is 2p. Three electrons in 2p, with 2s already full, is nitrogen. The symbol is N.",
+      "hints": [
+        "A half-full 2p subshell has three electrons. That atom is in period 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "N",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p24",
+      "q": "Is a 1p subshell possible? Type yes or no.",
+      "a": "no",
+      "why": "For n = 1, l can only be 0, which is 1s. l = 1 would be a p subshell, and that is too big for n = 1. The answer is no.",
+      "hints": [
+        "l has to be smaller than n. A p subshell needs l = 1, so the shell number must be at least 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "no",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p25",
+      "q": "Is a 2d subshell possible? Type yes or no.",
+      "a": "no",
+      "why": "A d subshell needs l = 2. For n = 2, l stops at 1. 2d is not possible. The answer is no.",
+      "hints": [
+        "d means l = 2. Compare that with n − 1 for a shell numbered 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "no",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p26",
+      "q": "Two electrons in one atom are both labeled n = 2, l = 1, ml = 1, ms = +1/2. Does the Pauli principle allow that? Type yes or no.",
+      "a": "no",
+      "why": "All four numbers match. Pauli says that pair cannot exist in one atom. The answer is no.",
+      "hints": [
+        "Compare all four numbers. They are the same on both electrons, including the spin."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "no",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p27",
+      "q": "How many electrons in a neutral silicon atom have n = 3 and l = 1? Type the number only.",
+      "a": "2",
+      "why": "Silicon is [Ne] 3s2 3p2. n = 3 and l = 1 means the 3p electrons, and there are 2 of them.",
+      "hints": [
+        "Silicon ends in 3p2. l = 1 picks out the p electrons in shell 3, not the 3s pair."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s33-p28",
+      "q": "What shape is an s orbital? Type sphere or dumbbell.",
+      "a": "sphere",
+      "why": "An s orbital is a sphere. Every direction around the nucleus looks the same.",
+      "hints": [
+        "s is the round orbital. A dumbbell is the p shape."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "sphere",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p29",
+      "q": "What shape is a p orbital? Type sphere or dumbbell.",
+      "a": "dumbbell",
+      "why": "A p orbital has two lobes and looks like a dumbbell. It is not the round s shape.",
+      "hints": [
+        "p orbitals have a node through the nucleus and two lobes."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "dumbbell",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p30",
+      "q": "Can you know both the exact position and the exact momentum of an electron at the same time? Type yes or no.",
+      "a": "no",
+      "why": "The uncertainty idea says a sharper position makes the momentum less certain. You cannot know both exactly. The answer is no.",
+      "hints": [
+        "An orbital is a probability map. Exact position and exact momentum are not available together."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "no",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s33-p31",
+      "q": "The two electrons in one 3s orbital have opposite spins. List both ms values. Separate them with a comma, and use a plain hyphen for the negative.",
+      "a": "+1/2, -1/2",
+      "why": "One orbital holds ms = +1/2 and ms = −1/2. For 3s, ml is 0 for both, and the spins are +1/2 and -1/2.",
+      "hints": [
+        "Pauli lets both electrons share n, l, and ml only when the spins differ. Write both spin values."
+      ],
+      "check": {
+        "kind": "set",
+        "answers": [
+          "+1/2",
+          "-1/2"
+        ],
+        "case": "sensitive"
       }
     }
   ]

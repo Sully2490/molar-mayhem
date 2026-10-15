@@ -246,6 +246,34 @@
         "text": "absorption",
         "case": "insensitive"
       }
+    },
+    {
+      "id": "ch03-s32-p15",
+      "q": "A hydrogen electron moves from n = 1 to n = 3. Is that absorption or emission? Type one word.",
+      "a": "absorption",
+      "why": "n = 1 is the lowest level. Moving from n = 1 up to n = 3 takes energy in, so this is absorption. Emission would make n smaller.",
+      "hints": [
+        "Emission makes n smaller. This change starts at the lowest level and climbs."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "absorption",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s32-p16",
+      "q": "A classmate says a hydrogen atom in n = 1 emits a photon by going to n = 6. Is that possible? Type yes or no.",
+      "a": "no",
+      "why": "n = 1 is already the lowest level. The atom cannot give off energy by climbing to n = 6. It would have to absorb a photon. The answer is no.",
+      "hints": [
+        "An atom gives off a photon only when the electron falls. n = 6 is above n = 1."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "no",
+        "case": "insensitive"
+      }
     }
   ]
 }

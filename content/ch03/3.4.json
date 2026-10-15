@@ -9,7 +9,8 @@
     "An orbital-box diagram uses one box for each orbital. An arrow is one electron. In a subshell, give every box one electron before you pair any. Paired arrows in one box point opposite ways.",
     "Chromium and copper break the usual order. Cr is [Ar] 4s1 3d5, not 4s2 3d4. Cu is [Ar] 4s1 3d10, not 4s2 3d9.",
     "A cation loses electrons from the highest n first. Remove 4s before 3d. Fe2+ is [Ar] 3d6. Fe3+ is [Ar] 3d5. Cu+ is [Ar] 3d10.",
-    "To name the element from a configuration, add up the electrons. For a neutral atom, that sum is the atomic number."
+    "To name the element from a configuration, add up the electrons. For a neutral atom, that sum is the atomic number.",
+    "Reject a configuration that overfills a subshell. An s subshell stops at 2, a p at 6, and a d at 10. The noble-gas core must be the last noble gas that is actually finished."
   ],
   "worked_example": {
     "q": "Write the electron configuration of iron (Fe). Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
@@ -654,6 +655,20 @@
       }
     },
     {
+      "id": "ch03-s34-box-F",
+      "q": "Type the orbital-box diagram for neutral fluorine. Include every occupied subshell from 1s through 2p. Use ↑ and ↓, one space between orbitals, [] for an empty orbital, and | between subshells. Unpaired arrows are ↑. A filled orbital is written ↑↓.",
+      "a": "1s ↑↓ | 2s ↑↓ | 2p ↑↓ ↑↓ ↑",
+      "why": "Fluorine is [He] 2s2 2p5. Drawing every occupied subshell with one arrow in each orbital before pairing gives 1s ↑↓ | 2s ↑↓ | 2p ↑↓ ↑↓ ↑.",
+      "hints": [
+        "Fluorine has five 2p electrons. Pair two of the 2p orbitals and leave one arrow alone."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "1s ↑↓ | 2s ↑↓ | 2p ↑↓ ↑↓ ↑",
+        "case": "sensitive"
+      }
+    },
+    {
       "id": "ch03-s34-box-read-O",
       "q": "This orbital-box diagram is 1s ↑↓ | 2s ↑↓ | 2p ↑↓ ↑ ↑. Write the electron configuration. Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
       "a": "[He] 2s2 2p4",
@@ -692,6 +707,62 @@
       "check": {
         "kind": "exact",
         "text": "Cr",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-valid-s3",
+      "q": "Is 1s2 2s2 2p6 3s3 a possible electron configuration? Type yes or no.",
+      "a": "no",
+      "why": "A 3s subshell holds 2 electrons. A count of 3 is past that limit, so this configuration is not possible. The answer is no.",
+      "hints": [
+        "Check the capacity of the last subshell. An s subshell stops at 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "no",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-valid-core",
+      "q": "A student shortens 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 to [Ar] 5s2. Is that the right noble-gas core? Type yes or no.",
+      "a": "no",
+      "why": "The orbitals through 4p are full, and that finished core is krypton, not argon. [Ar] 5s2 leaves out 4s, 3d, and 4p. The answer is no.",
+      "hints": [
+        "Argon stops at 3p. Count whether 4s, 3d, and 4p are already full before the 5s electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "no",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-valid-kr",
+      "q": "Rewrite 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 with the correct noble-gas core. Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Kr] 5s2",
+      "why": "Every subshell through 4p is full. That is the krypton core, and two electrons remain in 5s. The configuration is [Kr] 5s2.",
+      "hints": [
+        "The last noble gas whose orbitals are all full is Kr. Only 5s2 sits outside that core."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Kr] 5s2",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-valid-order",
+      "q": "Which subshell is filled before 3d begins? Type the label, like 2p.",
+      "a": "4s",
+      "why": "After 3p, the next subshell in the filling order is 4s. The 3d subshell comes after 4s. The label is 4s.",
+      "hints": [
+        "Look at the order past 3p. The s subshell of the next shell comes before 3d."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "4s",
         "case": "sensitive"
       }
     }
