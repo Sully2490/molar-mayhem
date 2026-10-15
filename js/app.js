@@ -1,4 +1,5 @@
 import { bindLearn, loadLessons, renderLearn } from './learn.js';
+import { bindPrep, loadFinalProblems, renderPrepPage } from './prep.js';
 import { lessonIdFromHash, renderRoute, routeFromHash, routeTitle } from './routes.js';
 import { renderTable } from './periodic.js';
 import { bindUnitEntry, renderDrill } from './unit-entry.js';
@@ -27,6 +28,20 @@ async function paintRoute() {
     if (generation !== paintGeneration) return;
     view.innerHTML = renderDrill();
     bindUnitEntry(view);
+  } else if (id === 'Prep') {
+    if (generation !== paintGeneration) return;
+    view.innerHTML = renderRoute(id);
+    bindPrep(view);
+    loadFinalProblems()
+      .then((problems) => {
+        if (generation !== paintGeneration || routeFromHash(location.hash) !== 'Prep') return;
+        view.innerHTML = renderPrepPage(problems);
+        bindPrep(view);
+      })
+      .catch((error) => {
+        if (generation !== paintGeneration || routeFromHash(location.hash) !== 'Prep') return;
+        view.innerHTML = renderPrepPage([], error.message);
+      });
   } else {
     view.innerHTML = renderRoute(id);
   }
