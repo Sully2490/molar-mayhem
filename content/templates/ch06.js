@@ -218,12 +218,12 @@ export const templates = [
       {
         id: 'neighbor',
         message: 'The mole ratio was rounded to the wrong whole numbers.',
-        value: (v) => empiricalRow(v.recipe).wrong,
+        wrong: (v) => empiricalRow(v.recipe).wrong,
       },
       {
         id: 'doubled',
         message: 'That is a doubled ratio. The empirical formula uses the smallest whole numbers.',
-        value: (v) => empiricalRow(v.recipe).doubled,
+        wrong: (v) => empiricalRow(v.recipe).doubled,
       },
     ],
   },

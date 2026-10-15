@@ -247,12 +247,12 @@ export const templates = [
       {
         id: 'other-reactant',
         message: 'That reactant is in excess. Compare moles divided by coefficients.',
-        value: (v) => reaction(v.rxn).fb,
+        wrong: (v) => reaction(v.rxn).fb,
       },
       {
         id: 'product',
         message: 'That is a product. The limiting reactant is one of the starting substances.',
-        value: (v) => reaction(v.rxn).fp,
+        wrong: (v) => reaction(v.rxn).fp,
       },
     ],
   },

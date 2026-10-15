@@ -133,7 +133,7 @@ export const templates = [
       {
         id: 'neighbor',
         message: 'Check the cutoffs again: 0.4 separates nonpolar from polar, and 1.8 separates polar from ionic.',
-        value: (v) => {
+        wrong: (v) => {
           const right = bondClass(deltaEn(v));
           if (right === 'ionic') return 'polar covalent';
           if (right === 'polar covalent') return 'nonpolar covalent';
@@ -143,7 +143,7 @@ export const templates = [
       {
         id: 'other-end',
         message: 'That label is at the other end of the scale from this difference.',
-        value: (v) => {
+        wrong: (v) => {
           const right = bondClass(deltaEn(v));
           if (right === 'ionic') return 'nonpolar covalent';
           if (right === 'nonpolar covalent') return 'polar covalent';

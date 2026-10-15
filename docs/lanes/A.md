@@ -70,7 +70,7 @@ The recall list stays in the repo and is not wired into Cards or Drill. The glos
 
 ## Required tests (`npm test`)
 For every template × seeds 1..50:
-1. The same seed gives an identical `q`/`a`; a different seed gives a different `q` for ≥ 45/50.
+1. The same seed gives an identical `q`/`a`; a different seed gives a different `q` for ≥ 45/50. `ch05-hybrid-count` asks only for the molecule, so its 50 seeds cover the 12 formulas.
 2. All vars are within their range and `valid()` passes. No NaN/Infinity in q, a or value.
 3. `grade(a, check).ok === true` with no sig-fig hint.
 4. Every mistake value, formatted to the same sig figs, gives `grade(...).ok === false`, and `diagnose()` (Spec B) returns that mistake's id and message.
@@ -89,16 +89,17 @@ Lane A does not edit Drill, Cards, or the map. The integrator wires the exports 
 
 ```js
 import { templates, templateById, templatesForSection } from './content/templates/index.js';
-import { generateFromSeed, diagnose, generateProblem } from './js/generate.js';
+import { diagnose } from './js/diagnose.js';
+import { generateFromSeed, generateProblem } from './js/generate.js';
 import { grade } from './js/grade.js';
 import { mulberry32 } from './js/rng.js';
 ```
 
-- `templates` is the full list (chapters 1–9, more than 80). Each item matches the schema above. `kind: 'exact'` is used for empirical formulas, the limiting-reactant formula, and bond classification. Oxidation numbers stay numeric with one significant figure.
+- `templates` is the full list (chapters 1–9, more than 80). Each item matches the schema above. `kind: 'exact'` is used for empirical formulas, the limiting-reactant formula, bond classification, and the hybrid-orbital count. Oxidation numbers stay numeric with one significant figure.
 - `templateById(id)` returns one spec. `templatesForSection('OpenStax AF2e §8.2')` returns every template for that lesson.
-- `generateFromSeed(spec, seed)` returns `{ q, a, why, hints, check, vars, seed, templateId, mistakes }`. `mistakes` is `[{ id, value, message }]` with the values already computed. If `valid(vars)` fails, the same function tries `seed + 1`, then `seed + 2`, up to 40 steps.
+- `generateFromSeed(spec, seed)` returns `{ q, a, why, hints, check, vars, seed, templateId, mistakes }`. Numeric mistakes are `[{ id, value, message }]`. Text mistakes put the wrong answer in `wrong`, not `value`. If `valid(vars)` fails, the same function tries `seed + 1`, then `seed + 2`, up to 40 steps.
 - `generateProblem(spec, mulberry32(seed))` is the lower-level draw. Prefer `generateFromSeed` so the seed and the mistakes travel with the problem.
-- `diagnose(input, problem)` returns `{ id, message }` when the answer matches a mistake, or `null`. Numeric matches allow the rounding that sig-fig formatting introduces. A correct answer is not reported as a mistake.
+- `diagnose(input, check, mistakes, ctx)` from `js/diagnose.js` returns `{ id, message }` when the answer matches a mistake, or `null`. A correct answer is not reported as a mistake.
 - `recall` is an unwired bonus list, `{ id, front, back, check, topic }`. Formula cards use `case: 'formula'`, so `hcl` does not match `HCl`. Do not put this deck on Cards or in the drill queue. The glossary’s decks are the ones on the site.
 
 `check` is ready for the existing `grade(input, check)` call. Do not change `js/grade.js`.
@@ -112,7 +113,7 @@ const spec = templateById('ch08-ideal-v');
 const problem = generateFromSeed(spec, seed);
 const result = grade(studentInput, problem.check);
 if (!result.ok) {
-  const found = diagnose(studentInput, problem);
+  const found = diagnose(studentInput, problem.check, problem.mistakes, {});
   // Show found.message first when it exists, then problem.hints[attempt].
 }
 ```

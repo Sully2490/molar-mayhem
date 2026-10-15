@@ -1,5 +1,8 @@
-import { DEFAULT_RELATIVE_PERCENT, countSigFigs, grade, normalizeAnswer, parseAnswer } from './grade.js';
+import { diagnose } from './diagnose.js';
+import { DEFAULT_RELATIVE_PERCENT, countSigFigs, parseAnswer } from './grade.js';
 import { mulberry32 } from './rng.js';
+
+export { diagnose };
 
 /**
  * Turn a static problem or a numeric template into { q, a, why, hints, check }.
@@ -38,11 +41,7 @@ export function generateFromSeed(spec, seed) {
     if (typeof spec.valid === 'function' && !spec.valid(problem.vars)) continue;
     const value = problem.check?.value;
     if (typeof value === 'number' && !Number.isFinite(value)) continue;
-    const mistakes = (spec.mistakes ?? []).map((item) => ({
-      id: item.id,
-      value: item.value(problem.vars),
-      message: item.message,
-    }));
+    const mistakes = (spec.mistakes ?? []).map((item) => materializeMistake(item, problem.vars));
     return {
       ...problem,
       seed: used,
@@ -53,45 +52,15 @@ export function generateFromSeed(spec, seed) {
   throw new Error(`No valid draw for ${spec.id} from seed ${start}`);
 }
 
-/**
- * Match a wrong answer to a template mistake.
- * Numeric matches allow the rounding that sig-fig formatting introduces.
- * @param {string} input
- * @param {{ check: object, mistakes?: Array<{ id: string, value: number | string, message: string }> }} problem
- * @returns {{ id: string, message: string } | null}
- */
-export function diagnose(input, problem) {
-  const mistakes = problem?.mistakes ?? [];
-  if (mistakes.length === 0) return null;
-  const check = problem.check ?? {};
-  if (check.kind === 'exact' || check.kind === 'set' || check.kind === 'config') {
-    const rule = check.case ?? 'formula';
-    const actual = normalizeAnswer(input, rule);
-    if (!actual) return null;
-    for (const mistake of mistakes) {
-      if (normalizeAnswer(String(mistake.value), rule) === actual) {
-        return { id: mistake.id, message: mistake.message };
-      }
-    }
-    return null;
+function materializeMistake(item, vars) {
+  const mistake = { id: item.id, message: item.message };
+  if (typeof item.wrong === 'function') mistake.wrong = item.wrong(vars);
+  if (typeof item.value === 'function') {
+    const value = item.value(vars);
+    if (typeof value === 'number') mistake.value = value;
+    else if (typeof value === 'string' && mistake.wrong == null) mistake.wrong = value;
   }
-  const parsed = parseAnswer(input);
-  if (!parsed || !Number.isFinite(parsed.value)) return null;
-  let best = null;
-  let bestRel = Infinity;
-  for (const mistake of mistakes) {
-    const target = Number(mistake.value);
-    if (!Number.isFinite(target)) continue;
-    const scale = Math.max(Math.abs(target), 1e-30);
-    const rel = Math.abs(parsed.value - target) / scale;
-    if (rel < bestRel) {
-      bestRel = rel;
-      best = mistake;
-    }
-  }
-  if (!best || bestRel > 0.015) return null;
-  if (grade(input, check).ok) return null;
-  return { id: best.id, message: best.message };
+  return mistake;
 }
 
 function generateTemplate(spec, random) {

@@ -174,7 +174,13 @@ export const templates = [
     unit: 'L',
     sigFigs: 'min',
     tolerance: 0.5,
-    valid: (v) => inRange(v) && v.V2 >= 0.1 && v.V2 <= 50,
+    valid(v) {
+      if (!(inRange(v) && v.V2 >= 0.1 && v.V2 <= 50)) return false;
+      const boyle = (v.P1 * v.V1) / v.P2;
+      const flipped = (v.P2 * v.V1 * v.T1) / (v.P1 * v.T2);
+      const apart = (left, right) => Math.abs(left - right) > 0.02 * Math.max(Math.abs(left), Math.abs(right));
+      return apart(boyle, flipped) && apart(flipped, v.V2) && apart(boyle, v.V2);
+    },
     hints: () => [
       'Combined gas law: P1·V1 / T1 = P2·V2 / T2.',
       'V2 = P1·V1·T2 / (P2·T1). Temperatures stay in kelvin.',
