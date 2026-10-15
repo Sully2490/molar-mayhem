@@ -1,6 +1,7 @@
+import { labShell } from './lab/index.js';
 import { renderPrepPage } from './prep.js';
 
-export const ROUTE_IDS = ['Home', 'Map', 'Learn', 'Drill', 'Prep', 'Cards'];
+export const ROUTE_IDS = ['Home', 'Map', 'Learn', 'Lab', 'Drill', 'Prep', 'Cards'];
 
 const ROUTES = {
   Home: {
@@ -12,6 +13,7 @@ const ROUTES = {
       <div class="route-grid">
         <a class="route-card" href="#Map"><strong>Map</strong><span>Chapters in order</span></a>
         <a class="route-card" href="#Learn"><strong>Learn</strong><span>Short lessons</span></a>
+        <a class="route-card" href="#Lab"><strong>Lab</strong><span>Pictures you can move</span></a>
         <a class="route-card" href="#Drill"><strong>Drill</strong><span>Extra practice</span></a>
         <a class="route-card" href="#Prep"><strong>Prep</strong><span>Study plan and a practice final</span></a>
         <a class="route-card" href="#Cards"><strong>Cards</strong><span>Quick review</span></a>
@@ -59,10 +61,14 @@ const ROUTES = {
       <p>Cards are not here yet. They will be quick prompts you can flip through.</p>
     `,
   },
+  Lab: {
+    title: 'Lab',
+    body: labShell(),
+  },
 };
 
 export function routeFromHash(hash) {
-  const raw = String(hash ?? '').replace(/^#/, '').trim();
+  const raw = String(hash ?? '').replace(/^#/, '').trim().split(/[/?]/)[0];
   if (!raw) return 'Home';
   const match = ROUTE_IDS.find((id) => id.toLowerCase() === raw.toLowerCase());
   return match ?? 'Home';
