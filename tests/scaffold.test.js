@@ -43,11 +43,22 @@ test('hash routes render placeholders', () => {
   assert.doesNotMatch(home, /Coming soon/);
 });
 
-test('GitHub Actions runs npm test', () => {
+test('GitHub Actions runs npm test with a read-only checkout', () => {
   const workflow = read('.github/workflows/test.yml');
   assert.match(workflow, /npm test/);
-  assert.match(workflow, /actions\/checkout@v4/);
-  assert.match(workflow, /actions\/setup-node@v4/);
+  assert.match(workflow, /permissions:\n {2}contents: read/);
+  assert.match(workflow, /push:\n {4}branches: \[main\]/);
+  assert.match(workflow, /actions\/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4/);
+  assert.match(workflow, /actions\/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4/);
+});
+
+test('element numbers stay readable and the table dialog marks the page inert', () => {
+  const css = read('css/styles.css');
+  assert.match(css, /\.el \.z \{ font-size: 0\.7rem; opacity: 1; \}/);
+  const app = read('js/app.js');
+  assert.match(app, /setPageBehindInert\(true\)/);
+  assert.match(app, /setPageBehindInert\(false\)/);
+  assert.match(app, /el\.inert = inert/);
 });
 
 test('check:content command exits 0 when MM_SOURCES is unset', () => {
