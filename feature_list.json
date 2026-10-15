@@ -29,7 +29,7 @@
         "content/coverage.json holds only manifest ids and lesson ids, with no source text or file names",
         "Skips cleanly with a warning when MM_SOURCES is unset (e.g. CI)"
       ],
-      "passing": false
+      "passing": true
     },
     {
       "id": "F02",
