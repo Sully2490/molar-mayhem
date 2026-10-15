@@ -1,0 +1,180 @@
+{
+  "id": "ch6-percent",
+  "ch": 6,
+  "openstax_section": "OpenStax AF2e §6.2",
+  "guide_line": "Find a mass percent from a formula.",
+  "steps": [
+    "Mass percent = (mass of that element in 1 mol) / (molar mass) × 100.",
+    "Count every atom. Fe2O3 has two Fe, not one.",
+    "A subscript outside parentheses counts too. Al2(SO4)3 has 2 Al, 3 S, and 12 O.",
+    "Type the percent as a number."
+  ],
+  "worked_example": {
+    "q": "Mass percent of H in H2O?",
+    "steps": [
+      "Hydrogen mass = 2.016 g.",
+      "2.016 / 18.02 × 100 = 11.2%."
+    ],
+    "answer": "11.2%"
+  },
+  "similar_problem": {
+    "q": "Mass percent of C in CO2?",
+    "hint": "Carbon’s mass is 12.01. The molar mass is 44.01.",
+    "answer": "27.3%"
+  },
+  "sources": [
+    "OpenStax AF2e §6.2"
+  ],
+  "problems": [
+    {
+      "id": "ch6-pct-h-h2o",
+      "q": "Mass percent of H in H2O?",
+      "a": "11.2",
+      "why": "Use the element’s total mass in one mole, then divide by the molar mass.",
+      "hints": [
+        "Include the subscript in the element’s mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 11.2,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-pct-c-co2",
+      "q": "Mass percent of C in CO2?",
+      "a": "27.3",
+      "why": "Use the element’s total mass in one mole, then divide by the molar mass.",
+      "hints": [
+        "Include the subscript in the element’s mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 27.3,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-pct-na-nacl",
+      "q": "Mass percent of Na in NaCl?",
+      "a": "39.3",
+      "why": "Use the element’s total mass in one mole, then divide by the molar mass.",
+      "hints": [
+        "Include the subscript in the element’s mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 39.3,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-pct-c-glu",
+      "q": "Mass percent of C in C6H12O6?",
+      "a": "40",
+      "why": "Use the element’s total mass in one mole, then divide by the molar mass.",
+      "hints": [
+        "Include the subscript in the element’s mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 40,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-pct-n-nh3",
+      "q": "Mass percent of N in NH3?",
+      "a": "82.2",
+      "why": "Use the element’s total mass in one mole, then divide by the molar mass.",
+      "hints": [
+        "Include the subscript in the element’s mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 82.2,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-pct-fe-ox",
+      "q": "Mass percent of Fe in Fe2O3?",
+      "a": "69.9",
+      "why": "Use the element’s total mass in one mole, then divide by the molar mass.",
+      "hints": [
+        "Include the subscript in the element’s mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 69.9,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-pct-ca-carb",
+      "q": "Mass percent of Ca in CaCO3?",
+      "a": "40",
+      "why": "Use the element’s total mass in one mole, then divide by the molar mass.",
+      "hints": [
+        "Include the subscript in the element’s mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 40,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-pct-s-acid",
+      "q": "Mass percent of S in H2SO4?",
+      "a": "32.7",
+      "why": "Use the element’s total mass in one mole, then divide by the molar mass.",
+      "hints": [
+        "Include the subscript in the element’s mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 32.7,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-pct-o-eth",
+      "q": "Mass percent of O in C2H5OH?",
+      "a": "34.7",
+      "why": "Use the element’s total mass in one mole, then divide by the molar mass.",
+      "hints": [
+        "Include the subscript in the element’s mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 34.7,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-pct-al-sulf",
+      "q": "Mass percent of Al in Al2(SO4)3?",
+      "a": "15.8",
+      "why": "Use the element’s total mass in one mole, then divide by the molar mass.",
+      "hints": [
+        "Include the subscript in the element’s mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 15.8,
+        "sigFigs": 3,
+        "unit": null
+      }
+    }
+  ]
+}

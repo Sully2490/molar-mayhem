@@ -1,0 +1,225 @@
+{
+  "id": "ch6-moles",
+  "ch": 6,
+  "openstax_section": "OpenStax AF2e §6.1",
+  "guide_line": "Convert grams, moles, and particles.",
+  "steps": [
+    "Molar mass is each atomic mass times its subscript, then added. A subscript outside parentheses multiplies the whole group.",
+    "Use the OpenStax masses to hundredths: H 1.008, C 12.01, N 14.01, O 16.00, Na 22.99, Cl 35.45, Ca 40.08.",
+    "Grams to moles: divide by the molar mass. Moles to grams: multiply.",
+    "Particles = moles × 6.022×10²³. Moles = particles ÷ 6.022×10²³.",
+    "Type the number only."
+  ],
+  "worked_example": {
+    "q": "Molar mass of H2O?",
+    "steps": [
+      "2(1.008) + 16.00 = 18.02 g/mol."
+    ],
+    "answer": "18.02 g/mol"
+  },
+  "similar_problem": {
+    "q": "How many moles are in 36.0 g of water?",
+    "hint": "Divide by 18.02 g/mol.",
+    "answer": "2.00 mol"
+  },
+  "sources": [
+    "OpenStax AF2e §6.1"
+  ],
+  "problems": [
+    {
+      "id": "ch6-mm-h2o",
+      "q": "Molar mass of H2O, in g/mol?",
+      "a": "18.02",
+      "why": "Multiply each atomic mass by its count, including groups in parentheses.",
+      "hints": [
+        "Add atomic masses. Do not forget a subscript."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 18.02,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-mm-co2",
+      "q": "Molar mass of CO2, in g/mol?",
+      "a": "44.01",
+      "why": "Multiply each atomic mass by its count, including groups in parentheses.",
+      "hints": [
+        "Add atomic masses. Do not forget a subscript."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 44.01,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-mm-nacl",
+      "q": "Molar mass of NaCl, in g/mol?",
+      "a": "58.44",
+      "why": "Multiply each atomic mass by its count, including groups in parentheses.",
+      "hints": [
+        "Add atomic masses. Do not forget a subscript."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 58.44,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-mm-glu",
+      "q": "Molar mass of C6H12O6, in g/mol?",
+      "a": "180.2",
+      "why": "Multiply each atomic mass by its count, including groups in parentheses.",
+      "hints": [
+        "Add atomic masses. Do not forget a subscript."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 180.2,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-mm-ca",
+      "q": "Molar mass of Ca(NO3)2, in g/mol?",
+      "a": "164.1",
+      "why": "Multiply each atomic mass by its count, including groups in parentheses.",
+      "hints": [
+        "Add atomic masses. Do not forget a subscript."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 164.1,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-mol-h2o",
+      "q": "Moles in 36.0 g of H2O?",
+      "a": "2",
+      "why": "Divide grams by 18.02 g/mol.",
+      "hints": [
+        "Divide by the molar mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-mol-nacl",
+      "q": "Moles in 10.0 g of NaCl?",
+      "a": "0.171",
+      "why": "Divide by 58.44 g/mol.",
+      "hints": [
+        "Divide by the molar mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.171,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-mol-ca",
+      "q": "Moles in 100.0 g of CaCO3?",
+      "a": "0.9991",
+      "why": "Divide by the molar mass of CaCO3.",
+      "hints": [
+        "Divide by the molar mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.9991,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-g-co2",
+      "q": "Mass, in grams, of 0.250 mol CO2?",
+      "a": "11",
+      "why": "Multiply moles by 44.01 g/mol.",
+      "hints": [
+        "Multiply by the molar mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 11,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-g-nh3",
+      "q": "Mass, in grams, of 2.00 mol NH3?",
+      "a": "34.1",
+      "why": "Multiply by the molar mass of NH3.",
+      "hints": [
+        "Multiply by the molar mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 34.1,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-p-h2o",
+      "q": "Molecules in 5.00 g of H2O?",
+      "a": "1.67e+23",
+      "why": "Change grams to moles, then multiply by 6.022×10²³.",
+      "hints": [
+        "Do not skip the mole step."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.67e+23,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-p-c",
+      "q": "Atoms in 1.00 g of C?",
+      "a": "5.0099999999999995e+22",
+      "why": "1.00 / 12.01 mol, times Avogadro’s number.",
+      "hints": [
+        "Divide by the atomic mass first."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 5.0099999999999995e+22,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-p-fe",
+      "q": "Moles in 3.01×10^24 atoms of Fe?",
+      "a": "5",
+      "why": "Divide by 6.022×10²³.",
+      "hints": [
+        "Divide by Avogadro’s number."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 5,
+        "sigFigs": 3,
+        "unit": null
+      }
+    }
+  ]
+}

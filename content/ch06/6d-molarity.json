@@ -1,0 +1,182 @@
+{
+  "id": "ch6-molarity",
+  "ch": 6,
+  "openstax_section": "OpenStax AF2e §6.3",
+  "guide_line": "Find molarity, or the grams that make a solution.",
+  "steps": [
+    "Molarity = moles of solute / liters of solution.",
+    "Change mL to L before you divide or multiply.",
+    "Grams to moles: divide by the molar mass. Moles to grams: multiply.",
+    "n = M × V, with V in liters.",
+    "Type the number only."
+  ],
+  "worked_example": {
+    "q": "5.85 g NaCl makes 500. mL of solution. Molarity?",
+    "steps": [
+      "5.85 / 58.44 = 0.100 mol.",
+      "0.500 L.",
+      "0.100 / 0.500 = 0.200 M."
+    ],
+    "answer": "0.200 M"
+  },
+  "similar_problem": {
+    "q": "10.0 g NaOH makes 250. mL of solution. Molarity?",
+    "hint": "NaOH is 40.00 g/mol. Volume is 0.250 L.",
+    "answer": "1.00 M"
+  },
+  "sources": [
+    "OpenStax AF2e §6.3"
+  ],
+  "problems": [
+    {
+      "id": "ch6-M-nacl",
+      "q": "5.85 g NaCl makes 500. mL of solution. Molarity?",
+      "a": "0.2",
+      "why": "Moles divided by liters.",
+      "hints": [
+        "Convert mL to L."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.2,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-M-naoh",
+      "q": "10.0 g NaOH makes 250. mL of solution. Molarity?",
+      "a": "1",
+      "why": "NaOH is about 40.00 g/mol.",
+      "hints": [
+        "Convert mL to L."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-M-acid",
+      "q": "4.90 g H2SO4 makes 100. mL of solution. Molarity?",
+      "a": "0.5",
+      "why": "H2SO4 is about 98.08 g/mol.",
+      "hints": [
+        "Convert mL to L."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.5,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-M-glu",
+      "q": "18.0 g C6H12O6 makes 200. mL of solution. Molarity?",
+      "a": "0.5",
+      "why": "Divide moles by 0.200 L.",
+      "hints": [
+        "Convert mL to L."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.5,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-g-kcl",
+      "q": "Grams of KCl for 250. mL of 0.150 M solution?",
+      "a": "2.8",
+      "why": "Moles = 0.150 × 0.250, then times the molar mass.",
+      "hints": [
+        "Convert moles to grams."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2.8,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-g-nacl",
+      "q": "Grams of NaCl for 50.0 mL of 2.00 M solution?",
+      "a": "5.84",
+      "why": "Moles = 2.00 × 0.0500.",
+      "hints": [
+        "Convert moles to grams."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 5.84,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-g-cu",
+      "q": "Grams of CuSO4 for 1.000 L of 0.500 M solution?",
+      "a": "79.8",
+      "why": "Moles = 0.500, then times the molar mass.",
+      "hints": [
+        "Convert moles to grams."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 79.8,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-n-75",
+      "q": "Moles of solute in 75.0 mL of 0.200 M solution?",
+      "a": "0.015",
+      "why": "n = M × V in liters.",
+      "hints": [
+        "75.0 mL is 0.0750 L."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.015,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-n-20",
+      "q": "Moles of solute in 20.0 mL of 1.50 M solution?",
+      "a": "0.03",
+      "why": "n = 1.50 × 0.0200.",
+      "hints": [
+        "Use liters."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.03,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-n-500",
+      "q": "Moles of solute in 500. mL of 0.0500 M solution?",
+      "a": "0.025",
+      "why": "n = 0.0500 × 0.500.",
+      "hints": [
+        "Use liters."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.025,
+        "sigFigs": 3,
+        "unit": null
+      }
+    }
+  ]
+}

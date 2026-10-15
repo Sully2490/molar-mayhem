@@ -1,0 +1,180 @@
+{
+  "id": "ch6-solutions",
+  "ch": 6,
+  "openstax_section": "OpenStax AF2e §6.4",
+  "guide_line": "Find mass percent, ppm, and ppb.",
+  "steps": [
+    "Mass percent = (grams solute / grams solution) × 100. The solution includes the solute.",
+    "Mass/volume percent = (grams solute / mL solution) × 100.",
+    "ppm = (grams solute / grams sample) × 10^6. For dilute water, 1 ppm ≈ 1 mg/L.",
+    "ppb = (grams solute / grams sample) × 10^9.",
+    "Type the number only."
+  ],
+  "worked_example": {
+    "q": "5.00 g of solute in 100. g of solution. Mass percent?",
+    "steps": [
+      "5.00 / 100. × 100 = 5.00%."
+    ],
+    "answer": "5.00%"
+  },
+  "similar_problem": {
+    "q": "10.0 g NaCl dissolved in 90.0 g water. Mass percent?",
+    "hint": "The solution mass is 10.0 + 90.0.",
+    "answer": "10.0%"
+  },
+  "sources": [
+    "OpenStax AF2e §6.4"
+  ],
+  "problems": [
+    {
+      "id": "ch6-w-5",
+      "q": "5.00 g solute in 100. g solution. Mass percent?",
+      "a": "5",
+      "why": "Divide by the solution mass.",
+      "hints": [
+        "The denominator is the whole solution."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 5,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-w-12",
+      "q": "12.5 g solute in 250. g solution. Mass percent?",
+      "a": "5",
+      "why": "12.5 / 250 × 100.",
+      "hints": [
+        "Divide by the solution mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 5,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-w-32",
+      "q": "3.20 g solute in 80.0 g solution. Mass percent?",
+      "a": "4",
+      "why": "3.20 / 80.0 × 100.",
+      "hints": [
+        "Divide by the solution mass."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-w-salt",
+      "q": "10.0 g NaCl in 90.0 g water. Mass percent?",
+      "a": "10",
+      "why": "Solution mass = 100.0 g.",
+      "hints": [
+        "Do not divide by 90.0 g."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 10,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-mv-25",
+      "q": "2.50 g solute in 50.0 mL solution. Mass/volume percent?",
+      "a": "5",
+      "why": "Grams per mL, times 100.",
+      "hints": [
+        "Use mL, not L."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 5,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-mv-9",
+      "q": "9.00 g solute in 1000 mL solution. Mass/volume percent?",
+      "a": "0.9",
+      "why": "9.00 / 1000 × 100.",
+      "hints": [
+        "Use mL."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.9,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-ppm-pb",
+      "q": "0.00200 g lead in 500. g water. ppm?",
+      "a": "4",
+      "why": "(g solute / g sample) × 10^6.",
+      "hints": [
+        "ppm is not percent."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-ppm-no",
+      "q": "0.300 mg nitrate in 2.00 L water. ppm?",
+      "a": "0.15",
+      "why": "For dilute water, ppm ≈ mg/L.",
+      "hints": [
+        "Divide milligrams by liters."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.15,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-ppb-hg",
+      "q": "4.00 µg mercury in 1.00 kg sample. ppb?",
+      "a": "4",
+      "why": "4.00 µg = 4.00×10⁻⁶ g. 1.00 kg = 1000 g.",
+      "hints": [
+        "Use the same mass unit, then × 10^9."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch6-g-glu",
+      "q": "Grams of glucose in 250. mL of 5.00% (m/v) solution?",
+      "a": "12.5",
+      "why": "5.00% (m/v) means 5.00 g per 100 mL.",
+      "hints": [
+        "Scale 5.00 g per 100 mL up to 250 mL."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 12.5,
+        "sigFigs": 3,
+        "unit": null
+      }
+    }
+  ]
+}

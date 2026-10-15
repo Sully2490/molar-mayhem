@@ -1,0 +1,186 @@
+{
+  "id": "ch6-formula",
+  "ch": 6,
+  "openstax_section": "OpenStax AF2e §6.2",
+  "guide_line": "Turn a percent composition into a formula.",
+  "steps": [
+    "Treat each percent as grams of that element.",
+    "Divide each mass by its atomic mass. Those are moles.",
+    "Divide every mole value by the smallest one.",
+    "If a ratio is about 1.5 or 1.33, multiply all of them until they are whole numbers.",
+    "Molecular formula = empirical formula × (molar mass / empirical mass). Type symbols, like CH2O."
+  ],
+  "worked_example": {
+    "q": "Empirical formula from 40.0% C, 6.71% H, 53.3% O?",
+    "steps": [
+      "Moles: 3.33 C, 6.66 H, 3.33 O.",
+      "Divide by 3.33: 1, 2, 1.",
+      "CH2O."
+    ],
+    "answer": "CH2O"
+  },
+  "similar_problem": {
+    "q": "Empirical formula from 30.4% N and 69.6% O?",
+    "hint": "Divide each percent by the atomic mass, then by the smaller mole count.",
+    "answer": "NO2"
+  },
+  "sources": [
+    "OpenStax AF2e §6.2"
+  ],
+  "problems": [
+    {
+      "id": "ch6-ef-ch2o",
+      "q": "Empirical formula from 40.0% C, 6.71% H, 53.3% O?",
+      "a": "CH2O",
+      "why": "Divide each percent by the atomic mass, then scale to whole numbers.",
+      "hints": [
+        "A 1.5 ratio means multiply every subscript by 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "CH2O"
+      }
+    },
+    {
+      "id": "ch6-ef-no2",
+      "q": "Empirical formula from 30.4% N, 69.6% O?",
+      "a": "NO2",
+      "why": "Divide each percent by the atomic mass, then scale to whole numbers.",
+      "hints": [
+        "A 1.5 ratio means multiply every subscript by 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "NO2"
+      }
+    },
+    {
+      "id": "ch6-ef-fe2o3",
+      "q": "Empirical formula from 69.9% Fe, 30.1% O?",
+      "a": "Fe2O3",
+      "why": "Divide each percent by the atomic mass, then scale to whole numbers.",
+      "hints": [
+        "A 1.5 ratio means multiply every subscript by 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "Fe2O3"
+      }
+    },
+    {
+      "id": "ch6-ef-ch2",
+      "q": "Empirical formula from 85.6% C, 14.4% H?",
+      "a": "CH2",
+      "why": "Divide each percent by the atomic mass, then scale to whole numbers.",
+      "hints": [
+        "A 1.5 ratio means multiply every subscript by 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "CH2"
+      }
+    },
+    {
+      "id": "ch6-ef-na2so4",
+      "q": "Empirical formula from 32.4% Na, 22.6% S, 45.0% O?",
+      "a": "Na2SO4",
+      "why": "Divide each percent by the atomic mass, then scale to whole numbers.",
+      "hints": [
+        "A 1.5 ratio means multiply every subscript by 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "Na2SO4"
+      }
+    },
+    {
+      "id": "ch6-ef-ch",
+      "q": "Empirical formula from 92.3% C, 7.7% H?",
+      "a": "CH",
+      "why": "Divide each percent by the atomic mass, then scale to whole numbers.",
+      "hints": [
+        "A 1.5 ratio means multiply every subscript by 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "CH"
+      }
+    },
+    {
+      "id": "ch6-ef-k2so4",
+      "q": "Empirical formula from 44.9% K, 18.4% S, 36.7% O?",
+      "a": "K2SO4",
+      "why": "Divide each percent by the atomic mass, then scale to whole numbers.",
+      "hints": [
+        "A 1.5 ratio means multiply every subscript by 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "K2SO4"
+      }
+    },
+    {
+      "id": "ch6-ef-c2h6o",
+      "q": "Empirical formula from 52.1% C, 13.1% H, 34.8% O?",
+      "a": "C2H6O",
+      "why": "Divide each percent by the atomic mass, then scale to whole numbers.",
+      "hints": [
+        "A 1.5 ratio means multiply every subscript by 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "C2H6O"
+      }
+    },
+    {
+      "id": "ch6-mf-glu",
+      "q": "Empirical formula CH2O. Molar mass 180.16 g/mol. Molecular formula?",
+      "a": "C6H12O6",
+      "why": "180.16 / 30.03 ≈ 6. Multiply every subscript by 6.",
+      "hints": [
+        "Divide the molar mass by the empirical mass."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "C6H12O6"
+      }
+    },
+    {
+      "id": "ch6-mf-bz",
+      "q": "Empirical formula CH. Molar mass 78.11 g/mol. Molecular formula?",
+      "a": "C6H6",
+      "why": "78.11 / 13.02 ≈ 6.",
+      "hints": [
+        "Multiply both subscripts by the same factor."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "C6H6"
+      }
+    },
+    {
+      "id": "ch6-mf-no",
+      "q": "Empirical formula NO2. Molar mass 92.0 g/mol. Molecular formula?",
+      "a": "N2O4",
+      "why": "92.0 / 46.0 ≈ 2.",
+      "hints": [
+        "Multiply both subscripts by 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "N2O4"
+      }
+    }
+  ]
+}
