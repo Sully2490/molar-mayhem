@@ -114,55 +114,164 @@ function circleWave(n, phase) {
   return `${path}Z`;
 }
 
+export const LEVEL_NS = [1, 2, 3, 4, 5, 6];
+export const LABEL_GAP = 24;
+export const BALMER_VISIBLE = [
+  { lambda: 410, name: 'violet' },
+  { lambda: 434, name: 'blue' },
+  { lambda: 486, name: 'teal' },
+  { lambda: 656, name: 'red' },
+];
+
+export const SPECTRUM_LAYOUT = {
+  width: 560,
+  height: 108,
+  uv: { x: 0, y: 24, width: 96, height: 42 },
+  visible: { x: 108, y: 24, width: 332, height: 42, lambdaMin: 380, lambdaMax: 750 },
+  ir: { x: 452, y: 24, width: 108, height: 42 },
+};
+
+export function levelY(n) {
+  return 36 + 250 * (1 - (bohrEnergyEv(n) + 13.6) / 13.6);
+}
+
+/** Shift crowded labels down so n = 4, 5, 6, and ∞ no longer share one line. */
+export function levelLabelLayout() {
+  const rows = [
+    ...LEVEL_NS.map((n) => ({
+      key: String(n),
+      n,
+      y: levelY(n),
+      label: `n = ${n} (${bohrEnergyEv(n).toFixed(2)} eV)`,
+    })),
+    { key: 'inf', n: null, y: levelY(99), label: 'n = ∞ (0 eV)' },
+  ];
+  const ordered = [...rows].sort((a, b) => a.y - b.y);
+  let previous = -1e9;
+  for (const row of ordered) {
+    row.labelY = Math.max(row.y, previous + LABEL_GAP);
+    previous = row.labelY;
+  }
+  return rows;
+}
+
+export function spectrumX(lambdaNm) {
+  const band = SPECTRUM_LAYOUT.visible;
+  const span = band.lambdaMax - band.lambdaMin;
+  return band.x + ((lambdaNm - band.lambdaMin) / span) * band.width;
+}
+
+function seriesBand(line) {
+  if (!line) return '';
+  if (line.nf === 1 || line.lambdaNm < 380) return 'uv';
+  if (line.nf >= 3 || line.lambdaNm > 750) return 'ir';
+  return 'visible';
+}
+
 export function describeLevels(state) {
+  const strip = 'The strip is a 380–750 nm color bar. Violet, blue, teal, and red marks are the visible Balmer lines. The shaded UV band is Lyman. The shaded IR band is Paschen and the later series. Labels that would overlap are shifted, with a leader line back to the level.';
   if (state.last) {
     const line = state.last;
-    return `The electron dropped from n = ${line.ni} to n = ${line.nf}. The gap is ${sci(line.energy)} joules, so the photon is ${line.lambdaNm.toFixed(1)} nm (${line.region}, ${line.series}). The arrow on the diagram is that drop. The black strip collects visible lines. This diagram stays still. Choose a level with Enter, Space, or a tap.`;
+    const band = seriesBand(line);
+    const where = band === 'uv' ? 'It lands in the UV band.' : band === 'ir' ? 'It lands in the IR band.' : 'It lands on the visible bar.';
+    return `The electron dropped from n = ${line.ni} to n = ${line.nf}. The gap is ${sci(line.energy)} joules, so the photon is ${line.lambdaNm.toFixed(1)} nm (${line.region}, ${line.series}). ${where} The arrow on the diagram is that drop. ${strip} This diagram stays still. Choose a level with Enter, Space, or a tap.`;
   }
   if (state.upper) {
-    return `n = ${state.upper} is selected, at ${bohrEnergyEv(state.upper).toFixed(2)} eV. Choose a lower level to drop the electron and give off a photon. The diagram is still.`;
+    return `n = ${state.upper} is selected, at ${bohrEnergyEv(state.upper).toFixed(2)} eV. Choose a lower level to drop the electron and give off a photon. The diagram is still. ${strip}`;
   }
-  return 'Hydrogen energy levels from n = 1 up to n = 6. Energy is more negative when n is small. Pick a high level, then a lower one. The diagram stays still. Arrow keys move between levels. Enter, Space, or a tap chooses one.';
+  return `Hydrogen energy levels from n = 1 up to n = 6. The dashed line is n = ∞. Energy is more negative when n is small. Pick a high level, then a lower one. ${strip} The diagram stays still. Arrow keys move between levels. Enter, Space, or a tap chooses one.`;
+}
+
+function gradientStops() {
+  const band = SPECTRUM_LAYOUT.visible;
+  const samples = [380, 430, 480, 530, 580, 640, 700, 750];
+  return samples.map((lambda) => {
+    const offset = ((lambda - band.lambdaMin) / (band.lambdaMax - band.lambdaMin)).toFixed(3);
+    return `<stop offset="${offset}" stop-color="${waveColor(lambda)}"/>`;
+  }).join('');
+}
+
+export function renderSpectrumStrip(lines = [], active = '') {
+  const layout = SPECTRUM_LAYOUT;
+  const vis = layout.visible;
+  const marks = BALMER_VISIBLE.map((line, index) => {
+    const x = spectrumX(line.lambda);
+    const color = waveColor(line.lambda);
+    const labelY = index % 2 === 0 ? 80 : 98;
+    return `<rect data-balmer="${line.lambda}" data-balmer-name="${line.name}" x="${(x - 1.6).toFixed(1)}" y="${vis.y}" width="3.2" height="${vis.height}" fill="${color}"/><text data-balmer-label="${line.lambda}" x="${x.toFixed(1)}" y="${labelY}" text-anchor="middle" font-size="11" fill="${color}">${line.lambda}</text>`;
+  }).join('');
+  const taken = BALMER_VISIBLE.map((line) => line.lambda);
+  const extra = lines
+    .filter((line) => line.lambdaNm >= vis.lambdaMin && line.lambdaNm <= vis.lambdaMax)
+    .filter((line) => taken.every((lambda) => Math.abs(lambda - line.lambdaNm) > 2))
+    .map((line) => {
+      const x = spectrumX(line.lambdaNm);
+      return `<rect data-user-line="${line.lambdaNm.toFixed(1)}" x="${(x - 1.4).toFixed(1)}" y="${vis.y}" width="2.8" height="${vis.height}" fill="${line.color}"/>`;
+    })
+    .join('');
+  const uvStroke = active === 'uv' ? ' stroke="#6d28d9" stroke-width="2"' : '';
+  const irStroke = active === 'ir' ? ' stroke="#9a3412" stroke-width="2"' : '';
+  return `
+    <svg class="lab-spectrum lab-h-spectrum" data-h-spectrum data-active-band="${active}" viewBox="0 0 ${layout.width} ${layout.height}" role="img" aria-label="Hydrogen emission strip. Shaded UV band labeled Lyman. Visible gradient from 380 to 750 nanometers with lines at 410 violet, 434 blue, 486 teal, and 656 red. Shaded IR band labeled Paschen and later series.">
+      <defs>
+        <pattern id="h-shade-uv" width="6" height="6" patternUnits="userSpaceOnUse">
+          <rect width="6" height="6" fill="#efe8f7"/>
+          <path d="M0 6 L6 0" stroke="#6d28d9" stroke-width="1" opacity="0.55"/>
+        </pattern>
+        <pattern id="h-shade-ir" width="6" height="6" patternUnits="userSpaceOnUse">
+          <rect width="6" height="6" fill="#f8efe4"/>
+          <path d="M0 6 L6 0" stroke="#9a3412" stroke-width="1" opacity="0.45"/>
+        </pattern>
+        <linearGradient id="h-vis" x1="0" x2="1" y1="0" y2="0">${gradientStops()}</linearGradient>
+      </defs>
+      <rect data-band="uv" x="${layout.uv.x}" y="${layout.uv.y}" width="${layout.uv.width}" height="${layout.uv.height}" rx="4" fill="url(#h-shade-uv)"${uvStroke}/>
+      <text x="10" y="42" font-size="13" font-weight="700" fill="#3b0764">UV</text>
+      <text x="10" y="58" font-size="12" fill="#3b0764">Lyman</text>
+      <rect data-band="visible" x="${vis.x}" y="${vis.y}" width="${vis.width}" height="${vis.height}" fill="url(#h-vis)"/>
+      <text x="${vis.x}" y="16" font-size="11" fill="#5d675f">380</text>
+      <text x="${vis.x + vis.width}" y="16" font-size="11" fill="#5d675f" text-anchor="end">750 nm</text>
+      ${marks}
+      ${extra}
+      <rect data-band="ir" x="${layout.ir.x}" y="${layout.ir.y}" width="${layout.ir.width}" height="${layout.ir.height}" rx="4" fill="url(#h-shade-ir)"${irStroke}/>
+      <text x="462" y="42" font-size="13" font-weight="700" fill="#7c2d12">IR</text>
+      <text x="462" y="58" font-size="12" fill="#7c2d12">Paschen</text>
+    </svg>
+  `;
 }
 
 export function renderLevels(state) {
-  const yOf = (n) => 36 + 250 * (1 - (bohrEnergyEv(n) + 13.6) / 13.6);
-  const levels = [1, 2, 3, 4, 5, 6].map((n) => {
-    const y = yOf(n);
+  const rows = levelLabelLayout();
+  const byKey = new Map(rows.map((row) => [row.key, row]));
+  const levels = LEVEL_NS.map((n) => {
+    const row = byKey.get(String(n));
     const on = state.upper === n;
     const tab = n === state.focus ? '0' : '-1';
-    return `<g data-action="level" data-n="${n}" data-focus="level-${n}" role="button" tabindex="${tab}" aria-pressed="${on ? 'true' : 'false'}" aria-label="Level n = ${n}, ${bohrEnergyEv(n).toFixed(2)} electronvolts"><rect x="40" y="${y - 16}" width="250" height="32" fill="transparent"/><line x1="70" x2="280" y1="${y}" y2="${y}" stroke="${on ? '#9a3412' : '#1c2430'}" stroke-width="${on ? 4 : 2}"/><text x="292" y="${y + 4}" font-size="13">n = ${n} (${bohrEnergyEv(n).toFixed(2)} eV)</text></g>`;
+    return `<g data-action="level" data-n="${n}" data-focus="level-${n}" role="button" tabindex="${tab}" aria-pressed="${on ? 'true' : 'false'}" aria-label="Level n = ${n}, ${bohrEnergyEv(n).toFixed(2)} electronvolts"><line data-leader="${n}" x1="250" y1="${row.y.toFixed(2)}" x2="312" y2="${row.labelY.toFixed(2)}" stroke="#5d675f" stroke-width="1"/><line x1="70" x2="250" y1="${row.y.toFixed(2)}" y2="${row.y.toFixed(2)}" stroke="${on ? '#9a3412' : '#1c2430'}" stroke-width="${on ? 4 : 2}"/><rect x="312" y="${(row.labelY - 9).toFixed(2)}" width="168" height="18" fill="transparent"/><text data-level-label="${n}" data-line-y="${row.y.toFixed(2)}" data-label-y="${row.labelY.toFixed(2)}" x="316" y="${(row.labelY + 4).toFixed(2)}" font-size="13">${row.label}</text></g>`;
   }).join('');
+  const limit = byKey.get('inf');
   let arrow = '';
   if (state.last) {
     const line = state.last;
-    const y1 = yOf(line.ni);
-    const y2 = yOf(line.nf);
-    arrow = `<line x1="150" y1="${y1}" x2="150" y2="${y2}" stroke="${line.color}" stroke-width="4" marker-end="url(#lab-arrow)"/><text x="160" y="${(y1 + y2) / 2}" font-size="13" fill="${line.color}">${line.lambdaNm.toFixed(0)} nm</text>`;
+    const y1 = levelY(line.ni);
+    const y2 = levelY(line.nf);
+    arrow = `<line x1="150" y1="${y1.toFixed(2)}" x2="150" y2="${y2.toFixed(2)}" stroke="${line.color}" stroke-width="4" marker-end="url(#lab-arrow)"/><text x="158" y="${((y1 + y2) / 2).toFixed(1)}" font-size="13" fill="${line.color}">${line.lambdaNm.toFixed(0)} nm</text>`;
   }
-  const strips = state.lines
-    .filter((line) => line.lambdaNm >= 380 && line.lambdaNm <= 750)
-    .map((line) => `<rect x="${((line.lambdaNm - 380) / 370) * 400}" y="0" width="3" height="36" fill="${line.color}"/>`)
-    .join('');
+  const infinity = `<g><line data-leader="inf" x1="250" y1="${limit.y.toFixed(2)}" x2="312" y2="${limit.labelY.toFixed(2)}" stroke="#5d675f" stroke-width="1"/><line x1="70" x2="250" y1="${limit.y.toFixed(2)}" y2="${limit.y.toFixed(2)}" stroke="#5d675f" stroke-dasharray="4 3"/><text data-level-label="inf" data-line-y="${limit.y.toFixed(2)}" data-label-y="${limit.labelY.toFixed(2)}" x="316" y="${(limit.labelY + 4).toFixed(2)}" font-size="13" fill="#5d675f">${limit.label}</text></g>`;
   return `
     <section class="lab-tool" data-tool="levels" data-motion="still">
       <h2>Hydrogen energy levels</h2>
       <p id="lab-desc" class="lab-desc" aria-live="polite">${escapeHtml(describeLevels(state))}</p>
       <div class="lab-split">
-        <svg class="lab-svg" viewBox="0 0 460 320" role="group" aria-label="Hydrogen levels" aria-describedby="lab-desc" data-level-list>
+        <svg class="lab-svg" viewBox="0 0 490 330" role="group" aria-label="Hydrogen levels" aria-describedby="lab-desc" data-level-list>
           <defs><marker id="lab-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#9a3412"/></marker></defs>
+          ${infinity}
           ${levels}
-          <line x1="70" x2="280" y1="${yOf(99)}" y2="${yOf(99)}" stroke="#5d675f" stroke-dasharray="4 3"/>
-          <text x="292" y="${yOf(99) + 4}" font-size="12" fill="#5d675f">n = ∞ (0 eV)</text>
           ${arrow}
         </svg>
         <div class="lab-side">
-          <p class="lab-fine">Visible lines land on the strip. Ultraviolet and infrared jumps are named in the sentence above.</p>
-          <svg class="lab-spectrum" viewBox="0 0 400 36" role="img" aria-label="Visible emission lines collected so far">
-            <rect width="400" height="36" rx="6" fill="#1c2430"/>
-            ${strips}
-          </svg>
-          <button type="button" data-action="clear-lines" data-focus="clear-lines">Clear the strip</button>
+          <p class="lab-fine">Visible Balmer lines sit on the 380–750 nm gradient. Lyman is the shaded UV band. Paschen and later series are the shaded IR band.</p>
+          ${renderSpectrumStrip(state.lines ?? [], seriesBand(state.last))}
+          <button type="button" data-action="clear-lines" data-focus="clear-lines">Clear extra lines</button>
         </div>
       </div>
     </section>

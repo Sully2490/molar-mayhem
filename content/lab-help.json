@@ -1,0 +1,413 @@
+{
+  "id": "lab-help",
+  "ch": 3,
+  "openstax_section": "OpenStax AF2e §3.1",
+  "guide_line": "Each lab picture has a short tutor hint, one worked example, and practice you can check.",
+  "steps": [
+    "Pick a lab tool.",
+    "Open Help and read the steps before you change the picture.",
+    "Try the practice. A miss gives a hint. The full answer waits until the third miss."
+  ],
+  "worked_example": {
+    "q": "A hydrogen electron falls from n = 3 to n = 2. Which series is that, and is the light ultraviolet, visible, or infrared?",
+    "steps": [
+      "The series is named by the lower level. Ending at n = 2 means Balmer.",
+      "That jump is the red line near 656 nm, so it is visible light."
+    ],
+    "answer": "Balmer, visible"
+  },
+  "similar_problem": {
+    "q": "A drop that ends at n = 1 belongs to which series, and which band on the strip?",
+    "hint": "The lower level names the series. n = 1 is not the visible Balmer set.",
+    "answer": "Lyman, UV"
+  },
+  "sources": [
+    "OpenStax AF2e §3.1",
+    "OpenStax AF2e §3.2",
+    "OpenStax AF2e §3.3",
+    "OpenStax AF2e §3.4",
+    "OpenStax AF2e §3.5",
+    "OpenStax AF2e §3.6",
+    "OpenStax AF2e §4.1",
+    "OpenStax AF2e §4.4",
+    "OpenStax AF2e §4.5",
+    "OpenStax AF2e §4.6"
+  ],
+  "categories": [
+    {
+      "tool": "lewis",
+      "title": "Lewis builder",
+      "lessonId": "ch04-lewis-structures",
+      "lessonLabel": "Lewis structures",
+      "openstax": ["OpenStax AF2e §4.4", "OpenStax AF2e §4.5"],
+      "steps": [
+        "Add the valence electrons. A negative charge adds electrons. A positive charge removes them. Each hydrogen brings 1.",
+        "Join each outside atom to the center with a single bond. One bond uses 2 electrons.",
+        "Park leftover electrons on the outside atoms first, in pairs. Hydrogen stops at 2 electrons. Most other atoms want 8.",
+        "If the center is still short of 8, move a lone pair from an outside atom into the bond. That makes a double or triple bond.",
+        "Formal charge = valence electrons − lone electrons − half the bonding electrons. Prefer the drawing whose charges are closest to zero."
+      ],
+      "worked": {
+        "q": "Water is H2O. How many valence electrons does the molecule have, and how many lone pairs sit on oxygen?",
+        "steps": [
+          "Oxygen brings 6 valence electrons. Each hydrogen brings 1. The total is 8.",
+          "Two O–H bonds use 4 electrons. The other 4 stay on oxygen as 2 lone pairs."
+        ],
+        "answer": "8 valence electrons, 2 lone pairs on oxygen"
+      },
+      "practice": [
+        { "template": "ch04-formal-charge", "seed": 1 },
+        { "template": "ch04-formal-charge", "seed": 2 },
+        { "template": "ch04-formal-charge-sum", "seed": 1 }
+      ]
+    },
+    {
+      "tool": "wave",
+      "title": "EM wave",
+      "lessonId": "ch03-electromagnetic",
+      "lessonLabel": "Light and photons",
+      "openstax": ["OpenStax AF2e §3.1"],
+      "steps": [
+        "Wavelength is the distance from one crest to the next. Frequency is how many crests pass a point in one second.",
+        "In empty space, c = λν. Use c = 2.998×10^8 m/s.",
+        "Change nanometers to meters before you divide. 1 nm = 10^−9 m.",
+        "One photon carries E = hν. The same energy is E = hc/λ. Use h = 6.626×10^−34 J·s.",
+        "A shorter wavelength means a higher frequency and a larger photon energy."
+      ],
+      "worked": {
+        "q": "A wave has wavelength 500.0 nm. What is its frequency in Hz? Use c = 2.998×10^8 m/s.",
+        "steps": [
+          "500.0 nm = 5.000×10^−7 m.",
+          "ν = c / λ = (2.998×10^8) / (5.000×10^−7)."
+        ],
+        "answer": "5.996×10^14 Hz"
+      },
+      "practice": [
+        { "template": "ch03-frequency-from-wavelength", "seed": 1 },
+        { "template": "ch03-wavelength-from-frequency", "seed": 1 },
+        { "template": "ch03-photon-energy", "seed": 1 }
+      ]
+    },
+    {
+      "tool": "standing",
+      "title": "Standing waves",
+      "lessonId": "ch03-electromagnetic",
+      "lessonLabel": "Light and photons",
+      "openstax": ["OpenStax AF2e §3.1", "OpenStax AF2e §3.3"],
+      "steps": [
+        "A standing wave on a string with fixed ends fits a whole number of half-waves.",
+        "Both ends are nodes. Count them. Nodes = half-waves + 1.",
+        "Only those fits are allowed, so the energy comes in steps.",
+        "The round loop closes after that same count of wavelengths. The wave has to meet itself.",
+        "An electron has a wavelength too: λ = h / (mv). A faster electron has a shorter wavelength."
+      ],
+      "worked": {
+        "q": "A string holds 4 half-waves. How many nodes are there, counting both fixed ends?",
+        "steps": [
+          "Each end is a node.",
+          "Nodes = 4 + 1."
+        ],
+        "answer": "5"
+      },
+      "practice": [
+        { "template": "ch03-debroglie", "seed": 1 },
+        {
+          "problem": {
+            "q": "A string holds 3 half-waves. How many nodes are there, counting both fixed ends?",
+            "a": "4",
+            "why": "Both ends are nodes, and nodes = half-waves + 1. 3 + 1 = 4.",
+            "hints": [
+              "The two ends count as nodes.",
+              "Add 1 to the half-wave count."
+            ],
+            "check": { "kind": "numeric", "value": 4, "tolerance": 0.5, "sigFigs": 1, "unit": null }
+          }
+        },
+        {
+          "problem": {
+            "q": "A string holds 1 half-wave. How many nodes are there, counting both fixed ends?",
+            "a": "2",
+            "why": "One half-wave still has a node at each end. 1 + 1 = 2.",
+            "hints": [
+              "The ends stay fixed even when n = 1.",
+              "Nodes = half-waves + 1."
+            ],
+            "check": { "kind": "numeric", "value": 2, "tolerance": 0.5, "sigFigs": 1, "unit": null }
+          }
+        }
+      ]
+    },
+    {
+      "tool": "levels",
+      "title": "H energy levels",
+      "lessonId": "ch03-bohr",
+      "lessonLabel": "Hydrogen energy levels",
+      "openstax": ["OpenStax AF2e §3.2"],
+      "steps": [
+        "Hydrogen levels are n = 1, 2, 3, and so on. The energy is E = −2.179×10^−18 J / n^2. More negative means more stable.",
+        "The electron gives off a photon when it falls. The photon energy is the positive gap: ΔE = 2.179×10^−18 (1/n_low^2 − 1/n_high^2) J.",
+        "The series is named by the lower level. n = 1 is Lyman. n = 2 is Balmer. n = 3 is Paschen.",
+        "Lyman light is ultraviolet. Paschen and the later series are infrared. Four Balmer lines are visible: about 410 nm (violet), 434 nm (blue), 486 nm (teal), and 656 nm (red).",
+        "n = ∞ is the top of the ladder, at 0. The electron is free there."
+      ],
+      "worked": {
+        "q": "A hydrogen electron falls from n = 3 to n = 2. Name the series, and name the color of the line.",
+        "steps": [
+          "The lower level is n = 2, so the series is Balmer.",
+          "The 3 → 2 line is near 656 nm, which is red."
+        ],
+        "answer": "Balmer, red"
+      },
+      "practice": [
+        { "template": "ch03-rydberg-energy", "seed": 1 },
+        { "template": "ch03-rydberg-wavelength", "seed": 1 },
+        { "template": "ch03-rydberg-energy", "seed": 4 }
+      ]
+    },
+    {
+      "tool": "orbitals",
+      "title": "Orbital pictures",
+      "lessonId": "ch03-quantum",
+      "lessonLabel": "Orbitals and quantum numbers",
+      "openstax": ["OpenStax AF2e §3.3"],
+      "steps": [
+        "An s orbital has l = 0. It is a sphere. A subshell has 1 s orbital.",
+        "A p orbital has l = 1. It has two lobes and a flat node through the nucleus. There are 3: px, py, and pz.",
+        "A d orbital has l = 2. Most have four lobes. dz² has two lobes and a ring. There are 5.",
+        "On the picture, teal and rust are opposite phases of the same wave. The dark dot is the nucleus.",
+        "This tool leaves f orbitals out."
+      ],
+      "worked": {
+        "q": "Which orbital has two lobes along the z axis, and what is l for that orbital?",
+        "steps": [
+          "Two lobes means a p orbital. Along z, that is pz.",
+          "Every p orbital has l = 1."
+        ],
+        "answer": "pz, l = 1"
+      },
+      "practice": [
+        {
+          "problem": {
+            "q": "How many orbitals are in one p subshell?",
+            "a": "3",
+            "why": "l = 1 gives three orbitals: px, py, and pz.",
+            "hints": [
+              "A p subshell is not one orbital.",
+              "Count px, py, and pz."
+            ],
+            "check": { "kind": "numeric", "value": 3, "tolerance": 0.5, "sigFigs": 1, "unit": null }
+          }
+        },
+        {
+          "problem": {
+            "q": "What is the azimuthal quantum number l for a d orbital?",
+            "a": "2",
+            "why": "s is l = 0, p is l = 1, and d is l = 2.",
+            "hints": [
+              "l starts at 0 for s.",
+              "d is two steps past s."
+            ],
+            "check": { "kind": "numeric", "value": 2, "tolerance": 0.5, "sigFigs": 1, "unit": null }
+          }
+        },
+        {
+          "problem": {
+            "q": "What shape is an s orbital? Answer with one word.",
+            "a": "sphere",
+            "why": "An s orbital is a sphere around the nucleus.",
+            "hints": [
+              "It does not have two lobes.",
+              "The picture is round in every direction."
+            ],
+            "check": { "kind": "exact", "text": "sphere", "case": "insensitive" }
+          }
+        }
+      ]
+    },
+    {
+      "tool": "boxes",
+      "title": "Orbital boxes",
+      "lessonId": "ch03-configurations",
+      "lessonLabel": "Electron configurations",
+      "openstax": ["OpenStax AF2e §3.4"],
+      "steps": [
+        "Fill in this order: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p. An s subshell holds 2 electrons, a p holds 6, and a d holds 10.",
+        "One box is one orbital. An s subshell has 1 box, a p has 3, and a d has 5.",
+        "Pauli: a box holds at most two electrons, and the arrows point opposite ways.",
+        "Hund: in one subshell, give every box one electron before you pair any.",
+        "Two exceptions: chromium is 4s1 3d5, not 4s2 3d4. Copper is 4s1 3d10, not 4s2 3d9."
+      ],
+      "worked": {
+        "q": "A ground-state nitrogen atom has 7 electrons. How many of them are unpaired?",
+        "steps": [
+          "The configuration is 1s2 2s2 2p3.",
+          "The three 2p electrons sit alone in three boxes, so all three are unpaired."
+        ],
+        "answer": "3"
+      },
+      "practice": [
+        {
+          "problem": {
+            "q": "How many unpaired electrons does a ground-state oxygen atom have?",
+            "a": "2",
+            "why": "Oxygen is 1s2 2s2 2p4. The 2p subshell has four electrons in three boxes, so two are paired and two are unpaired.",
+            "hints": [
+              "Write 2p4 in three boxes.",
+              "One box gets a pair. The other two stay single."
+            ],
+            "check": { "kind": "numeric", "value": 2, "tolerance": 0.5, "sigFigs": 1, "unit": null }
+          }
+        },
+        {
+          "problem": {
+            "q": "How many electrons does a ground-state chromium atom put in the 4s subshell?",
+            "a": "1",
+            "why": "Chromium is an exception: 4s1 3d5, not 4s2 3d4.",
+            "hints": [
+              "Chromium does not follow the plain 4s2 pattern.",
+              "Half-full 3d goes with one electron in 4s."
+            ],
+            "check": { "kind": "numeric", "value": 1, "tolerance": 0.5, "sigFigs": 1, "unit": null }
+          }
+        },
+        {
+          "problem": {
+            "q": "Which subshell is filled first, 4s or 3d? Type 4s or 3d.",
+            "a": "4s",
+            "why": "The usual order puts 4s before 3d.",
+            "hints": [
+              "Look at the order on the diagram, not the n number alone.",
+              "4s comes before 3d for a neutral atom in the ground state."
+            ],
+            "check": { "kind": "exact", "text": "4s", "case": "insensitive" }
+          }
+        }
+      ]
+    },
+    {
+      "tool": "vsepr",
+      "title": "VSEPR viewer",
+      "lessonId": "ch04-shape-and-polarity",
+      "lessonLabel": "Shape and polarity",
+      "openstax": ["OpenStax AF2e §4.6"],
+      "steps": [
+        "Count regions on the center. Each bonded atom is one region. Each lone pair is one region. A double bond is still one region.",
+        "Regions stay apart. 2 regions are linear (180°). 3 are trigonal planar (120°). 4 are tetrahedral (109.5°). 5 are trigonal bipyramidal. 6 are octahedral (90°).",
+        "The shape name ignores lone pairs. Two bonds and two lone pairs is bent, not tetrahedral.",
+        "A lone pair takes more room than a bond, so it squeezes the angle a little below the ideal value.",
+        "The molecule is polar when the bond dipoles do not cancel. The same outer atoms on a symmetric shape cancel."
+      ],
+      "worked": {
+        "q": "Oxygen in water has 2 bonds and 2 lone pairs. What is the molecular shape?",
+        "steps": [
+          "2 bonds + 2 lone pairs = 4 regions, so the electron geometry is tetrahedral.",
+          "The shape uses only the atoms. Two bonds and two lone pairs is bent."
+        ],
+        "answer": "bent"
+      },
+      "practice": [
+        { "template": "ch05-electron-groups", "seed": 1 },
+        { "template": "ch05-bond-angle", "seed": 1 },
+        { "template": "ch05-hybrid-count", "seed": 1 }
+      ]
+    },
+    {
+      "tool": "ionic",
+      "title": "Ionic formulas",
+      "lessonId": "ch04-ionic-bonding",
+      "lessonLabel": "Ionic bonding",
+      "openstax": ["OpenStax AF2e §4.1"],
+      "steps": [
+        "A metal loses electrons and becomes a cation. A nonmetal gains electrons and becomes an anion.",
+        "The compound is neutral. The total positive charge equals the total negative charge.",
+        "Write the cation first. Use the smallest whole-number counts.",
+        "Put parentheses around a polyatomic ion only when its count is greater than 1.",
+        "The finished formula does not show the charges. Ca2+ and NO3− become Ca(NO3)2."
+      ],
+      "worked": {
+        "q": "Aluminum forms Al3+ and oxygen forms O2−. What is the ionic formula?",
+        "steps": [
+          "The charges are 3+ and 2−. The smallest total that cancels is 6.",
+          "That is two Al3+ ions and three O2− ions."
+        ],
+        "answer": "Al2O3"
+      },
+      "practice": [
+        {
+          "problem": {
+            "q": "Magnesium forms Mg2+ and hydroxide is OH−. What is the ionic formula?",
+            "a": "Mg(OH)2",
+            "why": "Two OH− ions cancel one Mg2+. Parentheses are needed because the polyatomic ion is used twice.",
+            "hints": [
+              "The charges must add to zero. One OH− is not enough.",
+              "A polyatomic ion used more than once needs parentheses."
+            ],
+            "check": { "kind": "exact", "text": "Mg(OH)2", "case": "formula" }
+          }
+        },
+        {
+          "problem": {
+            "q": "Aluminum forms Al3+ and oxide is O2−. What is the ionic formula?",
+            "a": "Al2O3",
+            "why": "Two Al3+ and three O2− cancel. Oxide is a single atom, so there are no parentheses.",
+            "hints": [
+              "Find the smallest counts whose charges add to zero.",
+              "O2− is not a polyatomic ion, so do not wrap it in parentheses."
+            ],
+            "check": { "kind": "exact", "text": "Al2O3", "case": "formula" }
+          }
+        },
+        {
+          "problem": {
+            "q": "Ammonium is NH4+ and sulfate is SO42−. What is the ionic formula?",
+            "a": "(NH4)2SO4",
+            "why": "Two NH4+ ions cancel one SO42−. Ammonium is polyatomic and used twice, so it needs parentheses.",
+            "hints": [
+              "The sulfate charge is 2−, so you need two 1+ ions.",
+              "Parentheses go around the ion that is repeated."
+            ],
+            "check": { "kind": "exact", "text": "(NH4)2SO4", "case": "formula" }
+          }
+        }
+      ]
+    },
+    {
+      "tool": "tray",
+      "title": "Periodic table",
+      "lessonId": "ch03-periodic-trends",
+      "lessonLabel": "Periodic trends",
+      "openstax": ["OpenStax AF2e §3.5", "OpenStax AF2e §3.6"],
+      "steps": [
+        "The color is a heat map. Cool means a smaller number. Warm means a larger number. A blank cell has no value.",
+        "Atomic radius grows down a group. Across a period, radius shrinks.",
+        "Ionization energy and electronegativity mostly do the opposite: they rise across a period and fall down a group.",
+        "The arrows sit in the margin, not on the cells. They point the way that property increases.",
+        "Select an element to read its number. The sentence under the table says the same thing."
+      ],
+      "worked": {
+        "q": "Li, Be, and B are in the same period. Which atom has the largest radius? Write the symbol.",
+        "steps": [
+          "They are side by side in period 2.",
+          "Radius shrinks from left to right, so Li is the largest."
+        ],
+        "answer": "Li"
+      },
+      "practice": [
+        { "template": "ch04-delta-en", "seed": 1 },
+        { "template": "ch04-bond-class", "seed": 1 },
+        {
+          "problem": {
+            "q": "Which atom has the larger radius, Na or Cl? Write the symbol.",
+            "a": "Na",
+            "why": "Na and Cl are in the same period. Radius shrinks from left to right, so Na is larger.",
+            "hints": [
+              "They are in the same period.",
+              "Across a period, radius gets smaller toward the right."
+            ],
+            "check": { "kind": "exact", "text": "Na", "case": "insensitive" }
+          }
+        }
+      ]
+    }
+  ]
+}
