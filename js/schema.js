@@ -46,7 +46,7 @@ export function validateProblem(problem) {
   }
   if (problem?.hints !== undefined && !Array.isArray(problem.hints)) errors.push('hints must be a list');
   if (problem?.check !== undefined && !CHECK_KINDS.has(problem.check.kind)) {
-    errors.push('check.kind must be numeric, exact, or set');
+    errors.push('check.kind must be numeric, exact, set, or config');
   }
   if (problem?.check?.case !== undefined && !CASE_RULES.has(problem.check.case)) {
     errors.push('check.case must be insensitive, sensitive, or formula');
