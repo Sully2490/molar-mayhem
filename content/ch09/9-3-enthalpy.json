@@ -1,0 +1,154 @@
+{
+  "id": "ch09-enthalpy",
+  "ch": 9,
+  "openstax_section": "OpenStax AF2e §9.3",
+  "guide_line": "Use ΔH as a state function: scale it, reverse it, and build it from ΔHf° or Hess's law.",
+  "steps": [
+    "The first law says ΔU = q + w. q is positive when heat enters the system. w is positive when work is done on the system.",
+    "Enthalpy is H = U + PV. At constant pressure, ΔH = q_p. ΔH is negative for an exothermic reaction and positive for an endothermic one.",
+    "ΔH matches the moles in the equation. Multiply the equation and ΔH by the same factor. Reverse the equation and change the sign of ΔH. Write the physical states.",
+    "ΔHf° is the enthalpy change for making 1 mol of a substance from its elements in their standard states. An element in its standard state has ΔHf° = 0.",
+    "ΔH° = Σ n ΔHf°(products) - Σ n ΔHf°(reactants). Hess's law: add the ΔH values of steps that sum to the target equation. Report 4 significant figures."
+  ],
+  "worked_example": {
+    "q": "Find ΔH° for Fe2O3(s) + 3 CO(g) → 2 Fe(s) + 3 CO2(g). Use OpenStax AF2e Appendix G: Fe2O3(s) -824.2 kJ/mol, CO(g) -110.52 kJ/mol, CO2(g) -393.51 kJ/mol. Fe(s) is 0.",
+    "steps": [
+      "Products: 3 x -393.51 = -1180.53 kJ.",
+      "Reactants: -824.2 + 3 x -110.52 = -1155.76 kJ.",
+      "ΔH° = -1180.53 - (-1155.76) = -24.77 kJ."
+    ],
+    "answer": "-24.77 kJ"
+  },
+  "similar_problem": {
+    "q": "Find ΔH° for CuO(s) + H2(g) → Cu(s) + H2O(g). Use Appendix G: CuO(s) -157.3 kJ/mol and H2O(g) -241.82 kJ/mol. Cu(s) and H2(g) are 0. Report 4 significant figures, in kJ.",
+    "hint": "For CuO plus H2, ΔH° is ΔHf° of H2O(g) minus ΔHf° of CuO. Copper metal and H2 are elements, so each ΔHf° is 0.",
+    "answer": "ΔH° = -241.82 - (-157.3) = -84.52 kJ."
+  },
+  "sources": [
+    "OpenStax AF2e §9.3",
+    "OpenStax AF2e Appendix G",
+    "OpenStax AF2e Table 9.2"
+  ],
+  "problems": [
+    {
+      "id": "ch09-enthalpy-01",
+      "q": "A system absorbs 640.0 J of heat and does 215.0 J of work on the surroundings. What is ΔU, in J? Report 4 significant figures.",
+      "a": "425.0 J",
+      "why": "Heat in makes q = +640.0 J. Work done by the system makes w = -215.0 J. ΔU = 640.0 + (-215.0) = 425.0 J.",
+      "hints": [
+        "q is +640.0 J because heat entered. w is -215.0 J because the system did the work. Add those two."
+      ],
+      "check": { "kind": "numeric", "value": 425, "sigFigs": 4, "unit": "J" }
+    },
+    {
+      "id": "ch09-enthalpy-02",
+      "q": "ΔHf° of SO2(g) is -296.83 kJ/mol (OpenStax AF2e Appendix G). How much heat, in kJ, is released or absorbed when 3.250 mol of SO2 forms from its elements? Report 4 significant figures.",
+      "a": "-964.7 kJ",
+      "why": "ΔH = 3.250 mol x -296.83 kJ/mol = -964.6975 kJ, which is -964.7 kJ to 4 significant figures.",
+      "hints": [
+        "SO2 formation is tabulated for 1 mol. Multiply -296.83 kJ/mol by 3.250 mol."
+      ],
+      "check": { "kind": "numeric", "value": -964.7, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-enthalpy-03",
+      "q": "Table 9.2 gives ΔHc° of CH4(g) as -890.8 kJ/mol. How much heat, in kJ, is exchanged when 12.50 g of methane burns? Use atomic masses H = 1.008 and C = 12.011. Report 4 significant figures.",
+      "a": "-694.1 kJ",
+      "why": "Molar mass = 12.011 + 4(1.008) = 16.043 g/mol. Moles = 12.50 / 16.043 = 0.779155 mol. q = 0.779155 x -890.8 = -694.072 kJ, which is -694.1 kJ to 4 significant figures.",
+      "hints": [
+        "Methane's molar mass uses C = 12.011 and H = 1.008. Convert 12.50 g to moles, then multiply by -890.8 kJ/mol."
+      ],
+      "check": { "kind": "numeric", "value": -694.1, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-enthalpy-04",
+      "q": "Find ΔH° for C2H5OH(l) + 3 O2(g) → 2 CO2(g) + 3 H2O(l), in kJ/mol of ethanol. Appendix G: C2H5OH(l) -277.6, CO2(g) -393.51, H2O(l) -285.83 kJ/mol. O2 is 0. Report 4 significant figures.",
+      "a": "-1367 kJ/mol",
+      "why": "Products = 2(-393.51) + 3(-285.83) = -1644.51 kJ. Reactants = -277.6 kJ. ΔH° = -1644.51 - (-277.6) = -1366.91 kJ/mol, which is -1367 kJ/mol to 4 significant figures.",
+      "hints": [
+        "For ethanol combustion, subtract the reactant sum from the product sum. O2 is an element, and the coefficients are 2 and 3."
+      ],
+      "check": { "kind": "numeric", "value": -1367, "sigFigs": 4, "unit": "kJ/mol" }
+    },
+    {
+      "id": "ch09-enthalpy-05",
+      "q": "Use Hess's law to find ΔH° for C(graphite) + 2 H2(g) → CH4(g), in kJ. (1) C(graphite) + O2(g) → CO2(g), ΔH° = -393.51 kJ. (2) H2(g) + 1/2 O2(g) → H2O(g), ΔH° = -241.82 kJ. (3) CH4(g) + 2 O2(g) → CO2(g) + 2 H2O(g), ΔH° = -802.55 kJ. Values follow OpenStax AF2e Appendix G. Report 4 significant figures.",
+      "a": "-74.60 kJ",
+      "why": "Target = (1) + 2(2) - (3) = -393.51 + 2(-241.82) - (-802.55) = -74.60 kJ.",
+      "hints": [
+        "Keep step (1) as written, double step (2), and reverse step (3) so CH4 becomes a product."
+      ],
+      "check": { "kind": "numeric", "value": -74.6, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-enthalpy-06",
+      "q": "Which formula has ΔHf° = 0 at standard conditions, O2(g) or O3(g)? Enter the formula.",
+      "a": "O2",
+      "why": "O2 is the standard form of elemental oxygen, so its ΔHf° is 0. Ozone, O3, does not.",
+      "hints": [
+        "The standard form of oxygen is the O2 molecule, not ozone. Enter that formula."
+      ],
+      "check": { "kind": "exact", "text": "O2", "case": "sensitive" }
+    },
+    {
+      "id": "ch09-enthalpy-07",
+      "q": "H2(g) + 1/2 O2(g) → H2O(l) has ΔH° = -285.83 kJ (Appendix G). What is ΔH°, in kJ, for 2 H2O(l) → 2 H2(g) + O2(g)? Report 4 significant figures.",
+      "a": "571.7 kJ",
+      "why": "Reverse the sign and double the amount: ΔH° = -2 x -285.83 = 571.66 kJ, which is 571.7 kJ to 4 significant figures.",
+      "hints": [
+        "The water equation is reversed and doubled. Change the sign of -285.83 kJ, then multiply by 2."
+      ],
+      "check": { "kind": "numeric", "value": 571.7, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-enthalpy-08",
+      "q": "H2(g) + Cl2(g) → 2 HCl(g). Appendix G gives ΔHf° of HCl(g) as -92.307 kJ/mol. A mixture starts with 0.4000 mol H2 and 0.2500 mol Cl2. What is ΔH for the reaction that actually occurs, in kJ? Report 4 significant figures.",
+      "a": "-46.15 kJ",
+      "why": "The equation as written has ΔH° = 2 x -92.307 = -184.614 kJ. H2 and Cl2 react 1:1, so Cl2 runs out first. ΔH = 0.2500 x -184.614 = -46.1535 kJ, which is -46.15 kJ to 4 significant figures.",
+      "hints": [
+        "H2 and Cl2 react 1 to 1. You have 0.4000 mol H2 and 0.2500 mol Cl2, so use the smaller amount with 2 x -92.307 kJ."
+      ],
+      "check": { "kind": "numeric", "value": -46.15, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-enthalpy-09",
+      "q": "Table 9.2 gives the combustion enthalpy of ethanol as -1366.8 kJ/mol. How many kJ are released per gram of C2H5OH? Use H = 1.008, C = 12.011, and O = 15.999. Report 4 significant figures, with a negative sign.",
+      "a": "-29.67 kJ/g",
+      "why": "Molar mass = 2(12.011) + 6(1.008) + 15.999 = 46.069 g/mol. Per gram = -1366.8 / 46.069 = -29.6685 kJ/g, which is -29.67 kJ/g to 4 significant figures.",
+      "hints": [
+        "Divide ethanol's -1366.8 kJ/mol by its molar mass. Count 2 C, 6 H, and 1 O using the full atomic masses."
+      ],
+      "check": { "kind": "numeric", "value": -29.67, "sigFigs": 4, "unit": "kJ/g" }
+    },
+    {
+      "id": "ch09-enthalpy-10",
+      "q": "Find ΔH° for 2 NO(g) + O2(g) → 2 NO2(g), in kJ. Appendix G: NO(g) 90.25 kJ/mol, NO2(g) 33.2 kJ/mol, O2 0. Report 4 significant figures.",
+      "a": "-114.1 kJ",
+      "why": "ΔH° = 2(33.2) - 2(90.25) = 66.4 - 180.5 = -114.1 kJ.",
+      "hints": [
+        "Products are two NO2. Reactants are two NO. Oxygen is zero. Subtract 2 x 90.25 from 2 x 33.2."
+      ],
+      "check": { "kind": "numeric", "value": -114.1, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-enthalpy-11",
+      "q": "ΔHf° of NO2(g) is +33.2 kJ/mol. Is the formation of NO2 endothermic or exothermic?",
+      "a": "endothermic",
+      "why": "A positive ΔH means the system takes heat in, so the formation is endothermic.",
+      "hints": [
+        "The sign on +33.2 kJ/mol for NO2 tells you whether heat goes in or out."
+      ],
+      "check": { "kind": "exact", "text": "endothermic", "case": "insensitive" }
+    },
+    {
+      "id": "ch09-enthalpy-12",
+      "q": "This is a formation equation: 2 C(graphite) + 3 H2(g) + 1/2 O2(g) → C2H5OH(l). Enter the product formula.",
+      "a": "C2H5OH",
+      "why": "A formation equation makes 1 mol of one product from elements. The product formula is C2H5OH.",
+      "hints": [
+        "A formation equation has one product. Copy C2H5OH with those capitals."
+      ],
+      "check": { "kind": "exact", "text": "C2H5OH", "case": "sensitive" }
+    }
+  ]
+}
