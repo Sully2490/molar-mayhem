@@ -1,0 +1,160 @@
+{
+  "id": "ch5-hybridization",
+  "ch": 5,
+  "openstax_section": "OpenStax AF2e §5.2",
+  "guide_line": "Count electron groups on one atom, then name the hybrid.",
+  "steps": [
+    "An electron group is one bond or one lone pair on the atom you were asked about. A double bond is one group. A triple bond is one group.",
+    "Count those groups. The number of hybrid orbitals equals that count.",
+    "Two groups use sp hybrids, and the angle is about 180°. Three groups use sp2, about 120°. Four groups use sp3, about 109.5°.",
+    "Five groups use sp3d. Six groups use sp3d2."
+  ],
+  "worked_example": {
+    "q": "What hybridization does C use in CH4?",
+    "steps": [
+      "Carbon has four single bonds and no lone pair.",
+      "Four groups use sp3 hybrids."
+    ],
+    "answer": "sp3"
+  },
+  "similar_problem": {
+    "q": "What hybridization does C use in CO2?",
+    "hint": "Each double bond is one group, not two.",
+    "answer": "sp"
+  },
+  "sources": ["OpenStax AF2e §5.2"],
+  "problems": [
+    {
+      "id": "ch5-hyb-ch4",
+      "q": "What hybridization does C use in CH4?",
+      "a": "sp3",
+      "why": "Carbon in CH4 has four single bonds and no lone pair. Four groups use sp3 hybrids.",
+      "hints": [
+        "A double bond is one group, not two. Count groups on that atom only.",
+        "Four groups use sp3."
+      ],
+      "check": { "kind": "exact", "text": "sp3", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-co2",
+      "q": "What hybridization does C use in CO2?",
+      "a": "sp",
+      "why": "CO2 is O=C=O. Each double bond is one group, so carbon has two groups. Two groups use sp hybrids.",
+      "hints": [
+        "A double bond is one group, not two. Count groups on that atom only.",
+        "Two groups use sp."
+      ],
+      "check": { "kind": "exact", "text": "sp", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-ch2o",
+      "q": "What hybridization does C use in CH2O?",
+      "a": "sp2",
+      "why": "Carbon in CH2O has two C–H bonds and one C=O double bond. That is three groups, so the hybrids are sp2.",
+      "hints": [
+        "A double bond is one group, not two. Count groups on that atom only.",
+        "Three groups use sp2."
+      ],
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-nh3",
+      "q": "What hybridization does N use in NH3?",
+      "a": "sp3",
+      "why": "Nitrogen has three N–H bonds and one lone pair. Four groups use sp3 hybrids.",
+      "hints": [
+        "Count the lone pair. It is a group even though it is not a bond.",
+        "Four groups use sp3."
+      ],
+      "check": { "kind": "exact", "text": "sp3", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-h2o",
+      "q": "What hybridization does O use in H2O?",
+      "a": "sp3",
+      "why": "Oxygen has two O–H bonds and two lone pairs. Four groups use sp3 hybrids.",
+      "hints": [
+        "Count both lone pairs. Each lone pair is a group.",
+        "Four groups use sp3."
+      ],
+      "check": { "kind": "exact", "text": "sp3", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-bf3",
+      "q": "What hybridization does B use in BF3?",
+      "a": "sp2",
+      "why": "Boron has three B–F bonds and no lone pair. Three groups use sp2 hybrids.",
+      "hints": [
+        "Boron in BF3 has no lone pair.",
+        "Three groups use sp2."
+      ],
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-hcn",
+      "q": "What hybridization does C use in HCN?",
+      "a": "sp",
+      "why": "HCN is H–C≡N. Carbon has two groups: the C–H bond and the triple bond. Two groups use sp hybrids.",
+      "hints": [
+        "A triple bond is one group, not three.",
+        "Two groups use sp."
+      ],
+      "check": { "kind": "exact", "text": "sp", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-pcl5",
+      "q": "What hybridization does P use in PCl5?",
+      "a": "sp3d",
+      "why": "Phosphorus has five P–Cl bonds and no lone pair. Five groups use sp3d hybrids.",
+      "hints": [
+        "Count all five bonds as five groups.",
+        "Five groups use sp3d."
+      ],
+      "check": { "kind": "exact", "text": "sp3d", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-sf6",
+      "q": "What hybridization does S use in SF6?",
+      "a": "sp3d2",
+      "why": "Sulfur has six S–F bonds and no lone pair. Six groups use sp3d2 hybrids.",
+      "hints": [
+        "Count all six bonds as six groups.",
+        "Six groups use sp3d2."
+      ],
+      "check": { "kind": "exact", "text": "sp3d2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-xef4",
+      "q": "What hybridization does Xe use in XeF4?",
+      "a": "sp3d2",
+      "why": "Xenon has four Xe–F bonds and two lone pairs. Six groups use sp3d2 hybrids.",
+      "hints": [
+        "XeF4 has two lone pairs. Count them with the four bonds.",
+        "Six groups use sp3d2."
+      ],
+      "check": { "kind": "exact", "text": "sp3d2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-c2h4",
+      "q": "What hybridization does each C use in C2H4?",
+      "a": "sp2",
+      "why": "Each carbon in H2C=CH2 has two C–H bonds and one double bond. Three groups use sp2 hybrids.",
+      "hints": [
+        "A double bond is one group, not two. Count groups on that atom only.",
+        "Three groups use sp2."
+      ],
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-c2h2",
+      "q": "What hybridization does each C use in C2H2?",
+      "a": "sp",
+      "why": "Each carbon in H–C≡C–H has one C–H bond and one triple bond. Two groups use sp hybrids.",
+      "hints": [
+        "A triple bond is one group, not three.",
+        "Two groups use sp."
+      ],
+      "check": { "kind": "exact", "text": "sp", "case": "insensitive" }
+    }
+  ]
+}

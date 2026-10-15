@@ -1,0 +1,193 @@
+{
+  "id": "ch5-sigma-pi",
+  "ch": 5,
+  "openstax_section": "OpenStax AF2e §5.1",
+  "guide_line": "Every bond has one sigma. Extra bonds in a double or triple bond are pi.",
+  "steps": [
+    "A sigma bond is head-on overlap along the line between two atoms.",
+    "A pi bond is side-by-side overlap of p orbitals, above and below that line.",
+    "Every bond has exactly one sigma. A single bond is that sigma only. A double bond is 1 sigma and 1 pi. A triple bond is 1 sigma and 2 pi.",
+    "Add the bonds in the whole molecule. Lone pairs are not bonds."
+  ],
+  "worked_example": {
+    "q": "How many sigma and pi bonds are in H2?",
+    "steps": [
+      "H2 has one single bond.",
+      "A single bond is 1 sigma and 0 pi."
+    ],
+    "answer": "1 sigma, 0 pi"
+  },
+  "similar_problem": {
+    "q": "How many sigma and pi bonds are in O2?",
+    "hint": "A double bond is 1 sigma and 1 pi, not 2 sigma.",
+    "answer": "1 sigma, 1 pi"
+  },
+  "sources": ["OpenStax AF2e §5.1"],
+  "problems": [
+    {
+      "id": "ch5-sig-h2",
+      "q": "How many sigma and pi bonds are in H2?",
+      "a": "1 sigma, 0 pi",
+      "why": "H2 has one single bond. That is 1 sigma and 0 pi.",
+      "hints": [
+        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
+        "A single bond is only a sigma bond."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["1 sigma, 0 pi", "1 σ, 0 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-o2",
+      "q": "How many sigma and pi bonds are in O2?",
+      "a": "1 sigma, 1 pi",
+      "why": "O2 has one double bond. A double bond is 1 sigma and 1 pi.",
+      "hints": [
+        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
+        "Count one sigma for the bond, then one pi for the second overlap."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["1 sigma, 1 pi", "1 σ, 1 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-n2",
+      "q": "How many sigma and pi bonds are in N2?",
+      "a": "1 sigma, 2 pi",
+      "why": "N2 has one triple bond. A triple bond is 1 sigma and 2 pi.",
+      "hints": [
+        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
+        "A triple bond has one sigma and two pi bonds."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["1 sigma, 2 pi", "1 σ, 2 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-co2",
+      "q": "How many sigma and pi bonds are in CO2?",
+      "a": "2 sigma, 2 pi",
+      "why": "CO2 is O=C=O, two double bonds. Each double bond is 1 sigma and 1 pi, so the molecule has 2 sigma and 2 pi.",
+      "hints": [
+        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
+        "CO2 has two double bonds. Add them."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["2 sigma, 2 pi", "2 σ, 2 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-c2h4",
+      "q": "How many sigma and pi bonds are in C2H4?",
+      "a": "5 sigma, 1 pi",
+      "why": "C2H4 has four C–H single bonds and one C=C double bond. The double bond adds 1 sigma and 1 pi, so the total is 5 sigma and 1 pi.",
+      "hints": [
+        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
+        "Count four C–H sigma bonds plus the C=C bond."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["5 sigma, 1 pi", "5 σ, 1 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-c2h2",
+      "q": "How many sigma and pi bonds are in C2H2?",
+      "a": "3 sigma, 2 pi",
+      "why": "C2H2 has two C–H single bonds and one C≡C triple bond. The triple bond is 1 sigma and 2 pi, so the total is 3 sigma and 2 pi.",
+      "hints": [
+        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
+        "A triple bond is 1 sigma and 2 pi. Add the two C–H sigma bonds."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["3 sigma, 2 pi", "3 σ, 2 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-hcn",
+      "q": "How many sigma and pi bonds are in HCN?",
+      "a": "2 sigma, 2 pi",
+      "why": "HCN is H–C≡N. The C–H bond is 1 sigma. The triple bond is 1 sigma and 2 pi. The total is 2 sigma and 2 pi.",
+      "hints": [
+        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
+        "A triple bond is 1 sigma and 2 pi. The C–H bond is another sigma."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["2 sigma, 2 pi", "2 σ, 2 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-ch2o",
+      "q": "How many sigma and pi bonds are in CH2O?",
+      "a": "3 sigma, 1 pi",
+      "why": "CH2O has two C–H single bonds and one C=O double bond. That is 3 sigma and 1 pi.",
+      "hints": [
+        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
+        "Count two C–H sigma bonds plus the C=O bond."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["3 sigma, 1 pi", "3 σ, 1 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-ch4",
+      "q": "How many sigma and pi bonds are in CH4?",
+      "a": "4 sigma, 0 pi",
+      "why": "CH4 has four C–H single bonds and no multiple bond. That is 4 sigma and 0 pi.",
+      "hints": [
+        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
+        "Each single bond is one sigma."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["4 sigma, 0 pi", "4 σ, 0 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-c2h6",
+      "q": "How many sigma and pi bonds are in C2H6?",
+      "a": "7 sigma, 0 pi",
+      "why": "C2H6 has six C–H single bonds and one C–C single bond. That is 7 sigma and 0 pi.",
+      "hints": [
+        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
+        "Ethane has only single bonds. Count all seven."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["7 sigma, 0 pi", "7 σ, 0 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-h2o",
+      "q": "How many sigma and pi bonds are in H2O?",
+      "a": "2 sigma, 0 pi",
+      "why": "H2O has two O–H single bonds. Lone pairs are not bonds, so the total is 2 sigma and 0 pi.",
+      "hints": [
+        "A double bond is 1 sigma and 1 pi, not 2 sigma.",
+        "Lone pairs are not sigma or pi bonds."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["2 sigma, 0 pi", "2 σ, 0 π"]
+      }
+    }
+  ]
+}
