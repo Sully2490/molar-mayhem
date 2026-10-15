@@ -1,3 +1,5 @@
+import { toastHtml } from './celebrate.js';
+import { firstDrill, renderDrillQueue } from './drills.js';
 import { grade } from './grade.js';
 
 export const ATTEMPTS = 3;
@@ -52,7 +54,7 @@ export function feedbackForUnit(result, attempt, problem) {
 
 export function renderDrill() {
   const forms = UNIT_PROBLEMS.map(renderProblem).join('');
-  return `<section class="page" data-route="Drill"><h1>Drill</h1><p>Type the number and the unit in separate boxes.</p>${forms}</section>`;
+  return `<section class="page" data-route="Drill"><h1>Drill</h1><p>Type the number and the unit in separate boxes.</p>${forms}${renderDrillQueue(firstDrill())}${toastHtml()}</section>`;
 }
 
 function renderProblem(problem) {
@@ -78,7 +80,11 @@ function renderProblem(problem) {
   `;
 }
 
+const unitBound = new WeakSet();
+
 export function bindUnitEntry(root, problems = UNIT_PROBLEMS) {
+  if (unitBound.has(root)) return;
+  unitBound.add(root);
   const attempts = new Map();
   root.addEventListener('submit', (event) => {
     const form = event.target.closest?.('[data-unit-problem]');

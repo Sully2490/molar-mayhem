@@ -13,6 +13,14 @@ test('sync is a manual local code with no account or backend', () => {
   assert.match(doc, /No backend/);
 });
 
+test('every parity row is checked', () => {
+  const rows = doc.split('\n').filter((line) => (
+    line.startsWith('|') && !line.includes('---') && !line.includes('Item')
+  ));
+  assert.equal(rows.length, 8);
+  for (const row of rows) assert.match(row, /Checked/);
+});
+
 test('every Lab tool needs a description, keyboard, a still frame, and touch', () => {
   assert.match(doc, /tetrahedral, 109\.5°/);
   assert.match(doc, /aria-live/);

@@ -10,7 +10,7 @@ Progress sync is a **manual export/import code** and nothing else.
 - The student copies a code out, or pastes a code in. The same code may also sit in a `#sync=` link, which the page reads locally.
 - No accounts. No logins. No backend. No server save.
 
-Home when it is built: `js/sync.js`. The progress policy that saves attempts is feature I8.
+Home: `js/sync.js`. The progress policy that saves attempts is feature I8.
 
 ## Lab tools
 
@@ -27,11 +27,11 @@ Home: `js/lab/` and `css/lab/`.
 
 | Item | Where it lives | Now |
 | --- | --- | --- |
-| Periodic-table tray (heat map, trend arrows, element popup) | `js/periodic.js`, `js/elements.js`, tray in `index.html` and `css/styles.css` | Tray colors atomic radius, ionization energy, and electronegativity. Further properties stay with the table work. |
-| Glossary terms that open a popup | Not in the repo yet | |
-| Lab tools | `js/lab/`, `css/lab/` | Follow the Lab rules above. |
-| Drills | `#Drill` | Placeholder in `js/routes.js`. |
-| Flash cards | `#Cards` | Placeholder in `js/routes.js`. |
-| Exam prep (untimed cumulative final, chapters 1–9, more items in 5 and 7, corrections summary) | `#Prep`, `js/prep.js`, `js/final-exam.js` | On the practice-final branch. |
-| Course map, per-lesson progress, streak, and XP | `#Map` | Placeholder in `js/routes.js`. |
-| Sync | `js/sync.js`, `localStorage`, export/import code, `#sync=` | Follow the Sync rules above. Not built yet. |
+| Periodic-table tray (heat map, trend arrows, element popup) | `js/periodic.js`, `js/elements.js`, tray in `index.html` and `css/styles.css` | Checked. Tray colors atomic radius, ionization energy, and electronegativity. |
+| Glossary terms that open a popup | `#Home`, `js/glossary.js` | Checked. A term opens a dialog. Escape closes it and returns focus. |
+| Lab tools | `js/lab/`, `css/lab/` | Checked. Follow the Lab rules above. |
+| Drills | `#Drill`, `js/unit-entry.js`, `js/drills.js` | Checked. Separate value and unit boxes, plus an adaptive queue. |
+| Flash cards | `#Cards`, `js/cards.js` | Checked. Flip, previous, and next. |
+| Exam prep (untimed cumulative final, chapters 1–9, more items in 5 and 7, corrections summary) | `#Prep`, `js/prep.js` | Checked. The untimed practice final loads `content/final/practice-final.json`. |
+| Course map, per-lesson progress, streak, and XP | `#Map`, `js/map.js`, `js/progress.js` | Checked. Mastery, skip-ahead, streak, XP, toasts, and confetti. |
+| Sync | `js/sync.js`, `localStorage`, export/import code, `#sync=` | Checked. Manual export/import code in localStorage. A `#sync=` link is read locally. |
