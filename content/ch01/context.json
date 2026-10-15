@@ -5,7 +5,8 @@
   "guide_line": "Tell a hypothesis, a law, and a theory apart, and name the domain.",
   "steps": [
     "Chemistry studies what matter is made of and how it changes.",
-    "A hypothesis is a testable guess. A law states a pattern that keeps happening. A theory explains a pattern after many tests.",
+    "A hypothesis is a testable guess. An experiment is the test. A law states a pattern that keeps happening. A theory explains a pattern after many tests.",
+    "A qualitative observation uses words, such as a color or a smell. A quantitative observation uses a measured number.",
     "Macroscopic is what you can see or measure. Microscopic is atoms and molecules. Symbolic is formulas, symbols, and equations."
   ],
   "worked_example": {
@@ -128,6 +129,30 @@
       "why": "Ions in a crystal are too small to see. The model is microscopic.",
       "hints": ["The model shows ions, which are far too small to see in the crystal."],
       "check": { "kind": "exact", "text": "microscopic", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-13",
+      "q": "A student writes, \"The solution turned cloudy.\" Is that observation qualitative or quantitative?",
+      "a": "qualitative",
+      "why": "Cloudy describes what the solution looks like. There is no measured number, so the observation is qualitative.",
+      "hints": ["This note describes a look, and it does not include a measured number."],
+      "check": { "kind": "exact", "text": "qualitative", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-14",
+      "q": "A student writes, \"The balance read 8.42 g.\" Is that observation qualitative or quantitative?",
+      "a": "quantitative",
+      "why": "8.42 g is a measured number with a unit, so the observation is quantitative.",
+      "hints": ["A balance reading is a number plus a unit, not only a description."],
+      "check": { "kind": "exact", "text": "quantitative", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-15",
+      "q": "A student heats three samples and records the temperature each minute to test a guess. Is that a hypothesis, an experiment, a theory, or a law?",
+      "a": "experiment",
+      "why": "Heating the samples and recording the temperatures is the test of a guess. A test is an experiment.",
+      "hints": ["The student is carrying out a test and writing down results, not only stating a guess."],
+      "check": { "kind": "exact", "text": "experiment", "case": "insensitive" }
     }
   ]
 }

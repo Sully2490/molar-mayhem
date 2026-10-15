@@ -4,10 +4,11 @@
   "openstax_section": "OpenStax AF2e §1.2",
   "guide_line": "Sort a sample by state, and as an element, a compound, or a mixture.",
   "steps": [
+    "Matter is anything that has mass and takes up space. A gas is matter too.",
     "A solid keeps its shape and its volume. A liquid keeps its volume and takes the container's shape. A gas takes both. Plasma is a gas-like state full of charged particles.",
     "Mass is how much matter is in a sample. Weight is the pull of gravity on that sample. Mass does not change when gravity changes.",
     "Conservation of matter: when a substance changes, the total mass stays the same.",
-    "An element is one kind of atom. A compound joins two or more elements in a fixed ratio. A molecule is two or more atoms bonded together.",
+    "An element is one kind of atom. A compound joins two or more elements in a fixed ratio. A molecule is two or more atoms bonded together. O2 is a molecule and an element. It is not a compound.",
     "A mixture holds substances together. Homogeneous looks the same throughout. Heterogeneous does not. A pure substance is an element or a compound.",
     "Symbols you need here: sodium is Na, iron is Fe, water is H2O, and carbon dioxide is CO2."
   ],
@@ -193,6 +194,22 @@
       "why": "A gas that contains many charged particles is plasma, the fourth state of matter.",
       "hints": ["This state looks like a gas, but many of its particles carry a charge."],
       "check": { "kind": "exact", "text": "plasma", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-classify-21",
+      "q": "True or false: every molecule is a compound.",
+      "a": "false",
+      "why": "A molecule is two or more atoms bonded together. O2 is a molecule of one element, so it is not a compound. A compound needs at least two elements.",
+      "hints": ["Check a molecule made from only one element before you answer."],
+      "check": { "kind": "exact", "text": "false", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-classify-22",
+      "q": "You blow up a sealed balloon and it gets larger. Does the gas inside count as matter? Answer yes or no.",
+      "a": "yes",
+      "why": "The gas takes up more space, so the balloon grows, and it has mass. Anything with mass that takes up space is matter.",
+      "hints": ["Ask two questions: does the gas take up space, and does it have mass?"],
+      "check": { "kind": "exact", "text": "yes", "case": "insensitive" }
     }
   ]
 }

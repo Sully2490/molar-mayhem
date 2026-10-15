@@ -6,9 +6,10 @@
   "steps": [
     "A measurement has three parts: a number, a unit, and some uncertainty in the last digit.",
     "Base SI units for now: meter (m) for length, kilogram (kg) for mass, second (s) for time, and kelvin (K) for temperature.",
-    "kilo means 1000, centi means 0.01, and milli means 0.001. So 1 km = 1000 m, 1 cm = 0.01 m, and 1 mg = 0.001 g.",
+    "kilo (k) means 10^3, centi (c) means 10^-2, milli (m) means 10^-3, and micro means 10^-6. Lowercase m is milli. Capital M is mega.",
     "Density is mass divided by volume. For liquids and solids, 1 mL = 1 cm3, so g/mL and g/cm3 match. Report these results to four significant figures.",
-    "Water freezes at 273.15 K, which is 0 °C, and boils at 373.15 K, which is 100 °C. Changing a temperature into another scale comes in the conversions lesson."
+    "Water freezes at 273.15 K, which is 0 °C, and boils at 373.15 K, which is 100 °C. Changing a temperature into another scale comes in the conversions lesson.",
+    "Scientific notation writes a number as a coefficient times a power of ten, such as 3.20 × 10^2. The coefficient keeps the significant figures."
   ],
   "worked_example": {
     "q": "A block has a mass of 24.00 g and a volume of 3.000 mL. What is its density in g/mL?",
@@ -159,6 +160,62 @@
       "why": "Water freezes at 0 °C, which is 273.15 K.",
       "hints": ["The freezing point is a little more than 273 kelvin. Include the hundredths."],
       "check": { "kind": "numeric", "value": 273.15, "tolerance": 0.02, "sigFigs": 5, "unit": "K" }
+    },
+    {
+      "id": "ch01-measure-17",
+      "q": "What power of ten does the prefix milli stand for? Write it as 10 raised to an integer.",
+      "a": "10^-3",
+      "why": "Milli means one thousandth, which is 10^-3. Example: 1 mg = 10^-3 g.",
+      "hints": ["Milli means one thousandth of the base unit. Write that factor as a power of ten."],
+      "check": { "kind": "exact", "text": "10^-3", "answers": ["1e-3", "0.001"], "case": "insensitive" }
+    },
+    {
+      "id": "ch01-measure-18",
+      "q": "Write the symbol for the prefix milli.",
+      "a": "m",
+      "why": "The symbol for milli is a lowercase m. Capital M is the symbol for mega, 10^6.",
+      "hints": ["Use one lowercase letter. The capital form of that letter means mega, not milli."],
+      "check": { "kind": "exact", "text": "m", "case": "sensitive" }
+    },
+    {
+      "id": "ch01-measure-19",
+      "q": "Write the symbol for the prefix kilo.",
+      "a": "k",
+      "why": "The symbol for kilo is a lowercase k. Capital K is the kelvin symbol, not the kilo prefix.",
+      "hints": ["Use one lowercase letter. A capital K names the temperature unit, not this prefix."],
+      "check": { "kind": "exact", "text": "k", "case": "sensitive" }
+    },
+    {
+      "id": "ch01-measure-20",
+      "q": "Write 0.000640 in scientific notation.",
+      "a": "6.40 × 10^-4",
+      "why": "Move the decimal four places to the right to get 6.40. The value is 6.40 × 10^-4. The final zero stays because it was significant.",
+      "hints": ["Move the decimal until 6.40 is in front, and keep that last zero in the coefficient."],
+      "check": { "kind": "numeric", "value": 0.00064, "tolerance": 0, "sigFigs": 3, "unit": null }
+    },
+    {
+      "id": "ch01-measure-21",
+      "q": "Write 7.15 × 10^-3 in standard decimal notation.",
+      "a": "0.00715",
+      "why": "A power of -3 moves the decimal three places left: 7.15 × 10^-3 = 0.00715.",
+      "hints": ["A negative exponent moves the decimal left. Count three places from 7.15."],
+      "check": { "kind": "numeric", "value": 0.00715, "tolerance": 0, "sigFigs": 3, "unit": null }
+    },
+    {
+      "id": "ch01-measure-22",
+      "q": "Convert 3.600 km to centimeters.",
+      "a": "3.600 × 10^5 cm",
+      "why": "3.600 km × 1000 m/km = 3600 m. Then 3600 m × 100 cm/m = 360000 cm, written 3.600 × 10^5 cm.",
+      "hints": ["Go through meters. Kilo to the base unit is one step, and the base unit to centi is a second step."],
+      "check": { "kind": "numeric", "value": 360000, "tolerance": 0.05, "sigFigs": 4, "unit": "cm" }
+    },
+    {
+      "id": "ch01-measure-23",
+      "q": "A metal cube has an edge of 15.00 mm and a mass of 26.80 g. What is its density in g/mL? Change millimeters to centimeters before you cube the edge. One cubic centimeter is 1 mL.",
+      "a": "7.941 g/mL",
+      "why": "15.00 mm = 1.500 cm. Volume = 1.500^3 = 3.375 cm3 = 3.375 mL. Density = 26.80 g / 3.375 mL = 7.9407... g/mL, which rounds to 7.941 g/mL.",
+      "hints": ["Divide the edge by 10 to get centimeters, cube that length, then divide 26.80 g by the volume."],
+      "check": { "kind": "numeric", "value": 7.941, "tolerance": 0.05, "sigFigs": 4, "unit": "g/mL" }
     }
   ]
 }

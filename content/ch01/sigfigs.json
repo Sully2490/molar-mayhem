@@ -4,6 +4,7 @@
   "openstax_section": "OpenStax AF2e §1.5",
   "guide_line": "Count significant figures, round a result, and tell accuracy from precision.",
   "steps": [
+    "Significant figures show which digits were actually measured. The last digit is an estimate.",
     "Count from the first nonzero digit through the end. Zeros between nonzero digits count. Leading zeros do not. Trailing zeros after a decimal point do.",
     "If a whole number has no decimal point, its ending zeros do not count. Scientific notation shows which of those zeros were measured.",
     "Adding or subtracting: match the fewest decimal places. Multiplying or dividing: match the fewest significant figures.",
@@ -152,6 +153,54 @@
       "why": "Leading zeros do not count. The 2, the captive 0, the 4, and the final 0 do, so the count is 4.",
       "hints": ["Drop only the zeros before the 2 in 0.02040. Count every digit from the 2 onward."],
       "check": { "kind": "numeric", "value": 4, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch01-sigfigs-17",
+      "q": "Why do chemists report significant figures?",
+      "a": "to show uncertainty",
+      "why": "The figures show how much of the number was measured, including one estimated digit. They keep a calculated result from looking more certain than the data.",
+      "hints": ["They are not decoration. They report how sure the measured number is."],
+      "check": { "kind": "exact", "text": "to show uncertainty", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-sigfigs-18",
+      "q": "A centimeter ruler is read as 4.6 cm. Which decimal place was estimated?",
+      "a": "tenths",
+      "why": "The marks are tenths of a centimeter. In 4.6 the 4 is certain and the 6, in the tenths place, is the estimate.",
+      "hints": ["Name the decimal place of the last digit in 4.6 cm. That digit is the estimate."],
+      "check": { "kind": "exact", "text": "tenths", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-sigfigs-19",
+      "q": "How many significant figures should the product of 1.20 and 0.045 have? Do not compute the product.",
+      "a": "2",
+      "why": "1.20 has three significant figures and 0.045 has two. A product keeps the smaller count, which is 2.",
+      "hints": ["Compare the two factors and keep the smaller count. Leading zeros in 0.045 are not figures."],
+      "check": { "kind": "numeric", "value": 2, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch01-sigfigs-20",
+      "q": "How many digits after the decimal should the sum of 12.1 and 0.035 have?",
+      "a": "1",
+      "why": "12.1 stops at the tenths place and 0.035 stops at the thousandths. A sum keeps the fewer decimal places, so one digit after the decimal.",
+      "hints": ["Line the decimals up. The shorter number, 12.1, decides how many decimal places survive."],
+      "check": { "kind": "numeric", "value": 1, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch01-sigfigs-21",
+      "q": "How many significant figures are in 2500. when the decimal point is written at the end?",
+      "a": "4",
+      "why": "The written decimal point marks the ending zeros as measured. 2500. has four significant figures.",
+      "hints": ["The dot after 2500 changes the zeros from placeholders into measured digits."],
+      "check": { "kind": "numeric", "value": 4, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch01-sigfigs-22",
+      "q": "How many significant figures are in 5030 when no decimal point is written?",
+      "a": "3",
+      "why": "The zero between 5 and 3 is captive, so it counts. The final zero has no decimal point, so it does not. The count is 3.",
+      "hints": ["Count the zero trapped between 5 and 3. Do not count the final zero."],
+      "check": { "kind": "numeric", "value": 3, "tolerance": 0, "sigFigs": 1, "unit": null }
     }
   ]
 }
