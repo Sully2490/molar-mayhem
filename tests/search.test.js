@@ -3,8 +3,12 @@ import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import { CONTENT_PATHS, loadRecords, loadTermRecords, recordsFromLesson, recordsFromPayload } from '../js/search/records.js';
 import { buildIndex, search } from '../js/search/rank.js';
-import { announcementFor, mountSearch } from '../js/search/mount.js';
+import { announcementFor, mountSearch, placeSearchTools } from '../js/search/mount.js';
 import { enterFocusMode, exitFocusMode, focusModeIsOn } from '../js/search/focus.js';
+
+test('lab help stays out of the lesson index', () => {
+  assert.equal(CONTENT_PATHS.includes('content/lab-help.json'), false);
+});
 
 test('lessons and problems from content are searchable and answers stay out of the index', () => {
   const records = CONTENT_PATHS.flatMap((path) => {
@@ -161,6 +165,65 @@ test('slash focuses search and Escape exits focus mode', () => {
   assert.equal(focusModeIsOn(doc), true);
   exitFocusMode(doc);
   assert.equal(focusModeIsOn(doc), false);
+});
+
+test('search and focus mode sit below the page title', () => {
+  const doc = createDoc();
+  const header = doc.createElement('header');
+  header.className = 'site-header';
+  doc.body.append(header);
+  const view = doc.createElement('main');
+  view.id = 'view';
+  const section = doc.createElement('section');
+  section.className = 'page';
+  const title = doc.createElement('h1');
+  title.textContent = 'Home';
+  section.append(title);
+  view.append(section);
+  doc.body.append(view);
+
+  const ui = mountSearch(doc, { load: async () => [] });
+  assert.equal(ui.root.parentNode, section);
+  assert.equal(section.children[0], title);
+  assert.equal(section.children[1], ui.root);
+  assert.equal(ui.toggle.textContent, 'Focus mode');
+  assert.equal(header.parentNode.children.includes(ui.root), false);
+});
+
+test('a mount point under the title keeps search there after a route change', () => {
+  const doc = createDoc();
+  const view = doc.createElement('main');
+  view.id = 'view';
+  doc.body.append(view);
+  const home = doc.createElement('section');
+  const homeTitle = doc.createElement('h1');
+  homeTitle.textContent = 'Home';
+  home.append(homeTitle);
+  view.append(home);
+
+  const ui = mountSearch(doc, { load: async () => [] });
+  assert.equal(ui.root.parentNode, home);
+
+  view.children.length = 0;
+  ui.root.parentNode = null;
+  const terms = doc.createElement('section');
+  const termsTitle = doc.createElement('h1');
+  termsTitle.textContent = 'Terms';
+  const slot = doc.createElement('div');
+  slot.setAttribute('data-mm-tools-mount', '');
+  terms.append(termsTitle, slot);
+  view.append(terms);
+
+  assert.equal(placeSearchTools(doc, ui.root), 'mount');
+  assert.equal(ui.root.parentNode, slot);
+  assert.equal(placeSearchTools(doc, ui.root), 'mount');
+  assert.equal(ui.root.parentNode, slot);
+});
+
+test('focus mode still shows the toggle when search lives inside the page', () => {
+  const css = readFileSync(new URL('../css/search/search.css', import.meta.url), 'utf8');
+  assert.match(css, /:not\(\.mm-focus-keep\):not\(\.mm-tools\)/);
+  assert.match(css, /\.terms-tools-slot \.mm-tools/);
 });
 
 function createDoc() {

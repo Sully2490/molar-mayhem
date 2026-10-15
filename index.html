@@ -6,6 +6,10 @@
   <title>Molar Mayhem</title>
   <meta name="description" content="Free general chemistry practice for chapters 1–9.">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/learn/learn.css">
+  <link rel="stylesheet" href="css/home/home.css">
+  <link rel="stylesheet" href="css/periodic/periodic.css">
+  <link rel="stylesheet" href="css/three-d/three-d.css" data-mm-3d>
   <link rel="stylesheet" href="css/lab/lab.css" data-mm-lab>
   <link rel="stylesheet" href="css/terms/terms.css">
   <link rel="stylesheet" href="css/builders/builders.css" data-mm-builders>
@@ -23,18 +27,21 @@
     <a class="brand" href="#Home" data-nav="Home">Molar Mayhem</a>
     <nav class="site-nav" aria-label="Sections" data-compact-nav>
       <ul class="site-nav-list">
-        <li data-nav-slot="Map"><a href="#Map" data-nav="Map">Map</a></li>
-        <li data-nav-slot="Learn" class="nav-primary"><a href="#Learn" data-nav="Learn">Learn</a></li>
-        <li data-nav-slot="Lab"><a href="#Lab" data-nav="Lab">Lab</a></li>
-        <li data-nav-slot="Build"><a href="#Build" data-nav="Build">Build</a></li>
-        <li data-nav-slot="Drill" class="nav-primary"><a href="#Drill" data-nav="Drill">Drill</a></li>
-        <li data-nav-slot="Cards"><a href="#Cards" data-nav="Cards">Cards</a></li>
-        <li data-nav-slot="Terms"><a href="#Terms" data-nav="Terms">Terms</a></li>
-        <li data-nav-slot="Videos"><a href="#Videos" data-nav="Videos">Videos</a></li>
-        <li data-nav-slot="Exam3" class="nav-primary"><a href="#Exam3" data-nav="Exam3">Exam 3</a></li>
-        <li data-nav-slot="Weak"><a href="#Weak" data-nav="Weak">Weak spots</a></li>
-        <li data-nav-slot="Prep"><a href="#Prep" data-nav="Prep">Prep</a></li>
-        <li data-nav-slot="Final" class="nav-primary"><a href="#Final" data-nav="Final">Final</a></li>
+        <li class="nav-group-label" data-nav-group="study">Study</li>
+        <li data-nav-slot="Learn" data-nav-group="study" class="nav-primary"><a href="#Learn" data-nav="Learn">Learn</a></li>
+        <li data-nav-slot="Map" data-nav-group="study"><a href="#Map" data-nav="Map">Map</a></li>
+        <li data-nav-slot="Videos" data-nav-group="study"><a href="#Videos" data-nav="Videos">Videos</a></li>
+        <li data-nav-slot="Terms" data-nav-group="study"><a href="#Terms" data-nav="Terms">Terms</a></li>
+        <li data-nav-slot="Cards" data-nav-group="study"><a href="#Cards" data-nav="Cards">Cards</a></li>
+        <li class="nav-group-label" data-nav-group="practice">Practice</li>
+        <li data-nav-slot="Drill" data-nav-group="practice" class="nav-primary"><a href="#Drill" data-nav="Drill">Drill</a></li>
+        <li data-nav-slot="Lab" data-nav-group="practice"><a href="#Lab" data-nav="Lab">Lab</a></li>
+        <li data-nav-slot="Build" data-nav-group="practice"><a href="#Build" data-nav="Build">Build</a></li>
+        <li data-nav-slot="Weak" data-nav-group="practice"><a href="#Weak" data-nav="Weak">Weak spots</a></li>
+        <li class="nav-group-label" data-nav-group="exam">Exam</li>
+        <li data-nav-slot="Exam3" data-nav-group="exam" class="nav-primary"><a href="#Exam3" data-nav="Exam3">Exam 3</a></li>
+        <li data-nav-slot="Prep" data-nav-group="exam"><a href="#Prep" data-nav="Prep">Prep</a></li>
+        <li data-nav-slot="Final" data-nav-group="exam" class="nav-primary"><a href="#Final" data-nav="Final">Final</a></li>
         <li class="nav-more">
           <button type="button" class="nav-more-btn" id="nav-more-btn" aria-expanded="false" aria-controls="nav-more-panel">More</button>
           <ul id="nav-more-panel" class="nav-more-panel" hidden></ul>

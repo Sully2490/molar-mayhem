@@ -1,7 +1,42 @@
 import { feedbackFor, keypadFor } from '../learn.js';
 import { grade } from '../grade.js';
+import { renderMath } from '../math/render.js';
 import { masteryWord } from './mastery.js';
 import { answerText, scoreReport } from './report.js';
+
+const CHOICE_SETS = [
+  ['paramagnetic', 'diamagnetic'],
+  ['yes', 'no'],
+  ['polar', 'nonpolar'],
+];
+
+function foldWord(text) {
+  return String(text ?? '').toLowerCase().replace(/[^a-z]/g, '');
+}
+
+/** Choice buttons for yes/no, magnetism, and polarity. Null keeps the text box. */
+export function choiceSet(problem) {
+  const check = problem?.check;
+  if (!check || check.kind === 'numeric' || check.kind === 'config' || check.kind === 'set') return null;
+  const texts = [];
+  if (typeof check.text === 'string') texts.push(check.text);
+  if (Array.isArray(check.answers)) texts.push(...check.answers);
+  const folded = new Set(texts.map(foldWord).filter(Boolean));
+  for (const set of CHOICE_SETS) {
+    if (set.some((choice) => folded.has(choice))) return set;
+  }
+  return null;
+}
+
+function choiceFields(problem, choices) {
+  const buttons = choices.map((choice) => `
+    <label class="mm-choice">
+      <input type="radio" name="answer" value="${escapeHtml(choice)}" autocomplete="off" autocapitalize="off" spellcheck="false">
+      <span>${escapeHtml(choice)}</span>
+    </label>
+  `).join('');
+  return `<div class="mm-choices" role="radiogroup" aria-label="Choose an answer">${buttons}</div>`;
+}
 
 export function escapeHtml(text) {
   return String(text)
@@ -18,6 +53,8 @@ export function needsUnit(problem) {
 const fieldAttrs = 'autocomplete="off" autocapitalize="off" spellcheck="false"';
 
 export function answerFields(problem) {
+  const choices = choiceSet(problem);
+  if (choices) return choiceFields(problem, choices);
   const id = escapeHtml(problem.id);
   const keypad = keypadFor(problem);
   if (needsUnit(problem)) {
@@ -48,26 +85,68 @@ export function readFormAnswer(form, problem) {
     const unit = form.querySelector('[name="unit"]')?.value ?? '';
     return `${value} ${unit}`.trim();
   }
+  const fields = typeof form.querySelectorAll === 'function'
+    ? [...form.querySelectorAll('[name="answer"]')]
+    : [];
+  if (fields.length && fields[0].type === 'radio') {
+    return fields.find((field) => field.checked)?.value ?? '';
+  }
   return form.querySelector('[name="answer"]')?.value ?? '';
+}
+
+export function renderExamProgress(done, total) {
+  const safeTotal = Number(total) || 0;
+  const safeDone = Math.min(safeTotal, Number(done) || 0);
+  const pct = safeTotal === 0 ? 0 : Math.round((safeDone / safeTotal) * 100);
+  return `
+    <div class="mm-exam-progress" data-exam-progress>
+      <div class="mm-exam-track" role="progressbar" aria-valuemin="0" aria-valuemax="${safeTotal}" aria-valuenow="${safeDone}" aria-label="Exam progress">
+        <span class="mm-exam-fill" data-exam-fill style="width:${pct}%"></span>
+      </div>
+      <p data-exam-count>${safeDone} of ${safeTotal} checked</p>
+    </div>
+  `;
+}
+
+export function renderExamSummary({ correct, total, misses }) {
+  const missItems = (misses ?? []).map((problem) => `
+    <li data-exam-miss="${escapeHtml(problem.id)}">
+      <p>${renderMath(problem.q)}</p>
+      <p><strong>Answer:</strong> ${renderMath(problem.a)}</p>
+    </li>
+  `).join('');
+  const missBlock = missItems
+    ? `<h3>Review</h3><ol data-exam-misses>${missItems}</ol>`
+    : '<p data-exam-clear>Every question was right.</p>';
+  return `
+    <section data-exam-summary>
+      <h2>Exam summary</h2>
+      <p data-exam-score>${correct} / ${total} correct</p>
+      ${missBlock}
+    </section>
+  `;
 }
 
 export function renderExam3(problems) {
   const cards = (problems ?? []).map((problem, index) => `
     <form class="problem mm-problem" data-exam3="${escapeHtml(problem.id)}" data-lesson="${escapeHtml(problem.lessonId ?? '')}">
       <p class="kicker">Chapter ${escapeHtml(problem.ch)} · ${index + 1}</p>
-      <p id="q-${escapeHtml(problem.id)}">${escapeHtml(problem.q)}</p>
+      <p id="q-${escapeHtml(problem.id)}">${renderMath(problem.q)}</p>
       ${answerFields(problem)}
       <button type="submit">Check</button>
       <p class="feedback" id="live-${escapeHtml(problem.id)}" aria-live="polite"></p>
     </form>
   `).join('');
+  const count = (problems ?? []).length;
   const body = cards || '<p data-exam3-empty>No Chapter 5 or Chapter 7 problems are loaded.</p>';
   return `
     <section class="page mm-exam" data-route="Exam3">
       <p class="kicker">Chapters 5 and 7</p>
       <h1>Exam 3</h1>
       <p>This mix leans toward lessons you have started and not mastered yet. A hint comes first. The solution shows after the third miss.</p>
+      ${renderExamProgress(0, count)}
       ${body}
+      <div data-exam-summary-slot></div>
     </section>
   `;
 }
@@ -75,7 +154,7 @@ export function renderExam3(problems) {
 export function renderWeakPage(rows) {
   const items = (rows ?? []).map(({ lesson, state }) => `
     <li>
-      <a href="#Learn/${encodeURIComponent(lesson.id)}">${escapeHtml(lesson.guide_line)}</a>
+      <a href="#Learn/${encodeURIComponent(lesson.id)}">${renderMath(lesson.guide_line)}</a>
       <span>Ch ${escapeHtml(lesson.ch)}</span>
       <span data-mastery="${escapeHtml(lesson.id)}">${escapeHtml(masteryWord(state))}</span>
       <a href="#Drill">Drill</a>
@@ -122,7 +201,7 @@ export function renderRun(session) {
   const cards = (session.problems ?? []).map((problem, index) => `
     <fieldset class="problem mm-problem" data-final="${escapeHtml(problem.id)}">
       <legend>Question ${index + 1}${problem.bonus ? ' · Bonus' : ''}</legend>
-      <p>${escapeHtml(problem.q)}</p>
+      <p>${renderMath(problem.q)}</p>
       ${answerFields(problem)}
     </fieldset>
   `).join('');
@@ -161,9 +240,9 @@ export function renderReport(report) {
     : '<p data-weak-none>No weak section. Every scored section was right.</p>';
   const misses = (report.misses ?? []).map(({ problem }) => `
     <li>
-      <p>${escapeHtml(problem.q)}</p>
-      <p><strong>Answer:</strong> ${escapeHtml(problem.a)}</p>
-      <p>${escapeHtml(problem.why)}</p>
+      <p>${renderMath(problem.q)}</p>
+      <p><strong>Answer:</strong> ${renderMath(problem.a)}</p>
+      <p>${renderMath(problem.why)}</p>
     </li>
   `).join('');
   const missBlock = misses ? `<h2>Missed questions</h2><ol>${misses}</ol>` : '';

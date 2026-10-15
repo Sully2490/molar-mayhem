@@ -1,3 +1,5 @@
+import { NAV_GROUPS } from './home/nav-groups.js';
+
 /** Compact phone nav: primary links stay visible; the rest live behind More below 600px. */
 
 export const PRIMARY_NAV = Object.freeze(['Learn', 'Drill', 'Exam3', 'Final']);
@@ -67,11 +69,23 @@ export function bindCompactNav(root, env = {}) {
     }
   }
 
+  function groupIdForSlot(id) {
+    return NAV_GROUPS.find((group) => group.items.some((item) => item.id === id))?.id ?? null;
+  }
+
+  function groupAnchor(groupId) {
+    if (!groupId) return moreWrap;
+    const labels = [...list.querySelectorAll('.nav-group-label')];
+    const index = labels.findIndex((label) => label.getAttribute('data-nav-group') === groupId);
+    if (index < 0) return moreWrap;
+    return labels[index + 1] ?? moreWrap;
+  }
+
   function restoreToList() {
     if (!moreWrap) return;
     for (const id of slotOrder) {
       const item = findSlot(id);
-      if (item) list.insertBefore(item, moreWrap);
+      if (item) list.insertBefore(item, groupAnchor(groupIdForSlot(id)));
     }
   }
 

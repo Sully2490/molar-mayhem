@@ -22,6 +22,7 @@ import {
   wavelengthFromSpectrum,
 } from './chem.js';
 import { boxesAfterAdd, boxesAfterCheck, boxesAfterRemove, freshBoxes, moveBoxFocus, renderBoxes } from './boxes-view.js';
+import { categoryFor, helpAfterCheck, practiceKey, practiceProblems, renderLabHelp } from './help.js';
 import { describeIonic, renderIonic } from './ionic-view.js';
 import { describeLewis, lewisAfterCheck, lewisAfterHint, lewisSvg, renderLewis } from './lewis-view.js';
 import { prefersReducedMotion, readLabPrefs, shouldAnimate, writeLabPrefs } from './motion.js';
@@ -49,6 +50,7 @@ export function initialLabState(tool = 'lewis') {
     vsepr: { id: 'H2O', view: { yaw: 0.6, pitch: 0.35 }, paused: false },
     ionic: { cation: 'Ca', anion: 'NO3' },
     tray: { trend: 'radius', z: 11, arrows: true },
+    help: { open: false, tries: {}, notes: {}, drafts: {} },
   };
 }
 
@@ -95,6 +97,7 @@ export function renderLab(state, reduced = true) {
       <div class="lab-tabs" role="tablist" aria-label="Lab tools">${tabs}</div>
       <div id="lab-panel" role="tabpanel" tabindex="0" aria-labelledby="lab-tab-${state.tool}">
         ${renderTool(state, motion, reduced)}
+        ${renderLabHelp(state.tool, state.help)}
       </div>
     </div>
   `;
@@ -128,7 +131,9 @@ export function installLab() {
         this.onPointerDown = this.onPointerDown.bind(this);
         this.onPointerMove = this.onPointerMove.bind(this);
         this.onPointerUp = this.onPointerUp.bind(this);
+        this.onToggle = this.onToggle.bind(this);
         this.addEventListener('click', this.onClick);
+        this.addEventListener('toggle', this.onToggle, true);
         this.addEventListener('input', this.onInput);
         this.addEventListener('change', this.onChange);
         this.addEventListener('keydown', this.onKey);
@@ -432,10 +437,41 @@ export function installLab() {
       if (action === 'element-pick') {
         this.state.tray = { ...this.state.tray, z: Number(target.getAttribute('data-z')) };
         this.paint(`z-${this.state.tray.z}`);
+        return;
+      }
+      if (action === 'help-check') {
+        this.checkHelp(target.getAttribute('data-practice'));
       }
     }
 
+    checkHelp(index) {
+      const category = categoryFor(this.state.tool);
+      if (!category) return;
+      const problem = practiceProblems(category)[Number(index)];
+      if (!problem) return;
+      const key = practiceKey(this.state.tool, index);
+      const typed = this.state.help?.drafts?.[key];
+      const input = typed != null ? typed : (this.querySelector(`[data-help-input="${index}"]`)?.value ?? '');
+      this.state.help = helpAfterCheck(this.state.help ?? {}, this.state.tool, index, input, problem);
+      this.paint(`help-${index}`);
+    }
+
+    onToggle(event) {
+      const details = event.target;
+      if (!details?.classList?.contains('lab-help')) return;
+      this.state.help = { ...(this.state.help ?? {}), open: Boolean(details.open) };
+    }
+
     onInput(event) {
+      if (event.target?.hasAttribute?.('data-help-input')) {
+        const index = event.target.getAttribute('data-help-input');
+        const key = practiceKey(this.state.tool, index);
+        this.state.help = {
+          ...(this.state.help ?? {}),
+          drafts: { ...(this.state.help?.drafts ?? {}), [key]: event.target.value },
+        };
+        return;
+      }
       const action = event.target.getAttribute?.('data-action');
       if (action === 'lambda') this.setLambda(Number(event.target.value));
       if (action === 'half') {
@@ -496,6 +532,11 @@ export function installLab() {
     }
 
     onKey(event) {
+      if (event.target?.hasAttribute?.('data-help-input') && event.key === 'Enter') {
+        event.preventDefault();
+        this.checkHelp(event.target.getAttribute('data-help-input'));
+        return;
+      }
       const tag = event.target.tagName;
       if (tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA') return;
       if ((event.key === 'Enter' || event.key === ' ') && event.target.tagName === 'g') {

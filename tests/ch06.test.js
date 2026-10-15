@@ -176,7 +176,7 @@ const TEACHING = {
 };
 
 const contentDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '../content/ch06');
-const lessons = Object.fromEntries(readdirSync(contentDir).filter((name) => name.endsWith('.json')).sort().map((name) => {
+const lessons = Object.fromEntries(readdirSync(contentDir).filter((name) => name.endsWith('.json') && name !== 'index.json').sort().map((name) => {
   const lesson = JSON.parse(readFileSync(path.join(contentDir, name), 'utf8'));
   return [lesson.id, lesson];
 }));

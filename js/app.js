@@ -3,10 +3,12 @@ import { bindCards, renderCards } from './cards.js';
 import { bindDrill, drillFromGenerated, weightedDrillItems } from './drills.js';
 import { examHash, mountLane } from './exam/index.js';
 import { generateFromSeed } from './generate.js';
-import { bindGlossary } from './glossary.js';
-import { bindLearn, loadLessons, renderLearn } from './learn.js';
+import { bindGlossary, renderGlossary } from './glossary.js';
+import { bindHome, renderHome } from './home/index.js';
+import { bindLearn, isLessonTarget, loadLessons, renderLearn } from './learn.js';
 import { bindMap, renderMap } from './map.js';
-import { renderTable } from './periodic.js';
+import { mount } from './periodic.js';
+import { createRouteSync } from './route-sync.js';
 import { bindPrep, loadFinalProblems, renderPrepPage } from './prep.js';
 import { openLesson, readProgress, writeProgress } from './progress.js';
 import { drillTargetFromHash, lessonIdFromHash, renderRoute, routeFromHash, routeTitle } from './routes.js';
@@ -40,10 +42,13 @@ const termsDialog = installTerms(document);
 const DRILL_KEY = 'mm-drill';
 const practiceSeed = 1 + Math.floor(Math.random() * 999983);
 
-let trendId = 'radius';
-let selectedZ = null;
+let tableApi = null;
 let lastFocus = null;
 let paintGeneration = 0;
+
+function abandoned(generation, event) {
+  return generation !== paintGeneration || event?.stale?.() === true;
+}
 
 function takeSyncHash() {
   const applied = applySyncHash(location.hash);
@@ -152,14 +157,15 @@ function paintTerms() {
   if (termId) termsDialog.open(termId);
 }
 
-async function paintRoute() {
+async function paintRoute(event) {
+  if (event?.stale?.()) return;
   if (takeSyncHash()) return;
   const generation = ++paintGeneration;
   const hash = location.hash;
 
   if (videoHash(hash)) {
     const lessons = await loadLessons();
-    if (generation !== paintGeneration) return;
+    if (abandoned(generation, event)) return;
     mountVideos(view, hash, { lessons });
     finish('Videos');
     return;
@@ -167,7 +173,7 @@ async function paintRoute() {
 
   if (examHash(hash)) {
     const mounted = await mountLane(view, hash);
-    if (generation !== paintGeneration) return;
+    if (abandoned(generation, event)) return;
     if (mounted) {
       finish(examHash(hash));
       return;
@@ -177,10 +183,10 @@ async function paintRoute() {
   const id = routeFromHash(hash);
   if (id === 'Learn') {
     const lessonId = lessonIdFromHash(hash);
-    if (lessonId) writeProgress(openLesson(readProgress(), lessonId));
+    if (lessonId && isLessonTarget(lessonId)) writeProgress(openLesson(readProgress(), lessonId));
     const lessons = await loadLessons();
-    if (generation !== paintGeneration) return;
-    view.innerHTML = linkTerms(renderLearn(lessons, lessonId));
+    if (abandoned(generation, event)) return;
+    view.innerHTML = linkTerms(renderLearn(lessons, lessonId, readProgress()));
     bindLearn(view, lessons);
     mountGuided(view, lessons, lessonId);
   } else if (id === 'Drill') {
@@ -190,7 +196,7 @@ async function paintRoute() {
     bindDrill(view, undefined, items);
   } else if (id === 'Map') {
     const lessons = await loadLessons();
-    if (generation !== paintGeneration) return;
+    if (abandoned(generation, event)) return;
     view.innerHTML = renderMap(lessons, readProgress());
     attachPractice(view, lessons);
     bindMap(view);
@@ -201,30 +207,40 @@ async function paintRoute() {
   } else if (id === 'Terms') {
     paintTerms();
   } else if (id === 'Prep') {
-    if (generation !== paintGeneration) return;
+    if (abandoned(generation, event)) return;
     view.innerHTML = renderRoute(id);
     bindPrep(view);
     loadFinalProblems()
       .then((problems) => {
-        if (generation !== paintGeneration || routeFromHash(location.hash) !== 'Prep') return;
+        if (abandoned(generation, event) || routeFromHash(location.hash) !== 'Prep') return;
         view.innerHTML = renderPrepPage(problems);
         bindPrep(view);
       })
       .catch((error) => {
-        if (generation !== paintGeneration || routeFromHash(location.hash) !== 'Prep') return;
+        if (abandoned(generation, event) || routeFromHash(location.hash) !== 'Prep') return;
         view.innerHTML = renderPrepPage([], error.message);
       });
+  } else if (id === 'Home') {
+    const lessons = await loadLessons();
+    if (abandoned(generation, event)) return;
+    view.innerHTML = renderHome(lessons, readProgress(), { glossaryHtml: renderGlossary() });
+    bindHome(view);
+    bindGlossary(view);
   } else {
     view.innerHTML = renderRoute(id);
-    if (id === 'Home') bindGlossary(view);
   }
-  if (generation !== paintGeneration) return;
+  if (abandoned(generation, event)) return;
   finish(id);
 }
 
-function paintTable(focusSelector) {
-  trayBody.innerHTML = renderTable(trendId, selectedZ);
-  if (focusSelector) trayBody.querySelector(focusSelector)?.focus();
+function ensureTable() {
+  if (tableApi) return tableApi;
+  tableApi = mount(trayBody, {
+    size: 'full',
+    mode: { kind: 'heatmap', property: 'radius' },
+    skin: 'header',
+  });
+  return tableApi;
 }
 
 function setPageBehindInert(inert) {
@@ -240,7 +256,8 @@ function openTray() {
   tray.hidden = false;
   document.body.classList.add('tray-open');
   setPageBehindInert(true);
-  paintTable(`[data-trend="${trendId}"]`);
+  ensureTable();
+  trayBody.querySelector('[data-mm-mode="radius"]')?.focus();
 }
 
 function closeTray() {
@@ -253,22 +270,7 @@ function closeTray() {
 }
 
 document.body.addEventListener('click', (event) => {
-  if (event.target.closest('[data-open-tray]')) {
-    openTray();
-    return;
-  }
-  if (tray.hidden) return;
-  const trendButton = event.target.closest('[data-trend]');
-  if (trendButton) {
-    trendId = trendButton.getAttribute('data-trend');
-    paintTable(`[data-trend="${trendId}"]`);
-    return;
-  }
-  const cell = event.target.closest('[data-z]');
-  if (cell) {
-    selectedZ = Number(cell.getAttribute('data-z'));
-    paintTable(`[data-z="${selectedZ}"]`);
-  }
+  if (event.target.closest('[data-open-tray]')) openTray();
 });
 
 closeButton.addEventListener('click', closeTray);
@@ -276,5 +278,11 @@ backdrop.addEventListener('click', closeTray);
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeTray();
 });
-window.addEventListener('hashchange', paintRoute);
-paintRoute();
+const routeSync = createRouteSync({
+  getHash: () => location.hash,
+  onRoute(event) {
+    paintRoute(event);
+  },
+});
+routeSync.start();
+routeSync.publish(location.hash, 'start', true);

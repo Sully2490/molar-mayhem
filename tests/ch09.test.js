@@ -9,7 +9,7 @@ import { validateLesson } from '../js/schema.js';
 const contentDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '../content/ch09');
 
 async function loadLessons() {
-  const names = (await readdir(contentDir)).filter((name) => name.endsWith('.json')).sort();
+  const names = (await readdir(contentDir)).filter((name) => name.endsWith('.json') && name !== 'index.json').sort();
   const lessons = [];
   for (const name of names) {
     const lesson = JSON.parse(await readFile(path.join(contentDir, name), 'utf8'));

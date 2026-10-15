@@ -1,0 +1,112 @@
+/* Home: a start card, chapter tiles, and grouped places. Tile chrome lives in learn.css. */
+
+.home-page .home-chapter-heading,
+.home-page .home-places-heading {
+  margin: 1.3rem 0 0.55rem;
+  font-size: 1.35rem;
+}
+
+.home-start {
+  --accent: var(--teal);
+  --wash: #e7f4f1;
+  display: grid;
+  gap: 0.3rem;
+  margin: 1rem 0 0.4rem;
+  padding: 1.15rem 1.2rem 1.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, var(--line));
+  background:
+    radial-gradient(420px 140px at 100% 0%, var(--wash), transparent 70%),
+    linear-gradient(160deg, var(--wash), var(--card) 55%);
+  box-shadow: 0 16px 34px color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+.home-start h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 4vw, 2.25rem);
+}
+
+.home-start p { margin: 0; }
+
+.home-start-where { color: var(--muted); }
+
+.home-start-alt a {
+  color: var(--teal-deep);
+  font-weight: 700;
+}
+
+.home-group {
+  --accent: var(--teal);
+  --wash: #fffaf2;
+  margin: 0.35rem 0 1.1rem;
+}
+
+.home-group h2 { margin: 0; font-size: 1.45rem; }
+
+.home-group > p {
+  margin: 0.15rem 0 0.7rem;
+  color: var(--muted);
+}
+
+.home-group[data-home-group="study"] { --accent: #0f5c56; --wash: #e7f4f1; }
+.home-group[data-home-group="practice"] { --accent: #1d4e89; --wash: #e7f0f8; }
+.home-group[data-home-group="exam"] { --accent: #9a3412; --wash: #f8efe8; }
+.home-group[data-home-group="tools"] { --accent: #3f6212; --wash: #eef3e4; }
+
+.home-group-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  gap: 0.7rem;
+}
+
+.home-group[data-home-group="study"] .home-group-grid {
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+}
+
+.home-group[data-home-group="tools"] .home-group-grid {
+  grid-template-columns: minmax(12rem, 18rem);
+}
+
+.home-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.15rem;
+  min-height: 6.2rem;
+  padding: 0.85rem 0.95rem;
+  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--line));
+  background:
+    linear-gradient(165deg, var(--wash), var(--card) 68%);
+  color: inherit;
+  text-decoration: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: inset 0 4px 0 var(--accent);
+}
+
+.home-group[data-home-group="study"] .home-tile { min-height: 7.5rem; }
+
+.home-tile strong {
+  font-family: Georgia, "Iowan Old Style", Palatino, serif;
+  font-size: 1.22rem;
+}
+
+.home-tile:hover { border-color: var(--accent); }
+
+.home-tile:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 599px) {
+  .home-group-grid,
+  .home-group[data-home-group="study"] .home-group-grid,
+  .home-group[data-home-group="tools"] .home-group-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-tile,
+  .home-start-link { min-height: 44px; }
+}

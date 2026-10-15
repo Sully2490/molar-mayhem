@@ -22,7 +22,7 @@ const OUTLINE = [
 const SUBSCRIPTS = ['₀', '₁', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉'];
 
 function loadLessons() {
-  const files = readdirSync(dir).filter((name) => name.endsWith('.json')).sort();
+  const files = readdirSync(dir).filter((name) => name.endsWith('.json') && name !== 'index.json').sort();
   assert.deepEqual(files, OUTLINE.map(([name]) => name));
   return files.map((name) => ({
     name,

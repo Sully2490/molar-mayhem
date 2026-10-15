@@ -4,7 +4,12 @@ import { test } from 'node:test';
 import { PROGRESS_KEY } from '../js/progress.js';
 import {
   answerFields,
+  choiceSet,
   examHash,
+  examOutcome,
+  readFormAnswer,
+  renderExam3,
+  renderExamSummary,
   freshSession,
   gradeExam3,
   lessonsForSection,
@@ -261,4 +266,61 @@ test('the timer submits when it reaches zero and stays off by default', () => {
   assert.equal(finished.report.earned, 1);
   assert.equal(finished.report.possible, 1);
   assert.equal(finished.report.weak.length, 0);
+});
+
+test('categorical Exam 3 answers are choice buttons', () => {
+  for (const text of ['paramagnetic', 'diamagnetic', 'yes', 'no', 'polar', 'nonpolar', 'non-polar']) {
+    assert.deepEqual(choiceSet({ check: { kind: 'exact', text } })?.length, 2, text);
+    const html = answerFields({ id: 'cat', check: { kind: 'exact', text, case: 'insensitive' } });
+    assert.match(html, /type="radio"/, text);
+    assert.match(html, /name="answer"/, text);
+    assert.doesNotMatch(html, /inputmode/, text);
+  }
+  assert.equal(choiceSet({ check: { kind: 'exact', text: 'polar covalent' } }), null);
+  assert.equal(choiceSet({ check: { kind: 'numeric', value: 1, text: 'yes' } }), null);
+  const word = answerFields({ id: 'w', check: { kind: 'exact', text: 'polar covalent' } });
+  assert.doesNotMatch(word, /type="radio"/);
+});
+
+test('a checked choice is the Exam 3 answer', () => {
+  const form = {
+    querySelectorAll: () => [
+      { type: 'radio', value: 'paramagnetic', checked: false },
+      { type: 'radio', value: 'diamagnetic', checked: true },
+    ],
+    querySelector: () => ({ value: 'paramagnetic' }),
+  };
+  assert.equal(readFormAnswer(form, { id: 'mag', check: { kind: 'exact', text: 'diamagnetic' } }), 'diamagnetic');
+});
+
+test('Exam 3 shows progress and a summary only after every question is checked', () => {
+  const problems = [
+    { id: 'mag', ch: 5, q: 'Is O2 paramagnetic?', a: 'paramagnetic', why: 'Unpaired electrons.', check: { kind: 'exact', text: 'paramagnetic' } },
+    { id: 'yn', ch: 7, q: 'Energy is 2.179e-18 J. Is the sign yes?', a: 'yes', why: 'The value is positive.', check: { kind: 'exact', text: 'yes' } },
+  ];
+  const html = renderExam3(problems);
+  assert.match(html, /data-exam-progress/);
+  assert.match(html, /0 of 2 checked/);
+  assert.match(html, /data-exam-summary-slot/);
+  assert.match(html, /type="radio"/);
+  assert.match(html, /2\.179×10<sup>−18<\/sup>/);
+
+  const forms = [
+    { getAttribute: (name) => (name === 'data-exam3' ? 'mag' : name === 'data-done' ? 'correct' : null) },
+    { getAttribute: (name) => (name === 'data-exam3' ? 'yn' : '') },
+  ];
+  const open = examOutcome({ querySelectorAll: () => forms }, problems);
+  assert.equal(open.finished, false);
+  assert.equal(open.done, 1);
+
+  forms[1] = { getAttribute: (name) => (name === 'data-exam3' ? 'yn' : name === 'data-done' ? 'miss' : null) };
+  const closed = examOutcome({ querySelectorAll: () => forms }, problems);
+  assert.equal(closed.finished, true);
+  assert.equal(closed.correct, 1);
+  assert.deepEqual(closed.misses.map((problem) => problem.id), ['yn']);
+  const summary = renderExamSummary(closed);
+  assert.match(summary, /1 \/ 2 correct/);
+  assert.match(summary, /data-exam-miss="yn"/);
+  assert.doesNotMatch(summary, /data-exam-miss="mag"/);
+  assert.match(summary, /<sup>/);
 });

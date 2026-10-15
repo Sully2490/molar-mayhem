@@ -19,7 +19,7 @@ const OUTLINE = [
 ];
 
 const dir = path.join(path.dirname(fileURLToPath(import.meta.url)), '../content/ch08');
-const names = (await readdir(dir)).filter((name) => name.endsWith('.json')).sort();
+const names = (await readdir(dir)).filter((name) => name.endsWith('.json') && name !== 'index.json').sort();
 const lessons = await Promise.all(names.map(async (name) => JSON.parse(await readFile(path.join(dir, name), 'utf8'))));
 
 function cite(section) {

@@ -1,0 +1,98 @@
+.mm-3d-stack {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.mm-3d-stack > .b-canvas,
+.mm-3d-stack > .lab-rotate {
+  width: 100%;
+  max-width: 100%;
+}
+
+mm-3d-stage {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  background: var(--card, #fffaf2);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+mm-3d-stage[data-kind="orbital"] {
+  aspect-ratio: 6 / 5;
+  min-height: 220px;
+  touch-action: none;
+  cursor: grab;
+}
+
+mm-3d-stage[data-kind="orbital"]:active {
+  cursor: grabbing;
+}
+
+mm-3d-stage[data-kind="vsepr"],
+mm-3d-stage[data-kind="molecule"] {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.mm-3d-stack:has(mm-3d-stage[data-state="model"]) > mm-3d-stage[data-kind="vsepr"],
+.mm-3d-stack:has(mm-3d-stage[data-state="model"]) > mm-3d-stage[data-kind="molecule"] {
+  visibility: visible;
+}
+
+.mm-3d-stack:has(mm-3d-stage[data-state="model"]) > .b-canvas,
+.mm-3d-stack:has(mm-3d-stage[data-state="model"]) > .lab-rotate {
+  opacity: 0;
+}
+
+mm-3d-stage svg.mm-flat,
+mm-3d-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.mm-3d-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.45rem 0;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.mm-3d-tools button,
+.mm-3d-stack select {
+  min-height: 44px;
+  min-width: 44px;
+  max-width: 100%;
+  touch-action: manipulation;
+}
+
+.mm-3d-note {
+  color: var(--muted, #5d675f);
+  font-size: 0.92rem;
+  margin: 0.2rem 0 0.7rem;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .mm-3d-tools button {
+    flex: 1 1 8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  mm-3d-stage,
+  .mm-3d-stack,
+  .mm-3d-stack * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -23,7 +23,7 @@ const WEAK_ACIDS = ['HF', 'CH3COOH', 'H2CO3', 'H3PO4'];
 const STRONG_BASES = ['LiOH', 'NaOH', 'KOH', 'RbOH', 'CsOH', 'Ca(OH)2', 'Sr(OH)2', 'Ba(OH)2'];
 
 async function loadLessons() {
-  const names = (await readdir(dir)).filter((name) => name.endsWith('.json')).sort();
+  const names = (await readdir(dir)).filter((name) => name.endsWith('.json') && name !== 'index.json').sort();
   const lessons = [];
   for (const name of names) {
     const lesson = JSON.parse(await readFile(path.join(dir, name), 'utf8'));

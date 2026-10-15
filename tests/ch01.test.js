@@ -27,7 +27,7 @@ const SECTIONS = {
 const FORMULA = /^(?:[A-Z][a-z]?\d*)+$/;
 
 async function loadLessons() {
-  const names = (await readdir(dir)).filter((name) => name.endsWith('.json')).sort();
+  const names = (await readdir(dir)).filter((name) => name.endsWith('.json') && name !== 'index.json').sort();
   const lessons = [];
   for (const name of names) {
     const lesson = JSON.parse(await readFile(path.join(dir, name), 'utf8'));

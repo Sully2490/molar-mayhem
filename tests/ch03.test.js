@@ -50,7 +50,7 @@ const SYMBOL = {
 
 const lessonDir = new URL('../content/ch03/', import.meta.url);
 const lessons = readdirSync(lessonDir)
-  .filter((name) => name.endsWith('.json'))
+  .filter((name) => name.endsWith('.json') && name !== 'index.json')
   .sort()
   .map((name) => ({
     name,

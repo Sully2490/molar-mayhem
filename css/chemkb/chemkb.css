@@ -4,6 +4,12 @@
   gap: 0.35rem;
   width: 100%;
   margin: 0.45rem 0 0.15rem;
+  position: sticky;
+  bottom: 0;
+  z-index: 4;
+  padding: 0.45rem;
+  background: var(--paper, #fffaf2);
+  border-top: 1px solid var(--line, #ddd4c3);
 }
 
 .chem-kb-key {

@@ -84,10 +84,8 @@ export function mountSearch(doc, options = {}) {
   });
 
   tools.append(root, toggle);
-  const header = doc.querySelector?.('.site-header');
-  if (typeof header?.insertAdjacentElement === 'function') header.insertAdjacentElement('afterend', tools);
-  else if (typeof doc.body.insertBefore === 'function') doc.body.insertBefore(tools, doc.body.firstChild ?? null);
-  else doc.body.append(tools);
+  placeSearchTools(doc, tools);
+  const stopPlace = watchSearchPlacement(doc, tools);
 
   let index = buildIndex([]);
 
@@ -142,6 +140,7 @@ export function mountSearch(doc, options = {}) {
       run();
     },
     destroy() {
+      stopPlace();
       stopFocus();
       doc.removeEventListener?.('keydown', onKey);
       tools.remove?.();
@@ -182,4 +181,120 @@ function setHidden(node, hidden) {
   node.hidden = hidden;
   if (hidden) node.setAttribute?.('hidden', '');
   else node.removeAttribute?.('hidden');
+}
+
+/**
+ * Put Search and Focus mode under the page title.
+ * A `[data-mm-tools-mount]` slot wins. Otherwise the tools sit after the
+ * first h1 in `#view`. With neither, they stay under the site header.
+ * Route renders replace `#view`, so call this again after each paint.
+ * @param {Document} doc
+ * @param {HTMLElement} tools
+ */
+export function placeSearchTools(doc, tools) {
+  if (!doc || !tools) return 'missing';
+  const mount = doc.querySelector?.('[data-mm-tools-mount]');
+  if (mount && mount !== tools) {
+    if (!isInside(mount, tools)) moveInto(mount, tools);
+    return 'mount';
+  }
+  const title = findPageTitle(doc);
+  if (title && title.parentNode && title !== tools) {
+    if (nextElement(title) !== tools) {
+      detach(tools);
+      title.insertAdjacentElement('afterend', tools);
+    }
+    return 'title';
+  }
+  const header = doc.querySelector?.('.site-header');
+  if (typeof header?.insertAdjacentElement === 'function') {
+    if (nextElement(header) !== tools) {
+      detach(tools);
+      header.insertAdjacentElement('afterend', tools);
+    }
+    return 'header';
+  }
+  if (!tools.parentNode && doc.body) {
+    if (typeof doc.body.insertBefore === 'function') doc.body.insertBefore(tools, doc.body.firstChild ?? null);
+    else doc.body.append?.(tools);
+    return 'body';
+  }
+  return 'unchanged';
+}
+
+function findPageTitle(doc) {
+  const view = doc.querySelector?.('#view') || doc.querySelector?.('main');
+  if (!view || typeof view.querySelector !== 'function') return null;
+  return view.querySelector('h1');
+}
+
+function watchSearchPlacement(doc, tools) {
+  const Observer = globalThis.MutationObserver;
+  if (typeof Observer !== 'function') return () => {};
+  const root = doc.querySelector?.('#view') || doc.body;
+  if (!root) return () => {};
+  let placing = false;
+  let observer;
+  const run = () => {
+    if (placing) return;
+    placing = true;
+    try {
+      placeSearchTools(doc, tools);
+    } finally {
+      placing = false;
+    }
+  };
+  try {
+    observer = new Observer(run);
+    observer.observe(root, { childList: true });
+  } catch {
+    return () => {};
+  }
+  return () => observer.disconnect();
+}
+
+function moveInto(parent, node) {
+  detach(node);
+  parent.append(node);
+}
+
+function detach(node) {
+  const parent = node?.parentNode;
+  if (!parent) return;
+  if (typeof parent.removeChild === 'function') {
+    parent.removeChild(node);
+    return;
+  }
+  const kids = parent.children;
+  if (kids && typeof kids.indexOf === 'function') {
+    const index = kids.indexOf(node);
+    if (index >= 0) kids.splice(index, 1);
+  }
+  node.parentNode = null;
+}
+
+function nextElement(node) {
+  if (!node) return null;
+  if (node.nextElementSibling !== undefined) return node.nextElementSibling;
+  const kids = node.parentNode?.children;
+  if (!kids || typeof kids.indexOf !== 'function') return null;
+  const index = kids.indexOf(node);
+  return index >= 0 ? (kids[index + 1] ?? null) : null;
+}
+
+function isInside(parent, node) {
+  if (!parent || !node) return false;
+  if (typeof parent.contains === 'function') {
+    try {
+      return parent.contains(node);
+    } catch {
+      // A test double may not implement Node.contains.
+    }
+  }
+  let current = node;
+  while (current) {
+    if (current === parent) return true;
+    current = current.parentNode;
+  }
+  return false;
 }
