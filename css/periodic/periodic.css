@@ -1,0 +1,189 @@
+/* Shared periodic table. Layout also uses inline styles so the grid
+   holds before this file is linked. See docs/v3/integration-C.md. */
+
+.mm-pt {
+  color: var(--ink, #1c2430);
+}
+
+.mm-pt-modes,
+.mm-pt-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.35rem 0;
+}
+
+.mm-pt-mode,
+.mm-pt-chip {
+  min-height: 40px;
+  min-width: 40px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.mm-pt-blurb,
+.mm-pt-detail,
+.mm-pt-more,
+.mm-pt-cite {
+  margin: 0.4rem 0;
+}
+
+.mm-pt-detail { font-weight: 700; }
+
+.mm-pt-more,
+.mm-pt-cite {
+  color: var(--muted, #5d675f);
+  font-size: 0.92rem;
+}
+
+.mm-pt-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.7rem;
+  margin: 0.35rem 0 0.6rem;
+  color: var(--muted, #5d675f);
+  font-size: 0.85rem;
+}
+
+.mm-pt-bar {
+  width: 8.5rem;
+  height: 0.7rem;
+  border-radius: 999px;
+}
+
+.mm-pt-hatch-key {
+  display: inline-block;
+  width: 1.4rem;
+  height: 0.85rem;
+  border-radius: 3px;
+  border: 1px solid var(--line, #ddd4c3);
+}
+
+.mm-pt-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+  padding-bottom: 0.45rem;
+  touch-action: pan-x;
+}
+
+.mm-pt-layout {
+  display: grid;
+  grid-template-columns: auto max-content;
+  grid-template-rows: auto auto;
+  column-gap: 0.35rem;
+  width: max-content;
+}
+
+.mm-pt-across {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 1.8rem;
+  margin-bottom: 0.3rem;
+  color: var(--teal, #0f5c56);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.mm-pt-down {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 2.5rem;
+  color: var(--teal, #0f5c56);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.mm-pt-down span:last-child {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.mm-pt-stack { grid-column: 2; grid-row: 2; }
+
+.mm-pt-main,
+.mm-pt-fblock {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(40px, 2.75rem));
+  grid-auto-rows: minmax(40px, auto);
+  gap: 3px;
+  width: max-content;
+}
+
+.mm-pt-cell {
+  min-width: 40px;
+  min-height: 40px;
+  border: 0;
+  border-radius: 5px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.05;
+  font: inherit;
+  cursor: pointer;
+}
+
+.mm-pt-cell .z { font-size: 0.7rem; }
+.mm-pt-cell .sym { font-size: 0.86rem; font-weight: 700; }
+
+.mm-pt-cell.is-missing {
+  background-color: #e7e5e4;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 3px,
+    rgba(90, 80, 70, 0.35) 3px,
+    rgba(90, 80, 70, 0.35) 4px
+  );
+  color: var(--ink, #1c2430);
+}
+
+.mm-pt-cell.is-dim { opacity: 0.4; }
+.mm-pt-cell.is-hot { box-shadow: inset 0 0 0 3px var(--focus, #9a3412); }
+.mm-pt-cell.is-filtered { visibility: hidden; }
+
+.mm-pt-cell[aria-pressed="true"] {
+  box-shadow: inset 0 0 0 2px var(--ink, #1c2430);
+}
+
+.mm-pt-marker {
+  display: grid;
+  place-items: center;
+  min-width: 40px;
+  min-height: 40px;
+  font-size: 0.62rem;
+  color: var(--muted, #5d675f);
+  border: 1px dashed var(--line, #ddd4c3);
+  border-radius: 5px;
+}
+
+.mm-pt-caption {
+  margin: 0.45rem 0 0.3rem;
+  color: var(--muted, #5d675f);
+  font-size: 0.92rem;
+}
+
+.mm-pt-compact .mm-pt-cite,
+.mm-pt-compact .mm-pt-more { display: none; }
+
+.mm-pt-highlight .mm-pt-modes { display: none; }
+
+@media (max-width: 599px) {
+  .mm-pt-scroll { overflow-x: auto; }
+  .mm-pt-cell,
+  .mm-pt-mode,
+  .mm-pt-chip {
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
