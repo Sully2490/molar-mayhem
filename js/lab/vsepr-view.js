@@ -1,5 +1,8 @@
 import { VSEPR_SHAPES, dragView, initialView, projectPoint, rotateView, shapeSpec, vseprById } from './chem.js';
 import { escapeHtml, subDigits } from './html.js';
+import { boot3d, shapeStage, shapeTools, viewMarker } from '../three-d/index.js';
+
+boot3d();
 
 const ATOM_INK = {
   H: '#1c2430',
@@ -49,14 +52,18 @@ export function renderVsepr(state, motion) {
       <p id="lab-desc" class="lab-desc" aria-live="polite">${escapeHtml(describeVsepr(shape, motion))}</p>
       <div class="lab-tabs" role="tablist" aria-label="VSEPR shapes" data-shape-list>${tabs}</div>
       <div class="lab-split">
-        ${vseprSvg(shape, state.view, motion)}
+        <div class="mm-3d-stack" data-mm-stack="vsepr">
+          ${vseprSvg(shape, state.view, motion)}
+          ${shapeStage({ source: 'lab', shapeId: shape.id, yaw: state.view.yaw, pitch: state.view.pitch, spin: motion === 'run' ? 'on' : 'off' })}
+        </div>
         <div class="lab-side">
           <p><b>Electron geometry:</b> ${escapeHtml(shape.eg)}</p>
           <p><b>Molecular shape:</b> ${escapeHtml(shape.mg)}</p>
           <p><b>Angle:</b> ${escapeHtml(shape.angle)}°</p>
           <button type="button" data-action="play" data-focus="play" data-play="vsepr" aria-pressed="${motion === 'still' ? 'false' : 'true'}" ${state.locked ? 'disabled' : ''}>${state.locked ? 'Still' : motion === 'still' ? 'Spin' : 'Hold still'}</button>
           <button type="button" data-action="reset-view" data-focus="reset-view">Reset view</button>
-          <p class="lab-fine">Arrow keys turn the model. Home resets it. A finger drag works on a phone.</p>
+          ${shapeTools(shape.id)}
+          <p class="lab-fine">Arrow keys turn the model. Home resets it. A finger drag works on a phone. Zoom in and Zoom out move the camera.</p>
         </div>
       </div>
     </section>
@@ -106,6 +113,7 @@ export function vseprInner(shape, view, motion) {
     items.push({ z: 3, html: `<path d="${arc}" fill="none" stroke="#9a3412" stroke-width="2.5"/><text x="${mid.x.toFixed(1)}" y="${mid.y.toFixed(1)}" font-size="13" font-weight="700" fill="#9a3412">${escapeHtml(shape.angle)}°</text>` });
   }
   items.sort((a, b) => a.z - b.z);
+  items.push({ z: -10, html: viewMarker(view) });
   const frame = motion === 'still' ? 'Still frame.' : 'Spinning.';
   return `${items.map((item) => item.html).join('')}<text x="12" y="288" font-size="12" fill="#5d675f">${frame} Drag or use arrow keys.</text>`;
 }
