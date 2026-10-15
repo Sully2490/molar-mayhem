@@ -21,20 +21,24 @@
   <a class="skip" href="#view">Skip to content</a>
   <header class="site-header">
     <a class="brand" href="#Home" data-nav="Home">Molar Mayhem</a>
-    <nav aria-label="Sections">
-      <ul>
-        <li><a href="#Map" data-nav="Map">Map</a></li>
-        <li><a href="#Learn" data-nav="Learn">Learn</a></li>
-        <li><a href="#Lab" data-nav="Lab">Lab</a></li>
-        <li><a href="#Build" data-nav="Build">Build</a></li>
-        <li><a href="#Drill" data-nav="Drill">Drill</a></li>
-        <li><a href="#Cards" data-nav="Cards">Cards</a></li>
-        <li><a href="#Terms" data-nav="Terms">Terms</a></li>
-        <li><a href="#Videos" data-nav="Videos">Videos</a></li>
-        <li><a href="#Exam3" data-nav="Exam3">Exam 3</a></li>
-        <li><a href="#Weak" data-nav="Weak">Weak spots</a></li>
-        <li><a href="#Prep" data-nav="Prep">Prep</a></li>
-        <li><a href="#Final" data-nav="Final">Final</a></li>
+    <nav class="site-nav" aria-label="Sections" data-compact-nav>
+      <ul class="site-nav-list">
+        <li data-nav-slot="Map"><a href="#Map" data-nav="Map">Map</a></li>
+        <li data-nav-slot="Learn" class="nav-primary"><a href="#Learn" data-nav="Learn">Learn</a></li>
+        <li data-nav-slot="Lab"><a href="#Lab" data-nav="Lab">Lab</a></li>
+        <li data-nav-slot="Build"><a href="#Build" data-nav="Build">Build</a></li>
+        <li data-nav-slot="Drill" class="nav-primary"><a href="#Drill" data-nav="Drill">Drill</a></li>
+        <li data-nav-slot="Cards"><a href="#Cards" data-nav="Cards">Cards</a></li>
+        <li data-nav-slot="Terms"><a href="#Terms" data-nav="Terms">Terms</a></li>
+        <li data-nav-slot="Videos"><a href="#Videos" data-nav="Videos">Videos</a></li>
+        <li data-nav-slot="Exam3" class="nav-primary"><a href="#Exam3" data-nav="Exam3">Exam 3</a></li>
+        <li data-nav-slot="Weak"><a href="#Weak" data-nav="Weak">Weak spots</a></li>
+        <li data-nav-slot="Prep"><a href="#Prep" data-nav="Prep">Prep</a></li>
+        <li data-nav-slot="Final" class="nav-primary"><a href="#Final" data-nav="Final">Final</a></li>
+        <li class="nav-more">
+          <button type="button" class="nav-more-btn" id="nav-more-btn" aria-expanded="false" aria-controls="nav-more-panel">More</button>
+          <ul id="nav-more-panel" class="nav-more-panel" hidden></ul>
+        </li>
       </ul>
     </nav>
     <button type="button" class="table-btn" data-open-tray>Periodic table</button>
