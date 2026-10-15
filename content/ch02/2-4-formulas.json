@@ -1,0 +1,169 @@
+{
+  "id": "ch2-formulas",
+  "ch": 2,
+  "openstax_section": "OpenStax AF2e §2.4",
+  "guide_line": "Find a molar mass, then convert grams, moles, and particles in either direction.",
+  "steps": [
+    "A molecular formula counts the atoms in one molecule. An empirical formula is that count divided by the greatest common factor. C4H10O2 reduces to C2H5O.",
+    "A subscript belongs to the symbol in front of it. H2 is one bonded molecule. 2H is two separate atoms. Isomers share a molecular formula and differ in how the atoms connect.",
+    "Seven elements are commonly diatomic: H2, N2, O2, F2, Cl2, Br2, and I2.",
+    "Use these atomic masses at full precision: H 1.008, C 12.011, N 14.007, O 15.999, Na 22.990, Mg 24.305, S 32.06, Cl 35.45. Multiply each mass by its subscript, add, then round to 4 significant figures. Divide grams by the molar mass to get moles. Divide a particle count by 6.022×10^23 to get moles. Multiply when you go the other way."
+  ],
+  "worked_example": {
+    "q": "What is the molar mass of CH4? Use C 12.011 and H 1.008. Round to 4 significant figures.",
+    "steps": [
+      "One C and four H: 12.011 + 4(1.008) = 12.011 + 4.032 = 16.043.",
+      "16.043 g/mol rounds to 16.04 g/mol."
+    ],
+    "answer": "16.04 g/mol"
+  },
+  "similar_problem": {
+    "q": "What is the molar mass of SO2? Use S 32.06 and O 15.999. Round to 4 significant figures.",
+    "hint": "SO2 is one sulfur and two oxygens. Compute 32.06 + 2(15.999) and round to 4 significant figures.",
+    "answer": "64.06 g/mol"
+  },
+  "sources": ["OpenStax AF2e §2.4"],
+  "problems": [
+    {
+      "id": "ch2-24-mm-h2o",
+      "q": "What is the molar mass of H2O? Use H 1.008 and O 15.999. Round to 4 significant figures.",
+      "a": "18.02 g/mol",
+      "why": "2(1.008) + 15.999 = 18.015, which rounds to 18.02 g/mol.",
+      "hints": ["Water is H2O. Compute 2(1.008) + 15.999 and round to 4 significant figures, in g/mol."],
+      "check": { "kind": "numeric", "value": 18.02, "tolerance": 0.05, "sigFigs": 4, "unit": "g/mol" }
+    },
+    {
+      "id": "ch2-24-mm-co2",
+      "q": "What is the molar mass of CO2? Use C 12.011 and O 15.999. Round to 4 significant figures.",
+      "a": "44.01 g/mol",
+      "why": "12.011 + 2(15.999) = 44.009, which rounds to 44.01 g/mol.",
+      "hints": ["Carbon dioxide is one carbon and two oxygens. Compute 12.011 + 2(15.999) and round to 4 significant figures."],
+      "check": { "kind": "numeric", "value": 44.01, "tolerance": 0.05, "sigFigs": 4, "unit": "g/mol" }
+    },
+    {
+      "id": "ch2-24-mm-nacl",
+      "q": "What is the molar mass of NaCl? Use Na 22.990 and Cl 35.45. Round to 4 significant figures.",
+      "a": "58.44 g/mol",
+      "why": "22.990 + 35.45 = 58.44 g/mol.",
+      "hints": ["Sodium chloride is NaCl. Add 22.990 and 35.45. Keep four significant figures, unit g/mol."],
+      "check": { "kind": "numeric", "value": 58.44, "tolerance": 0.05, "sigFigs": 4, "unit": "g/mol" }
+    },
+    {
+      "id": "ch2-24-moles-water",
+      "q": "The molar mass of water is 18.02 g/mol. How many moles are in 36.04 g of water?",
+      "a": "2.000 mol",
+      "why": "Moles = mass / molar mass. 36.04 g / 18.02 g/mol = 2.000 mol.",
+      "hints": ["Divide 36.04 g of water by the molar mass 18.02 g/mol."],
+      "check": { "kind": "numeric", "value": 2, "tolerance": 0.05, "sigFigs": 4, "unit": "mol" }
+    },
+    {
+      "id": "ch2-24-molecules",
+      "q": "How many molecules are in 0.2500 mol of a compound? Use 6.022×10^23 particles in 1 mol. Round to 4 significant figures.",
+      "a": "1.506e23",
+      "why": "0.2500 × 6.022×10^23 = 1.5055×10^23, which rounds to 1.506×10^23 molecules.",
+      "hints": ["Multiply 0.2500 mol by 6.022×10^23 per mol and round the coefficient to 4 significant figures."],
+      "check": { "kind": "numeric", "value": 1.506e23, "tolerance": 0.05, "sigFigs": 4, "unit": null }
+    },
+    {
+      "id": "ch2-24-empirical",
+      "q": "A molecule has the formula C4H10O2. What is its empirical formula?",
+      "a": "C2H5O",
+      "why": "The greatest common factor of 4, 10, and 2 is 2. Divide each subscript by 2 to get C2H5O.",
+      "hints": ["Divide each subscript in C4H10O2 by their greatest common factor, 2."],
+      "check": { "kind": "exact", "text": "C2H5O", "case": "sensitive" }
+    },
+    {
+      "id": "ch2-24-molecular",
+      "q": "A compound has empirical formula NO2 and molar mass 92.02 g/mol. Use N 14.007 and O 15.999. What is the molecular formula?",
+      "a": "N2O4",
+      "why": "Empirical mass = 14.007 + 2(15.999) = 46.005 g/mol, which is 46.01 g/mol to 4 significant figures. 92.02 / 46.01 = 2, so the molecular formula is N2O4.",
+      "hints": ["The empirical mass of NO2 is 14.007 + 2(15.999), about 46.01 g/mol. Divide 92.02 by that mass and scale NO2 by the whole number."],
+      "check": { "kind": "exact", "text": "N2O4", "case": "sensitive" }
+    },
+    {
+      "id": "ch2-24-diatomics",
+      "q": "List the seven elements that are commonly found as diatomic molecules. Separate the formulas with commas.",
+      "a": "H2, N2, O2, F2, Cl2, Br2, I2",
+      "why": "The seven diatomic elements are H2, N2, O2, F2, Cl2, Br2, and I2.",
+      "hints": ["Start with hydrogen, nitrogen, and oxygen, then add fluorine, chlorine, bromine, and iodine. Skip S8."],
+      "check": {
+        "kind": "set",
+        "case": "sensitive",
+        "answers": ["H2", "N2", "O2", "F2", "Cl2", "Br2", "I2"],
+        "nearMiss": [{ "text": "S8", "hint": "S8 is a sulfur molecule, but sulfur is not one of the seven diatomic elements." }]
+      }
+    },
+    {
+      "id": "ch2-24-empirical-p4",
+      "q": "The molecular formula of a phosphorus oxide is P4O10. What is its empirical formula?",
+      "a": "P2O5",
+      "why": "Both subscripts divide by 2. P4O10 reduces to P2O5.",
+      "hints": ["Divide both subscripts in P4O10 by 2 and write the smaller whole-number formula."],
+      "check": { "kind": "exact", "text": "P2O5", "case": "sensitive" }
+    },
+    {
+      "id": "ch2-24-mass-nacl",
+      "q": "NaCl has molar mass 58.44 g/mol. What is the mass of 2.500 mol of NaCl? Round to 4 significant figures.",
+      "a": "146.1 g",
+      "why": "Mass = moles × molar mass. 2.500 mol × 58.44 g/mol = 146.1 g.",
+      "hints": ["Multiply 2.500 mol of NaCl by 58.44 g/mol and round to 4 significant figures."],
+      "check": { "kind": "numeric", "value": 146.1, "tolerance": 0.05, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch2-24-atoms",
+      "q": "How many atoms are in 0.1000 mol of an element? Use 6.022×10^23 atoms in 1 mol.",
+      "a": "6.022e22",
+      "why": "0.1000 × 6.022×10^23 = 6.022×10^22 atoms.",
+      "hints": ["0.1000 mol is one tenth of 6.022×10^23. The exponent drops from 23 to 22."],
+      "check": { "kind": "numeric", "value": 6.022e22, "tolerance": 0.05, "sigFigs": 4, "unit": null }
+    },
+    {
+      "id": "ch2-24-hydrogen-molecule",
+      "q": "Which formula means one molecule of hydrogen, two atoms bonded together? Type H2 or 2H.",
+      "a": "H2",
+      "why": "The subscript in H2 means the two hydrogen atoms are bonded in one molecule. 2H means two separate atoms.",
+      "hints": ["A subscript 2 on H means the two atoms are bonded in one molecule. Type H2, not 2H."],
+      "check": { "kind": "exact", "text": "H2", "case": "sensitive" }
+    },
+    {
+      "id": "ch2-24-isomers",
+      "q": "Two compounds both have formula C3H6O, but the atoms are connected differently. What are these compounds called?",
+      "a": "structural isomers",
+      "why": "Same molecular formula and different connections means the compounds are structural isomers.",
+      "hints": ["The formula C3H6O matches in both compounds, but the bonds do not. Name compounds that share a formula and differ in connections."],
+      "check": { "kind": "exact", "text": "structural isomers", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-24-mm-mgcl2",
+      "q": "What is the molar mass of MgCl2? Use Mg 24.305 and Cl 35.45. Round to 4 significant figures.",
+      "a": "95.21 g/mol",
+      "why": "The subscript 2 applies to chlorine. 24.305 + 2(35.45) = 95.205, which rounds to 95.21 g/mol.",
+      "hints": ["MgCl2 has one magnesium and two chlorines. Compute 24.305 + 2(35.45), then round to 4 significant figures."],
+      "check": { "kind": "numeric", "value": 95.21, "tolerance": 0.05, "sigFigs": 4, "unit": "g/mol" }
+    },
+    {
+      "id": "ch2-24-moles-carbon",
+      "q": "How many moles are in 24.02 g of carbon? Use 12.011 g/mol. Round to 4 significant figures.",
+      "a": "2.000 mol",
+      "why": "Moles = grams / molar mass. 24.02 g / 12.011 g/mol = 1.9998 mol, which rounds to 2.000 mol.",
+      "hints": ["Divide 24.02 g of carbon by 12.011 g/mol. Multiplying those two numbers goes the wrong way."],
+      "check": { "kind": "numeric", "value": 2, "tolerance": 0.05, "sigFigs": 4, "unit": "mol" }
+    },
+    {
+      "id": "ch2-24-atoms-to-moles",
+      "q": "How many moles is 3.011×10^23 atoms? Use 6.022×10^23 atoms in 1 mol. Round to 4 significant figures.",
+      "a": "0.5000 mol",
+      "why": "Moles = atom count / Avogadro's number. 3.011×10^23 / 6.022×10^23 = 0.5000 mol.",
+      "hints": ["Divide 3.011×10^23 atoms by 6.022×10^23 per mol. Do not multiply the atom count by that number."],
+      "check": { "kind": "numeric", "value": 0.5, "tolerance": 0.05, "sigFigs": 4, "unit": "mol" }
+    },
+    {
+      "id": "ch2-24-na-atoms",
+      "q": "How many atoms are in 11.50 g of sodium? Use Na 22.990 g/mol and 6.022×10^23 atoms in 1 mol. Round to 4 significant figures.",
+      "a": "3.012e23",
+      "why": "Moles = 11.50 / 22.990 = 0.500217. Atoms = 0.500217 × 6.022×10^23 = 3.012×10^23.",
+      "hints": ["First divide 11.50 g by 22.990 g/mol. Then multiply that mole count by 6.022×10^23 and round to 4 significant figures."],
+      "check": { "kind": "numeric", "value": 3.012e23, "tolerance": 0.05, "sigFigs": 4, "unit": null }
+    }
+  ]
+}

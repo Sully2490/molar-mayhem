@@ -1,0 +1,124 @@
+{
+  "id": "ch2-evolution",
+  "ch": 2,
+  "openstax_section": "OpenStax AF2e §2.2",
+  "guide_line": "Say where each particle sits, and what the gold foil showed about the atom.",
+  "steps": [
+    "Thomson's cathode-ray tube found a negative particle, the electron. It stays outside the nucleus and has far less mass than a proton or a neutron.",
+    "Rutherford shot positive alpha particles at gold foil. Most went straight through, so the atom is mostly empty space. A few bounced back off a tiny, heavy, positive nucleus.",
+    "Protons and neutrons sit in that nucleus. A proton has charge 1+. A neutron has no charge. Their masses are nearly the same, and each is about 1 amu.",
+    "One element can have atoms of different mass. Those atoms are isotopes. They share a proton count and differ in neutrons."
+  ],
+  "worked_example": {
+    "q": "In the gold-foil experiment, a few alpha particles bounced backward. What part of the atom did they hit?",
+    "steps": [
+      "Most alpha particles passed through, so the atom is not a solid packed ball.",
+      "The few that reversed hit a tiny, heavy, positive center. That center is the nucleus."
+    ],
+    "answer": "nucleus"
+  },
+  "similar_problem": {
+    "q": "Thomson's cathode-ray tube produced a beam that moved toward a positive plate. What particle is that beam?",
+    "hint": "The beam is negative and comes from inside the atom. Name the particle, not the scientist.",
+    "answer": "electron"
+  },
+  "sources": ["OpenStax AF2e §2.2"],
+  "problems": [
+    {
+      "id": "ch2-22-thomson",
+      "q": "Who used a cathode-ray tube to show that atoms contain electrons?",
+      "a": "Thomson",
+      "why": "Thomson's cathode-ray beam was a stream of electrons, so atoms contain negative particles.",
+      "hints": ["A cathode-ray tube sent a negative beam out of the atom. Name the scientist tied to that tube."],
+      "check": { "kind": "exact", "text": "Thomson", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-22-electron-place",
+      "q": "Where are electrons found, compared with the nucleus?",
+      "a": "outside the nucleus",
+      "why": "Electrons are outside the nucleus. They are not packed into the positive center.",
+      "hints": ["Electrons make the negative region around the atom. They are not inside the positive center. Say where they stay."],
+      "check": { "kind": "exact", "text": "outside the nucleus", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-22-rutherford",
+      "q": "Who showed that the atom has a small, dense, positive nucleus?",
+      "a": "Rutherford",
+      "why": "Rutherford's gold-foil experiment sent most alpha particles straight through and bounced a few back. The bounce requires a small positive nucleus.",
+      "hints": ["A few alpha particles bounced off thin gold foil. Name the scientist who ran that experiment."],
+      "check": { "kind": "exact", "text": "Rutherford", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-22-chadwick",
+      "q": "Who showed that the nucleus contains a neutral particle, the neutron?",
+      "a": "Chadwick",
+      "why": "Chadwick identified the neutron: a nuclear particle with no charge and about the same mass as a proton.",
+      "hints": ["The nucleus needed a heavy particle with zero charge. Name the scientist who identified it."],
+      "check": { "kind": "exact", "text": "Chadwick", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-22-lightest",
+      "q": "Which of the proton, neutron, and electron has the smallest mass?",
+      "a": "electron",
+      "why": "A proton and a neutron each have a mass near 1 amu. An electron is far lighter.",
+      "hints": ["The proton and the neutron are each about 1 amu. Pick the particle that is far lighter."],
+      "check": { "kind": "exact", "text": "electron", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-22-isotopes",
+      "q": "What are atoms called when they are the same element but have different masses?",
+      "a": "isotopes",
+      "why": "Isotopes share an atomic number and differ in mass because they differ in neutrons.",
+      "hints": ["Same proton count, different mass. Give the name for that pair of atoms."],
+      "check": { "kind": "exact", "text": "isotopes", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-22-electron",
+      "q": "What particle makes up a cathode-ray beam?",
+      "a": "electron",
+      "why": "A cathode ray is a stream of electrons, the negative particles from inside the atom.",
+      "hints": ["Cathode rays are the negative pieces found inside every atom. Name the particle."],
+      "check": { "kind": "exact", "text": "electron", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-22-negative",
+      "q": "A cathode-ray beam moves toward a positive plate. What is the sign of the particle's charge?",
+      "a": "negative",
+      "why": "Opposite charges attract. A beam pulled toward a positive plate is negative.",
+      "hints": ["The cathode-ray beam moves toward a positive plate. Give the sign of its charge."],
+      "check": { "kind": "exact", "text": "negative", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-22-positive",
+      "q": "Positive alpha particles are pushed away by the center of the atom. What is the sign of the nucleus?",
+      "a": "positive",
+      "why": "Like charges repel. Positive alpha particles bounce off a positive nucleus.",
+      "hints": ["Positive alpha particles are repelled by the center of the atom. Give the sign of that center."],
+      "check": { "kind": "exact", "text": "positive", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-22-empty",
+      "q": "In the gold-foil experiment, most alpha particles went straight through. What is most of the atom's volume?",
+      "a": "empty space",
+      "why": "If the atom were solid packed matter, the particles would all deflect. Straight paths mean the volume is mostly empty space.",
+      "hints": ["Nearly every alpha particle passed straight through the foil. Say what most of the atom's volume must be."],
+      "check": { "kind": "exact", "text": "empty space", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-22-nucleus",
+      "q": "What did the rare alpha particle that reversed direction strike?",
+      "a": "nucleus",
+      "why": "Only a tiny, heavy, positive center can turn a fast alpha particle around. That center is the nucleus.",
+      "hints": ["The rare alpha particle that reversed direction struck the tiny heavy center. Name that center."],
+      "check": { "kind": "exact", "text": "nucleus", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-22-proton",
+      "q": "What is the positive particle in the nucleus with a charge of 1+?",
+      "a": "proton",
+      "why": "A proton sits in the nucleus, has charge 1+, and is much heavier than an electron.",
+      "hints": ["The positive particle inside the nucleus has a charge of 1+. Name that particle."],
+      "check": { "kind": "exact", "text": "proton", "case": "insensitive" }
+    }
+  ]
+}
