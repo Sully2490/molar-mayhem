@@ -45,12 +45,12 @@
         {
           "prompt": "How many moles of N2 are in 20.00 g? N2 is 28.014 g/mol.",
           "hint": "Divide 20.00 g by 28.014 g/mol.",
-          "answer": "0.7143 mol",
-          "expected": "0.7143 mol",
+          "answer": "0.7139 mol",
+          "expected": "0.7139 mol",
           "unit": "mol",
           "check": {
             "kind": "numeric",
-            "value": 0.7143,
+            "value": 0.7139,
             "tolerance": 0.5,
             "sigFigs": 4,
             "unit": "mol"
@@ -73,12 +73,12 @@
         {
           "prompt": "How many moles of H2 does that N2 need? The ratio is 3 H2 / 1 N2.",
           "hint": "Multiply the moles of N2 by 3.",
-          "answer": "2.143 mol",
-          "expected": "2.143 mol",
+          "answer": "2.142 mol",
+          "expected": "2.142 mol",
           "unit": "mol",
           "check": {
             "kind": "numeric",
-            "value": 2.143,
+            "value": 2.142,
             "tolerance": 0.5,
             "sigFigs": 4,
             "unit": "mol"

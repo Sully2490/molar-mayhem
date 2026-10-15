@@ -1,3 +1,4 @@
+import { keypadFor } from '../learn.js';
 import { awardXp, readProgress, writeProgress } from '../progress.js';
 import {
   PROBLEM_XP,
@@ -20,10 +21,6 @@ function labelFor(step) {
   return unit ? `Your answer (${unit})` : 'Your answer';
 }
 
-function inputMode(step) {
-  return step.check?.kind === 'numeric' ? 'decimal' : 'text';
-}
-
 function stepState(session, index) {
   if (session.correct[index]) return 'correct';
   if (session.revealed[index]) return 'revealed';
@@ -42,7 +39,7 @@ function stepBody(problem, session, step, index) {
   if (state === 'active') {
     controls = `
       <label for="${inputId}">${escapeHtml(labelFor(step))}</label>
-      <input id="${inputId}" name="answer" autocomplete="off" inputmode="${inputMode(step)}" aria-describedby="${liveId}">
+      <input id="${inputId}" name="answer" autocomplete="off" autocapitalize="off" spellcheck="false"${keypadFor(step)} aria-describedby="${liveId}">
       <button type="submit">Check</button>
       <p class="feedback" id="${liveId}" aria-live="polite">${escapeHtml(note)}</p>
     `;

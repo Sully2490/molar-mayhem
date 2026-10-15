@@ -324,6 +324,52 @@ const MAIN_LESSON_HASHES = {
   'content/ch09/9-4-bonds.json': '196d694a172e2d411d9876172d127fcaaf2a69e1126d106446fea266768cb1b3',
 };
 
+test('section 7.4 guided steps show 0.7139 mol N2 and 2.142 mol H2 needed', () => {
+  const lesson = JSON.parse(readFileSync(new URL('../content/ch07/7-4-yields.json', import.meta.url), 'utf8'));
+  const problem = lesson.problems.find((item) => item.id === 'ch07-limit-hydrogen');
+  const nitrogen = problem.guided[0];
+  const needed = problem.guided[2];
+  assert.match(nitrogen.prompt, /moles of N2/);
+  assert.equal(nitrogen.answer, '0.7139 mol');
+  assert.equal(nitrogen.expected, '0.7139 mol');
+  assert.equal(nitrogen.check.value, 0.7139);
+  assert.equal(grade(nitrogen.answer, nitrogen.check).ok, true);
+  assert.match(needed.prompt, /moles of H2 does that N2 need/);
+  assert.equal(needed.answer, '2.142 mol');
+  assert.equal(needed.expected, '2.142 mol');
+  assert.equal(needed.check.value, 2.142);
+  assert.equal(grade(needed.answer, needed.check).ok, true);
+});
+
+function stepHtml(check) {
+  return renderGuided({
+    id: 'keypad',
+    a: '1',
+    why: 'Shown.',
+    guided: [{ prompt: 'Type the value.', answer: '1', hint: 'Use the keypad that fits.', check }],
+  });
+}
+
+test('step inputs use keypadFor and keep a full keyboard for signed and scientific answers', () => {
+  const plain = stepHtml({ kind: 'numeric', value: 59.41, unit: 'g' });
+  assert.match(plain, /autocomplete="off"/);
+  assert.match(plain, /autocapitalize="off"/);
+  assert.match(plain, /spellcheck="false"/);
+  assert.match(plain, /inputmode="decimal"/);
+
+  for (const check of [
+    { kind: 'numeric', value: -29.67, unit: 'kJ' },
+    { kind: 'numeric', value: 4.307e-19, unit: 'J' },
+    { kind: 'numeric', value: 1e6, unit: 'J' },
+    { kind: 'exact', text: 'H2', case: 'sensitive' },
+  ]) {
+    const html = stepHtml(check);
+    assert.match(html, /autocapitalize="off"/);
+    assert.match(html, /spellcheck="false"/);
+    assert.equal(/<input[^>]*inputmode=/.test(html), false, JSON.stringify(check));
+  }
+});
+
 test('chapter 5, 7, 8, and 9 keep every existing answer, check, and value', () => {
   for (const [rel, expected] of Object.entries(MAIN_LESSON_HASHES)) {
     const lesson = JSON.parse(readFileSync(new URL(`../${rel}`, import.meta.url), 'utf8'));
