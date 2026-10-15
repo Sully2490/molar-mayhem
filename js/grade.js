@@ -34,11 +34,19 @@ const UNIT_ALIASES = new Map([
   ['kelvin', 'K'],
 ]);
 
+/** Relative percent used when a numeric check omits tolerance. 0.5 means ±0.5%. */
+export const DEFAULT_RELATIVE_PERCENT = 0.5;
+
+const SUBSCRIPTS = '₀₁₂₃₄₅₆₇₈₉';
+const SUPERSCRIPTS = '⁰¹²³⁴⁵⁶⁷⁸⁹';
+
 /**
  * Grade a student answer against a check descriptor.
- * Numeric checks understand tolerance, scientific notation, sig figs, and units.
+ * Numeric tolerance is a relative percent. Sig-fig mismatches hint instead of failing.
+ * Exact checks fold Unicode digits, collapse whitespace, and follow a case rule.
+ * Set checks compare unordered lists and can flag near-miss items.
  * @param {string} input
- * @param {{ kind: 'numeric' | 'exact', value?: number, tolerance?: number, sigFigs?: number, unit?: string | null, text?: string }} check
+ * @param {{ kind: 'numeric' | 'exact' | 'set', value?: number, tolerance?: number, sigFigs?: number, unit?: string | null, text?: string, case?: 'insensitive' | 'sensitive' | 'formula', answers?: string[], nearMiss?: Array<string | { text: string, hint?: string }> }} check
  */
 export function grade(input, check) {
   switch (check?.kind) {
@@ -46,6 +54,8 @@ export function grade(input, check) {
       return gradeNumeric(input, check);
     case 'exact':
       return gradeExact(input, check);
+    case 'set':
+      return gradeSet(input, check);
     default: {
       const kind = check?.kind;
       throw new Error(`Unknown check kind: ${String(kind)}`);
@@ -62,18 +72,103 @@ export function gradeNumeric(input, check) {
   } else if (parsed.unit) {
     return { ok: false, reason: 'unit' };
   }
-  const tolerance = check.tolerance ?? 0;
-  if (Math.abs(parsed.value - check.value) > tolerance) return { ok: false, reason: 'tolerance' };
-  if (check.sigFigs != null && parsed.sigFigs !== check.sigFigs) return { ok: false, reason: 'sigFigs' };
+  const percent = check.tolerance ?? DEFAULT_RELATIVE_PERCENT;
+  if (!withinRelativePercent(parsed.value, check.value, percent)) {
+    return { ok: false, reason: 'tolerance' };
+  }
+  if (check.sigFigs != null && parsed.sigFigs !== check.sigFigs) {
+    return {
+      ok: true,
+      hint: `The value is right. Check significant figures: this answer uses ${check.sigFigs}.`,
+    };
+  }
   return { ok: true };
 }
 
+export function withinRelativePercent(actual, expected, percent) {
+  const limit = Math.abs(expected) * (percent / 100);
+  return Math.abs(actual - expected) <= limit + 1e-9;
+}
+
 export function gradeExact(input, check) {
-  const expected = String(check.text ?? '').trim().toLowerCase().replace(/\s+/g, ' ');
-  const actual = String(input ?? '').trim().toLowerCase().replace(/\s+/g, ' ');
+  const caseRule = check.case ?? 'insensitive';
+  const actual = normalizeAnswer(input, caseRule);
   if (!actual) return { ok: false, reason: 'format' };
-  if (actual !== expected) return { ok: false, reason: 'exact' };
+  const accepted = acceptedAnswers(check).map((item) => normalizeAnswer(item, caseRule));
+  if (!accepted.includes(actual)) return { ok: false, reason: 'exact' };
   return { ok: true };
+}
+
+export function gradeSet(input, check) {
+  const caseRule = check.case ?? 'formula';
+  if (!collapseWhitespace(input)) return { ok: false, reason: 'format' };
+  const items = splitSetItems(input);
+  if (items.length === 0) return { ok: false, reason: 'format' };
+  const student = new Set(items.map((item) => normalizeAnswer(item, caseRule)));
+  const expectedList = acceptedAnswers(check).map((item) => normalizeAnswer(item, caseRule));
+  const expected = new Set(expectedList);
+  const nearHits = nearMissEntries(check).filter((entry) => student.has(normalizeAnswer(entry.text, caseRule)));
+  if (nearHits.length > 0) {
+    const hinted = nearHits.find((entry) => entry.hint);
+    const hint = hinted?.hint || `${nearHits[0].text} is close, but it does not belong on this list.`;
+    return { ok: false, reason: 'nearMiss', hint };
+  }
+  const allPresent = [...expected].every((item) => student.has(item));
+  const noExtras = [...student].every((item) => expected.has(item));
+  if (expected.size > 0 && allPresent && noExtras) return { ok: true };
+  const some = [...student].some((item) => expected.has(item));
+  if (some) {
+    return { ok: false, reason: 'partial', hint: 'Some of those belong. Check the list and try again.' };
+  }
+  return { ok: false, reason: 'set', hint: 'None of those match this list.' };
+}
+
+export function normalizeSymbols(text) {
+  return String(text ?? '').replace(/[₀-₉⁰¹²³⁴⁵⁶⁷⁸⁹]/g, (ch) => {
+    const sub = SUBSCRIPTS.indexOf(ch);
+    if (sub !== -1) return String(sub);
+    const sup = SUPERSCRIPTS.indexOf(ch);
+    if (sup !== -1) return String(sup);
+    return ch;
+  });
+}
+
+export function collapseWhitespace(text) {
+  return String(text ?? '').trim().replace(/\s+/g, ' ');
+}
+
+export function normalizeAnswer(text, caseRule) {
+  const collapsed = collapseWhitespace(normalizeSymbols(text));
+  switch (caseRule) {
+    case 'insensitive':
+      return collapsed.toLowerCase();
+    case 'sensitive':
+      return collapsed;
+    case 'formula':
+      return collapsed.replace(/ /g, '');
+    default:
+      throw new Error(`Unknown case rule: ${String(caseRule)}`);
+  }
+}
+
+function acceptedAnswers(check) {
+  const answers = [];
+  if (typeof check.text === 'string' && check.text.length > 0) answers.push(check.text);
+  if (Array.isArray(check.answers)) answers.push(...check.answers);
+  return answers;
+}
+
+function nearMissEntries(check) {
+  return (check.nearMiss ?? []).map((entry) => (
+    typeof entry === 'string' ? { text: entry, hint: '' } : { text: entry.text, hint: entry.hint ?? '' }
+  ));
+}
+
+function splitSetItems(raw) {
+  return String(raw)
+    .split(/[,;\n]|\band\b/i)
+    .map((part) => part.trim())
+    .filter(Boolean);
 }
 
 export function parseAnswer(raw) {

@@ -3,6 +3,7 @@ import schema from '../content/schema.json' with { type: 'json' };
 export const LESSON_FIELDS = schema.required;
 
 const CHECK_KINDS = new Set(schema.$defs.check.properties.kind.enum);
+const CASE_RULES = new Set(schema.$defs.check.properties.case.enum);
 
 export function validateLesson(lesson) {
   const errors = [];
@@ -45,7 +46,10 @@ export function validateProblem(problem) {
   }
   if (problem?.hints !== undefined && !Array.isArray(problem.hints)) errors.push('hints must be a list');
   if (problem?.check !== undefined && !CHECK_KINDS.has(problem.check.kind)) {
-    errors.push('check.kind must be numeric or exact');
+    errors.push('check.kind must be numeric, exact, or set');
+  }
+  if (problem?.check?.case !== undefined && !CASE_RULES.has(problem.check.case)) {
+    errors.push('check.case must be insensitive, sensitive, or formula');
   }
   return errors;
 }

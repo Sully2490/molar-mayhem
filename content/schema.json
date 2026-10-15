@@ -78,12 +78,38 @@
       "additionalProperties": false,
       "required": ["kind"],
       "properties": {
-        "kind": { "enum": ["numeric", "exact"] },
+        "kind": { "enum": ["numeric", "exact", "set"] },
         "value": { "type": "number" },
-        "tolerance": { "type": "number", "minimum": 0 },
+        "tolerance": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Relative percent. 0.5 means 0.5% of the expected value. Default 0.5 when omitted."
+        },
         "sigFigs": { "type": "integer", "minimum": 1 },
         "unit": { "type": ["string", "null"] },
-        "text": { "type": "string" }
+        "text": { "type": "string" },
+        "case": { "enum": ["insensitive", "sensitive", "formula"] },
+        "answers": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "nearMiss": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "type": "string", "minLength": 1 },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["text"],
+                "properties": {
+                  "text": { "type": "string", "minLength": 1 },
+                  "hint": { "type": "string", "minLength": 1 }
+                }
+              }
+            ]
+          }
+        }
       }
     }
   }

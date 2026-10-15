@@ -1,3 +1,5 @@
+import { DEFAULT_RELATIVE_PERCENT } from './grade.js';
+
 /**
  * Turn a static problem or a numeric template into { q, a, why, hints, check }.
  * @param {object} spec
@@ -37,7 +39,7 @@ function generateTemplate(spec, random) {
     check: {
       kind: 'numeric',
       value,
-      tolerance: spec.tolerance ?? 0,
+      tolerance: spec.tolerance ?? DEFAULT_RELATIVE_PERCENT,
       sigFigs: spec.sigFigs,
       unit: spec.unit ?? null,
     },
