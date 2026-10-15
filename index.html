@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Molar Mayhem</title>
+  <meta name="description" content="Free general chemistry practice for chapters 1–9.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230f5c56'/%3E%3Ctext x='8' y='12' text-anchor='middle' font-size='9' fill='white' font-family='Georgia,serif'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip" href="#view">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#Home" data-nav="Home">Molar Mayhem</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#Map" data-nav="Map">Map</a></li>
+        <li><a href="#Learn" data-nav="Learn">Learn</a></li>
+        <li><a href="#Drill" data-nav="Drill">Drill</a></li>
+        <li><a href="#Prep" data-nav="Prep">Prep</a></li>
+        <li><a href="#Cards" data-nav="Cards">Cards</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="table-btn" data-open-tray>Periodic table</button>
+  </header>
+  <main id="view" tabindex="-1">
+    <noscript>
+      <section class="page">
+        <h1>Molar Mayhem</h1>
+        <p>Turn on JavaScript to open the study pages and the periodic table.</p>
+      </section>
+    </noscript>
+  </main>
+  <footer class="site-footer">
+    <p>Original explanations and problems. Textbook reference: OpenStax <cite>Chemistry: Atoms First 2e</cite>, CC BY 4.0.</p>
+  </footer>
+  <div id="tray-backdrop" class="tray-backdrop" hidden></div>
+  <aside id="tray" class="tray" role="dialog" aria-modal="true" aria-labelledby="tray-title" hidden>
+    <div class="tray-bar">
+      <h2 id="tray-title">Periodic table</h2>
+      <button type="button" id="close-tray">Close</button>
+    </div>
+    <div id="tray-body"></div>
+  </aside>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
