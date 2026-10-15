@@ -2,13 +2,16 @@
   "id": "ch07-classify",
   "ch": 7,
   "openstax_section": "OpenStax AF2e §7.2",
-  "guide_line": "Sort a reaction as precipitation, acid-base, or redox, and find oxidation numbers.",
+  "guide_line": "Name precipitation, neutralization, combustion, and displacement, then find oxidation numbers and the oxidizing and reducing agents.",
   "steps": [
     "Precipitation: two aqueous solutions produce an insoluble solid. Nitrates, ammonium, and group 1 salts dissolve. Chlorides and iodides dissolve except with Ag+, Pb2+, and Hg2+. Sulfates dissolve except with Ba2+, Pb2+, Sr2+, and Ca2+. Carbonates do not dissolve except with group 1 ions and ammonium.",
-    "Acid-base: H+ moves from an acid to a base. A strong acid plus a strong base makes water, and the net ionic equation is H+ + OH- -> H2O.",
+    "Neutralization: H+ moves from an acid to a base and makes water. A strong acid plus a strong hydroxide has the net ionic equation H+ + OH- -> H2O.",
     "Only six common acids are strong: HCl, HBr, HI, HNO3, H2SO4, and HClO4. Every other acid is weak.",
-    "Redox: one element's oxidation number goes up (it is oxidized) and another goes down (it is reduced).",
-    "A free element is 0. Group 1 is +1, group 2 is +2, fluorine is -1, oxygen is -2, and hydrogen with a nonmetal is +1. The numbers in a formula add up to the charge."
+    "Single displacement: a free element replaces an ion in a compound. Double displacement: two compounds swap partners. Precipitation and neutralization are double displacement.",
+    "Combustion is a fuel burning in oxygen, usually making CO2 and H2O. It is also redox.",
+    "If an oxidation number goes up, that species is oxidized and is the reducing agent. If it goes down, that species is reduced and is the oxidizing agent.",
+    "A free element is 0. Group 1 is +1, group 2 is +2, fluorine is -1, oxygen is -2, and hydrogen with a nonmetal is +1. The numbers in a formula add up to the charge.",
+    "To balance a redox reaction in acid, balance each half-reaction with H2O, H+, and electrons, then multiply so the electrons cancel."
   ],
   "worked_example": {
     "q": "What is the oxidation number of S in H2SO4? Enter the number only.",
@@ -161,6 +164,62 @@
       "why": "The six strong acids are HCl, HBr, HI, HNO3, H2SO4, and HClO4. HF is not one of them, so it is weak.",
       "hints": ["Check HF against HCl, HBr, HI, HNO3, H2SO4, and HClO4. It is not on that list."],
       "check": { "kind": "exact", "text": "weak", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-single-displacement",
+      "q": "Zn(s) + CuSO4(aq) -> ZnSO4(aq) + Cu(s). Is this single displacement or double displacement?",
+      "a": "single displacement",
+      "why": "Zinc metal takes copper's place in the compound. One free element replaces one ion, so this is single displacement.",
+      "hints": ["Zinc metal takes the place of copper in the compound, so only one partner is replaced."],
+      "check": { "kind": "exact", "text": "single displacement", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-double-displacement",
+      "q": "AgNO3(aq) + NaCl(aq) -> AgCl(s) + NaNO3(aq). Is this single displacement or double displacement?",
+      "a": "double displacement",
+      "why": "Two dissolved salts swap partners. Neither reactant is a free element, so this is double displacement.",
+      "hints": ["Two dissolved salts swap partners, and neither reactant is a free element."],
+      "check": { "kind": "exact", "text": "double displacement", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-name-combustion",
+      "q": "A hydrocarbon reacts with oxygen to make CO2 and H2O. What is this reaction called? Answer combustion, precipitation, or neutralization.",
+      "a": "combustion",
+      "why": "A fuel plus oxygen that produces carbon dioxide and water is combustion. It is also redox, but the name of this pattern is combustion.",
+      "hints": ["A hydrocarbon plus oxygen that makes CO2 and H2O is combustion, even though it is also redox."],
+      "check": { "kind": "exact", "text": "combustion", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-reducing-agent-mg",
+      "q": "In 2 Mg + O2 -> 2 MgO, which substance is the reducing agent? Write its formula.",
+      "a": "Mg",
+      "why": "Mg goes from 0 to +2, so it is oxidized. The species that loses electrons is the reducing agent. Write Mg.",
+      "hints": ["Magnesium's oxidation number rises from 0 to +2. The species that is oxidized is the reducing agent."],
+      "check": { "kind": "exact", "text": "Mg", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-oxidizing-agent-h",
+      "q": "In Zn + 2 H+ -> Zn2+ + H2, which species is the oxidizing agent? Write the ion as H+.",
+      "a": "H+",
+      "why": "H+ goes from +1 to 0, so it is reduced. The species that gains electrons is the oxidizing agent. Write H+.",
+      "hints": ["H+ drops from +1 to 0, so it is reduced. The species that is reduced is the oxidizing agent."],
+      "check": { "kind": "exact", "text": "H+", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-redox-bromide",
+      "q": "Balance this reaction in acid: MnO4- + Br- -> Mn2+ + Br2. What is the coefficient of Br- in the smallest whole-number equation? Enter the number only.",
+      "a": "10",
+      "why": "MnO4- gains 5 electrons and each Br2 needs 2 Br-. The match is 2 MnO4- and 10 Br-: 2 MnO4- + 10 Br- + 16 H+ -> 2 Mn2+ + 5 Br2 + 8 H2O. Enter 10.",
+      "hints": ["Each bromide loses one electron, but Br2 holds two bromines, so that half-reaction moves two electrons. Permanganate needs five."],
+      "check": { "kind": "numeric", "value": 10, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch07-redox-protons",
+      "q": "In the balanced acid equation 2 MnO4- + 10 Br- + H+ -> products, what is the coefficient of H+? Enter the number only.",
+      "a": "16",
+      "why": "One MnO4- needs 8 H+ to make 4 H2O. The balanced equation uses two MnO4-, so the H+ coefficient is 16.",
+      "hints": ["One MnO4- needs 8 H+. The electrons match only after you use two permanganate ions, so double the 8."],
+      "check": { "kind": "numeric", "value": 16, "tolerance": 0, "sigFigs": 2, "unit": null }
     }
   ]
 }

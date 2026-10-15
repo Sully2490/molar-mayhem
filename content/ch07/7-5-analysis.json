@@ -2,12 +2,13 @@
   "id": "ch07-analysis",
   "ch": 7,
   "openstax_section": "OpenStax AF2e §7.5",
-  "guide_line": "Use a titration volume or a weighed precipitate to find concentration or percent composition.",
+  "guide_line": "Use a titration volume, a weighed precipitate, or a combustion analysis to find concentration, percent, or an empirical formula.",
   "steps": [
     "Write the balanced equation so you know how many H+ or OH- each formula supplies.",
     "Moles of titrant = molarity times liters. At the endpoint, convert those moles to moles of analyte with the mole ratio.",
     "Molarity of the analyte = moles of analyte divided by liters of analyte.",
     "In a gravimetric analysis, moles of the weighed solid equal moles of the ion you are tracking. Change that to grams, then to a percent of the sample mass.",
+    "In a combustion analysis, every carbon atom becomes one CO2 and every two hydrogen atoms become one H2O. Moles of H are twice the moles of water. Divide by the smaller mole amount for the empirical formula.",
     "Round the final answer to 4 significant figures. Atomic masses, at OpenStax full precision: H 1.008, C 12.011, O 15.999, Na 22.990, S 32.06, Cl 35.45, Ba 137.33, Ag 107.868."
   ],
   "worked_example": {
@@ -105,6 +106,30 @@
       "why": "Moles of AgCl = 0.6450 / 143.318 = 0.004500 mol. Mass of Cl = 0.004500 times 35.45 = 0.1595 g. Percent = (0.1595 / 1.050) times 100 = 15.19%.",
       "hints": ["0.6450 g of AgCl over 143.318 g/mol is the moles of Cl. Multiply by 35.45 g/mol and compare with the 1.050 g sample."],
       "check": { "kind": "numeric", "value": 15.19, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch07-combust-carbon",
+      "q": "A compound of carbon and hydrogen is burned. The carbon is collected as 4.401 g of CO2. How many moles of carbon were in the sample? Include the unit mol.",
+      "a": "0.1000 mol",
+      "why": "Molar mass of CO2 = 12.011 + 2(15.999) = 44.009 g/mol. Moles of CO2 = 4.401 / 44.009 = 0.1000 mol. Each CO2 holds one C, so moles of C = 0.1000 mol.",
+      "hints": ["Divide 4.401 g by 44.009 g/mol of CO2. Each carbon dioxide molecule holds one carbon atom."],
+      "check": { "kind": "numeric", "value": 0.1, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
+    },
+    {
+      "id": "ch07-combust-hydrogen",
+      "q": "The same combustion collects the hydrogen as 1.802 g of H2O. How many moles of hydrogen were in the sample? Include the unit mol.",
+      "a": "0.2000 mol",
+      "why": "Molar mass of H2O = 2(1.008) + 15.999 = 18.015 g/mol. Moles of water = 1.802 / 18.015 = 0.1000 mol. Each water holds two H, so moles of H = 0.2000 mol.",
+      "hints": ["Divide 1.802 g by 18.015 g/mol, then multiply by 2 because each water molecule holds two hydrogen atoms."],
+      "check": { "kind": "numeric", "value": 0.2, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
+    },
+    {
+      "id": "ch07-combust-formula",
+      "q": "A combustion analysis finds 0.1000 mol of C and 0.2000 mol of H in a sample. What is the empirical formula? Write it with no spaces.",
+      "a": "CH2",
+      "why": "Divide both amounts by 0.1000 mol. The ratio is 1 C to 2 H, so the empirical formula is CH2.",
+      "hints": ["The sample produced 0.1000 mol of C and 0.2000 mol of H. Divide both by 0.1000."],
+      "check": { "kind": "exact", "text": "CH2", "case": "sensitive" }
     }
   ]
 }

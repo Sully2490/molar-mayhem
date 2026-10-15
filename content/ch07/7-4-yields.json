@@ -4,7 +4,7 @@
   "openstax_section": "OpenStax AF2e §7.4",
   "guide_line": "Find the limiting reactant, the theoretical yield, and the percent yield.",
   "steps": [
-    "Convert each reactant to moles.",
+    "Convert each reactant to moles. Do not decide the limiting reactant by which mass is smaller.",
     "Divide each mole amount by its coefficient. The smaller result is the limiting reactant. The other reactant is in excess.",
     "Use the limiting reactant and the mole ratio to find moles of product, then grams. That mass is the theoretical yield.",
     "Percent yield = (actual mass / theoretical mass) times 100.",
@@ -145,6 +145,22 @@
       "why": "O2 is limiting at 0.6250 mol, so moles of ethanol used = 0.6250 / 3 = 0.2083 mol. Mass used = 0.2083 times 46.069 = 9.598 g. Left over = 15.00 - 9.598 = 5.402 g.",
       "hints": ["Ethanol used, in moles, is one third of the moles of O2. Subtract that mass from 15.00 g."],
       "check": { "kind": "numeric", "value": 5.402, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch07-name-theoretical",
+      "q": "The mass of product calculated from the limiting reactant, before anything is weighed, is called the theoretical yield or the actual yield?",
+      "a": "theoretical yield",
+      "why": "The theoretical yield is the calculated maximum. The actual yield is the mass you collect.",
+      "hints": ["This is the mass you calculate from the limiting reactant, before you weigh the product."],
+      "check": { "kind": "exact", "text": "theoretical yield", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-name-actual",
+      "q": "The mass of product you collect and weigh in the lab is called the theoretical yield or the actual yield?",
+      "a": "actual yield",
+      "why": "The actual yield is the measured mass. It is often less than the theoretical yield.",
+      "hints": ["This is the mass you collect and weigh, which is often less than the calculated maximum."],
+      "check": { "kind": "exact", "text": "actual yield", "case": "insensitive" }
     }
   ]
 }

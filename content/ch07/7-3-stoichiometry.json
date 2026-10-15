@@ -4,7 +4,7 @@
   "openstax_section": "OpenStax AF2e §7.3",
   "guide_line": "Use the mole ratio to convert a given mass or a known solution volume into the amount of another substance.",
   "steps": [
-    "Balance the equation. The coefficients are the mole ratio.",
+    "Balance the equation before you use it. An unbalanced equation gives the wrong mole ratio.",
     "Change a given mass into moles by dividing by the molar mass. Change a solution volume into moles with molarity times liters.",
     "Multiply by the mole ratio: moles wanted = moles given times (coefficient wanted / coefficient given).",
     "If the question asks for grams, multiply the moles you want by that substance's molar mass.",
@@ -161,6 +161,14 @@
       "why": "Moles of oxalic acid = 0.01500 times 0.08000 = 0.001200 mol. Moles of NaOH = 0.002400 mol. Volume = 0.002400 / 0.1000 = 0.02400 L = 24.00 mL.",
       "hints": ["15.00 mL of 0.08000 M H2C2O4 contains 0.001200 mol, and oxalic acid donates two H+."],
       "check": { "kind": "numeric", "value": 24, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
+    },
+    {
+      "id": "ch07-stoich-aluminum-unbalanced",
+      "q": "Aluminum burns in oxygen. The equation Al + O2 -> Al2O3 is not balanced. How many grams of Al2O3 form from 5.396 g of Al? Include the unit g.",
+      "a": "10.20 g",
+      "why": "Balance first: 4 Al + 3 O2 -> 2 Al2O3. Moles of Al = 5.396 / 26.982 = 0.2000 mol. Moles of Al2O3 = 0.1000 mol. Molar mass = 2(26.982) + 3(15.999) = 101.961 g/mol. Mass = 10.20 g.",
+      "hints": ["Balance first. Four Al make two Al2O3, so 0.2000 mol of Al makes 0.1000 mol of oxide. Al2O3 is 101.961 g/mol."],
+      "check": { "kind": "numeric", "value": 10.2, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
     }
   ]
 }

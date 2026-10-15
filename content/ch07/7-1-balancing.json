@@ -2,11 +2,12 @@
   "id": "ch07-balance",
   "ch": 7,
   "openstax_section": "OpenStax AF2e §7.1",
-  "guide_line": "Balance an equation, then cancel spectator ions to leave the net ionic equation.",
+  "guide_line": "Balance an equation, label each state, and cancel spectator ions to leave the net ionic equation.",
   "steps": [
     "Write the correct formulas first. Change coefficients, never subscripts, to balance.",
     "Count atoms of one element at a time. Match metals and other elements that appear once on each side before H and O.",
-    "A molecular equation shows whole formulas. A complete ionic equation splits each dissolved salt into ions.",
+    "State symbols sit in parentheses and are not coefficients: (s) solid, (l) liquid, (g) gas, (aq) dissolved in water.",
+    "A molecular equation shows whole formulas. A complete ionic equation splits each dissolved salt into ions and still shows the spectators.",
     "Ions that stay dissolved on both sides are spectators. Cross them out. What remains is the net ionic equation."
   ],
   "worked_example": {
@@ -184,6 +185,45 @@
           "Zn + Cu2+ → Zn2+ + Cu",
           "Cu2+ + Zn → Cu + Zn2+"
         ],
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch07-state-aqueous",
+      "q": "A substance dissolved in water is labeled with which state symbol? Include the parentheses.",
+      "a": "(aq)",
+      "why": "(aq) means aqueous, dissolved in water. (s), (l), and (g) are the pure solid, liquid, and gas.",
+      "hints": ["The four state symbols are (s), (l), (g), and (aq). Dissolved in water is the one that is not a pure solid, liquid, or gas."],
+      "check": {
+        "kind": "exact",
+        "text": "(aq)",
+        "answers": ["aq"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch07-state-gas",
+      "q": "Oxygen as a pure gas is written O2 followed by which state symbol? Include the parentheses.",
+      "a": "(g)",
+      "why": "A pure gas uses (g). (aq) would mean the oxygen is dissolved in water.",
+      "hints": ["Oxygen that is not dissolved is a pure gas. Use the state symbol for a gas, not the symbol for a water solution."],
+      "check": {
+        "kind": "exact",
+        "text": "(g)",
+        "answers": ["g"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch07-complete-ionic-silver",
+      "q": "Aqueous sodium chloride is mixed with aqueous silver nitrate, and solid AgCl forms. Write the complete ionic equation, spectators included, in this order: Na+, Cl-, Ag+, NO3- on the left and Na+, NO3-, AgCl on the right. Use ->.",
+      "a": "Na+ + Cl- + Ag+ + NO3- -> Na+ + NO3- + AgCl",
+      "why": "NaCl and AgNO3 are dissolved, so they split. AgCl is the solid, so it stays together. The complete ionic equation still shows Na+ and NO3-.",
+      "hints": ["Split NaCl into Na+ and Cl- and AgNO3 into Ag+ and NO3-. AgCl stays together because it is the solid."],
+      "check": {
+        "kind": "exact",
+        "text": "Na+ + Cl- + Ag+ + NO3- -> Na+ + NO3- + AgCl",
+        "answers": ["Na+ + Cl- + Ag+ + NO3- → Na+ + NO3- + AgCl"],
         "case": "sensitive"
       }
     }
