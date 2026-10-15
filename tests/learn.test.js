@@ -111,6 +111,81 @@ test('lesson links stay on the Learn route', () => {
   assert.equal(lessonIdFromHash(''), '');
 });
 
+test('Learn opens on chapter tiles with short titles and a continue card', () => {
+  const lesson = readLesson('content/ch01/classify.json');
+  const html = renderLearn([lesson], '', { lessons: {} });
+  assert.match(html, /data-learn-view="modules"/);
+  assert.match(html, /data-learn-continue/);
+  assert.match(html, /data-module="1"/);
+  assert.match(html, /Essential Ideas/);
+  assert.match(html, /States and mixtures/);
+  assert.match(html, /class="progress-ring"/);
+  assert.match(html, /data-mastered="0"/);
+  assert.match(html, /data-total="1"/);
+  assert.doesNotMatch(html, /<a[^>]*>Sort a sample by state/);
+  assert.doesNotMatch(html, /aria-disabled|data-locked|is-locked/);
+});
+
+test('a mastered lesson fills that chapter ring', () => {
+  const lesson = readLesson('content/ch01/classify.json');
+  const html = renderLearn([lesson], '', { lessons: { [lesson.id]: 'mastered' } });
+  assert.match(html, /data-module="1"[^>]*data-mastered="1"[^>]*data-total="1"/);
+  assert.match(html, /data-continue-kind="done"/);
+  assert.match(html, /1 of 1 lessons mastered/);
+});
+
+test('a chapter opens seven unlocked items in order', () => {
+  const lesson = readLesson('content/ch01/classify.json');
+  const html = renderLearn([lesson], 'mod-1', { lessons: { [lesson.id]: 'practicing' } });
+  assert.match(html, /data-learn-view="chapter"/);
+  assert.match(html, /data-item="overview"[\s\S]*data-item="lesson"[\s\S]*data-item="examples"[\s\S]*data-item="practice"[\s\S]*data-item="quiz"[\s\S]*data-item="videos"[\s\S]*data-item="terms"/);
+  assert.match(html, /Open browsing/);
+  assert.match(html, /href="#Learn\/mod-1-quiz"/);
+  assert.doesNotMatch(html, /aria-disabled|data-locked|is-locked/);
+  const modules = renderLearn([lesson], '', { lessons: { [lesson.id]: 'practicing' } });
+  assert.match(modules, /data-continue-kind="continue"/);
+  assert.match(modules, new RegExp(`data-continue-lesson="${lesson.id}"`));
+});
+
+test('quiz, practice, videos, and terms items stay open', () => {
+  const lesson = readLesson('content/ch01/classify.json');
+  const quiz = renderLearn([lesson], 'mod-1-quiz', { lessons: {} });
+  assert.match(quiz, /aria-current="page"/);
+  assert.match(quiz, new RegExp(`data-problem="${lesson.problems[0].id}"`));
+  assert.match(quiz, /Nothing is locked/);
+  const practice = renderLearn([lesson], 'mod-1-practice', { lessons: {} });
+  assert.match(practice, new RegExp(`data-problem="${lesson.problems[0].id}"`));
+  const videos = renderLearn([lesson], 'mod-1-videos', { lessons: {} });
+  assert.match(videos, /No public video is listed/);
+  assert.match(videos, /href="#Videos\/1"/);
+  const terms = renderLearn([lesson], 'mod-1-terms', { lessons: {} });
+  assert.match(terms, /class="term-pills"/);
+  assert.match(terms, /href="#Terms\//);
+  const examples = renderLearn([lesson], 'mod-1-examples', { lessons: {} });
+  assert.match(examples, /Worked examples/);
+  assert.match(examples, /<strong>Answer:<\/strong>/);
+});
+
+test('lessons inside a chapter follow the OpenStax section number', () => {
+  const html = renderLearn([
+    { id: 'ch01-classify', ch: 1, openstax_section: 'OpenStax AF2e §1.2', guide_line: 'Later.' },
+    { id: 'ch01-context', ch: 1, openstax_section: 'OpenStax AF2e §1.1', guide_line: 'Earlier.' },
+  ], 'mod-1-lesson', { lessons: {} });
+  const earlier = html.indexOf('Hypothesis, law, theory');
+  const later = html.indexOf('States and mixtures');
+  assert.ok(earlier >= 0 && later > earlier);
+});
+
+test('module hashes are not lesson targets', async () => {
+  const { isLessonTarget, parseLearnToken } = await import('../js/learn.js');
+  assert.equal(isLessonTarget('mod-1'), false);
+  assert.equal(isLessonTarget('mod-3-quiz'), false);
+  assert.equal(isLessonTarget(''), false);
+  assert.equal(isLessonTarget('ch01-classify'), true);
+  assert.equal(parseLearnToken('mod-9-terms').item, 'terms');
+  assert.equal(parseLearnToken('mod-0').kind, 'missing');
+});
+
 test('number boxes get a phone keypad only when no minus or exponent is needed', async () => {
   const { keypadFor } = await import('../js/learn.js');
   assert.equal(keypadFor({ check: { kind: 'numeric', value: 59.41 } }), ' inputmode="decimal"');

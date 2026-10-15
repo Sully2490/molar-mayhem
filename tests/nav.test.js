@@ -98,9 +98,9 @@ test('app.js syncs the compact More active state from finish()', () => {
   assert.match(app, /compactNav\.syncRoute\(id\)/);
 });
 
-test('service worker salt is 20261015v3a', () => {
+test('service worker salt is 20261015v3', () => {
   const sw = read('sw.js');
-  assert.match(sw, /const DEPLOY_SALT = '20261015v3a';/);
+  assert.match(sw, /const DEPLOY_SALT = '20261015v3';/);
 });
 
 function buildNavDoc() {

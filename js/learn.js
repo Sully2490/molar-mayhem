@@ -1,8 +1,30 @@
+import { videos as publishedVideos } from '../content/videos/catalog.js';
 import { grade } from './grade.js';
+import {
+  chapterByNumber,
+  CHAPTERS,
+  lessonsForChapter,
+  orderedLessons,
+  sectionLabel,
+  shortTitle,
+} from './home/chapters.js';
+import { ensureLearnCss } from './home/css.js';
+import { continueCardHtml, moduleGridHtml, moduleHref } from './home/modules.js';
+import { chapterStats, readProgress } from './progress.js';
+import { progressRingHtml } from './home/ring.js';
+import { termsByChapter } from './terms/catalog.js';
 
 export const ATTEMPTS = 3;
 
-const CHAPTERS = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+export const MODULE_ITEMS = Object.freeze([
+  { id: 'overview', label: 'Overview', hint: 'What this chapter covers' },
+  { id: 'lesson', label: 'Lesson', hint: 'Read each lesson from scratch' },
+  { id: 'examples', label: 'Worked examples', hint: 'See one problem worked out' },
+  { id: 'practice', label: 'Practice', hint: 'Try the problems' },
+  { id: 'quiz', label: 'Quiz', hint: 'A short check, one problem each' },
+  { id: 'videos', label: 'Videos', hint: 'Public clips for this chapter' },
+  { id: 'terms', label: 'Terms', hint: 'Words from this chapter' },
+]);
 
 /** Lesson files already on the site. GitHub Pages cannot list a folder. */
 export const LESSON_FILES = [
@@ -70,17 +92,8 @@ export function chapterFolder(chapter) {
   return `content/ch${String(chapter).padStart(2, '0')}`;
 }
 
-function sectionRank(lesson) {
-  const match = String(lesson.openstax_section ?? '').match(/(\d+(?:\.\d+)?)/);
-  return match ? Number(match[1]) : 99;
-}
-
 function sortLessons(lessons) {
-  return lessons.sort((left, right) => (
-    (left.ch ?? 0) - (right.ch ?? 0)
-    || sectionRank(left) - sectionRank(right)
-    || String(left.id).localeCompare(String(right.id))
-  ));
+  return orderedLessons(lessons);
 }
 
 async function namesForChapter(chapter, fetchImpl) {
@@ -101,7 +114,7 @@ async function namesForChapter(chapter, fetchImpl) {
 
 export async function loadLessons(fetchImpl = fetch) {
   const lessons = [];
-  for (const chapter of CHAPTERS) {
+  for (const chapter of CHAPTERS.map((item) => item.number)) {
     const paths = await namesForChapter(chapter, fetchImpl);
     for (const path of paths) {
       try {
@@ -150,19 +163,192 @@ function lessonLink(lesson) {
   return `#Learn/${encodeURIComponent(lesson.id)}`;
 }
 
-export function renderLearn(lessons, lessonId = '') {
-  const lesson = lessons.find((item) => item.id === lessonId);
-  const body = lesson ? renderLesson(lesson) : renderList(lessons);
-  return `<section class="page" data-route="Learn">${body}</section>`;
+export function parseLearnToken(token) {
+  const raw = String(token ?? '').trim();
+  if (!raw) return { kind: 'modules' };
+  const match = raw.match(/^mod-(\d+)(?:-([a-z]+))?$/);
+  if (!match) return { kind: 'lesson', lessonId: raw };
+  const chapter = Number(match[1]);
+  const item = match[2] ?? '';
+  if (!chapterByNumber(chapter)) return { kind: 'missing', token: raw };
+  if (!item) return { kind: 'chapter', chapter };
+  if (!MODULE_ITEMS.some((entry) => entry.id === item)) return { kind: 'missing', token: raw };
+  return { kind: 'item', chapter, item };
 }
 
-function renderList(lessons) {
-  const items = lessons.length === 0
+/** True when the hash segment is a lesson id, not a chapter module. */
+export function isLessonTarget(token) {
+  return parseLearnToken(token).kind === 'lesson';
+}
+
+export function renderLearn(lessons, lessonId = '', progress = undefined) {
+  ensureLearnCss();
+  const saved = progress === undefined ? readProgress() : progress;
+  const target = parseLearnToken(lessonId);
+  let body = '';
+  if (target.kind === 'modules') body = renderModules(lessons, saved);
+  else if (target.kind === 'chapter') body = renderChapter(lessons, target.chapter, saved);
+  else if (target.kind === 'item') body = renderItem(lessons, target.chapter, target.item, saved);
+  else if (target.kind === 'missing') body = renderMissing(target.token);
+  else {
+    const lesson = (lessons ?? []).find((item) => item.id === target.lessonId);
+    body = lesson ? renderLesson(lesson) : renderMissing(target.lessonId);
+  }
+  const view = target.kind === 'lesson' ? 'lesson' : target.kind;
+  return `<section class="page learn-page" data-route="Learn" data-learn-view="${escapeHtml(view)}">${body}</section>`;
+}
+
+function renderModules(lessons, progress) {
+  const note = (lessons ?? []).length === 0
     ? '<p>No lessons are in the chapter folders yet.</p>'
-    : `<ul class="lesson-list">${lessons.map((lesson) => (
-      `<li><a href="${lessonLink(lesson)}">${escapeHtml(lesson.guide_line)}</a> <span>Ch ${lesson.ch}</span></li>`
-    )).join('')}</ul>`;
-  return `<h1>Learn</h1><p>Pick a lesson. Each one starts from scratch, then gives you practice.</p>${items}`;
+    : '<p>Pick a chapter. Every item stays open. Nothing is locked.</p>';
+  return `<p class="kicker">Chapters 1–9</p>
+    <h1>Learn</h1>
+    ${note}
+    ${continueCardHtml(lessons, progress)}
+    ${moduleGridHtml(lessons, progress)}`;
+}
+
+function renderMissing(token) {
+  return `<p class="learn-crumbs"><a href="#Learn">Chapters</a></p>
+    <h1>That page is not here</h1>
+    <p>No lesson or chapter item matches <span class="learn-missing">${escapeHtml(token || 'that link')}</span>.</p>`;
+}
+
+function chapterStyle(chapter) {
+  return `--accent:${chapter.accent};--wash:${chapter.wash}`;
+}
+
+function renderChapter(lessons, number, progress) {
+  const chapter = chapterByNumber(number);
+  const rows = lessonsForChapter(lessons, number);
+  const stats = chapterStats(progress, rows.map((lesson) => lesson.id));
+  const items = MODULE_ITEMS.map((item, index) => `
+    <li>
+      <a class="module-item" href="${moduleHref(number, item.id)}" data-item="${item.id}">
+        <span class="module-item-index" aria-hidden="true">${index + 1}</span>
+        <span class="module-item-copy">
+          <strong>${escapeHtml(item.label)}</strong>
+          <span>${escapeHtml(item.hint)}</span>
+        </span>
+        <span class="module-item-go" aria-hidden="true">Open</span>
+      </a>
+    </li>`).join('');
+  return `<p class="learn-crumbs"><a href="#Learn">Chapters</a></p>
+    <header class="module-head" data-chapter="${number}" style="${chapterStyle(chapter)}">
+      <div>
+        <p class="kicker">Chapter ${number}</p>
+        <h1>${escapeHtml(chapter.title)}</h1>
+        <p>${escapeHtml(chapter.blurb)}</p>
+        <p class="module-cite">${escapeHtml(chapter.sections)}</p>
+      </div>
+      <div class="module-head-ring" aria-hidden="true">${progressRingHtml(stats.mastered, stats.total)}<span class="module-fraction">${stats.mastered}/${stats.total}</span></div>
+    </header>
+    <p class="module-open">Open browsing. Every item below is unlocked.</p>
+    <ol class="module-items">${items}</ol>`;
+}
+
+function itemNav(number, current) {
+  const links = MODULE_ITEMS.map((item) => {
+    const here = item.id === current ? ' aria-current="page"' : '';
+    return `<a href="${moduleHref(number, item.id)}" data-item="${item.id}"${here}>${escapeHtml(item.label)}</a>`;
+  }).join('');
+  return `<nav class="module-subnav" aria-label="Chapter items">${links}</nav>`;
+}
+
+function lessonRows(rows) {
+  if (!rows.length) return '<p>No lessons are in this chapter yet.</p>';
+  return `<ul class="learn-rows">${rows.map((lesson) => `
+    <li>
+      <a class="learn-row" href="${lessonLink(lesson)}">
+        <span class="learn-row-section">${escapeHtml(sectionLabel(lesson) || 'Lesson')}</span>
+        <span class="learn-row-title">${escapeHtml(shortTitle(lesson))}</span>
+      </a>
+    </li>`).join('')}</ul>`;
+}
+
+function renderItem(lessons, number, item, progress) {
+  const chapter = chapterByNumber(number);
+  const rows = lessonsForChapter(lessons, number);
+  const crumbs = `<p class="learn-crumbs"><a href="#Learn">Chapters</a> · <a href="${moduleHref(number)}">${escapeHtml(chapter.title)}</a></p>`;
+  const head = MODULE_ITEMS.find((entry) => entry.id === item);
+  const intro = `<header class="module-head module-head-item" data-chapter="${number}" style="${chapterStyle(chapter)}">
+      <div>
+        <p class="kicker">Chapter ${number}</p>
+        <h1>${escapeHtml(head.label)}</h1>
+        <p>${escapeHtml(head.hint)}</p>
+      </div>
+    </header>
+    ${itemNav(number, item)}`;
+  return `${crumbs}${intro}${itemBody(item, chapter, rows, progress)}`;
+}
+
+function itemBody(item, chapter, rows, progress) {
+  if (item === 'overview') return renderOverview(chapter, rows, progress);
+  if (item === 'lesson') return lessonRows(rows);
+  if (item === 'examples') return renderExamples(rows);
+  if (item === 'practice') return renderPractice(rows, 'Practice these by hand. A hint comes first. The solution shows after three misses.');
+  if (item === 'quiz') return renderQuiz(rows);
+  if (item === 'videos') return renderVideos(chapter.number);
+  if (item === 'terms') return renderTerms(chapter.number);
+  return '';
+}
+
+function renderOverview(chapter, rows, progress) {
+  const stats = chapterStats(progress, rows.map((lesson) => lesson.id));
+  const count = stats.total === 1 ? '1 lesson' : `${stats.total} lessons`;
+  return `<p>${escapeHtml(chapter.blurb)} ${escapeHtml(count)} in this chapter. ${stats.mastered} mastered.</p>
+    <p class="module-cite">${escapeHtml(chapter.sections)}</p>
+    ${lessonRows(rows)}`;
+}
+
+function renderExamples(rows) {
+  const cards = rows.map((lesson) => {
+    const example = lesson.worked_example ?? { q: '', answer: '' };
+    return `<article class="problem learn-example">
+      <h2>${escapeHtml(shortTitle(lesson))}</h2>
+      <p>${escapeHtml(example.q)}</p>
+      <p><strong>Answer:</strong> ${escapeHtml(example.answer)}</p>
+      <p><a href="${lessonLink(lesson)}">Open the lesson</a></p>
+    </article>`;
+  }).join('');
+  return cards || '<p>No worked example is in this chapter yet.</p>';
+}
+
+function renderPractice(rows, lead) {
+  const problems = rows.flatMap((lesson) => lesson.problems ?? []).map(renderProblem).join('');
+  if (!problems) return `<p>${escapeHtml(lead)}</p><p>No practice problems are in this chapter yet.</p>`;
+  return `<p>${escapeHtml(lead)}</p>${problems}`;
+}
+
+function renderQuiz(rows) {
+  const problems = rows
+    .map((lesson) => (lesson.problems ?? [])[0])
+    .filter(Boolean)
+    .map(renderProblem)
+    .join('');
+  const lead = 'A short check. One problem from each lesson. Nothing is locked.';
+  if (!problems) return `<p>${lead}</p><p>No quiz problem is in this chapter yet.</p>`;
+  return `<p>${lead}</p>${problems}`;
+}
+
+function renderVideos(chapter) {
+  const clips = (publishedVideos ?? []).filter((video) => Number(video.chapter) === Number(chapter));
+  const href = `#Videos/${chapter}`;
+  if (!clips.length) {
+    return `<p>No public video is listed for this chapter yet.</p><p><a href="${href}">Open the video page</a></p>`;
+  }
+  const items = clips.map((video) => `<li><a href="${href}">${escapeHtml(video.title || 'Video')}</a></li>`).join('');
+  return `<ul class="learn-rows">${items}</ul><p><a href="${href}">Open the video page</a></p>`;
+}
+
+function renderTerms(chapter) {
+  const terms = termsByChapter(chapter);
+  if (!terms.length) return '<p>No glossary terms are listed for this chapter yet.</p>';
+  const pills = terms.map((entry) => (
+    `<li><a href="#Terms/${encodeURIComponent(entry.id)}">${escapeHtml(entry.term)}</a></li>`
+  )).join('');
+  return `<ul class="term-pills">${pills}</ul>`;
 }
 
 function renderLesson(lesson) {
@@ -170,10 +356,15 @@ function renderLesson(lesson) {
   const example = lesson.worked_example ?? { q: '', answer: '' };
   const similar = lesson.similar_problem ?? { q: '', hint: '', answer: '' };
   const problems = (lesson.problems ?? []).map(renderProblem).join('');
+  const chapter = chapterByNumber(lesson.ch);
+  const crumb = chapter
+    ? `<a href="${moduleHref(lesson.ch)}">${escapeHtml(chapter.title)}</a>`
+    : `<a href="#Learn">Chapters</a>`;
   return `
-    <p><a href="#Learn">All lessons</a></p>
+    <p class="learn-crumbs"><a href="#Learn">Chapters</a> · ${crumb}</p>
     <p class="kicker">${escapeHtml(lesson.openstax_section ?? '')}</p>
-    <h1>${escapeHtml(lesson.guide_line ?? '')}</h1>
+    <h1>${escapeHtml(shortTitle(lesson))}</h1>
+    <p class="learn-objective">${escapeHtml(lesson.guide_line ?? '')}</p>
     <ol>${steps}</ol>
     <section class="problem">
       <h2>Worked example</h2>
@@ -224,6 +415,7 @@ function renderProblem(problem) {
 }
 
 export function bindLearn(root, lessons) {
+  ensureLearnCss();
   lessonsByRoot.set(root, lessons);
   if (attemptsByRoot.has(root)) return;
   const attempts = new Map();
