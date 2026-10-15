@@ -133,6 +133,39 @@ test('unordered sets ignore order and flag near-miss items', () => {
   assert.match(plain.hint, /HClO3/);
 });
 
+test('electron configurations expand noble-gas cores and ignore orbital order', () => {
+  const sodium = { kind: 'config', text: '[Ne] 3s1' };
+  assert.equal(grade('[Ne] 3s1', sodium).ok, true);
+  assert.equal(grade('1s2 2s2 2p6 3s1', sodium).ok, true);
+  assert.equal(grade('1s² 2s² 2p⁶ 3s¹', sodium).ok, true);
+  assert.equal(grade('[Ne]3s1', sodium).ok, true);
+  const sodiumWrong = grade('[Ne] 3s2', sodium);
+  assert.equal(sodiumWrong.ok, false);
+  assert.equal(sodiumWrong.reason, 'config');
+
+  const iron = { kind: 'config', text: '[Ar] 4s2 3d6' };
+  assert.equal(grade('[Ar] 3d6 4s2', iron).ok, true);
+  assert.equal(grade('1s2 2s2 2p6 3s2 3p6 4s2 3d6', iron).ok, true);
+  assert.equal(grade('[Ar] 4s² 3d⁶', iron).ok, true);
+  assert.equal(grade('[Ar] 4s2 3d5', iron).ok, false);
+
+  const zinc = { kind: 'config', text: '[Ar] 4s2 3d10' };
+  assert.equal(grade('[Ar] 3d10 4s2', zinc).ok, true);
+  assert.equal(grade('[Ar] 4s2 3d10', zinc).ok, true);
+  assert.equal(grade('1s2 2s2 2p6 3s2 3p6 3d10 4s2', zinc).ok, true);
+  assert.equal(grade('[Ar] 4s1 3d10', zinc).reason, 'config');
+  assert.equal(grade('', zinc).reason, 'format');
+  assert.equal(grade('not a configuration', zinc).reason, 'format');
+  assert.deepEqual(validateProblem({
+    id: 'na',
+    q: 'Write the configuration of Na.',
+    a: '[Ne] 3s1',
+    why: 'Sodium has one 3s electron past neon.',
+    hints: ['The neon core is 1s2 2s2 2p6.'],
+    check: { kind: 'config', text: '[Ne] 3s1' },
+  }), []);
+});
+
 test('schema accepts a set check', () => {
   const problem = {
     id: 'acids',

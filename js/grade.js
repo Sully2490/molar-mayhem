@@ -45,8 +45,9 @@ const SUPERSCRIPTS = '⁰¹²³⁴⁵⁶⁷⁸⁹';
  * Numeric tolerance is a relative percent. Sig-fig mismatches hint instead of failing.
  * Exact checks fold Unicode digits, collapse whitespace, and follow a case rule.
  * Set checks compare unordered lists and can flag near-miss items.
+ * Config checks expand noble-gas cores and compare orbitals, ignoring order.
  * @param {string} input
- * @param {{ kind: 'numeric' | 'exact' | 'set', value?: number, tolerance?: number, sigFigs?: number, unit?: string | null, text?: string, case?: 'insensitive' | 'sensitive' | 'formula', answers?: string[], nearMiss?: Array<string | { text: string, hint?: string }> }} check
+ * @param {{ kind: 'numeric' | 'exact' | 'set' | 'config', value?: number, tolerance?: number, sigFigs?: number, unit?: string | null, text?: string, case?: 'insensitive' | 'sensitive' | 'formula', answers?: string[], nearMiss?: Array<string | { text: string, hint?: string }> }} check
  */
 export function grade(input, check) {
   switch (check?.kind) {
@@ -56,6 +57,8 @@ export function grade(input, check) {
       return gradeExact(input, check);
     case 'set':
       return gradeSet(input, check);
+    case 'config':
+      return gradeConfig(input, check);
     default: {
       const kind = check?.kind;
       throw new Error(`Unknown check kind: ${String(kind)}`);
@@ -149,6 +152,81 @@ export function normalizeAnswer(text, caseRule) {
     default:
       throw new Error(`Unknown case rule: ${String(caseRule)}`);
   }
+}
+
+const NOBLE_GAS_CORES = [
+  ['[rn]', '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p6'],
+  ['[xe]', '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6'],
+  ['[kr]', '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6'],
+  ['[ar]', '1s2 2s2 2p6 3s2 3p6'],
+  ['[ne]', '1s2 2s2 2p6'],
+  ['[he]', '1s2'],
+];
+
+/**
+ * Parse an electron configuration into orbital → electron count.
+ * Noble-gas shorthand is expanded. Spacing, commas, and superscripts are ignored.
+ * Orbital order does not matter.
+ * @param {string} raw
+ * @returns {Map<string, number> | null}
+ */
+export function parseConfig(raw) {
+  let text = normalizeSymbols(raw).toLowerCase().replace(/[\s,]+/g, '');
+  if (!text) return null;
+  for (const [token, expansion] of NOBLE_GAS_CORES) {
+    text = text.replaceAll(token, expansion.replace(/\s+/g, ''));
+  }
+  return readOrbitals(text);
+}
+
+const SUBSHELL_MAX = { s: 2, p: 6, d: 10, f: 14 };
+
+function readOrbitals(text) {
+  const orbitals = new Map();
+  let index = 0;
+  while (index < text.length) {
+    const shell = text[index];
+    const subshell = text[index + 1];
+    if (!/[1-9]/.test(shell) || !SUBSHELL_MAX[subshell]) return null;
+    index += 2;
+    const limit = SUBSHELL_MAX[subshell];
+    const two = text.slice(index, index + 2);
+    const one = text.slice(index, index + 1);
+    let count = 0;
+    if (/^\d{2}$/.test(two) && Number(two) >= 1 && Number(two) <= limit) {
+      count = Number(two);
+      index += 2;
+    } else if (/^\d$/.test(one) && Number(one) >= 1 && Number(one) <= limit) {
+      count = Number(one);
+      index += 1;
+    } else {
+      return null;
+    }
+    const key = `${shell}${subshell}`;
+    if (orbitals.has(key)) return null;
+    orbitals.set(key, count);
+  }
+  return orbitals.size === 0 ? null : orbitals;
+}
+
+function sameOrbitals(left, right) {
+  if (left.size !== right.size) return false;
+  for (const [key, count] of left) {
+    if (right.get(key) !== count) return false;
+  }
+  return true;
+}
+
+export function gradeConfig(input, check) {
+  const actual = parseConfig(input);
+  if (!actual) return { ok: false, reason: 'format' };
+  const accepted = acceptedAnswers(check).map((item) => parseConfig(item)).filter(Boolean);
+  if (accepted.some((parsed) => sameOrbitals(parsed, actual))) return { ok: true };
+  return {
+    ok: false,
+    reason: 'config',
+    hint: 'Check each orbital. A noble-gas core stands for the orbitals inside it, and order does not matter.',
+  };
 }
 
 function acceptedAnswers(check) {

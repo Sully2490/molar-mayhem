@@ -78,7 +78,7 @@
       "additionalProperties": false,
       "required": ["kind"],
       "properties": {
-        "kind": { "enum": ["numeric", "exact", "set"] },
+        "kind": { "enum": ["numeric", "exact", "set", "config"] },
         "value": { "type": "number" },
         "tolerance": {
           "type": "number",
