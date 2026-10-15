@@ -1,0 +1,35 @@
+/** The gas-law equations, typed with ordinary digits. */
+export const gasLaws = {
+  id: 'gas-laws',
+  title: 'Gas-law formulas',
+  chapter: 8,
+  lesson: '8.2-ideal-gas',
+  intro: 'Write the equation. Subscripts can be ordinary numbers. Temperature in these laws is in kelvin.',
+  cards: [
+    {
+      id: 'list',
+      kind: 'list',
+      prompt: 'Name the four one-change gas laws: Boyle, Charles, Avogadro, and Amontons (Gay-Lussac).',
+      items: [
+        { id: 'boyle', label: "Boyle's law", accepts: ['Boyle', "Boyle's law", 'Boyle law'] },
+        { id: 'charles', label: "Charles's law", accepts: ['Charles', "Charles's law", 'Charles law'] },
+        { id: 'avogadro', label: "Avogadro's law", accepts: ['Avogadro', "Avogadro's law", 'Avogadro law'] },
+        { id: 'amontons', label: "Amontons's law", accepts: ['Amontons', 'Gay-Lussac', "Gay-Lussac's law", 'Amontons law'] },
+      ],
+    },
+    { id: 'boyle', kind: 'item', prompt: "Write Boyle's law. Pressure and volume trade off.", answer: 'P1V1 = P2V2', accepts: ['P1V1 = P2V2', 'P1V1=P2V2'] },
+    { id: 'charles', kind: 'item', prompt: "Write Charles's law. Volume and kelvin temperature rise together.", answer: 'V1/T1 = V2/T2', accepts: ['V1/T1 = V2/T2', 'V1/T1=V2/T2'] },
+    { id: 'avogadro', kind: 'item', prompt: "Write Avogadro's law. Volume and moles rise together.", answer: 'V1/n1 = V2/n2', accepts: ['V1/n1 = V2/n2', 'V1/n1=V2/n2'] },
+    { id: 'amontons', kind: 'item', prompt: "Write Amontons's law (Gay-Lussac). Pressure and kelvin temperature rise together at fixed volume.", answer: 'P1/T1 = P2/T2', accepts: ['P1/T1 = P2/T2', 'P1/T1=P2/T2'] },
+    { id: 'combined', kind: 'item', prompt: 'Write the combined gas law.', answer: 'P1V1/T1 = P2V2/T2', accepts: ['P1V1/T1 = P2V2/T2', 'P1V1/T1=P2V2/T2'] },
+    { id: 'ideal', kind: 'item', prompt: 'Write the ideal gas law.', answer: 'PV = nRT', accepts: ['PV = nRT', 'PV=nRT'] },
+    { id: 'dalton', kind: 'item', prompt: "Write Dalton's law for three gases.", answer: 'Ptotal = P1 + P2 + P3', accepts: ['Ptotal = P1 + P2 + P3', 'P = P1 + P2 + P3'] },
+    { id: 'mole-fraction', kind: 'item', prompt: 'Write partial pressure from mole fraction.', answer: 'Pi = Xi Ptotal', accepts: ['Pi = Xi Ptotal', 'P1 = X1 Ptotal', 'Pi=Xi*Ptotal'] },
+    { id: 'graham', kind: 'item', prompt: "Write Graham's law for effusion rates.", answer: 'rate1/rate2 = sqrt(M2/M1)', accepts: ['rate1/rate2 = sqrt(M2/M1)', 'r1/r2 = sqrt(M2/M1)'] },
+    { id: 'rms', kind: 'item', prompt: 'Write the root-mean-square speed.', answer: 'urms = sqrt(3RT/M)', accepts: ['urms = sqrt(3RT/M)', 'u = sqrt(3RT/M)'] },
+    { id: 'ke', kind: 'item', prompt: 'Write the average kinetic energy per mole of gas.', answer: 'KE = 3/2 RT', accepts: ['KE = 3/2 RT', '3/2 RT', 'KEavg = 3/2 RT'] },
+    { id: 'waals', kind: 'item', prompt: 'Which equation corrects the ideal gas law for attractions and particle volume?', answer: 'van der Waals', accepts: ['van der Waals', 'van der Waals equation'] },
+    { id: 'stp', kind: 'item', prompt: 'What are the STP temperature and pressure in this course?', answer: '273.15 K and 1 atm', accepts: ['273.15 K and 1 atm', '273 K and 1 atm', '0 C and 1 atm'] },
+    { id: 'vm', kind: 'item', prompt: 'What is the molar volume of an ideal gas at STP, in liters?', answer: '22.4 L', accepts: ['22.4', '22.4 L', '22.41 L'] },
+  ],
+};
