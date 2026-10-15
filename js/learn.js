@@ -191,15 +191,31 @@ function renderLesson(lesson) {
   `;
 }
 
+// Phones: a decimal keypad only when the answer needs no minus sign or exponent,
+// because iOS decimal keypads have neither.
+export function keypadFor(problem) {
+  const check = problem.check ?? {};
+  if (check.kind !== 'numeric' || typeof check.value !== 'number') return '';
+  const v = check.value;
+  return v >= 0 && (v === 0 || (v >= 1e-3 && v < 1e6)) ? ' inputmode="decimal"' : '';
+}
+
 function renderProblem(problem) {
   const inputId = `answer-${problem.id}`;
   const liveId = `live-${problem.id}`;
+  const numeric = problem.check?.kind === 'numeric';
+  const unitId = `unit-${problem.id}`;
+  const unitBox = numeric && problem.check.unit
+    ? `<label class="answer-label" for="${unitId}">Unit</label>
+        <input id="${unitId}" name="unit" class="unit-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="${liveId}">`
+    : '';
   return `
     <form class="problem" data-problem="${escapeHtml(problem.id)}">
       <p id="q-${escapeHtml(problem.id)}">${escapeHtml(problem.q)}</p>
-      <label class="answer-label" for="${inputId}">${escapeHtml(labelFor(problem))}</label>
+      <label class="answer-label" for="${inputId}">${escapeHtml(numeric ? 'Your answer' : labelFor(problem))}</label>
       <div class="answer-row">
-        <input id="${inputId}" name="answer" autocomplete="off" aria-describedby="${liveId}">
+        <input id="${inputId}" name="answer" autocomplete="off" autocapitalize="off" spellcheck="false"${keypadFor(problem)} aria-describedby="${liveId}">
+        ${unitBox}
         <button type="submit">Check</button>
       </div>
       <p class="feedback" id="${liveId}" aria-live="polite"></p>
@@ -223,14 +239,19 @@ export function bindLearn(root, lessons) {
     if (!problem) return;
     const used = attempts.get(id) ?? 0;
     if (used >= ATTEMPTS) return;
-    const input = form.querySelector('input');
+    const input = form.querySelector('input[name="answer"]') ?? form.querySelector('input');
+    const unitInput = form.querySelector?.('input[name="unit"]');
     const live = form.querySelector('.feedback');
-    const result = grade(input.value, problem.check);
+    const typed = unitInput && unitInput.value.trim() ? `${input.value.trim()} ${unitInput.value.trim()}` : input.value;
+    const result = grade(typed, problem.check);
     const next = result.ok ? used : used + 1;
     if (!result.ok) attempts.set(id, next);
     const message = feedbackFor(result, next, problem);
     live.dataset.status = message.status;
     live.textContent = message.text;
-    if (message.done) input.disabled = true;
+    if (message.done) {
+      input.disabled = true;
+      if (unitInput) unitInput.disabled = true;
+    }
   });
 }

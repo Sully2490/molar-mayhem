@@ -41,7 +41,8 @@ test('a lesson renders a labeled answer box and the similar-problem hint', () =>
   assert.match(html, /Your answer/);
   assert.match(html, /<strong>Hint:<\/strong>/);
   assert.match(html, /<strong>Answer:<\/strong>/);
-  assert.match(html, /Your answer \(g\)/);
+  assert.match(html, /<label class="answer-label" for="unit-[^"]+">Unit<\/label>/);
+  assert.match(html, /inputmode="decimal"/);
   assert.equal(labelFor({ check: { unit: 'g' } }), 'Your answer (g)');
   assert.equal(labelFor({ check: {} }), 'Your answer');
 });
@@ -108,4 +109,12 @@ test('lesson links stay on the Learn route', () => {
   assert.equal(lessonIdFromHash('#learn/ch01-classify'), 'ch01-classify');
   assert.equal(lessonIdFromHash('#Map'), '');
   assert.equal(lessonIdFromHash(''), '');
+});
+
+test('number boxes get a phone keypad only when no minus or exponent is needed', async () => {
+  const { keypadFor } = await import('../js/learn.js');
+  assert.equal(keypadFor({ check: { kind: 'numeric', value: 59.41 } }), ' inputmode="decimal"');
+  assert.equal(keypadFor({ check: { kind: 'numeric', value: -29.67 } }), '');
+  assert.equal(keypadFor({ check: { kind: 'numeric', value: 4.307e-19 } }), '');
+  assert.equal(keypadFor({ check: { kind: 'exact', text: 'sp3' } }), '');
 });
