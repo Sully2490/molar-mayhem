@@ -176,7 +176,7 @@ export function renderPrepPage(problems = [], message = '') {
       <div class="final-q">
         <p><strong>${item.number}.</strong> ${escapeHtml(item.q)}</p>
         <label class="answer-label" for="final-${item.number}">Your answer</label>
-        <input id="final-${item.number}" name="${escapeHtml(item.id)}" data-qid="${escapeHtml(item.id)}" autocomplete="off">
+        <input id="final-${item.number}" name="${escapeHtml(item.id)}" data-qid="${escapeHtml(item.id)}" autocomplete="off" autocapitalize="off" spellcheck="false">
       </div>`).join('');
     const heading = ch == null
       ? ''

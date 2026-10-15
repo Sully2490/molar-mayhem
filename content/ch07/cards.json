@@ -107,7 +107,7 @@
       "q": "List the strong bases: the group 1 hydroxides from Li through Cs, plus Ca(OH)2, Sr(OH)2, and Ba(OH)2.",
       "a": "LiOH, NaOH, KOH, RbOH, CsOH, Ca(OH)2, Sr(OH)2, Ba(OH)2",
       "why": "The strong bases are LiOH, NaOH, KOH, RbOH, CsOH, Ca(OH)2, Sr(OH)2, and Ba(OH)2. Mg(OH)2 and NH3 are not on this list.",
-      "hints": ["List five group-1 hydroxides, Li through Cs, then the three soluble heavier group-2 hydroxides."],
+      "hints": ["List five group-1 hydroxides, Li through Cs, then Ca(OH)2, Sr(OH)2, and Ba(OH)2. Those three dissolve only slightly, but whatever dissolves breaks apart completely, so they are still strong bases."],
       "check": {
         "kind": "set",
         "case": "sensitive",

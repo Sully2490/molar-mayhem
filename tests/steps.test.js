@@ -319,7 +319,8 @@ const MAIN_LESSON_HASHES = {
   'content/ch07/7-4-yields.json': '8704f001534a18062191f6eb00cbd35f0a5f0b4ef9dc335462523768843bb91a',
   // mL-to-L note is inside mistakes, so this lesson hash stays the same.
   'content/ch07/7-5-analysis.json': '5352245ba29f87c0c16614ff7e87620000333d8c8f8319faba7ffd531a70364f',
-  'content/ch07/cards.json': 'b681c96550bd16376c9c11fdb1be943c38bf9d719699ad435ba71d29b878a22c',
+  // Strong-base hint: Ca, Sr, and Ba hydroxides dissolve only slightly.
+  'content/ch07/cards.json': 'e14b536ce76126830d7ff664fb5538c883c4a379a9faf9b44798898218cfd263',
   'content/ch08/8.1-pressure.json': '987c09b57fbc4be5b5ea89f6a0a98bdb49265238bad50ecac93e05a6009e4aa6',
   // AgCl and He mL-to-L notes live in mistakes, so these lesson hashes stay put.
   'content/ch08/8.2-ideal-gas.json': '9fd704a5bf78b23cb57a13186f773216d43cac828c5fd4d27a79e3e7d4fb9118',
@@ -398,7 +399,7 @@ test('chapter 5, 7, 8, and 9 keep every existing answer, check, and value', () =
       delete problem.mistakes;
     }
     const hash = createHash('sha256').update(JSON.stringify(lesson)).digest('hex');
-    assert.equal(hash, expected, `${rel} changed more than guided and mistakes since main e57d6a9, apart from the noted 0.7139 mol N2 explanation`);
+    assert.equal(hash, expected, `${rel} changed more than guided and mistakes since main e57d6a9, apart from the noted 0.7139 mol N2 explanation and the strong-base hint`);
   }
 });
 

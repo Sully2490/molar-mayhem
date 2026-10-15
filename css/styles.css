@@ -61,6 +61,11 @@ body.tray-open { overflow: hidden; }
   text-decoration: none;
 }
 
+.site-header nav {
+  flex: 1 1 20rem;
+  min-width: 0;
+}
+
 nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -187,6 +192,16 @@ ul.lesson-list { list-style: none; }
 }
 
 .lesson-list a { color: var(--teal-deep); font-weight: 700; }
+
+.lesson-list a[data-practice] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.2rem 0.75rem;
+  border: 1px solid var(--teal);
+  border-radius: 999px;
+  background: white;
+}
 
 .answer-field { display: flex; flex-direction: column; gap: 0.25rem; }
 

@@ -1,6 +1,7 @@
 import { toastHtml } from './celebrate.js';
 import { renderDrillQueue } from './drills.js';
 import { grade } from './grade.js';
+import { keypadFor } from './learn.js';
 
 export const ATTEMPTS = 3;
 
@@ -68,11 +69,11 @@ function renderProblem(problem) {
       <div class="answer-row">
         <div class="answer-field">
           <label class="answer-label" for="${valueId}">Value</label>
-          <input id="${valueId}" name="value" inputmode="decimal" autocomplete="off" aria-describedby="${liveId}">
+          <input id="${valueId}" name="value" autocomplete="off" autocapitalize="off" spellcheck="false"${keypadFor(problem)} aria-describedby="${liveId}">
         </div>
         <div class="answer-field">
           <label class="answer-label" for="${unitId}">Unit</label>
-          <input id="${unitId}" name="unit" autocomplete="off" aria-describedby="${liveId}">
+          <input id="${unitId}" name="unit" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="${liveId}">
         </div>
         <button type="submit">Check</button>
       </div>

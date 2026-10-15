@@ -1,6 +1,21 @@
 import { showToast } from './celebrate.js';
+import { diagnose } from './diagnose.js';
+import { generateFromSeed } from './generate.js';
 import { grade } from './grade.js';
+import { keypadFor } from './learn.js';
 import { awardXp, readProgress, writeProgress } from './progress.js';
+import { mulberry32 } from './rng.js';
+
+const FINAL_TOPICS = new Set([
+  'gas laws',
+  'calorimetry',
+  'thermochemistry',
+  'molarity',
+  'dilution',
+  'grams moles',
+  'stoichiometry',
+  'limiting reagent',
+]);
 
 export function drillsFromLessons(lessons) {
   const items = [];
@@ -28,6 +43,41 @@ export function drillsFromLessons(lessons) {
  * Drop a correct id. A miss is weighted: one copy comes back next, and extra
  * copies follow the rest of the queue. `misses` is how many times it was missed.
  */
+export function drillFromGenerated(problem, spec) {
+  const hints = Array.isArray(problem.hints) && problem.hints.length
+    ? problem.hints
+    : ['Check the setup and try again.'];
+  return {
+    id: `${spec.id}:${problem.seed}`,
+    q: problem.q,
+    a: problem.a,
+    why: problem.why,
+    hints,
+    check: problem.check,
+    mistakes: problem.mistakes ?? [],
+    seed: problem.seed,
+    templateId: spec.id,
+    topic: spec.topic,
+  };
+}
+
+/** Final-guide topics are drawn twice as often. The seed rebuilds the same queue. */
+export function weightedDrillItems(list, seed, count = 6) {
+  const pool = [];
+  for (const spec of list ?? []) {
+    pool.push(spec);
+    if (FINAL_TOPICS.has(spec.topic)) pool.push(spec);
+  }
+  if (!pool.length || count <= 0) return [];
+  const random = mulberry32(seed);
+  const items = [];
+  for (let i = 0; i < count; i += 1) {
+    const spec = pool[Math.floor(random() * pool.length)];
+    items.push(drillFromGenerated(generateFromSeed(spec, seed + i), spec));
+  }
+  return items;
+}
+
 export function nextQueue(queue, id, correct, misses = 1) {
   const rest = queue.filter((item) => item !== id);
   if (correct) return rest;
@@ -63,7 +113,7 @@ export function renderDrillQueue(item, note = '') {
         <div class="answer-row">
           <div class="answer-field">
             <label class="answer-label" for="${inputId}">Your answer</label>
-            <input id="${inputId}" name="answer" autocomplete="off" aria-describedby="${liveId}">
+            <input id="${inputId}" name="answer" autocomplete="off" autocapitalize="off" spellcheck="false"${keypadFor(item)} aria-describedby="${liveId}">
           </div>
           <button type="submit">Check</button>
         </div>
@@ -103,9 +153,13 @@ export function bindDrill(root, storage, items = []) {
     }
     const used = (misses.get(id) ?? 0) + 1;
     misses.set(id, used);
+    const found = diagnose(input?.value ?? '', item.check, item.mistakes ?? [], {});
+    const stepHint = item.hints[Math.min(used - 1, item.hints.length - 1)] ?? item.hints[0];
     const hint = used >= 3
       ? `Solution: ${item.a}. ${item.why}`
-      : `Not yet. ${item.hints[0]}`;
+      : found?.message
+        ? `${found.message} ${stepHint}`
+        : `Not yet. ${item.hints[0]}`;
     const drop = used >= 3;
     queue = nextQueue(queue, id, drop, used);
     const next = bank.find((entry) => entry.id === queue[0]) ?? null;

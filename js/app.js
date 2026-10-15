@@ -1,14 +1,31 @@
-import { bindCards, cardsFromLessons, renderCards } from './cards.js';
-import { bindDrill, drillsFromLessons } from './drills.js';
+import './builders/index.js';
+import { bindCards, renderCards } from './cards.js';
+import { bindDrill, drillFromGenerated, weightedDrillItems } from './drills.js';
+import { examHash, mountLane } from './exam/index.js';
+import { generateFromSeed } from './generate.js';
 import { bindGlossary } from './glossary.js';
 import { bindLearn, loadLessons, renderLearn } from './learn.js';
 import { bindMap, renderMap } from './map.js';
 import { renderTable } from './periodic.js';
 import { bindPrep, loadFinalProblems, renderPrepPage } from './prep.js';
 import { openLesson, readProgress, writeProgress } from './progress.js';
-import { lessonIdFromHash, renderRoute, routeFromHash, routeTitle } from './routes.js';
+import { drillTargetFromHash, lessonIdFromHash, renderRoute, routeFromHash, routeTitle } from './routes.js';
+import { bindGuided, renderGuided } from './steps/index.js';
 import { applySyncHash, rememberNote, rememberPending } from './sync.js';
+import {
+  allFlashcards,
+  bindRecall,
+  bindTermsIndex,
+  installTerms,
+  linkTerms,
+  recallDeckFromHash,
+  renderRecallIndex,
+  renderTermsIndex,
+  termIdFromHash,
+} from './terms/index.js';
 import { bindUnitEntry, renderDrill } from './unit-entry.js';
+import { mountVideos, videoHash } from './video/index.js';
+import { templateById, templates, templatesForSection } from '../content/templates/index.js';
 
 const view = document.querySelector('#view');
 const navLinks = [...document.querySelectorAll('[data-nav]')];
@@ -16,6 +33,10 @@ const tray = document.querySelector('#tray');
 const backdrop = document.querySelector('#tray-backdrop');
 const trayBody = document.querySelector('#tray-body');
 const closeButton = document.querySelector('#close-tray');
+const termsDialog = installTerms(document);
+
+const DRILL_KEY = 'mm-drill';
+const practiceSeed = 1 + Math.floor(Math.random() * 999983);
 
 let trendId = 'radius';
 let selectedZ = null;
@@ -32,35 +53,150 @@ function takeSyncHash() {
   return false;
 }
 
+function finish(id) {
+  document.title = id === 'Home' ? 'Molar Mayhem' : `${routeTitle(id)} — Molar Mayhem`;
+  for (const link of navLinks) {
+    if (link.getAttribute('data-nav') === id) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
+  }
+}
+
+function cssAttr(value) {
+  return typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(value) : String(value).replace(/"/g, '');
+}
+
+function mountGuided(root, lessons, lessonId) {
+  const shown = (lessons ?? []).filter((lesson) => !lessonId || lesson.id === lessonId);
+  for (const lesson of shown) {
+    for (const problem of lesson.problems ?? []) {
+      if (!Array.isArray(problem.guided) || problem.guided.length === 0) continue;
+      const current = root.querySelector(`form[data-problem="${cssAttr(problem.id)}"]`);
+      if (!current || current.classList.contains('mm-guided')) continue;
+      current.outerHTML = linkTerms(renderGuided(problem));
+      const next = root.querySelector(`form.mm-guided[data-problem="${cssAttr(problem.id)}"]`);
+      const form = bindGuided(next, problem);
+      form?.addEventListener('submit', (event) => event.stopPropagation());
+    }
+  }
+}
+
+function readDrillMemory() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(DRILL_KEY) || 'null');
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return null;
+    if (!Number.isInteger(raw.seed) || raw.seed <= 0) return null;
+    if (raw.templateId != null && typeof raw.templateId !== 'string') return null;
+    return { templateId: raw.templateId || '', seed: raw.seed };
+  } catch {
+    return null;
+  }
+}
+
+function writeDrillMemory(entry) {
+  try {
+    localStorage.setItem(DRILL_KEY, JSON.stringify(entry));
+  } catch {
+    /* private mode can refuse storage */
+  }
+}
+
+function drillItemsFor(hash) {
+  const target = drillTargetFromHash(hash);
+  const saved = readDrillMemory();
+  const seed = target.seed || saved?.seed || practiceSeed;
+  const templateId = target.templateId || (!target.seed && saved?.templateId) || '';
+  writeDrillMemory({ templateId, seed });
+  const items = [];
+  if (templateId) {
+    try {
+      const spec = templateById(templateId);
+      items.push(drillFromGenerated(generateFromSeed(spec, seed), spec));
+    } catch {
+      /* an unknown id falls through to the weighted queue */
+    }
+  }
+  for (const item of weightedDrillItems(templates, seed, items.length ? 5 : 6)) {
+    if (!items.some((have) => have.id === item.id)) items.push(item);
+  }
+  return items;
+}
+
+function attachPractice(root, lessons) {
+  for (const lesson of lessons ?? []) {
+    const specs = templatesForSection(lesson.openstax_section);
+    if (!specs.length) continue;
+    const label = root.querySelector(`[data-mastery="${cssAttr(lesson.id)}"]`);
+    const row = label?.closest('li');
+    if (!row || row.querySelector('[data-practice]')) continue;
+    const spec = specs[practiceSeed % specs.length];
+    const seed = practiceSeed;
+    const href = `#Drill/${encodeURIComponent(spec.id)}/${seed}`;
+    row.insertAdjacentHTML('beforeend', `<a data-practice href="${href}">Practice</a>`);
+  }
+}
+
+function paintTerms() {
+  const deck = recallDeckFromHash(location.hash);
+  if (deck !== null) {
+    view.innerHTML = renderRecallIndex();
+    const api = bindRecall(view);
+    if (deck) api.openDeck(deck);
+    return;
+  }
+  view.innerHTML = renderTermsIndex();
+  bindTermsIndex(view, termsDialog);
+  const termId = termIdFromHash(location.hash);
+  if (termId) termsDialog.open(termId);
+}
+
 async function paintRoute() {
   if (takeSyncHash()) return;
   const generation = ++paintGeneration;
-  const id = routeFromHash(location.hash);
+  const hash = location.hash;
+
+  if (videoHash(hash)) {
+    const lessons = await loadLessons();
+    if (generation !== paintGeneration) return;
+    mountVideos(view, hash, { lessons });
+    finish('Videos');
+    return;
+  }
+
+  if (examHash(hash)) {
+    const mounted = await mountLane(view, hash);
+    if (generation !== paintGeneration) return;
+    if (mounted) {
+      finish(examHash(hash));
+      return;
+    }
+  }
+
+  const id = routeFromHash(hash);
   if (id === 'Learn') {
-    const lessonId = lessonIdFromHash(location.hash);
+    const lessonId = lessonIdFromHash(hash);
     if (lessonId) writeProgress(openLesson(readProgress(), lessonId));
     const lessons = await loadLessons();
     if (generation !== paintGeneration) return;
-    view.innerHTML = renderLearn(lessons, lessonId);
+    view.innerHTML = linkTerms(renderLearn(lessons, lessonId));
     bindLearn(view, lessons);
+    mountGuided(view, lessons, lessonId);
   } else if (id === 'Drill') {
-    const lessons = await loadLessons();
-    if (generation !== paintGeneration) return;
-    const drills = drillsFromLessons(lessons);
-    view.innerHTML = renderDrill(drills[0] ?? null);
+    const items = drillItemsFor(hash);
+    view.innerHTML = renderDrill(items[0] ?? null);
     bindUnitEntry(view);
-    bindDrill(view, undefined, drills);
+    bindDrill(view, undefined, items);
   } else if (id === 'Map') {
     const lessons = await loadLessons();
     if (generation !== paintGeneration) return;
     view.innerHTML = renderMap(lessons, readProgress());
+    attachPractice(view, lessons);
     bindMap(view);
   } else if (id === 'Cards') {
-    const lessons = await loadLessons();
-    if (generation !== paintGeneration) return;
-    const deck = cardsFromLessons(lessons);
+    const deck = allFlashcards();
     view.innerHTML = renderCards(deck);
     bindCards(view, deck);
+  } else if (id === 'Terms') {
+    paintTerms();
   } else if (id === 'Prep') {
     if (generation !== paintGeneration) return;
     view.innerHTML = renderRoute(id);
@@ -80,11 +216,7 @@ async function paintRoute() {
     if (id === 'Home') bindGlossary(view);
   }
   if (generation !== paintGeneration) return;
-  document.title = id === 'Home' ? 'Molar Mayhem' : `${routeTitle(id)} — Molar Mayhem`;
-  for (const link of navLinks) {
-    if (link.getAttribute('data-nav') === id) link.setAttribute('aria-current', 'page');
-    else link.removeAttribute('aria-current');
-  }
+  finish(id);
 }
 
 function paintTable(focusSelector) {
