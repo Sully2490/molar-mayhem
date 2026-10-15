@@ -1,0 +1,198 @@
+{
+  "id": "ch01-classify",
+  "ch": 1,
+  "openstax_section": "OpenStax AF2e §1.2",
+  "guide_line": "Sort a sample by state, and as an element, a compound, or a mixture.",
+  "steps": [
+    "A solid keeps its shape and its volume. A liquid keeps its volume and takes the container's shape. A gas takes both. Plasma is a gas-like state full of charged particles.",
+    "Mass is how much matter is in a sample. Weight is the pull of gravity on that sample. Mass does not change when gravity changes.",
+    "Conservation of matter: when a substance changes, the total mass stays the same.",
+    "An element is one kind of atom. A compound joins two or more elements in a fixed ratio. A molecule is two or more atoms bonded together.",
+    "A mixture holds substances together. Homogeneous looks the same throughout. Heterogeneous does not. A pure substance is an element or a compound.",
+    "Symbols you need here: sodium is Na, iron is Fe, water is H2O, and carbon dioxide is CO2."
+  ],
+  "worked_example": {
+    "q": "Sand has settled at the bottom of a jar of water. How is this sample classified?",
+    "steps": [
+      "You can see two different parts, sand and water.",
+      "They are not bonded, so the sample is a mixture, and it is not uniform."
+    ],
+    "answer": "heterogeneous mixture"
+  },
+  "similar_problem": {
+    "q": "Sugar is fully dissolved in water, and every sip tastes the same. How is this sample classified?",
+    "hint": "The sugar and water are mixed, and the mixture looks the same in every part of the glass.",
+    "answer": "homogeneous mixture"
+  },
+  "sources": ["OpenStax AF2e §1.2"],
+  "problems": [
+    {
+      "id": "ch01-classify-01",
+      "q": "How is helium in a balloon classified: element, compound, homogeneous mixture, or heterogeneous mixture?",
+      "a": "element",
+      "why": "Helium is only one kind of atom, so it is an element.",
+      "hints": ["Helium is a single kind of atom with the symbol He."],
+      "check": { "kind": "exact", "text": "element", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-classify-02",
+      "q": "Table salt has the formula NaCl. How is it classified?",
+      "a": "compound",
+      "why": "Sodium and chlorine are different elements bonded in a fixed ratio, so NaCl is a compound.",
+      "hints": ["Na and Cl are different elements locked in one fixed recipe."],
+      "check": { "kind": "exact", "text": "compound", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-classify-03",
+      "q": "Oil is floating on vinegar. How is this sample classified?",
+      "a": "heterogeneous mixture",
+      "why": "Two liquids sit in layers you can see, so the mixture is heterogeneous.",
+      "hints": ["The oil layer and the vinegar layer are both visible."],
+      "check": { "kind": "exact", "text": "heterogeneous mixture", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-classify-04",
+      "q": "How is the air in a room classified?",
+      "a": "homogeneous mixture",
+      "why": "Air is several gases mixed so evenly that it looks like one gas. That is a homogeneous mixture.",
+      "hints": ["Air contains nitrogen, oxygen, and other gases, blended so you cannot see separate parts."],
+      "check": { "kind": "exact", "text": "homogeneous mixture", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-classify-05",
+      "q": "What state is an ice cube: solid, liquid, or gas?",
+      "a": "solid",
+      "why": "An ice cube keeps both its shape and its volume, so it is a solid.",
+      "hints": ["An ice cube does not flow, and it does not take the shape of a glass."],
+      "check": { "kind": "exact", "text": "solid", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-classify-06",
+      "q": "Water vapor fills a balloon. What state is the vapor?",
+      "a": "gas",
+      "why": "The vapor takes the shape and the volume of the balloon, so it is a gas.",
+      "hints": ["The vapor spreads through the whole balloon instead of sitting in a puddle."],
+      "check": { "kind": "exact", "text": "gas", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-classify-07",
+      "q": "Water is poured into a glass. What state is the water?",
+      "a": "liquid",
+      "why": "The water takes the shape of the glass but keeps its own volume, so it is a liquid.",
+      "hints": ["The water matches the glass's shape, but pouring out half leaves a smaller volume."],
+      "check": { "kind": "exact", "text": "liquid", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-classify-08",
+      "q": "Write the element symbol for sodium.",
+      "a": "Na",
+      "why": "Sodium's symbol is Na: a capital N and a lowercase a.",
+      "hints": ["Use a capital N and a lowercase a. Both letters belong to one symbol."],
+      "check": { "kind": "exact", "text": "Na", "case": "sensitive" }
+    },
+    {
+      "id": "ch01-classify-09",
+      "q": "Write the formula for water.",
+      "a": "H2O",
+      "why": "A water molecule has two hydrogen atoms and one oxygen atom, so the formula is H2O.",
+      "hints": ["Start with hydrogen, use a 2 after it, and end with oxygen."],
+      "check": { "kind": "exact", "text": "H2O", "case": "sensitive" }
+    },
+    {
+      "id": "ch01-classify-10",
+      "q": "Write the formula for carbon dioxide.",
+      "a": "CO2",
+      "why": "Carbon dioxide has one carbon atom and two oxygen atoms, so the formula is CO2.",
+      "hints": ["Put carbon first, then oxygen with a 2. Both element letters are capitals."],
+      "check": { "kind": "exact", "text": "CO2", "case": "sensitive" }
+    },
+    {
+      "id": "ch01-classify-11",
+      "q": "From Na, H2O, Fe, and NaCl, list only the elements.",
+      "a": "Na, Fe",
+      "why": "Na and Fe each contain one kind of atom. H2O and NaCl each join two elements, so they are compounds.",
+      "hints": ["Keep a formula only when it has a single element. Order does not matter."],
+      "check": {
+        "kind": "set",
+        "case": "sensitive",
+        "answers": ["Na", "Fe"],
+        "nearMiss": [
+          { "text": "H2O", "hint": "H2O contains hydrogen and oxygen, so it is a compound." },
+          { "text": "NaCl", "hint": "NaCl contains sodium and chlorine, so it is a compound." }
+        ]
+      }
+    },
+    {
+      "id": "ch01-classify-12",
+      "q": "Oxygen gas has the formula O2. How is it classified?",
+      "a": "element",
+      "why": "O2 has only oxygen atoms. A molecule of one element is still that element.",
+      "hints": ["Both atoms in O2 are oxygen, so no second element is present."],
+      "check": { "kind": "exact", "text": "element", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-classify-13",
+      "q": "Brass is copper and zinc mixed evenly. How is brass classified?",
+      "a": "homogeneous mixture",
+      "why": "Two metals are mixed, and the mix looks the same throughout, so brass is a homogeneous mixture.",
+      "hints": ["You cannot pick the copper out of the zinc by looking at the brass."],
+      "check": { "kind": "exact", "text": "homogeneous mixture", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-classify-14",
+      "q": "Granite shows black, white, and gray grains. How is granite classified?",
+      "a": "heterogeneous mixture",
+      "why": "The different colored grains show that granite is not uniform, so it is a heterogeneous mixture.",
+      "hints": ["The black, white, and gray grains are different materials you can see."],
+      "check": { "kind": "exact", "text": "heterogeneous mixture", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-classify-15",
+      "q": "Write the element symbol for iron.",
+      "a": "Fe",
+      "why": "Iron's symbol is Fe: a capital F and a lowercase e.",
+      "hints": ["Use a capital F followed by a lowercase e."],
+      "check": { "kind": "exact", "text": "Fe", "case": "sensitive" }
+    },
+    {
+      "id": "ch01-classify-16",
+      "q": "An astronaut goes from Earth to the Moon. Which stays the same, mass or weight?",
+      "a": "mass",
+      "why": "Mass measures the amount of matter, and that does not change. Weight is the pull of gravity, and the Moon pulls less than Earth.",
+      "hints": ["The Moon pulls with less gravity. The amount of matter in the astronaut does not change."],
+      "check": { "kind": "exact", "text": "mass", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-classify-17",
+      "q": "A 12.00 g piece of wood burns. You collect 4.00 g of ash, and the rest leaves as gas. What mass of gas left, in grams?",
+      "a": "8.00 g",
+      "why": "Conservation of matter says the total mass stays 12.00 g. The gas is 12.00 g − 4.00 g = 8.00 g.",
+      "hints": ["The wood's mass equals the ash plus the gas. Subtract the ash from 12.00 g."],
+      "check": { "kind": "numeric", "value": 8, "tolerance": 0.05, "sigFigs": 3, "unit": "g" }
+    },
+    {
+      "id": "ch01-classify-18",
+      "q": "Oxygen gas is made of O2 units. Is one O2 unit an atom or a molecule?",
+      "a": "molecule",
+      "why": "O2 is two oxygen atoms bonded together. Two or more bonded atoms make a molecule.",
+      "hints": ["O2 contains two atoms joined by a bond, so it is more than a single atom."],
+      "check": { "kind": "exact", "text": "molecule", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-classify-19",
+      "q": "Helium gas is a collection of separate He particles. Is one He particle an atom or a molecule?",
+      "a": "atom",
+      "why": "A helium particle is one atom by itself. It is not two or more atoms bonded together.",
+      "hints": ["Helium travels as single particles, not as bonded pairs."],
+      "check": { "kind": "exact", "text": "atom", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-classify-20",
+      "q": "Lightning is a glowing region of gas filled with charged particles. What state of matter is that?",
+      "a": "plasma",
+      "why": "A gas that contains many charged particles is plasma, the fourth state of matter.",
+      "hints": ["This state looks like a gas, but many of its particles carry a charge."],
+      "check": { "kind": "exact", "text": "plasma", "case": "insensitive" }
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "id": "ch01-sigfigs",
+  "ch": 1,
+  "openstax_section": "OpenStax AF2e §1.5",
+  "guide_line": "Count significant figures, round a result, and tell accuracy from precision.",
+  "steps": [
+    "Count from the first nonzero digit through the end. Zeros between nonzero digits count. Leading zeros do not. Trailing zeros after a decimal point do.",
+    "If a whole number has no decimal point, its ending zeros do not count. Scientific notation shows which of those zeros were measured.",
+    "Adding or subtracting: match the fewest decimal places. Multiplying or dividing: match the fewest significant figures.",
+    "If the first digit you drop is below 5, keep the last digit. If it is above 5, round up. If it is exactly 5 and only zeros follow, round so the last kept digit is even.",
+    "Accurate means close to the true value. Precise means close to the other readings. A count, or a defined link such as 1 in = 2.54 cm, is exact."
+  ],
+  "worked_example": {
+    "q": "How many significant figures are in 0.02050?",
+    "steps": [
+      "The zeros before the 2 only locate the decimal point.",
+      "Count the 2, the captive 0, the 5, and the final 0. That is four figures."
+    ],
+    "answer": "4"
+  },
+  "similar_problem": {
+    "q": "How many significant figures are in 0.00340?",
+    "hint": "Skip the zeros before the 3. Then count the 3, the 4, and the last zero.",
+    "answer": "3"
+  },
+  "sources": ["OpenStax AF2e §1.5"],
+  "problems": [
+    {
+      "id": "ch01-sigfigs-01",
+      "q": "How many significant figures are in 0.00450?",
+      "a": "3",
+      "why": "The zeros before the 4 are placeholders. The 4, the 5, and the final 0 are significant, so the count is 3.",
+      "hints": ["In 0.00450, start counting at the 4 and keep the final zero."],
+      "check": { "kind": "numeric", "value": 3, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch01-sigfigs-02",
+      "q": "How many significant figures are in 100.0?",
+      "a": "4",
+      "why": "The decimal point makes every zero in 100.0 a measured digit. The count is 4.",
+      "hints": ["100.0 has a decimal point, so its zeros are not just placeholders."],
+      "check": { "kind": "numeric", "value": 4, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch01-sigfigs-03",
+      "q": "How many significant figures are in 1500 when no decimal point is written?",
+      "a": "2",
+      "why": "With no decimal point, the two ending zeros in 1500 are not counted. Only the 1 and the 5 are significant.",
+      "hints": ["1500 has no decimal point, so do not count the zeros that follow the 5."],
+      "check": { "kind": "numeric", "value": 2, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch01-sigfigs-04",
+      "q": "How many significant figures are in 1.500 × 10^3?",
+      "a": "4",
+      "why": "In scientific notation, only 1.500 is counted. That coefficient has four figures. The power of ten does not add any.",
+      "hints": ["Count the digits in 1.500 only. Ignore the power of ten."],
+      "check": { "kind": "numeric", "value": 4, "tolerance": 0, "sigFigs": 1, "unit": null }
+    },
+    {
+      "id": "ch01-sigfigs-05",
+      "q": "Round 6.382 to three significant figures.",
+      "a": "6.38",
+      "why": "Three figures reach the 8. The next digit is 2, which is below 5, so 6.382 rounds to 6.38.",
+      "hints": ["Keep the 6, the 3, and the 8. The next digit is 2, which is too small to round up."],
+      "check": { "kind": "numeric", "value": 6.38, "tolerance": 0, "sigFigs": 3, "unit": null }
+    },
+    {
+      "id": "ch01-sigfigs-06",
+      "q": "Round 48.35 to three significant figures.",
+      "a": "48.4",
+      "why": "Three figures reach the 3, and the next digit is exactly 5. The 3 is odd, so rounding to the even digit gives 48.4.",
+      "hints": ["The first digit you drop in 48.35 is a lone 5. Make the last kept digit even."],
+      "check": { "kind": "numeric", "value": 48.4, "tolerance": 0, "sigFigs": 3, "unit": null }
+    },
+    {
+      "id": "ch01-sigfigs-07",
+      "q": "Add 8.074, 1.2, and 0.35. Round the sum correctly.",
+      "a": "9.6",
+      "why": "The sum is 8.074 + 1.2 + 0.35 = 9.624. The 1.2 stops at tenths, and the first dropped digit is 2, so the sum is 9.6.",
+      "hints": ["1.2 has only one digit after the decimal, so the sum cannot keep hundredths."],
+      "check": { "kind": "numeric", "value": 9.6, "tolerance": 0, "sigFigs": 2, "unit": null }
+    },
+    {
+      "id": "ch01-sigfigs-08",
+      "q": "Multiply 2.50 by 3.126. Round the product correctly.",
+      "a": "7.82",
+      "why": "2.50 has three significant figures, and 2.50 × 3.126 = 7.815. The dropped digit is a lone 5 and the kept 1 is odd, so the product rounds to 7.82.",
+      "hints": ["2.50 has fewer significant figures than 3.126. A trailing lone 5 rounds toward an even last digit."],
+      "check": { "kind": "numeric", "value": 7.82, "tolerance": 0, "sigFigs": 3, "unit": null }
+    },
+    {
+      "id": "ch01-sigfigs-09",
+      "q": "Multiply 4.250 by 1.32. Round the product correctly.",
+      "a": "5.61",
+      "why": "1.32 has three significant figures. 4.250 × 1.32 = 5.61, already at three figures.",
+      "hints": ["1.32 has three significant figures, which is fewer than 4.250 has."],
+      "check": { "kind": "numeric", "value": 5.61, "tolerance": 0, "sigFigs": 3, "unit": null }
+    },
+    {
+      "id": "ch01-sigfigs-10",
+      "q": "Three mass readings are 5.12 g, 5.11 g, and 5.12 g. The true mass is 6.50 g. Are the readings accurate, precise, both, or neither?",
+      "a": "precise",
+      "why": "The readings cluster together, so they are precise. They are far from 6.50 g, so they are not accurate.",
+      "hints": ["Compare the three readings with each other, then compare the cluster with 6.50 g."],
+      "check": { "kind": "exact", "text": "precise", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-sigfigs-11",
+      "q": "Three mass readings are 6.48 g, 6.55 g, and 6.42 g. The true mass is 6.50 g. Are the readings accurate, precise, both, or neither?",
+      "a": "accurate",
+      "why": "The readings scatter, so they are not precise. They fall on both sides of 6.50 g, so the set is accurate.",
+      "hints": ["The readings are spread out, but they sit around the true value of 6.50 g."],
+      "check": { "kind": "exact", "text": "accurate", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-sigfigs-12",
+      "q": "Three mass readings are 6.50 g, 6.51 g, and 6.50 g. The true mass is 6.50 g. Are the readings accurate, precise, both, or neither?",
+      "a": "both",
+      "why": "The readings match each other and match 6.50 g, so they are both accurate and precise.",
+      "hints": ["Check whether the readings agree with one another and whether they agree with 6.50 g."],
+      "check": { "kind": "exact", "text": "both", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-sigfigs-13",
+      "q": "Three mass readings are 4.10 g, 7.20 g, and 5.00 g. The true mass is 6.50 g. Are the readings accurate, precise, both, or neither?",
+      "a": "neither",
+      "why": "The readings disagree with each other and do not cluster on 6.50 g, so they are neither accurate nor precise.",
+      "hints": ["The three readings are far apart, and they are not grouped on 6.50 g."],
+      "check": { "kind": "exact", "text": "neither", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-sigfigs-14",
+      "q": "Is the defined link 1 in = 2.54 cm exact or measured?",
+      "a": "exact",
+      "why": "An inch is defined as exactly 2.54 cm, so this factor has no measurement uncertainty.",
+      "hints": ["This inch-to-centimeter link is a definition, not a reading from a ruler."],
+      "check": { "kind": "exact", "text": "exact", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-sigfigs-15",
+      "q": "Write 0.000450 in scientific notation, keeping its significant figures.",
+      "a": "4.50 × 10^-4",
+      "why": "Move the decimal four places to the right to get 4.50. The zeros before the 4 drop out, and the final zero stays, so the value is 4.50 × 10^-4.",
+      "hints": ["Move the decimal until one digit remains in front of it. Keep the final zero from 450."],
+      "check": { "kind": "numeric", "value": 0.00045, "tolerance": 0, "sigFigs": 3, "unit": null }
+    },
+    {
+      "id": "ch01-sigfigs-16",
+      "q": "How many significant figures are in 0.02040?",
+      "a": "4",
+      "why": "Leading zeros do not count. The 2, the captive 0, the 4, and the final 0 do, so the count is 4.",
+      "hints": ["Drop only the zeros before the 2 in 0.02040. Count every digit from the 2 onward."],
+      "check": { "kind": "numeric", "value": 4, "tolerance": 0, "sigFigs": 1, "unit": null }
+    }
+  ]
+}

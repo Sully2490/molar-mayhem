@@ -1,0 +1,149 @@
+{
+  "id": "ch01-properties",
+  "ch": 1,
+  "openstax_section": "OpenStax AF2e §1.3",
+  "guide_line": "Tell a physical change from a chemical change, and an intensive property from an extensive one.",
+  "steps": [
+    "A physical property can be observed without changing what the substance is. Color, density, and melting point are physical.",
+    "A chemical property describes a reaction the substance can undergo, such as burning or rusting.",
+    "A physical change alters form or state. The substance is still the same. A chemical change makes a new substance.",
+    "An extensive property depends on how much you have, such as mass or volume. An intensive property does not, such as density or temperature.",
+    "Metals conduct heat and electricity well. Nonmetals conduct poorly. Metalloids fall in between."
+  ],
+  "worked_example": {
+    "q": "Butter melts in a warm pan. Is that a physical change or a chemical change?",
+    "steps": [
+      "The butter changes from solid to liquid.",
+      "It is still butter, so the substance did not change."
+    ],
+    "answer": "physical change"
+  },
+  "similar_problem": {
+    "q": "An iron nail rusts in damp air. Is that a physical change or a chemical change?",
+    "hint": "The red-brown rust was not on the nail at the start. Ask whether a new substance formed.",
+    "answer": "chemical change"
+  },
+  "sources": ["OpenStax AF2e §1.3"],
+  "problems": [
+    {
+      "id": "ch01-properties-01",
+      "q": "Is the boiling point of ethanol a physical property or a chemical property?",
+      "a": "physical property",
+      "why": "Boiling changes the state of ethanol, not its identity. The boiling point is a physical property.",
+      "hints": ["Ethanol is still ethanol after it boils. The temperature only describes that change of state."],
+      "check": { "kind": "exact", "text": "physical property", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-properties-02",
+      "q": "Is the flammability of ethanol a physical property or a chemical property?",
+      "a": "chemical property",
+      "why": "Burning ethanol makes new substances. Flammability is a chemical property.",
+      "hints": ["Flammability asks whether ethanol can burn and form new substances."],
+      "check": { "kind": "exact", "text": "chemical property", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-properties-03",
+      "q": "Water boils in a pot. Is that a physical change or a chemical change?",
+      "a": "physical change",
+      "why": "Liquid water becomes steam, and steam is still water. That is a physical change.",
+      "hints": ["The steam can be cooled back into the same water."],
+      "check": { "kind": "exact", "text": "physical change", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-properties-04",
+      "q": "A wooden stick burns. Is that a physical change or a chemical change?",
+      "a": "chemical change",
+      "why": "Ash, smoke, and new gases are not wood. Burning is a chemical change.",
+      "hints": ["Ash and smoke cannot be turned back into the original stick by cooling."],
+      "check": { "kind": "exact", "text": "chemical change", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-properties-05",
+      "q": "Is the mass of a gold bar extensive or intensive?",
+      "a": "extensive",
+      "why": "A larger bar has more mass. Mass depends on the amount, so it is extensive.",
+      "hints": ["Compare a small piece of the bar with the whole bar. The mass changes."],
+      "check": { "kind": "exact", "text": "extensive", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-properties-06",
+      "q": "Is the density of that gold extensive or intensive?",
+      "a": "intensive",
+      "why": "Cutting the bar in half does not change the mass packed into each milliliter. Density is intensive.",
+      "hints": ["A scrap of the gold and the whole bar have the same mass per milliliter."],
+      "check": { "kind": "exact", "text": "intensive", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-properties-07",
+      "q": "Sugar dissolves in water. Is that a physical change or a chemical change?",
+      "a": "physical change",
+      "why": "The sugar is still sugar, spread through the water. Dissolving is a physical change.",
+      "hints": ["Evaporating the water leaves the sugar behind, still sugar."],
+      "check": { "kind": "exact", "text": "physical change", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-properties-08",
+      "q": "Is the color of a copper strip a physical property or a chemical property?",
+      "a": "physical property",
+      "why": "You can see the color without turning copper into a new substance. Color is a physical property.",
+      "hints": ["Looking at the strip does not change the copper into something else."],
+      "check": { "kind": "exact", "text": "physical property", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-properties-09",
+      "q": "Foil is cut into squares. Is that a physical change or a chemical change?",
+      "a": "physical change",
+      "why": "The pieces are smaller, but each piece is still the same metal. Cutting is a physical change.",
+      "hints": ["Cutting changes the size of the foil, not the metal it is made of."],
+      "check": { "kind": "exact", "text": "physical change", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-properties-10",
+      "q": "Is the temperature of a warm drink extensive or intensive?",
+      "a": "intensive",
+      "why": "A sip and the whole cup can have the same temperature. Temperature does not depend on the amount, so it is intensive.",
+      "hints": ["Pouring half the drink into another cup does not change how hot each cup is."],
+      "check": { "kind": "exact", "text": "intensive", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-properties-11",
+      "q": "Is the volume of juice in a bottle extensive or intensive?",
+      "a": "extensive",
+      "why": "Pouring out half leaves less volume. Volume depends on the amount, so it is extensive.",
+      "hints": ["The volume left in the bottle gets smaller as you pour juice out."],
+      "check": { "kind": "exact", "text": "extensive", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-properties-12",
+      "q": "Iron reacts with acid and a gas bubbles out. Is that a physical change or a chemical change?",
+      "a": "chemical change",
+      "why": "The gas is a new substance that was not present as a gas in the iron or the acid. That is a chemical change.",
+      "hints": ["A new gas forms. The iron and the acid do not just change shape."],
+      "check": { "kind": "exact", "text": "chemical change", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-properties-13",
+      "q": "Copper conducts heat and electricity well. Is copper a metal, a nonmetal, or a metalloid?",
+      "a": "metal",
+      "why": "A substance that conducts heat and electricity well is a metal. Copper is a metal.",
+      "hints": ["Strong conduction of heat and electricity is the metal test in this section."],
+      "check": { "kind": "exact", "text": "metal", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-properties-14",
+      "q": "Sulfur conducts heat and electricity poorly. Is sulfur a metal, a nonmetal, or a metalloid?",
+      "a": "nonmetal",
+      "why": "Poor conduction is the nonmetal test. Sulfur is a nonmetal.",
+      "hints": ["Poor conduction puts an element with the nonmetals, not between the two groups."],
+      "check": { "kind": "exact", "text": "nonmetal", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-properties-15",
+      "q": "Silicon conducts heat and electricity better than sulfur and worse than copper. Is silicon a metal, a nonmetal, or a metalloid?",
+      "a": "metalloid",
+      "why": "Conduction that falls between a metal and a nonmetal marks a metalloid. Silicon is a metalloid.",
+      "hints": ["The conduction is in the middle, so silicon is neither a full metal nor a full nonmetal."],
+      "check": { "kind": "exact", "text": "metalloid", "case": "insensitive" }
+    }
+  ]
+}
