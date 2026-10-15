@@ -1,10 +1,10 @@
 # STATUS
 
-_Last updated: 2026-10-15. This branch is the grader and dialog cleanup._
+_Last updated: 2026-10-15. This branch adds separate value and unit boxes on Drill._
 
 ## State
-- Features passing: F00, F03. See `feature_list.json`.
-- Static site loads from `index.html` with no build step. Hash routes `#Map`, `#Learn`, `#Drill`, `#Prep`, and `#Cards` show placeholders. The periodic-table tray colors atomic radius, ionization energy, and electronegativity.
+- Features passing: F00, F03, I1. See `feature_list.json`.
+- Static site loads from `index.html` with no build step. Hash routes `#Map`, `#Learn`, `#Prep`, and `#Cards` show placeholders. `#Drill` asks for a value and a unit in separate boxes. The periodic-table tray colors atomic radius, ionization energy, and electronegativity.
 - `npm test` and `npm run check:content` run locally. GitHub Actions runs `npm test`.
 - `check:content` walks `content/` including chapter folders, checks each lesson against the lesson schema, and skips the coverage manifest when `MM_SOURCES` is unset. `schema.json` and `coverage.json` are parsed only. The manifest mapping itself is F01.
 - Course source material and the coverage manifest stay outside the repo, at the path set in `MM_SOURCES`.
@@ -19,4 +19,4 @@ F01 and F02 stay on hold.
 The first chapter with answer boxes must give every input a visible label and put feedback in an aria-live region.
 
 ## Blockers
-- F01 and F02 are on hold. This branch does not add a chapter.
+- I1 is passing. F01 and F02 stay on hold. This branch does not add a chapter.

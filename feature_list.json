@@ -355,7 +355,7 @@
         "Separate value + unit fields",
         "Feedback distinguishes wrong number, wrong unit, wrong sig figs"
       ],
-      "passing": false
+      "passing": true
     },
     {
       "id": "I2",

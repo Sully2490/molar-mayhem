@@ -1,5 +1,6 @@
 import { renderRoute, routeFromHash, routeTitle } from './routes.js';
 import { renderTable } from './periodic.js';
+import { bindUnitEntry, renderDrill } from './unit-entry.js';
 
 const view = document.querySelector('#view');
 const navLinks = [...document.querySelectorAll('[data-nav]')];
@@ -14,7 +15,12 @@ let lastFocus = null;
 
 function paintRoute() {
   const id = routeFromHash(location.hash);
-  view.innerHTML = renderRoute(id);
+  if (id === 'Drill') {
+    view.innerHTML = renderDrill();
+    bindUnitEntry(view);
+  } else {
+    view.innerHTML = renderRoute(id);
+  }
   document.title = id === 'Home' ? 'Molar Mayhem' : `${routeTitle(id)} — Molar Mayhem`;
   for (const link of navLinks) {
     if (link.getAttribute('data-nav') === id) link.setAttribute('aria-current', 'page');
