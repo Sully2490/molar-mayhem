@@ -1,0 +1,279 @@
+{
+  "id": "ch03-bohr",
+  "ch": 3,
+  "openstax_section": "OpenStax AF2e §3.2",
+  "guide_line": "Use E = −k Z^2 / n^2 and the gap between two levels to get the photon.",
+  "steps": [
+    "In the Bohr model the electron of a one-electron atom stays in a level n = 1, 2, 3, and so on. Level 1 is closest to the nucleus.",
+    "The energy of level n is E = −k Z^2 / n^2. Use k = 2.179e-18 J. Z is 1 for H, 2 for He+, and 3 for Li2+. A more negative energy is more stable.",
+    "The electron absorbs a photon to climb to a higher n. It emits a photon when it falls. The photon energy is the positive difference, |ΔE|.",
+    "From that gap, ν = |ΔE| / h and λ = hc / |ΔE|. You can also use the Rydberg equation for hydrogen: 1/λ = R (1/n_low^2 − 1/n_high^2), with R = 1.097e7 m−1.",
+    "The orbit radius is r = (n^2 / Z) a0, with a0 = 5.292e-11 m."
+  ],
+  "worked_example": {
+    "q": "A hydrogen electron falls from n = 3 to n = 2. Use k = 2.179e-18 J. What is the energy of the emitted photon? Type the positive number and the unit J.",
+    "steps": [
+      "E = −k / n^2, so the gap is k (1/2^2 − 1/3^2).",
+      "1/4 − 1/9 = 5/36. Multiply that fraction by k."
+    ],
+    "answer": "3.026e-19 J"
+  },
+  "similar_problem": {
+    "q": "A hydrogen electron falls from n = 4 to n = 1. Use k = 2.179e-18 J. What is the energy of the emitted photon? Type the positive number and the unit J.",
+    "hint": "The positive gap is k (1/1^2 − 1/4^2). Square each n before you subtract.",
+    "answer": "2.043e-18 J"
+  },
+  "sources": [
+    "OpenStax AF2e §3.2"
+  ],
+  "problems": [
+    {
+      "id": "ch03-s32-p01",
+      "q": "What is the energy of the electron in hydrogen at n = 2? Use k = 2.179e-18 J and Z = 1. Type the number, with its sign, and the unit J.",
+      "a": "-5.448e-19 J",
+      "why": "E = −k / 4 = −(2.179e-18)/4 = -5.448e-19 J.",
+      "hints": [
+        "Keep the negative sign. E = −k / 2^2."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -5.4475e-19,
+        "tolerance": 0.5,
+        "unit": "J",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s32-p02",
+      "q": "What is the energy of the electron in hydrogen at n = 5? Use k = 2.179e-18 J and Z = 1. Type the number, with its sign, and the unit J.",
+      "a": "-8.716e-20 J",
+      "why": "E = −k / 25 = -8.716e-20 J.",
+      "hints": [
+        "Divide k by 5 squared, which is 25, and keep the energy negative."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -8.716000000000001e-20,
+        "tolerance": 0.5,
+        "unit": "J",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s32-p03",
+      "q": "A hydrogen electron falls from n = 4 to n = 2. Use k = 2.179e-18 J. What is the photon energy? Type the positive number and the unit J.",
+      "a": "4.086e-19 J",
+      "why": "|ΔE| = k (1/4 − 1/16) = k (3/16) = 4.086e-19 J.",
+      "hints": [
+        "The gap is k (1/2^2 − 1/4^2). Report the positive difference."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4.085625e-19,
+        "tolerance": 0.5,
+        "unit": "J",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s32-p04",
+      "q": "A hydrogen electron falls from n = 4 to n = 2. Use R = 1.097e7 m−1. What is the wavelength of the photon? Type the number and the unit m.",
+      "a": "4.862e-7 m",
+      "why": "1/λ = R (1/4 − 1/16) = R (3/16). λ = 4.862e-7 m.",
+      "hints": [
+        "Use 1/λ = R (1/2^2 − 1/4^2), then flip the fraction to get λ in meters."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4.861744150714068e-7,
+        "tolerance": 0.5,
+        "unit": "m",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s32-p05",
+      "q": "How much energy is needed to remove the electron from hydrogen in the n = 4 level? Use k = 2.179e-18 J. Type the positive number and the unit J.",
+      "a": "1.362e-19 J",
+      "why": "From n = 4 to E = 0, the energy is k/16 = 1.362e-19 J.",
+      "hints": [
+        "Ionizing from n = 4 takes the electron to n = infinity, where E = 0. The energy needed is k / 4^2."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.361875e-19,
+        "tolerance": 0.5,
+        "unit": "J",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s32-p06",
+      "q": "A hydrogen electron falls from n = 5 to n = 1. Use R = 1.097e7 m−1. What is the wavelength of the photon? Type the number and the unit m.",
+      "a": "9.496e-8 m",
+      "why": "1/λ = R (1 − 1/25) = R (24/25). λ = 9.496e-8 m.",
+      "hints": [
+        "Use 1/λ = R (1/1^2 − 1/5^2). 5 squared is 25."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 9.495594044363416e-8,
+        "tolerance": 0.5,
+        "unit": "m",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s32-p07",
+      "q": "What is the energy of the electron in He+ at n = 2? He+ has Z = 2. Use k = 2.179e-18 J. Type the number, with its sign, and the unit J.",
+      "a": "-2.179e-18 J",
+      "why": "E = −k (2^2) / 2^2 = −k = -2.179e-18 J.",
+      "hints": [
+        "Square Z = 2 before you divide by n^2. The sign stays negative."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -2.179e-18,
+        "tolerance": 0.5,
+        "unit": "J",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s32-p08",
+      "q": "What is the radius of the n = 3 orbit in hydrogen? Use a0 = 5.292e-11 m and Z = 1. Type the number and the unit m.",
+      "a": "4.763e-10 m",
+      "why": "The radius is n^2 a0 = 9 × 5.292e-11 = 4.763e-10 m.",
+      "hints": [
+        "r = n^2 a0 / Z. For n = 3 and Z = 1, multiply a0 by 9."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4.7628e-10,
+        "tolerance": 0.5,
+        "unit": "m",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s32-p09",
+      "q": "A hydrogen electron falls from n = 2 to n = 1. Use k = 2.179e-18 J and h = 6.626e-34 J·s. What is the frequency of the photon? Type the number and the unit Hz.",
+      "a": "2.466e15 Hz",
+      "why": "|ΔE| = 0.7500 k. ν = |ΔE|/h = 2.466e15 Hz.",
+      "hints": [
+        "Find |ΔE| = k (1 − 1/4) first, then divide that energy by h."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2466420162994265,
+        "tolerance": 0.5,
+        "unit": "Hz",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s32-p10",
+      "q": "What is the energy of the electron in Li2+ at n = 2? Li2+ has Z = 3. Use k = 2.179e-18 J. Type the number, with its sign, and the unit J.",
+      "a": "-4.903e-18 J",
+      "why": "E = −k (3^2) / 2^2 = −(9/4) k = -4.903e-18 J.",
+      "hints": [
+        "Square Z = 3, which is 9, then divide by n^2 = 4. Keep the sign negative."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -4.90275e-18,
+        "tolerance": 0.5,
+        "unit": "J",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s32-p11",
+      "q": "A hydrogen electron falls from n = 6 to n = 3. Use R = 1.097e7 m−1. What is the wavelength of the photon? Type the number and the unit m.",
+      "a": "1.094e-6 m",
+      "why": "1/λ = R (1/9 − 1/36) = R/12. λ = 1.094e-6 m.",
+      "hints": [
+        "Use 1/λ = R (1/3^2 − 1/6^2). 3 squared is 9 and 6 squared is 36."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.0000010938924339106654,
+        "tolerance": 0.5,
+        "unit": "m",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s32-p12",
+      "q": "What is the energy of the electron in He+ at n = 3? He+ has Z = 2. Use k = 2.179e-18 J. Type the number, with its sign, and the unit J.",
+      "a": "-9.684e-19 J",
+      "why": "E = −k (4/9) = -9.684e-19 J.",
+      "hints": [
+        "Z squared is 4 and n squared is 9. E = −k × 4/9."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -9.684444444444446e-19,
+        "tolerance": 0.5,
+        "unit": "J",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s32-p13",
+      "q": "Which drop releases more energy, n = 3 to n = 1, or n = 3 to n = 2? Type n=3 to n=1 or n=3 to n=2.",
+      "a": "n=3 to n=1",
+      "why": "Both drops start at n = 3. Level 1 is much lower than level 2, so the fall to n = 1 releases more energy.",
+      "hints": [
+        "Compare how far each electron falls. Level 1 is lower than level 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "n=3 to n=1",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s32-p14",
+      "q": "A hydrogen electron goes from n = 2 to n = 5. Is that absorption or emission? Type one word.",
+      "a": "absorption",
+      "why": "Level n = 5 is higher than n = 2, so the electron must take energy in. That is absorption.",
+      "hints": [
+        "Ask whether n gets larger or smaller. A climb to a higher n takes energy in."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "absorption",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s32-p15",
+      "q": "A hydrogen electron moves from n = 1 to n = 3. Is that absorption or emission? Type one word.",
+      "a": "absorption",
+      "why": "n = 1 is the lowest level. Moving from n = 1 up to n = 3 takes energy in, so this is absorption. Emission would make n smaller.",
+      "hints": [
+        "Emission makes n smaller. This change starts at the lowest level and climbs."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "absorption",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s32-p16",
+      "q": "A classmate says a hydrogen atom in n = 1 emits a photon by going to n = 6. Is that possible? Type yes or no.",
+      "a": "no",
+      "why": "n = 1 is already the lowest level. The atom cannot give off energy by climbing to n = 6. It would have to absorb a photon. The answer is no.",
+      "hints": [
+        "An atom gives off a photon only when the electron falls. n = 6 is above n = 1."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "no",
+        "case": "insensitive"
+      }
+    }
+  ]
+}

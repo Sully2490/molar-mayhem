@@ -1,0 +1,231 @@
+{
+  "id": "ch03-periodic-table",
+  "ch": 3,
+  "openstax_section": "OpenStax AF2e §3.6",
+  "guide_line": "Read the group, the period, the block, and the valence count from the table.",
+  "steps": [
+    "The table lines the elements up by atomic number. A row is a period. A column is a group.",
+    "Group 1 is the alkali metals. Group 2 is the alkaline earth metals. Group 17 is the halogens. Group 18 is the noble gases.",
+    "For groups 1, 2, and 13 through 18, the valence count is the ones digit of the group number.",
+    "Metals sit left of the staircase. Nonmetals sit to the right. The staircase metalloids used here are B, Si, Ge, As, Sb, and Te.",
+    "Groups 1 and 2 are the s block. Groups 13 through 18 are the p block. The d block is the transition metals. The f block is the two rows drawn below the table."
+  ],
+  "worked_example": {
+    "q": "What is the group number of the halogens? Type the number only.",
+    "steps": [
+      "The halogens are the column just left of the noble gases.",
+      "That column is group 17."
+    ],
+    "answer": "17"
+  },
+  "similar_problem": {
+    "q": "What is the group number of the noble gases? Type the number only.",
+    "hint": "The noble gases are the last column on the right of the main table.",
+    "answer": "18"
+  },
+  "sources": [
+    "OpenStax AF2e §3.6"
+  ],
+  "problems": [
+    {
+      "id": "ch03-s36-p01",
+      "q": "What is the group number of the alkali metals? Type the number only.",
+      "a": "1",
+      "why": "The alkali metals are the first column. That is group 1.",
+      "hints": [
+        "Alkali metals have one valence electron and sit in the leftmost column."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s36-p02",
+      "q": "Which element is the halogen in period 3? Write the element symbol with a capital letter, like He.",
+      "a": "Cl",
+      "why": "Period 3 runs from Na to Ar. The halogen column is group 17, which meets period 3 at Cl.",
+      "hints": [
+        "Find period 3, then move to the column just left of the noble gases."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Cl",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s36-p03",
+      "q": "Which element is the noble gas in period 2? Write the element symbol with a capital letter, like He.",
+      "a": "Ne",
+      "why": "Period 2 ends at the group 18 element Ne.",
+      "hints": [
+        "Period 2 is the Li-to-Ne row. Pick the last element in that row."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Ne",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s36-p04",
+      "q": "How many valence electrons does an atom in group 16 have? Type the number only.",
+      "a": "6",
+      "why": "The ones digit of 16 is 6, and group 16 is a main group, so there are 6 valence electrons.",
+      "hints": [
+        "Use the ones digit of the group number for groups 13 through 18."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 6,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s36-p05",
+      "q": "Which element is in period 4 and group 2? Write the element symbol with a capital letter, like He.",
+      "a": "Ca",
+      "why": "Period 4 starts at K. Group 2 in that period is Ca.",
+      "hints": [
+        "Group 2 is the alkaline earth column. Go down to the fourth period."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Ca",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s36-p06",
+      "q": "Is silicon a metal, a metalloid, or a nonmetal? Type one word.",
+      "a": "metalloid",
+      "why": "Silicon sits on the staircase, so it is a metalloid.",
+      "hints": [
+        "Si is one of B, Si, Ge, As, Sb, and Te."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "metalloid",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s36-p07",
+      "q": "What charge does a group 2 ion usually have? Type the charge like 2+ or 2-.",
+      "a": "2+",
+      "why": "Group 2 atoms lose two valence electrons. The ion is 2+.",
+      "hints": [
+        "The ones digit is 2, and a metal loses those electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "2+",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s36-p08",
+      "q": "What charge does a group 16 ion usually have? Type the charge like 2+ or 2-.",
+      "a": "2-",
+      "why": "Group 16 atoms gain two electrons to finish the p subshell. The ion is 2-.",
+      "hints": [
+        "Group 16 is two short of a full octet. The charge is negative."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "2-",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s36-p09",
+      "q": "Which block is iron in: s, p, d, or f? Type one letter.",
+      "a": "d",
+      "why": "Iron is a transition metal. Its last electrons enter 3d, so it is in the d block.",
+      "hints": [
+        "The middle block of the table is the d block. Iron sits there."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "d",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s36-p10",
+      "q": "Is titanium a main-group element or a transition element? Type main-group or transition.",
+      "a": "transition",
+      "why": "Titanium is in the d block, so it is a transition element.",
+      "hints": [
+        "Ti is in the middle block, not in groups 1, 2, or 13 through 18."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "transition",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s36-p11",
+      "q": "What is the family name of group 17? Type one plural word.",
+      "a": "halogens",
+      "why": "Group 17 is the halogen family.",
+      "hints": [
+        "This is the column of F, Cl, Br, and I."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "halogens",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s36-p12",
+      "q": "What is the atomic number of the element in period 4 and group 15? Type the number only.",
+      "a": "33",
+      "why": "Period 4 group 15 is arsenic, and arsenic is atomic number 33.",
+      "hints": [
+        "Count across period 4 to group 15. The d block fills Z = 21 through 30 before the p block."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 33,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s36-p13",
+      "q": "What is the valence configuration shared by group 1? Use n for the period and type the s count after it.",
+      "a": "ns1",
+      "why": "Every alkali metal ends in one s electron in its highest shell: ns1.",
+      "hints": [
+        "Group 1 has one valence electron in an s orbital. Use n for the period."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "ns1",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s36-p14",
+      "q": "How many elements are in period 3? Type the number only.",
+      "a": "8",
+      "why": "Period 3 is Na through Ar and has no d block yet. That is 8 elements.",
+      "hints": [
+        "Count from sodium through argon. Do not include the transition metals."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 8,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    }
+  ]
+}
