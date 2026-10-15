@@ -88,7 +88,10 @@
         "sigFigs": { "type": "integer", "minimum": 1 },
         "unit": { "type": ["string", "null"] },
         "text": { "type": "string" },
-        "case": { "enum": ["insensitive", "sensitive", "formula"] },
+        "case": {
+          "enum": ["insensitive", "sensitive", "formula"],
+          "description": "Omitted means formula: element symbols stay case-sensitive. Use insensitive for element names and ordinary words."
+        },
         "answers": {
           "type": "array",
           "items": { "type": "string", "minLength": 1 }

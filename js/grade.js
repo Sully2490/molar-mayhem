@@ -43,7 +43,9 @@ const SUPERSCRIPTS = '⁰¹²³⁴⁵⁶⁷⁸⁹';
 /**
  * Grade a student answer against a check descriptor.
  * Numeric tolerance is a relative percent. Sig-fig mismatches hint instead of failing.
- * Exact checks fold Unicode digits, collapse whitespace, and follow a case rule.
+ * Exact checks fold Unicode digits and charges. The default case is formula:
+ * element symbols stay capitalized, so Co, CO, and co are different.
+ * Use case "insensitive" only for element names and ordinary words.
  * Set checks compare unordered lists and can flag near-miss items.
  * Config checks expand noble-gas cores and compare orbitals, ignoring order.
  * @param {string} input
@@ -94,7 +96,7 @@ export function withinRelativePercent(actual, expected, percent) {
 }
 
 export function gradeExact(input, check) {
-  const caseRule = check.case ?? 'insensitive';
+  const caseRule = check.case ?? 'formula';
   const actual = normalizeAnswer(input, caseRule);
   if (!actual) return { ok: false, reason: 'format' };
   const accepted = acceptedAnswers(check).map((item) => normalizeAnswer(item, caseRule));
@@ -127,13 +129,17 @@ export function gradeSet(input, check) {
 }
 
 export function normalizeSymbols(text) {
-  return String(text ?? '').replace(/[₀-₉⁰¹²³⁴⁵⁶⁷⁸⁹]/g, (ch) => {
-    const sub = SUBSCRIPTS.indexOf(ch);
-    if (sub !== -1) return String(sub);
-    const sup = SUPERSCRIPTS.indexOf(ch);
-    if (sup !== -1) return String(sup);
-    return ch;
-  });
+  return String(text ?? '')
+    .replaceAll('−', '-')
+    .replaceAll('⁺', '+')
+    .replaceAll('⁻', '-')
+    .replace(/[₀-₉⁰¹²³⁴⁵⁶⁷⁸⁹]/g, (ch) => {
+      const sub = SUBSCRIPTS.indexOf(ch);
+      if (sub !== -1) return String(sub);
+      const sup = SUPERSCRIPTS.indexOf(ch);
+      if (sup !== -1) return String(sup);
+      return ch;
+    });
 }
 
 export function collapseWhitespace(text) {
@@ -148,7 +154,7 @@ export function normalizeAnswer(text, caseRule) {
     case 'sensitive':
       return collapsed;
     case 'formula':
-      return collapsed.replace(/ /g, '');
+      return canonicalizeFormula(collapsed);
     default:
       throw new Error(`Unknown case rule: ${String(caseRule)}`);
   }
@@ -227,6 +233,11 @@ export function gradeConfig(input, check) {
     reason: 'config',
     hint: 'Check each orbital. A noble-gas core stands for the orbitals inside it, and order does not matter.',
   };
+}
+
+function canonicalizeFormula(text) {
+  const compact = text.replace(/[\s^]/g, '').replace(/[{}]/g, '');
+  return compact.replace(/([+-])(\d+)$/, (_, sign, digits) => `${digits}${sign}`);
 }
 
 function acceptedAnswers(check) {
