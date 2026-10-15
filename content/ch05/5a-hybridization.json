@@ -1,0 +1,248 @@
+{
+  "id": "ch5-hybridization",
+  "ch": 5,
+  "openstax_section": "OpenStax AF2e §5.2",
+  "guide_line": "Count electron groups on the atom you were asked about, then name the hybrid set.",
+  "steps": [
+    "Valence bond theory needs hybrid orbitals when the shape from VSEPR does not match a raw s or p orbital. The hybrid set lives on one atom.",
+    "An electron group is one bonding region or one lone pair on that atom. A double bond is one group. A triple bond is one group. Count only the atom in the question.",
+    "The number of hybrid orbitals equals the number of groups. Two groups use sp hybrids and a 180° angle. Three groups use sp2 hybrids and about 120°. Four groups use sp3 hybrids and about 109.5°.",
+    "Five groups use sp3d hybrids. Six groups use sp3d2 hybrids. Leftover p orbitals are not part of the hybrid count. They show up later as pi bonds."
+  ],
+  "worked_example": {
+    "q": "What hybridization does C use in CH4?",
+    "steps": [
+      "Carbon has four single bonds and no lone pair.",
+      "Four groups use four sp3 hybrids."
+    ],
+    "answer": "sp3"
+  },
+  "similar_problem": {
+    "q": "What hybridization does C use in CO2?",
+    "hint": "Each C=O in CO2 is one group, so carbon has two groups.",
+    "answer": "sp"
+  },
+  "sources": ["OpenStax AF2e §5.2"],
+  "problems": [
+    {
+      "id": "ch5-hyb-ch4",
+      "q": "What hybridization does C use in CH4?",
+      "a": "sp3",
+      "why": "Carbon in CH4 has four single bonds and no lone pair. Four groups use sp3 hybrids.",
+      "hints": [
+        "Carbon in CH4 has four single bonds and no lone pair.",
+        "Those four groups on carbon use sp3 hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp3", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-co2",
+      "q": "What hybridization does C use in CO2?",
+      "a": "sp",
+      "why": "CO2 is O=C=O. Each double bond is one group, so carbon has two groups. Two groups use sp hybrids.",
+      "hints": [
+        "Each C=O in CO2 is one group, so carbon has two groups.",
+        "Two groups on the carbon of CO2 use sp hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-ch2o",
+      "q": "What hybridization does C use in CH2O?",
+      "a": "sp2",
+      "why": "Carbon in CH2O has two C–H bonds and one C=O double bond. That is three groups, so the hybrids are sp2.",
+      "hints": [
+        "CH2O’s carbon has two C–H bonds plus one C=O, three groups.",
+        "Three groups on the carbon of CH2O use sp2 hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-nh3",
+      "q": "What hybridization does N use in NH3?",
+      "a": "sp3",
+      "why": "Nitrogen has three N–H bonds and one lone pair. Four groups use sp3 hybrids.",
+      "hints": [
+        "Nitrogen in NH3 has three bonds and one lone pair.",
+        "Three bonds plus that lone pair on nitrogen use sp3 hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp3", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-h2o",
+      "q": "What hybridization does O use in H2O?",
+      "a": "sp3",
+      "why": "Oxygen has two O–H bonds and two lone pairs. Four groups use sp3 hybrids.",
+      "hints": [
+        "Oxygen in water has two bonds and two lone pairs.",
+        "Two bonds plus two lone pairs on oxygen use sp3 hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp3", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-bf3",
+      "q": "What hybridization does B use in BF3?",
+      "a": "sp2",
+      "why": "Boron has three B–F bonds and no lone pair. Three groups use sp2 hybrids.",
+      "hints": [
+        "Boron in BF3 has three bonds and no lone pair.",
+        "Three groups on boron in BF3 use sp2 hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-hcn",
+      "q": "What hybridization does C use in HCN?",
+      "a": "sp",
+      "why": "HCN is H–C≡N. Carbon has two groups: the C–H bond and the triple bond. Two groups use sp hybrids.",
+      "hints": [
+        "The C≡N in HCN is one group, plus the C–H bond.",
+        "Two groups on carbon in HCN use sp hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-pcl5",
+      "q": "What hybridization does P use in PCl5?",
+      "a": "sp3d",
+      "why": "Phosphorus has five P–Cl bonds and no lone pair. Five groups use sp3d hybrids.",
+      "hints": [
+        "Phosphorus in PCl5 has five bonds and no lone pair.",
+        "Five groups on phosphorus use sp3d hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp3d", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-sf6",
+      "q": "What hybridization does S use in SF6?",
+      "a": "sp3d2",
+      "why": "Sulfur has six S–F bonds and no lone pair. Six groups use sp3d2 hybrids.",
+      "hints": [
+        "Sulfur in SF6 has six bonds and no lone pair.",
+        "Six groups on sulfur use sp3d2 hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp3d2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-xef4",
+      "q": "What hybridization does Xe use in XeF4?",
+      "a": "sp3d2",
+      "why": "Xenon has four Xe–F bonds and two lone pairs. Six groups use sp3d2 hybrids.",
+      "hints": [
+        "XeF4 has four bonds and two lone pairs on xenon.",
+        "Six groups on xenon in XeF4 use sp3d2 hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp3d2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-c2h4",
+      "q": "What hybridization does each C use in C2H4?",
+      "a": "sp2",
+      "why": "Each carbon in H2C=CH2 has two C–H bonds and one double bond. Three groups use sp2 hybrids.",
+      "hints": [
+        "Each carbon in C2H4 has two C–H bonds and one C=C.",
+        "Three groups on each carbon of C2H4 use sp2 hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-c2h2",
+      "q": "What hybridization does each C use in C2H2?",
+      "a": "sp",
+      "why": "Each carbon in H–C≡C–H has one C–H bond and one triple bond. Two groups use sp hybrids.",
+      "hints": [
+        "Each carbon in C2H2 has one C–H bond and one C≡C.",
+        "Two groups on each carbon of C2H2 use sp hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-becl2",
+      "q": "What hybridization does Be use in BeCl2?",
+      "a": "sp",
+      "why": "Beryllium has two Be–Cl bonds and no lone pair. Two groups use sp hybrids.",
+      "hints": [
+        "Beryllium in BeCl2 has two bonds and an incomplete octet, with no lone pair.",
+        "Two groups on beryllium use sp hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-so2",
+      "q": "What hybridization does S use in SO2?",
+      "a": "sp2",
+      "why": "Sulfur in SO2 has two bonding regions and one lone pair. Three groups use sp2 hybrids.",
+      "hints": [
+        "Sulfur in SO2 has two bonding regions and one lone pair.",
+        "Those three groups on sulfur use sp2 hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-sf4",
+      "q": "What hybridization does S use in SF4?",
+      "a": "sp3d",
+      "why": "Sulfur has four S–F bonds and one lone pair. Five groups use sp3d hybrids.",
+      "hints": [
+        "Sulfur in SF4 has four bonds and one lone pair.",
+        "Five groups on sulfur in SF4 use sp3d hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp3d", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-xef2",
+      "q": "What hybridization does Xe use in XeF2?",
+      "a": "sp3d",
+      "why": "Xenon has two Xe–F bonds and three lone pairs. Five groups use sp3d hybrids.",
+      "hints": [
+        "Xenon in XeF2 has two bonds and three lone pairs.",
+        "Five groups on xenon in XeF2 use sp3d hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp3d", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-brf5",
+      "q": "What hybridization does Br use in BrF5?",
+      "a": "sp3d2",
+      "why": "Bromine has five Br–F bonds and one lone pair. Six groups use sp3d2 hybrids.",
+      "hints": [
+        "Bromine in BrF5 has five bonds and one lone pair.",
+        "Six groups on bromine use sp3d2 hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp3d2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-pcl3",
+      "q": "What hybridization does P use in PCl3?",
+      "a": "sp3",
+      "why": "Phosphorus has three P–Cl bonds and one lone pair. Four groups use sp3 hybrids.",
+      "hints": [
+        "Phosphorus in PCl3 has three bonds and one lone pair.",
+        "Four groups on phosphorus in PCl3 use sp3 hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp3", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-bf4",
+      "q": "What hybridization does B use in BF4−?",
+      "a": "sp3",
+      "why": "The extra electron lets boron make four B–F bonds and hold no lone pair. Four groups use sp3 hybrids.",
+      "hints": [
+        "Boron in BF4− has four bonds and no lone pair.",
+        "Four groups on boron in BF4− use sp3 hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp3", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-hyb-co3",
+      "q": "What hybridization does C use in CO3^2−?",
+      "a": "sp2",
+      "why": "Carbon in carbonate has three bonding regions and no lone pair. Three groups use sp2 hybrids.",
+      "hints": [
+        "Carbon in carbonate has three bonding regions and no lone pair.",
+        "Three groups on the carbon of carbonate use sp2 hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+    }
+  ]
+}

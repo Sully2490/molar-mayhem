@@ -1,0 +1,188 @@
+{
+  "id": "ch5-multiple-bonds",
+  "ch": 5,
+  "openstax_section": "OpenStax AF2e §5.3",
+  "guide_line": "Hybrid orbitals make the sigma framework and hold lone pairs. Leftover p orbitals make the pi bonds. Resonance moves pi electrons. It does not change the hybrid.",
+  "steps": [
+    "Count groups to name the hybrid, the same way as for a single-bonded atom. Those hybrids overlap end to end to make every sigma bond, and they hold any lone pairs.",
+    "An atom that uses sp2 hybrids has one p orbital left over. In C2H4 that leftover p orbital stands straight up from the plane and overlaps side by side with the other carbon’s leftover p orbital. That overlap is the pi bond. The molecule stays flat so the p orbitals can overlap.",
+    "An atom that uses sp hybrids has two p orbitals left over. In C2H2 those two p orbitals make two pi bonds, so the carbon-carbon link is a triple bond: one sigma plus two pi.",
+    "You can spin the groups on a single bond. The sigma overlap stays the same as they turn. You cannot spin the groups on a double or triple bond without breaking the side-by-side pi overlap.",
+    "Resonance drawings move the pi bond from one place to another. The sigma framework, the group count, and the hybrid stay the same. Pick any one resonance form and count groups."
+  ],
+  "worked_example": {
+    "q": "In C2H4, the pi bond is overlap of which orbitals?",
+    "steps": [
+      "Each carbon has three groups, so each carbon is sp2.",
+      "Each carbon has one p orbital left over. Those two p orbitals overlap side by side.",
+      "The pi bond is overlap of the unhybridized p orbitals."
+    ],
+    "answer": "unhybridized p"
+  },
+  "similar_problem": {
+    "q": "How many unhybridized p orbitals does each carbon in C2H2 use for pi bonds?",
+    "hint": "Each carbon in C2H2 is sp hybridized, so two p orbitals are left out of the hybrid set.",
+    "answer": "2"
+  },
+  "sources": ["OpenStax AF2e §5.3"],
+  "problems": [
+    {
+      "id": "ch5-mb-c2h4-pi",
+      "q": "In C2H4, the pi bond is overlap of which orbitals?",
+      "a": "unhybridized p",
+      "why": "Each carbon in C2H4 is sp2 and has one p orbital left over. Side-by-side overlap of those unhybridized p orbitals is the pi bond.",
+      "hints": [
+        "Each carbon in C2H4 uses sp2 hybrids for its three sigma bonds and keeps one p orbital out.",
+        "The pi bond in C2H4 is overlap of those unhybridized p orbitals."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["unhybridized p", "unhybridized 2p", "2p", "p orbitals", "p"]
+      }
+    },
+    {
+      "id": "ch5-mb-c2h2-pcount",
+      "q": "How many unhybridized p orbitals does each carbon in C2H2 use for pi bonds?",
+      "a": "2",
+      "why": "Each carbon in C2H2 has two groups, so it is sp hybridized. Two p orbitals stay out of the hybrid set, and each one makes a pi bond.",
+      "hints": [
+        "Each carbon in C2H2 is sp hybridized, so two p orbitals are left out of the hybrid set.",
+        "Those two leftover p orbitals on each carbon of C2H2 make the two pi bonds."
+      ],
+      "check": { "kind": "exact", "text": "2", "case": "insensitive", "answers": ["2", "two"] }
+    },
+    {
+      "id": "ch5-mb-c2h4-rotate",
+      "q": "Can the two CH2 groups in C2H4 spin around the C=C bond without breaking the pi bond? Answer yes or no.",
+      "a": "no",
+      "why": "Spinning around the C=C bond would twist the unhybridized p orbitals out of alignment and break the pi overlap. Rotation around that double bond does not happen freely.",
+      "hints": [
+        "The pi bond in C2H4 needs the two leftover p orbitals to stay side by side.",
+        "Turning one CH2 group would break that overlap, so the answer is no."
+      ],
+      "check": { "kind": "exact", "text": "no", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-mb-c2h6-rotate",
+      "q": "Can the two CH3 groups in C2H6 spin around the C–C bond? Answer yes or no.",
+      "a": "yes",
+      "why": "The C–C bond in C2H6 is only a sigma bond. End-to-end overlap does not care how the CH3 groups are turned, so the bond rotates freely.",
+      "hints": [
+        "C2H6 has only a sigma bond between the carbons.",
+        "A sigma bond stays overlapped as the groups turn, so the answer is yes."
+      ],
+      "check": { "kind": "exact", "text": "yes", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-mb-so2",
+      "q": "SO2 can be drawn with the double bond on either oxygen. What is the hybridization of S?",
+      "a": "sp2",
+      "why": "Either drawing gives sulfur two bonding regions and one lone pair. That is three groups, so sulfur is sp2. Moving the pi bond does not change the count.",
+      "hints": [
+        "In either drawing of SO2, sulfur has two bonding regions and one lone pair.",
+        "Three groups stay three groups when the pi bond moves, so sulfur is sp2."
+      ],
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-mb-benzene",
+      "q": "Each carbon in benzene is bonded to two carbons and one hydrogen, with no lone pair. What hybridization does that carbon use?",
+      "a": "sp2",
+      "why": "Three groups and no lone pair mean sp2. The leftover p orbital on each carbon joins the delocalized pi system. Resonance does not change the hybrid.",
+      "hints": [
+        "A benzene carbon has three bonding regions and no lone pair.",
+        "Three groups on that carbon use sp2 hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-mb-co2-p",
+      "q": "Carbon in CO2 is sp hybridized. How many of its p orbitals stay unhybridized and form pi bonds?",
+      "a": "2",
+      "why": "An sp atom hybridizes the s orbital and one p orbital. The other two p orbitals stay unhybridized. In CO2 each of those makes a pi bond to an oxygen.",
+      "hints": [
+        "An sp set uses the s orbital and only one of the three p orbitals.",
+        "Carbon in CO2 keeps two p orbitals out, and each one forms a pi bond."
+      ],
+      "check": { "kind": "exact", "text": "2", "case": "insensitive", "answers": ["2", "two"] }
+    },
+    {
+      "id": "ch5-mb-no3",
+      "q": "Nitrate, NO3−, has the double bond on any one of the three oxygens. What is the hybridization of N?",
+      "a": "sp2",
+      "why": "Nitrogen has three bonding regions and no lone pair in every resonance form. Three groups use sp2 hybrids. The pi electrons are delocalized over the three N–O links.",
+      "hints": [
+        "In every drawing of nitrate, nitrogen has three bonding regions and no lone pair.",
+        "That group count does not change with the resonance form, so nitrogen is sp2."
+      ],
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-mb-ketene-center",
+      "q": "In ketene, H2C=C=O, what hybridization does the central carbon use?",
+      "a": "sp",
+      "why": "The central carbon has two double bonds and no lone pair. Two groups use sp hybrids. Each leftover p orbital makes one of the two pi bonds.",
+      "hints": [
+        "The middle carbon of H2C=C=O has two double bonds and nothing else attached.",
+        "Two groups on that central carbon use sp hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-mb-ketene-end",
+      "q": "In ketene, H2C=C=O, what hybridization does the CH2 carbon use?",
+      "a": "sp2",
+      "why": "The CH2 carbon has two C–H bonds and one double bond. Three groups use sp2 hybrids. Its leftover p orbital makes the C=C pi bond.",
+      "hints": [
+        "The CH2 carbon in ketene has two C–H bonds and one C=C.",
+        "Three groups on that end carbon use sp2 hybrids."
+      ],
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-mb-carbonate",
+      "q": "Resonance in CO3^2− moves the pi bond from one oxygen to another. Does the hybridization of carbon change? Answer yes or no.",
+      "a": "no",
+      "why": "Carbon has three bonding regions in every resonance form. The hybrid stays sp2. Only the pi electrons move.",
+      "hints": [
+        "Count carbon’s groups in any one drawing of carbonate, then in another.",
+        "The count stays at three, so the hybridization does not change."
+      ],
+      "check": { "kind": "exact", "text": "no", "case": "insensitive" }
+    },
+    {
+      "id": "ch5-mb-c2h4-sigma",
+      "q": "The sigma part of the C=C bond in C2H4 is overlap of which hybrid orbitals?",
+      "a": "sp2",
+      "why": "Each carbon is sp2. The end-to-end overlap of one sp2 hybrid from each carbon is the sigma part of the double bond. The pi part uses the leftover p orbitals.",
+      "hints": [
+        "Each carbon in C2H4 builds its sigma bonds from sp2 hybrids.",
+        "The C–C sigma bond is sp2 overlapping sp2."
+      ],
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive", "answers": ["sp2", "sp2 and sp2"] }
+    },
+    {
+      "id": "ch5-mb-c2h2-sigma",
+      "q": "The sigma part of the C≡C bond in C2H2 is overlap of which hybrid orbitals?",
+      "a": "sp",
+      "why": "Each carbon is sp. One sp hybrid from each carbon overlaps end to end to make the sigma part of the triple bond. The two pi bonds use the leftover p orbitals.",
+      "hints": [
+        "Each carbon in C2H2 builds its sigma bonds from sp hybrids.",
+        "The C–C sigma bond in C2H2 is sp overlapping sp."
+      ],
+      "check": { "kind": "exact", "text": "sp", "case": "insensitive", "answers": ["sp", "sp and sp"] }
+    },
+    {
+      "id": "ch5-mb-o3",
+      "q": "Ozone, O3, can be drawn with the double bond on either end. What is the hybridization of the central oxygen?",
+      "a": "sp2",
+      "why": "The central oxygen has two bonding regions and one lone pair in either drawing. Three groups use sp2 hybrids. The pi bond is delocalized.",
+      "hints": [
+        "The middle oxygen in ozone has two bonding regions and one lone pair.",
+        "Three groups on that oxygen use sp2 hybrids in both drawings."
+      ],
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+    }
+  ]
+}
