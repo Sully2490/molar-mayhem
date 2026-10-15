@@ -5,9 +5,9 @@
   "guide_line": "Use a calorimeter: heat lost by one part is gained by the other.",
   "steps": [
     "A calorimeter is an insulated container. If no heat leaks out, q of one part plus q of the other part equals zero.",
-    "In a coffee-cup calorimeter the pressure stays about constant. For a reaction in water, q_reaction = -q_solution. Use q = c x m x ΔT. Dilute solutions use c = 4.184 J/g°C.",
+    "In a coffee-cup calorimeter the pressure stays about constant. The reaction is the system and the solution is the surroundings. q_reaction = -q_solution. Use q = c x m x ΔT. Dilute solutions use c = 4.184 J/g°C and a density of about 1.000 g/mL.",
     "In a bomb calorimeter the volume stays constant. q_reaction = -C_cal x ΔT. If the water and the bomb both warm, add those two heats, then change the sign.",
-    "When a hot metal is dropped into cooler water, q_metal + q_water = 0. Both parts end at the same final temperature.",
+    "When a hot metal is dropped into cooler water, q_metal + q_water = 0. Both parts end at the same final temperature. The unknown can be that shared final temperature, the metal's specific heat, or the metal's starting temperature.",
     "The sign follows the object you name. Water that warms has positive q. The reaction or the hot metal has the opposite sign. Report 4 significant figures."
   ],
   "worked_example": {
@@ -148,6 +148,36 @@
         "The aluminum starts at 15.00 °C and the water starts at 85.00 °C. Use 0.897 for Al and 4.184 for water, and set the heats to cancel."
       ],
       "check": { "kind": "numeric", "value": 62.41, "sigFigs": 4, "unit": "°C" }
+    },
+    {
+      "id": "ch09-calorimetry-13",
+      "q": "75.00 g of copper (c = 0.385 J/g°C, OpenStax AF2e Table 9.1) is placed in 150.0 g of water (c = 4.184 J/g°C) at 22.10 °C. The final temperature is 28.40 °C. What was the copper's starting temperature, in °C? Report 4 significant figures.",
+      "a": "165.3 °C",
+      "why": "q_water = 4.184 x 150.0 x (28.40 - 22.10) = 3953.88 J. The copper lost that heat: 0.385 x 75.00 x (28.40 - T) = -3953.88. 28.40 - T = -136.931, so T = 165.331 °C, which is 165.3 °C to 4 significant figures.",
+      "hints": [
+        "The 150.0 g of water warms from 22.10 °C to 28.40 °C. The 75.00 g of copper, c = 0.385, lost that heat and also ended at 28.40 °C."
+      ],
+      "check": { "kind": "numeric", "value": 165.3, "sigFigs": 4, "unit": "°C" }
+    },
+    {
+      "id": "ch09-calorimetry-14",
+      "q": "A reaction warms 125.0 mL of dilute solution from 19.50 °C to 24.70 °C in a coffee cup. Use a density of 1.000 g/mL and c = 4.184 J/g°C. What is q for the reaction, in kJ? Report 4 significant figures.",
+      "a": "-2.720 kJ",
+      "why": "Mass = 125.0 mL x 1.000 g/mL = 125.0 g. q_solution = 4.184 x 125.0 x (24.70 - 19.50) = 2719.6 J = 2.7196 kJ. q_reaction = -2.720 kJ to 4 significant figures.",
+      "hints": [
+        "Turn 125.0 mL into grams with 1.000 g/mL, then use the rise from 19.50 °C to 24.70 °C. Give the reaction the opposite sign."
+      ],
+      "check": { "kind": "numeric", "value": -2.72, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-calorimetry-15",
+      "q": "A dissolving salt makes the coffee-cup solution colder. Is that dissolving endothermic or exothermic?",
+      "a": "endothermic",
+      "why": "The solution lost heat, so the dissolving took heat in. The process is endothermic.",
+      "hints": [
+        "The coffee-cup solution got colder, so the dissolving took heat from the water. Name that direction."
+      ],
+      "check": { "kind": "exact", "text": "endothermic", "case": "insensitive" }
     }
   ]
 }

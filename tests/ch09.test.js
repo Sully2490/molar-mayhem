@@ -62,7 +62,7 @@ test('every hint is specific to one problem', async () => {
       seen.set(hint, problem.id);
     }
   }
-  assert.equal(seen.size, 4 + 48);
+  assert.equal(seen.size, 4 + 57);
 });
 
 test('chapter 9 answer key grades and a wrong answer fails', async (t) => {
@@ -83,5 +83,5 @@ test('chapter 9 answer key grades and a wrong answer fails', async (t) => {
       count += 1;
     }
   }
-  assert.equal(count, 48);
+  assert.equal(count, 57);
 });

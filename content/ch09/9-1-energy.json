@@ -4,10 +4,10 @@
   "openstax_section": "OpenStax AF2e §9.1",
   "guide_line": "Find heat from q = c m ΔT, and tell heat from temperature.",
   "steps": [
-    "Temperature tells how hot a sample is. Heat is energy moving from the hotter object to the cooler one.",
+    "Temperature tells how hot a sample is. Heat is energy moving from the hotter object to the cooler one. Two samples can share a temperature and still need different amounts of heat. The larger mass needs more heat for the same temperature rise.",
     "Specific heat, c, is the energy to warm 1 g of a substance by 1 °C. Heat capacity, C, is the energy to warm the whole sample by 1 °C. C = c x m.",
     "q = c x m x ΔT, and ΔT = T_final - T_initial. q is positive when the sample warms and negative when it cools.",
-    "Liquid water has c = 4.184 J/g°C (OpenStax AF2e Table 9.1). 1 cal = 4.184 J. One food Calorie is 4.184 kJ.",
+    "Liquid water has c = 4.184 J/g°C (OpenStax AF2e Table 9.1). 1 cal = 4.184 J, so divide joules by 4.184 to get calories. One food Calorie is 4.184 kJ.",
     "A change that releases heat is exothermic. A change that takes heat in is endothermic. Report each calculated number to 4 significant figures."
   ],
   "worked_example": {
@@ -148,6 +148,26 @@
         "Silicon's table value is 0.712 J/g°C. ΔT for this 40.00 g piece is 80.00 minus 25.00."
       ],
       "check": { "kind": "numeric", "value": 1566, "sigFigs": 4, "unit": "J" }
+    },
+    {
+      "id": "ch09-energy-13",
+      "q": "Convert 860.0 J to calories. Use 1 cal = 4.184 J. Report 4 significant figures.",
+      "a": "205.5 cal",
+      "why": "860.0 J / 4.184 J/cal = 205.545 cal, which is 205.5 cal to 4 significant figures.",
+      "hints": [
+        "These are small calories. Divide 860.0 J by 4.184 J/cal."
+      ],
+      "check": { "kind": "numeric", "value": 205.5, "sigFigs": 4, "unit": "cal" }
+    },
+    {
+      "id": "ch09-energy-14",
+      "q": "90.00 g of water and 360.0 g of water are both at 18.00 °C. Which sample needs more heat to reach 28.00 °C? Enter that mass, in g. Use c = 4.184 J/g°C.",
+      "a": "360.0 g",
+      "why": "Both samples rise by 10.00 °C and water's c is the same, so the larger mass needs more heat. That mass is 360.0 g.",
+      "hints": [
+        "The 90.00 g and 360.0 g water samples start at the same 18.00 °C and rise by the same amount. Pick the larger mass."
+      ],
+      "check": { "kind": "numeric", "value": 360, "sigFigs": 4, "unit": "g" }
     }
   ]
 }

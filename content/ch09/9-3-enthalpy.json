@@ -5,7 +5,7 @@
   "guide_line": "Use ΔH as a state function: scale it, reverse it, and build it from ΔHf° or Hess's law.",
   "steps": [
     "The first law says ΔU = q + w. q is positive when heat enters the system. w is positive when work is done on the system.",
-    "Enthalpy is H = U + PV. At constant pressure, ΔH = q_p. ΔH is negative for an exothermic reaction and positive for an endothermic one.",
+    "Enthalpy is H = U + PV. At constant pressure, ΔH = q_p. ΔH is a state function, so only the start and the end matter, not the path. ΔH is negative for an exothermic reaction and positive for an endothermic one. When the moles of gas do not change, ΔH equals ΔU.",
     "ΔH matches the moles in the equation. Multiply the equation and ΔH by the same factor. Reverse the equation and change the sign of ΔH. Write the physical states.",
     "ΔHf° is the enthalpy change for making 1 mol of a substance from its elements in their standard states. An element in its standard state has ΔHf° = 0.",
     "ΔH° = Σ n ΔHf°(products) - Σ n ΔHf°(reactants). Hess's law: add the ΔH values of steps that sum to the target equation. Report 4 significant figures."
@@ -149,6 +149,46 @@
         "A formation equation has one product. Copy C2H5OH with those capitals."
       ],
       "check": { "kind": "exact", "text": "C2H5OH", "case": "sensitive" }
+    },
+    {
+      "id": "ch09-enthalpy-13",
+      "q": "Heat, q, can depend on the path. Enthalpy change does not. Which one is the state function? Enter q or ΔH.",
+      "a": "ΔH",
+      "why": "ΔH depends only on the starting and ending states. Heat can differ when the path differs, so q is not the state function.",
+      "hints": [
+        "A state function ignores the path. Between q and ΔH, pick the enthalpy change."
+      ],
+      "check": { "kind": "exact", "text": "ΔH", "case": "sensitive", "answers": ["DH", "delta H"] }
+    },
+    {
+      "id": "ch09-enthalpy-14",
+      "q": "Use Hess's law to find ΔH° for H2(g) + 1/2 O2(g) → H2O(g), in kJ. (1) 2 H2(g) + O2(g) → 2 H2O(l), ΔH° = -571.66 kJ. (2) H2O(l) → H2O(g), ΔH° = 44.01 kJ. These values follow OpenStax AF2e Appendix G. Report 4 significant figures.",
+      "a": "-241.8 kJ",
+      "why": "Halve step (1): -285.83 kJ. Add step (2): -285.83 + 44.01 = -241.82 kJ, which is -241.8 kJ to 4 significant figures.",
+      "hints": [
+        "The target makes one H2O(g). Halve the -571.66 kJ liquid-water step, then add the +44.01 kJ change from liquid to gas."
+      ],
+      "check": { "kind": "numeric", "value": -241.8, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-enthalpy-15",
+      "q": "CO(g) + 1/2 O2(g) → CO2(g) has ΔH° = -282.99 kJ. Appendix G gives ΔHf° of CO2(g) as -393.51 kJ/mol. O2 is 0. What is ΔHf° of CO(g), in kJ/mol? Report 4 significant figures.",
+      "a": "-110.5 kJ/mol",
+      "why": "-282.99 = -393.51 - ΔHf°(CO). ΔHf°(CO) = -393.51 - (-282.99) = -110.52 kJ/mol, which is -110.5 kJ/mol to 4 significant figures.",
+      "hints": [
+        "The unknown is ΔHf° of CO, a reactant. -282.99 kJ equals -393.51 minus that unknown. Oxygen is 0."
+      ],
+      "check": { "kind": "numeric", "value": -110.5, "sigFigs": 4, "unit": "kJ/mol" }
+    },
+    {
+      "id": "ch09-enthalpy-16",
+      "q": "At constant pressure, with only expansion work, which reaction has ΔH = ΔU? A: N2(g) + 3 H2(g) → 2 NH3(g). B: H2(g) + Cl2(g) → 2 HCl(g). Enter A or B.",
+      "a": "B",
+      "why": "ΔH and ΔU differ when the moles of gas change. Reaction A changes the gas moles from 4 to 2. Reaction B stays at 2 mol of gas, so ΔH = ΔU.",
+      "hints": [
+        "Compare moles of gas on each side. A goes from 4 mol of gas to 2. B stays at 2 mol of gas."
+      ],
+      "check": { "kind": "exact", "text": "B", "case": "sensitive" }
     }
   ]
 }
