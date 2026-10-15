@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import { PROGRESS_KEY } from '../js/progress.js';
 import {
+  answerFields,
   examHash,
   freshSession,
   gradeExam3,
@@ -48,6 +49,28 @@ const exact = (id, lessonId, chapter, text) => ({
   hints: ['Count the groups.'],
   check: { kind: 'exact', text, case: 'insensitive' },
   openstax_section: `OpenStax AF2e §${chapter}.1`,
+});
+
+test('the value box uses the shared keypad and every input stays plain text', () => {
+  const plain = answerFields({ id: 'n', check: { kind: 'numeric', value: 59.41, unit: 'g' } });
+  const negative = answerFields({ id: 'neg', check: { kind: 'numeric', value: -29.67, unit: 'kJ' } });
+  const sci = answerFields({ id: 'sci', check: { kind: 'numeric', value: 4.307e-19, unit: 'J' } });
+  const word = answerFields({ id: 'w', check: { kind: 'exact', text: 'sp3' } });
+
+  assert.match(plain, /name="value"[^>]*inputmode="decimal"/);
+  assert.equal(/name="unit"[^>]*inputmode=/.test(plain), false);
+  assert.equal(/name="value"[^>]*inputmode=/.test(negative), false);
+  assert.equal(/name="value"[^>]*inputmode=/.test(sci), false);
+  assert.equal(/name="answer"[^>]*inputmode=/.test(word), false);
+
+  for (const html of [plain, negative, sci, word]) {
+    const inputs = html.match(/<input\b[^>]*>/g);
+    assert.ok(inputs?.length);
+    for (const tag of inputs) {
+      assert.match(tag, /autocapitalize="off"/);
+      assert.match(tag, /spellcheck="false"/);
+    }
+  }
 });
 
 test('practicing lessons weigh more than mastered lessons', () => {

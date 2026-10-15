@@ -84,5 +84,6 @@ export function bindVideos(root) {
     const frame = button.closest('[data-video-frame]');
     if (!video || !frame) return;
     frame.innerHTML = playerHtml(video);
+    frame.querySelector('iframe')?.focus();
   }, { signal: abort.signal });
 }

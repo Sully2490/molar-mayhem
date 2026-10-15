@@ -115,8 +115,17 @@ test('a tap is what inserts the iframe', () => {
     title: 'Sigma and pi bonds',
     description: 'End-to-end overlap is sigma.',
   };
+  const iframe = {
+    focused: false,
+    focus() {
+      this.focused = true;
+    },
+  };
   const frame = {
     innerHTML: '',
+    querySelector(selector) {
+      return selector === 'iframe' ? iframe : null;
+    },
   };
   const button = {
     attrs: {
@@ -153,6 +162,7 @@ test('a tap is what inserts the iframe', () => {
   assert.match(frame.innerHTML, /youtube-nocookie\.com\/embed\/abcdefghijk/);
   assert.match(frame.innerHTML, /title="Sigma and pi bonds"/);
   assert.doesNotMatch(frame.innerHTML, /start=/);
+  assert.equal(iframe.focused, true);
 });
 
 test('the published catalog stores ids only and is public-only', () => {

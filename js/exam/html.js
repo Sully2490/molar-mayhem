@@ -1,4 +1,4 @@
-import { feedbackFor } from '../learn.js';
+import { feedbackFor, keypadFor } from '../learn.js';
 import { grade } from '../grade.js';
 import { masteryWord } from './mastery.js';
 import { answerText, scoreReport } from './report.js';
@@ -15,18 +15,21 @@ export function needsUnit(problem) {
   return Boolean(problem?.check?.unit);
 }
 
+const fieldAttrs = 'autocomplete="off" autocapitalize="off" spellcheck="false"';
+
 export function answerFields(problem) {
   const id = escapeHtml(problem.id);
+  const keypad = keypadFor(problem);
   if (needsUnit(problem)) {
     return `
       <div class="mm-answer-row">
         <div class="mm-answer-field">
           <label class="answer-label" for="value-${id}">Value</label>
-          <input id="value-${id}" name="value" inputmode="decimal" autocomplete="off">
+          <input id="value-${id}" name="value" ${fieldAttrs}${keypad}>
         </div>
         <div class="mm-answer-field">
           <label class="answer-label" for="unit-${id}">Unit</label>
-          <input id="unit-${id}" name="unit" autocomplete="off">
+          <input id="unit-${id}" name="unit" ${fieldAttrs}>
         </div>
       </div>
     `;
@@ -34,7 +37,7 @@ export function answerFields(problem) {
   return `
     <div class="mm-answer-field">
       <label class="answer-label" for="answer-${id}">Your answer</label>
-      <input id="answer-${id}" name="answer" autocomplete="off">
+      <input id="answer-${id}" name="answer" ${fieldAttrs}${keypad}>
     </div>
   `;
 }
