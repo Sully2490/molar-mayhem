@@ -1,0 +1,123 @@
+.mm-tools {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0.75rem 1.15rem 0;
+}
+
+.mm-search form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.mm-search label {
+  font-weight: 700;
+}
+
+.mm-search input[type="search"] {
+  font: inherit;
+  min-height: 44px;
+  min-width: 12rem;
+  flex: 1;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--line, #ddd4c3);
+  border-radius: 0.6rem;
+  background: white;
+  color: var(--ink, #1c2430);
+}
+
+.mm-focus-toggle,
+.mm-update-button {
+  min-height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--teal, #0f5c56);
+  background: white;
+  color: var(--teal-deep, #0a3d39);
+  font: inherit;
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+}
+
+.mm-search-status {
+  min-height: 1.2rem;
+  margin: 0.35rem 0 0;
+  color: var(--muted, #5d675f);
+}
+
+.mm-search-results {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  background: var(--card, #fffaf2);
+  border: 1px solid var(--line, #ddd4c3);
+  border-radius: 0.9rem;
+  max-height: 18rem;
+  overflow: auto;
+}
+
+.mm-search-results a {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.8rem;
+  color: var(--teal-deep, #0a3d39);
+  text-decoration: none;
+}
+
+.mm-search-results a:hover,
+.mm-search-results a:focus {
+  background: var(--paper, #f3efe4);
+}
+
+.mm-search-meta {
+  color: var(--muted, #5d675f);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+body.mm-focus header,
+body.mm-focus .site-header,
+body.mm-focus footer,
+body.mm-focus .site-footer,
+body.mm-focus .skip,
+body.mm-focus #tray,
+body.mm-focus #tray-backdrop,
+body.mm-focus .mm-search {
+  display: none !important;
+}
+
+body.mm-focus .mm-tools {
+  margin: 0;
+  padding: 0;
+}
+
+body.mm-focus #view .page > :not(.mm-focus-keep) {
+  display: none !important;
+}
+
+body.mm-focus .mm-focus-toggle {
+  position: fixed;
+  z-index: 30;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: var(--teal, #0f5c56);
+  color: white;
+}
+
+.mm-update {
+  position: fixed;
+  z-index: 40;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  background: var(--ink, #1c2430);
+  color: white;
+  border-radius: 999px;
+  padding: 0.25rem;
+  box-shadow: 0 8px 24px rgb(20 28 26 / 20%);
+}
+
+.mm-update-button {
+  background: white;
+}

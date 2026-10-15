@@ -1,0 +1,27 @@
+.chem-kb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  width: 100%;
+  margin: 0.45rem 0 0.15rem;
+}
+
+.chem-kb-key {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--line, #ddd4c3);
+  border-radius: 0.6rem;
+  background: var(--card, #fffaf2);
+  color: var(--ink, #1c2430);
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.chem-kb-key:hover,
+.chem-kb-key:focus-visible {
+  border-color: var(--teal, #0f5c56);
+}
