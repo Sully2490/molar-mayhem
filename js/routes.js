@@ -1,5 +1,10 @@
+import { renderCards } from './cards.js';
+import { renderGlossary } from './glossary.js';
 import { labShell } from './lab/index.js';
+import { renderMap } from './map.js';
 import { renderPrepPage } from './prep.js';
+import { emptyProgress } from './progress.js';
+import { renderDrill } from './unit-entry.js';
 
 export const ROUTE_IDS = ['Home', 'Map', 'Learn', 'Lab', 'Drill', 'Prep', 'Cards'];
 
@@ -19,15 +24,12 @@ const ROUTES = {
         <a class="route-card" href="#Cards"><strong>Cards</strong><span>Quick review</span></a>
       </div>
       <p><button type="button" class="table-btn" data-open-tray>Open the periodic table</button></p>
+      ${renderGlossary()}
     `,
   },
   Map: {
     title: 'Map',
-    body: `
-      <p class="kicker">Coming soon</p>
-      <h1>Map</h1>
-      <p>The chapter map is not here yet. It will list chapters 1–9 so you can jump to a lesson.</p>
-    `,
+    body: '',
   },
   Learn: {
     title: 'Learn',
@@ -39,11 +41,7 @@ const ROUTES = {
   },
   Drill: {
     title: 'Drill',
-    body: `
-      <p class="kicker">Coming soon</p>
-      <h1>Drill</h1>
-      <p>Drills are not here yet. They will be short practice on the topics that are easy to miss.</p>
-    `,
+    body: '',
   },
   Prep: {
     title: 'Prep',
@@ -55,11 +53,7 @@ const ROUTES = {
   },
   Cards: {
     title: 'Cards',
-    body: `
-      <p class="kicker">Coming soon</p>
-      <h1>Cards</h1>
-      <p>Cards are not here yet. They will be quick prompts you can flip through.</p>
-    `,
+    body: '',
   },
   Lab: {
     title: 'Lab',
@@ -88,6 +82,9 @@ export function routeTitle(id) {
 
 export function renderRoute(id) {
   if (id === 'Prep') return renderPrepPage([]);
+  if (id === 'Drill') return renderDrill();
+  if (id === 'Map') return renderMap([], emptyProgress());
+  if (id === 'Cards') return renderCards();
   const route = ROUTES[id] ?? ROUTES.Home;
   const routeId = ROUTES[id] ? id : 'Home';
   return `<section class="page" data-route="${routeId}">${route.body}</section>`;

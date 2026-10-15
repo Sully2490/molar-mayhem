@@ -450,7 +450,7 @@
         "Hint after each miss, worked solution after last attempt",
         "Progress saved to localStorage, syncable via #sync= link"
       ],
-      "passing": false
+      "passing": true
     },
     {
       "id": "P1",

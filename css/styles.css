@@ -73,7 +73,13 @@ nav ul {
 nav a,
 .table-btn,
 .trend,
-#close-tray {
+#close-tray,
+.term-btn,
+.card-controls button,
+.sync-actions button,
+.lesson-list button,
+.answer-row button,
+.term-popup button {
   min-height: 44px;
   border-radius: 999px;
 }
@@ -93,7 +99,13 @@ nav a[aria-current="page"] {
 
 .table-btn,
 .trend,
-#close-tray {
+#close-tray,
+.term-btn,
+.card-controls button,
+.sync-actions button,
+.lesson-list button,
+.answer-row button,
+.term-popup button {
   border: 1px solid var(--teal);
   background: white;
   color: var(--teal-deep);
@@ -155,6 +167,16 @@ h1 { font-size: clamp(2rem, 5vw, 2.7rem); margin: 0 0 0.6rem; }
 .route-card span { color: var(--muted); font-size: 0.92rem; }
 
 .route-card:hover { border-color: var(--teal); }
+
+ul.lesson-list { list-style: none; }
+
+.lesson-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.75rem;
+  padding: 0.35rem 0;
+}
 
 .lesson-list, .problem {
   background: var(--card);
@@ -368,6 +390,68 @@ h1 { font-size: clamp(2rem, 5vw, 2.7rem); margin: 0 0 0.6rem; }
   .tray { width: 100%; }
 }
 
+.term-row, .card-controls, .sync-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.6rem 0;
+}
+
+.term-popup {
+  margin-top: 0.8rem;
+  padding: 0.85rem;
+  border: 2px solid var(--teal);
+  border-radius: 0.8rem;
+  background: white;
+}
+
+.study-card {
+  min-height: 8rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: var(--card);
+}
+
+.study-card:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.sync-box textarea {
+  width: 100%;
+  min-height: 5rem;
+  font: inherit;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+}
+
+.toast {
+  margin: 0.6rem 0;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.6rem;
+  background: #e7f6f3;
+  font-weight: 700;
+}
+
+.confetti { position: relative; height: 0; }
+
+.confetti-bit {
+  position: absolute;
+  top: 0;
+  left: var(--x, 50%);
+  width: 8px;
+  height: 10px;
+  background: var(--teal);
+  animation: confetti-fall 900ms ease-out var(--delay, 0ms) forwards;
+}
+
+@keyframes confetti-fall {
+  to { transform: translateY(4.5rem) rotate(40deg); opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; }
+  .confetti-bit { animation: none; display: none; }
 }

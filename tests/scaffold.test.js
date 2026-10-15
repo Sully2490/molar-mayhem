@@ -26,13 +26,22 @@ test('index.html is a static Molar Mayhem page', () => {
   assert.doesNotMatch(html, /webpack|vite|parcel|rollup/i);
 });
 
-test('hash routes render placeholders', () => {
-  for (const route of ['Map', 'Drill', 'Cards']) {
-    const html = renderRoute(route);
-    assert.match(html, new RegExp(`data-route="${route}"`));
-    assert.match(html, new RegExp(`<h1>${route}</h1>`));
-    assert.match(html, /Coming soon/);
-  }
+test('hash routes render the study pages', () => {
+  const map = renderRoute('Map');
+  assert.match(map, /data-route="Map"/);
+  assert.match(map, /<h1>Map<\/h1>/);
+  assert.match(map, /Skip ahead any time/);
+  assert.doesNotMatch(map, /Coming soon/);
+  const drill = renderRoute('Drill');
+  assert.match(drill, /data-route="Drill"/);
+  assert.match(drill, /<h1>Drill<\/h1>/);
+  assert.match(drill, /for="value-i1-gold"/);
+  assert.doesNotMatch(drill, /Coming soon/);
+  const cards = renderRoute('Cards');
+  assert.match(cards, /data-route="Cards"/);
+  assert.match(cards, /<h1>Cards<\/h1>/);
+  assert.match(cards, /data-card-flip/);
+  assert.doesNotMatch(cards, /Coming soon/);
   const learn = renderRoute('Learn');
   assert.match(learn, /data-route="Learn"/);
   assert.match(learn, /<h1>Learn<\/h1>/);
@@ -83,5 +92,5 @@ test('check:content command exits 0 when MM_SOURCES is unset', () => {
 test('F00 and F03 are marked passing', () => {
   const list = JSON.parse(read('feature_list.json'));
   const passing = new Set(list.features.filter((feature) => feature.passing).map((feature) => feature.id));
-  assert.deepEqual([...passing].sort(), ['F00', 'F03', 'I1']);
+  assert.deepEqual([...passing].sort(), ['F00', 'F03', 'I1', 'I8']);
 });

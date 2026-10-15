@@ -1,7 +1,13 @@
+import { bindCards, renderCards } from './cards.js';
+import { bindDrill } from './drills.js';
+import { bindGlossary } from './glossary.js';
 import { bindLearn, loadLessons, renderLearn } from './learn.js';
-import { bindPrep, loadFinalProblems, renderPrepPage } from './prep.js';
-import { lessonIdFromHash, renderRoute, routeFromHash, routeTitle } from './routes.js';
+import { bindMap, renderMap } from './map.js';
 import { renderTable } from './periodic.js';
+import { bindPrep, loadFinalProblems, renderPrepPage } from './prep.js';
+import { openLesson, readProgress, writeProgress } from './progress.js';
+import { lessonIdFromHash, renderRoute, routeFromHash, routeTitle } from './routes.js';
+import { applySyncHash, rememberNote } from './sync.js';
 import { bindUnitEntry, renderDrill } from './unit-entry.js';
 
 const view = document.querySelector('#view');
@@ -16,18 +22,42 @@ let selectedZ = null;
 let lastFocus = null;
 let paintGeneration = 0;
 
+function takeSyncHash() {
+  const applied = applySyncHash(location.hash);
+  if (!applied.handled) return false;
+  rememberNote(applied.note);
+  if (location.hash !== applied.nextHash) {
+    location.hash = applied.nextHash;
+    return true;
+  }
+  return false;
+}
+
 async function paintRoute() {
+  if (takeSyncHash()) return;
   const generation = ++paintGeneration;
   const id = routeFromHash(location.hash);
   if (id === 'Learn') {
+    const lessonId = lessonIdFromHash(location.hash);
+    if (lessonId) writeProgress(openLesson(readProgress(), lessonId));
     const lessons = await loadLessons();
     if (generation !== paintGeneration) return;
-    view.innerHTML = renderLearn(lessons, lessonIdFromHash(location.hash));
+    view.innerHTML = renderLearn(lessons, lessonId);
     bindLearn(view, lessons);
   } else if (id === 'Drill') {
     if (generation !== paintGeneration) return;
     view.innerHTML = renderDrill();
     bindUnitEntry(view);
+    bindDrill(view);
+  } else if (id === 'Map') {
+    const lessons = await loadLessons();
+    if (generation !== paintGeneration) return;
+    view.innerHTML = renderMap(lessons, readProgress());
+    bindMap(view);
+  } else if (id === 'Cards') {
+    if (generation !== paintGeneration) return;
+    view.innerHTML = renderCards();
+    bindCards(view);
   } else if (id === 'Prep') {
     if (generation !== paintGeneration) return;
     view.innerHTML = renderRoute(id);
@@ -44,6 +74,7 @@ async function paintRoute() {
       });
   } else {
     view.innerHTML = renderRoute(id);
+    if (id === 'Home') bindGlossary(view);
   }
   if (generation !== paintGeneration) return;
   document.title = id === 'Home' ? 'Molar Mayhem' : `${routeTitle(id)} — Molar Mayhem`;
