@@ -1,0 +1,199 @@
+{
+  "id": "ch4-polarity",
+  "ch": 4,
+  "openstax_section": "OpenStax AF2e §4.6",
+  "guide_line": "Decide whether a molecule is polar.",
+  "steps": [
+    "A polar bond is not enough. Look at the shape.",
+    "If the outer atoms match and the shape is symmetric, the dipoles cancel. The molecule is nonpolar.",
+    "Linear AX2, trigonal planar AX3, tetrahedral AX4, and square planar AX4E2 cancel when the outer atoms match.",
+    "A bent or pyramidal molecule, or mixed outer atoms, is usually polar.",
+    "Type polar or nonpolar."
+  ],
+  "worked_example": {
+    "q": "Is CO2 polar or nonpolar?",
+    "steps": [
+      "Each C=O is polar.",
+      "The linear shape cancels them."
+    ],
+    "answer": "nonpolar"
+  },
+  "similar_problem": {
+    "q": "Is H2O polar or nonpolar?",
+    "hint": "Water is bent.",
+    "answer": "polar"
+  },
+  "sources": [
+    "OpenStax AF2e §4.6"
+  ],
+  "problems": [
+    {
+      "id": "ch4-p-co2",
+      "q": "Is CO2 polar or nonpolar?",
+      "a": "nonpolar",
+      "why": "The two C=O dipoles point opposite ways and cancel.",
+      "hints": [
+        "Polar bonds can cancel in a symmetric shape."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "nonpolar"
+      }
+    },
+    {
+      "id": "ch4-p-h2o",
+      "q": "Is H2O polar or nonpolar?",
+      "a": "polar",
+      "why": "The bent shape leaves the bond dipoles uncanceled.",
+      "hints": [
+        "Polar bonds can cancel in a symmetric shape."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "polar"
+      }
+    },
+    {
+      "id": "ch4-p-ccl4",
+      "q": "Is CCl4 polar or nonpolar?",
+      "a": "nonpolar",
+      "why": "Four identical C-Cl bonds on a tetrahedron cancel.",
+      "hints": [
+        "Polar bonds can cancel in a symmetric shape."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "nonpolar"
+      }
+    },
+    {
+      "id": "ch4-p-ch2cl2",
+      "q": "Is CH2Cl2 polar or nonpolar?",
+      "a": "polar",
+      "why": "The outer atoms are not all the same, so the dipoles do not cancel.",
+      "hints": [
+        "Polar bonds can cancel in a symmetric shape."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "polar"
+      }
+    },
+    {
+      "id": "ch4-p-nh3",
+      "q": "Is NH3 polar or nonpolar?",
+      "a": "polar",
+      "why": "The lone pair makes a pyramidal shape.",
+      "hints": [
+        "Polar bonds can cancel in a symmetric shape."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "polar"
+      }
+    },
+    {
+      "id": "ch4-p-bf3",
+      "q": "Is BF3 polar or nonpolar?",
+      "a": "nonpolar",
+      "why": "Three identical bonds on a trigonal plane cancel.",
+      "hints": [
+        "Polar bonds can cancel in a symmetric shape."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "nonpolar"
+      }
+    },
+    {
+      "id": "ch4-p-so2",
+      "q": "Is SO2 polar or nonpolar?",
+      "a": "polar",
+      "why": "SO2 is bent, so the S-O dipoles do not cancel.",
+      "hints": [
+        "Polar bonds can cancel in a symmetric shape."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "polar"
+      }
+    },
+    {
+      "id": "ch4-p-chcl3",
+      "q": "Is CHCl3 polar or nonpolar?",
+      "a": "polar",
+      "why": "Hydrogen and chlorine pull differently.",
+      "hints": [
+        "Polar bonds can cancel in a symmetric shape."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "polar"
+      }
+    },
+    {
+      "id": "ch4-p-xef4",
+      "q": "Is XeF4 polar or nonpolar?",
+      "a": "nonpolar",
+      "why": "Square planar XeF4 puts opposite Xe-F dipoles against each other.",
+      "hints": [
+        "Polar bonds can cancel in a symmetric shape."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "nonpolar"
+      }
+    },
+    {
+      "id": "ch4-p-hcl",
+      "q": "Is HCl polar or nonpolar?",
+      "a": "polar",
+      "why": "One polar bond has nothing to cancel it.",
+      "hints": [
+        "Polar bonds can cancel in a symmetric shape."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "polar"
+      }
+    },
+    {
+      "id": "ch4-p-sf4",
+      "q": "Is SF4 polar or nonpolar?",
+      "a": "polar",
+      "why": "The seesaw shape is not symmetric.",
+      "hints": [
+        "Polar bonds can cancel in a symmetric shape."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "polar"
+      }
+    },
+    {
+      "id": "ch4-p-ch4",
+      "q": "Is CH4 polar or nonpolar?",
+      "a": "nonpolar",
+      "why": "The tetrahedral shape is symmetric.",
+      "hints": [
+        "Polar bonds can cancel in a symmetric shape."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "nonpolar"
+      }
+    }
+  ]
+}

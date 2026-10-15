@@ -1,0 +1,212 @@
+{
+  "id": "ch4-lewis",
+  "ch": 4,
+  "openstax_section": "OpenStax AF2e §4.4",
+  "guide_line": "Count valence electrons and assign formal charge.",
+  "steps": [
+    "Add the valence electrons of each atom. A group number is a good start: C 4, N 5, O 6, F 7, H 1.",
+    "Add one electron for each negative charge. Subtract one for each positive charge.",
+    "The less electronegative atom (never H) is the center. Connect the atoms, then fill octets.",
+    "Formal charge = valence electrons − lone-pair electrons − number of bonds.",
+    "Type the electron count, or the formal charge, as a number."
+  ],
+  "worked_example": {
+    "q": "How many valence electrons does CO2 have?",
+    "steps": [
+      "C is 4. Each O is 6.",
+      "4 + 6 + 6 = 16."
+    ],
+    "answer": "16"
+  },
+  "similar_problem": {
+    "q": "How many valence electrons does H2O have?",
+    "hint": "H is 1 and O is 6.",
+    "answer": "8"
+  },
+  "sources": [
+    "OpenStax AF2e §4.4",
+    "OpenStax AF2e §4.5"
+  ],
+  "problems": [
+    {
+      "id": "ch4-e-co2",
+      "q": "How many valence electrons are in CO2?",
+      "a": "16",
+      "why": "O=C=O. Each oxygen keeps two lone pairs.",
+      "hints": [
+        "Add group numbers, then add electrons for a negative charge."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 16,
+        "sigFigs": 2,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch4-e-h2o",
+      "q": "How many valence electrons are in H2O?",
+      "a": "8",
+      "why": "Oxygen is the center, with two bonds and two lone pairs.",
+      "hints": [
+        "Add group numbers, then add electrons for a negative charge."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 8,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch4-e-nh3",
+      "q": "How many valence electrons are in NH3?",
+      "a": "8",
+      "why": "Nitrogen is the center, with three bonds and one lone pair.",
+      "hints": [
+        "Add group numbers, then add electrons for a negative charge."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 8,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch4-e-hcn",
+      "q": "How many valence electrons are in HCN?",
+      "a": "10",
+      "why": "H-C≡N. Nitrogen keeps one lone pair.",
+      "hints": [
+        "Add group numbers, then add electrons for a negative charge."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 10,
+        "sigFigs": 2,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch4-e-no3",
+      "q": "How many valence electrons are in NO3-?",
+      "a": "24",
+      "why": "Add the 1− charge. Nitrogen is the center, with resonance.",
+      "hints": [
+        "Add group numbers, then add electrons for a negative charge."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 24,
+        "sigFigs": 2,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch4-e-ch2o",
+      "q": "How many valence electrons are in CH2O?",
+      "a": "12",
+      "why": "Carbon is the center, with a C=O and two C-H bonds.",
+      "hints": [
+        "Add group numbers, then add electrons for a negative charge."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 12,
+        "sigFigs": 2,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch4-e-so4",
+      "q": "How many valence electrons are in SO4 2-?",
+      "a": "32",
+      "why": "Add the 2− charge. Sulfur is the center with four S-O bonds in the octet form.",
+      "hints": [
+        "Add group numbers, then add electrons for a negative charge."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 32,
+        "sigFigs": 2,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch4-e-bf3",
+      "q": "How many valence electrons are in BF3?",
+      "a": "24",
+      "why": "Boron is the center with three bonds and only six electrons.",
+      "hints": [
+        "Add group numbers, then add electrons for a negative charge."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 24,
+        "sigFigs": 2,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch4-e-pcl5",
+      "q": "How many valence electrons are in PCl5?",
+      "a": "40",
+      "why": "Phosphorus is the center with five bonds. It expands past eight.",
+      "hints": [
+        "Add group numbers, then add electrons for a negative charge."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 40,
+        "sigFigs": 2,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch4-e-cn",
+      "q": "How many valence electrons are in CN-?",
+      "a": "10",
+      "why": "Add the 1− charge. C≡N, with one lone pair on each atom.",
+      "hints": [
+        "Add group numbers, then add electrons for a negative charge."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 10,
+        "sigFigs": 2,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch4-fc-o",
+      "q": "Formal charge on O with 1 bond and 3 lone pairs?",
+      "a": "-1",
+      "why": "Oxygen has 6 valence electrons. Lone-pair electrons = 6. Bonds = 1. 6 − 6 − 1 = −1.",
+      "hints": [
+        "Count lone-pair electrons, not the number of pairs."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": -1,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch4-fc-n",
+      "q": "Formal charge on N with 4 bonds and 0 lone pairs?",
+      "a": "1",
+      "why": "Nitrogen has 5 valence electrons. 5 − 0 − 4 = +1.",
+      "hints": [
+        "FC = valence − lone electrons − bonds."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1,
+        "sigFigs": 1,
+        "unit": null
+      }
+    }
+  ]
+}

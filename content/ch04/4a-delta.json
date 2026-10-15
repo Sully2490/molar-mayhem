@@ -1,0 +1,234 @@
+{
+  "id": "ch4-delta",
+  "ch": 4,
+  "openstax_section": "OpenStax AF2e §4.2",
+  "guide_line": "Classify a bond from electronegativity.",
+  "steps": [
+    "Electronegativity is how hard an atom pulls shared electrons. Use Pauling values.",
+    "ΔEN is the absolute difference of the two values.",
+    "Under 0.4 is nonpolar covalent. From 0.4 through 1.8 is polar covalent. Above 1.8 is ionic.",
+    "Type nonpolar, polar, or ionic."
+  ],
+  "worked_example": {
+    "q": "Classify C-H. Carbon is 2.55 and hydrogen is 2.20.",
+    "steps": [
+      "|2.55 − 2.20| = 0.35.",
+      "0.35 is under 0.4, so the bond is nonpolar."
+    ],
+    "answer": "nonpolar"
+  },
+  "similar_problem": {
+    "q": "Classify O-H. Oxygen is 3.44 and hydrogen is 2.20.",
+    "hint": "Subtract, then compare with 0.4 and 1.8.",
+    "answer": "polar"
+  },
+  "sources": [
+    "OpenStax AF2e §4.2"
+  ],
+  "problems": [
+    {
+      "id": "ch4-d-ch",
+      "q": "Classify the C-H bond. Electronegativities are 2.55 and 2.2.",
+      "a": "nonpolar",
+      "why": "ΔEN = 0.35, so the bond is nonpolar.",
+      "hints": [
+        "Subtract the two values. Do not add them."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "nonpolar",
+        "answers": [
+          "nonpolar covalent"
+        ]
+      }
+    },
+    {
+      "id": "ch4-d-oh",
+      "q": "Classify the O-H bond. Electronegativities are 3.44 and 2.2.",
+      "a": "polar",
+      "why": "ΔEN = 1.24, so the bond is polar.",
+      "hints": [
+        "Subtract the two values. Do not add them."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "polar",
+        "answers": [
+          "polar covalent"
+        ]
+      }
+    },
+    {
+      "id": "ch4-d-nacl",
+      "q": "Classify the Na-Cl bond. Electronegativities are 0.93 and 3.16.",
+      "a": "ionic",
+      "why": "ΔEN = 2.23, so the bond is ionic.",
+      "hints": [
+        "Subtract the two values. Do not add them."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "ionic",
+        "answers": [
+          "ionic bond"
+        ]
+      }
+    },
+    {
+      "id": "ch4-d-co",
+      "q": "Classify the C-O bond. Electronegativities are 2.55 and 3.44.",
+      "a": "polar",
+      "why": "ΔEN = 0.89, so the bond is polar.",
+      "hints": [
+        "Subtract the two values. Do not add them."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "polar",
+        "answers": [
+          "polar covalent"
+        ]
+      }
+    },
+    {
+      "id": "ch4-d-nn",
+      "q": "Classify the N-N bond. Electronegativities are 3.04 and 3.04.",
+      "a": "nonpolar",
+      "why": "ΔEN = 0.00, so the bond is nonpolar.",
+      "hints": [
+        "Subtract the two values. Do not add them."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "nonpolar",
+        "answers": [
+          "nonpolar covalent"
+        ]
+      }
+    },
+    {
+      "id": "ch4-d-mgo",
+      "q": "Classify the Mg-O bond. Electronegativities are 1.31 and 3.44.",
+      "a": "ionic",
+      "why": "ΔEN = 2.13, so the bond is ionic.",
+      "hints": [
+        "Subtract the two values. Do not add them."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "ionic",
+        "answers": [
+          "ionic bond"
+        ]
+      }
+    },
+    {
+      "id": "ch4-d-hcl",
+      "q": "Classify the H-Cl bond. Electronegativities are 2.2 and 3.16.",
+      "a": "polar",
+      "why": "ΔEN = 0.96, so the bond is polar.",
+      "hints": [
+        "Subtract the two values. Do not add them."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "polar",
+        "answers": [
+          "polar covalent"
+        ]
+      }
+    },
+    {
+      "id": "ch4-d-cs",
+      "q": "Classify the C-S bond. Electronegativities are 2.55 and 2.58.",
+      "a": "nonpolar",
+      "why": "ΔEN = 0.03, so the bond is nonpolar.",
+      "hints": [
+        "Subtract the two values. Do not add them."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "nonpolar",
+        "answers": [
+          "nonpolar covalent"
+        ]
+      }
+    },
+    {
+      "id": "ch4-d-kf",
+      "q": "Classify the K-F bond. Electronegativities are 0.82 and 3.98.",
+      "a": "ionic",
+      "why": "ΔEN = 3.16, so the bond is ionic.",
+      "hints": [
+        "Subtract the two values. Do not add them."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "ionic",
+        "answers": [
+          "ionic bond"
+        ]
+      }
+    },
+    {
+      "id": "ch4-d-nh",
+      "q": "Classify the N-H bond. Electronegativities are 3.04 and 2.2.",
+      "a": "polar",
+      "why": "ΔEN = 0.84, so the bond is polar.",
+      "hints": [
+        "Subtract the two values. Do not add them."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "polar",
+        "answers": [
+          "polar covalent"
+        ]
+      }
+    },
+    {
+      "id": "ch4-d-so",
+      "q": "Classify the S-O bond. Electronegativities are 2.58 and 3.44.",
+      "a": "polar",
+      "why": "ΔEN = 0.86, so the bond is polar.",
+      "hints": [
+        "Subtract the two values. Do not add them."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "polar",
+        "answers": [
+          "polar covalent"
+        ]
+      }
+    },
+    {
+      "id": "ch4-d-br",
+      "q": "Classify the Br-Br bond. Electronegativities are 2.96 and 2.96.",
+      "a": "nonpolar",
+      "why": "ΔEN = 0.00, so the bond is nonpolar.",
+      "hints": [
+        "Subtract the two values. Do not add them."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "nonpolar",
+        "answers": [
+          "nonpolar covalent"
+        ]
+      }
+    }
+  ]
+}

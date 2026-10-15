@@ -1,0 +1,217 @@
+{
+  "id": "ch4-vsepr",
+  "ch": 4,
+  "openstax_section": "OpenStax AF2e §4.6",
+  "guide_line": "Name the molecular shape.",
+  "steps": [
+    "Draw the Lewis structure and count electron groups on the center. A bond (any order) is one group. A lone pair is one group.",
+    "2 groups: linear, 180°. 3 groups: trigonal planar, 120°. 4 groups: tetrahedral, 109.5°.",
+    "5 groups: trigonal bipyramidal. 6 groups: octahedral.",
+    "The shape name ignores lone pairs. One lone pair on a tetrahedral center is trigonal pyramidal. Two lone pairs make it bent.",
+    "Type the shape name, such as tetrahedral."
+  ],
+  "worked_example": {
+    "q": "Molecular shape of CH4?",
+    "steps": [
+      "Carbon has 4 bonds and 0 lone pairs.",
+      "The shape is tetrahedral, 109.5°."
+    ],
+    "answer": "tetrahedral"
+  },
+  "similar_problem": {
+    "q": "Molecular shape of NH3?",
+    "hint": "Nitrogen has 3 bonds and 1 lone pair.",
+    "answer": "trigonal pyramidal"
+  },
+  "sources": [
+    "OpenStax AF2e §4.6"
+  ],
+  "problems": [
+    {
+      "id": "ch4-s-ch4",
+      "q": "Molecular shape of CH4?",
+      "a": "tetrahedral",
+      "why": "Count groups, then drop the lone pairs from the name.",
+      "hints": [
+        "Name the atoms you see, not the electron-group geometry."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "tetrahedral",
+        "answers": [
+          "tetrahedron"
+        ]
+      }
+    },
+    {
+      "id": "ch4-s-nh3",
+      "q": "Molecular shape of NH3?",
+      "a": "trigonal pyramidal",
+      "why": "Count groups, then drop the lone pairs from the name.",
+      "hints": [
+        "Name the atoms you see, not the electron-group geometry."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "trigonal pyramidal",
+        "answers": [
+          "pyramidal"
+        ]
+      }
+    },
+    {
+      "id": "ch4-s-h2o",
+      "q": "Molecular shape of H2O?",
+      "a": "bent",
+      "why": "Count groups, then drop the lone pairs from the name.",
+      "hints": [
+        "Name the atoms you see, not the electron-group geometry."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "bent",
+        "answers": [
+          "bent 104.5"
+        ]
+      }
+    },
+    {
+      "id": "ch4-s-co2",
+      "q": "Molecular shape of CO2?",
+      "a": "linear",
+      "why": "Count groups, then drop the lone pairs from the name.",
+      "hints": [
+        "Name the atoms you see, not the electron-group geometry."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "linear"
+      }
+    },
+    {
+      "id": "ch4-s-bf3",
+      "q": "Molecular shape of BF3?",
+      "a": "trigonal planar",
+      "why": "Count groups, then drop the lone pairs from the name.",
+      "hints": [
+        "Name the atoms you see, not the electron-group geometry."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "trigonal planar",
+        "answers": [
+          "triangular planar"
+        ]
+      }
+    },
+    {
+      "id": "ch4-s-so2",
+      "q": "Molecular shape of SO2?",
+      "a": "bent",
+      "why": "Count groups, then drop the lone pairs from the name.",
+      "hints": [
+        "Name the atoms you see, not the electron-group geometry."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "bent"
+      }
+    },
+    {
+      "id": "ch4-s-pcl5",
+      "q": "Molecular shape of PCl5?",
+      "a": "trigonal bipyramidal",
+      "why": "Count groups, then drop the lone pairs from the name.",
+      "hints": [
+        "Name the atoms you see, not the electron-group geometry."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "trigonal bipyramidal"
+      }
+    },
+    {
+      "id": "ch4-s-sf6",
+      "q": "Molecular shape of SF6?",
+      "a": "octahedral",
+      "why": "Count groups, then drop the lone pairs from the name.",
+      "hints": [
+        "Name the atoms you see, not the electron-group geometry."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "octahedral"
+      }
+    },
+    {
+      "id": "ch4-s-xef4",
+      "q": "Molecular shape of XeF4?",
+      "a": "square planar",
+      "why": "Count groups, then drop the lone pairs from the name.",
+      "hints": [
+        "Name the atoms you see, not the electron-group geometry."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "square planar"
+      }
+    },
+    {
+      "id": "ch4-s-sf4",
+      "q": "Molecular shape of SF4?",
+      "a": "seesaw",
+      "why": "Count groups, then drop the lone pairs from the name.",
+      "hints": [
+        "Name the atoms you see, not the electron-group geometry."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "seesaw",
+        "answers": [
+          "see-saw"
+        ]
+      }
+    },
+    {
+      "id": "ch4-s-clf3",
+      "q": "Molecular shape of ClF3?",
+      "a": "t-shaped",
+      "why": "Count groups, then drop the lone pairs from the name.",
+      "hints": [
+        "Name the atoms you see, not the electron-group geometry."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "t-shaped",
+        "answers": [
+          "t shaped"
+        ]
+      }
+    },
+    {
+      "id": "ch4-s-i3",
+      "q": "Molecular shape of I3-?",
+      "a": "linear",
+      "why": "Count groups, then drop the lone pairs from the name.",
+      "hints": [
+        "Name the atoms you see, not the electron-group geometry."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "linear"
+      }
+    }
+  ]
+}
