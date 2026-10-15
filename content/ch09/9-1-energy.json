@@ -37,7 +37,45 @@
       "hints": [
         "For the 425.0 g water sample, ΔT is 37.50 minus 19.25. Multiply that change by 4.184 and by 425.0."
       ],
-      "check": { "kind": "numeric", "value": 32450, "sigFigs": 4, "unit": "J" }
+      "check": { "kind": "numeric", "value": 32450, "sigFigs": 4, "unit": "J" },
+      "guided": [
+        {
+          "prompt": "What is ΔT for the warming water, in °C?",
+          "hint": "Subtract 19.25 from 37.50.",
+          "answer": "18.25 °C",
+          "expected": "18.25 °C",
+          "unit": "°C",
+          "check": {
+            "kind": "numeric",
+            "value": 18.25,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "°C"
+          }
+        },
+        {
+          "prompt": "What is q, in J? q = 4.184 × 425.0 × ΔT. The water absorbs heat, so q is positive.",
+          "hint": "Keep the positive sign.",
+          "answer": "32450 J",
+          "expected": "32450 J",
+          "check": {
+            "kind": "numeric",
+            "value": 32450,
+            "sigFigs": 4,
+            "unit": "J"
+          },
+          "unit": "J"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "sign",
+          "describe": "Check the sign: heat released means q (and ΔH) is negative.",
+          "wrong": "-32450 J",
+          "value": -32450,
+          "unit": "J"
+        }
+      ]
     },
     {
       "id": "ch09-energy-02",
@@ -47,7 +85,45 @@
       "hints": [
         "This gold sample cools, so ΔT is 24.10 minus 98.60. Keep the minus sign on q."
       ],
-      "check": { "kind": "numeric", "value": -617, "sigFigs": 4, "unit": "J" }
+      "check": { "kind": "numeric", "value": -617, "sigFigs": 4, "unit": "J" },
+      "guided": [
+        {
+          "prompt": "What is ΔT for the cooling gold, in °C?",
+          "hint": "Subtract the start from the end: 24.10 − 98.60.",
+          "answer": "-74.50 °C",
+          "expected": "-74.50 °C",
+          "unit": "°C",
+          "check": {
+            "kind": "numeric",
+            "value": -74.5,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "°C"
+          }
+        },
+        {
+          "prompt": "What is q for the gold, in J? The metal cools, so q is negative.",
+          "hint": "Multiply 0.129 × 64.20 × the negative ΔT.",
+          "answer": "-617.0 J",
+          "expected": "-617.0 J",
+          "check": {
+            "kind": "numeric",
+            "value": -617,
+            "sigFigs": 4,
+            "unit": "J"
+          },
+          "unit": "J"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "sign",
+          "describe": "Check the sign: heat released means q (and ΔH) is negative.",
+          "wrong": "617.0 J",
+          "value": 617,
+          "unit": "J"
+        }
+      ]
     },
     {
       "id": "ch09-energy-03",

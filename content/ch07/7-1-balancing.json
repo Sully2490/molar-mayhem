@@ -50,7 +50,62 @@
         "text": "1, 5, 3, 4",
         "answers": ["1,5,3,4"],
         "case": "insensitive"
-      }
+      },
+      "guided": [
+        {
+          "prompt": "How many CO2 molecules balance the 3 carbon atoms in C3H8?",
+          "hint": "One CO2 holds one carbon, so the CO2 coefficient is 3.",
+          "answer": "3",
+          "expected": "3",
+          "check": {
+            "kind": "numeric",
+            "value": 3,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "How many H2O molecules balance the 8 hydrogen atoms?",
+          "hint": "Each water holds 2 H, so 8 H needs 4 H2O.",
+          "answer": "4",
+          "expected": "4",
+          "check": {
+            "kind": "numeric",
+            "value": 4,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "How many O2 molecules supply the oxygen in 3 CO2 and 4 H2O?",
+          "hint": "The products hold 10 oxygen atoms, which is 5 O2.",
+          "answer": "5",
+          "expected": "5",
+          "check": {
+            "kind": "numeric",
+            "value": 5,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "Write the four coefficients in order, separated by commas.",
+          "hint": "The order is C3H8, O2, CO2, H2O.",
+          "answer": "1, 5, 3, 4",
+          "expected": "1, 5, 3, 4",
+          "check": {
+            "kind": "exact",
+            "text": "1, 5, 3, 4",
+            "answers": [
+              "1,5,3,4"
+            ],
+            "case": "insensitive"
+          }
+        }
+      ]
     },
     {
       "id": "ch07-balance-ammonia",

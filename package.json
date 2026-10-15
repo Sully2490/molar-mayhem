@@ -10,6 +10,7 @@
     "check:content": "node scripts/check-content.js"
   },
   "devDependencies": {
+    "jsdom": "^29.1.1",
     "serve": "^14.2.5"
   },
   "overrides": {

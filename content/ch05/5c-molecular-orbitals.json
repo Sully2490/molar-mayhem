@@ -277,7 +277,49 @@
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": null
-      }
+      },
+      "guided": [
+        {
+          "prompt": "How many bonding valence electrons does C2 have?",
+          "hint": "Sigma 2s and the pi 2p set hold 6 bonding electrons.",
+          "answer": "6",
+          "expected": "6",
+          "check": {
+            "kind": "numeric",
+            "value": 6,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "How many antibonding valence electrons does C2 have?",
+          "hint": "Sigma-star 2s holds the 2 antibonding electrons.",
+          "answer": "2",
+          "expected": "2",
+          "check": {
+            "kind": "numeric",
+            "value": 2,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "What is the bond order of C2, to 4 significant figures?",
+          "hint": "1/2 (6 − 2) = 2.000.",
+          "answer": "2.000",
+          "expected": "2.000",
+          "check": {
+            "kind": "numeric",
+            "value": 2,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": null
+          },
+          "overcount": "sp2"
+        }
+      ]
     },
     {
       "id": "ch5-mo-c2-mag",
@@ -309,7 +351,49 @@
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": null
-      }
+      },
+      "guided": [
+        {
+          "prompt": "How many bonding valence electrons does N2 have?",
+          "hint": "N2 fills the bonding orbitals through sigma 2p: 8 electrons.",
+          "answer": "8",
+          "expected": "8",
+          "check": {
+            "kind": "numeric",
+            "value": 8,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "How many antibonding valence electrons does N2 have?",
+          "hint": "Only sigma-star 2s is antibonding and full.",
+          "answer": "2",
+          "expected": "2",
+          "check": {
+            "kind": "numeric",
+            "value": 2,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "What is the bond order of N2, to 4 significant figures?",
+          "hint": "1/2 (8 − 2) = 3.000.",
+          "answer": "3.000",
+          "expected": "3.000",
+          "check": {
+            "kind": "numeric",
+            "value": 3,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": null
+          },
+          "overcount": "sp2"
+        }
+      ]
     },
     {
       "id": "ch5-mo-n2-mag",
@@ -373,7 +457,49 @@
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": null
-      }
+      },
+      "guided": [
+        {
+          "prompt": "How many bonding valence electrons does O2 have in its molecular orbitals?",
+          "hint": "The filled bonding orbitals of O2 hold 8 electrons.",
+          "answer": "8",
+          "expected": "8",
+          "check": {
+            "kind": "numeric",
+            "value": 8,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "How many antibonding valence electrons does O2 have?",
+          "hint": "The pi-star set holds 4 electrons.",
+          "answer": "4",
+          "expected": "4",
+          "check": {
+            "kind": "numeric",
+            "value": 4,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "What is the bond order, to 4 significant figures? Bond order = 1/2 (bonding − antibonding).",
+          "hint": "1/2 (8 − 4) = 2.000.",
+          "answer": "2.000",
+          "expected": "2.000",
+          "check": {
+            "kind": "numeric",
+            "value": 2,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": null
+          },
+          "overcount": "sp3"
+        }
+      ]
     },
     {
       "id": "ch5-mo-o2-mag",

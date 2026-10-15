@@ -76,7 +76,60 @@
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "L"
-      }
+      },
+      "guided": [
+        {
+          "prompt": "Change 25.00 °C into kelvin.",
+          "hint": "Add 273.15. Do not multiply.",
+          "answer": "298.15 K",
+          "expected": "298.15 K",
+          "unit": "K",
+          "check": {
+            "kind": "numeric",
+            "value": 298.15,
+            "tolerance": 0.5,
+            "sigFigs": 5,
+            "unit": "K"
+          }
+        },
+        {
+          "prompt": "Change 100.0 °C into kelvin.",
+          "hint": "Add 273.15 to 100.0.",
+          "answer": "373.15 K",
+          "expected": "373.15 K",
+          "unit": "K",
+          "check": {
+            "kind": "numeric",
+            "value": 373.15,
+            "tolerance": 0.5,
+            "sigFigs": 5,
+            "unit": "K"
+          }
+        },
+        {
+          "prompt": "Pressure is constant. What is the new volume?",
+          "hint": "Multiply 2.150 L by the kelvin ratio 373.15 / 298.15.",
+          "answer": "2.691 L",
+          "expected": "2.691 L",
+          "check": {
+            "kind": "numeric",
+            "value": 2.691,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "L"
+          },
+          "unit": "L"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "kelvin",
+          "describe": "Use kelvin: K = °C + 273.15.",
+          "wrong": "8.600 L",
+          "value": 8.6,
+          "unit": "L"
+        }
+      ]
     },
     {
       "id": "8.2-04",
@@ -92,7 +145,60 @@
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "torr"
-      }
+      },
+      "guided": [
+        {
+          "prompt": "Change 30.00 °C into kelvin.",
+          "hint": "Add 273.15.",
+          "answer": "303.15 K",
+          "expected": "303.15 K",
+          "unit": "K",
+          "check": {
+            "kind": "numeric",
+            "value": 303.15,
+            "tolerance": 0.5,
+            "sigFigs": 5,
+            "unit": "K"
+          }
+        },
+        {
+          "prompt": "Change 90.00 °C into kelvin.",
+          "hint": "Add 273.15.",
+          "answer": "363.15 K",
+          "expected": "363.15 K",
+          "unit": "K",
+          "check": {
+            "kind": "numeric",
+            "value": 363.15,
+            "tolerance": 0.5,
+            "sigFigs": 5,
+            "unit": "K"
+          }
+        },
+        {
+          "prompt": "Volume is constant. What is the new pressure?",
+          "hint": "Multiply 720.0 torr by 363.15 / 303.15.",
+          "answer": "862.5 torr",
+          "expected": "862.5 torr",
+          "check": {
+            "kind": "numeric",
+            "value": 862.5,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "torr"
+          },
+          "unit": "torr"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "kelvin",
+          "describe": "Use kelvin: K = °C + 273.15.",
+          "wrong": "2160 torr",
+          "value": 2160,
+          "unit": "torr"
+        }
+      ]
     },
     {
       "id": "8.2-05",
@@ -124,7 +230,60 @@
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "L"
-      }
+      },
+      "guided": [
+        {
+          "prompt": "Change 25.00 °C into kelvin.",
+          "hint": "Add 273.15.",
+          "answer": "298.15 K",
+          "expected": "298.15 K",
+          "unit": "K",
+          "check": {
+            "kind": "numeric",
+            "value": 298.15,
+            "tolerance": 0.5,
+            "sigFigs": 5,
+            "unit": "K"
+          }
+        },
+        {
+          "prompt": "Change 76.85 °C into kelvin.",
+          "hint": "76.85 + 273.15.",
+          "answer": "350.00 K",
+          "expected": "350.00 K",
+          "unit": "K",
+          "check": {
+            "kind": "numeric",
+            "value": 350,
+            "tolerance": 0.5,
+            "sigFigs": 5,
+            "unit": "K"
+          }
+        },
+        {
+          "prompt": "What is the new volume? V2 = P1 V1 T2 / (P2 T1).",
+          "hint": "Use kelvin in both temperatures.",
+          "answer": "4.035 L",
+          "expected": "4.035 L",
+          "check": {
+            "kind": "numeric",
+            "value": 4.035,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "L"
+          },
+          "unit": "L"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "kelvin",
+          "describe": "Use kelvin: K = °C + 273.15.",
+          "wrong": "10.57 L",
+          "value": 10.566875,
+          "unit": "L"
+        }
+      ]
     },
     {
       "id": "8.2-07",
@@ -140,7 +299,46 @@
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "L"
-      }
+      },
+      "guided": [
+        {
+          "prompt": "Change 25.00 °C into kelvin before you use R.",
+          "hint": "Add 273.15. R uses kelvin.",
+          "answer": "298.15 K",
+          "expected": "298.15 K",
+          "unit": "K",
+          "check": {
+            "kind": "numeric",
+            "value": 298.15,
+            "tolerance": 0.5,
+            "sigFigs": 5,
+            "unit": "K"
+          }
+        },
+        {
+          "prompt": "What volume does the gas fill? V = nRT / P, with R = 0.08206 L atm/(mol K).",
+          "hint": "Multiply 0.2500 × 0.08206 × 298.15, then divide by 1.000 atm.",
+          "answer": "6.117 L",
+          "expected": "6.117 L",
+          "check": {
+            "kind": "numeric",
+            "value": 6.117,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "L"
+          },
+          "unit": "L"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "kelvin",
+          "describe": "Use kelvin: K = °C + 273.15.",
+          "wrong": "0.5129 L",
+          "value": 0.512875,
+          "unit": "L"
+        }
+      ]
     },
     {
       "id": "8.2-08",
@@ -156,7 +354,46 @@
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "mol"
-      }
+      },
+      "guided": [
+        {
+          "prompt": "The temperature is already 300.0 K. Enter that kelvin temperature. Do not add 273.15.",
+          "hint": "300.0 K is already on the kelvin scale.",
+          "answer": "300.0 K",
+          "expected": "300.0 K",
+          "unit": "K",
+          "check": {
+            "kind": "numeric",
+            "value": 300,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "K"
+          }
+        },
+        {
+          "prompt": "How many moles are in the sample? n = PV / RT.",
+          "hint": "Divide (1.150 atm)(3.400 L) by (0.08206)(300.0 K).",
+          "answer": "0.1588 mol",
+          "expected": "0.1588 mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.1588,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          },
+          "unit": "mol"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "kelvin",
+          "describe": "300.0 K is already kelvin. Do not add 273.15.",
+          "wrong": "0.08313 mol",
+          "value": 0.083134,
+          "unit": "mol"
+        }
+      ]
     },
     {
       "id": "8.2-09",
@@ -172,7 +409,36 @@
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "K"
-      }
+      },
+      "guided": [
+        {
+          "prompt": "Multiply P × V. P is 1.200 atm and V is 10.00 L.",
+          "hint": "1.200 × 10.00 = 12.00.",
+          "answer": "12.00",
+          "expected": "12.00",
+          "check": {
+            "kind": "numeric",
+            "value": 12,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "What is the temperature in kelvin? T = PV / (nR).",
+          "hint": "Divide 12.00 by (0.4000)(0.08206).",
+          "answer": "365.6 K",
+          "expected": "365.6 K",
+          "check": {
+            "kind": "numeric",
+            "value": 365.6,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "K"
+          },
+          "unit": "K"
+        }
+      ]
     },
     {
       "id": "8.2-10",
@@ -188,7 +454,46 @@
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "atm"
-      }
+      },
+      "guided": [
+        {
+          "prompt": "The temperature is 350.0 K. Enter it. Do not add 273.15.",
+          "hint": "350.0 is already kelvin.",
+          "answer": "350.0 K",
+          "expected": "350.0 K",
+          "unit": "K",
+          "check": {
+            "kind": "numeric",
+            "value": 350,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "K"
+          }
+        },
+        {
+          "prompt": "What is the pressure? P = nRT / V.",
+          "hint": "Multiply 0.1800 × 0.08206 × 350.0, then divide by 5.000 L.",
+          "answer": "1.034 atm",
+          "expected": "1.034 atm",
+          "check": {
+            "kind": "numeric",
+            "value": 1.034,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "atm"
+          },
+          "unit": "atm"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "kelvin",
+          "describe": "Use kelvin: K = °C + 273.15.",
+          "wrong": "1.841 atm",
+          "value": 1.8407,
+          "unit": "atm"
+        }
+      ]
     },
     {
       "id": "8.2-11",
@@ -204,7 +509,46 @@
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "L"
-      }
+      },
+      "guided": [
+        {
+          "prompt": "STP temperature is 273.15 K. Enter that temperature.",
+          "hint": "Use 273.15 K, not 0 °C, in PV = nRT.",
+          "answer": "273.15 K",
+          "expected": "273.15 K",
+          "unit": "K",
+          "check": {
+            "kind": "numeric",
+            "value": 273.15,
+            "tolerance": 0.5,
+            "sigFigs": 5,
+            "unit": "K"
+          }
+        },
+        {
+          "prompt": "What is the volume at STP? V = nRT / P.",
+          "hint": "Multiply 0.6500 × 0.08206 × 273.15.",
+          "answer": "14.57 L",
+          "expected": "14.57 L",
+          "check": {
+            "kind": "numeric",
+            "value": 14.57,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "L"
+          },
+          "unit": "L"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "kelvin",
+          "describe": "Use kelvin: K = °C + 273.15.",
+          "wrong": "0 L",
+          "value": 0,
+          "unit": "L"
+        }
+      ]
     },
     {
       "id": "8.2-12",
@@ -270,7 +614,60 @@
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "°C"
-      }
+      },
+      "guided": [
+        {
+          "prompt": "Change 25.00 °C into kelvin.",
+          "hint": "Add 273.15.",
+          "answer": "298.15 K",
+          "expected": "298.15 K",
+          "unit": "K",
+          "check": {
+            "kind": "numeric",
+            "value": 298.15,
+            "tolerance": 0.5,
+            "sigFigs": 5,
+            "unit": "K"
+          }
+        },
+        {
+          "prompt": "The pressure rises by 1.200 / 1.000. What is the new temperature in kelvin?",
+          "hint": "Multiply 298.15 K by 1.200.",
+          "answer": "357.78 K",
+          "expected": "357.78 K",
+          "unit": "K",
+          "check": {
+            "kind": "numeric",
+            "value": 357.78,
+            "tolerance": 0.5,
+            "sigFigs": 5,
+            "unit": "K"
+          }
+        },
+        {
+          "prompt": "Change that kelvin temperature back to °C.",
+          "hint": "Subtract 273.15.",
+          "answer": "84.63 °C",
+          "expected": "84.63 °C",
+          "check": {
+            "kind": "numeric",
+            "value": 84.63,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "°C"
+          },
+          "unit": "°C"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "kelvin",
+          "describe": "Use kelvin: K = °C + 273.15.",
+          "wrong": "357.78 °C",
+          "value": 357.78,
+          "unit": "°C"
+        }
+      ]
     },
     {
       "id": "8.2-16",
@@ -286,7 +683,60 @@
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "atm"
-      }
+      },
+      "guided": [
+        {
+          "prompt": "How many moles of He are in 0.08500 g? He is 4.0026 g/mol.",
+          "hint": "Divide 0.08500 g by 4.0026 g/mol.",
+          "answer": "0.02124 mol",
+          "expected": "0.02124 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.02124,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "Change 125.0 mL into liters.",
+          "hint": "Divide by 1000.",
+          "answer": "0.1250 L",
+          "expected": "0.1250 L",
+          "unit": "L",
+          "check": {
+            "kind": "numeric",
+            "value": 0.125,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "L"
+          }
+        },
+        {
+          "prompt": "The temperature is 295.0 K. What is the pressure? P = nRT / V.",
+          "hint": "Use the moles you just found, not the grams.",
+          "answer": "4.113 atm",
+          "expected": "4.113 atm",
+          "check": {
+            "kind": "numeric",
+            "value": 4.113,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "atm"
+          },
+          "unit": "atm"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "skip-moles",
+          "describe": "You went straight from grams to grams. Convert to moles first.",
+          "wrong": "16.46 atm",
+          "value": 16.461236,
+          "unit": "atm"
+        }
+      ]
     }
   ]
 }

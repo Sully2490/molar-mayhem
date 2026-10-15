@@ -33,7 +33,37 @@
       "a": "0.07360 M",
       "why": "Moles of NaOH = 0.01840 times 0.1000 = 0.001840 mol. The ratio is 1 to 1. Molarity of HCl = 0.001840 / 0.02500 = 0.07360 M.",
       "hints": ["Moles of NaOH are 0.01840 L times 0.1000 mol/L. The HCl sample volume is 0.02500 L."],
-      "check": { "kind": "numeric", "value": 0.0736, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
+      "check": { "kind": "numeric", "value": 0.0736, "tolerance": 0.5, "sigFigs": 4, "unit": "M" },
+      "guided": [
+        {
+          "prompt": "How many moles of NaOH are in 18.40 mL of 0.1000 M NaOH?",
+          "hint": "Use 0.01840 L × 0.1000 mol/L.",
+          "answer": "0.001840 mol",
+          "expected": "0.001840 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.00184,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "The acid ratio is 1 to 1. What is the molarity of HCl in the 25.00 mL sample?",
+          "hint": "Divide the moles of HCl by 0.02500 L.",
+          "answer": "0.07360 M",
+          "expected": "0.07360 M",
+          "check": {
+            "kind": "numeric",
+            "value": 0.0736,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "M"
+          },
+          "unit": "M"
+        }
+      ]
     },
     {
       "id": "ch07-titrate-koh",
@@ -49,7 +79,60 @@
       "a": "36.08 %",
       "why": "Moles of AgCl = 1.240 / 143.318 = 0.008652 mol. Mass of Cl = 0.008652 times 35.45 = 0.3067 g. Percent = (0.3067 / 0.8500) times 100 = 36.08%.",
       "hints": ["Convert 1.240 g of AgCl to moles with 143.318 g/mol, then to grams of Cl with 35.45 g/mol."],
-      "check": { "kind": "numeric", "value": 36.08, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+      "check": { "kind": "numeric", "value": 36.08, "tolerance": 0.5, "sigFigs": 4, "unit": "%" },
+      "guided": [
+        {
+          "prompt": "How many moles of AgCl are in 1.240 g? AgCl is 143.318 g/mol.",
+          "hint": "Divide 1.240 g by 143.318 g/mol.",
+          "answer": "0.008652 mol",
+          "expected": "0.008652 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.008652,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "How many grams of Cl is that? Cl is 35.45 g/mol.",
+          "hint": "Multiply the moles by 35.45 g/mol.",
+          "answer": "0.3067 g",
+          "expected": "0.3067 g",
+          "unit": "g",
+          "check": {
+            "kind": "numeric",
+            "value": 0.3067,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "g"
+          }
+        },
+        {
+          "prompt": "What is the mass percent of Cl in the 0.8500 g sample?",
+          "hint": "Divide the grams of Cl by 0.8500 g and multiply by 100.",
+          "answer": "36.08 %",
+          "expected": "36.08 %",
+          "check": {
+            "kind": "numeric",
+            "value": 36.08,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "%"
+          },
+          "unit": "%"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "skip-moles",
+          "describe": "You went straight from grams to grams. Convert to moles first.",
+          "wrong": "51.70 %",
+          "value": 51.7,
+          "unit": "%"
+        }
+      ]
     },
     {
       "id": "ch07-vinegar",
@@ -97,7 +180,81 @@
       "a": "0.06150 M",
       "why": "Moles of NaOH = 0.02460 times 0.1500 = 0.003690 mol. The acid takes half of that, 0.001845 mol. Molarity = 0.001845 / 0.03000 = 0.06150 M.",
       "hints": ["24.60 mL of 0.1500 M NaOH is 0.003690 mol of base, and sulfuric acid takes two of those moles. Divide the acid moles by 0.03000 L."],
-      "check": { "kind": "numeric", "value": 0.0615, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
+      "check": { "kind": "numeric", "value": 0.0615, "tolerance": 0.5, "sigFigs": 4, "unit": "M" },
+      "guided": [
+        {
+          "prompt": "How many moles of NaOH are in 24.60 mL of 0.1500 M NaOH?",
+          "hint": "Use 0.02460 L × 0.1500 mol/L.",
+          "answer": "0.003690 mol",
+          "expected": "0.003690 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.00369,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "H2SO4 + 2 NaOH. How many moles of H2SO4 were titrated?",
+          "hint": "Divide the moles of NaOH by 2.",
+          "answer": "0.001845 mol",
+          "expected": "0.001845 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.001845,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          },
+          "ratio": [
+            2,
+            1
+          ],
+          "coefficients": [
+            2
+          ]
+        },
+        {
+          "prompt": "What is the molarity of H2SO4 in the 30.00 mL sample?",
+          "hint": "Divide the moles of acid by 0.03000 L.",
+          "answer": "0.06150 M",
+          "expected": "0.06150 M",
+          "check": {
+            "kind": "numeric",
+            "value": 0.0615,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "M"
+          },
+          "ratio": [
+            2,
+            1
+          ],
+          "coefficients": [
+            2
+          ],
+          "unit": "M"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "flip-ratio",
+          "describe": "Your mole ratio is upside down. Put the unknown on top.",
+          "wrong": "0.2460 M",
+          "value": 0.246,
+          "unit": "M"
+        },
+        {
+          "id": "coefficient",
+          "describe": "Did you use the coefficient from the balanced equation?",
+          "wrong": "0.1230 M",
+          "value": 0.123,
+          "unit": "M"
+        }
+      ]
     },
     {
       "id": "ch07-grav-chloride-small",

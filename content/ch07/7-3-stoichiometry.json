@@ -32,7 +32,60 @@
       "a": "35.74 g",
       "why": "Moles of H2 = 4.000 / 2.016 = 1.984 mol. The ratio to water is 1 to 1. Mass of H2O = 1.984 mol times 18.015 g/mol = 35.74 g.",
       "hints": ["Divide 4.000 g by the molar mass of H2, 2.016 g/mol, then multiply by 18.015 g/mol of water."],
-      "check": { "kind": "numeric", "value": 35.74, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+      "check": { "kind": "numeric", "value": 35.74, "tolerance": 0.5, "sigFigs": 4, "unit": "g" },
+      "guided": [
+        {
+          "prompt": "How many moles of H2 are in 4.000 g? Molar mass of H2 is 2.016 g/mol.",
+          "hint": "Divide 4.000 g by 2.016 g/mol.",
+          "answer": "1.984 mol",
+          "expected": "1.984 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 1.984,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "The equation is 2 H2 + O2 → 2 H2O. How many moles of H2O form?",
+          "hint": "The coefficients are equal, so the moles of water stay the same.",
+          "answer": "1.984 mol",
+          "expected": "1.984 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 1.984,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "How many grams of H2O is that? Molar mass of water is 18.015 g/mol.",
+          "hint": "Multiply the moles of water by 18.015 g/mol.",
+          "answer": "35.74 g",
+          "expected": "35.74 g",
+          "check": {
+            "kind": "numeric",
+            "value": 35.74,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "g"
+          },
+          "unit": "g"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "skip-moles",
+          "describe": "You went straight from grams to grams. Convert to moles first.",
+          "wrong": "72.06 g",
+          "value": 72.06,
+          "unit": "g"
+        }
+      ]
     },
     {
       "id": "ch07-stoich-water-8",
@@ -40,7 +93,60 @@
       "a": "71.49 g",
       "why": "Moles of H2 = 8.000 / 2.016 = 3.968 mol. The ratio to water is 1 to 1. Mass of H2O = 3.968 mol times 18.015 g/mol = 71.49 g.",
       "hints": ["8.000 g of H2 divided by 2.016 g/mol gives the moles, and the water ratio is 1 to 1."],
-      "check": { "kind": "numeric", "value": 71.49, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+      "check": { "kind": "numeric", "value": 71.49, "tolerance": 0.5, "sigFigs": 4, "unit": "g" },
+      "guided": [
+        {
+          "prompt": "How many moles of H2 are in 8.000 g? Molar mass of H2 is 2.016 g/mol.",
+          "hint": "Divide 8.000 g by 2.016 g/mol.",
+          "answer": "3.968 mol",
+          "expected": "3.968 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 3.968,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "How many moles of H2O form from 2 H2 → 2 H2O?",
+          "hint": "The mole ratio is 1 to 1.",
+          "answer": "3.968 mol",
+          "expected": "3.968 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 3.968,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "How many grams of H2O is that? Use 18.015 g/mol.",
+          "hint": "Multiply the moles of water by 18.015.",
+          "answer": "71.49 g",
+          "expected": "71.49 g",
+          "check": {
+            "kind": "numeric",
+            "value": 71.49,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "g"
+          },
+          "unit": "g"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "skip-moles",
+          "describe": "You went straight from grams to grams. Convert to moles first.",
+          "wrong": "144.1 g",
+          "value": 144.12,
+          "unit": "g"
+        }
+      ]
     },
     {
       "id": "ch07-stoich-propane-oxygen",
@@ -48,7 +154,59 @@
       "a": "1.250 mol",
       "why": "The ratio is 5 mol O2 / 1 mol C3H8. Moles of O2 = 0.2500 times 5 = 1.250 mol.",
       "hints": ["The coefficient ratio is 5 mol O2 per 1 mol C3H8, and you start with 0.2500 mol of propane."],
-      "check": { "kind": "numeric", "value": 1.25, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
+      "check": { "kind": "numeric", "value": 1.25, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" },
+      "guided": [
+        {
+          "prompt": "The equation is C3H8 + 5 O2 → 3 CO2 + 4 H2O. What is the O2 coefficient?",
+          "hint": "The balanced equation shows 5 O2 for 1 C3H8.",
+          "answer": "5",
+          "expected": "5",
+          "check": {
+            "kind": "numeric",
+            "value": 5,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "How many moles of O2 react with 0.2500 mol of C3H8?",
+          "hint": "Multiply 0.2500 mol by the O2 coefficient.",
+          "answer": "1.250 mol",
+          "expected": "1.250 mol",
+          "check": {
+            "kind": "numeric",
+            "value": 1.25,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          },
+          "ratio": [
+            1,
+            5
+          ],
+          "coefficients": [
+            5
+          ],
+          "unit": "mol"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "flip-ratio",
+          "describe": "Your mole ratio is upside down. Put the unknown on top.",
+          "wrong": "0.05000 mol",
+          "value": 0.05,
+          "unit": "mol"
+        },
+        {
+          "id": "coefficient",
+          "describe": "Did you use the coefficient from the balanced equation?",
+          "wrong": "0.2500 mol",
+          "value": 0.25,
+          "unit": "mol"
+        }
+      ]
     },
     {
       "id": "ch07-stoich-propane-co2",
@@ -56,7 +214,60 @@
       "a": "59.41 g",
       "why": "Moles of CO2 = 0.4500 times 3 = 1.350 mol. Molar mass of CO2 = 12.011 + 2(15.999) = 44.009 g/mol. Mass = 1.350 times 44.009 = 59.41 g.",
       "hints": ["0.4500 mol of propane makes 1.350 mol of CO2, and CO2 is 12.011 + 2(15.999) g/mol."],
-      "check": { "kind": "numeric", "value": 59.41, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+      "check": { "kind": "numeric", "value": 59.41, "tolerance": 0.5, "sigFigs": 4, "unit": "g" },
+      "guided": [
+        {
+          "prompt": "How many moles of CO2 form from 0.4500 mol of C3H8? The ratio is 3 CO2 / 1 C3H8.",
+          "hint": "Multiply 0.4500 mol by 3.",
+          "answer": "1.350 mol",
+          "expected": "1.350 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 1.35,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "How many grams of CO2 is that? CO2 is 44.009 g/mol.",
+          "hint": "Multiply the moles of CO2 by 44.009 g/mol.",
+          "answer": "59.41 g",
+          "expected": "59.41 g",
+          "check": {
+            "kind": "numeric",
+            "value": 59.41,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "g"
+          },
+          "ratio": [
+            1,
+            3
+          ],
+          "coefficients": [
+            3
+          ],
+          "unit": "g"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "flip-ratio",
+          "describe": "Your mole ratio is upside down. Put the unknown on top.",
+          "wrong": "6.601 g",
+          "value": 6.60135,
+          "unit": "g"
+        },
+        {
+          "id": "coefficient",
+          "describe": "Did you use the coefficient from the balanced equation?",
+          "wrong": "19.80 g",
+          "value": 19.80405,
+          "unit": "g"
+        }
+      ]
     },
     {
       "id": "ch07-stoich-sodium-chloride",
@@ -64,7 +275,60 @@
       "a": "12.71 g",
       "why": "Moles of Na = 5.000 / 22.990 = 0.2175 mol. The ratio to NaCl is 1 to 1. Molar mass of NaCl = 22.990 + 35.45 = 58.440 g/mol. Mass = 0.2175 times 58.440 = 12.71 g.",
       "hints": ["5.000 g divided by 22.990 g/mol is the moles of Na. NaCl is 22.990 + 35.45 g/mol and the ratio is 1 to 1."],
-      "check": { "kind": "numeric", "value": 12.71, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+      "check": { "kind": "numeric", "value": 12.71, "tolerance": 0.5, "sigFigs": 4, "unit": "g" },
+      "guided": [
+        {
+          "prompt": "How many moles of Na are in 5.000 g? Na is 22.990 g/mol.",
+          "hint": "Divide 5.000 g by 22.990 g/mol.",
+          "answer": "0.2175 mol",
+          "expected": "0.2175 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.2175,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "2 Na → 2 NaCl. How many moles of NaCl form?",
+          "hint": "The ratio is 1 to 1.",
+          "answer": "0.2175 mol",
+          "expected": "0.2175 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.2175,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "How many grams of NaCl is that? NaCl is 58.440 g/mol.",
+          "hint": "Multiply the moles of NaCl by 58.440 g/mol.",
+          "answer": "12.71 g",
+          "expected": "12.71 g",
+          "check": {
+            "kind": "numeric",
+            "value": 12.71,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "g"
+          },
+          "unit": "g"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "skip-moles",
+          "describe": "You went straight from grams to grams. Convert to moles first.",
+          "wrong": "292.2 g",
+          "value": 292.2,
+          "unit": "g"
+        }
+      ]
     },
     {
       "id": "ch07-stoich-silver-moles",
@@ -72,7 +336,46 @@
       "a": "0.005000 mol",
       "why": "Moles of AgNO3 = 0.04000 L times 0.1250 mol/L = 0.005000 mol. The silver ratio is 1 to 1, so AgCl is 0.005000 mol.",
       "hints": ["Change 40.00 mL into 0.04000 L, multiply by 0.1250 mol/L, and keep the 1-to-1 silver ratio."],
-      "check": { "kind": "numeric", "value": 0.005, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
+      "check": { "kind": "numeric", "value": 0.005, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" },
+      "guided": [
+        {
+          "prompt": "Change 40.00 mL into liters.",
+          "hint": "Divide milliliters by 1000.",
+          "answer": "0.04000 L",
+          "expected": "0.04000 L",
+          "unit": "L",
+          "check": {
+            "kind": "numeric",
+            "value": 0.04,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "L"
+          }
+        },
+        {
+          "prompt": "How many moles of AgCl form? Moles = liters × 0.1250 mol/L, and the silver ratio is 1 to 1.",
+          "hint": "0.04000 L times 0.1250 mol/L.",
+          "answer": "0.005000 mol",
+          "expected": "0.005000 mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.005,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          },
+          "unit": "mol"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "skip-moles",
+          "describe": "40.00 mL is not 40.00 L. Divide by 1000 before you multiply by molarity.",
+          "wrong": "5.000 mol",
+          "value": 5,
+          "unit": "mol"
+        }
+      ]
     },
     {
       "id": "ch07-stoich-silver-mass",
@@ -80,7 +383,46 @@
       "a": "0.7166 g",
       "why": "Moles of AgCl = 0.04000 times 0.1250 = 0.005000 mol. Molar mass of AgCl = 107.868 + 35.45 = 143.318 g/mol. Mass = 0.005000 times 143.318 = 0.7166 g.",
       "hints": ["You need 0.005000 mol of AgCl. Its molar mass is 107.868 + 35.45."],
-      "check": { "kind": "numeric", "value": 0.7166, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+      "check": { "kind": "numeric", "value": 0.7166, "tolerance": 0.5, "sigFigs": 4, "unit": "g" },
+      "guided": [
+        {
+          "prompt": "How many moles of AgCl form from 40.00 mL of 0.1250 M AgNO3?",
+          "hint": "Use 0.04000 L × 0.1250 mol/L.",
+          "answer": "0.005000 mol",
+          "expected": "0.005000 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.005,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "How many grams of AgCl is that? AgCl is 143.318 g/mol.",
+          "hint": "Multiply 0.005000 mol by 143.318 g/mol.",
+          "answer": "0.7166 g",
+          "expected": "0.7166 g",
+          "check": {
+            "kind": "numeric",
+            "value": 0.7166,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "g"
+          },
+          "unit": "g"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "skip-moles",
+          "describe": "You went straight from grams to grams. Convert to moles first.",
+          "wrong": "716.6 g",
+          "value": 716.59,
+          "unit": "g"
+        }
+      ]
     },
     {
       "id": "ch07-stoich-aluminum-oxide",
@@ -88,7 +430,68 @@
       "a": "13.23 g",
       "why": "Molar mass of Al2O3 = 2(26.982) + 3(15.999) = 101.961 g/mol. Moles of Al2O3 = 25.00 / 101.961 = 0.2452 mol. Moles of Al = 0.2452 times (4/2) = 0.4904 mol. Mass of Al = 0.4904 times 26.982 = 13.23 g.",
       "hints": ["Al2O3 is 2(26.982) + 3(15.999) g/mol, and the metal ratio is 4 mol Al for 2 mol oxide."],
-      "check": { "kind": "numeric", "value": 13.23, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+      "check": { "kind": "numeric", "value": 13.23, "tolerance": 0.5, "sigFigs": 4, "unit": "g" },
+      "guided": [
+        {
+          "prompt": "How many moles of Al2O3 are in 25.00 g? Al2O3 is 101.961 g/mol.",
+          "hint": "Divide 25.00 g by 101.961 g/mol.",
+          "answer": "0.2452 mol",
+          "expected": "0.2452 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.2452,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "4 Al make 2 Al2O3. How many moles of Al are needed?",
+          "hint": "Multiply the moles of oxide by 4/2.",
+          "answer": "0.4904 mol",
+          "expected": "0.4904 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.4904,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          },
+          "ratio": [
+            2,
+            4
+          ]
+        },
+        {
+          "prompt": "How many grams of Al is that? Al is 26.982 g/mol.",
+          "hint": "Multiply the moles of Al by 26.982 g/mol.",
+          "answer": "13.23 g",
+          "expected": "13.23 g",
+          "check": {
+            "kind": "numeric",
+            "value": 13.23,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "g"
+          },
+          "ratio": [
+            2,
+            4
+          ],
+          "unit": "g"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "flip-ratio",
+          "describe": "Your mole ratio is upside down. Put the unknown on top.",
+          "wrong": "3.308 g",
+          "value": 3.3079,
+          "unit": "g"
+        }
+      ]
     },
     {
       "id": "ch07-stoich-limewater-acid",
@@ -112,7 +515,63 @@
       "a": "5.875 g",
       "why": "Molar mass of Fe2O3 = 2(55.845) + 3(15.999) = 159.687 g/mol. Moles of oxide = 8.400 / 159.687 = 0.05260 mol. Moles of Fe = 0.1052 mol. Mass of Fe = 0.1052 times 55.845 = 5.875 g.",
       "hints": ["Fe2O3 is 2(55.845) + 3(15.999) g/mol. The ratio is 2 mol Fe per 1 mol of the oxide."],
-      "check": { "kind": "numeric", "value": 5.875, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+      "check": { "kind": "numeric", "value": 5.875, "tolerance": 0.5, "sigFigs": 4, "unit": "g" },
+      "guided": [
+        {
+          "prompt": "How many moles of Fe2O3 are in 8.400 g? Fe2O3 is 159.687 g/mol.",
+          "hint": "Divide 8.400 g by 159.687 g/mol.",
+          "answer": "0.05260 mol",
+          "expected": "0.05260 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.0526,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "1 Fe2O3 makes 2 Fe. How many moles of Fe form?",
+          "hint": "Multiply the moles of oxide by 2.",
+          "answer": "0.1052 mol",
+          "expected": "0.1052 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.1052,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          },
+          "coefficients": [
+            2
+          ]
+        },
+        {
+          "prompt": "How many grams of Fe is that? Fe is 55.845 g/mol.",
+          "hint": "Multiply the moles of iron by 55.845 g/mol.",
+          "answer": "5.875 g",
+          "expected": "5.875 g",
+          "check": {
+            "kind": "numeric",
+            "value": 5.875,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "g"
+          },
+          "unit": "g"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "skip-moles",
+          "describe": "You went straight from grams to grams. Convert to moles first.",
+          "wrong": "938.2 g",
+          "value": 938.196,
+          "unit": "g"
+        }
+      ]
     },
     {
       "id": "ch07-stoich-zinc-hydrogen",
@@ -128,7 +587,68 @@
       "a": "3.950 g",
       "why": "Moles of Mg = 6.000 / 24.305 = 0.2469 mol. Moles of O2 = half of that = 0.1234 mol. Mass of O2 = 0.1234 times 31.998 = 3.950 g.",
       "hints": ["Divide 6.000 g by 24.305 g/mol of Mg, take half of those moles because 2 Mg need 1 O2, then use 31.998 g/mol."],
-      "check": { "kind": "numeric", "value": 3.95, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+      "check": { "kind": "numeric", "value": 3.95, "tolerance": 0.5, "sigFigs": 4, "unit": "g" },
+      "guided": [
+        {
+          "prompt": "How many moles of Mg are in 6.000 g? Mg is 24.305 g/mol.",
+          "hint": "Divide 6.000 g by 24.305 g/mol.",
+          "answer": "0.2469 mol",
+          "expected": "0.2469 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.2469,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "2 Mg need 1 O2. How many moles of O2 are required?",
+          "hint": "Take half of the moles of Mg.",
+          "answer": "0.1234 mol",
+          "expected": "0.1234 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.1234,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          },
+          "ratio": [
+            2,
+            1
+          ]
+        },
+        {
+          "prompt": "How many grams of O2 is that? O2 is 31.998 g/mol.",
+          "hint": "Multiply the moles of O2 by 31.998 g/mol.",
+          "answer": "3.950 g",
+          "expected": "3.950 g",
+          "check": {
+            "kind": "numeric",
+            "value": 3.95,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "g"
+          },
+          "ratio": [
+            2,
+            1
+          ],
+          "unit": "g"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "flip-ratio",
+          "describe": "Your mole ratio is upside down. Put the unknown on top.",
+          "wrong": "15.80 g",
+          "value": 15.798,
+          "unit": "g"
+        }
+      ]
     },
     {
       "id": "ch07-vol-sulfuric",

@@ -35,7 +35,55 @@
       "a": "6",
       "why": "Two H are +2 and four O are -8. The molecule is neutral, so S is +6. Enter 6.",
       "hints": ["Two H are +2 and four O are -8. Sulfur is whatever makes a neutral molecule."],
-      "check": { "kind": "numeric", "value": 6, "tolerance": 0, "sigFigs": 1, "unit": null }
+      "check": { "kind": "numeric", "value": 6, "tolerance": 0, "sigFigs": 1, "unit": null },
+      "guided": [
+        {
+          "prompt": "In H2SO4, what is the total oxidation contribution of the two H atoms? Enter the number only.",
+          "hint": "Each H is +1, so two H contribute +2.",
+          "answer": "2",
+          "expected": "2",
+          "check": {
+            "kind": "numeric",
+            "value": 2,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "What is the total oxidation contribution of the four O atoms? Enter the number only.",
+          "hint": "Each O is −2, so four O contribute −8.",
+          "answer": "-8",
+          "expected": "-8",
+          "check": {
+            "kind": "numeric",
+            "value": -8,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "The molecule is neutral. What is the oxidation number of S? Enter the number only.",
+          "hint": "S + 2 + (−8) = 0, so S is +6.",
+          "answer": "6",
+          "expected": "6",
+          "check": {
+            "kind": "numeric",
+            "value": 6,
+            "tolerance": 0,
+            "sigFigs": 1,
+            "unit": null
+          }
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "sign",
+          "describe": "Oxygen is −2, not +2. Four O atoms contribute −8, so sulfur is +6.",
+          "wrong": "−2"
+        }
+      ]
     },
     {
       "id": "ch07-ox-nitric",

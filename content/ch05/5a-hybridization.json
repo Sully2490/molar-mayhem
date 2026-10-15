@@ -44,7 +44,53 @@
         "Each C=O in CO2 is one group, so carbon has two groups.",
         "Two groups on the carbon of CO2 use sp hybrids."
       ],
-      "check": { "kind": "exact", "text": "sp", "case": "insensitive" }
+      "check": { "kind": "exact", "text": "sp", "case": "insensitive" },
+      "guided": [
+        {
+          "prompt": "How many electron groups are on C in O=C=O? Count each double bond as one group.",
+          "hint": "Two double bonds are two groups, not four.",
+          "answer": "2",
+          "expected": "2",
+          "check": {
+            "kind": "numeric",
+            "value": 2,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "What is the arrangement of those two groups?",
+          "hint": "Two groups sit opposite each other.",
+          "answer": "linear",
+          "expected": "linear",
+          "check": {
+            "kind": "exact",
+            "text": "linear",
+            "case": "insensitive"
+          },
+          "overcount": "tetrahedral"
+        },
+        {
+          "prompt": "What hybridization does carbon use?",
+          "hint": "Two groups use sp hybrids.",
+          "answer": "sp",
+          "expected": "sp",
+          "check": {
+            "kind": "exact",
+            "text": "sp",
+            "case": "insensitive"
+          },
+          "overcount": "sp3"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "double-bond",
+          "describe": "A double bond counts as one electron group.",
+          "wrong": "sp3"
+        }
+      ]
     },
     {
       "id": "ch5-hyb-ch2o",
@@ -55,7 +101,58 @@
         "CH2O’s carbon has two C–H bonds plus one C=O, three groups.",
         "Three groups on the carbon of CH2O use sp2 hybrids."
       ],
-      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" },
+      "guided": [
+        {
+          "prompt": "How many electron groups are on C in CH2O?",
+          "hint": "Two C–H bonds plus one C=O is three groups.",
+          "answer": "3",
+          "expected": "3",
+          "check": {
+            "kind": "numeric",
+            "value": 3,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "What is the arrangement of those three groups?",
+          "hint": "Three groups stay in one plane.",
+          "answer": "trigonal planar",
+          "expected": "trigonal planar",
+          "check": {
+            "kind": "exact",
+            "text": "trigonal planar",
+            "case": "insensitive"
+          },
+          "overcount": "tetrahedral"
+        },
+        {
+          "prompt": "What hybridization does that carbon use?",
+          "hint": "Three groups use sp2 hybrids.",
+          "answer": "sp2",
+          "expected": "sp2",
+          "check": {
+            "kind": "exact",
+            "text": "sp2",
+            "case": "insensitive"
+          },
+          "overcount": "sp3"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "double-bond",
+          "describe": "A double bond counts as one electron group.",
+          "wrong": "tetrahedral"
+        },
+        {
+          "id": "double-bond",
+          "describe": "A double bond counts as one electron group.",
+          "wrong": "sp3"
+        }
+      ]
     },
     {
       "id": "ch5-hyb-nh3",
@@ -66,7 +163,53 @@
         "Nitrogen in NH3 has three bonds and one lone pair.",
         "Three bonds plus that lone pair on nitrogen use sp3 hybrids."
       ],
-      "check": { "kind": "exact", "text": "sp3", "case": "insensitive" }
+      "check": { "kind": "exact", "text": "sp3", "case": "insensitive" },
+      "guided": [
+        {
+          "prompt": "How many electron groups are on N in NH3? Count the lone pair.",
+          "hint": "Three N–H bonds plus one lone pair is four groups.",
+          "answer": "4",
+          "expected": "4",
+          "check": {
+            "kind": "numeric",
+            "value": 4,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "What is the arrangement of those four electron groups?",
+          "hint": "Four groups point toward the corners of a tetrahedron. The molecular shape is trigonal pyramidal.",
+          "answer": "tetrahedral",
+          "expected": "tetrahedral",
+          "check": {
+            "kind": "exact",
+            "text": "tetrahedral",
+            "case": "insensitive"
+          },
+          "overcount": "trigonal planar"
+        },
+        {
+          "prompt": "What hybridization does nitrogen use?",
+          "hint": "Four groups use sp3 hybrids.",
+          "answer": "sp3",
+          "expected": "sp3",
+          "check": {
+            "kind": "exact",
+            "text": "sp3",
+            "case": "insensitive"
+          },
+          "overcount": "sp2"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "forgot-lone-pair",
+          "describe": "Count the lone pair too. Three bonds plus one lone pair is four groups, not three.",
+          "wrong": "sp2"
+        }
+      ]
     },
     {
       "id": "ch5-hyb-h2o",
@@ -77,7 +220,53 @@
         "Oxygen in water has two bonds and two lone pairs.",
         "Two bonds plus two lone pairs on oxygen use sp3 hybrids."
       ],
-      "check": { "kind": "exact", "text": "sp3", "case": "insensitive" }
+      "check": { "kind": "exact", "text": "sp3", "case": "insensitive" },
+      "guided": [
+        {
+          "prompt": "How many electron groups are on O in H2O? Count both lone pairs.",
+          "hint": "Two O–H bonds plus two lone pairs is four groups.",
+          "answer": "4",
+          "expected": "4",
+          "check": {
+            "kind": "numeric",
+            "value": 4,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "What is the arrangement of those four electron groups?",
+          "hint": "Four groups use a tetrahedron. The molecular shape is bent.",
+          "answer": "tetrahedral",
+          "expected": "tetrahedral",
+          "check": {
+            "kind": "exact",
+            "text": "tetrahedral",
+            "case": "insensitive"
+          },
+          "overcount": "linear"
+        },
+        {
+          "prompt": "What hybridization does oxygen use?",
+          "hint": "Four groups use sp3 hybrids.",
+          "answer": "sp3",
+          "expected": "sp3",
+          "check": {
+            "kind": "exact",
+            "text": "sp3",
+            "case": "insensitive"
+          },
+          "overcount": "sp2"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "forgot-lone-pair",
+          "describe": "Count both lone pairs. Two bonds plus two lone pairs is four groups.",
+          "wrong": "sp2"
+        }
+      ]
     },
     {
       "id": "ch5-hyb-bf3",
@@ -99,7 +288,53 @@
         "The C≡N in HCN is one group, plus the C–H bond.",
         "Two groups on carbon in HCN use sp hybrids."
       ],
-      "check": { "kind": "exact", "text": "sp", "case": "insensitive" }
+      "check": { "kind": "exact", "text": "sp", "case": "insensitive" },
+      "guided": [
+        {
+          "prompt": "How many electron groups are on C in H–C≡N? The triple bond is one group.",
+          "hint": "The C–H bond is one group and the triple bond is one group.",
+          "answer": "2",
+          "expected": "2",
+          "check": {
+            "kind": "numeric",
+            "value": 2,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "What is the arrangement of those two groups?",
+          "hint": "Two groups make a straight line.",
+          "answer": "linear",
+          "expected": "linear",
+          "check": {
+            "kind": "exact",
+            "text": "linear",
+            "case": "insensitive"
+          },
+          "overcount": "trigonal planar"
+        },
+        {
+          "prompt": "What hybridization does that carbon use?",
+          "hint": "Two groups use sp hybrids.",
+          "answer": "sp",
+          "expected": "sp",
+          "check": {
+            "kind": "exact",
+            "text": "sp",
+            "case": "insensitive"
+          },
+          "overcount": "sp2"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "double-bond",
+          "describe": "A triple bond counts as one electron group, not two.",
+          "wrong": "sp2"
+        }
+      ]
     },
     {
       "id": "ch5-hyb-pcl5",
@@ -143,7 +378,53 @@
         "Each carbon in C2H4 has two C–H bonds and one C=C.",
         "Three groups on each carbon of C2H4 use sp2 hybrids."
       ],
-      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" },
+      "guided": [
+        {
+          "prompt": "How many electron groups are on one carbon in H2C=CH2?",
+          "hint": "Two C–H bonds plus one double bond is three groups.",
+          "answer": "3",
+          "expected": "3",
+          "check": {
+            "kind": "numeric",
+            "value": 3,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "What is the arrangement of those three groups?",
+          "hint": "Three groups lie in a triangle.",
+          "answer": "trigonal planar",
+          "expected": "trigonal planar",
+          "check": {
+            "kind": "exact",
+            "text": "trigonal planar",
+            "case": "insensitive"
+          },
+          "overcount": "tetrahedral"
+        },
+        {
+          "prompt": "What hybridization does that carbon use?",
+          "hint": "Three groups use sp2 hybrids.",
+          "answer": "sp2",
+          "expected": "sp2",
+          "check": {
+            "kind": "exact",
+            "text": "sp2",
+            "case": "insensitive"
+          },
+          "overcount": "sp3"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "double-bond",
+          "describe": "A double bond counts as one electron group.",
+          "wrong": "sp3"
+        }
+      ]
     },
     {
       "id": "ch5-hyb-c2h2",
@@ -154,7 +435,53 @@
         "Each carbon in C2H2 has one C–H bond and one C≡C.",
         "Two groups on each carbon of C2H2 use sp hybrids."
       ],
-      "check": { "kind": "exact", "text": "sp", "case": "insensitive" }
+      "check": { "kind": "exact", "text": "sp", "case": "insensitive" },
+      "guided": [
+        {
+          "prompt": "How many electron groups are on one carbon in H–C≡C–H?",
+          "hint": "One C–H bond plus one triple bond is two groups.",
+          "answer": "2",
+          "expected": "2",
+          "check": {
+            "kind": "numeric",
+            "value": 2,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "What is the arrangement of those two groups?",
+          "hint": "Two groups make a straight line.",
+          "answer": "linear",
+          "expected": "linear",
+          "check": {
+            "kind": "exact",
+            "text": "linear",
+            "case": "insensitive"
+          },
+          "overcount": "trigonal planar"
+        },
+        {
+          "prompt": "What hybridization does that carbon use?",
+          "hint": "Two groups use sp hybrids.",
+          "answer": "sp",
+          "expected": "sp",
+          "check": {
+            "kind": "exact",
+            "text": "sp",
+            "case": "insensitive"
+          },
+          "overcount": "sp2"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "double-bond",
+          "describe": "A triple bond counts as one electron group, not two.",
+          "wrong": "sp2"
+        }
+      ]
     },
     {
       "id": "ch5-hyb-becl2",
@@ -165,7 +492,53 @@
         "Beryllium in BeCl2 has two bonds and an incomplete octet, with no lone pair.",
         "Two groups on beryllium use sp hybrids."
       ],
-      "check": { "kind": "exact", "text": "sp", "case": "insensitive" }
+      "check": { "kind": "exact", "text": "sp", "case": "insensitive" },
+      "guided": [
+        {
+          "prompt": "How many electron groups are on Be in BeCl2?",
+          "hint": "Two Be–Cl bonds and no lone pair is two groups.",
+          "answer": "2",
+          "expected": "2",
+          "check": {
+            "kind": "numeric",
+            "value": 2,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "What is the arrangement of those two groups?",
+          "hint": "Two groups sit opposite each other.",
+          "answer": "linear",
+          "expected": "linear",
+          "check": {
+            "kind": "exact",
+            "text": "linear",
+            "case": "insensitive"
+          },
+          "overcount": "tetrahedral"
+        },
+        {
+          "prompt": "What hybridization does beryllium use?",
+          "hint": "Two groups use sp hybrids.",
+          "answer": "sp",
+          "expected": "sp",
+          "check": {
+            "kind": "exact",
+            "text": "sp",
+            "case": "insensitive"
+          },
+          "overcount": "sp3"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "group-count",
+          "describe": "Beryllium has two bonds and no lone pair. Two groups use sp hybrids.",
+          "wrong": "sp3"
+        }
+      ]
     },
     {
       "id": "ch5-hyb-so2",
@@ -176,7 +549,53 @@
         "Sulfur in SO2 has two bonding regions and one lone pair.",
         "Those three groups on sulfur use sp2 hybrids."
       ],
-      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" },
+      "guided": [
+        {
+          "prompt": "How many electron groups are on S in SO2? Count the lone pair, and count each bonding region once.",
+          "hint": "Two bonding regions plus one lone pair is three groups.",
+          "answer": "3",
+          "expected": "3",
+          "check": {
+            "kind": "numeric",
+            "value": 3,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "What is the arrangement of those three electron groups?",
+          "hint": "Three groups lie in a plane. The molecular shape is bent.",
+          "answer": "trigonal planar",
+          "expected": "trigonal planar",
+          "check": {
+            "kind": "exact",
+            "text": "trigonal planar",
+            "case": "insensitive"
+          },
+          "overcount": "tetrahedral"
+        },
+        {
+          "prompt": "What hybridization does sulfur use?",
+          "hint": "Three groups use sp2 hybrids.",
+          "answer": "sp2",
+          "expected": "sp2",
+          "check": {
+            "kind": "exact",
+            "text": "sp2",
+            "case": "insensitive"
+          },
+          "overcount": "sp3"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "double-bond",
+          "describe": "A double bond counts as one electron group.",
+          "wrong": "sp3"
+        }
+      ]
     },
     {
       "id": "ch5-hyb-sf4",
