@@ -201,7 +201,7 @@ export function renderRecallSession(session) {
       <h2 id="recall-prompt">${escapeHtml(card.prompt)}</h2>
       <form data-recall-form>
         <label for="recall-answer">Your answer</label>
-        <textarea id="recall-answer" name="answer" rows="3" ${session.phase === 'review' ? '' : 'autofocus'}></textarea>
+        <textarea id="recall-answer" name="answer" rows="3" autocapitalize="off" spellcheck="false" ${session.phase === 'review' ? '' : 'autofocus'}></textarea>
         <div class="recall-actions">
           <button type="submit">Check</button>
           <button type="button" data-recall-reveal>Show the answer</button>

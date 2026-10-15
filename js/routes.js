@@ -1,3 +1,4 @@
+import { builderShell } from './builders/index.js';
 import { renderCards } from './cards.js';
 import { renderGlossary } from './glossary.js';
 import { labShell } from './lab/index.js';
@@ -6,7 +7,10 @@ import { renderPrepPage } from './prep.js';
 import { emptyProgress } from './progress.js';
 import { renderDrill } from './unit-entry.js';
 
-export const ROUTE_IDS = ['Home', 'Map', 'Learn', 'Lab', 'Drill', 'Prep', 'Cards'];
+export const ROUTE_IDS = [
+  'Home', 'Map', 'Learn', 'Lab', 'Build', 'Drill', 'Prep', 'Cards',
+  'Terms', 'Videos', 'Exam3', 'Weak', 'Final',
+];
 
 const ROUTES = {
   Home: {
@@ -19,9 +23,15 @@ const ROUTES = {
         <a class="route-card" href="#Map"><strong>Map</strong><span>Chapters in order</span></a>
         <a class="route-card" href="#Learn"><strong>Learn</strong><span>Short lessons</span></a>
         <a class="route-card" href="#Lab"><strong>Lab</strong><span>Pictures you can move</span></a>
+        <a class="route-card" href="#Build"><strong>Build</strong><span>Bonding, gases, and heat</span></a>
         <a class="route-card" href="#Drill"><strong>Drill</strong><span>Extra practice</span></a>
+        <a class="route-card" href="#Cards"><strong>Cards</strong><span>Glossary review</span></a>
+        <a class="route-card" href="#Terms"><strong>Terms</strong><span>Glossary and quick recall</span></a>
+        <a class="route-card" href="#Videos"><strong>Videos</strong><span>Public clips</span></a>
+        <a class="route-card" href="#Exam3"><strong>Exam 3</strong><span>Chapters 5 and 7</span></a>
+        <a class="route-card" href="#Weak"><strong>Weak spots</strong><span>Lessons still open</span></a>
         <a class="route-card" href="#Prep"><strong>Prep</strong><span>Study plan and a practice final</span></a>
-        <a class="route-card" href="#Cards"><strong>Cards</strong><span>Quick review</span></a>
+        <a class="route-card" href="#Final"><strong>Final</strong><span>Timed practice final</span></a>
       </div>
       <p><button type="button" class="table-btn" data-open-tray>Open the periodic table</button></p>
       ${renderGlossary()}
@@ -59,7 +69,45 @@ const ROUTES = {
     title: 'Lab',
     body: labShell(),
   },
+  Build: {
+    title: 'Builders',
+    body: builderShell(),
+  },
+  Terms: {
+    title: 'Terms',
+    body: '',
+  },
+  Videos: {
+    title: 'Videos',
+    body: '',
+  },
+  Exam3: {
+    title: 'Exam 3',
+    body: '',
+  },
+  Weak: {
+    title: 'Weak spots',
+    body: '',
+  },
+  Final: {
+    title: 'Practice final',
+    body: '',
+  },
 };
+
+export function drillTargetFromHash(hash) {
+  const raw = String(hash ?? '').replace(/^#/, '').trim();
+  const parts = raw.split('/');
+  if (parts[0]?.toLowerCase() !== 'drill') return { templateId: '', seed: 0 };
+  let templateId = '';
+  try {
+    templateId = parts[1] ? decodeURIComponent(parts[1]) : '';
+  } catch {
+    templateId = '';
+  }
+  const seed = Number(parts[2]);
+  return { templateId, seed: Number.isInteger(seed) && seed > 0 ? seed : 0 };
+}
 
 export function routeFromHash(hash) {
   const raw = String(hash ?? '').replace(/^#/, '').trim();

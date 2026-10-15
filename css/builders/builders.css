@@ -145,7 +145,7 @@
 
 .b-canvas {
   aspect-ratio: 6 / 5;
-  touch-action: none;
+  touch-action: pan-y;
   cursor: grab;
 }
 
