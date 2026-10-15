@@ -5,7 +5,9 @@
   "guide_line": "Add the atomic masses in a formula, then use that molar mass to move between grams and moles.",
   "steps": [
     "6.1 Formula Mass: add the atomic mass of every atom the formula shows. That sum is the formula mass in amu.",
+    "Call that sum a molecular mass only for a covalent molecule. An ionic compound has no molecules, so keep the name formula mass.",
     "The same number in g/mol is the molar mass. One mole of the substance has that mass in grams.",
+    "Direction matters. Divide grams by the molar mass to get moles. Multiply moles by the molar mass to get grams. Divide a particle count by 6.022e23 to get moles.",
     "Use these OpenStax AF2e atomic masses: H 1.00794, C 12.011, N 14.0067, O 15.9994, Na 22.989769, Mg 24.305, Al 26.981539, P 30.973762, S 32.066, Cl 35.453, K 39.0983, Ca 40.078, Fe 55.845, Cu 63.546, Zn 65.38.",
     "A mole is 6.022×10^23 particles. Use 6.022e23 when you need a count to 4 significant figures.",
     "Chain the units. Grams times (1 mol / molar mass in g) gives moles. Moles times the molar mass gives grams. Moles times 6.022e23 gives particles. Multiply by a subscript to count one element."
@@ -121,6 +123,38 @@
       "why": "Molar mass = 2(14.0067) + 8(1.00794) + 32.066 + 4(15.9994) = 132.14052 g/mol. Moles of salt = 6.800 / 132.14052 = 0.05146 mol. Moles of N = 0.05146 × 2 = 0.1029 mol.",
       "hints": ["(NH4)2SO4 holds two nitrogens. Divide 6.800 g by the molar mass, then multiply by 2."],
       "check": { "kind": "numeric", "value": 0.1029, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
+    },
+    {
+      "id": "ch06-term-formula-mass",
+      "q": "CaCl2 is ionic, so it is not made of molecules. What two-word name is used for the sum of the atomic masses in its formula?",
+      "a": "formula mass",
+      "why": "Ionic compounds do not have molecules. The sum of the atomic masses in CaCl2 is the formula mass. The same number in g/mol is the molar mass.",
+      "hints": ["CaCl2 is ionic. Use the name that fits a formula of ions, not the name that says molecule."],
+      "check": { "kind": "exact", "text": "formula mass", "case": "insensitive" }
+    },
+    {
+      "id": "ch06-term-molecular-mass",
+      "q": "H2O is a covalent molecule. What two-word name is used for the sum of the atomic masses in that molecule?",
+      "a": "molecular mass",
+      "why": "Water is made of molecules. The sum of the atomic masses in H2O is its molecular mass. That same number is also the formula mass and, in g/mol, the molar mass.",
+      "hints": ["H2O is a molecule. The name that includes the word molecular fits this sum."],
+      "check": { "kind": "exact", "text": "molecular mass", "case": "insensitive" }
+    },
+    {
+      "id": "ch06-mol-from-atoms",
+      "q": "How many moles are in 3.011e24 atoms of Mg? Use 6.022e23 per mole. Give 4 significant figures.",
+      "a": "5.000 mol",
+      "why": "Moles = 3.011e24 atoms × (1 mol / 6.022e23 atoms) = 5.000 mol. The atomic mass is not used when the question starts from a count of atoms.",
+      "hints": ["3.011e24 is a count of magnesium atoms. Divide by 6.022e23. The atomic mass 24.305 is not part of this step."],
+      "check": { "kind": "numeric", "value": 5, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
+    },
+    {
+      "id": "ch06-mol-small-p",
+      "q": "How many moles are in 4.250e-3 g of P? P is 30.973762. Give 4 significant figures.",
+      "a": "1.372e-4 mol",
+      "why": "Moles = 4.250e-3 g × (1 mol / 30.973762 g) = 1.372e-4 mol.",
+      "hints": ["4.250e-3 g of phosphorus is the given mass. Divide by 30.973762 g/mol."],
+      "check": { "kind": "numeric", "value": 0.0001372, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
     }
   ]
 }

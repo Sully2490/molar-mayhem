@@ -2,11 +2,14 @@
   "id": "ch06-concentration",
   "ch": 6,
   "openstax_section": "OpenStax AF2e §6.4",
-  "guide_line": "Report concentration as a mass percent, a volume percent, ppm, or ppb, and convert a mass percent to molarity when a density is given.",
+  "guide_line": "Report concentration as a mass percent, a volume percent, a mass/volume percent, ppm, or ppb.",
   "steps": [
     "6.4 Other Units for Solution Concentrations: mass percent = (mass of solute / mass of solution) × 100. The solution mass includes the solute.",
+    "If you are given the solute and the solvent as two masses, add them. The denominator is the solution, not the solvent alone.",
     "Volume percent = (volume of solute / volume of solution) × 100. Mass/volume percent = (grams of solute / milliliters of solution) × 100.",
-    "ppm = (mass of solute / mass of solution) × 10^6. ppb uses 10^9. Put both masses in the same unit before you multiply.",
+    "Mass/volume percent needs grams and milliliters. Change liters to milliliters before you divide.",
+    "ppm = (mass of solute / mass of solution) × 10^6. ppb uses 10^9. Put both masses in the same unit before you multiply. ppb = ppm × 1000.",
+    "For dilute water with density 1.000 g/mL, 1 mg of solute in 1 L of solution is 1 ppm.",
     "A concentrated solution can be cut by mass percent the same way dilution works: percent1 × mass1 = percent2 × mass2.",
     "With a density, mass percent can become molarity. Pick 100 g of solution, take the solute grams from the percent, change grams to moles, and change the solution mass to liters with the density."
   ],
@@ -122,6 +125,54 @@
       "why": "Solution mass = 18.00 g + 142.0 g = 160.0 g. Mass percent = (18.00 / 160.0) × 100 = 11.25%.",
       "hints": ["Add 18.00 g of sugar to 142.0 g of water first. Divide 18.00 g by 160.0 g, not by 142.0 g."],
       "check": { "kind": "numeric", "value": 11.25, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch06-mv-from-L",
+      "q": "8.400 g of solute is dissolved to make 0.2500 L of solution. What is the mass/volume percent? Give 4 significant figures.",
+      "a": "3.360 %",
+      "why": "0.2500 L = 250.0 mL. Mass/volume percent = (8.400 g / 250.0 mL) × 100 = 3.360%.",
+      "hints": ["Change 0.2500 L into 250.0 mL first. Then divide 8.400 g by that volume and multiply by 100."],
+      "check": { "kind": "numeric", "value": 3.36, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch06-mv-volume",
+      "q": "A solution is 12.00% by mass/volume and contains 3.600 g of solute. What is the volume of the solution in mL? Give 4 significant figures.",
+      "a": "30.00 mL",
+      "why": "12.00% mass/volume means 12.00 g per 100 mL. Volume = 3.600 g × (100 mL / 12.00 g) = 30.00 mL.",
+      "hints": ["12.00% mass/volume means 12.00 g of solute in 100 mL of solution. Scale that pair down to 3.600 g."],
+      "check": { "kind": "numeric", "value": 30, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
+    },
+    {
+      "id": "ch06-mv-grams",
+      "q": "How many grams of solute are in 80.00 mL of a 5.500% mass/volume solution? Give 4 significant figures.",
+      "a": "4.400 g",
+      "why": "Mass = 80.00 mL × (5.500 g / 100 mL) = 4.400 g.",
+      "hints": ["5.500% mass/volume means 5.500 g in 100 mL. Scale that amount to 80.00 mL."],
+      "check": { "kind": "numeric", "value": 4.4, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch06-ppm-total",
+      "q": "2.500 g of KNO3 is dissolved in 247.5 g of water. What is the concentration of KNO3 in ppm? Give 4 significant figures.",
+      "a": "1.000e4 ppm",
+      "why": "Solution mass = 2.500 g + 247.5 g = 250.0 g. ppm = (2.500 g / 250.0 g) × 1e6 = 1.000e4 ppm. Dividing by 247.5 g alone leaves the salt out of the solution mass.",
+      "hints": ["Add 2.500 g of KNO3 to 247.5 g of water to get the solution mass. Divide 2.500 g by that total, then multiply by 1e6."],
+      "check": { "kind": "numeric", "value": 10000, "tolerance": 0.5, "sigFigs": 4, "unit": "ppm" }
+    },
+    {
+      "id": "ch06-ppm-to-ppb",
+      "q": "A water sample is 0.01840 ppm lead. What is that concentration in ppb? Give 4 significant figures.",
+      "a": "18.40 ppb",
+      "why": "ppb = 0.01840 ppm × 1000 = 18.40 ppb. One ppb is a thousand times smaller than one ppm, so the number grows by 1000.",
+      "hints": ["The sample is already 0.01840 ppm lead. Multiply that number by 1000 to report ppb."],
+      "check": { "kind": "numeric", "value": 18.4, "tolerance": 0.5, "sigFigs": 4, "unit": "ppb" }
+    },
+    {
+      "id": "ch06-mgl-ppm",
+      "q": "A dilute aqueous solution contains 3.750 mg of solute per liter and has density 1.000 g/mL. What is the concentration in ppm? Give 4 significant figures.",
+      "a": "3.750 ppm",
+      "why": "At 1.000 g/mL, 1.000 L of solution has a mass of 1000 g. 3.750 mg = 0.003750 g. ppm = (0.003750 g / 1000 g) × 1e6 = 3.750 ppm. For this density, mg/L and ppm are the same number.",
+      "hints": ["Density 1.000 g/mL makes 1.000 L of this solution weigh 1000 g, so the ppm number matches 3.750 mg/L."],
+      "check": { "kind": "numeric", "value": 3.75, "tolerance": 0.5, "sigFigs": 4, "unit": "ppm" }
     }
   ]
 }

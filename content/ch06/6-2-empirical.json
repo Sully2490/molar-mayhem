@@ -5,6 +5,9 @@
   "guide_line": "Find the percent of each element, then turn masses into an empirical formula and, if you have a molar mass, a molecular formula.",
   "steps": [
     "6.2 Determining Empirical and Molecular Formulas: percent of an element = (mass of that element in 1 mol / molar mass) × 100.",
+    "A lab percent uses the mass of one element divided by the mass of the whole sample, times 100.",
+    "If the data are moles, multiply by atomic masses first. A mass percent is not the mole percent.",
+    "To turn a molecular formula into an empirical formula, divide every subscript by the largest whole number that goes into all of them.",
     "For an empirical formula, assume 100 g when you are given percents. Grams of each element equal the percent number. Divide each mass by its atomic mass to get moles.",
     "Divide every mole count by the smallest one. If a result is near 1.5, 1.33, or 1.25, multiply all of the counts by 2, 3, or 4.",
     "A molecular formula needs one more number. n = given molar mass / empirical formula mass. Multiply each subscript by that whole number.",
@@ -130,6 +133,30 @@
       "why": "The formula starts with Zn. Zinc's symbol is a capital Z and a lowercase n.",
       "hints": ["The metal symbol is the first element in ZnSO4. Keep the capital Z and the lowercase n."],
       "check": { "kind": "exact", "text": "Zn", "case": "sensitive" }
+    },
+    {
+      "id": "ch06-emp-reduce",
+      "q": "What is the empirical formula of a compound whose molecular formula is C6H14? Write C, then H.",
+      "a": "C3H7",
+      "why": "The subscripts 6 and 14 share a factor of 2. Divide both by 2. The empirical formula is C3H7.",
+      "hints": ["Both subscripts in C6H14 can be divided by 2. Keep carbon before hydrogen."],
+      "check": { "kind": "exact", "text": "C3H7", "case": "sensitive" }
+    },
+    {
+      "id": "ch06-pct-lab-c",
+      "q": "A 4.800 g sample of a carbon compound contains 1.920 g of carbon. The rest of the sample is oxygen. What is the percent carbon by mass? Give 4 significant figures.",
+      "a": "40.00 %",
+      "why": "Percent C = (1.920 g / 4.800 g) × 100 = 40.00%. The oxygen is part of the sample, so the denominator is 4.800 g, not the oxygen mass alone.",
+      "hints": ["Divide 1.920 g of carbon by the 4.800 g sample, then multiply by 100. Leave the oxygen mass out of the denominator."],
+      "check": { "kind": "numeric", "value": 40, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch06-pct-from-moles",
+      "q": "A sample contains 0.2500 mol of C and 0.5000 mol of O. What is the percent carbon by mass? C is 12.011 and O is 15.9994. Give 4 significant figures.",
+      "a": "27.29 %",
+      "why": "Mass of C = 0.2500 mol × 12.011 g/mol = 3.00275 g. Mass of O = 0.5000 mol × 15.9994 g/mol = 7.9997 g. Total = 11.00245 g. Percent C = (3.00275 / 11.00245) × 100 = 27.29%. Dividing the moles, 0.2500 / 0.7500, gives 33.33%, which is not the mass percent.",
+      "hints": ["Change 0.2500 mol of C and 0.5000 mol of O into grams with their atomic masses before you divide. A ratio of the moles is not the mass percent."],
+      "check": { "kind": "numeric", "value": 27.29, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
     }
   ]
 }

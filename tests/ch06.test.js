@@ -68,8 +68,9 @@ function roundSig(n, digits = 4) {
 function formatSig(n, digits = 4) {
   const rounded = roundSig(n, digits);
   const exp = Math.floor(Math.log10(Math.abs(rounded)) + 1e-12);
-  if (exp >= -3 && exp <= 4) {
-    const text = rounded.toFixed(digits - 1 - exp);
+  const decimals = digits - 1 - exp;
+  if (exp >= -3 && decimals >= 0) {
+    const text = rounded.toFixed(decimals);
     if (countSigFigs(text) === digits) return text;
   }
   const man = rounded / 10 ** exp;
@@ -80,8 +81,8 @@ function numeric(full, unit) {
   return { kind: 'numeric', full, unit };
 }
 
-function exact(text) {
-  return { kind: 'exact', text };
+function exact(text, caseRule = 'sensitive') {
+  return { kind: 'exact', text, case: caseRule };
 }
 
 const SPECS = {
@@ -97,6 +98,10 @@ const SPECS = {
   'ch06-al-atoms': numeric((3.4 / m.Al) * NA, 'atoms'),
   'ch06-g-rust': numeric(1.25 * Fe2O3, 'g'),
   'ch06-mol-n-salt': numeric((6.8 / amm) * 2, 'mol'),
+  'ch06-term-formula-mass': exact('formula mass', 'insensitive'),
+  'ch06-term-molecular-mass': exact('molecular mass', 'insensitive'),
+  'ch06-mol-from-atoms': numeric(3.011e24 / NA, 'mol'),
+  'ch06-mol-small-p': numeric(4.25e-3 / m.P, 'mol'),
   'ch06-pct-o-co2': numeric((2 * m.O / CO2) * 100, '%'),
   'ch06-pct-n-nitrate': numeric((2 * m.N / NH4NO3) * 100, '%'),
   'ch06-pct-water-soda': numeric((10 * H2O / soda) * 100, '%'),
@@ -110,6 +115,9 @@ const SPECS = {
   'ch06-emp-no2': exact('NO2'),
   'ch06-pct-water-zinc': numeric((7 * H2O / zincHydrate) * 100, '%'),
   'ch06-symbol-zn': exact('Zn'),
+  'ch06-emp-reduce': exact('C3H7'),
+  'ch06-pct-lab-c': numeric((1.92 / 4.8) * 100, '%'),
+  'ch06-pct-from-moles': numeric((0.25 * m.C) / (0.25 * m.C + 0.5 * m.O) * 100, '%'),
   'ch06-m-from-mol': numeric(0.355 / 0.5, 'M'),
   'ch06-g-koh': numeric(0.5 * 0.2 * KOH, 'g'),
   'ch06-mol-acid': numeric(0.18 * 0.075, 'mol'),
@@ -122,6 +130,12 @@ const SPECS = {
   'ch06-dilute-acid': numeric((6 * 15) / 250, 'M'),
   'ch06-g-naoh': numeric(2 * 0.125 * NaOH, 'g'),
   'ch06-dilute-ml-to-l': numeric((2.5 * 0.04) / 0.5, 'M'),
+  'ch06-term-solute': exact('solute', 'insensitive'),
+  'ch06-term-solvent': exact('solvent', 'insensitive'),
+  'ch06-term-aqueous': exact('aqueous', 'insensitive'),
+  'ch06-term-water': exact('water', 'insensitive'),
+  'ch06-add-water': numeric((0.45 * 80) / 200, 'M'),
+  'ch06-evaporate': numeric((0.16 * 250) / 200, 'M'),
   'ch06-mass-pct': numeric((25 / 150) * 100, '%'),
   'ch06-g-from-pct': numeric(400 * 0.085, 'g'),
   'ch06-mass-dilute': numeric((10 * 250) / 68, 'g'),
@@ -134,6 +148,12 @@ const SPECS = {
   'ch06-g-ethanol': numeric(80 * 0.12, 'g'),
   'ch06-ppm-soil': numeric((0.0084 / 2000) * 1e6, 'ppm'),
   'ch06-sugar-pct': numeric((18 / 160) * 100, '%'),
+  'ch06-mv-from-L': numeric((8.4 / 250) * 100, '%'),
+  'ch06-mv-volume': numeric(3.6 / 0.12, 'mL'),
+  'ch06-mv-grams': numeric(80 * 0.055, 'g'),
+  'ch06-ppm-total': numeric((2.5 / 250) * 1e6, 'ppm'),
+  'ch06-ppm-to-ppb': numeric(0.0184 * 1000, 'ppb'),
+  'ch06-mgl-ppm': numeric(3.75, 'ppm'),
 };
 
 const TEACHING = {
@@ -174,7 +194,7 @@ function expectedAnswer(spec) {
 }
 
 function checkFor(spec) {
-  if (spec.kind === 'exact') return { kind: 'exact', text: spec.text, case: 'sensitive' };
+  if (spec.kind === 'exact') return { kind: 'exact', text: spec.text, case: spec.case };
   return {
     kind: 'numeric',
     value: roundSig(spec.full),
@@ -185,7 +205,10 @@ function checkFor(spec) {
 }
 
 function wrongInput(answer, spec) {
-  if (spec.kind === 'exact') return answer.toLowerCase();
+  if (spec.kind === 'exact') {
+    const flipped = answer.toLowerCase();
+    return flipped === answer ? `${answer}s` : flipped;
+  }
   return `${formatSig(spec.full * 2)} ${spec.unit}`;
 }
 
@@ -233,7 +256,7 @@ for (const [id, lesson] of Object.entries(lessons)) {
       assert.equal(problem.hints.length, 1, problem.id);
       assert.equal(problem.why.includes(problem.hints[0]), false, problem.id);
       if (spec.kind === 'exact') {
-        assert.equal(problem.check.case, 'sensitive', problem.id);
+        assert.equal(problem.check.case, spec.case, problem.id);
         assert.equal(problem.check.kind, 'exact');
         assert.equal(problem.check.text, spec.text);
       } else {
