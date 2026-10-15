@@ -1,0 +1,183 @@
+{
+  "id": "ch09-calorimetry",
+  "ch": 9,
+  "openstax_section": "OpenStax AF2e §9.2",
+  "guide_line": "Use a calorimeter: heat lost by one part is gained by the other.",
+  "steps": [
+    "A calorimeter is an insulated container. If no heat leaks out, q of one part plus q of the other part equals zero.",
+    "In a coffee-cup calorimeter the pressure stays about constant. The reaction is the system and the solution is the surroundings. q_reaction = -q_solution. Use q = c x m x ΔT. Dilute solutions use c = 4.184 J/g°C and a density of about 1.000 g/mL.",
+    "In a bomb calorimeter the volume stays constant. q_reaction = -C_cal x ΔT. If the water and the bomb both warm, add those two heats, then change the sign.",
+    "When a hot metal is dropped into cooler water, q_metal + q_water = 0. Both parts end at the same final temperature. The unknown can be that shared final temperature, the metal's specific heat, or the metal's starting temperature.",
+    "The sign follows the object you name. Water that warms has positive q. The reaction or the hot metal has the opposite sign. Report 4 significant figures."
+  ],
+  "worked_example": {
+    "q": "100.0 g of solution (c = 4.184 J/g°C) in a coffee cup warms from 21.50 °C to 28.25 °C during a reaction. What is q for the reaction, in kJ?",
+    "steps": [
+      "ΔT = 28.25 - 21.50 = 6.75 °C.",
+      "q_solution = 4.184 x 100.0 x 6.75 = 2824.2 J = 2.8242 kJ.",
+      "q_reaction = -2.8242 kJ, which is -2.824 kJ to 4 significant figures."
+    ],
+    "answer": "-2.824 kJ"
+  },
+  "similar_problem": {
+    "q": "A coffee-cup reaction warms 150.0 g of solution (c = 4.184 J/g°C) from 18.40 °C to 22.15 °C. What is q for the reaction, in kJ? Report 4 significant figures.",
+    "hint": "This solution mass is 150.0 g and it warms from 18.40 °C to 22.15 °C. Give the reaction the opposite sign of the solution.",
+    "answer": "ΔT = 22.15 - 18.40 = 3.75 °C. q_solution = 4.184 x 150.0 x 3.75 = 2353.5 J = 2.3535 kJ. q_reaction = -2.354 kJ to 4 significant figures."
+  },
+  "sources": [
+    "OpenStax AF2e §9.2",
+    "OpenStax AF2e Table 9.1"
+  ],
+  "problems": [
+    {
+      "id": "ch09-calorimetry-01",
+      "q": "A bomb calorimeter has C = 5.240 kJ/°C. A reaction raises its temperature by 2.180 °C. What is q for the reaction, in kJ? Report 4 significant figures.",
+      "a": "-11.42 kJ",
+      "why": "q_reaction = -C ΔT = -5.240 x 2.180 = -11.4232 kJ, which is -11.42 kJ to 4 significant figures.",
+      "hints": [
+        "In this bomb, q for the reaction is minus 5.240 kJ/°C times the 2.180 °C rise."
+      ],
+      "check": { "kind": "numeric", "value": -11.42, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-calorimetry-02",
+      "q": "50.00 mL of 0.8000 M acid is mixed with 50.00 mL of 0.8000 M base. The solution mass is 100.0 g, c = 4.184 J/g°C, and the temperature goes from 20.00 °C to 25.60 °C. The limiting reactant is 0.04000 mol. Find ΔH in kJ/mol. Report 4 significant figures.",
+      "a": "-58.58 kJ/mol",
+      "why": "ΔT = 5.60 °C. q_solution = 4.184 x 100.0 x 5.60 = 2343.04 J = 2.34304 kJ. q_reaction = -2.34304 kJ. ΔH = -2.34304 / 0.04000 = -58.576 kJ/mol, which is -58.58 kJ/mol to 4 significant figures.",
+      "hints": [
+        "Find q for the 100.0 g solution from 20.00 °C to 25.60 °C, flip the sign, then divide by 0.04000 mol."
+      ],
+      "check": { "kind": "numeric", "value": -58.58, "sigFigs": 4, "unit": "kJ/mol" }
+    },
+    {
+      "id": "ch09-calorimetry-03",
+      "q": "85.00 g of iron (c = 0.449 J/g°C) at 100.0 °C is placed in 120.0 g of water (c = 4.184 J/g°C) at 22.00 °C. What is the final temperature, in °C? Report 4 significant figures.",
+      "a": "27.51 °C",
+      "why": "0.449 x 85.00 x (T - 100.0) + 4.184 x 120.0 x (T - 22.00) = 0. 38.165(T - 100.0) + 502.08(T - 22.00) = 0. 540.245 T = 14862.26, so T = 27.510 °C, which is 27.51 °C to 4 significant figures.",
+      "hints": [
+        "The hot iron and the 22.00 °C water share one final temperature. Set q_iron + q_water = 0."
+      ],
+      "check": { "kind": "numeric", "value": 27.51, "sigFigs": 4, "unit": "°C" }
+    },
+    {
+      "id": "ch09-calorimetry-04",
+      "q": "52.40 g of metal at 99.20 °C is placed in 80.00 g of water at 23.10 °C. The final temperature is 26.40 °C. Water has c = 4.184 J/g°C. What is the specific heat of the metal, in J/g°C? Report 4 significant figures.",
+      "a": "0.2896 J/g°C",
+      "why": "q_water = 4.184 x 80.00 x (26.40 - 23.10) = 1104.576 J. The metal lost that heat. c = 1104.576 / (52.40 x (99.20 - 26.40)) = 0.289556 J/g°C, which is 0.2896 J/g°C to 4 significant figures.",
+      "hints": [
+        "The 80.00 g of water warms from 23.10 °C to 26.40 °C. The metal lost that same heat while cooling from 99.20 °C."
+      ],
+      "check": { "kind": "numeric", "value": 0.2896, "sigFigs": 4, "unit": "J/g°C" }
+    },
+    {
+      "id": "ch09-calorimetry-05",
+      "q": "OpenStax AF2e Table 9.1 lists Al 0.897, Fe 0.449, Cu 0.385, and Pb 0.130 J/g°C. A calorimeter result is c = 0.385 J/g°C. Enter the symbol.",
+      "a": "Cu",
+      "why": "0.385 J/g°C matches copper. The symbol is Cu.",
+      "hints": [
+        "Match 0.385 J/g°C to the list. The symbol uses a capital C and a lowercase u."
+      ],
+      "check": { "kind": "exact", "text": "Cu", "case": "sensitive" }
+    },
+    {
+      "id": "ch09-calorimetry-06",
+      "q": "A reaction that releases 3.150 kJ raises a calorimeter's temperature by 1.460 °C. What is the calorimeter constant, in kJ/°C? Report 4 significant figures.",
+      "a": "2.158 kJ/°C",
+      "why": "C = 3.150 kJ / 1.460 °C = 2.15753 kJ/°C, which is 2.158 kJ/°C to 4 significant figures.",
+      "hints": [
+        "This calorimeter constant is the 3.150 kJ release divided by the 1.460 °C rise."
+      ],
+      "check": { "kind": "numeric", "value": 2.158, "sigFigs": 4, "unit": "kJ/°C" }
+    },
+    {
+      "id": "ch09-calorimetry-07",
+      "q": "A salt dissolves in 120.0 g of water (c = 4.184 J/g°C) and the temperature falls from 24.80 °C to 21.35 °C. What is q for the dissolving, in kJ? Report 4 significant figures.",
+      "a": "1.732 kJ",
+      "why": "ΔT = 21.35 - 24.80 = -3.45 °C. q_solution = 4.184 x 120.0 x -3.45 = -1732.176 J. q_dissolving = +1.732 kJ to 4 significant figures.",
+      "hints": [
+        "The 120.0 g solution cools from 24.80 °C to 21.35 °C, so its q is negative. Dissolving gets the opposite sign."
+      ],
+      "check": { "kind": "numeric", "value": 1.732, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-calorimetry-08",
+      "q": "A bomb holds 1.200 x 10^3 g of water (c = 4.184 J/g°C) and the bomb itself has C = 785.0 J/°C. A fuel sample raises the temperature by 2.450 °C. What is q for the reaction, in kJ? Report 4 significant figures.",
+      "a": "-14.22 kJ",
+      "why": "q_water = 4.184 x 1200 x 2.450 = 12300.96 J. q_bomb = 785.0 x 2.450 = 1923.25 J. q_reaction = -(12300.96 + 1923.25) = -14224.21 J = -14.22 kJ to 4 significant figures.",
+      "hints": [
+        "Add the heat gained by 1.200 x 10^3 g of water to the heat gained by the 785.0 J/°C bomb, then change the sign."
+      ],
+      "check": { "kind": "numeric", "value": -14.22, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-calorimetry-09",
+      "q": "Burning 0.8200 g of a fuel releases 26.40 kJ in a bomb calorimeter. What is q per gram of fuel, in kJ/g? Use a negative sign for heat released. Report 4 significant figures.",
+      "a": "-32.20 kJ/g",
+      "why": "q per gram = -26.40 kJ / 0.8200 g = -32.1951 kJ/g, which is -32.20 kJ/g to 4 significant figures.",
+      "hints": [
+        "Divide -26.40 kJ by the 0.8200 g of fuel that burned."
+      ],
+      "check": { "kind": "numeric", "value": -32.2, "sigFigs": 4, "unit": "kJ/g" }
+    },
+    {
+      "id": "ch09-calorimetry-10",
+      "q": "150.0 g of water at 75.00 °C is mixed with 250.0 g of water at 18.00 °C. What is the final temperature, in °C? Report 4 significant figures.",
+      "a": "39.38 °C",
+      "why": "c cancels. 150.0(T - 75.00) + 250.0(T - 18.00) = 0. 400.0 T = 15750, so T = 39.375 °C, which is 39.38 °C to 4 significant figures.",
+      "hints": [
+        "Both parts are water, so c cancels. The 150.0 g sample starts at 75.00 °C and the 250.0 g sample starts at 18.00 °C."
+      ],
+      "check": { "kind": "numeric", "value": 39.38, "sigFigs": 4, "unit": "°C" }
+    },
+    {
+      "id": "ch09-calorimetry-11",
+      "q": "0.9200 g of ethanol, C2H5OH, is burned in a bomb with C = 6.180 kJ/°C. The temperature rises 4.250 °C. Use atomic masses H = 1.008, C = 12.011, and O = 15.999. Find ΔH in kJ/mol of ethanol. Report 4 significant figures.",
+      "a": "-1315 kJ/mol",
+      "why": "Molar mass = 2(12.011) + 6(1.008) + 15.999 = 46.069 g/mol. Moles = 0.9200 / 46.069 = 0.0199700 mol. q = -6.180 x 4.250 = -26.265 kJ. ΔH = -26.265 / 0.0199700 = -1315.22 kJ/mol, which is -1315 kJ/mol to 4 significant figures.",
+      "hints": [
+        "Molar mass of C2H5OH uses H = 1.008, C = 12.011, and O = 15.999. Divide the bomb heat by the moles in 0.9200 g."
+      ],
+      "check": { "kind": "numeric", "value": -1315, "sigFigs": 4, "unit": "kJ/mol" }
+    },
+    {
+      "id": "ch09-calorimetry-12",
+      "q": "200.0 g of aluminum (c = 0.897 J/g°C) at 15.00 °C is placed in 90.00 g of water (c = 4.184 J/g°C) at 85.00 °C. What is the final temperature, in °C? Report 4 significant figures.",
+      "a": "62.41 °C",
+      "why": "0.897 x 200.0 x (T - 15.00) + 4.184 x 90.00 x (T - 85.00) = 0. 179.4(T - 15.00) + 376.56(T - 85.00) = 0. 555.96 T = 34698.6, so T = 62.412 °C, which is 62.41 °C to 4 significant figures.",
+      "hints": [
+        "The aluminum starts at 15.00 °C and the water starts at 85.00 °C. Use 0.897 for Al and 4.184 for water, and set the heats to cancel."
+      ],
+      "check": { "kind": "numeric", "value": 62.41, "sigFigs": 4, "unit": "°C" }
+    },
+    {
+      "id": "ch09-calorimetry-13",
+      "q": "75.00 g of copper (c = 0.385 J/g°C, OpenStax AF2e Table 9.1) is placed in 150.0 g of water (c = 4.184 J/g°C) at 22.10 °C. The final temperature is 28.40 °C. What was the copper's starting temperature, in °C? Report 4 significant figures.",
+      "a": "165.3 °C",
+      "why": "q_water = 4.184 x 150.0 x (28.40 - 22.10) = 3953.88 J. The copper lost that heat: 0.385 x 75.00 x (28.40 - T) = -3953.88. 28.40 - T = -136.931, so T = 165.331 °C, which is 165.3 °C to 4 significant figures.",
+      "hints": [
+        "The 150.0 g of water warms from 22.10 °C to 28.40 °C. The 75.00 g of copper, c = 0.385, lost that heat and also ended at 28.40 °C."
+      ],
+      "check": { "kind": "numeric", "value": 165.3, "sigFigs": 4, "unit": "°C" }
+    },
+    {
+      "id": "ch09-calorimetry-14",
+      "q": "A reaction warms 125.0 mL of dilute solution from 19.50 °C to 24.70 °C in a coffee cup. Use a density of 1.000 g/mL and c = 4.184 J/g°C. What is q for the reaction, in kJ? Report 4 significant figures.",
+      "a": "-2.720 kJ",
+      "why": "Mass = 125.0 mL x 1.000 g/mL = 125.0 g. q_solution = 4.184 x 125.0 x (24.70 - 19.50) = 2719.6 J = 2.7196 kJ. q_reaction = -2.720 kJ to 4 significant figures.",
+      "hints": [
+        "Turn 125.0 mL into grams with 1.000 g/mL, then use the rise from 19.50 °C to 24.70 °C. Give the reaction the opposite sign."
+      ],
+      "check": { "kind": "numeric", "value": -2.72, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-calorimetry-15",
+      "q": "A dissolving salt makes the coffee-cup solution colder. Is that dissolving endothermic or exothermic?",
+      "a": "endothermic",
+      "why": "The solution lost heat, so the dissolving took heat in. The process is endothermic.",
+      "hints": [
+        "The coffee-cup solution got colder, so the dissolving took heat from the water. Name that direction."
+      ],
+      "check": { "kind": "exact", "text": "endothermic", "case": "insensitive" }
+    }
+  ]
+}

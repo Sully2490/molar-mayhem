@@ -1,0 +1,154 @@
+{
+  "id": "ch09-bonds",
+  "ch": 9,
+  "openstax_section": "OpenStax AF2e §9.4",
+  "guide_line": "Estimate ΔH from bond energies, and compare lattice energies by charge and size.",
+  "steps": [
+    "Bond energy is the energy to break 1 mol of a bond in the gas phase. Breaking a bond takes energy. Forming a bond releases the same amount.",
+    "ΔH is about Σ D(bonds broken) - Σ D(bonds formed). Use the average values in OpenStax AF2e Table 9.3. This is an estimate.",
+    "A triple bond is stronger than a double bond, and a double bond is stronger than a single bond, between the same two atoms.",
+    "Lattice energy is the energy to separate 1 mol of an ionic solid into gas-phase ions. It is larger when the ion charges are higher and when the ions are smaller.",
+    "A Born-Haber cycle is Hess's law for an ionic solid: ΔHf° = sublimation + 1/2 bond energy + ionization energy + electron affinity - lattice energy. Report 4 significant figures."
+  ],
+  "worked_example": {
+    "q": "Estimate ΔH for H2(g) + Br2(g) → 2 HBr(g). Bond energies from OpenStax AF2e Table 9.3: H-H 436, Br-Br 190, H-Br 370 kJ/mol.",
+    "steps": [
+      "Bonds broken: 436 + 190 = 626 kJ.",
+      "Bonds formed: 2 x 370 = 740 kJ.",
+      "ΔH = 626 - 740 = -114 kJ, written -114.0 kJ to 4 significant figures."
+    ],
+    "answer": "-114.0 kJ"
+  },
+  "similar_problem": {
+    "q": "Estimate ΔH for H2(g) + F2(g) → 2 HF(g). Table 9.3: H-H 436, F-F 160, H-F 569 kJ/mol. Report 4 significant figures, in kJ.",
+    "hint": "Break one H-H (436) and one F-F (160). Form two H-F bonds at 569 kJ/mol each.",
+    "answer": "Broken = 436 + 160 = 596 kJ. Formed = 2 x 569 = 1138 kJ. ΔH = 596 - 1138 = -542 kJ, which is -542.0 kJ to 4 significant figures."
+  },
+  "sources": [
+    "OpenStax AF2e §9.4",
+    "OpenStax AF2e Table 9.3",
+    "OpenStax AF2e Appendix G"
+  ],
+  "problems": [
+    {
+      "id": "ch09-bonds-01",
+      "q": "Estimate ΔH for C2H4(g) + H2(g) → C2H6(g), in kJ. Table 9.3: C=C 611, H-H 436, C-C 345, C-H 415 kJ/mol. The four C-H bonds already in C2H4 stay in place. Report 4 significant figures.",
+      "a": "-128.0 kJ",
+      "why": "Broken = 611 + 436 = 1047 kJ. Formed = 345 + 2(415) = 1175 kJ. ΔH = 1047 - 1175 = -128 kJ, which is -128.0 kJ to 4 significant figures.",
+      "hints": [
+        "In C2H4 plus H2, break the C=C (611) and the H-H (436). Form one C-C (345) and two new C-H bonds (415 each)."
+      ],
+      "check": { "kind": "numeric", "value": -128, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-bonds-02",
+      "q": "Which bond is strongest: C-C, C=C, or C#C? Type one of those three. Table 9.3 lists 345, 611, and 837 kJ/mol.",
+      "a": "C#C",
+      "why": "Bond energy rises from the single bond (345) to the double bond (611) to the triple bond (837). The strongest is C#C.",
+      "hints": [
+        "Compare 345, 611, and 837. Type the carbon-carbon bond that matches 837, using a # for the triple bond."
+      ],
+      "check": { "kind": "exact", "text": "C#C", "case": "sensitive" }
+    },
+    {
+      "id": "ch09-bonds-03",
+      "q": "Which has the larger lattice energy, CaO or KF? Enter the formula. Charges: Ca is 2+, O is 2-, K is 1+, F is 1-.",
+      "a": "CaO",
+      "why": "Lattice energy rises when both ion charges are larger. CaO has 2+ and 2- ions, so its lattice energy is larger than that of KF.",
+      "hints": [
+        "Compare the charges in CaO with the charges in KF. The 2+ and 2- pair wins."
+      ],
+      "check": { "kind": "exact", "text": "CaO", "case": "sensitive" }
+    },
+    {
+      "id": "ch09-bonds-04",
+      "q": "Find the lattice energy of NaCl(s), in kJ/mol. Given: sublimation of Na 107.5 kJ/mol (Appendix G, Na(g)), 1/2 of the Cl-Cl bond 121.3 kJ/mol (Appendix G, Cl(g)), ionization energy 496.0 kJ/mol, electron affinity -349.0 kJ/mol, and ΔHf° of NaCl(s) -411.2 kJ/mol. Report 4 significant figures.",
+      "a": "787.0 kJ/mol",
+      "why": "Lattice energy = 107.5 + 121.3 + 496.0 + (-349.0) - (-411.2) = 787.0 kJ/mol.",
+      "hints": [
+        "For NaCl, add 107.5, 121.3, 496.0, and -349.0, then subtract the formation value -411.2."
+      ],
+      "check": { "kind": "numeric", "value": 787, "sigFigs": 4, "unit": "kJ/mol" }
+    },
+    {
+      "id": "ch09-bonds-05",
+      "q": "Table 9.3 gives the H-H bond energy as 436 kJ/mol. How much energy, in kJ, is needed to break the bonds in 0.2500 mol of H2? Report 4 significant figures.",
+      "a": "109.0 kJ",
+      "why": "Energy = 0.2500 mol x 436 kJ/mol = 109.0 kJ.",
+      "hints": [
+        "Each mole of H2 has one H-H bond at 436 kJ. Scale that by 0.2500 mol."
+      ],
+      "check": { "kind": "numeric", "value": 109, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-bonds-06",
+      "q": "Estimate ΔH for N2(g) + 3 H2(g) → 2 NH3(g), in kJ. Table 9.3: N#N 946, H-H 436, N-H 390 kJ/mol. Report 4 significant figures.",
+      "a": "-86.00 kJ",
+      "why": "Broken = 946 + 3(436) = 2254 kJ. Formed = 6(390) = 2340 kJ, because each NH3 has three N-H bonds. ΔH = 2254 - 2340 = -86 kJ, which is -86.00 kJ to 4 significant figures.",
+      "hints": [
+        "Break one N#N (946) and three H-H bonds (436). Form six N-H bonds (390), two ammonia molecules times three."
+      ],
+      "check": { "kind": "numeric", "value": -86, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-bonds-07",
+      "q": "How much stronger is a C#C bond than a C-C bond, in kJ/mol? Table 9.3: C#C 837, C-C 345. Report 4 significant figures.",
+      "a": "492.0 kJ/mol",
+      "why": "837 - 345 = 492 kJ/mol, which is 492.0 kJ/mol to 4 significant figures.",
+      "hints": [
+        "Subtract the C-C value 345 from the C#C value 837."
+      ],
+      "check": { "kind": "numeric", "value": 492, "sigFigs": 4, "unit": "kJ/mol" }
+    },
+    {
+      "id": "ch09-bonds-08",
+      "q": "Which has the larger lattice energy, NaF or NaI? Enter the formula. The charges match. F- is smaller than I-.",
+      "a": "NaF",
+      "why": "The charges are the same, so the smaller ions give the larger lattice energy. Fluoride is smaller than iodide, so NaF is larger.",
+      "hints": [
+        "NaF and NaI have the same charges. Pick the formula with the smaller halide ion."
+      ],
+      "check": { "kind": "exact", "text": "NaF", "case": "sensitive" }
+    },
+    {
+      "id": "ch09-bonds-09",
+      "q": "An ionic solid MX forms in these steps, all in kJ/mol: sublimation 150.0, half the X-X bond 80.00, ionization energy 400.0, electron affinity -330.0, lattice energy 700.0. What is ΔHf° of MX, in kJ/mol? Report 4 significant figures.",
+      "a": "-400.0 kJ/mol",
+      "why": "ΔHf° = 150.0 + 80.00 + 400.0 + (-330.0) + (-700.0) = -400.0 kJ/mol. Forming the lattice releases the lattice energy, so that step is negative.",
+      "hints": [
+        "Add 150.0, 80.00, 400.0, and -330.0, then add -700.0 because forming the MX lattice releases that energy."
+      ],
+      "check": { "kind": "numeric", "value": -400, "sigFigs": 4, "unit": "kJ/mol" }
+    },
+    {
+      "id": "ch09-bonds-10",
+      "q": "Estimate ΔH for C2H2(g) + H2(g) → C2H4(g), in kJ. Table 9.3: C#C 837, C=C 611, C-H 415, H-H 436 kJ/mol. Acetylene has two C-H bonds and one C#C bond. Report 4 significant figures.",
+      "a": "-168.0 kJ",
+      "why": "Broken = 2(415) + 837 + 436 = 2103 kJ. Formed = 4(415) + 611 = 2271 kJ. ΔH = 2103 - 2271 = -168 kJ, which is -168.0 kJ to 4 significant figures.",
+      "hints": [
+        "Acetylene contributes two C-H bonds and one C#C bond, and H2 contributes one H-H. Ethylene has four C-H bonds and one C=C bond."
+      ],
+      "check": { "kind": "numeric", "value": -168, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-bonds-11",
+      "q": "Which has the larger lattice energy, MgO or NaCl? Enter the formula. Mg is 2+, O is 2-, Na is 1+, and Cl is 1-.",
+      "a": "MgO",
+      "why": "MgO has charges 2+ and 2-. NaCl has charges 1+ and 1-. The higher charges give MgO the larger lattice energy.",
+      "hints": [
+        "MgO is 2+ with 2-. NaCl is 1+ with 1-. Enter the formula with the higher charges."
+      ],
+      "check": { "kind": "exact", "text": "MgO", "case": "sensitive" }
+    },
+    {
+      "id": "ch09-bonds-12",
+      "q": "How much energy, in kJ, is needed to break all of the H-H bonds in 2.500 g of H2? Table 9.3 gives 436 kJ/mol. Use the atomic mass H = 1.008. Report 4 significant figures.",
+      "a": "540.7 kJ",
+      "why": "Molar mass of H2 = 2(1.008) = 2.016 g/mol. Moles = 2.500 / 2.016 = 1.24008 mol. Energy = 1.24008 x 436 = 540.675 kJ, which is 540.7 kJ to 4 significant figures.",
+      "hints": [
+        "H2 molar mass is 2 x 1.008. Convert 2.500 g to moles, then multiply by 436 kJ/mol."
+      ],
+      "check": { "kind": "numeric", "value": 540.7, "sigFigs": 4, "unit": "kJ" }
+    }
+  ]
+}

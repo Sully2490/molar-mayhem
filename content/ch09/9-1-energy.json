@@ -1,0 +1,173 @@
+{
+  "id": "ch09-energy",
+  "ch": 9,
+  "openstax_section": "OpenStax AF2e §9.1",
+  "guide_line": "Find heat from q = c m ΔT, and tell heat from temperature.",
+  "steps": [
+    "Temperature tells how hot a sample is. Heat is energy moving from the hotter object to the cooler one. Two samples can share a temperature and still need different amounts of heat. The larger mass needs more heat for the same temperature rise.",
+    "Specific heat, c, is the energy to warm 1 g of a substance by 1 °C. Heat capacity, C, is the energy to warm the whole sample by 1 °C. C = c x m.",
+    "q = c x m x ΔT, and ΔT = T_final - T_initial. q is positive when the sample warms and negative when it cools.",
+    "Liquid water has c = 4.184 J/g°C (OpenStax AF2e Table 9.1). 1 cal = 4.184 J, so divide joules by 4.184 to get calories. One food Calorie is 4.184 kJ.",
+    "A change that releases heat is exothermic. A change that takes heat in is endothermic. Report each calculated number to 4 significant figures."
+  ],
+  "worked_example": {
+    "q": "A 250.0 g iron skillet (c = 0.449 J/g°C) is heated from 22.00 °C to 148.0 °C. How much heat, in J, does the skillet absorb?",
+    "steps": [
+      "ΔT = 148.0 - 22.00 = 126.0 °C.",
+      "q = 0.449 J/g°C x 250.0 g x 126.0 °C = 14143.5 J.",
+      "To 4 significant figures, q = 14140 J."
+    ],
+    "answer": "14140 J"
+  },
+  "similar_problem": {
+    "q": "A 180.0 g copper pan (c = 0.385 J/g°C) cools from 95.00 °C to 28.00 °C. What is q for the copper, in J? Report 4 significant figures.",
+    "hint": "Copper cools from 95.00 °C to 28.00 °C, so ΔT is negative. Use c = 0.385 J/g°C.",
+    "answer": "ΔT = 28.00 - 95.00 = -67.00 °C. q = 0.385 x 180.0 x -67.00 = -4643.1 J, which is -4643 J to 4 significant figures."
+  },
+  "sources": [
+    "OpenStax AF2e §9.1",
+    "OpenStax AF2e Table 9.1"
+  ],
+  "problems": [
+    {
+      "id": "ch09-energy-01",
+      "q": "How much heat, in J, does 425.0 g of water absorb when it warms from 19.25 °C to 37.50 °C? Use c = 4.184 J/g°C. Report 4 significant figures.",
+      "a": "32450 J",
+      "why": "ΔT = 37.50 - 19.25 = 18.25 °C. q = 4.184 x 425.0 x 18.25 = 32452 J, which is 32450 J to 4 significant figures.",
+      "hints": [
+        "For the 425.0 g water sample, ΔT is 37.50 minus 19.25. Multiply that change by 4.184 and by 425.0."
+      ],
+      "check": { "kind": "numeric", "value": 32450, "sigFigs": 4, "unit": "J" }
+    },
+    {
+      "id": "ch09-energy-02",
+      "q": "A 64.20 g gold sample (c = 0.129 J/g°C, OpenStax AF2e Table 9.1) cools from 98.60 °C to 24.10 °C. What is q for the gold, in J? Report 4 significant figures.",
+      "a": "-617.0 J",
+      "why": "ΔT = 24.10 - 98.60 = -74.50 °C. q = 0.129 x 64.20 x -74.50 = -616.994 J, which is -617.0 J to 4 significant figures.",
+      "hints": [
+        "This gold sample cools, so ΔT is 24.10 minus 98.60. Keep the minus sign on q."
+      ],
+      "check": { "kind": "numeric", "value": -617, "sigFigs": 4, "unit": "J" }
+    },
+    {
+      "id": "ch09-energy-03",
+      "q": "An 86.50 g metal piece absorbs 1248 J and warms from 21.40 °C to 63.80 °C. What is its specific heat, in J/g°C? Report 4 significant figures.",
+      "a": "0.3403 J/g°C",
+      "why": "ΔT = 63.80 - 21.40 = 42.40 °C. c = 1248 / (86.50 x 42.40) = 0.340277 J/g°C, which is 0.3403 J/g°C to 4 significant figures.",
+      "hints": [
+        "Rearrange the 86.50 g metal problem to c = q / (m ΔT). Its temperature rise is 63.80 minus 21.40."
+      ],
+      "check": { "kind": "numeric", "value": 0.3403, "sigFigs": 4, "unit": "J/g°C" }
+    },
+    {
+      "id": "ch09-energy-04",
+      "q": "OpenStax AF2e Table 9.1 lists Al 0.897, Fe 0.449, Cu 0.385, and Au 0.129 J/g°C. A metal has specific heat 0.449 J/g°C. Enter its symbol.",
+      "a": "Fe",
+      "why": "0.449 J/g°C matches iron in Table 9.1. The symbol is Fe.",
+      "hints": [
+        "Look for 0.449 J/g°C on the metal list. Type that symbol with a capital F."
+      ],
+      "check": { "kind": "exact", "text": "Fe", "case": "sensitive" }
+    },
+    {
+      "id": "ch09-energy-05",
+      "q": "A metal block absorbs 642.0 J and its temperature rises by 3.250 °C. What is the heat capacity of the block, in J/°C? Report 4 significant figures.",
+      "a": "197.5 J/°C",
+      "why": "C = q / ΔT = 642.0 J / 3.250 °C = 197.538 J/°C, which is 197.5 J/°C to 4 significant figures.",
+      "hints": [
+        "The block's heat capacity is 642.0 J divided by the 3.250 °C rise. Do not divide by a mass."
+      ],
+      "check": { "kind": "numeric", "value": 197.5, "sigFigs": 4, "unit": "J/°C" }
+    },
+    {
+      "id": "ch09-energy-06",
+      "q": "Ethanol has c = 2.376 J/g°C (OpenStax AF2e Table 9.1). A sample absorbs 2.150 x 10^3 J and warms by 15.40 °C. What is the mass, in g? Report 4 significant figures.",
+      "a": "58.76 g",
+      "why": "m = q / (c ΔT) = 2150 / (2.376 x 15.40) = 58.7586 g, which is 58.76 g to 4 significant figures.",
+      "hints": [
+        "For this ethanol sample, rearrange to m = q / (c ΔT) and use 2.376 J/g°C with a 15.40 °C rise."
+      ],
+      "check": { "kind": "numeric", "value": 58.76, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch09-energy-07",
+      "q": "A snack label says 3.500 Cal. How many kilojoules is that? Use 1 Cal = 4.184 kJ. Report 4 significant figures.",
+      "a": "14.64 kJ",
+      "why": "3.500 Cal x 4.184 kJ/Cal = 14.644 kJ, which is 14.64 kJ to 4 significant figures.",
+      "hints": [
+        "A food Calorie is 4.184 kJ. Multiply the snack's 3.500 Cal by 4.184."
+      ],
+      "check": { "kind": "numeric", "value": 14.64, "sigFigs": 4, "unit": "kJ" }
+    },
+    {
+      "id": "ch09-energy-08",
+      "q": "Convert 125.0 cal to joules. Use 1 cal = 4.184 J. Report 4 significant figures.",
+      "a": "523.0 J",
+      "why": "125.0 cal x 4.184 J/cal = 523.0 J.",
+      "hints": [
+        "This one is small calories, not food Calories. Multiply 125.0 cal by 4.184 J/cal."
+      ],
+      "check": { "kind": "numeric", "value": 523, "sigFigs": 4, "unit": "J" }
+    },
+    {
+      "id": "ch09-energy-09",
+      "q": "250.0 g of water at 22.00 °C absorbs 8.368 kJ. What is the final temperature, in °C? Use c = 4.184 J/g°C. Report 4 significant figures.",
+      "a": "30.00 °C",
+      "why": "8.368 kJ = 8368 J. ΔT = 8368 / (4.184 x 250.0) = 8.000 °C. T_final = 22.00 + 8.000 = 30.00 °C.",
+      "hints": [
+        "Change 8.368 kJ into joules, divide by c x 250.0 g, then add that ΔT to 22.00 °C."
+      ],
+      "check": { "kind": "numeric", "value": 30, "sigFigs": 4, "unit": "°C" }
+    },
+    {
+      "id": "ch09-energy-10",
+      "q": "A 100.0 g sample of Al (c = 0.897 J/g°C) and a 100.0 g sample of Pb (c = 0.130 J/g°C) are each warmed by 10.00 °C. Which metal absorbs more heat? Enter the symbol.",
+      "a": "Al",
+      "why": "The masses and ΔT match, so the larger specific heat absorbs more heat. Aluminum (0.897) absorbs more than lead (0.130). The symbol is Al.",
+      "hints": [
+        "The Al and Pb samples have the same mass and the same 10.00 °C rise, so compare 0.897 with 0.130."
+      ],
+      "check": { "kind": "exact", "text": "Al", "case": "sensitive" }
+    },
+    {
+      "id": "ch09-energy-11",
+      "q": "Ice melts in a warm room. For the ice, is the melting endothermic or exothermic?",
+      "a": "endothermic",
+      "why": "The ice takes in heat as it melts, so the change is endothermic.",
+      "hints": [
+        "Melting ice takes heat in from the room. Use the word for a change that absorbs heat."
+      ],
+      "check": { "kind": "exact", "text": "endothermic", "case": "insensitive" }
+    },
+    {
+      "id": "ch09-energy-12",
+      "q": "How much heat, in J, does 40.00 g of silicon absorb when it warms from 25.00 °C to 80.00 °C? Use c = 0.712 J/g°C (OpenStax AF2e Table 9.1). Report 4 significant figures.",
+      "a": "1566 J",
+      "why": "ΔT = 80.00 - 25.00 = 55.00 °C. q = 0.712 x 40.00 x 55.00 = 1566.4 J, which is 1566 J to 4 significant figures.",
+      "hints": [
+        "Silicon's table value is 0.712 J/g°C. ΔT for this 40.00 g piece is 80.00 minus 25.00."
+      ],
+      "check": { "kind": "numeric", "value": 1566, "sigFigs": 4, "unit": "J" }
+    },
+    {
+      "id": "ch09-energy-13",
+      "q": "Convert 860.0 J to calories. Use 1 cal = 4.184 J. Report 4 significant figures.",
+      "a": "205.5 cal",
+      "why": "860.0 J / 4.184 J/cal = 205.545 cal, which is 205.5 cal to 4 significant figures.",
+      "hints": [
+        "These are small calories. Divide 860.0 J by 4.184 J/cal."
+      ],
+      "check": { "kind": "numeric", "value": 205.5, "sigFigs": 4, "unit": "cal" }
+    },
+    {
+      "id": "ch09-energy-14",
+      "q": "90.00 g of water and 360.0 g of water are both at 18.00 °C. Which sample needs more heat to reach 28.00 °C? Enter that mass, in g. Use c = 4.184 J/g°C.",
+      "a": "360.0 g",
+      "why": "Both samples rise by 10.00 °C and water's c is the same, so the larger mass needs more heat. That mass is 360.0 g.",
+      "hints": [
+        "The 90.00 g and 360.0 g water samples start at the same 18.00 °C and rise by the same amount. Pick the larger mass."
+      ],
+      "check": { "kind": "numeric", "value": 360, "sigFigs": 4, "unit": "g" }
+    }
+  ]
+}
