@@ -5,14 +5,17 @@ export function emptyProgress() {
 }
 
 export function todayKey(date = new Date()) {
-  return date.toISOString().slice(0, 10);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
 }
 
 export function previousDay(iso) {
   const [year, month, day] = String(iso).split('-').map(Number);
-  const date = new Date(Date.UTC(year, month - 1, day));
-  date.setUTCDate(date.getUTCDate() - 1);
-  return date.toISOString().slice(0, 10);
+  const date = new Date(year, month - 1, day, 12, 0, 0);
+  date.setDate(date.getDate() - 1);
+  return todayKey(date);
 }
 
 export function normalizeProgress(raw) {
@@ -34,7 +37,7 @@ export function normalizeProgress(raw) {
   return next;
 }
 
-/** Advance the streak when this UTC day is new. Same day leaves the count alone. */
+/** Advance the streak when this local day is new. Same day leaves the count alone. */
 export function noteDay(progress, day = todayKey()) {
   const next = normalizeProgress(progress);
   if (next.lastDay === day) return next;

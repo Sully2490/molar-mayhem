@@ -1,5 +1,5 @@
 import { toastHtml } from './celebrate.js';
-import { firstDrill, renderDrillQueue } from './drills.js';
+import { renderDrillQueue } from './drills.js';
 import { grade } from './grade.js';
 
 export const ATTEMPTS = 3;
@@ -52,9 +52,10 @@ export function feedbackForUnit(result, attempt, problem) {
   return { done: false, status: 'miss', text: 'Not yet. Type the number in Value and the unit in Unit.' };
 }
 
-export function renderDrill() {
+export function renderDrill(item) {
   const forms = UNIT_PROBLEMS.map(renderProblem).join('');
-  return `<section class="page" data-route="Drill"><h1>Drill</h1><p>Type the number and the unit in separate boxes.</p>${forms}${renderDrillQueue(firstDrill())}${toastHtml()}</section>`;
+  const queue = item === undefined ? '' : renderDrillQueue(item);
+  return `<section class="page" data-route="Drill"><h1>Drill</h1><p>Type the number and the unit in separate boxes.</p>${forms}${queue}${toastHtml()}</section>`;
 }
 
 function renderProblem(problem) {

@@ -1,5 +1,5 @@
-import { bindCards, renderCards } from './cards.js';
-import { bindDrill } from './drills.js';
+import { bindCards, cardsFromLessons, renderCards } from './cards.js';
+import { bindDrill, drillsFromLessons } from './drills.js';
 import { bindGlossary } from './glossary.js';
 import { bindLearn, loadLessons, renderLearn } from './learn.js';
 import { bindMap, renderMap } from './map.js';
@@ -7,7 +7,7 @@ import { renderTable } from './periodic.js';
 import { bindPrep, loadFinalProblems, renderPrepPage } from './prep.js';
 import { openLesson, readProgress, writeProgress } from './progress.js';
 import { lessonIdFromHash, renderRoute, routeFromHash, routeTitle } from './routes.js';
-import { applySyncHash, rememberNote } from './sync.js';
+import { applySyncHash, rememberNote, rememberPending } from './sync.js';
 import { bindUnitEntry, renderDrill } from './unit-entry.js';
 
 const view = document.querySelector('#view');
@@ -25,11 +25,10 @@ let paintGeneration = 0;
 function takeSyncHash() {
   const applied = applySyncHash(location.hash);
   if (!applied.handled) return false;
+  const nextUrl = `${location.pathname}${location.search}#Map`;
+  history.replaceState(null, '', nextUrl);
+  if (applied.needsConfirm && applied.progress) rememberPending(applied.progress);
   rememberNote(applied.note);
-  if (location.hash !== applied.nextHash) {
-    location.hash = applied.nextHash;
-    return true;
-  }
   return false;
 }
 
@@ -45,19 +44,23 @@ async function paintRoute() {
     view.innerHTML = renderLearn(lessons, lessonId);
     bindLearn(view, lessons);
   } else if (id === 'Drill') {
+    const lessons = await loadLessons();
     if (generation !== paintGeneration) return;
-    view.innerHTML = renderDrill();
+    const drills = drillsFromLessons(lessons);
+    view.innerHTML = renderDrill(drills[0] ?? null);
     bindUnitEntry(view);
-    bindDrill(view);
+    bindDrill(view, undefined, drills);
   } else if (id === 'Map') {
     const lessons = await loadLessons();
     if (generation !== paintGeneration) return;
     view.innerHTML = renderMap(lessons, readProgress());
     bindMap(view);
   } else if (id === 'Cards') {
+    const lessons = await loadLessons();
     if (generation !== paintGeneration) return;
-    view.innerHTML = renderCards();
-    bindCards(view);
+    const deck = cardsFromLessons(lessons);
+    view.innerHTML = renderCards(deck);
+    bindCards(view, deck);
   } else if (id === 'Prep') {
     if (generation !== paintGeneration) return;
     view.innerHTML = renderRoute(id);

@@ -2,49 +2,40 @@ import { showToast } from './celebrate.js';
 import { grade } from './grade.js';
 import { awardXp, readProgress, writeProgress } from './progress.js';
 
-export const DRILL_ITEMS = [
-  {
-    id: 'drill-na-protons',
-    q: 'How many protons are in one sodium atom?',
-    a: '11',
-    why: 'Sodium’s atomic number is 11, so each atom has 11 protons.',
-    hints: ['The atomic number is the proton count.'],
-    check: { kind: 'numeric', value: 11 },
-  },
-  {
-    id: 'drill-water',
-    q: 'Write the chemical formula for water.',
-    a: 'H2O',
-    why: 'A water molecule has two hydrogen atoms and one oxygen atom.',
-    hints: ['Two H and one O.'],
-    check: { kind: 'exact', text: 'H2O' },
-  },
-  {
-    id: 'drill-share',
-    q: 'Do atoms in a covalent bond share electrons or transfer them? Answer share or transfer.',
-    a: 'share',
-    why: 'A covalent bond is a shared pair of electrons.',
-    hints: ['Covalent means the electrons are shared.'],
-    check: { kind: 'exact', text: 'share', case: 'insensitive' },
-  },
-  {
-    id: 'drill-mole',
-    q: 'What counting unit holds 6.022 × 10²³ particles?',
-    a: 'mole',
-    why: 'One mole of anything is 6.022 × 10²³ particles.',
-    hints: ['It is the unit used with molar mass.'],
-    check: { kind: 'exact', text: 'mole', case: 'insensitive' },
-  },
-];
-
-export function nextQueue(queue, id, correct) {
-  const rest = queue.filter((item) => item !== id);
-  if (!correct) rest.push(id);
-  return rest;
+export function drillsFromLessons(lessons) {
+  const items = [];
+  for (const lesson of lessons ?? []) {
+    for (const problem of lesson?.problems ?? []) {
+      if (!problem || typeof problem.id !== 'string' || typeof problem.q !== 'string') continue;
+      if (typeof problem.a !== 'string' || !problem.check || typeof problem.check !== 'object') continue;
+      const hints = Array.isArray(problem.hints) && problem.hints.length
+        ? problem.hints
+        : ['Check the lesson and try again.'];
+      items.push({
+        id: problem.id,
+        q: problem.q,
+        a: problem.a,
+        why: typeof problem.why === 'string' ? problem.why : '',
+        hints,
+        check: problem.check,
+      });
+    }
+  }
+  return items;
 }
 
-export function firstDrill() {
-  return DRILL_ITEMS[0];
+/**
+ * Drop a correct id. A miss is weighted: one copy comes back next, and extra
+ * copies follow the rest of the queue. `misses` is how many times it was missed.
+ */
+export function nextQueue(queue, id, correct, misses = 1) {
+  const rest = queue.filter((item) => item !== id);
+  if (correct) return rest;
+  const copies = Math.min(Math.max(misses, 1) + 1, 4);
+  const soon = rest.slice(0, 1);
+  const later = rest.slice(1);
+  const weighted = Array.from({ length: copies }, () => id);
+  return [...soon, weighted[0], ...later, ...weighted.slice(1)];
 }
 
 function escapeHtml(text) {
@@ -65,7 +56,7 @@ export function renderDrillQueue(item, note = '') {
   return `
     <section data-drill-queue>
       <h2>Extra practice</h2>
-      <p>A miss comes back at the end of the queue.</p>
+      <p>A miss comes back sooner, and it shows up more than once.</p>
       ${noteHtml}
       <form class="problem" data-drill="${escapeHtml(item.id)}">
         <p id="q-${escapeHtml(item.id)}">${escapeHtml(item.q)}</p>
@@ -84,10 +75,11 @@ export function renderDrillQueue(item, note = '') {
 
 const bound = new WeakSet();
 
-export function bindDrill(root, storage) {
+export function bindDrill(root, storage, items = []) {
   if (bound.has(root)) return;
   bound.add(root);
-  let queue = DRILL_ITEMS.map((item) => item.id);
+  const bank = items;
+  let queue = bank.map((item) => item.id);
   const misses = new Map();
 
   root.addEventListener('submit', (event) => {
@@ -97,7 +89,7 @@ export function bindDrill(root, storage) {
     const host = root.querySelector('[data-drill-queue]');
     if (!host) return;
     const id = form.getAttribute('data-drill');
-    const item = DRILL_ITEMS.find((entry) => entry.id === id);
+    const item = bank.find((entry) => entry.id === id);
     if (!item) return;
     const input = form.querySelector('[name="answer"]');
     const result = grade(input?.value ?? '', item.check);
@@ -106,7 +98,7 @@ export function bindDrill(root, storage) {
       writeProgress(progress, storage);
       queue = nextQueue(queue, id, true);
       showToast(root, 'Correct. +10 XP.');
-      host.outerHTML = renderDrillQueue(DRILL_ITEMS.find((entry) => entry.id === queue[0]) ?? null, 'Correct. +10 XP.');
+      host.outerHTML = renderDrillQueue(bank.find((entry) => entry.id === queue[0]) ?? null, 'Correct. +10 XP.');
       return;
     }
     const used = (misses.get(id) ?? 0) + 1;
@@ -114,8 +106,9 @@ export function bindDrill(root, storage) {
     const hint = used >= 3
       ? `Solution: ${item.a}. ${item.why}`
       : `Not yet. ${item.hints[0]}`;
-    queue = nextQueue(queue, id, used >= 3);
-    const next = DRILL_ITEMS.find((entry) => entry.id === queue[0]) ?? null;
+    const drop = used >= 3;
+    queue = nextQueue(queue, id, drop, used);
+    const next = bank.find((entry) => entry.id === queue[0]) ?? null;
     host.outerHTML = renderDrillQueue(next, hint);
   });
 }
