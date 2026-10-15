@@ -1,0 +1,158 @@
+{
+  "id": "ch01-context",
+  "ch": 1,
+  "openstax_section": "OpenStax AF2e §1.1",
+  "guide_line": "Tell a hypothesis, a law, and a theory apart, and name the domain.",
+  "steps": [
+    "Chemistry studies what matter is made of and how it changes.",
+    "A hypothesis is a testable guess. An experiment is the test. A law states a pattern that keeps happening. A theory explains a pattern after many tests.",
+    "A qualitative observation uses words, such as a color or a smell. A quantitative observation uses a measured number.",
+    "Macroscopic is what you can see or measure. Microscopic is atoms and molecules. Symbolic is formulas, symbols, and equations."
+  ],
+  "worked_example": {
+    "q": "A student watches ice melt into liquid water. Which domain is that observation?",
+    "steps": [
+      "The student is watching a change that can be seen.",
+      "The observation does not use a formula or a picture of atoms."
+    ],
+    "answer": "macroscopic"
+  },
+  "similar_problem": {
+    "q": "A page shows the formula H2O for water. Which domain is the formula?",
+    "hint": "H2O is a written symbol for water, not the water you can pour.",
+    "answer": "symbolic"
+  },
+  "sources": ["OpenStax AF2e §1.1"],
+  "problems": [
+    {
+      "id": "ch01-context-01",
+      "q": "Classify the statement: every sample of pure water boils at the same temperature when the pressure is the same.",
+      "a": "law",
+      "why": "The statement reports a pattern that repeats. It does not give a cause, so it is a law.",
+      "hints": ["This sentence only says what always happens to pure water. It does not say why."],
+      "check": { "kind": "exact", "text": "law", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-02",
+      "q": "Classify the statement: the metal strip may bend because the two metals expand by different amounts.",
+      "a": "hypothesis",
+      "why": "\"May\" marks a cause you could test. A testable guess is a hypothesis.",
+      "hints": ["Look for a proposed cause of the bend that an experiment could check."],
+      "check": { "kind": "exact", "text": "hypothesis", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-03",
+      "q": "Classify the statement: many experiments support the idea that matter is made of atoms, and that idea explains why a compound has a fixed recipe.",
+      "a": "theory",
+      "why": "The atom idea explains a pattern and has passed many tests. That is a theory.",
+      "hints": ["This claim both explains a pattern and says it has already survived many experiments."],
+      "check": { "kind": "exact", "text": "theory", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-04",
+      "q": "You see a blue liquid in a beaker. Which domain is that observation?",
+      "a": "macroscopic",
+      "why": "The color and the beaker are things you can see. That is the macroscopic domain.",
+      "hints": ["The blue liquid and the beaker are visible. No formula is required."],
+      "check": { "kind": "exact", "text": "macroscopic", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-05",
+      "q": "A sketch shows separate H2 molecules and O2 molecules. Which domain is the sketch?",
+      "a": "microscopic",
+      "why": "Molecules are too small to see. A picture of them is the microscopic domain.",
+      "hints": ["The sketch is about molecules, which you cannot see with your eyes."],
+      "check": { "kind": "exact", "text": "microscopic", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-06",
+      "q": "The board shows the equation 2 H2 + O2 → 2 H2O. Which domain is the equation?",
+      "a": "symbolic",
+      "why": "An equation is written with symbols. That is the symbolic domain.",
+      "hints": ["An equation uses symbols and numbers, not a photo of the reaction."],
+      "check": { "kind": "exact", "text": "symbolic", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-07",
+      "q": "Classify the statement: I think the fizz is a gas made by the reaction.",
+      "a": "hypothesis",
+      "why": "\"I think\" offers a cause that a test could support or reject. That is a hypothesis.",
+      "hints": ["The speaker is guessing the source of the fizz before a test is done."],
+      "check": { "kind": "exact", "text": "hypothesis", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-08",
+      "q": "Classify the statement: heating a gas in a sealed tube always raises its pressure.",
+      "a": "law",
+      "why": "\"Always\" reports a repeated pattern and gives no explanation. That is a law.",
+      "hints": ["The sentence says the pressure rise happens every time. It never says why."],
+      "check": { "kind": "exact", "text": "law", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-09",
+      "q": "Name the three domains: the visible world, the atom-level world, and the world of formulas.",
+      "a": "macroscopic, microscopic, and symbolic",
+      "why": "Visible samples are macroscopic. Atoms and molecules are microscopic. Formulas and equations are symbolic.",
+      "hints": ["Match each phrase in the question to one domain name, in any order."],
+      "check": {
+        "kind": "set",
+        "case": "insensitive",
+        "answers": ["macroscopic", "microscopic", "symbolic"],
+        "nearMiss": [
+          {
+            "text": "submicroscopic",
+            "hint": "Submicroscopic is another label for the atom-level view. This lesson uses microscopic."
+          }
+        ]
+      }
+    },
+    {
+      "id": "ch01-context-10",
+      "q": "A balance reads 2.50 g. Which domain is that reading?",
+      "a": "macroscopic",
+      "why": "A balance reading is a lab measurement you can make directly. That is macroscopic.",
+      "hints": ["A balance reading is a measurement of a sample you can handle."],
+      "check": { "kind": "exact", "text": "macroscopic", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-11",
+      "q": "A bottle label shows the symbol Na. Which domain is the symbol?",
+      "a": "symbolic",
+      "why": "Na is a chemical symbol, not the metal itself. Symbols are the symbolic domain.",
+      "hints": ["Na stands for the metal. The letters are not the shiny piece of metal."],
+      "check": { "kind": "exact", "text": "symbolic", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-12",
+      "q": "A model shows Na+ and Cl− ions packed in a crystal. Which domain is the model?",
+      "a": "microscopic",
+      "why": "Ions in a crystal are too small to see. The model is microscopic.",
+      "hints": ["The model shows ions, which are far too small to see in the crystal."],
+      "check": { "kind": "exact", "text": "microscopic", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-13",
+      "q": "A student writes, \"The solution turned cloudy.\" Is that observation qualitative or quantitative?",
+      "a": "qualitative",
+      "why": "Cloudy describes what the solution looks like. There is no measured number, so the observation is qualitative.",
+      "hints": ["This note describes a look, and it does not include a measured number."],
+      "check": { "kind": "exact", "text": "qualitative", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-14",
+      "q": "A student writes, \"The balance read 8.42 g.\" Is that observation qualitative or quantitative?",
+      "a": "quantitative",
+      "why": "8.42 g is a measured number with a unit, so the observation is quantitative.",
+      "hints": ["A balance reading is a number plus a unit, not only a description."],
+      "check": { "kind": "exact", "text": "quantitative", "case": "insensitive" }
+    },
+    {
+      "id": "ch01-context-15",
+      "q": "A student heats three samples and records the temperature each minute to test a guess. Is that a hypothesis, an experiment, a theory, or a law?",
+      "a": "experiment",
+      "why": "Heating the samples and recording the temperatures is the test of a guess. A test is an experiment.",
+      "hints": ["The student is carrying out a test and writing down results, not only stating a guess."],
+      "check": { "kind": "exact", "text": "experiment", "case": "insensitive" }
+    }
+  ]
+}

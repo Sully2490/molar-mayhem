@@ -1,0 +1,173 @@
+{
+  "id": "ch01-convert",
+  "ch": 1,
+  "openstax_section": "OpenStax AF2e §1.6",
+  "guide_line": "Convert units with factors, and convert temperatures among °C, K, and °F.",
+  "steps": [
+    "Write a conversion factor as a ratio that equals one, then multiply so the unit you have cancels.",
+    "Use these OpenStax AF2e Table 1.6 factors: 1 in = 2.54 cm (exact), 1 lb = 453.59 g, 1 oz = 28.349 g, 1 km = 0.62137 mi, 1 mi = 1609.3 m, 1 qt = 0.94635 L, 1 tbsp = 14.787 mL, and 1 m = 1.0936 yd.",
+    "Round a multiplication or division result to four significant figures when the measured value has four. An exact factor does not limit the result.",
+    "Kelvin and Celsius share the size of one degree. Remember the shift: add 273.15 to a Celsius temperature, or subtract 273.15 from a kelvin temperature. Keep the hundredths place. Do not treat 273.15 as a factor you multiply.",
+    "Fahrenheit does not share that zero. Use the formula when it is given: °F = (9/5) × °C + 32, and °C = (5/9) × (°F − 32)."
+  ],
+  "worked_example": {
+    "q": "Convert 6.000 in to centimeters. Use 1 in = 2.54 cm, exact.",
+    "steps": [
+      "Multiply by 2.54 cm / 1 in so inches cancel.",
+      "6.000 × 2.54 = 15.24. The 2.54 is exact, so the four figures in 6.000 remain: 15.24 cm."
+    ],
+    "answer": "15.24 cm"
+  },
+  "similar_problem": {
+    "q": "Convert 3.000 in to centimeters. Use 1 in = 2.54 cm, exact.",
+    "hint": "Multiply 3.000 by 2.54 cm per inch. Because 2.54 is exact, keep four figures.",
+    "answer": "7.620 cm"
+  },
+  "sources": ["OpenStax AF2e §1.6"],
+  "problems": [
+    {
+      "id": "ch01-convert-01",
+      "q": "Convert 18.00 in to centimeters. Use 1 in = 2.54 cm, exact.",
+      "a": "45.72 cm",
+      "why": "18.00 in × 2.54 cm/in = 45.72 cm. The factor is exact, so the four figures in 18.00 stay.",
+      "hints": ["Cancel inches with 2.54 cm per inch. Do not round away a figure, because 2.54 is exact."],
+      "check": { "kind": "numeric", "value": 45.72, "tolerance": 0.05, "sigFigs": 4, "unit": "cm" }
+    },
+    {
+      "id": "ch01-convert-02",
+      "q": "Convert 2.000 lb to grams. Use 1 lb = 453.59 g.",
+      "a": "907.2 g",
+      "why": "2.000 lb × 453.59 g/lb = 907.18 g. Four significant figures give 907.2 g.",
+      "hints": ["Multiply 2.000 by 453.59 g per pound, then keep four significant figures."],
+      "check": { "kind": "numeric", "value": 907.2, "tolerance": 0.05, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch01-convert-03",
+      "q": "Convert 75.00 g to ounces. Use 1 oz = 28.349 g.",
+      "a": "2.646 oz",
+      "why": "75.00 g × (1 oz / 28.349 g) = 2.6456... oz, which rounds to 2.646 oz.",
+      "hints": ["Divide 75.00 g by 28.349 g per ounce, then keep four significant figures."],
+      "check": { "kind": "numeric", "value": 2.646, "tolerance": 0.05, "sigFigs": 4, "unit": "oz" }
+    },
+    {
+      "id": "ch01-convert-04",
+      "q": "Convert 12.00 km to miles. Use 1 km = 0.62137 mi.",
+      "a": "7.456 mi",
+      "why": "12.00 km × 0.62137 mi/km = 7.45644 mi, which rounds to 7.456 mi.",
+      "hints": ["Multiply 12.00 km by 0.62137 miles per kilometer."],
+      "check": { "kind": "numeric", "value": 7.456, "tolerance": 0.05, "sigFigs": 4, "unit": "mi" }
+    },
+    {
+      "id": "ch01-convert-05",
+      "q": "Convert 2.500 qt to liters. Use 1 qt = 0.94635 L.",
+      "a": "2.366 L",
+      "why": "2.500 qt × 0.94635 L/qt = 2.365875 L, which rounds to 2.366 L.",
+      "hints": ["Multiply 2.500 quarts by 0.94635 liters per quart."],
+      "check": { "kind": "numeric", "value": 2.366, "tolerance": 0.05, "sigFigs": 4, "unit": "L" }
+    },
+    {
+      "id": "ch01-convert-06",
+      "q": "Convert 1.200 mi to meters. Use 1 mi = 1609.3 m.",
+      "a": "1.931 × 10^3 m",
+      "why": "1.200 mi × 1609.3 m/mi = 1931.16 m. Four significant figures give 1.931 × 10^3 m.",
+      "hints": ["Multiply 1.200 miles by 1609.3 meters per mile, and show four figures in scientific notation."],
+      "check": { "kind": "numeric", "value": 1931, "tolerance": 0.05, "sigFigs": 4, "unit": "m" }
+    },
+    {
+      "id": "ch01-convert-07",
+      "q": "Convert 1.500 qt to milliliters. Use 1 qt = 0.94635 L and 1 L = 1000 mL.",
+      "a": "1.420 × 10^3 mL",
+      "why": "1.500 qt × 0.94635 L/qt × 1000 mL/L = 1419.525 mL. The first dropped digit is 5 and nonzero digits follow, so four figures give 1.420 × 10^3 mL.",
+      "hints": ["Change quarts to liters with 0.94635, then use 1000 mL in each liter."],
+      "check": { "kind": "numeric", "value": 1420, "tolerance": 0.05, "sigFigs": 4, "unit": "mL" }
+    },
+    {
+      "id": "ch01-convert-08",
+      "q": "A 3.600 lb sample of liquid fills 1.800 qt. What is the density in g/mL? Use 1 lb = 453.59 g, 1 qt = 0.94635 L, and 1 L = 1000 mL.",
+      "a": "0.9586 g/mL",
+      "why": "Mass = 3.600 × 453.59 = 1632.924 g. Volume = 1.800 × 0.94635 × 1000 = 1703.43 mL. Density = 1632.924 / 1703.43 = 0.95861... g/mL, which rounds to 0.9586 g/mL.",
+      "hints": ["Change pounds to grams and quarts to milliliters, then divide the gram mass by the milliliter volume."],
+      "check": { "kind": "numeric", "value": 0.9586, "tolerance": 0.05, "sigFigs": 4, "unit": "g/mL" }
+    },
+    {
+      "id": "ch01-convert-09",
+      "q": "Convert 25.00 °C to kelvin.",
+      "a": "298.15 K",
+      "why": "K = °C + 273.15 = 25.00 + 273.15 = 298.15 K. Both temperatures have hundredths, so the sum keeps hundredths.",
+      "hints": ["Add 273.15 to 25.00. Keep two digits after the decimal."],
+      "check": { "kind": "numeric", "value": 298.15, "tolerance": 0.02, "sigFigs": 5, "unit": "K" }
+    },
+    {
+      "id": "ch01-convert-10",
+      "q": "Convert 310.15 K to degrees Celsius.",
+      "a": "37.00 °C",
+      "why": "°C = K − 273.15 = 310.15 − 273.15 = 37.00 °C.",
+      "hints": ["Subtract 273.15 from 310.15. Both values already show hundredths."],
+      "check": { "kind": "numeric", "value": 37, "tolerance": 0.02, "sigFigs": 4, "unit": "°C" }
+    },
+    {
+      "id": "ch01-convert-11",
+      "q": "Convert 20.00 °C to degrees Fahrenheit. Use °F = (9/5) × °C + 32.",
+      "a": "68.00 °F",
+      "why": "°F = (9/5) × 20.00 + 32 = 36.00 + 32 = 68.00 °F.",
+      "hints": ["Multiply 20.00 by 9/5, then add 32. Keep the hundredths."],
+      "check": { "kind": "numeric", "value": 68, "tolerance": 0.02, "sigFigs": 4, "unit": "°F" }
+    },
+    {
+      "id": "ch01-convert-12",
+      "q": "Convert 98.60 °F to degrees Celsius. Use °C = (5/9) × (°F − 32).",
+      "a": "37.00 °C",
+      "why": "°C = (5/9) × (98.60 − 32) = (5/9) × 66.60 = 37.00 °C.",
+      "hints": ["Subtract 32 from 98.60 first, then multiply that difference by 5/9."],
+      "check": { "kind": "numeric", "value": 37, "tolerance": 0.02, "sigFigs": 4, "unit": "°C" }
+    },
+    {
+      "id": "ch01-convert-13",
+      "q": "Convert −10.00 °C to kelvin.",
+      "a": "263.15 K",
+      "why": "K = −10.00 + 273.15 = 263.15 K.",
+      "hints": ["A temperature below zero still uses the same addition: add 273.15 to −10.00."],
+      "check": { "kind": "numeric", "value": 263.15, "tolerance": 0.02, "sigFigs": 5, "unit": "K" }
+    },
+    {
+      "id": "ch01-convert-14",
+      "q": "Convert 50.00 °F to kelvin. Use °C = (5/9) × (°F − 32), then shift by 273.15.",
+      "a": "283.15 K",
+      "why": "°C = (5/9) × (50.00 − 32) = 10.00 °C. Then K = 10.00 + 273.15 = 283.15 K.",
+      "hints": ["Change 50.00 °F into Celsius first with (5/9) times (50.00 minus 32). Then add 273.15."],
+      "check": { "kind": "numeric", "value": 283.15, "tolerance": 0.02, "sigFigs": 5, "unit": "K" }
+    },
+    {
+      "id": "ch01-convert-15",
+      "q": "Convert 3.000 tbsp to milliliters. Use 1 tbsp = 14.787 mL.",
+      "a": "44.36 mL",
+      "why": "3.000 tbsp × 14.787 mL/tbsp = 44.361 mL, which rounds to 44.36 mL.",
+      "hints": ["Multiply 3.000 by 14.787 mL per tablespoon, then keep four significant figures."],
+      "check": { "kind": "numeric", "value": 44.36, "tolerance": 0.05, "sigFigs": 4, "unit": "mL" }
+    },
+    {
+      "id": "ch01-convert-16",
+      "q": "Convert 5.000 m to yards. Use 1 m = 1.0936 yd.",
+      "a": "5.468 yd",
+      "why": "5.000 m × 1.0936 yd/m = 5.468 yd. Both the measurement and the rounded product have four figures.",
+      "hints": ["Multiply 5.000 meters by 1.0936 yards per meter."],
+      "check": { "kind": "numeric", "value": 5.468, "tolerance": 0.05, "sigFigs": 4, "unit": "yd" }
+    },
+    {
+      "id": "ch01-convert-17",
+      "q": "Convert 85.00 mm to inches. Use 10 mm = 1 cm and 1 in = 2.54 cm. Both factors are exact.",
+      "a": "3.346 in",
+      "why": "85.00 mm × (1 cm / 10 mm) = 8.500 cm. Then 8.500 cm × (1 in / 2.54 cm) = 3.34646... in, which rounds to 3.346 in.",
+      "hints": ["Change millimeters to centimeters first, then divide by 2.54 cm per inch."],
+      "check": { "kind": "numeric", "value": 3.346, "tolerance": 0.05, "sigFigs": 4, "unit": "in" }
+    },
+    {
+      "id": "ch01-convert-18",
+      "q": "Convert 15.00 m/s to kilometers per hour. Use 1 km = 1000 m and 1 h = 3600 s. Both factors are exact.",
+      "a": "54.00 km/h",
+      "why": "15.00 m/s × (1 km / 1000 m) × (3600 s / 1 h) = 54.00 km/h. Both the distance unit and the time unit must change.",
+      "hints": ["Cancel meters for kilometers and seconds for hours. The 3600 and the 1000 are both exact."],
+      "check": { "kind": "numeric", "value": 54, "tolerance": 0.05, "sigFigs": 4, "unit": "km/h" }
+    }
+  ]
+}
