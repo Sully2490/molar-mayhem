@@ -1,0 +1,270 @@
+{
+  "id": "ch5-sigma-pi",
+  "ch": 5,
+  "openstax_section": "OpenStax AF2e §5.1",
+  "guide_line": "A covalent bond is orbital overlap. End-to-end overlap is sigma. Side-by-side overlap is pi. Count one sigma per bond, then add a pi for each extra bond.",
+  "steps": [
+    "Valence bond theory says a covalent bond forms when a half-filled orbital on one atom overlaps a half-filled orbital on another. The shared pair is pulled toward both nuclei. More overlap makes a stronger bond.",
+    "The strongest overlap of p orbitals is end to end, along the line between the nuclei. Overlap of two s orbitals (H2), an s orbital with a p orbital (HF or HCl), or two p orbitals end to end (Cl2) is a sigma bond. Electron density sits on that line.",
+    "A pi bond is side-by-side overlap of p orbitals. The overlap sits above and below the line between the nuclei, and that line itself is a node.",
+    "The first bond between two atoms is always sigma. A single bond is that sigma only. A double bond is 1 sigma and 1 pi. A triple bond is 1 sigma and 2 pi. Add every bond in the molecule. Lone pairs are not bonds."
+  ],
+  "worked_example": {
+    "q": "How many sigma and pi bonds are in H2?",
+    "steps": [
+      "H2 has one single bond, from end-to-end overlap of the two 1s orbitals.",
+      "A single bond is 1 sigma and 0 pi."
+    ],
+    "answer": "1 sigma, 0 pi"
+  },
+  "similar_problem": {
+    "q": "How many sigma and pi bonds are in O2?",
+    "hint": "O2 has one double bond: 1 sigma plus 1 pi.",
+    "answer": "1 sigma, 1 pi"
+  },
+  "sources": ["OpenStax AF2e §5.1"],
+  "problems": [
+    {
+      "id": "ch5-vb-h2-type",
+      "q": "The bond in H2 is overlap of two 1s orbitals along the line between the nuclei. Is that bond sigma or pi?",
+      "a": "sigma",
+      "why": "End-to-end overlap puts the electron density on the line between the nuclei. That is a sigma bond. H2 has no pi bond.",
+      "hints": [
+        "H2 overlaps two 1s orbitals along the line between the nuclei.",
+        "Overlap on that line is a sigma bond."
+      ],
+      "check": { "kind": "exact", "text": "sigma", "case": "insensitive", "answers": ["sigma", "σ"] }
+    },
+    {
+      "id": "ch5-vb-side-p",
+      "q": "Two 2p orbitals overlap side by side, above and below the line between the nuclei. Is that overlap sigma or pi?",
+      "a": "pi",
+      "why": "Side-by-side overlap of p orbitals leaves a node on the line between the nuclei. That overlap is a pi bond.",
+      "hints": [
+        "Side-by-side p overlap sits off the line between the nuclei.",
+        "That off-axis overlap is a pi bond."
+      ],
+      "check": { "kind": "exact", "text": "pi", "case": "insensitive", "answers": ["pi", "π"] }
+    },
+    {
+      "id": "ch5-vb-cl2",
+      "q": "Two chlorine atoms overlap 3p orbitals end to end. Is the Cl–Cl bond sigma or pi?",
+      "a": "sigma",
+      "why": "End-to-end overlap of two p orbitals concentrates electron density along the Cl–Cl line. A single bond made that way is sigma.",
+      "hints": [
+        "The Cl–Cl bond is end-to-end overlap of two 3p orbitals.",
+        "End-to-end p overlap is a sigma bond."
+      ],
+      "check": { "kind": "exact", "text": "sigma", "case": "insensitive", "answers": ["sigma", "σ"] }
+    },
+    {
+      "id": "ch5-vb-hf",
+      "q": "Which fluorine orbital overlaps the hydrogen 1s orbital to make the H–F sigma bond?",
+      "a": "2p",
+      "why": "Fluorine uses a half-filled 2p orbital. End-to-end overlap of H 1s with F 2p is the sigma bond in HF.",
+      "hints": [
+        "Fluorine’s valence p orbitals are in the second shell.",
+        "The H–F sigma bond uses a fluorine 2p orbital."
+      ],
+      "check": { "kind": "exact", "text": "2p", "case": "insensitive", "answers": ["2p", "F 2p", "fluorine 2p"] }
+    },
+    {
+      "id": "ch5-vb-hcl",
+      "q": "Which chlorine orbital overlaps the hydrogen 1s orbital to make the H–Cl sigma bond?",
+      "a": "3p",
+      "why": "Chlorine’s half-filled valence orbital is a 3p orbital. End-to-end overlap of H 1s with Cl 3p is the sigma bond.",
+      "hints": [
+        "Chlorine’s valence p orbitals are in the third shell.",
+        "The H–Cl sigma bond uses a chlorine 3p orbital."
+      ],
+      "check": { "kind": "exact", "text": "3p", "case": "insensitive", "answers": ["3p", "Cl 3p", "chlorine 3p"] }
+    },
+    {
+      "id": "ch5-vb-node",
+      "q": "A pi bond has a node along the line between the two nuclei. True or false?",
+      "a": "true",
+      "why": "In a pi bond the overlap is above and below the internuclear axis. The axis itself is a node, a place with no electron density from that bond.",
+      "hints": [
+        "Pi overlap is off to the sides, not on the line between the nuclei.",
+        "That line is a node, so the statement is true."
+      ],
+      "check": { "kind": "exact", "text": "true", "case": "insensitive", "answers": ["true", "yes"] }
+    },
+    {
+      "id": "ch5-vb-first",
+      "q": "Between the same two atoms, which bond is always the first one formed, sigma or pi?",
+      "a": "sigma",
+      "why": "The first overlap between two atoms is end to end, so it is sigma. A second or third bond, if there is one, is pi.",
+      "hints": [
+        "The first overlap between two atoms lies along the line that joins them.",
+        "That first bond is sigma. Any extra bond is pi."
+      ],
+      "check": { "kind": "exact", "text": "sigma", "case": "insensitive", "answers": ["sigma", "σ", "the sigma bond"] }
+    },
+    {
+      "id": "ch5-sig-h2",
+      "q": "How many sigma and pi bonds are in H2?",
+      "a": "1 sigma, 0 pi",
+      "why": "H2 has one single bond. That is 1 sigma and 0 pi.",
+      "hints": [
+        "H2 has one single bond, so count only a sigma bond.",
+        "That one H–H bond is 1 sigma and 0 pi."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["1 sigma, 0 pi", "1 σ, 0 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-o2",
+      "q": "How many sigma and pi bonds are in O2?",
+      "a": "1 sigma, 1 pi",
+      "why": "O2 has one double bond. A double bond is 1 sigma and 1 pi.",
+      "hints": [
+        "O2 has one double bond: 1 sigma plus 1 pi.",
+        "Count the second overlap of O=O as the pi bond."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["1 sigma, 1 pi", "1 σ, 1 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-n2",
+      "q": "How many sigma and pi bonds are in N2?",
+      "a": "1 sigma, 2 pi",
+      "why": "N2 has one triple bond. A triple bond is 1 sigma and 2 pi.",
+      "hints": [
+        "N2 has one triple bond: 1 sigma plus 2 pi.",
+        "The two extra overlaps in N≡N are both pi bonds."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["1 sigma, 2 pi", "1 σ, 2 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-co2",
+      "q": "How many sigma and pi bonds are in CO2?",
+      "a": "2 sigma, 2 pi",
+      "why": "CO2 is O=C=O, two double bonds. Each double bond is 1 sigma and 1 pi, so the molecule has 2 sigma and 2 pi.",
+      "hints": [
+        "Each C=O in CO2 is 1 sigma and 1 pi. Add both double bonds.",
+        "Two double bonds give CO2 two sigma bonds and two pi bonds."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["2 sigma, 2 pi", "2 σ, 2 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-c2h4",
+      "q": "How many sigma and pi bonds are in C2H4?",
+      "a": "5 sigma, 1 pi",
+      "why": "C2H4 has four C–H single bonds and one C=C double bond. The double bond adds 1 sigma and 1 pi, so the total is 5 sigma and 1 pi.",
+      "hints": [
+        "C2H4 has four C–H single bonds plus one C=C. Only the double bond adds a pi.",
+        "Four C–H sigma bonds plus one C=C sigma make 5 sigma and 1 pi."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["5 sigma, 1 pi", "5 σ, 1 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-c2h2",
+      "q": "How many sigma and pi bonds are in C2H2?",
+      "a": "3 sigma, 2 pi",
+      "why": "C2H2 is H–C≡C–H: two C–H single bonds and one triple bond. The triple bond is 1 sigma and 2 pi, so the molecule has 3 sigma and 2 pi.",
+      "hints": [
+        "C2H2 has two C–H single bonds and one C≡C. The triple bond adds two pi bonds.",
+        "Two C–H sigma bonds plus one C≡C sigma make 3 sigma and 2 pi."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["3 sigma, 2 pi", "3 σ, 2 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-hcn",
+      "q": "How many sigma and pi bonds are in HCN?",
+      "a": "2 sigma, 2 pi",
+      "why": "HCN is H–C≡N: one C–H single bond and one triple bond. That is 2 sigma and 2 pi.",
+      "hints": [
+        "HCN has one C–H single bond and one C≡N triple bond.",
+        "The C–H sigma plus the one sigma in C≡N make 2 sigma and 2 pi."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["2 sigma, 2 pi", "2 σ, 2 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-ch2o",
+      "q": "How many sigma and pi bonds are in CH2O?",
+      "a": "3 sigma, 1 pi",
+      "why": "CH2O has two C–H single bonds and one C=O double bond. That is 3 sigma and 1 pi.",
+      "hints": [
+        "CH2O has two C–H single bonds and one C=O. Only the double bond adds a pi.",
+        "Two C–H sigma bonds plus one C=O sigma make 3 sigma and 1 pi."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["3 sigma, 1 pi", "3 σ, 1 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-ch4",
+      "q": "How many sigma and pi bonds are in CH4?",
+      "a": "4 sigma, 0 pi",
+      "why": "CH4 has four C–H single bonds and no multiple bond. That is 4 sigma and 0 pi.",
+      "hints": [
+        "CH4 is only four C–H single bonds, so there is no extra overlap to count.",
+        "Four C–H bonds are 4 sigma and 0 pi."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["4 sigma, 0 pi", "4 σ, 0 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-c2h6",
+      "q": "How many sigma and pi bonds are in C2H6?",
+      "a": "7 sigma, 0 pi",
+      "why": "C2H6 has six C–H single bonds and one C–C single bond. All seven bonds are sigma, and there is no pi bond.",
+      "hints": [
+        "C2H6 has six C–H bonds and one C–C bond, and every one of them is single.",
+        "Seven single bonds are 7 sigma and 0 pi."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["7 sigma, 0 pi", "7 σ, 0 π"]
+      }
+    },
+    {
+      "id": "ch5-sig-h2o",
+      "q": "How many sigma and pi bonds are in H2O?",
+      "a": "2 sigma, 0 pi",
+      "why": "Water has two O–H single bonds. Lone pairs on oxygen are not bonds, so the count is 2 sigma and 0 pi.",
+      "hints": [
+        "Water has two O–H single bonds. Do not count the lone pairs.",
+        "Two single bonds are 2 sigma and 0 pi."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "answers": ["2 sigma, 0 pi", "2 σ, 0 π"]
+      }
+    }
+  ]
+}

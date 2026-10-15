@@ -43,7 +43,9 @@ const SUPERSCRIPTS = '⁰¹²³⁴⁵⁶⁷⁸⁹';
 /**
  * Grade a student answer against a check descriptor.
  * Numeric tolerance is a relative percent. Sig-fig mismatches hint instead of failing.
- * Exact checks fold Unicode digits, collapse whitespace, and follow a case rule.
+ * Exact checks fold Unicode digits and charges. The default case is formula:
+ * element symbols stay capitalized, so Co, CO, and co are different.
+ * Use case "insensitive" only for element names and ordinary words.
  * Set checks compare unordered lists and can flag near-miss items.
  * Config checks expand noble-gas cores and compare orbitals, ignoring order.
  * @param {string} input
@@ -90,11 +92,11 @@ export function gradeNumeric(input, check) {
 
 export function withinRelativePercent(actual, expected, percent) {
   const limit = Math.abs(expected) * (percent / 100);
-  return Math.abs(actual - expected) <= limit + 1e-9;
+  return Math.abs(actual - expected) <= limit + Math.abs(expected) * 1e-12;
 }
 
 export function gradeExact(input, check) {
-  const caseRule = check.case ?? 'insensitive';
+  const caseRule = check.case ?? 'formula';
   const actual = normalizeAnswer(input, caseRule);
   if (!actual) return { ok: false, reason: 'format' };
   const accepted = acceptedAnswers(check).map((item) => normalizeAnswer(item, caseRule));
@@ -127,13 +129,17 @@ export function gradeSet(input, check) {
 }
 
 export function normalizeSymbols(text) {
-  return String(text ?? '').replace(/[₀-₉⁰¹²³⁴⁵⁶⁷⁸⁹]/g, (ch) => {
-    const sub = SUBSCRIPTS.indexOf(ch);
-    if (sub !== -1) return String(sub);
-    const sup = SUPERSCRIPTS.indexOf(ch);
-    if (sup !== -1) return String(sup);
-    return ch;
-  });
+  return String(text ?? '')
+    .replaceAll('−', '-')
+    .replaceAll('⁺', '+')
+    .replaceAll('⁻', '-')
+    .replace(/[₀-₉⁰¹²³⁴⁵⁶⁷⁸⁹]/g, (ch) => {
+      const sub = SUBSCRIPTS.indexOf(ch);
+      if (sub !== -1) return String(sub);
+      const sup = SUPERSCRIPTS.indexOf(ch);
+      if (sup !== -1) return String(sup);
+      return ch;
+    });
 }
 
 export function collapseWhitespace(text) {
@@ -148,7 +154,7 @@ export function normalizeAnswer(text, caseRule) {
     case 'sensitive':
       return collapsed;
     case 'formula':
-      return collapsed.replace(/ /g, '');
+      return canonicalizeFormula(collapsed);
     default:
       throw new Error(`Unknown case rule: ${String(caseRule)}`);
   }
@@ -229,6 +235,11 @@ export function gradeConfig(input, check) {
   };
 }
 
+function canonicalizeFormula(text) {
+  const compact = text.replace(/[\s^]/g, '').replace(/[{}]/g, '');
+  return compact.replace(/([+-])(\d+)$/, (_, sign, digits) => `${digits}${sign}`);
+}
+
 function acceptedAnswers(check) {
   const answers = [];
   if (typeof check.text === 'string' && check.text.length > 0) answers.push(check.text);
@@ -250,13 +261,12 @@ function splitSetItems(raw) {
 }
 
 export function parseAnswer(raw) {
-  const text = String(raw ?? '')
-    .trim()
-    .replaceAll('−', '-')
-    .replaceAll('×', 'x')
-    .replaceAll('·', 'x')
-    .replace(/\s+/g, ' ');
-  const match = text.match(/^([+-]?(?:\d+\.?\d*|\.\d+))(?:\s*(?:e|x\s*10\s*\^)\s*([+-]?\d+))?\s*([^\d\s].*)?$/i);
+  const text = collapseWhitespace(
+    normalizeSymbols(raw)
+      .replaceAll('×', 'x')
+      .replaceAll('·', 'x'),
+  );
+  const match = text.match(/^([+-]?(?:\d+\.?\d*|\.\d+))(?:\s*(?:e|x\s*10\s*\^?)\s*([+-]?\d+))?\s*([^\d\s].*)?$/i);
   if (!match) return null;
   const coefficient = match[1];
   const exponent = match[2] == null ? 0 : Number(match[2]);

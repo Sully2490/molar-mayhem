@@ -27,12 +27,19 @@ function paintTable(focusSelector) {
   if (focusSelector) trayBody.querySelector(focusSelector)?.focus();
 }
 
+function setPageBehindInert(inert) {
+  for (const el of document.querySelectorAll('header, main, footer, .skip')) {
+    el.inert = inert;
+  }
+}
+
 function openTray() {
   if (!tray.hidden) return;
   lastFocus = document.activeElement;
   backdrop.hidden = false;
   tray.hidden = false;
   document.body.classList.add('tray-open');
+  setPageBehindInert(true);
   paintTable(`[data-trend="${trendId}"]`);
 }
 
@@ -41,6 +48,7 @@ function closeTray() {
   tray.hidden = true;
   backdrop.hidden = true;
   document.body.classList.remove('tray-open');
+  setPageBehindInert(false);
   if (lastFocus instanceof HTMLElement) lastFocus.focus();
 }
 
