@@ -39,6 +39,11 @@ export function bindGlossary(root) {
   if (bound.has(root)) return;
   bound.add(root);
   let opener = null;
+  if (typeof window !== 'undefined') {
+    window.addEventListener('hashchange', () => {
+      for (const el of document.querySelectorAll('[inert]')) el.inert = false;
+    });
+  }
   root.addEventListener('click', (event) => {
     const dialog = root.querySelector('[data-glossary-dialog]');
     if (!dialog) return;
@@ -50,6 +55,7 @@ export function bindGlossary(root) {
       dialog.querySelector('#glossary-title').textContent = item.term;
       dialog.querySelector('[data-glossary-body]').textContent = item.text;
       dialog.hidden = false;
+      setBehindInert(dialog, true);
       dialog.querySelector('[data-glossary-close]')?.focus();
       return;
     }
@@ -67,5 +73,19 @@ function closeDialog(root, opener) {
   const dialog = root.querySelector('[data-glossary-dialog]');
   if (!dialog) return;
   dialog.hidden = true;
+  setBehindInert(dialog, false);
   if (opener instanceof HTMLElement) opener.focus();
+}
+
+// Keep Tab inside the open dialog: make everything else on the page inert.
+function setBehindInert(dialog, on) {
+  if (typeof document === 'undefined') return;
+  let node = dialog;
+  while (node && node.parentElement) {
+    for (const sib of node.parentElement.children) {
+      if (sib !== node) sib.inert = on;
+    }
+    node = node.parentElement;
+    if (node === document.body) break;
+  }
 }
