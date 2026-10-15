@@ -86,7 +86,7 @@ function ensureBaseHistory(baseRef, options = {}) {
   const inherit = options.inherit === true;
   const remoteRef = `origin/${baseRef}`;
   const refspec = `+refs/heads/${baseRef}:refs/remotes/origin/${baseRef}`;
-  const shallow = git(cwd, ['rev-parse', '--is-shallow-repository'], { inherit }).trim() === 'true';
+  const shallow = git(cwd, ['rev-parse', '--is-shallow-repository']).trim() === 'true';
   if (!shallow) {
     git(cwd, ['fetch', '--no-tags', 'origin', refspec], { inherit });
   } else {
