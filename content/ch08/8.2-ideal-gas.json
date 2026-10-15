@@ -7,7 +7,7 @@
     "Every gas-law temperature must be in kelvin. Add 273.15 to a Celsius reading. 25.00 °C is 298.15 K.",
     "Boyle: if temperature and moles stay fixed, pressure and volume trade off. P1 V1 = P2 V2.",
     "Charles: if pressure and moles stay fixed, volume grows with kelvin temperature. V1/T1 = V2/T2.",
-    "Amontons: if volume and moles stay fixed, pressure grows with kelvin temperature. P1/T1 = P2/T2.",
+    "Amontons: if volume and moles stay fixed, pressure grows with kelvin temperature. P1/T1 = P2/T2. The same constant-volume relation is also called Gay-Lussac's law.",
     "Avogadro: if temperature and pressure stay fixed, volume grows with moles. V1/n1 = V2/n2.",
     "All of those sit inside PV = nRT. Use R = 0.08206 L atm/(mol K) when P is in atm. Use R = 8.314 L kPa/(mol K) when P is in kPa.",
     "STP in this book is 273.15 K and 1 atm (101.325 kPa). One mole of ideal gas occupies 22.41 L there."
@@ -254,6 +254,38 @@
           "PV=nRT",
           "PV = nRT"
         ]
+      }
+    },
+    {
+      "id": "8.2-15",
+      "q": "A sealed flask holds gas at 1.000 atm and 25.00 °C. The volume and the amount stay fixed. The pressure rises to 1.200 atm. What is the new temperature in °C?",
+      "a": "84.63 °C",
+      "why": "25.00 °C is 298.15 K. T2 = 298.15 × 1.200/1.000 = 357.78 K. Subtract 273.15 to get 84.63 °C.",
+      "hints": [
+        "First find kelvin with 298.15 × 1.200/1.000, then subtract 273.15 to get °C."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 84.63,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "°C"
+      }
+    },
+    {
+      "id": "8.2-16",
+      "q": "A 125.0 mL flask holds 0.08500 g of He at 295.0 K. Helium is 4.0026 g/mol. What is the pressure in atm? Use R = 0.08206 L atm/(mol K).",
+      "a": "4.113 atm",
+      "why": "125.0 mL is 0.1250 L. n = 0.08500/4.0026 mol. P = nRT/V = 4.113 atm.",
+      "hints": [
+        "125.0 mL is 0.1250 L. Moles are 0.08500/4.0026. Then P = nRT/V."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4.113,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
       }
     }
   ]

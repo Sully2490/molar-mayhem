@@ -6,6 +6,7 @@
   "steps": [
     "Pressure is force divided by area: P = F / A. A bigger force, or a smaller area, makes a higher pressure.",
     "Common gas units are atm, torr, mm Hg, kPa, Pa, bar, and psi. Use 1 atm = 760 torr = 760 mm Hg = 101.325 kPa = 101325 Pa = 1.01325 bar = 14.70 psi. One bar is exactly 100000 Pa.",
+    "A mercury barometer reads the outside air pressure as the height of the mercury column, in mm Hg.",
     "A closed-end mercury manometer has a vacuum on the closed side. The gas pressure equals the height difference. Change cm of mercury to mm, and use 1 mm Hg = 1 torr.",
     "An open-end manometer compares the gas with the outside air. If the mercury is higher on the open side, add that height to the air pressure. If the mercury is higher on the gas side, subtract it.",
     "A liquid column pushes with P = hρg. Multiply height, density, and g. Divide pascals by 1000 to get kPa."
@@ -234,6 +235,38 @@
         "tolerance": 0.5,
         "sigFigs": 4,
         "unit": "kPa"
+      }
+    },
+    {
+      "id": "8.1-14",
+      "q": "Convert 695.0 mm Hg to atm. Use 760 mm Hg = 1 atm.",
+      "a": "0.9145 atm",
+      "why": "695.0 mm Hg / 760 mm Hg per atm = 0.9145 atm.",
+      "hints": [
+        "Divide 695.0 mm Hg by 760 mm Hg in 1 atm."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.9145,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "8.1-15",
+      "q": "A mercury barometer stands at 74.20 cm. What is the air pressure in atm? Use 760 mm Hg = 1 atm.",
+      "a": "0.9763 atm",
+      "why": "74.20 cm is 742.0 mm Hg. 742.0 / 760 = 0.9763 atm.",
+      "hints": [
+        "Turn 74.20 cm into 742.0 mm Hg, then divide by 760."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.9763,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
       }
     }
   ]
