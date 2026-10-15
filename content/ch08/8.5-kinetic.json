@@ -1,0 +1,242 @@
+{
+  "id": "8.5-kinetic",
+  "ch": 8,
+  "openstax_section": "OpenStax AF2e §8.5",
+  "guide_line": "Find rms speed and average kinetic energy from temperature.",
+  "steps": [
+    "In the kinetic-molecular model, gas particles are tiny next to the container, move in straight lines, and bounce with no energy loss.",
+    "Average kinetic energy per mole depends only on kelvin temperature: KE = (3/2) RT. Use R = 8.314 J/(mol K). Two different gases at the same temperature have the same average KE per mole.",
+    "The root-mean-square speed is u = sqrt(3RT/M). Put M in kg/mol by dividing g/mol by 1000. The speed is then in m/s. Lighter particles move faster. A higher temperature also raises the speed."
+  ],
+  "worked_example": {
+    "q": "What is the rms speed of He at 300.0 K, in m/s? He is 4.0026 g/mol. Use R = 8.314 J/(mol K).",
+    "steps": [
+      "Change 4.0026 g/mol into 0.0040026 kg/mol.",
+      "u = sqrt(3 × 8.314 × 300.0 / 0.0040026).",
+      "u = 1367 m/s."
+    ],
+    "answer": "1367 m/s"
+  },
+  "similar_problem": {
+    "q": "What is the rms speed of Ne at 300.0 K, in m/s? Ne is 20.180 g/mol. Use R = 8.314 J/(mol K).",
+    "hint": "Change 20.180 g/mol into 0.020180 kg/mol, then take sqrt(3 × 8.314 × 300.0 / M).",
+    "answer": "608.9 m/s"
+  },
+  "sources": [
+    "OpenStax AF2e §8.5"
+  ],
+  "problems": [
+    {
+      "id": "8.5-01",
+      "q": "What is the rms speed of He at 298.15 K, in m/s? He is 4.0026 g/mol. Use R = 8.314 J/(mol K) and M in kg/mol.",
+      "a": "1363 m/s",
+      "why": "u = sqrt(3 × 8.314 × 298.15 / 0.0040026) = 1363 m/s.",
+      "hints": [
+        "Use M = 0.0040026 kg/mol in sqrt(3 × 8.314 × 298.15 / M)."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1363,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "m/s"
+      }
+    },
+    {
+      "id": "8.5-02",
+      "q": "What is the rms speed of N2 at 298.15 K, in m/s? N2 is 28.014 g/mol. Use R = 8.314 J/(mol K).",
+      "a": "515.2 m/s",
+      "why": "u = sqrt(3 × 8.314 × 298.15 / 0.028014) = 515.2 m/s.",
+      "hints": [
+        "N2 is 0.028014 kg/mol. Square-root 3RT/M at 298.15 K."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 515.2,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "m/s"
+      }
+    },
+    {
+      "id": "8.5-03",
+      "q": "What is the rms speed of O2 at 500.0 K, in m/s? O2 is 31.998 g/mol. Use R = 8.314 J/(mol K).",
+      "a": "624.3 m/s",
+      "why": "u = sqrt(3 × 8.314 × 500.0 / 0.031998) = 624.3 m/s.",
+      "hints": [
+        "O2 is 0.031998 kg/mol, and this temperature is 500.0 K rather than room temperature."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 624.3,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "m/s"
+      }
+    },
+    {
+      "id": "8.5-04",
+      "q": "What is the average kinetic energy, in J, of 1.000 mol of ideal gas at 300.0 K? Use KE = (3/2) RT and R = 8.314 J/(mol K).",
+      "a": "3741 J",
+      "why": "KE = (3/2)(8.314)(300.0) = 3741 J.",
+      "hints": [
+        "Multiply 1.5 by 8.314 and by 300.0 K for one mole."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 3741,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "J"
+      }
+    },
+    {
+      "id": "8.5-05",
+      "q": "What is the average kinetic energy, in J, of 1.000 mol of ideal gas at 600.0 K? Use KE = (3/2) RT and R = 8.314 J/(mol K).",
+      "a": "7483 J",
+      "why": "KE = (3/2)(8.314)(600.0) = 7483 J. Twice the kelvin temperature doubles the energy.",
+      "hints": [
+        "This sample is at 600.0 K. Multiply 1.5 by 8.314 and by 600.0."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 7483,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "J"
+      }
+    },
+    {
+      "id": "8.5-06",
+      "q": "At 300 K, which gas has the higher rms speed, He or Ar? He is 4.0026 g/mol and Ar is 39.948 g/mol. Type the formula.",
+      "a": "He",
+      "why": "u = sqrt(3RT/M). Same T means the smaller mass, He, has the higher speed.",
+      "hints": [
+        "Both gases are at 300 K, so the lighter one is faster. Type He."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "He",
+        "case": "sensitive",
+        "answers": [
+          "He"
+        ]
+      }
+    },
+    {
+      "id": "8.5-07",
+      "q": "At the same temperature, what is u(He)/u(Ar)? He is 4.0026 g/mol and Ar is 39.948 g/mol. Report the number only.",
+      "a": "3.159",
+      "why": "u(He)/u(Ar) = sqrt(39.948/4.0026) = 3.159.",
+      "hints": [
+        "Temperature cancels. The speed ratio is sqrt(39.948/4.0026)."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 3.159,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "8.5-08",
+      "q": "N2 has an rms speed of 515.0 m/s. N2 is 28.014 g/mol. What is the temperature in kelvin? Use R = 8.314 J/(mol K) and T = u^2 M / (3R), with M in kg/mol.",
+      "a": "297.9 K",
+      "why": "T = (515.0)^2 (0.028014) / (3 × 8.314) = 297.9 K.",
+      "hints": [
+        "Use M = 0.028014 kg/mol and u = 515.0 in T = u^2 M / (3 × 8.314)."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 297.9,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "K"
+      }
+    },
+    {
+      "id": "8.5-09",
+      "q": "For one gas, what is the ratio of rms speeds at 400.0 K and 300.0 K? Report u(400.0 K)/u(300.0 K).",
+      "a": "1.155",
+      "why": "u2/u1 = sqrt(400.0/300.0) = 1.155.",
+      "hints": [
+        "The mass cancels, so this speed ratio is sqrt(400.0/300.0)."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.155,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "8.5-10",
+      "q": "Do He and N2 have the same average kinetic energy per mole when both are at 300 K? Type yes or no.",
+      "a": "yes",
+      "why": "KE = (3/2) RT. The identity of the gas is not in that equation, so yes.",
+      "hints": [
+        "Average kinetic energy per mole depends only on kelvin temperature, so type yes."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "yes",
+        "case": "insensitive",
+        "answers": [
+          "yes"
+        ]
+      }
+    },
+    {
+      "id": "8.5-11",
+      "q": "As temperature rises, does the rms speed of a gas increase or decrease? Type increase or decrease.",
+      "a": "increase",
+      "why": "Speed grows with the square root of kelvin temperature, so it increases.",
+      "hints": [
+        "u = sqrt(3RT/M), so a higher kelvin temperature raises the speed. Type increase."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "increase",
+        "case": "insensitive",
+        "answers": [
+          "increase"
+        ]
+      }
+    },
+    {
+      "id": "8.5-12",
+      "q": "What is the rms speed of Ar at 273.15 K, in m/s? Ar is 39.948 g/mol. Use R = 8.314 J/(mol K).",
+      "a": "413.0 m/s",
+      "why": "u = sqrt(3 × 8.314 × 273.15 / 0.039948) = 413.0 m/s.",
+      "hints": [
+        "Ar is 0.039948 kg/mol. Use T = 273.15 K inside sqrt(3RT/M)."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 413,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "m/s"
+      }
+    },
+    {
+      "id": "8.5-13",
+      "q": "Gas-law temperatures use which scale? Type its symbol.",
+      "a": "K",
+      "why": "Add 273.15 to Celsius to get kelvin. The symbol is K.",
+      "hints": [
+        "The gas laws use the kelvin scale. Type the capital symbol K."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "K",
+        "case": "sensitive",
+        "answers": [
+          "K"
+        ]
+      }
+    }
+  ]
+}

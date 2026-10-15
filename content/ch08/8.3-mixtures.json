@@ -1,0 +1,339 @@
+{
+  "id": "8.3-mixtures",
+  "ch": 8,
+  "openstax_section": "OpenStax AF2e §8.3",
+  "guide_line": "Find gas density, molar mass, partial pressure, and reaction volume.",
+  "steps": [
+    "Gas density is mass divided by volume. From PV = nRT, d = MP/RT, and M = dRT/P. M is the molar mass in g/mol.",
+    "Build molar masses from these atomic masses: H 1.008, He 4.0026, C 12.011, N 14.007, O 15.999, F 18.998, Ne 20.180, S 32.06, Cl 35.45, Ar 39.948. Each problem also states the molar mass to use.",
+    "At one temperature and pressure, gas volumes follow the coefficients in the equation, just as moles do. The reactant that runs out first, after you match those coefficients, sets how much product forms.",
+    "Dalton: the total pressure is the sum of the partial pressures. Mole fraction = partial pressure / total pressure. Partial pressure = mole fraction × total pressure.",
+    "When two samples share one final volume, each partial pressure is the pressure that gas would have alone in that volume. Add those pressures. If both gases are already in one tank, add the moles first, then use PV = nRT once.",
+    "Gas collected over water is mixed with water vapor. Subtract the vapor pressure of water before you use PV = nRT on the dry gas."
+  ],
+  "worked_example": {
+    "q": "What is the density of N2 at STP? The molar mass is 28.014 g/mol. Use R = 0.08206 L atm/(mol K).",
+    "steps": [
+      "STP means P = 1 atm and T = 273.15 K.",
+      "d = MP/RT = 28.014 / (0.08206 × 273.15).",
+      "d = 1.250 g/L."
+    ],
+    "answer": "1.250 g/L"
+  },
+  "similar_problem": {
+    "q": "What is the density of He at STP? The molar mass is 4.0026 g/mol. Use R = 0.08206 L atm/(mol K).",
+    "hint": "Divide 4.0026 g/mol by the STP molar volume, 22.41 L/mol.",
+    "answer": "0.1786 g/L"
+  },
+  "sources": [
+    "OpenStax AF2e §8.3"
+  ],
+  "problems": [
+    {
+      "id": "8.3-01",
+      "q": "What is the density of O2 at STP, in g/L? O2 is 31.998 g/mol. Use R = 0.08206 L atm/(mol K).",
+      "a": "1.428 g/L",
+      "why": "d = 31.998 / (0.08206 × 273.15) = 1.428 g/L.",
+      "hints": [
+        "For O2 at 1 atm and 273.15 K, divide 31.998 by (0.08206 × 273.15)."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.428,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "g/L"
+      }
+    },
+    {
+      "id": "8.3-02",
+      "q": "What is the density of CO2 at 1.000 atm and 298.15 K, in g/L? CO2 is 44.009 g/mol. Use R = 0.08206 L atm/(mol K).",
+      "a": "1.799 g/L",
+      "why": "d = (44.009)(1.000)/((0.08206)(298.15)) = 1.799 g/L.",
+      "hints": [
+        "Keep this temperature at 298.15 K. Divide 44.009 × 1.000 by (0.08206 × 298.15)."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.799,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "g/L"
+      }
+    },
+    {
+      "id": "8.3-03",
+      "q": "A gas has density 1.429 g/L at 1.000 atm and 273.15 K. What is its molar mass in g/mol? Use R = 0.08206 L atm/(mol K).",
+      "a": "32.03 g/mol",
+      "why": "M = dRT/P = (1.429)(0.08206)(273.15)/1.000 = 32.03 g/mol.",
+      "hints": [
+        "Flip the density equation for this sample: multiply 1.429 by 0.08206 and by 273.15."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 32.03,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "g/mol"
+      }
+    },
+    {
+      "id": "8.3-04",
+      "q": "A gas has molar mass 4.003 g/mol. Which formula fits: He, CH4, or N2? He is 4.0026, CH4 is 16.043, and N2 is 28.014. Type the formula.",
+      "a": "He",
+      "why": "4.003 g/mol matches He (4.0026). CH4 and N2 are much heavier.",
+      "hints": [
+        "Helium is 4.0026 g/mol, which rounds to 4.003. Type the symbol He."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "He",
+        "case": "sensitive",
+        "answers": [
+          "He"
+        ]
+      }
+    },
+    {
+      "id": "8.3-05",
+      "q": "Carbon burns as C(s) + O2(g) → CO2(g). What volume of CO2, in liters, forms at STP from 0.1800 mol of C? Use 22.41 L per mole at STP.",
+      "a": "4.035 L",
+      "why": "One mole of C makes one mole of CO2. V = (0.1800)(0.08206)(273.15) = 4.035 L.",
+      "hints": [
+        "The equation is one to one, so multiply 0.1800 mol of CO2 by 22.41 L/mol."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4.035,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "L"
+      }
+    },
+    {
+      "id": "8.3-06",
+      "q": "What is the mass, in grams, of N2 in a 2.000 L sample at 1.200 atm and 300.0 K? N2 is 28.014 g/mol. Use R = 0.08206 L atm/(mol K).",
+      "a": "2.731 g",
+      "why": "n = (1.200)(2.000)/((0.08206)(300.0)) = 0.09749 mol. Mass = 0.09749 × 28.014 = 2.731 g.",
+      "hints": [
+        "Find the moles of this 2.000 L sample with PV/RT, then multiply by 28.014 g/mol."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2.731,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "g"
+      }
+    },
+    {
+      "id": "8.3-07",
+      "q": "A mixture has P(N2) = 0.6500 atm, P(O2) = 0.1800 atm, and P(Ar) = 0.01200 atm. What is the total pressure in atm?",
+      "a": "0.8420 atm",
+      "why": "Ptotal = 0.6500 + 0.1800 + 0.01200 = 0.8420 atm.",
+      "hints": [
+        "Add the three partial pressures 0.6500, 0.1800, and 0.01200 atm."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.842,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "8.3-08",
+      "q": "In a mixture, P(O2) = 0.1800 atm and the total pressure is 0.8420 atm. What is the mole fraction of O2? Report the number only.",
+      "a": "0.2138",
+      "why": "X(O2) = 0.1800 / 0.8420 = 0.2138.",
+      "hints": [
+        "Divide the oxygen pressure 0.1800 atm by the total 0.8420 atm."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.2138,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "8.3-09",
+      "q": "CO2 has mole fraction 0.1800 in a mixture whose total pressure is 3.200 atm. What is the partial pressure of CO2 in atm?",
+      "a": "0.5760 atm",
+      "why": "P(CO2) = (0.1800)(3.200) = 0.5760 atm.",
+      "hints": [
+        "Multiply the mole fraction 0.1800 by the total pressure 3.200 atm."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.576,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "8.3-10",
+      "q": "Oxygen is collected over water. The total pressure is 765.0 torr and the vapor pressure of water is 23.80 torr. What is the dry oxygen pressure in torr?",
+      "a": "741.2 torr",
+      "why": "P(O2) = 765.0 − 23.80 = 741.2 torr.",
+      "hints": [
+        "Subtract the water vapor pressure 23.80 torr from the total 765.0 torr."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 741.2,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "torr"
+      }
+    },
+    {
+      "id": "8.3-11",
+      "q": "Hydrogen is collected over water. The volume is 0.2500 L, the temperature is 23.00 °C, and the total pressure is 765.0 torr. Water vapor at this temperature is 23.80 torr. How many moles of dry H2 were collected? Use R = 0.08206 L atm/(mol K) and 760 torr = 1 atm.",
+      "a": "0.01003 mol",
+      "why": "Dry pressure = 765.0 − 23.80 = 741.2 torr = 741.2/760 atm. T = 23.00 + 273.15 = 296.15 K. n = (741.2/760)(0.2500)/((0.08206)(296.15)) = 0.01003 mol.",
+      "hints": [
+        "Subtract 23.80 torr from 765.0 torr, convert that pressure to atm, change 23.00 °C to 296.15 K, then use n = PV/RT."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.01003,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "mol"
+      }
+    },
+    {
+      "id": "8.3-12",
+      "q": "Ammonia forms by N2(g) + 3 H2(g) → 2 NH3(g). What volume of H2, in liters, reacts with 6.000 L of N2 at the same temperature and pressure?",
+      "a": "18.00 L",
+      "why": "At the same T and P, V(H2) = 3 × 6.000 L = 18.00 L.",
+      "hints": [
+        "The coefficients are 1 N2 to 3 H2, so multiply 6.000 L of N2 by 3."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 18,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "L"
+      }
+    },
+    {
+      "id": "8.3-13",
+      "q": "At the same temperature and pressure, which gas is denser, He or CO2? He is 4.0026 g/mol and CO2 is 44.009 g/mol. Type the formula.",
+      "a": "CO2",
+      "why": "d = MP/RT. Same T and P means the larger molar mass, CO2, has the larger density.",
+      "hints": [
+        "Density rises with molar mass when T and P match. CO2 is far heavier than He, so type CO2."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "CO2",
+        "case": "sensitive",
+        "answers": [
+          "CO2"
+        ]
+      }
+    },
+    {
+      "id": "8.3-14",
+      "q": "A 5.000 g sample of carbon burns completely: C(s) + O2(g) → CO2(g). Carbon is 12.011 g/mol. What volume of CO2, in liters, forms at 1.000 atm and 298.15 K? Use R = 0.08206 L atm/(mol K).",
+      "a": "10.18 L",
+      "why": "n = 5.000/12.011 = 0.416285 mol. V = (0.416285)(0.08206)(298.15) = 10.18 L.",
+      "hints": [
+        "Moles of carbon are 5.000/12.011. That equals moles of CO2. Then use V = nRT/P at 298.15 K."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 10.18,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "L"
+      }
+    },
+    {
+      "id": "8.3-15",
+      "q": "A 0.6400 g sample of gas fills 0.2500 L at 0.9800 atm and 300.0 K. What is the molar mass in g/mol? Use R = 0.08206 L atm/(mol K).",
+      "a": "64.31 g/mol",
+      "why": "n = (0.9800)(0.2500)/(0.08206 × 300.0). M = 0.6400/n = 64.31 g/mol.",
+      "hints": [
+        "Find moles with n = PV/RT, then divide 0.6400 g by those moles."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 64.31,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "g/mol"
+      }
+    },
+    {
+      "id": "8.3-16",
+      "q": "Ammonia forms by N2(g) + 3 H2(g) → 2 NH3(g). A mixture has 2.400 L of N2 and 5.100 L of H2 at the same temperature and pressure. What volume of NH3, in liters, can form?",
+      "a": "3.400 L",
+      "why": "N2 would need 3 × 2.400 = 7.200 L of H2, but only 5.100 L is present, so H2 runs out first. V(NH3) = (2/3) × 5.100 = 3.400 L.",
+      "hints": [
+        "H2 is short: 2.400 L of N2 would need 7.200 L of H2, but only 5.100 L is there. NH3 volume is (2/3) of the H2 volume."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 3.4,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "L"
+      }
+    },
+    {
+      "id": "8.3-17",
+      "q": "A 1.800 L flask of Ne at 0.6400 atm is opened into a 2.200 L flask of Ar at 1.100 atm. The gases mix in the combined 4.000 L volume. Temperature stays fixed. What is the total pressure in atm?",
+      "a": "0.8930 atm",
+      "why": "P(Ne) = 0.6400 × 1.800/4.000 = 0.2880 atm. P(Ar) = 1.100 × 2.200/4.000 = 0.6050 atm. Total = 0.8930 atm.",
+      "hints": [
+        "Each gas keeps its PV product. Ne ends at 0.6400 × 1.800/4.000 atm. Add the matching Ar pressure."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.893,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "8.3-18",
+      "q": "A 5.000 L tank at 298.15 K holds 0.4200 mol of O2 and 0.1800 mol of N2. What is the total pressure in atm? Use R = 0.08206 L atm/(mol K).",
+      "a": "2.936 atm",
+      "why": "n = 0.4200 + 0.1800 = 0.6000 mol. P = (0.6000)(0.08206)(298.15)/5.000 = 2.936 atm.",
+      "hints": [
+        "Add the moles first: 0.4200 + 0.1800. Then P = nRT/V for that total."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2.936,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "8.3-19",
+      "q": "Hydrogen peroxide decomposes: 2 H2O2(l) → 2 H2O(l) + O2(g). A 4.252 g sample of H2O2 decomposes completely. H2O2 is 34.014 g/mol. What volume of O2, in liters, forms at STP? Use R = 0.08206 L atm/(mol K). STP is 1 atm and 273.15 K.",
+      "a": "1.401 L",
+      "why": "n(H2O2) = 4.252/34.014. Only half that many moles of O2 form. V = nRT/P at 273.15 K and 1 atm = 1.401 L.",
+      "hints": [
+        "Moles of H2O2 are 4.252/34.014. Only half that many moles of O2 form. Then use V = nRT/P at 273.15 K and 1 atm."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.401,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "L"
+      }
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "id": "8.4-effusion",
+  "ch": 8,
+  "openstax_section": "OpenStax AF2e §8.4",
+  "guide_line": "Compare effusion rates with Graham's law.",
+  "steps": [
+    "Diffusion is mixing as gas particles wander from a crowded place into a less crowded one. Effusion is escape through a tiny hole into a vacuum.",
+    "Graham: rate1/rate2 = sqrt(M2/M1). The lighter gas moves faster.",
+    "Time is the reverse of rate. The heavier gas takes longer by the factor sqrt(M_heavy/M_light).",
+    "In the same amount of time, distance follows the rate. The lighter gas travels farther."
+  ],
+  "worked_example": {
+    "q": "How many times faster does He effuse than N2? He is 4.0026 g/mol and N2 is 28.014 g/mol. Report the rate ratio rate(He)/rate(N2).",
+    "steps": [
+      "He is lighter, so its rate is larger.",
+      "rate(He)/rate(N2) = sqrt(28.014/4.0026).",
+      "The ratio is 2.646."
+    ],
+    "answer": "2.646"
+  },
+  "similar_problem": {
+    "q": "How many times faster does He effuse than O2? He is 4.0026 g/mol and O2 is 31.998 g/mol. Report rate(He)/rate(O2).",
+    "hint": "Put 31.998 over 4.0026 inside a square root to get rate(He)/rate(O2).",
+    "answer": "2.827"
+  },
+  "sources": [
+    "OpenStax AF2e §8.4"
+  ],
+  "problems": [
+    {
+      "id": "8.4-01",
+      "q": "How many times faster does He effuse than Ar? He is 4.0026 g/mol and Ar is 39.948 g/mol. Report rate(He)/rate(Ar).",
+      "a": "3.159",
+      "why": "rate(He)/rate(Ar) = sqrt(39.948/4.0026) = 3.159.",
+      "hints": [
+        "rate(He)/rate(Ar) is the square root of 39.948/4.0026."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 3.159,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "8.4-02",
+      "q": "How many times faster does N2 effuse than O2? N2 is 28.014 g/mol and O2 is 31.998 g/mol. Report rate(N2)/rate(O2).",
+      "a": "1.069",
+      "why": "rate(N2)/rate(O2) = sqrt(31.998/28.014) = 1.069.",
+      "hints": [
+        "N2 is the lighter gas here. Square-root 31.998/28.014."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.069,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "8.4-03",
+      "q": "How many times faster does H2 effuse than Cl2? H2 is 2.016 g/mol and Cl2 is 70.90 g/mol. Report rate(H2)/rate(Cl2).",
+      "a": "5.930",
+      "why": "rate(H2)/rate(Cl2) = sqrt(70.90/2.016) = 5.930.",
+      "hints": [
+        "Square-root the mass ratio 70.90/2.016 to compare H2 with Cl2."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 5.93,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "8.4-04",
+      "q": "Under the same conditions, He effuses in 12.50 s. How many seconds does O2 take? He is 4.0026 g/mol and O2 is 31.998 g/mol.",
+      "a": "35.34 s",
+      "why": "t(O2) = 12.50 s × sqrt(31.998/4.0026) = 35.34 s.",
+      "hints": [
+        "O2 is heavier, so multiply the 12.50 s helium time by sqrt(31.998/4.0026)."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 35.34,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "s"
+      }
+    },
+    {
+      "id": "8.4-05",
+      "q": "Under the same setup, an unknown gas effuses in 48.00 s and N2 effuses in 32.00 s. N2 is 28.014 g/mol. What is the molar mass of the unknown gas, in g/mol?",
+      "a": "63.03 g/mol",
+      "why": "M = 28.014 × (48.00/32.00)^2 = 28.014 × 2.250 = 63.03 g/mol.",
+      "hints": [
+        "The unknown is slower, so M = 28.014 × (48.00/32.00)^2."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 63.03,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "g/mol"
+      }
+    },
+    {
+      "id": "8.4-06",
+      "q": "In the same time, He travels 40.00 cm. How far does Ne travel, in cm? He is 4.0026 g/mol and Ne is 20.180 g/mol.",
+      "a": "17.81 cm",
+      "why": "distance(Ne) = 40.00 cm × sqrt(4.0026/20.180) = 17.81 cm.",
+      "hints": [
+        "Ne is heavier, so multiply 40.00 cm by sqrt(4.0026/20.180)."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 17.81,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "8.4-07",
+      "q": "Which gas effuses faster, F2 or Ne? F2 is 37.996 g/mol and Ne is 20.180 g/mol. Type the formula.",
+      "a": "Ne",
+      "why": "Ne has the smaller molar mass, so it effuses faster than F2.",
+      "hints": [
+        "Ne is 20.180 g/mol and F2 is 37.996 g/mol. The lighter gas is faster, so type Ne."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Ne",
+        "case": "sensitive",
+        "answers": [
+          "Ne"
+        ]
+      }
+    },
+    {
+      "id": "8.4-08",
+      "q": "A gas effuses 3.159 times as fast as Ar. Ar is 39.948 g/mol. What is the molar mass of the unknown gas, in g/mol?",
+      "a": "4.003 g/mol",
+      "why": "3.159 = sqrt(39.948/M), so M = 39.948 / (3.159)^2 = 4.003 g/mol.",
+      "hints": [
+        "Set 3.159 equal to sqrt(39.948/M). Square 3.159, then divide 39.948 by that square."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4.003,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "g/mol"
+      }
+    },
+    {
+      "id": "8.4-09",
+      "q": "In the same time, H2 travels 50.00 cm. How far does O2 travel, in cm? H2 is 2.016 g/mol and O2 is 31.998 g/mol.",
+      "a": "12.55 cm",
+      "why": "distance(O2) = 50.00 cm × sqrt(2.016/31.998) = 12.55 cm.",
+      "hints": [
+        "O2 is heavier than H2, so multiply 50.00 cm by sqrt(2.016/31.998)."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 12.55,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "cm"
+      }
+    },
+    {
+      "id": "8.4-10",
+      "q": "How many times faster does CH4 effuse than SO2? CH4 is 16.043 g/mol and SO2 is 64.058 g/mol. Report rate(CH4)/rate(SO2).",
+      "a": "1.998",
+      "why": "rate(CH4)/rate(SO2) = sqrt(64.058/16.043) = 1.998.",
+      "hints": [
+        "Square-root 64.058/16.043 to get the methane-to-sulfur-dioxide rate ratio."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.998,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "8.4-11",
+      "q": "A gas leaks through a pinhole into vacuum. Type the name of this process.",
+      "a": "effusion",
+      "why": "Escape through a tiny hole into vacuum is effusion. Diffusion is mixing through open space.",
+      "hints": [
+        "Leakage through a tiny hole into vacuum is called effusion. Type that one word."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "effusion",
+        "case": "insensitive",
+        "answers": [
+          "effusion"
+        ]
+      }
+    },
+    {
+      "id": "8.4-12",
+      "q": "Which gas effuses faster, Cl2 or F2? Cl2 is 70.90 g/mol and F2 is 37.996 g/mol. Type the formula.",
+      "a": "F2",
+      "why": "F2 is lighter than Cl2, so F2 effuses faster.",
+      "hints": [
+        "Compare 37.996 g/mol with 70.90 g/mol and type the lighter formula, F2."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "F2",
+        "case": "sensitive",
+        "answers": [
+          "F2"
+        ]
+      }
+    },
+    {
+      "id": "8.4-13",
+      "q": "Which of these gases effuse faster than O2 (31.998 g/mol)? He is 4.0026, Ne is 20.180, N2 is 28.014, Ar is 39.948, and Cl2 is 70.90. Type the formulas of every gas that is faster.",
+      "a": "He, Ne, N2",
+      "why": "He, Ne, and N2 are lighter than O2, so they effuse faster. Ar and Cl2 are heavier.",
+      "hints": [
+        "Keep every gas lighter than O2 at 31.998 g/mol. That leaves He, Ne, and N2."
+      ],
+      "check": {
+        "kind": "set",
+        "answers": [
+          "He",
+          "Ne",
+          "N2"
+        ],
+        "case": "sensitive",
+        "nearMiss": [
+          {
+            "text": "Ar",
+            "hint": "Ar is 39.948 g/mol, heavier than O2, so it is slower."
+          },
+          {
+            "text": "Cl2",
+            "hint": "Cl2 is 70.90 g/mol, heavier than O2, so leave it off."
+          }
+        ]
+      }
+    }
+  ]
+}
