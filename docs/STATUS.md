@@ -1,9 +1,10 @@
 # STATUS
 
-_Last updated: 2026-10-15. This branch wires lanes A–F into the shared page shell._
+_Last updated: 2026-10-15. Lane G merges lanes A–F and wires them into the shared page shell. `DEPLOY_SALT` is `20261015v3`._
 
 ## State
 - Features passing: F00, F03, I1, I8. See `feature_list.json`.
+- v3 lanes A–F are merged here. Home leads with Start here and grouped tiles. Learn opens chapter modules. The header groups Study, Practice, and Exam, and hides those labels under 600px. The periodic-table tray uses the shared `mount()` board. Search stays under the page title, and `content/lab-help.json` is precached but not indexed as a lesson. The service worker salt is `20261015v3`.
 - Static site loads from `index.html` with no build step. The nav opens Map, Learn, Lab, Build, Drill, Cards, Terms, Videos, Exam 3, Weak spots, Prep, and Final. `#Learn` loads each lesson in `content/chNN/`, links glossary terms, and shows guided steps when a problem has them. Opening a lesson marks it practicing. `#Drill` asks for a number and a unit in separate labeled boxes, then drills seeded templates. A miss is weighted so it returns sooner and more than once, and a diagnosed mistake is named first. `#Cards` flips the glossary decks. `#Map` lists every lesson (skip ahead any time), with mastery, streak, XP, and a Practice link into Drill. The streak uses the local date. A new mastery shows a toast and confetti; reduced motion keeps the toast and drops the animation. `#Prep` is an untimed practice final. `#Final` is the timed practice final. `#Build` opens the builders. `#Terms` is the glossary and quick recall. `#Videos`, `#Exam3`, and `#Weak` mount their lane pages. Home glossary terms open a dialog. The periodic-table tray colors atomic radius, ionization energy, and electronegativity. Lane A’s recall list stays unwired.
 - `content/final/practice-final.json` may be a list of problem objects, a list of file names in that folder, `{ "files": [...] }`, or `{ "problems": [...] }`. A named file may be one problem or `{ "problems": [...] }`. Each problem uses `id`, `q`, `a`, `why`, `hints`, and `check`. P1 stays `passing: false` because GF and I3 are still open.
 - `npm test` and `npm run check:content` run locally. GitHub Actions runs `npm test`.

@@ -194,7 +194,7 @@ test('vendored libraries stay on the site and keep their licenses', () => {
   assert.match(css, /min-width:\s*44px/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
   assert.match(css, /max-width:\s*100%/);
-  assert.match(read('sw.js'), /const DEPLOY_SALT = '20261015v3d';/);
+  assert.match(read('sw.js'), /const DEPLOY_SALT = '20261015v3';/);
   assert.match(read('docs/v3/integration-D.md'), /vendor\/three\/three\.module\.js/);
   assert.match(read('docs/v3/integration-D.md'), /20261015v3d/);
 });

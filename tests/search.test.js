@@ -6,6 +6,10 @@ import { buildIndex, search } from '../js/search/rank.js';
 import { announcementFor, mountSearch, placeSearchTools } from '../js/search/mount.js';
 import { enterFocusMode, exitFocusMode, focusModeIsOn } from '../js/search/focus.js';
 
+test('lab help stays out of the lesson index', () => {
+  assert.equal(CONTENT_PATHS.includes('content/lab-help.json'), false);
+});
+
 test('lessons and problems from content are searchable and answers stay out of the index', () => {
   const records = CONTENT_PATHS.flatMap((path) => {
     const data = JSON.parse(readFileSync(new URL(`../${path}`, import.meta.url), 'utf8'));

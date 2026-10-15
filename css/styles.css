@@ -410,6 +410,16 @@ ul.lesson-list { list-style: none; }
   align-items: center;
 }
 
+.nav-group-label {
+  list-style: none;
+  padding: 0.35rem 0.35rem 0.35rem 0.15rem;
+  color: var(--teal-deep);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .nav-more {
   position: relative;
   list-style: none;
@@ -480,6 +490,10 @@ ul.lesson-list { list-style: none; }
   .site-nav-list {
     flex-wrap: nowrap;
     gap: 0.15rem;
+  }
+
+  .nav-group-label {
+    display: none;
   }
 
   .site-nav-list a,

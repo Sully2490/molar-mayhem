@@ -5,6 +5,7 @@ export const CONTENT_PATHS = PRECACHE_PATHS.filter((path) => (
   && path.endsWith('.json')
   && !path.endsWith('/schema.json')
   && !path.startsWith('content/terms/')
+  && path !== 'content/lab-help.json'
 ));
 
 export function recordsFromPayload(path, data) {

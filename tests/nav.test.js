@@ -103,6 +103,29 @@ test('service worker salt is 20261015v3', () => {
   assert.match(sw, /const DEPLOY_SALT = '20261015v3';/);
 });
 
+test('desktop layout keeps each nav group beside its links', () => {
+  const { doc, list } = buildNavDoc();
+  const study = el(doc, 'li', { class: 'nav-group-label', 'data-nav-group': 'study' });
+  const practice = el(doc, 'li', { class: 'nav-group-label', 'data-nav-group': 'practice' });
+  const exam = el(doc, 'li', { class: 'nav-group-label', 'data-nav-group': 'exam' });
+  list.insertBefore(study, list.querySelector('[data-nav-slot="Learn"]'));
+  list.insertBefore(practice, list.querySelector('[data-nav-slot="Drill"]'));
+  list.insertBefore(exam, list.querySelector('[data-nav-slot="Exam3"]'));
+  bindCompactNav(doc, {
+    matchMedia: () => ({ matches: false, addEventListener() {}, addListener() {} }),
+    addWindowListener() {},
+  });
+  const order = [...list.children].map((node) => (
+    node.getAttribute('data-nav-slot') || node.getAttribute('data-nav-group') || 'more'
+  ));
+  assert.deepEqual(order, [
+    'study', 'Map', 'Learn', 'Cards', 'Terms', 'Videos',
+    'practice', 'Lab', 'Build', 'Drill', 'Weak',
+    'exam', 'Exam3', 'Prep', 'Final',
+    'more',
+  ]);
+});
+
 function buildNavDoc() {
   const doc = createDoc();
   const nav = el(doc, 'nav', { 'data-compact-nav': '', class: 'site-nav' });
