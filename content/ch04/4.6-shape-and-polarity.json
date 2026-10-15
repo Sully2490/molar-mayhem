@@ -1,0 +1,301 @@
+{
+  "id": "ch04-shape-and-polarity",
+  "ch": 4,
+  "openstax_section": "OpenStax AF2e §4.6",
+  "guide_line": "Count electron regions to get the electron-pair geometry, then ignore lone pairs to name the molecular shape. A molecule is polar only when its bond dipoles do not cancel.",
+  "steps": [
+    "An electron region is a bond or a lone pair on the central atom. A double bond or a triple bond counts as one region.",
+    "Regions stay as far apart as they can. Two regions are linear (180°). Three are trigonal planar (120°). Four are tetrahedral (109.5°). Five are trigonal bipyramidal (90° and 120°). Six are octahedral (90°).",
+    "The electron-pair geometry counts every region. The molecular shape counts only the atoms. Lone pairs change the shape name.",
+    "Four regions: 0 lone pairs is tetrahedral, 1 is trigonal pyramidal, and 2 is bent. Three regions with 1 lone pair is also bent. Five regions: 1 lone pair is seesaw, 2 is T-shaped, and 3 is linear.",
+    "A bond is polar when the two atoms differ in electronegativity. The molecule is polar when those bond dipoles do not cancel.",
+    "Identical outer atoms on a symmetric shape cancel: linear CO2, trigonal planar BF3, tetrahedral CH4 and CCl4, trigonal bipyramidal PCl5, and octahedral SF6. A bent or pyramidal molecule, or a tetrahedron with different outer atoms, does not cancel."
+  ],
+  "worked_example": {
+    "q": "What is the molecular shape of CH4, and is the molecule polar or nonpolar?",
+    "steps": [
+      "Carbon has four single bonds and no lone pair, so there are four regions.",
+      "Four regions and no lone pairs give a tetrahedral shape. The angle is 109.5°.",
+      "The four C–H bonds are arranged evenly, so the dipoles cancel.",
+      "CH4 is tetrahedral and nonpolar."
+    ],
+    "answer": "tetrahedral, nonpolar"
+  },
+  "similar_problem": {
+    "q": "What is the molecular shape of H2O?",
+    "hint": "Oxygen has two bonds and two lone pairs. Name the shape from the atoms only, after the lone pairs have pushed them together.",
+    "answer": "bent"
+  },
+  "sources": ["OpenStax AF2e §4.6"],
+  "problems": [
+    {
+      "id": "ch04-46-01",
+      "q": "What is the molecular shape of H2O?",
+      "a": "bent",
+      "why": "Oxygen has two bonds and two lone pairs, four regions in all. The electron-pair geometry is tetrahedral. The two atoms and the oxygen make a bent molecular shape.",
+      "hints": ["Oxygen has two bonds and two lone pairs. Name the shape from the atoms only, after the lone pairs have pushed them together."],
+      "check": {
+        "kind": "exact",
+        "text": "bent",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-02",
+      "q": "What is the electron-pair geometry of H2O?",
+      "a": "tetrahedral",
+      "why": "Two bonds plus two lone pairs are four regions. Four regions take a tetrahedral electron-pair geometry, even though the molecular shape is bent.",
+      "hints": ["Count lone pairs as regions for this question. Two bonds and two lone pairs are four regions around oxygen."],
+      "check": {
+        "kind": "exact",
+        "text": "tetrahedral",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-03",
+      "q": "What is the molecular shape of NH3?",
+      "a": "trigonal pyramidal",
+      "why": "Nitrogen has three bonds and one lone pair. Four regions give a tetrahedral electron-pair geometry. Leaving the lone pair out of the shape name gives trigonal pyramidal.",
+      "hints": ["Nitrogen has three N–H bonds and one lone pair. The lone pair is not an atom, so the shape is a three-sided pyramid."],
+      "check": {
+        "kind": "exact",
+        "text": "trigonal pyramidal",
+        "answers": ["triangular pyramidal"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-04",
+      "q": "What is the molecular shape of CH4?",
+      "a": "tetrahedral",
+      "why": "Carbon has four bonds and no lone pair. The molecular shape matches the electron-pair geometry: tetrahedral.",
+      "hints": ["Carbon in CH4 has four bonds and no leftover pair. The shape name matches the four-region geometry."],
+      "check": {
+        "kind": "exact",
+        "text": "tetrahedral",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-05",
+      "q": "What is the molecular shape of BF3?",
+      "a": "trigonal planar",
+      "why": "Boron has three bonds and no lone pair. Three regions lie in a plane, so BF3 is trigonal planar.",
+      "hints": ["Boron in BF3 has three bonds and no lone pair. Three regions with nothing left over stay flat."],
+      "check": {
+        "kind": "exact",
+        "text": "trigonal planar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-06",
+      "q": "What is the molecular shape of CO2?",
+      "a": "linear",
+      "why": "Each C=O double bond is one region, and carbon has no lone pair. Two regions point opposite each other, so CO2 is linear.",
+      "hints": ["Count each C=O double bond as one region. Carbon has two regions and no lone pair."],
+      "check": {
+        "kind": "exact",
+        "text": "linear",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-07",
+      "q": "What is the bond angle in CH4, in degrees?",
+      "a": "109.5",
+      "why": "CH4 has four bonding regions and no lone pair. The tetrahedral angle is 109.5°.",
+      "hints": ["CH4 is the four-region shape with no lone pairs. Use the ideal tetrahedral angle, including the decimal."],
+      "check": {
+        "kind": "exact",
+        "text": "109.5",
+        "answers": ["109.5°", "109.5 degrees"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-08",
+      "q": "What is the bond angle in CO2, in degrees?",
+      "a": "180",
+      "why": "CO2 has two regions and no lone pair. The atoms lie on a straight line, so the angle is 180°.",
+      "hints": ["CO2 has only two regions around carbon. Two regions form a straight line."],
+      "check": {
+        "kind": "exact",
+        "text": "180",
+        "answers": ["180°", "180 degrees"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-09",
+      "q": "Is CO2 polar or nonpolar?",
+      "a": "nonpolar",
+      "why": "Each C=O bond is polar, but the molecule is linear. The two bond dipoles point opposite ways and cancel, so CO2 is nonpolar.",
+      "hints": ["The C=O bonds are polar, but they lie on a straight line. Ask whether those two arrows cancel."],
+      "check": {
+        "kind": "exact",
+        "text": "nonpolar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-10",
+      "q": "Is H2O polar or nonpolar?",
+      "a": "polar",
+      "why": "Each O–H bond is polar, and the molecular shape is bent. The bond dipoles both point toward oxygen and do not cancel, so water is polar.",
+      "hints": ["The shape is bent, not linear. The two O–H dipoles point toward oxygen and do not sit opposite each other."],
+      "check": {
+        "kind": "exact",
+        "text": "polar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-11",
+      "q": "Is CH4 polar or nonpolar?",
+      "a": "nonpolar",
+      "why": "The four C–H bonds point to the corners of a tetrahedron. Equal bonds in that shape cancel, so CH4 is nonpolar.",
+      "hints": ["Four identical bonds point to the corners of a tetrahedron. That arrangement cancels."],
+      "check": {
+        "kind": "exact",
+        "text": "nonpolar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-12",
+      "q": "Is CH3Cl polar or nonpolar?",
+      "a": "polar",
+      "why": "CH3Cl is tetrahedral, but one outer atom is chlorine instead of hydrogen. The C–Cl dipole is not matched on the opposite side, so the molecule is polar.",
+      "hints": ["The shape is still tetrahedral, but chlorine replaced one hydrogen. The four directions are no longer the same bond."],
+      "check": {
+        "kind": "exact",
+        "text": "polar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-13",
+      "q": "What is the molecular shape of SF6?",
+      "a": "octahedral",
+      "why": "Sulfur has six bonds and no lone pair. Six regions give an octahedral molecular shape.",
+      "hints": ["Sulfur in SF6 has six bonds and no lone pair. Six regions take the octahedral arrangement."],
+      "check": {
+        "kind": "exact",
+        "text": "octahedral",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-14",
+      "q": "Is SF6 polar or nonpolar?",
+      "a": "nonpolar",
+      "why": "Each S–F bond is polar. Opposite bonds in the octahedron point in opposite directions and cancel, so SF6 is nonpolar.",
+      "hints": ["Every S–F bond is polar. In an octahedron each bond has a partner pointing the opposite way."],
+      "check": {
+        "kind": "exact",
+        "text": "nonpolar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-15",
+      "q": "What is the molecular shape of SF4?",
+      "a": "seesaw",
+      "why": "Sulfur has four bonds and one lone pair, five regions. The electron-pair geometry is trigonal bipyramidal. With one lone pair, the molecular shape is seesaw.",
+      "hints": ["SF4 has four bonds and one lone pair, which is five regions. One lone pair on that geometry leaves a seesaw of atoms."],
+      "check": {
+        "kind": "exact",
+        "text": "seesaw",
+        "answers": ["see-saw"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-16",
+      "q": "What is the electron-pair geometry of XeF2?",
+      "a": "trigonal bipyramidal",
+      "why": "Xenon has two bonds and three lone pairs. Five regions take a trigonal bipyramidal electron-pair geometry.",
+      "hints": ["Add the bonds to the lone pairs on xenon. Two bonds plus three lone pairs are five regions."],
+      "check": {
+        "kind": "exact",
+        "text": "trigonal bipyramidal",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-17",
+      "q": "What is the molecular shape of XeF2?",
+      "a": "linear",
+      "why": "The three lone pairs occupy the equatorial positions of the trigonal bipyramid. The two fluorine atoms are left opposite each other, so the molecular shape is linear.",
+      "hints": ["The three lone pairs take the equatorial spots. The two fluorines remain opposite one another."],
+      "check": {
+        "kind": "exact",
+        "text": "linear",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-18",
+      "q": "Is NH3 polar or nonpolar?",
+      "a": "polar",
+      "why": "Nitrogen is more electronegative than hydrogen, and the shape is trigonal pyramidal. The bond dipoles and the lone pair point the same general way, so NH3 is polar.",
+      "hints": ["Ammonia is trigonal pyramidal, with the lone pair on one side of the nitrogen. The N–H dipoles do not cancel."],
+      "check": {
+        "kind": "exact",
+        "text": "polar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-19",
+      "q": "What is the molecular shape of PCl5?",
+      "a": "trigonal bipyramidal",
+      "why": "Phosphorus has five bonds and no lone pair. The molecular shape is the same as the five-region geometry: trigonal bipyramidal.",
+      "hints": ["PCl5 has five bonds and no lone pair. The shape name is the five-region geometry itself."],
+      "check": {
+        "kind": "exact",
+        "text": "trigonal bipyramidal",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-20",
+      "q": "What is the bond angle in BF3, in degrees?",
+      "a": "120",
+      "why": "BF3 has three bonding regions and no lone pair. They spread evenly in a plane, so the angle is 120°.",
+      "hints": ["BF3 has three regions and no lone pair, all in one plane. Divide a full circle by three."],
+      "check": {
+        "kind": "exact",
+        "text": "120",
+        "answers": ["120°", "120 degrees"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-21",
+      "q": "Is CCl4 polar or nonpolar?",
+      "a": "nonpolar",
+      "why": "CCl4 is tetrahedral with four identical C–Cl bonds. The bond dipoles cancel, so CCl4 is nonpolar.",
+      "hints": ["Four identical outer atoms sit on a tetrahedron. Match this with CH4, not with CH3Cl."],
+      "check": {
+        "kind": "exact",
+        "text": "nonpolar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-46-22",
+      "q": "What is the molecular shape of SO2?",
+      "a": "bent",
+      "why": "Sulfur in SO2 has two bonding regions and one lone pair. Three regions with one lone pair give a bent molecular shape.",
+      "hints": ["SO2 has two S–O regions and one lone pair on sulfur. Three regions with one lone pair are not trigonal planar."],
+      "check": {
+        "kind": "exact",
+        "text": "bent",
+        "case": "insensitive"
+      }
+    }
+  ]
+}
