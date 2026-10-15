@@ -1,0 +1,140 @@
+{
+  "id": "ch2-structure",
+  "ch": 2,
+  "openstax_section": "OpenStax AF2e §2.3",
+  "guide_line": "From Z and A, find protons, neutrons, electrons, the symbol, and the average mass.",
+  "steps": [
+    "The atomic number Z is the proton count. It names the element. A neutral atom has the same number of electrons as protons.",
+    "The mass number A is protons plus neutrons. Neutrons = A − Z. Type an isotope as Cl-35: symbol, hyphen, mass number. Only the first letter of a symbol is capital, so Co is cobalt and CO is carbon monoxide.",
+    "Charge = protons − electrons. A 3+ ion lost 3 electrons. A 2− ion gained 2. Type the charge as 3+ or 2-.",
+    "Average atomic mass is each isotope's fraction times its mass, added together. Keep the isotope masses you are given, then round the result to 4 significant figures. One electron has charge 1.602×10^−19 C, so a measured charge divided by that value is a whole number of electrons."
+  ],
+  "worked_example": {
+    "q": "A neutral atom has 19 protons and 20 neutrons. What is its mass number?",
+    "steps": [
+      "Mass number = protons + neutrons.",
+      "19 + 20 = 39."
+    ],
+    "answer": "39"
+  },
+  "similar_problem": {
+    "q": "A neutral atom has 17 protons and 20 neutrons. What is its mass number?",
+    "hint": "This atom has 17 protons and 20 neutrons. Add those two counts.",
+    "answer": "37"
+  },
+  "sources": ["OpenStax AF2e §2.3"],
+  "problems": [
+    {
+      "id": "ch2-23-protons-p",
+      "q": "A neutral phosphorus atom has atomic number 15. How many protons does it have?",
+      "a": "15",
+      "why": "The atomic number is the proton count. Phosphorus has 15 protons.",
+      "hints": ["Phosphorus has atomic number 15. That number is the proton count."],
+      "check": { "kind": "numeric", "value": 15, "tolerance": 0, "unit": null }
+    },
+    {
+      "id": "ch2-23-neutrons-cl37",
+      "q": "Chlorine-37 has atomic number 17. How many neutrons are in one atom?",
+      "a": "20",
+      "why": "Neutrons = mass number − atomic number. 37 − 17 = 20 neutrons.",
+      "hints": ["Chlorine-37 has mass number 37 and atomic number 17. Subtract 17 from 37."],
+      "check": { "kind": "numeric", "value": 20, "tolerance": 0, "unit": null }
+    },
+    {
+      "id": "ch2-23-electrons-s2",
+      "q": "A sulfide ion has 16 protons and a charge of 2-. How many electrons does it have?",
+      "a": "18",
+      "why": "Charge = protons − electrons. 16 − electrons = −2, so the ion has 18 electrons.",
+      "hints": ["This sulfide ion has charge 2- and 16 protons. Add 2 extra electrons to the proton count."],
+      "check": { "kind": "numeric", "value": 18, "tolerance": 0, "unit": null }
+    },
+    {
+      "id": "ch2-23-mass-number",
+      "q": "An atom has 20 protons and 20 neutrons. What is its mass number?",
+      "a": "40",
+      "why": "Mass number = 20 protons + 20 neutrons = 40.",
+      "hints": ["This atom has 20 protons and 20 neutrons. Add those two counts to get the mass number."],
+      "check": { "kind": "numeric", "value": 40, "tolerance": 0, "unit": null }
+    },
+    {
+      "id": "ch2-23-symbol-fe",
+      "q": "An atom has 26 protons. Type the element symbol.",
+      "a": "Fe",
+      "why": "Atomic number 26 is iron. The symbol is Fe.",
+      "hints": ["Atomic number 26 is iron. Type Fe with only the F capitalized."],
+      "check": { "kind": "exact", "text": "Fe", "case": "sensitive" }
+    },
+    {
+      "id": "ch2-23-symbol-na",
+      "q": "Type the symbol for sodium.",
+      "a": "Na",
+      "why": "Sodium is atomic number 11. The symbol is Na.",
+      "hints": ["Sodium is atomic number 11. Type Na, not NA."],
+      "check": { "kind": "exact", "text": "Na", "case": "sensitive" }
+    },
+    {
+      "id": "ch2-23-symbol-co",
+      "q": "Type the symbol for the element cobalt.",
+      "a": "Co",
+      "why": "Cobalt is one element, atomic number 27. The symbol is Co. CO would be carbon monoxide.",
+      "hints": ["Cobalt is one atom, atomic number 27. Type Co. Two capitals would mean carbon and oxygen."],
+      "check": { "kind": "exact", "text": "Co", "case": "sensitive" }
+    },
+    {
+      "id": "ch2-23-charge",
+      "q": "An ion has 13 protons and 10 electrons. What is its charge? Type it as 3+ or 2-.",
+      "a": "3+",
+      "why": "Charge = protons − electrons = 13 − 10 = 3+. The ion is positive because it has fewer electrons than protons.",
+      "hints": ["This ion has 13 protons and 10 electrons. Subtract the electrons from the protons and write the positive sign as 3+."],
+      "check": { "kind": "exact", "text": "3+", "case": "sensitive" }
+    },
+    {
+      "id": "ch2-23-avg-b",
+      "q": "A boron sample is 25.00% boron-10 (10.0129 amu) and 75.00% boron-11 (11.0093 amu). What is the average atomic mass? Round to 4 significant figures.",
+      "a": "10.76 amu",
+      "why": "(0.2500 × 10.0129) + (0.7500 × 11.0093) = 2.503225 + 8.256975 = 10.7602 amu, which rounds to 10.76 amu.",
+      "hints": ["Take 0.2500 times 10.0129 amu and 0.7500 times 11.0093 amu. Add them, then round to 4 significant figures."],
+      "check": { "kind": "numeric", "value": 10.76, "tolerance": 0.05, "sigFigs": 4, "unit": "amu" }
+    },
+    {
+      "id": "ch2-23-avg-ne",
+      "q": "A neon sample is 90.00% neon-20 (19.9924 amu) and 10.00% neon-22 (21.9914 amu). What is the average atomic mass? Round to 4 significant figures.",
+      "a": "20.19 amu",
+      "why": "(0.9000 × 19.9924) + (0.1000 × 21.9914) = 17.99316 + 2.19914 = 20.1923 amu, which rounds to 20.19 amu.",
+      "hints": ["Take 0.9000 times 19.9924 amu and 0.1000 times 21.9914 amu. Add them, then round to 4 significant figures."],
+      "check": { "kind": "numeric", "value": 20.19, "tolerance": 0.05, "sigFigs": 4, "unit": "amu" }
+    },
+    {
+      "id": "ch2-23-percent-ne",
+      "q": "Neon-20 has mass 19.9924 amu and neon-22 has mass 21.9914 amu. A sample's average mass is 20.1923 amu. What percent of the atoms are neon-20? Use 4 significant figures.",
+      "a": "90.00 %",
+      "why": "Let x be the neon-20 fraction. 19.9924x + 21.9914(1 − x) = 20.1923. Then x = (21.9914 − 20.1923) / (21.9914 − 19.9924) = 0.9000, which is 90.00%.",
+      "hints": ["Solve 19.9924x + 21.9914(1 − x) = 20.1923 for x, then write the neon-20 percent with 4 significant figures."],
+      "check": { "kind": "numeric", "value": 90, "tolerance": 0.05, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch2-23-electrons-fe3",
+      "q": "An Fe3+ ion has 26 protons. How many electrons does it have?",
+      "a": "23",
+      "why": "A 3+ charge means 3 fewer electrons than protons. 26 − 3 = 23 electrons.",
+      "hints": ["Fe3+ still has 26 protons. It lost 3 electrons, so subtract 3 from 26."],
+      "check": { "kind": "numeric", "value": 23, "tolerance": 0, "unit": null }
+    },
+    {
+      "id": "ch2-23-symbol-br79",
+      "q": "An atom has 35 protons and 44 neutrons. Type its isotope symbol as Br-79.",
+      "a": "Br-79",
+      "why": "35 protons is bromine, symbol Br. Mass number = 35 + 44 = 79. The symbol is Br-79.",
+      "hints": ["35 protons is bromine. Add 35 and 44 for the mass number, then type Br-79."],
+      "check": { "kind": "exact", "text": "Br-79", "case": "sensitive" }
+    },
+    {
+      "id": "ch2-23-oil-drop",
+      "q": "One electron has charge 1.602×10^−19 C. An oil drop has charge −9.612×10^−19 C. How many extra electrons are on the drop?",
+      "a": "6",
+      "why": "Divide the drop's charge by the electron charge. 9.612×10^−19 / 1.602×10^−19 = 6 extra electrons.",
+      "hints": ["Divide 9.612×10^−19 by 1.602×10^−19. The quotient is the extra-electron count on this drop."],
+      "check": { "kind": "numeric", "value": 6, "tolerance": 0, "unit": null }
+    }
+  ]
+}
