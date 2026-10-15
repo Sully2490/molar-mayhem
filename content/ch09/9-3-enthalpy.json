@@ -58,7 +58,66 @@
       "hints": [
         "Methane's molar mass uses C = 12.011 and H = 1.008. Convert 12.50 g to moles, then multiply by -890.8 kJ/mol."
       ],
-      "check": { "kind": "numeric", "value": -694.1, "sigFigs": 4, "unit": "kJ" }
+      "check": { "kind": "numeric", "value": -694.1, "sigFigs": 4, "unit": "kJ" },
+      "guided": [
+        {
+          "prompt": "What is the molar mass of CH4? C is 12.011 and H is 1.008.",
+          "hint": "12.011 + 4(1.008).",
+          "answer": "16.043 g/mol",
+          "expected": "16.043 g/mol",
+          "unit": "g/mol",
+          "check": {
+            "kind": "numeric",
+            "value": 16.043,
+            "tolerance": 0.5,
+            "sigFigs": 5,
+            "unit": "g/mol"
+          }
+        },
+        {
+          "prompt": "How many moles are in 12.50 g of methane?",
+          "hint": "Divide 12.50 g by the molar mass.",
+          "answer": "0.7792 mol",
+          "expected": "0.7792 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.7792,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "How much heat is exchanged? Multiply the moles by −890.8 kJ/mol.",
+          "hint": "Keep the negative sign from the combustion enthalpy.",
+          "answer": "-694.1 kJ",
+          "expected": "-694.1 kJ",
+          "check": {
+            "kind": "numeric",
+            "value": -694.1,
+            "sigFigs": 4,
+            "unit": "kJ"
+          },
+          "unit": "kJ"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "skip-moles",
+          "describe": "You went straight from grams to grams. Convert to moles first.",
+          "wrong": "-11135 kJ",
+          "value": -11135,
+          "unit": "kJ"
+        },
+        {
+          "id": "sign",
+          "describe": "Check the sign: heat released means q (and ΔH) is negative.",
+          "wrong": "694.1 kJ",
+          "value": 694.1,
+          "unit": "kJ"
+        }
+      ]
     },
     {
       "id": "ch09-enthalpy-04",
@@ -68,7 +127,59 @@
       "hints": [
         "For ethanol combustion, subtract the reactant sum from the product sum. O2 is an element, and the coefficients are 2 and 3."
       ],
-      "check": { "kind": "numeric", "value": -1367, "sigFigs": 4, "unit": "kJ/mol" }
+      "check": { "kind": "numeric", "value": -1367, "sigFigs": 4, "unit": "kJ/mol" },
+      "guided": [
+        {
+          "prompt": "What is the enthalpy sum of the products, in kJ? Use 2 CO2 and 3 H2O.",
+          "hint": "2(−393.51) + 3(−285.83).",
+          "answer": "-1644.51 kJ",
+          "expected": "-1644.51 kJ",
+          "unit": "kJ",
+          "check": {
+            "kind": "numeric",
+            "value": -1644.51,
+            "tolerance": 0.5,
+            "sigFigs": 6,
+            "unit": "kJ"
+          }
+        },
+        {
+          "prompt": "What is the enthalpy of the reactants, in kJ? O2 is 0.",
+          "hint": "Only ethanol contributes, and it is −277.6 kJ.",
+          "answer": "-277.6 kJ",
+          "expected": "-277.6 kJ",
+          "unit": "kJ",
+          "check": {
+            "kind": "numeric",
+            "value": -277.6,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "kJ"
+          }
+        },
+        {
+          "prompt": "ΔH° = products − reactants. What is ΔH° in kJ/mol of ethanol?",
+          "hint": "Subtracting a negative number makes the result more negative.",
+          "answer": "-1367 kJ/mol",
+          "expected": "-1367 kJ/mol",
+          "check": {
+            "kind": "numeric",
+            "value": -1367,
+            "sigFigs": 4,
+            "unit": "kJ/mol"
+          },
+          "unit": "kJ/mol"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "sign",
+          "describe": "Check the sign: heat released means q (and ΔH) is negative.",
+          "wrong": "1367 kJ/mol",
+          "value": 1367,
+          "unit": "kJ/mol"
+        }
+      ]
     },
     {
       "id": "ch09-enthalpy-05",
@@ -78,7 +189,73 @@
       "hints": [
         "Keep step (1) as written, double step (2), and reverse step (3) so CH4 becomes a product."
       ],
-      "check": { "kind": "numeric", "value": -74.6, "sigFigs": 4, "unit": "kJ" }
+      "check": { "kind": "numeric", "value": -74.6, "sigFigs": 4, "unit": "kJ" },
+      "guided": [
+        {
+          "prompt": "Keep step (1) as written. What is its ΔH, in kJ?",
+          "hint": "Step (1) stays −393.51 kJ.",
+          "answer": "-393.51 kJ",
+          "expected": "-393.51 kJ",
+          "unit": "kJ",
+          "check": {
+            "kind": "numeric",
+            "value": -393.51,
+            "tolerance": 0.5,
+            "sigFigs": 5,
+            "unit": "kJ"
+          }
+        },
+        {
+          "prompt": "Double step (2). What is 2 × ΔH, in kJ?",
+          "hint": "2 × −241.82.",
+          "answer": "-483.64 kJ",
+          "expected": "-483.64 kJ",
+          "unit": "kJ",
+          "check": {
+            "kind": "numeric",
+            "value": -483.64,
+            "tolerance": 0.5,
+            "sigFigs": 5,
+            "unit": "kJ"
+          }
+        },
+        {
+          "prompt": "Reverse step (3) so CH4 is a product. What is the sign-flipped ΔH, in kJ?",
+          "hint": "Reversing changes −802.55 into +802.55.",
+          "answer": "802.55 kJ",
+          "expected": "802.55 kJ",
+          "unit": "kJ",
+          "check": {
+            "kind": "numeric",
+            "value": 802.55,
+            "tolerance": 0.5,
+            "sigFigs": 5,
+            "unit": "kJ"
+          }
+        },
+        {
+          "prompt": "Add those three contributions. What is ΔH° for making CH4?",
+          "hint": "If you forget to reverse step (3), the sign of the answer is wrong.",
+          "answer": "-74.60 kJ",
+          "expected": "-74.60 kJ",
+          "check": {
+            "kind": "numeric",
+            "value": -74.6,
+            "sigFigs": 4,
+            "unit": "kJ"
+          },
+          "unit": "kJ"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "sign",
+          "describe": "Check the sign: heat released means q (and ΔH) is negative.",
+          "wrong": "74.60 kJ",
+          "value": 74.6,
+          "unit": "kJ"
+        }
+      ]
     },
     {
       "id": "ch09-enthalpy-06",
@@ -98,7 +275,45 @@
       "hints": [
         "The water equation is reversed and doubled. Change the sign of -285.83 kJ, then multiply by 2."
       ],
-      "check": { "kind": "numeric", "value": 571.7, "sigFigs": 4, "unit": "kJ" }
+      "check": { "kind": "numeric", "value": 571.7, "sigFigs": 4, "unit": "kJ" },
+      "guided": [
+        {
+          "prompt": "Reverse H2 + 1/2 O2 → H2O. What is the sign-flipped ΔH, in kJ?",
+          "hint": "Change the sign of −285.83.",
+          "answer": "285.83 kJ",
+          "expected": "285.83 kJ",
+          "unit": "kJ",
+          "check": {
+            "kind": "numeric",
+            "value": 285.83,
+            "tolerance": 0.5,
+            "sigFigs": 5,
+            "unit": "kJ"
+          }
+        },
+        {
+          "prompt": "The reversed equation is doubled. What is ΔH°, in kJ?",
+          "hint": "Multiply the flipped value by 2.",
+          "answer": "571.7 kJ",
+          "expected": "571.7 kJ",
+          "check": {
+            "kind": "numeric",
+            "value": 571.7,
+            "sigFigs": 4,
+            "unit": "kJ"
+          },
+          "unit": "kJ"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "sign",
+          "describe": "Check the sign: heat released means q (and ΔH) is negative.",
+          "wrong": "-571.7 kJ",
+          "value": -571.7,
+          "unit": "kJ"
+        }
+      ]
     },
     {
       "id": "ch09-enthalpy-08",

@@ -1,0 +1,85 @@
+.mm-guided {
+  margin: 1rem 0;
+  color: #1c1917;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+.mm-guided-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mm-guided-step {
+  margin: 0 0 1rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid #d6d3d1;
+}
+
+.mm-guided-prompt {
+  margin: 0 0 0.5rem;
+}
+
+.mm-guided label {
+  display: block;
+  margin: 0 0 0.35rem;
+  font-weight: 700;
+}
+
+.mm-guided input,
+.mm-guided button {
+  min-height: 44px;
+  min-width: 44px;
+  font: inherit;
+}
+
+.mm-guided input {
+  width: min(100%, 16rem);
+  padding: 0.4rem 0.6rem;
+  border: 2px solid #44403c;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.mm-guided button {
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border: 2px solid #1d4ed8;
+  border-radius: 6px;
+  background: #1d4ed8;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mm-guided button:focus-visible,
+.mm-guided input:focus-visible {
+  outline: 3px solid #b45309;
+  outline-offset: 2px;
+}
+
+.mm-guided .feedback,
+.mm-guided-result {
+  margin: 0.5rem 0 0;
+  min-height: 1.5rem;
+}
+
+.mm-guided-result {
+  font-weight: 700;
+}
+
+.mm-guided-final {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #d6d3d1;
+}
+
+.mm-guided-final h3,
+.mm-guided-final p {
+  margin: 0.35rem 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mm-guided button {
+    transition: none;
+  }
+}

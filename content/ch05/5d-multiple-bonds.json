@@ -182,7 +182,53 @@
         "The middle oxygen in ozone has two bonding regions and one lone pair.",
         "Three groups on that oxygen use sp2 hybrids in both drawings."
       ],
-      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" }
+      "check": { "kind": "exact", "text": "sp2", "case": "insensitive" },
+      "guided": [
+        {
+          "prompt": "How many electron groups are on the central O in ozone, O3?",
+          "hint": "Two bonding regions plus one lone pair is three groups.",
+          "answer": "3",
+          "expected": "3",
+          "check": {
+            "kind": "numeric",
+            "value": 3,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "What is the arrangement of those three electron groups?",
+          "hint": "Three groups lie in a plane.",
+          "answer": "trigonal planar",
+          "expected": "trigonal planar",
+          "check": {
+            "kind": "exact",
+            "text": "trigonal planar",
+            "case": "insensitive"
+          },
+          "overcount": "tetrahedral"
+        },
+        {
+          "prompt": "What hybridization does the central oxygen use?",
+          "hint": "Three groups use sp2 hybrids.",
+          "answer": "sp2",
+          "expected": "sp2",
+          "check": {
+            "kind": "exact",
+            "text": "sp2",
+            "case": "insensitive"
+          },
+          "overcount": "sp3"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "double-bond",
+          "describe": "A double bond counts as one electron group.",
+          "wrong": "sp3"
+        }
+      ]
     }
   ]
 }

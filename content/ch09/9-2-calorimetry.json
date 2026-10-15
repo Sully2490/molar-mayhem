@@ -37,7 +37,45 @@
       "hints": [
         "In this bomb, q for the reaction is minus 5.240 kJ/°C times the 2.180 °C rise."
       ],
-      "check": { "kind": "numeric", "value": -11.42, "sigFigs": 4, "unit": "kJ" }
+      "check": { "kind": "numeric", "value": -11.42, "sigFigs": 4, "unit": "kJ" },
+      "guided": [
+        {
+          "prompt": "How much heat did the calorimeter gain, in kJ? Use C × ΔT.",
+          "hint": "5.240 kJ/°C × 2.180 °C.",
+          "answer": "11.42 kJ",
+          "expected": "11.42 kJ",
+          "unit": "kJ",
+          "check": {
+            "kind": "numeric",
+            "value": 11.42,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "kJ"
+          }
+        },
+        {
+          "prompt": "What is q for the reaction? The reaction supplied that heat, so flip the sign.",
+          "hint": "q_reaction = −C ΔT.",
+          "answer": "-11.42 kJ",
+          "expected": "-11.42 kJ",
+          "check": {
+            "kind": "numeric",
+            "value": -11.42,
+            "sigFigs": 4,
+            "unit": "kJ"
+          },
+          "unit": "kJ"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "sign",
+          "describe": "Check the sign: heat released means q (and ΔH) is negative.",
+          "wrong": "11.42 kJ",
+          "value": 11.42,
+          "unit": "kJ"
+        }
+      ]
     },
     {
       "id": "ch09-calorimetry-02",
@@ -47,7 +85,73 @@
       "hints": [
         "Find q for the 100.0 g solution from 20.00 °C to 25.60 °C, flip the sign, then divide by 0.04000 mol."
       ],
-      "check": { "kind": "numeric", "value": -58.58, "sigFigs": 4, "unit": "kJ/mol" }
+      "check": { "kind": "numeric", "value": -58.58, "sigFigs": 4, "unit": "kJ/mol" },
+      "guided": [
+        {
+          "prompt": "What is ΔT of the solution, in °C?",
+          "hint": "25.60 − 20.00.",
+          "answer": "5.600 °C",
+          "expected": "5.600 °C",
+          "unit": "°C",
+          "check": {
+            "kind": "numeric",
+            "value": 5.6,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "°C"
+          }
+        },
+        {
+          "prompt": "What is q for the 100.0 g solution, in kJ?",
+          "hint": "4.184 × 100.0 × 5.60, then divide by 1000.",
+          "answer": "2.343 kJ",
+          "expected": "2.343 kJ",
+          "unit": "kJ",
+          "check": {
+            "kind": "numeric",
+            "value": 2.343,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "kJ"
+          }
+        },
+        {
+          "prompt": "What is q for the reaction, in kJ? Flip the sign.",
+          "hint": "The solution gained heat, so the reaction lost it.",
+          "answer": "-2.343 kJ",
+          "expected": "-2.343 kJ",
+          "unit": "kJ",
+          "check": {
+            "kind": "numeric",
+            "value": -2.343,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "kJ"
+          }
+        },
+        {
+          "prompt": "Divide by 0.04000 mol to get ΔH in kJ/mol. Keep the sign.",
+          "hint": "ΔH is negative because the reaction released heat.",
+          "answer": "-58.58 kJ/mol",
+          "expected": "-58.58 kJ/mol",
+          "check": {
+            "kind": "numeric",
+            "value": -58.58,
+            "sigFigs": 4,
+            "unit": "kJ/mol"
+          },
+          "unit": "kJ/mol"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "sign",
+          "describe": "Check the sign: heat released means q (and ΔH) is negative.",
+          "wrong": "58.58 kJ/mol",
+          "value": 58.58,
+          "unit": "kJ/mol"
+        }
+      ]
     },
     {
       "id": "ch09-calorimetry-03",
@@ -97,7 +201,59 @@
       "hints": [
         "The 120.0 g solution cools from 24.80 °C to 21.35 °C, so its q is negative. Dissolving gets the opposite sign."
       ],
-      "check": { "kind": "numeric", "value": 1.732, "sigFigs": 4, "unit": "kJ" }
+      "check": { "kind": "numeric", "value": 1.732, "sigFigs": 4, "unit": "kJ" },
+      "guided": [
+        {
+          "prompt": "What is ΔT of the water, in °C?",
+          "hint": "21.35 − 24.80. The water cooled.",
+          "answer": "-3.450 °C",
+          "expected": "-3.450 °C",
+          "unit": "°C",
+          "check": {
+            "kind": "numeric",
+            "value": -3.45,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "°C"
+          }
+        },
+        {
+          "prompt": "What is q for the water, in kJ?",
+          "hint": "4.184 × 120.0 × the negative ΔT, then divide by 1000.",
+          "answer": "-1.732 kJ",
+          "expected": "-1.732 kJ",
+          "unit": "kJ",
+          "check": {
+            "kind": "numeric",
+            "value": -1.732,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "kJ"
+          }
+        },
+        {
+          "prompt": "What is q for the dissolving, in kJ? It is the opposite of q for the water.",
+          "hint": "The water lost heat, so dissolving gained it.",
+          "answer": "1.732 kJ",
+          "expected": "1.732 kJ",
+          "check": {
+            "kind": "numeric",
+            "value": 1.732,
+            "sigFigs": 4,
+            "unit": "kJ"
+          },
+          "unit": "kJ"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "sign",
+          "describe": "Check the sign: heat released means q (and ΔH) is negative.",
+          "wrong": "-1.732 kJ",
+          "value": -1.732,
+          "unit": "kJ"
+        }
+      ]
     },
     {
       "id": "ch09-calorimetry-08",
@@ -167,7 +323,59 @@
       "hints": [
         "Turn 125.0 mL into grams with 1.000 g/mL, then use the rise from 19.50 °C to 24.70 °C. Give the reaction the opposite sign."
       ],
-      "check": { "kind": "numeric", "value": -2.72, "sigFigs": 4, "unit": "kJ" }
+      "check": { "kind": "numeric", "value": -2.72, "sigFigs": 4, "unit": "kJ" },
+      "guided": [
+        {
+          "prompt": "What is the mass of 125.0 mL of solution? Density is 1.000 g/mL.",
+          "hint": "125.0 mL × 1.000 g/mL.",
+          "answer": "125.0 g",
+          "expected": "125.0 g",
+          "unit": "g",
+          "check": {
+            "kind": "numeric",
+            "value": 125,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "g"
+          }
+        },
+        {
+          "prompt": "What is q for the solution, in kJ?",
+          "hint": "4.184 × 125.0 × 5.20 °C, then divide by 1000.",
+          "answer": "2.720 kJ",
+          "expected": "2.720 kJ",
+          "unit": "kJ",
+          "check": {
+            "kind": "numeric",
+            "value": 2.72,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "kJ"
+          }
+        },
+        {
+          "prompt": "What is q for the reaction, in kJ?",
+          "hint": "Flip the sign. The solution warmed, so the reaction released heat.",
+          "answer": "-2.720 kJ",
+          "expected": "-2.720 kJ",
+          "check": {
+            "kind": "numeric",
+            "value": -2.72,
+            "sigFigs": 4,
+            "unit": "kJ"
+          },
+          "unit": "kJ"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "sign",
+          "describe": "Check the sign: heat released means q (and ΔH) is negative.",
+          "wrong": "2.720 kJ",
+          "value": 2.72,
+          "unit": "kJ"
+        }
+      ]
     },
     {
       "id": "ch09-calorimetry-15",

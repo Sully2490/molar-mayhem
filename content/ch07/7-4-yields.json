@@ -38,9 +38,71 @@
       "id": "ch07-limit-hydrogen",
       "q": "20.00 g of N2 is mixed with 4.000 g of H2. N2 + 3 H2 -> 2 NH3. Which reactant is limiting? Write its formula.",
       "a": "H2",
-      "why": "Moles of N2 = 20.00 / 28.014 = 0.7143 mol, which needs 2.143 mol of H2. Moles of H2 on hand = 4.000 / 2.016 = 1.984 mol. H2 runs out first.",
+      "why": "Moles of N2 = 20.00 / 28.014 = 0.7139 mol, which needs 2.142 mol of H2. Moles of H2 on hand = 4.000 / 2.016 = 1.984 mol. H2 runs out first.",
       "hints": ["20.00 g of N2 needs three times its moles in H2. H2 is only 2.016 g/mol, so convert 4.000 g and compare."],
-      "check": { "kind": "exact", "text": "H2", "case": "sensitive" }
+      "check": { "kind": "exact", "text": "H2", "case": "sensitive" },
+      "guided": [
+        {
+          "prompt": "How many moles of N2 are in 20.00 g? N2 is 28.014 g/mol.",
+          "hint": "Divide 20.00 g by 28.014 g/mol.",
+          "answer": "0.7139 mol",
+          "expected": "0.7139 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.7139,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "How many moles of H2 are in 4.000 g? H2 is 2.016 g/mol.",
+          "hint": "Divide 4.000 g by 2.016 g/mol.",
+          "answer": "1.984 mol",
+          "expected": "1.984 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 1.984,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "How many moles of H2 does that N2 need? The ratio is 3 H2 / 1 N2.",
+          "hint": "Multiply the moles of N2 by 3.",
+          "answer": "2.142 mol",
+          "expected": "2.142 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 2.142,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "Which reactant runs out first? Write its formula.",
+          "hint": "Compare the moles of H2 you have with the moles of H2 you need.",
+          "answer": "H2",
+          "expected": "H2",
+          "check": {
+            "kind": "exact",
+            "text": "H2",
+            "case": "sensitive"
+          }
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "skip-moles",
+          "describe": "Do not compare 20.00 g with 4.000 g. Convert both to moles first.",
+          "wrong": "N2"
+        }
+      ]
     },
     {
       "id": "ch07-yield-ammonia-mass",
@@ -48,7 +110,68 @@
       "a": "22.53 g",
       "why": "H2 is limiting at 4.000 / 2.016 = 1.984 mol. Moles of NH3 = 1.984 times (2/3) = 1.323 mol. Molar mass of NH3 = 14.007 + 3(1.008) = 17.031 g/mol. Mass = 1.323 times 17.031 = 22.53 g.",
       "hints": ["The limiting reactant is H2. Every 3 mol H2 makes 2 mol NH3, and NH3 is 14.007 + 3(1.008) g/mol."],
-      "check": { "kind": "numeric", "value": 22.53, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+      "check": { "kind": "numeric", "value": 22.53, "tolerance": 0.5, "sigFigs": 4, "unit": "g" },
+      "guided": [
+        {
+          "prompt": "H2 is limiting. How many moles of H2 are in 4.000 g? H2 is 2.016 g/mol.",
+          "hint": "Divide 4.000 g by 2.016 g/mol.",
+          "answer": "1.984 mol",
+          "expected": "1.984 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 1.984,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "3 H2 make 2 NH3. How many moles of NH3 form?",
+          "hint": "Multiply the moles of H2 by 2/3.",
+          "answer": "1.323 mol",
+          "expected": "1.323 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 1.323,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          },
+          "ratio": [
+            3,
+            2
+          ]
+        },
+        {
+          "prompt": "What is the theoretical yield of NH3 in grams? NH3 is 17.031 g/mol.",
+          "hint": "Multiply the moles of NH3 by 17.031 g/mol.",
+          "answer": "22.53 g",
+          "expected": "22.53 g",
+          "check": {
+            "kind": "numeric",
+            "value": 22.53,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "g"
+          },
+          "ratio": [
+            3,
+            2
+          ],
+          "unit": "g"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "flip-ratio",
+          "describe": "Your mole ratio is upside down. Put the unknown on top.",
+          "wrong": "50.68 g",
+          "value": 50.686,
+          "unit": "g"
+        }
+      ]
     },
     {
       "id": "ch07-yield-ammonia-percent",
@@ -56,7 +179,36 @@
       "a": "82.12 %",
       "why": "Percent yield = (18.50 / 22.53) times 100 = 82.12%.",
       "hints": ["The actual mass is 18.50 g. Divide by the theoretical ammonia mass and multiply by 100."],
-      "check": { "kind": "numeric", "value": 82.12, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+      "check": { "kind": "numeric", "value": 82.12, "tolerance": 0.5, "sigFigs": 4, "unit": "%" },
+      "guided": [
+        {
+          "prompt": "Divide the actual mass, 18.50 g, by the theoretical mass, 22.53 g.",
+          "hint": "18.50 / 22.53 is the fraction collected.",
+          "answer": "0.8211",
+          "expected": "0.8211",
+          "check": {
+            "kind": "numeric",
+            "value": 0.8211,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "Change that fraction into a percent.",
+          "hint": "Multiply the fraction by 100.",
+          "answer": "82.12 %",
+          "expected": "82.12 %",
+          "check": {
+            "kind": "numeric",
+            "value": 82.12,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "%"
+          },
+          "unit": "%"
+        }
+      ]
     },
     {
       "id": "ch07-limit-chlorine",
@@ -128,7 +280,68 @@
       "a": "18.34 g",
       "why": "O2 is limiting at 20.00 / 31.998 = 0.6250 mol. Moles of CO2 = 0.6250 times (2/3) = 0.4167 mol. Mass = 0.4167 times 44.009 = 18.34 g.",
       "hints": ["O2 is limiting. Two CO2 form for every three O2, and CO2 is 44.009 g/mol."],
-      "check": { "kind": "numeric", "value": 18.34, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+      "check": { "kind": "numeric", "value": 18.34, "tolerance": 0.5, "sigFigs": 4, "unit": "g" },
+      "guided": [
+        {
+          "prompt": "How many moles of O2 are in 20.00 g? O2 is 31.998 g/mol.",
+          "hint": "Divide 20.00 g by 31.998 g/mol.",
+          "answer": "0.6250 mol",
+          "expected": "0.6250 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.625,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          }
+        },
+        {
+          "prompt": "3 O2 make 2 CO2. How many moles of CO2 form?",
+          "hint": "Multiply the moles of O2 by 2/3.",
+          "answer": "0.4167 mol",
+          "expected": "0.4167 mol",
+          "unit": "mol",
+          "check": {
+            "kind": "numeric",
+            "value": 0.4167,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "mol"
+          },
+          "ratio": [
+            3,
+            2
+          ]
+        },
+        {
+          "prompt": "What is the theoretical yield of CO2 in grams? CO2 is 44.009 g/mol.",
+          "hint": "Multiply the moles of CO2 by 44.009 g/mol.",
+          "answer": "18.34 g",
+          "expected": "18.34 g",
+          "check": {
+            "kind": "numeric",
+            "value": 18.34,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "g"
+          },
+          "ratio": [
+            3,
+            2
+          ],
+          "unit": "g"
+        }
+      ],
+      "mistakes": [
+        {
+          "id": "flip-ratio",
+          "describe": "Your mole ratio is upside down. Put the unknown on top.",
+          "wrong": "41.26 g",
+          "value": 41.258,
+          "unit": "g"
+        }
+      ]
     },
     {
       "id": "ch07-yield-ethanol-percent",
@@ -136,7 +349,36 @@
       "a": "77.43 %",
       "why": "Percent yield = (14.20 / 18.34) times 100 = 77.43%.",
       "hints": ["14.20 g of CO2 was collected. Divide by the theoretical CO2 mass from the limiting reactant."],
-      "check": { "kind": "numeric", "value": 77.43, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+      "check": { "kind": "numeric", "value": 77.43, "tolerance": 0.5, "sigFigs": 4, "unit": "%" },
+      "guided": [
+        {
+          "prompt": "Divide the actual mass, 14.20 g, by the theoretical mass, 18.34 g.",
+          "hint": "14.20 / 18.34 is the fraction collected.",
+          "answer": "0.7743",
+          "expected": "0.7743",
+          "check": {
+            "kind": "numeric",
+            "value": 0.7743,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "Change that fraction into a percent.",
+          "hint": "Multiply the fraction by 100.",
+          "answer": "77.43 %",
+          "expected": "77.43 %",
+          "check": {
+            "kind": "numeric",
+            "value": 77.43,
+            "tolerance": 0.5,
+            "sigFigs": 4,
+            "unit": "%"
+          },
+          "unit": "%"
+        }
+      ]
     },
     {
       "id": "ch07-excess-ethanol",

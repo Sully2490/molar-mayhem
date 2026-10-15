@@ -129,7 +129,50 @@
         "kind": "exact",
         "case": "insensitive",
         "answers": ["1 sigma, 1 pi", "1 σ, 1 π"]
-      }
+      },
+      "guided": [
+        {
+          "prompt": "How many sigma bonds are in O2?",
+          "hint": "A double bond has one sigma bond.",
+          "answer": "1",
+          "expected": "1",
+          "check": {
+            "kind": "numeric",
+            "value": 1,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "How many pi bonds are in O2?",
+          "hint": "A double bond has one pi bond.",
+          "answer": "1",
+          "expected": "1",
+          "check": {
+            "kind": "numeric",
+            "value": 1,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "Write the sigma and pi counts as words.",
+          "hint": "O2 has 1 sigma and 1 pi.",
+          "answer": "1 sigma, 1 pi",
+          "expected": "1 sigma, 1 pi",
+          "check": {
+            "kind": "exact",
+            "case": "insensitive",
+            "answers": [
+              "1 sigma, 1 pi",
+              "1 σ, 1 π"
+            ]
+          },
+          "overcount": "sp3"
+        }
+      ]
     },
     {
       "id": "ch5-sig-n2",
@@ -144,7 +187,50 @@
         "kind": "exact",
         "case": "insensitive",
         "answers": ["1 sigma, 2 pi", "1 σ, 2 π"]
-      }
+      },
+      "guided": [
+        {
+          "prompt": "How many sigma bonds are in N2?",
+          "hint": "A triple bond starts with one sigma bond.",
+          "answer": "1",
+          "expected": "1",
+          "check": {
+            "kind": "numeric",
+            "value": 1,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "How many pi bonds are in N2?",
+          "hint": "The other two bonds in a triple bond are pi bonds.",
+          "answer": "2",
+          "expected": "2",
+          "check": {
+            "kind": "numeric",
+            "value": 2,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "Write the sigma and pi counts as words.",
+          "hint": "N2 has 1 sigma and 2 pi.",
+          "answer": "1 sigma, 2 pi",
+          "expected": "1 sigma, 2 pi",
+          "check": {
+            "kind": "exact",
+            "case": "insensitive",
+            "answers": [
+              "1 sigma, 2 pi",
+              "1 σ, 2 π"
+            ]
+          },
+          "overcount": "sp2"
+        }
+      ]
     },
     {
       "id": "ch5-sig-co2",
@@ -159,7 +245,51 @@
         "kind": "exact",
         "case": "insensitive",
         "answers": ["2 sigma, 2 pi", "2 σ, 2 π"]
-      }
+      },
+      "guided": [
+        {
+          "prompt": "How many sigma bonds are in O=C=O?",
+          "hint": "Each double bond contributes one sigma bond.",
+          "answer": "2",
+          "expected": "2",
+          "check": {
+            "kind": "numeric",
+            "value": 2,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          },
+          "overcount": "sp3"
+        },
+        {
+          "prompt": "How many pi bonds are in O=C=O?",
+          "hint": "Each double bond contributes one pi bond.",
+          "answer": "2",
+          "expected": "2",
+          "check": {
+            "kind": "numeric",
+            "value": 2,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "Write the sigma and pi counts as words, like \"2 sigma, 2 pi\".",
+          "hint": "Add the two double bonds: 2 sigma and 2 pi.",
+          "answer": "2 sigma, 2 pi",
+          "expected": "2 sigma, 2 pi",
+          "check": {
+            "kind": "exact",
+            "case": "insensitive",
+            "answers": [
+              "2 sigma, 2 pi",
+              "2 σ, 2 π"
+            ]
+          },
+          "overcount": "sp3"
+        }
+      ]
     },
     {
       "id": "ch5-sig-c2h4",
@@ -174,7 +304,50 @@
         "kind": "exact",
         "case": "insensitive",
         "answers": ["5 sigma, 1 pi", "5 σ, 1 π"]
-      }
+      },
+      "guided": [
+        {
+          "prompt": "How many sigma bonds are in C2H4?",
+          "hint": "Four C–H bonds plus the sigma part of C=C is five.",
+          "answer": "5",
+          "expected": "5",
+          "check": {
+            "kind": "numeric",
+            "value": 5,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "How many pi bonds are in C2H4?",
+          "hint": "The double bond adds one pi bond.",
+          "answer": "1",
+          "expected": "1",
+          "check": {
+            "kind": "numeric",
+            "value": 1,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "Write the sigma and pi counts as words.",
+          "hint": "C2H4 has 5 sigma and 1 pi.",
+          "answer": "5 sigma, 1 pi",
+          "expected": "5 sigma, 1 pi",
+          "check": {
+            "kind": "exact",
+            "case": "insensitive",
+            "answers": [
+              "5 sigma, 1 pi",
+              "5 σ, 1 π"
+            ]
+          },
+          "overcount": "sp3"
+        }
+      ]
     },
     {
       "id": "ch5-sig-c2h2",
@@ -189,7 +362,50 @@
         "kind": "exact",
         "case": "insensitive",
         "answers": ["3 sigma, 2 pi", "3 σ, 2 π"]
-      }
+      },
+      "guided": [
+        {
+          "prompt": "How many sigma bonds are in C2H2?",
+          "hint": "Two C–H bonds plus the sigma part of the triple bond is three.",
+          "answer": "3",
+          "expected": "3",
+          "check": {
+            "kind": "numeric",
+            "value": 3,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "How many pi bonds are in C2H2?",
+          "hint": "A triple bond has two pi bonds.",
+          "answer": "2",
+          "expected": "2",
+          "check": {
+            "kind": "numeric",
+            "value": 2,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "Write the sigma and pi counts as words.",
+          "hint": "C2H2 has 3 sigma and 2 pi.",
+          "answer": "3 sigma, 2 pi",
+          "expected": "3 sigma, 2 pi",
+          "check": {
+            "kind": "exact",
+            "case": "insensitive",
+            "answers": [
+              "3 sigma, 2 pi",
+              "3 σ, 2 π"
+            ]
+          },
+          "overcount": "sp2"
+        }
+      ]
     },
     {
       "id": "ch5-sig-hcn",
@@ -204,7 +420,50 @@
         "kind": "exact",
         "case": "insensitive",
         "answers": ["2 sigma, 2 pi", "2 σ, 2 π"]
-      }
+      },
+      "guided": [
+        {
+          "prompt": "How many sigma bonds are in H–C≡N?",
+          "hint": "The C–H bond is one sigma. The triple bond adds one more sigma.",
+          "answer": "2",
+          "expected": "2",
+          "check": {
+            "kind": "numeric",
+            "value": 2,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "How many pi bonds are in H–C≡N?",
+          "hint": "A triple bond has two pi bonds.",
+          "answer": "2",
+          "expected": "2",
+          "check": {
+            "kind": "numeric",
+            "value": 2,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "Write the sigma and pi counts as words.",
+          "hint": "HCN has 2 sigma and 2 pi.",
+          "answer": "2 sigma, 2 pi",
+          "expected": "2 sigma, 2 pi",
+          "check": {
+            "kind": "exact",
+            "case": "insensitive",
+            "answers": [
+              "2 sigma, 2 pi",
+              "2 σ, 2 π"
+            ]
+          },
+          "overcount": "sp2"
+        }
+      ]
     },
     {
       "id": "ch5-sig-ch2o",
@@ -219,7 +478,50 @@
         "kind": "exact",
         "case": "insensitive",
         "answers": ["3 sigma, 1 pi", "3 σ, 1 π"]
-      }
+      },
+      "guided": [
+        {
+          "prompt": "How many sigma bonds are in CH2O?",
+          "hint": "Two C–H bonds plus the sigma part of C=O is three.",
+          "answer": "3",
+          "expected": "3",
+          "check": {
+            "kind": "numeric",
+            "value": 3,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "How many pi bonds are in CH2O?",
+          "hint": "The double bond adds one pi bond.",
+          "answer": "1",
+          "expected": "1",
+          "check": {
+            "kind": "numeric",
+            "value": 1,
+            "tolerance": 0.5,
+            "sigFigs": 1,
+            "unit": null
+          }
+        },
+        {
+          "prompt": "Write the sigma and pi counts as words.",
+          "hint": "CH2O has 3 sigma and 1 pi.",
+          "answer": "3 sigma, 1 pi",
+          "expected": "3 sigma, 1 pi",
+          "check": {
+            "kind": "exact",
+            "case": "insensitive",
+            "answers": [
+              "3 sigma, 1 pi",
+              "3 σ, 1 π"
+            ]
+          },
+          "overcount": "tetrahedral"
+        }
+      ]
     },
     {
       "id": "ch5-sig-ch4",
