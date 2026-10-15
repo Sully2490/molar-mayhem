@@ -6,7 +6,7 @@ _Last updated: 2026-10-15. F00 is on main. This branch is the F03 grader after r
 - Features passing: F00, F03. See `feature_list.json`.
 - Static site loads from `index.html` with no build step. Hash routes `#Map`, `#Learn`, `#Drill`, `#Prep`, and `#Cards` show placeholders. The periodic-table tray colors atomic radius, ionization energy, and electronegativity.
 - `npm test` and `npm run check:content` run locally. GitHub Actions runs `npm test`.
-- `check:content` parses any `content/*.json` files and skips the coverage manifest when `MM_SOURCES` is unset. The manifest mapping itself is F01.
+- `check:content` walks `content/` including chapter folders, checks each lesson against the lesson schema, and skips the coverage manifest when `MM_SOURCES` is unset. `schema.json` and `coverage.json` are parsed only. The manifest mapping itself is F01.
 - Course source material and the coverage manifest stay outside the repo, at the path set in `MM_SOURCES`.
 - Numeric tolerance is a relative percent (default 0.5%). A sig-fig mismatch returns a hint and still counts. Exact checks fold Unicode subscripts and superscripts into ASCII digits, collapse whitespace, follow a case rule, and accept any listed answer. An unordered set can mark near-miss items. A config check expands [He] through [Rn] and matches orbitals in any order.
 
