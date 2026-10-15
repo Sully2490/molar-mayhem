@@ -1,0 +1,2622 @@
+{
+  "terms": [
+    {
+      "id": "absolute-pressure",
+      "term": "absolute pressure",
+      "definition": "Absolute pressure is measured against a perfect vacuum. It is the pressure that belongs in the gas laws. Gauge pressure is absolute pressure minus the outside air.",
+      "ch": 8,
+      "href": "#Learn/8.2-ideal-gas"
+    },
+    {
+      "id": "absolute-zero",
+      "term": "absolute zero",
+      "definition": "Absolute zero is 0 K, the lowest temperature on the kelvin scale. Particle motion is at its minimum, and a real gas volume would be extrapolated to zero.",
+      "ch": 1,
+      "href": "#Learn/ch01-convert"
+    },
+    {
+      "id": "accuracy",
+      "term": "accuracy",
+      "definition": "Accuracy is how close a measurement is to the true value. A method can be precise and still inaccurate if it is offset.",
+      "ch": 1,
+      "href": "#Learn/ch01-sigfigs"
+    },
+    {
+      "id": "activity-series",
+      "term": "activity series",
+      "definition": "The activity series lists metals from most reactive to least. A metal higher on the list can displace a metal ion lower on the list from a solution.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "actual-yield",
+      "term": "actual yield",
+      "definition": "The actual yield is the amount of product you really collect. It is measured, not calculated from the equation alone.",
+      "ch": 7,
+      "href": "#Learn/ch07-yield"
+    },
+    {
+      "id": "aliquot",
+      "term": "aliquot",
+      "definition": "An aliquot is a carefully measured portion of a larger sample, taken so the portion represents the whole.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "alkali-metal",
+      "term": "alkali metal",
+      "definition": "The alkali metals are group 1, except hydrogen: Li, Na, K, Rb, Cs, and Fr. They have one valence electron and form +1 ions.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-table"
+    },
+    {
+      "id": "alkaline-earth-metal",
+      "term": "alkaline earth metal",
+      "definition": "The alkaline earth metals are group 2: Be, Mg, Ca, Sr, Ba, and Ra. They have two valence electrons and form +2 ions.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-table"
+    },
+    {
+      "id": "alpha-particle",
+      "term": "alpha particle",
+      "definition": "An alpha particle is a helium nucleus, two protons and two neutrons, shot out by some radioactive atoms. It is positive and relatively heavy.",
+      "ch": 2,
+      "href": "#Learn/ch2-evolution"
+    },
+    {
+      "id": "amontons-law",
+      "term": "Amontons's law",
+      "definition": "Amontons's law says that for a fixed amount of gas in a fixed volume, pressure is proportional to kelvin temperature. P₁/T₁ = P₂/T₂. This course also calls that pattern Gay-Lussac’s law.",
+      "ch": 8,
+      "href": "#Learn/8.2-ideal-gas"
+    },
+    {
+      "id": "amplitude",
+      "term": "amplitude",
+      "definition": "Amplitude is the height of a wave from the middle to a crest. For light, amplitude is tied to brightness, not to the color.",
+      "ch": 3,
+      "href": "#Learn/ch03-electromagnetic"
+    },
+    {
+      "id": "analyte",
+      "term": "analyte",
+      "definition": "The analyte is the substance of unknown amount that the titration is trying to measure. It sits in the flask.",
+      "ch": 7,
+      "href": "#Learn/ch07-analysis"
+    },
+    {
+      "id": "angular-momentum-quantum-number",
+      "term": "angular momentum quantum number",
+      "definition": "The angular momentum quantum number, l, sets the shape of an orbital. It is an integer from 0 up to n − 1. l = 0 is s, 1 is p, 2 is d, and 3 is f.",
+      "ch": 3,
+      "href": "#Learn/ch03-quantum"
+    },
+    {
+      "id": "anion",
+      "term": "anion",
+      "definition": "An anion is a negative ion. Nonmetals often form anions by gaining electrons.",
+      "ch": 2,
+      "href": "#Learn/ch2-structure"
+    },
+    {
+      "id": "antibonding-orbital",
+      "term": "antibonding orbital",
+      "definition": "An antibonding orbital has a node between the nuclei. Electrons in it cancel bonding and push the atoms apart. Its symbol often carries a star.",
+      "ch": 5,
+      "href": "#Learn/ch5-molecular-orbitals"
+    },
+    {
+      "id": "aqueous",
+      "term": "aqueous",
+      "definition": "Aqueous means dissolved in water. The state symbol (aq) marks a solute in a water solution.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "atmosphere-unit",
+      "term": "atmosphere",
+      "definition": "One atmosphere is the average pressure of air at sea level, defined as 101325 Pa. It is also 760 torr.",
+      "ch": 8,
+      "href": "#Learn/8.1-pressure"
+    },
+    {
+      "id": "atom",
+      "term": "atom",
+      "definition": "An atom is the smallest particle of an element that still has that element’s chemical properties.",
+      "ch": 1,
+      "href": "#Learn/ch01-classify"
+    },
+    {
+      "id": "atomic-mass",
+      "term": "atomic mass",
+      "definition": "Atomic mass is the weighted average mass of an element’s isotopes, in atomic mass units, using each isotope’s percent abundance.",
+      "ch": 2,
+      "href": "#Learn/ch2-structure"
+    },
+    {
+      "id": "atomic-mass-unit",
+      "term": "atomic mass unit",
+      "definition": "The atomic mass unit, u, is a mass equal to one-twelfth the mass of a carbon-12 atom. Proton and neutron masses are each about 1 u.",
+      "ch": 2,
+      "href": "#Learn/ch2-structure"
+    },
+    {
+      "id": "atomic-number",
+      "term": "atomic number",
+      "definition": "The atomic number is the number of protons in the nucleus. It identifies the element and, for a neutral atom, equals the number of electrons.",
+      "ch": 2,
+      "href": "#Learn/ch2-structure"
+    },
+    {
+      "id": "atomic-radius",
+      "term": "atomic radius",
+      "definition": "Atomic radius is a measure of the size of an atom. It decreases across a period and increases down a group.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-trends"
+    },
+    {
+      "id": "atomic-symbol",
+      "term": "atomic symbol",
+      "definition": "An atomic symbol is the one- or two-letter abbreviation of an element. The first letter is uppercase. A second letter, if there is one, is lowercase.",
+      "ch": 2,
+      "href": "#Learn/ch2-structure"
+    },
+    {
+      "id": "aufbau-principle",
+      "term": "Aufbau principle",
+      "definition": "The Aufbau principle says electrons fill the lowest-energy subshells first. For neutral atoms the usual order begins 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p.",
+      "ch": 3,
+      "href": "#Learn/ch03-configurations"
+    },
+    {
+      "id": "average-kinetic-energy",
+      "term": "average kinetic energy",
+      "definition": "The average kinetic energy of gas particles is (3/2)RT per mole, or (3/2)kT per particle. It depends on kelvin temperature and not on the identity of the gas.",
+      "ch": 8,
+      "href": "#Learn/8.5-kinetic"
+    },
+    {
+      "id": "avogadros-law",
+      "term": "Avogadro's law",
+      "definition": "Avogadro's law says that at the same temperature and pressure, volume is proportional to the number of gas moles. V₁/n₁ = V₂/n₂. Equal volumes hold equal moles.",
+      "ch": 8,
+      "href": "#Learn/8.2-ideal-gas"
+    },
+    {
+      "id": "avogadro-number",
+      "term": "Avogadro's number",
+      "definition": "Avogadro's number is 6.022 × 10²³. It is the number of particles in one mole.",
+      "ch": 2,
+      "href": "#Learn/ch2-formulas"
+    },
+    {
+      "id": "balanced-equation",
+      "term": "balanced equation",
+      "definition": "A balanced equation has equal numbers of each kind of atom on both sides, and equal total charge. Coefficients are changed until that is true.",
+      "ch": 7,
+      "href": "#Learn/ch07-balance"
+    },
+    {
+      "id": "barometer",
+      "term": "barometer",
+      "definition": "A barometer measures the pressure of the atmosphere, classically by how high that pressure holds a column of mercury.",
+      "ch": 8,
+      "href": "#Learn/8.1-pressure"
+    },
+    {
+      "id": "base-unit",
+      "term": "base unit",
+      "definition": "A base unit is one of the starting units of SI. Others are built from it. The kilogram is the base unit of mass.",
+      "ch": 1,
+      "href": "#Learn/ch01-measure"
+    },
+    {
+      "id": "bent",
+      "term": "bent",
+      "definition": "A bent shape has a central atom bonded to two atoms, with one or two lone pairs pushing the bonds off a straight line.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "binary-acid",
+      "term": "binary acid",
+      "definition": "A binary acid is a hydrogen compound of one other element, dissolved in water. The name is hydro- plus the root plus -ic acid.",
+      "ch": 4,
+      "href": "#Learn/ch04-nomenclature"
+    },
+    {
+      "id": "bohr-model",
+      "term": "Bohr model",
+      "definition": "The Bohr model pictures the hydrogen electron on circular orbits with only certain energies. A jump between orbits absorbs or emits one photon. It works for one-electron atoms and fails for larger ones.",
+      "ch": 3,
+      "href": "#Learn/ch03-bohr"
+    },
+    {
+      "id": "boiling",
+      "term": "boiling",
+      "definition": "Boiling happens when the vapor pressure of a liquid equals the pressure of the gas above it. Bubbles of vapor can then form inside the liquid.",
+      "ch": 8,
+      "href": "#Learn/8.3-mixtures"
+    },
+    {
+      "id": "bomb-calorimeter",
+      "term": "bomb calorimeter",
+      "definition": "A bomb calorimeter burns a sample in a sealed steel container at constant volume. The heat it measures is tied to ΔU, not directly to ΔH, because the volume cannot change.",
+      "ch": 9,
+      "href": "#Learn/ch09-calorimetry"
+    },
+    {
+      "id": "bond-angle",
+      "term": "bond angle",
+      "definition": "A bond angle is the angle between two bonds that share an atom. Lone pairs squeeze the angle smaller than the ideal geometry.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "bond-enthalpy",
+      "term": "bond enthalpy",
+      "definition": "Bond enthalpy is the average energy needed to break one mole of a given bond in the gas phase. Breaking bonds costs energy. Forming bonds releases it. ΔH is about the sum of bonds broken minus bonds formed.",
+      "ch": 9,
+      "href": "#Learn/ch09-bonds"
+    },
+    {
+      "id": "bond-length",
+      "term": "bond length",
+      "definition": "Bond length is the average distance between the nuclei of two bonded atoms. Triple bonds are shorter than double bonds, which are shorter than single bonds between the same atoms.",
+      "ch": 4,
+      "href": "#Learn/ch04-covalent-bonding"
+    },
+    {
+      "id": "bond-order",
+      "term": "bond order",
+      "definition": "Bond order is half the difference between the number of bonding electrons and the number of antibonding electrons. A higher bond order means a stronger, shorter bond. Zero means no bond.",
+      "ch": 5,
+      "href": "#Learn/ch5-molecular-orbitals"
+    },
+    {
+      "id": "bonding-orbital",
+      "term": "bonding orbital",
+      "definition": "A bonding orbital is a molecular orbital that puts electron density between the nuclei and lowers the energy, pulling the atoms together.",
+      "ch": 5,
+      "href": "#Learn/ch5-molecular-orbitals"
+    },
+    {
+      "id": "bonding-pair",
+      "term": "bonding pair",
+      "definition": "A bonding pair is two electrons shared between two atoms. One bonding pair is a single bond.",
+      "ch": 4,
+      "href": "#Learn/ch04-lewis-structures"
+    },
+    {
+      "id": "boyles-law",
+      "term": "Boyle's law",
+      "definition": "Boyle's law says that for a fixed amount of gas at a fixed temperature, pressure and volume trade off. P₁V₁ = P₂V₂.",
+      "ch": 8,
+      "href": "#Learn/8.2-ideal-gas"
+    },
+    {
+      "id": "buret",
+      "term": "buret",
+      "definition": "A buret is a marked glass tube with a stopcock that delivers a solution one drop at a time and tells you the volume that left.",
+      "ch": 7,
+      "href": "#Learn/ch07-analysis"
+    },
+    {
+      "id": "calorie",
+      "term": "calorie",
+      "definition": "A calorie is an older energy unit. One calorie is 4.184 J, the heat that warms one gram of water by one degree Celsius. A food Calorie is 1000 of those calories, a kilocalorie.",
+      "ch": 9,
+      "href": "#Learn/ch09-energy"
+    },
+    {
+      "id": "calorimeter",
+      "term": "calorimeter",
+      "definition": "A calorimeter is the device that traps the heat of a change so you can measure it. A coffee cup is the constant-pressure version. A bomb is the constant-volume version.",
+      "ch": 9,
+      "href": "#Learn/ch09-calorimetry"
+    },
+    {
+      "id": "calorimetry",
+      "term": "calorimetry",
+      "definition": "Calorimetry measures heat by watching a temperature change in a known material. In a simple cup, the heat lost by one part is gained by the other.",
+      "ch": 9,
+      "href": "#Learn/ch09-calorimetry"
+    },
+    {
+      "id": "cathode-ray",
+      "term": "cathode ray",
+      "definition": "A cathode ray is a beam of electrons traveling from the negative electrode through a low-pressure gas. The beam showed that atoms contain electrons.",
+      "ch": 2,
+      "href": "#Learn/ch2-evolution"
+    },
+    {
+      "id": "cation",
+      "term": "cation",
+      "definition": "A cation is a positive ion. Metals often form cations by losing electrons.",
+      "ch": 2,
+      "href": "#Learn/ch2-structure"
+    },
+    {
+      "id": "celsius",
+      "term": "Celsius",
+      "definition": "The Celsius scale sets 0 °C at the freezing point of water and 100 °C at the boiling point, both at ordinary pressure.",
+      "ch": 1,
+      "href": "#Learn/ch01-convert"
+    },
+    {
+      "id": "charge-balance",
+      "term": "charge balance",
+      "definition": "Charge balance means the total positive charge in an ionic formula equals the total negative charge. The compound itself is neutral.",
+      "ch": 3,
+      "href": "#Learn/ch03-compounds"
+    },
+    {
+      "id": "charless-law",
+      "term": "Charles's law",
+      "definition": "Charles's law says that for a fixed amount of gas at a fixed pressure, volume is proportional to kelvin temperature. V₁/T₁ = V₂/T₂. The temperature must be in kelvin.",
+      "ch": 8,
+      "href": "#Learn/8.2-ideal-gas"
+    },
+    {
+      "id": "chemical-bond",
+      "term": "chemical bond",
+      "definition": "A chemical bond is a lasting attraction that holds atoms or ions together in a compound. Ionic, covalent, and metallic bonds are the three patterns in this course.",
+      "ch": 4,
+      "href": "#Learn/ch04-ionic-bonding"
+    },
+    {
+      "id": "chemical-change",
+      "term": "chemical change",
+      "definition": "A chemical change makes one or more new substances. Clues include a new color, a gas, a solid, or a temperature change that you did not heat from outside.",
+      "ch": 1,
+      "href": "#Learn/ch01-properties"
+    },
+    {
+      "id": "chemical-equation",
+      "term": "chemical equation",
+      "definition": "A chemical equation uses formulas to show the reactants that change and the products that form. A balanced equation has the same count of each atom on both sides.",
+      "ch": 7,
+      "href": "#Learn/ch07-balance"
+    },
+    {
+      "id": "chemical-formula",
+      "term": "chemical formula",
+      "definition": "A chemical formula uses element symbols and subscripts to show the ratio of atoms or ions in a substance.",
+      "ch": 3,
+      "href": "#Learn/ch03-compounds"
+    },
+    {
+      "id": "chemical-property",
+      "term": "chemical property",
+      "definition": "A chemical property describes how a substance changes, or refuses to change, into a different substance.",
+      "ch": 1,
+      "href": "#Learn/ch01-properties"
+    },
+    {
+      "id": "chemistry",
+      "term": "chemistry",
+      "definition": "Chemistry is the study of matter: what it is made of, how it changes, and the energy that goes with those changes.",
+      "ch": 1,
+      "href": "#Learn/ch01-context"
+    },
+    {
+      "id": "chromium-exception",
+      "term": "chromium exception",
+      "definition": "Chromium’s configuration is [Ar] 4s¹ 3d⁵, not 4s² 3d⁴. A half-filled d subshell is preferred, so one 4s electron is written in 3d.",
+      "ch": 3,
+      "href": "#Learn/ch03-configurations"
+    },
+    {
+      "id": "coefficient",
+      "term": "coefficient",
+      "definition": "A coefficient is the number in front of a formula in an equation. It counts molecules, formula units, or moles. It multiplies every subscript in that formula.",
+      "ch": 7,
+      "href": "#Learn/ch07-balance"
+    },
+    {
+      "id": "coffee-cup-calorimeter",
+      "term": "coffee-cup calorimeter",
+      "definition": "A coffee-cup calorimeter is an open cup at constant pressure. The heat measured is ΔH for the change inside, if the cup itself absorbs nothing.",
+      "ch": 9,
+      "href": "#Learn/ch09-calorimetry"
+    },
+    {
+      "id": "combination-reaction",
+      "term": "combination reaction",
+      "definition": "A combination reaction builds one product from two or more reactants. It is also called a synthesis reaction.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "combined-gas-law",
+      "term": "combined gas law",
+      "definition": "The combined gas law merges Boyle, Charles, and Amontons for a fixed amount of gas: P₁V₁/T₁ = P₂V₂/T₂. Temperatures are in kelvin.",
+      "ch": 8,
+      "href": "#Learn/8.2-ideal-gas"
+    },
+    {
+      "id": "combustion-analysis",
+      "term": "combustion analysis",
+      "definition": "Combustion analysis burns a compound in oxygen and collects CO₂ and H₂O. The masses of those products give the masses of carbon and hydrogen in the sample.",
+      "ch": 6,
+      "href": "#Learn/ch06-empirical"
+    },
+    {
+      "id": "combustion-reaction",
+      "term": "combustion reaction",
+      "definition": "A combustion reaction is a fast reaction with oxygen that releases heat and light. For a hydrocarbon, the products of complete combustion are CO₂ and H₂O.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "complete-ionic-equation",
+      "term": "complete ionic equation",
+      "definition": "A complete ionic equation writes strong electrolytes as separate ions and keeps solids, liquids, and weak electrolytes together as formulas.",
+      "ch": 7,
+      "href": "#Learn/ch07-balance"
+    },
+    {
+      "id": "compound",
+      "term": "compound",
+      "definition": "A compound is a pure substance made of two or more elements bonded in a fixed ratio. The compound has properties of its own.",
+      "ch": 1,
+      "href": "#Learn/ch01-classify"
+    },
+    {
+      "id": "compressibility-factor",
+      "term": "compressibility factor",
+      "definition": "The compressibility factor, Z, is PV/nRT. For an ideal gas it is 1. A real gas below 1 is more compressible than ideal, often because of attractions. Above 1, particle volume dominates.",
+      "ch": 8,
+      "href": "#Learn/8.6-real-gases"
+    },
+    {
+      "id": "concentration",
+      "term": "concentration",
+      "definition": "Concentration tells how much solute is in a given amount of solution or solvent. Molarity, percent, and ppm are different ways to say it.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "conservation-of-mass",
+      "term": "conservation of mass",
+      "definition": "Conservation of mass says that in an ordinary chemical change the total mass of the substances stays the same. Atoms are rearranged, not lost.",
+      "ch": 2,
+      "href": "#Learn/ch2-early-ideas"
+    },
+    {
+      "id": "constructive-interference",
+      "term": "constructive interference",
+      "definition": "Constructive interference is waves adding in step so the result is larger. In orbitals it builds the bonding combination, with density between the nuclei.",
+      "ch": 5,
+      "href": "#Learn/ch5-sigma-pi"
+    },
+    {
+      "id": "continuous-spectrum",
+      "term": "continuous spectrum",
+      "definition": "A continuous spectrum is an unbroken band of colors, the kind a hot solid gives off, with every wavelength in a range present.",
+      "ch": 3,
+      "href": "#Learn/ch03-bohr"
+    },
+    {
+      "id": "conversion-factor",
+      "term": "conversion factor",
+      "definition": "A conversion factor is a fraction equal to one that relates two units. You can flip it so the unit you want to cancel is on the bottom.",
+      "ch": 1,
+      "href": "#Learn/ch01-convert"
+    },
+    {
+      "id": "copper-exception",
+      "term": "copper exception",
+      "definition": "Copper’s configuration is [Ar] 4s¹ 3d¹⁰, not 4s² 3d⁹. A filled d subshell is preferred.",
+      "ch": 3,
+      "href": "#Learn/ch03-configurations"
+    },
+    {
+      "id": "core-electron",
+      "term": "core electron",
+      "definition": "Core electrons are the inner electrons, the ones represented by the noble-gas symbol in a shorthand configuration. They are not the valence set.",
+      "ch": 3,
+      "href": "#Learn/ch03-configurations"
+    },
+    {
+      "id": "covalent-bond",
+      "term": "covalent bond",
+      "definition": "A covalent bond is a shared pair of electrons between two atoms, usually nonmetals. The shared pair pulls both nuclei in.",
+      "ch": 4,
+      "href": "#Learn/ch04-covalent-bonding"
+    },
+    {
+      "id": "d-orbital",
+      "term": "d orbital",
+      "definition": "A d orbital has l = 2. A d subshell has five orbitals and holds up to ten electrons. The 3d subshell fills during the first row of transition metals.",
+      "ch": 3,
+      "href": "#Learn/ch03-quantum"
+    },
+    {
+      "id": "daltons-atomic-theory",
+      "term": "Dalton's atomic theory",
+      "definition": "Dalton's atomic theory says matter is made of atoms, each element has its own kind, atoms rearrange in reactions but are not created or destroyed, and a compound joins elements in a fixed ratio.",
+      "ch": 2,
+      "href": "#Learn/ch2-early-ideas"
+    },
+    {
+      "id": "daltons-law",
+      "term": "Dalton's law",
+      "definition": "Dalton's law says the total pressure of a gas mixture is the sum of the partial pressures of the gases, when they do not react.",
+      "ch": 8,
+      "href": "#Learn/8.3-mixtures"
+    },
+    {
+      "id": "decomposition-reaction",
+      "term": "decomposition reaction",
+      "definition": "A decomposition reaction breaks one reactant into two or more products.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "delocalized-electron",
+      "term": "delocalized electron",
+      "definition": "A delocalized electron is not stuck between one pair of atoms. In resonance and in some molecular orbitals it is spread over three or more atoms.",
+      "ch": 5,
+      "href": "#Learn/ch5-multiple-bonds"
+    },
+    {
+      "id": "density",
+      "term": "density",
+      "definition": "Density is mass divided by volume. It tells you how much mass sits in a given space.",
+      "ch": 1,
+      "href": "#Learn/ch01-measure"
+    },
+    {
+      "id": "derived-unit",
+      "term": "derived unit",
+      "definition": "A derived unit is a combination of base units. The unit of density, kg/m³, and the joule are derived.",
+      "ch": 1,
+      "href": "#Learn/ch01-measure"
+    },
+    {
+      "id": "destructive-interference",
+      "term": "destructive interference",
+      "definition": "Destructive interference is waves adding out of step so they cancel. In orbitals it makes a node and the antibonding combination.",
+      "ch": 5,
+      "href": "#Learn/ch5-sigma-pi"
+    },
+    {
+      "id": "diamagnetic",
+      "term": "diamagnetic",
+      "definition": "A diamagnetic substance has all electrons paired. It is weakly repelled by a magnetic field.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-trends"
+    },
+    {
+      "id": "diffusion",
+      "term": "diffusion",
+      "definition": "Diffusion is the mixing of gases by the random motion of their particles. A scent spreads through a room even when the air looks still.",
+      "ch": 8,
+      "href": "#Learn/8.4-effusion"
+    },
+    {
+      "id": "dilution",
+      "term": "dilution",
+      "definition": "Dilution is adding solvent so the same amount of solute is spread through a larger volume. M₁V₁ = M₂V₂ tracks the moles, which do not change.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "dimensional-analysis",
+      "term": "dimensional analysis",
+      "definition": "Dimensional analysis converts a quantity by multiplying by fractions equal to one, so unwanted units cancel and the wanted unit remains.",
+      "ch": 1,
+      "href": "#Learn/ch01-convert"
+    },
+    {
+      "id": "dipole-moment",
+      "term": "dipole moment",
+      "definition": "A dipole moment is a measure of the separation of positive and negative charge in a bond or a molecule. An arrow points toward the negative end.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "dissociation",
+      "term": "dissociation",
+      "definition": "Dissociation is the separating of an ionic compound into its ions as it dissolves. The ions were already charged in the crystal.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "double-bond",
+      "term": "double bond",
+      "definition": "A double bond is two shared pairs between the same two atoms. It is drawn as two lines and counts as one region for shape.",
+      "ch": 4,
+      "href": "#Learn/ch04-lewis-structures"
+    },
+    {
+      "id": "double-displacement",
+      "term": "double-displacement reaction",
+      "definition": "A double-displacement reaction swaps partners between two ionic compounds. Precipitation and many neutralizations follow this pattern.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "duet-rule",
+      "term": "duet rule",
+      "definition": "The duet rule says hydrogen and helium are stable with two electrons, a filled first shell, rather than an octet.",
+      "ch": 4,
+      "href": "#Learn/ch04-lewis-structures"
+    },
+    {
+      "id": "effective-nuclear-charge",
+      "term": "effective nuclear charge",
+      "definition": "Effective nuclear charge is the net positive pull a valence electron feels after inner electrons cancel part of the nucleus. It rises across a period.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-trends"
+    },
+    {
+      "id": "effusion",
+      "term": "effusion",
+      "definition": "Effusion is the escape of gas particles through a tiny hole into a vacuum, without collisions in the hole. Lighter gases effuse faster.",
+      "ch": 8,
+      "href": "#Learn/8.4-effusion"
+    },
+    {
+      "id": "elastic-collision",
+      "term": "elastic collision",
+      "definition": "An elastic collision conserves kinetic energy. In the ideal-gas model, particle collisions with each other and with the walls are elastic.",
+      "ch": 8,
+      "href": "#Learn/8.5-kinetic"
+    },
+    {
+      "id": "electrolyte",
+      "term": "electrolyte",
+      "definition": "An electrolyte is a solute that produces ions in solution, so the solution conducts electricity.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "electromagnetic-radiation",
+      "term": "electromagnetic radiation",
+      "definition": "Electromagnetic radiation is energy traveling as linked electric and magnetic waves. Light, microwaves, and X-rays are all the same family, with different wavelengths.",
+      "ch": 3,
+      "href": "#Learn/ch03-electromagnetic"
+    },
+    {
+      "id": "electron",
+      "term": "electron",
+      "definition": "The electron is the lightweight, negatively charged particle that occupies the space around the nucleus.",
+      "ch": 2,
+      "href": "#Learn/ch2-evolution"
+    },
+    {
+      "id": "electron-affinity",
+      "term": "electron affinity",
+      "definition": "Electron affinity is the energy change when a gaseous atom gains an electron. A large release means the atom strongly wants that electron.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-trends"
+    },
+    {
+      "id": "electron-configuration",
+      "term": "electron configuration",
+      "definition": "An electron configuration is the list of occupied subshells and how many electrons each holds, such as 1s² 2s² 2p⁴ for oxygen.",
+      "ch": 3,
+      "href": "#Learn/ch03-configurations"
+    },
+    {
+      "id": "electron-promotion",
+      "term": "electron promotion",
+      "definition": "Electron promotion is moving an electron from a filled orbital into an empty one of similar energy so the atom can form more bonds. Hybridization then mixes those orbitals.",
+      "ch": 5,
+      "href": "#Learn/ch5-hybridization"
+    },
+    {
+      "id": "electron-shell",
+      "term": "electron shell",
+      "definition": "An electron shell is the set of orbitals that share one principal quantum number n.",
+      "ch": 3,
+      "href": "#Learn/ch03-quantum"
+    },
+    {
+      "id": "electron-pair-geometry",
+      "term": "electron-pair geometry",
+      "definition": "Electron-pair geometry is the arrangement of all electron regions, bonds and lone pairs, around a central atom.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "electronegativity",
+      "term": "electronegativity",
+      "definition": "Electronegativity is an atom’s pull on electrons in a bond. Fluorine is the highest. The value generally rises up and to the right on the table, skipping the noble gases.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-trends"
+    },
+    {
+      "id": "element",
+      "term": "element",
+      "definition": "An element is a pure substance made of one kind of atom. It cannot be broken into a simpler substance by a chemical change.",
+      "ch": 1,
+      "href": "#Learn/ch01-classify"
+    },
+    {
+      "id": "empirical-formula",
+      "term": "empirical formula",
+      "definition": "The empirical formula is the lowest whole-number ratio of atoms in a compound. It may or may not be the same as the molecular formula.",
+      "ch": 6,
+      "href": "#Learn/ch06-empirical"
+    },
+    {
+      "id": "end-point",
+      "term": "end point",
+      "definition": "The end point is the moment the indicator changes color. A well-chosen indicator makes the end point land very near the equivalence point.",
+      "ch": 7,
+      "href": "#Learn/ch07-analysis"
+    },
+    {
+      "id": "endothermic",
+      "term": "endothermic",
+      "definition": "An endothermic process absorbs heat from the surroundings. ΔH is positive. The products hold more enthalpy than the reactants.",
+      "ch": 9,
+      "href": "#Learn/ch09-enthalpy"
+    },
+    {
+      "id": "energy",
+      "term": "energy",
+      "definition": "Energy is the ability to do work or to transfer heat. It is measured in joules. Chemistry tracks it because every change stores or releases some.",
+      "ch": 9,
+      "href": "#Learn/ch09-energy"
+    },
+    {
+      "id": "enthalpy",
+      "term": "enthalpy",
+      "definition": "Enthalpy, H, is a state function equal to internal energy plus the pressure-volume product. At constant pressure, the heat a reaction exchanges is ΔH.",
+      "ch": 9,
+      "href": "#Learn/ch09-enthalpy"
+    },
+    {
+      "id": "enthalpy-diagram",
+      "term": "enthalpy diagram",
+      "definition": "An enthalpy diagram plots enthalpy on the vertical axis and shows reactants and products as levels. A downward arrow is exothermic. An upward arrow is endothermic.",
+      "ch": 9,
+      "href": "#Learn/ch09-enthalpy"
+    },
+    {
+      "id": "equivalence-point",
+      "term": "equivalence point",
+      "definition": "The equivalence point is the moment when the added titrant has exactly reacted with the analyte, using the mole ratio from the equation.",
+      "ch": 7,
+      "href": "#Learn/ch07-analysis"
+    },
+    {
+      "id": "exact-number",
+      "term": "exact number",
+      "definition": "An exact number has no measurement uncertainty. Counted objects and defined conversions, such as 1 m = 100 cm, are exact.",
+      "ch": 1,
+      "href": "#Learn/ch01-sigfigs"
+    },
+    {
+      "id": "excess-reactant",
+      "term": "excess reactant",
+      "definition": "The excess reactant is still left when the limiting reactant is gone. Some of it reacts. The rest does not.",
+      "ch": 7,
+      "href": "#Learn/ch07-yield"
+    },
+    {
+      "id": "excited-state",
+      "term": "excited state",
+      "definition": "An excited state is any allowed electron energy above the ground state. The electron got there by absorbing energy.",
+      "ch": 3,
+      "href": "#Learn/ch03-bohr"
+    },
+    {
+      "id": "exothermic",
+      "term": "exothermic",
+      "definition": "An exothermic process releases heat to the surroundings. ΔH is negative. The products hold less enthalpy than the reactants.",
+      "ch": 9,
+      "href": "#Learn/ch09-enthalpy"
+    },
+    {
+      "id": "expanded-octet",
+      "term": "expanded octet",
+      "definition": "An expanded octet is more than eight electrons around a central atom. It happens for period 3 and beyond, when d orbitals are available.",
+      "ch": 4,
+      "href": "#Learn/ch04-lewis-structures"
+    },
+    {
+      "id": "extensive-property",
+      "term": "extensive property",
+      "definition": "An extensive property depends on the amount of sample. Mass and volume are extensive.",
+      "ch": 1,
+      "href": "#Learn/ch01-properties"
+    },
+    {
+      "id": "fahrenheit",
+      "term": "Fahrenheit",
+      "definition": "The Fahrenheit scale is a temperature scale still used in everyday U.S. weather. Water freezes at 32 °F and boils at 212 °F.",
+      "ch": 1,
+      "href": "#Learn/ch01-convert"
+    },
+    {
+      "id": "first-law",
+      "term": "first law of thermodynamics",
+      "definition": "The first law says energy is conserved. The change in a system’s internal energy equals the heat added to it plus the work done on it. Energy is not created or destroyed.",
+      "ch": 9,
+      "href": "#Learn/ch09-energy"
+    },
+    {
+      "id": "formal-charge",
+      "term": "formal charge",
+      "definition": "Formal charge is a bookkeeping charge: valence electrons minus lone electrons minus half the bonding electrons. The best Lewis structure keeps formal charges near zero.",
+      "ch": 4,
+      "href": "#Learn/ch04-formal-charge-resonance"
+    },
+    {
+      "id": "formation-reaction",
+      "term": "formation reaction",
+      "definition": "A formation reaction makes one mole of a compound from its elements in their standard states. The ΔH of that reaction is ΔH_f°.",
+      "ch": 9,
+      "href": "#Learn/ch09-enthalpy"
+    },
+    {
+      "id": "formula-mass",
+      "term": "formula mass",
+      "definition": "Formula mass is the sum of the atomic masses in a formula, in atomic mass units. The same number, in grams, is the mass of one mole.",
+      "ch": 6,
+      "href": "#Learn/ch06-formula-mass"
+    },
+    {
+      "id": "formula-unit",
+      "term": "formula unit",
+      "definition": "A formula unit is the lowest whole-number ratio of ions in an ionic compound. It is the item a mole of that compound counts.",
+      "ch": 2,
+      "href": "#Learn/ch2-formulas"
+    },
+    {
+      "id": "free-radical",
+      "term": "free radical",
+      "definition": "A free radical is a molecule or atom with an unpaired electron. The unpaired electron makes it reactive.",
+      "ch": 4,
+      "href": "#Learn/ch04-lewis-structures"
+    },
+    {
+      "id": "frequency",
+      "term": "frequency",
+      "definition": "Frequency is how many wave crests pass a point each second. The unit is the hertz, s⁻¹. Higher frequency means shorter wavelength for light in a vacuum.",
+      "ch": 3,
+      "href": "#Learn/ch03-electromagnetic"
+    },
+    {
+      "id": "gas",
+      "term": "gas",
+      "definition": "A gas takes both the shape and the volume of its container. Particles are far apart and fill whatever space they are given.",
+      "ch": 1,
+      "href": "#Learn/ch01-classify"
+    },
+    {
+      "id": "gas-constant",
+      "term": "gas constant",
+      "definition": "The gas constant, R, is the proportionality constant in PV = nRT. Use 0.08206 L·atm/(mol·K) when pressure is in atmospheres, and 8.314 J/(mol·K) when energy is in joules.",
+      "ch": 8,
+      "href": "#Learn/8.2-ideal-gas"
+    },
+    {
+      "id": "gas-density",
+      "term": "gas density",
+      "definition": "The density of an ideal gas is mass over volume, and it equals PM/RT, where M is the molar mass. Heavier gases are denser at the same T and P.",
+      "ch": 8,
+      "href": "#Learn/8.3-mixtures"
+    },
+    {
+      "id": "gauge-pressure",
+      "term": "gauge pressure",
+      "definition": "Gauge pressure is the pressure above the surrounding atmosphere. Absolute pressure is gauge pressure plus the air pressure outside.",
+      "ch": 8,
+      "href": "#Learn/8.1-pressure"
+    },
+    {
+      "id": "gay-lussacs-law",
+      "term": "Gay-Lussac's law",
+      "definition": "Gay-Lussac's law, in this course, is the constant-volume gas law: pressure rises with kelvin temperature. It is the same relation as Amontons’s law, P₁/T₁ = P₂/T₂.",
+      "ch": 8,
+      "href": "#Learn/8.2-ideal-gas"
+    },
+    {
+      "id": "gold-foil-experiment",
+      "term": "gold-foil experiment",
+      "definition": "In the gold-foil experiment, most alpha particles shot at thin gold went straight through, and a few bounced back. That showed a tiny, dense, positive nucleus with empty space around it.",
+      "ch": 2,
+      "href": "#Learn/ch2-evolution"
+    },
+    {
+      "id": "grahams-law",
+      "term": "Graham's law",
+      "definition": "Graham's law says the rate of effusion of a gas is inversely proportional to the square root of its molar mass. Rate₁/Rate₂ = √(M₂/M₁).",
+      "ch": 8,
+      "href": "#Learn/8.4-effusion"
+    },
+    {
+      "id": "gravimetric-analysis",
+      "term": "gravimetric analysis",
+      "definition": "Gravimetric analysis finds an unknown amount by making a precipitate, drying it, and weighing it. The mass and the formula give the moles.",
+      "ch": 7,
+      "href": "#Learn/ch07-analysis"
+    },
+    {
+      "id": "ground-state",
+      "term": "ground state",
+      "definition": "The ground state is the lowest allowed energy of an electron in an atom. It is the level the electron occupies when it has not been excited.",
+      "ch": 3,
+      "href": "#Learn/ch03-bohr"
+    },
+    {
+      "id": "group",
+      "term": "group",
+      "definition": "A group is a vertical column of the periodic table. Members of a group have the same number of valence electrons and similar chemistry.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-table"
+    },
+    {
+      "id": "halogen",
+      "term": "halogen",
+      "definition": "The halogens are group 17: F, Cl, Br, I, and At. They have seven valence electrons and commonly form −1 ions or one covalent bond.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-table"
+    },
+    {
+      "id": "heat",
+      "term": "heat",
+      "definition": "Heat is energy that moves because of a temperature difference, from the hotter object to the cooler one. It is not the same thing as temperature.",
+      "ch": 9,
+      "href": "#Learn/ch09-energy"
+    },
+    {
+      "id": "heat-capacity",
+      "term": "heat capacity",
+      "definition": "Heat capacity is the heat needed to raise the temperature of a particular object by one degree. It is specific heat times mass, and it belongs to that object, not to one gram.",
+      "ch": 9,
+      "href": "#Learn/ch09-energy"
+    },
+    {
+      "id": "heat-of-reaction",
+      "term": "heat of reaction",
+      "definition": "The heat of reaction is the heat exchanged when a reaction runs as written, usually reported as ΔH at constant pressure.",
+      "ch": 9,
+      "href": "#Learn/ch09-enthalpy"
+    },
+    {
+      "id": "hesss-law",
+      "term": "Hess's law",
+      "definition": "Hess's law says that if you add chemical equations, you add their ΔH values. Enthalpy is a state function, so the path of steps does not change the overall ΔH.",
+      "ch": 9,
+      "href": "#Learn/ch09-enthalpy"
+    },
+    {
+      "id": "heterogeneous-mixture",
+      "term": "heterogeneous mixture",
+      "definition": "A heterogeneous mixture has parts you can tell apart. Different samples of it can have different compositions.",
+      "ch": 1,
+      "href": "#Learn/ch01-classify"
+    },
+    {
+      "id": "heteronuclear",
+      "term": "heteronuclear diatomic",
+      "definition": "A heteronuclear diatomic is a molecule of two different atoms, such as CO or NO. The atomic orbitals that mix are not equal in energy.",
+      "ch": 5,
+      "href": "#Learn/ch5-molecular-orbitals"
+    },
+    {
+      "id": "homo",
+      "term": "HOMO",
+      "definition": "The HOMO is the highest occupied molecular orbital, the top level that actually has electrons in the ground configuration.",
+      "ch": 5,
+      "href": "#Learn/ch5-molecular-orbitals"
+    },
+    {
+      "id": "homogeneous-mixture",
+      "term": "homogeneous mixture",
+      "definition": "A homogeneous mixture looks the same in every sample. The parts are mixed down to the particle level.",
+      "ch": 1,
+      "href": "#Learn/ch01-classify"
+    },
+    {
+      "id": "homonuclear",
+      "term": "homonuclear diatomic",
+      "definition": "A homonuclear diatomic is a molecule of two atoms of the same element, such as N₂, O₂, or F₂.",
+      "ch": 5,
+      "href": "#Learn/ch5-molecular-orbitals"
+    },
+    {
+      "id": "hunds-rule",
+      "term": "Hund's rule",
+      "definition": "Hund's rule says electrons occupy equal-energy orbitals one at a time with parallel spins before any orbital gets a pair.",
+      "ch": 3,
+      "href": "#Learn/ch03-configurations"
+    },
+    {
+      "id": "hybrid-orbital",
+      "term": "hybrid orbital",
+      "definition": "A hybrid orbital is one of the mixed orbitals hybridization produces. Hybrids form the sigma framework and can hold lone pairs. Leftover p orbitals form pi bonds.",
+      "ch": 5,
+      "href": "#Learn/ch5-hybridization"
+    },
+    {
+      "id": "hybridization",
+      "term": "hybridization",
+      "definition": "Hybridization mixes atomic orbitals on one atom into new, equal orbitals that point toward the bonded atoms. The count of electron regions names the hybrid set.",
+      "ch": 5,
+      "href": "#Learn/ch5-hybridization"
+    },
+    {
+      "id": "hydrate",
+      "term": "hydrate",
+      "definition": "A hydrate is an ionic compound with a fixed number of water molecules locked into the crystal. The dot in the formula means “with,” not times, in the name.",
+      "ch": 4,
+      "href": "#Learn/ch04-nomenclature"
+    },
+    {
+      "id": "hydration",
+      "term": "hydration",
+      "definition": "Hydration is the clustering of water molecules around dissolved ions or polar molecules. The partial charges of water face the ion.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "hypothesis",
+      "term": "hypothesis",
+      "definition": "A hypothesis is a testable guess. It says what you expect to happen and what you would count as a miss.",
+      "ch": 1,
+      "href": "#Learn/ch01-context"
+    },
+    {
+      "id": "ideal-gas",
+      "term": "ideal gas",
+      "definition": "An ideal gas is a model: particles have zero volume and do not attract or repel. Real gases act ideal at ordinary pressure and at a temperature well above the point where they would liquefy.",
+      "ch": 8,
+      "href": "#Learn/8.2-ideal-gas"
+    },
+    {
+      "id": "ideal-gas-law",
+      "term": "ideal gas law",
+      "definition": "The ideal gas law is PV = nRT. It links pressure, volume, moles, and kelvin temperature for a gas whose particles have no size and no attractions.",
+      "ch": 8,
+      "href": "#Learn/8.2-ideal-gas"
+    },
+    {
+      "id": "incomplete-octet",
+      "term": "incomplete octet",
+      "definition": "An incomplete octet is a stable Lewis structure in which an atom has fewer than eight electrons. Boron and beryllium often stop at six or four.",
+      "ch": 4,
+      "href": "#Learn/ch04-lewis-structures"
+    },
+    {
+      "id": "indicator",
+      "term": "indicator",
+      "definition": "An indicator is a dye that changes color when the solution crosses a target acidity. It signals the end point.",
+      "ch": 7,
+      "href": "#Learn/ch07-analysis"
+    },
+    {
+      "id": "intensive-property",
+      "term": "intensive property",
+      "definition": "An intensive property does not depend on how much of the sample you have. Density and temperature are intensive.",
+      "ch": 1,
+      "href": "#Learn/ch01-properties"
+    },
+    {
+      "id": "internal-energy",
+      "term": "internal energy",
+      "definition": "Internal energy, U, is the total energy inside a system, kinetic plus potential, at the molecular scale. The change is ΔU = q + w, heat plus work, with the sign convention that energy entering the system is positive.",
+      "ch": 9,
+      "href": "#Learn/ch09-energy"
+    },
+    {
+      "id": "ion",
+      "term": "ion",
+      "definition": "An ion is an atom or group of atoms with a charge, because the electron count is not equal to the proton count.",
+      "ch": 2,
+      "href": "#Learn/ch2-structure"
+    },
+    {
+      "id": "ionic-bond",
+      "term": "ionic bond",
+      "definition": "An ionic bond is the attraction between oppositely charged ions. A metal typically loses electrons and a nonmetal gains them.",
+      "ch": 4,
+      "href": "#Learn/ch04-ionic-bonding"
+    },
+    {
+      "id": "ionic-compound",
+      "term": "ionic compound",
+      "definition": "An ionic compound is a lattice of cations and anions held by attraction of opposite charges. The formula is the simplest ratio that adds to zero charge.",
+      "ch": 3,
+      "href": "#Learn/ch03-compounds"
+    },
+    {
+      "id": "ionic-radius",
+      "term": "ionic radius",
+      "definition": "Ionic radius is the size of an ion. Cations are smaller than their neutral atoms. Anions are larger.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-trends"
+    },
+    {
+      "id": "ionization-energy",
+      "term": "ionization energy",
+      "definition": "Ionization energy is the energy needed to remove one electron from a gaseous atom or ion. It generally rises across a period and falls down a group.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-trends"
+    },
+    {
+      "id": "isoelectronic",
+      "term": "isoelectronic",
+      "definition": "Isoelectronic species have the same number of electrons and the same configuration. They are not the same element.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-trends"
+    },
+    {
+      "id": "isotope",
+      "term": "isotope",
+      "definition": "Isotopes are atoms of the same element with different numbers of neutrons, and so different mass numbers.",
+      "ch": 2,
+      "href": "#Learn/ch2-structure"
+    },
+    {
+      "id": "isotope-symbol",
+      "term": "isotope symbol",
+      "definition": "An isotope symbol shows the mass number at the upper left of the element symbol and often the atomic number at the lower left.",
+      "ch": 2,
+      "href": "#Learn/ch2-structure"
+    },
+    {
+      "id": "joule",
+      "term": "joule",
+      "definition": "The joule, J, is the SI unit of energy. One joule is the work done by a force of one newton moving one meter. A kilojoule is 1000 J.",
+      "ch": 9,
+      "href": "#Learn/ch09-energy"
+    },
+    {
+      "id": "kelvin",
+      "term": "kelvin",
+      "definition": "The kelvin is the SI temperature unit. A change of 1 K equals a change of 1 °C. Zero kelvin is absolute zero, and the symbol has no degree mark.",
+      "ch": 1,
+      "href": "#Learn/ch01-convert"
+    },
+    {
+      "id": "kinetic-energy",
+      "term": "kinetic energy",
+      "definition": "Kinetic energy is energy of motion. For one particle it is ½mv². Faster or heavier particles carry more.",
+      "ch": 9,
+      "href": "#Learn/ch09-energy"
+    },
+    {
+      "id": "kinetic-molecular-theory",
+      "term": "kinetic molecular theory",
+      "definition": "Kinetic molecular theory says a gas is tiny particles in constant random motion, with no volume of their own and no attractions. Collisions are elastic, and the average kinetic energy depends only on kelvin temperature.",
+      "ch": 8,
+      "href": "#Learn/8.5-kinetic"
+    },
+    {
+      "id": "lattice-energy",
+      "term": "lattice energy",
+      "definition": "Lattice energy is the energy released when separated gas-phase ions come together to form one mole of an ionic solid. Higher charges and smaller ions make a more negative lattice energy, a stronger crystal.",
+      "ch": 9,
+      "href": "#Learn/ch09-bonds"
+    },
+    {
+      "id": "definite-proportions",
+      "term": "law of definite proportions",
+      "definition": "The law of definite proportions says a given compound always contains the same elements in the same mass ratio.",
+      "ch": 2,
+      "href": "#Learn/ch2-early-ideas"
+    },
+    {
+      "id": "multiple-proportions",
+      "term": "law of multiple proportions",
+      "definition": "The law of multiple proportions says that when two elements form more than one compound, the mass ratios of one element, for a fixed mass of the other, are small whole numbers.",
+      "ch": 2,
+      "href": "#Learn/ch2-early-ideas"
+    },
+    {
+      "id": "lewis-structure",
+      "term": "Lewis structure",
+      "definition": "A Lewis structure shows every atom, every bonding pair as a line, and every lone pair as dots, arranged so the octet rule is satisfied when it can be.",
+      "ch": 4,
+      "href": "#Learn/ch04-lewis-structures"
+    },
+    {
+      "id": "lewis-symbol",
+      "term": "Lewis symbol",
+      "definition": "A Lewis symbol is an element symbol surrounded by dots, one dot for each valence electron.",
+      "ch": 4,
+      "href": "#Learn/ch04-lewis-structures"
+    },
+    {
+      "id": "limiting-reactant",
+      "term": "limiting reactant",
+      "definition": "The limiting reactant is the reactant that runs out first. It decides how much product can form. Other reactants are left over.",
+      "ch": 7,
+      "href": "#Learn/ch07-yield"
+    },
+    {
+      "id": "line-spectrum",
+      "term": "line spectrum",
+      "definition": "A line spectrum is a set of sharp colored lines from atoms that emit only certain photon energies, not a smooth rainbow.",
+      "ch": 3,
+      "href": "#Learn/ch03-bohr"
+    },
+    {
+      "id": "linear-geometry",
+      "term": "linear",
+      "definition": "A linear geometry has two electron regions and a bond angle of 180°. Carbon dioxide and BeF₂ are linear molecules.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "liquid",
+      "term": "liquid",
+      "definition": "A liquid keeps its volume but takes the shape of the container. Particles stay close and can slide past one another.",
+      "ch": 1,
+      "href": "#Learn/ch01-classify"
+    },
+    {
+      "id": "liter",
+      "term": "liter",
+      "definition": "The liter is a volume equal to one cubic decimeter, or 1000 cm³. One milliliter equals one cubic centimeter.",
+      "ch": 1,
+      "href": "#Learn/ch01-measure"
+    },
+    {
+      "id": "localized-electron",
+      "term": "localized electron",
+      "definition": "A localized electron is confined to one bond or one lone pair, the way a single Lewis line pictures it.",
+      "ch": 5,
+      "href": "#Learn/ch5-multiple-bonds"
+    },
+    {
+      "id": "lone-pair",
+      "term": "lone pair",
+      "definition": "A lone pair is a pair of valence electrons that is not shared in a bond. It still counts as one region in a shape.",
+      "ch": 4,
+      "href": "#Learn/ch04-lewis-structures"
+    },
+    {
+      "id": "lumo",
+      "term": "LUMO",
+      "definition": "The LUMO is the lowest unoccupied molecular orbital, the first empty level. The HOMO–LUMO gap is the smallest electron jump.",
+      "ch": 5,
+      "href": "#Learn/ch5-molecular-orbitals"
+    },
+    {
+      "id": "magnetic-quantum-number",
+      "term": "magnetic quantum number",
+      "definition": "The magnetic quantum number, mₗ, picks the orientation of an orbital. It runs from −l to +l in whole steps.",
+      "ch": 3,
+      "href": "#Learn/ch03-quantum"
+    },
+    {
+      "id": "main-group",
+      "term": "main-group element",
+      "definition": "A main-group element is in the s block or the p block. Its ion charge is usually predictable from the group number.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-table"
+    },
+    {
+      "id": "manometer",
+      "term": "manometer",
+      "definition": "A manometer measures a gas pressure by the height difference of a liquid in a U-shaped tube. The height difference, plus the outside pressure if the tube is open, gives the gas pressure.",
+      "ch": 8,
+      "href": "#Learn/8.1-pressure"
+    },
+    {
+      "id": "mass",
+      "term": "mass",
+      "definition": "Mass is the amount of matter in a sample. It stays the same when you move the sample to a place with different gravity.",
+      "ch": 1,
+      "href": "#Learn/ch01-classify"
+    },
+    {
+      "id": "mass-number",
+      "term": "mass number",
+      "definition": "The mass number is the count of protons plus neutrons in one atom. It is a whole number, not the same as the atomic mass on the periodic table.",
+      "ch": 2,
+      "href": "#Learn/ch2-structure"
+    },
+    {
+      "id": "mass-percent",
+      "term": "mass percent",
+      "definition": "Mass percent is the mass of solute divided by the mass of solution, times 100. Both masses must be in the same unit.",
+      "ch": 6,
+      "href": "#Learn/ch06-concentration"
+    },
+    {
+      "id": "mass-spectrometer",
+      "term": "mass spectrometer",
+      "definition": "A mass spectrometer separates ions by mass using a magnetic or electric field, so you can see which isotopes are present and how common they are.",
+      "ch": 2,
+      "href": "#Learn/ch2-structure"
+    },
+    {
+      "id": "mass-volume-percent",
+      "term": "mass/volume percent",
+      "definition": "Mass/volume percent is the grams of solute in 100 mL of solution, times 100 if you start from a fraction, so the number is grams per 100 mL.",
+      "ch": 6,
+      "href": "#Learn/ch06-concentration"
+    },
+    {
+      "id": "matter",
+      "term": "matter",
+      "definition": "Matter is anything that has mass and takes up space. Air counts, even though you cannot see it.",
+      "ch": 1,
+      "href": "#Learn/ch01-classify"
+    },
+    {
+      "id": "mean-free-path",
+      "term": "mean free path",
+      "definition": "The mean free path is the average distance a gas particle travels before it collides with another particle. It is longer when the gas is thinner.",
+      "ch": 8,
+      "href": "#Learn/8.4-effusion"
+    },
+    {
+      "id": "meniscus",
+      "term": "meniscus",
+      "definition": "The meniscus is the curved surface of a liquid in a narrow tube. For water, you read the volume at the bottom of the curve, at eye level.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "metal",
+      "term": "metal",
+      "definition": "A metal is an element that tends to lose electrons, conducts heat and electricity, and is shiny and malleable.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-table"
+    },
+    {
+      "id": "metallic-bond",
+      "term": "metallic bond",
+      "definition": "A metallic bond is the attraction between metal cations and a shared pool of electrons that can move through the solid.",
+      "ch": 4,
+      "href": "#Learn/ch04-ionic-bonding"
+    },
+    {
+      "id": "metalloid",
+      "term": "metalloid",
+      "definition": "A metalloid is an element with properties between metals and nonmetals. Silicon and boron are examples. They often semiconductor.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-table"
+    },
+    {
+      "id": "mixture",
+      "term": "mixture",
+      "definition": "A mixture holds two or more substances together without a fixed chemical ratio. The parts keep their own identities.",
+      "ch": 1,
+      "href": "#Learn/ch01-classify"
+    },
+    {
+      "id": "molar-mass",
+      "term": "molar mass",
+      "definition": "Molar mass is the mass of one mole of a substance, in grams per mole. For an element it matches the atomic mass. For a compound, add the atomic masses in the formula.",
+      "ch": 2,
+      "href": "#Learn/ch2-formulas"
+    },
+    {
+      "id": "molar-volume",
+      "term": "molar volume",
+      "definition": "Molar volume is the volume of one mole of gas. For an ideal gas at STP it is 22.4 L/mol.",
+      "ch": 8,
+      "href": "#Learn/8.2-ideal-gas"
+    },
+    {
+      "id": "molarity",
+      "term": "molarity",
+      "definition": "Molarity is moles of solute divided by liters of solution. The symbol is M, and the unit is mol/L.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "mole",
+      "term": "mole",
+      "definition": "The mole is the counting unit for particles. One mole contains Avogadro’s number of the named items, and its mass in grams equals the atomic or formula mass in u.",
+      "ch": 2,
+      "href": "#Learn/ch2-formulas"
+    },
+    {
+      "id": "mole-fraction",
+      "term": "mole fraction",
+      "definition": "The mole fraction of a gas is its moles divided by the total moles in the mixture. Partial pressure equals mole fraction times total pressure.",
+      "ch": 8,
+      "href": "#Learn/8.3-mixtures"
+    },
+    {
+      "id": "mole-ratio",
+      "term": "mole ratio",
+      "definition": "A mole ratio is the ratio of coefficients of two substances in a balanced equation. It converts moles of one into moles of the other.",
+      "ch": 7,
+      "href": "#Learn/ch07-stoich"
+    },
+    {
+      "id": "molecular-compound",
+      "term": "molecular compound",
+      "definition": "A molecular compound is made of molecules: nonmetal atoms sharing electrons. The formula counts the atoms in one molecule.",
+      "ch": 3,
+      "href": "#Learn/ch03-compounds"
+    },
+    {
+      "id": "molecular-formula",
+      "term": "molecular formula",
+      "definition": "The molecular formula shows the actual count of each atom in one molecule. It is a whole-number multiple of the empirical formula.",
+      "ch": 6,
+      "href": "#Learn/ch06-empirical"
+    },
+    {
+      "id": "molecular-geometry",
+      "term": "molecular geometry",
+      "definition": "Molecular geometry is the shape made by the atoms only. Lone pairs push on the bonds but are not part of the name.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "molecular-mass",
+      "term": "molecular mass",
+      "definition": "Molecular mass is the formula mass of a molecular substance: the sum of the atomic masses in one molecule.",
+      "ch": 6,
+      "href": "#Learn/ch06-formula-mass"
+    },
+    {
+      "id": "molecular-orbital",
+      "term": "molecular orbital",
+      "definition": "A molecular orbital is an orbital that belongs to the whole molecule, formed by combining atomic orbitals. Electrons in it can be bonding or antibonding.",
+      "ch": 5,
+      "href": "#Learn/ch5-molecular-orbitals"
+    },
+    {
+      "id": "molecular-orbital-diagram",
+      "term": "molecular orbital diagram",
+      "definition": "A molecular orbital diagram is an energy ladder of bonding and antibonding orbitals, with electrons filled from the bottom and Hund’s rule used for equal levels.",
+      "ch": 5,
+      "href": "#Learn/ch5-molecular-orbitals"
+    },
+    {
+      "id": "molecular-orbital-theory",
+      "term": "molecular orbital theory",
+      "definition": "Molecular orbital theory builds orbitals for the molecule as a whole, fills them with the available electrons, and reads off bond order and magnetism.",
+      "ch": 5,
+      "href": "#Learn/ch5-molecular-orbitals"
+    },
+    {
+      "id": "molecule",
+      "term": "molecule",
+      "definition": "A molecule is two or more atoms bonded together. It can be one element, like O₂, or a compound, like H₂O.",
+      "ch": 1,
+      "href": "#Learn/ch01-classify"
+    },
+    {
+      "id": "multiple-bond",
+      "term": "multiple bond",
+      "definition": "A multiple bond is a double or triple bond: one sigma bond plus one or two pi bonds made from leftover p orbitals.",
+      "ch": 5,
+      "href": "#Learn/ch5-multiple-bonds"
+    },
+    {
+      "id": "net-ionic-equation",
+      "term": "net ionic equation",
+      "definition": "A net ionic equation shows only the species that change. Spectator ions are removed, and the remaining charges and atoms still balance.",
+      "ch": 7,
+      "href": "#Learn/ch07-balance"
+    },
+    {
+      "id": "neutral-atom",
+      "term": "neutral atom",
+      "definition": "A neutral atom has no overall charge. Its electron count equals its proton count.",
+      "ch": 2,
+      "href": "#Learn/ch2-structure"
+    },
+    {
+      "id": "acid-base-neutralization",
+      "term": "neutralization",
+      "definition": "Neutralization is the reaction of an acid with a base to make water and, usually, a salt. A strong acid and a strong base give the net ionic equation H⁺ + OH⁻ → H₂O.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "neutron",
+      "term": "neutron",
+      "definition": "The neutron is a nuclear particle with no charge and about the same mass as a proton. Neutrons account for isotopes of the same element.",
+      "ch": 2,
+      "href": "#Learn/ch2-evolution"
+    },
+    {
+      "id": "noble-gas",
+      "term": "noble gas",
+      "definition": "The noble gases are group 18. They have full valence shells and rarely form compounds. Helium, neon, and argon are the ones you meet most.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-table"
+    },
+    {
+      "id": "noble-gas-configuration",
+      "term": "noble-gas configuration",
+      "definition": "A noble-gas configuration is a shorthand that replaces a filled inner core with the symbol of the previous noble gas in brackets.",
+      "ch": 3,
+      "href": "#Learn/ch03-configurations"
+    },
+    {
+      "id": "node",
+      "term": "node",
+      "definition": "A node is a place where the chance of finding the electron is zero. A p orbital has a node at the nucleus between its two lobes.",
+      "ch": 3,
+      "href": "#Learn/ch03-quantum"
+    },
+    {
+      "id": "nonelectrolyte",
+      "term": "nonelectrolyte",
+      "definition": "A nonelectrolyte dissolves as whole molecules and does not produce ions, so the solution does not conduct.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "nonmetal",
+      "term": "nonmetal",
+      "definition": "A nonmetal is an element that tends to gain or share electrons. As a solid it is usually dull and brittle, and it does not conduct well.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-table"
+    },
+    {
+      "id": "nonpolar-covalent-bond",
+      "term": "nonpolar covalent bond",
+      "definition": "A nonpolar covalent bond shares electrons evenly. The two atoms have the same, or nearly the same, electronegativity.",
+      "ch": 4,
+      "href": "#Learn/ch04-covalent-bonding"
+    },
+    {
+      "id": "nuclear-model",
+      "term": "nuclear model",
+      "definition": "The nuclear model of the atom puts the positive charge and almost all the mass in a tiny nucleus, with electrons occupying the large surrounding volume.",
+      "ch": 2,
+      "href": "#Learn/ch2-evolution"
+    },
+    {
+      "id": "nucleon",
+      "term": "nucleon",
+      "definition": "A nucleon is a proton or a neutron, either of the particles that live in the nucleus and make up the mass number.",
+      "ch": 2,
+      "href": "#Learn/ch2-evolution"
+    },
+    {
+      "id": "nucleus",
+      "term": "nucleus",
+      "definition": "The nucleus is the tiny, dense center of the atom. It holds the protons and neutrons, and nearly all of the mass.",
+      "ch": 2,
+      "href": "#Learn/ch2-evolution"
+    },
+    {
+      "id": "octahedral",
+      "term": "octahedral",
+      "definition": "Octahedral geometry has six electron regions pointing to the corners of an octahedron. The ideal bond angles are 90°.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "octet-rule",
+      "term": "octet rule",
+      "definition": "The octet rule says main-group atoms tend to end up with eight electrons around them, counting shared and lone pairs. Hydrogen is content with two.",
+      "ch": 4,
+      "href": "#Learn/ch04-lewis-structures"
+    },
+    {
+      "id": "oil-drop-experiment",
+      "term": "oil-drop experiment",
+      "definition": "The oil-drop experiment measured the charge of one electron by balancing the electric pull on tiny charged oil drops against their weight.",
+      "ch": 2,
+      "href": "#Learn/ch2-evolution"
+    },
+    {
+      "id": "orbital",
+      "term": "orbital",
+      "definition": "An orbital is a region of space around the nucleus where an electron with a given set of quantum numbers is likely to be found. It is not a fixed path.",
+      "ch": 3,
+      "href": "#Learn/ch03-quantum"
+    },
+    {
+      "id": "orbital-diagram",
+      "term": "orbital diagram",
+      "definition": "An orbital diagram draws each orbital as a box and each electron as an arrow. Opposite arrows in one box are a pair.",
+      "ch": 3,
+      "href": "#Learn/ch03-configurations"
+    },
+    {
+      "id": "orbital-overlap",
+      "term": "orbital overlap",
+      "definition": "Orbital overlap is the sharing of space by two orbitals. More overlap, for the same kind of bond, means a stronger link.",
+      "ch": 5,
+      "href": "#Learn/ch5-sigma-pi"
+    },
+    {
+      "id": "oxidation",
+      "term": "oxidation",
+      "definition": "Oxidation is the loss of electrons. The oxidation number of the oxidized atom goes up.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "oxidation-number",
+      "term": "oxidation number",
+      "definition": "An oxidation number is a bookkeeping charge that tracks electrons in a redox reaction. Pure elements are 0. A monatomic ion’s number equals its charge.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "oxidizing-agent",
+      "term": "oxidizing agent",
+      "definition": "The oxidizing agent is the species that takes electrons. It is reduced. The thing it takes electrons from is oxidized.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "oxoanion",
+      "term": "oxoanion",
+      "definition": "An oxoanion is a polyatomic ion of an element plus oxygen. Extra oxygen changes the ending and sometimes adds per- or hypo-.",
+      "ch": 4,
+      "href": "#Learn/ch04-nomenclature"
+    },
+    {
+      "id": "oxyacid",
+      "term": "oxyacid",
+      "definition": "An oxyacid is an acid made of hydrogen, oxygen, and a third element. The name follows the polyatomic ion: -ate becomes -ic acid, and -ite becomes -ous acid.",
+      "ch": 4,
+      "href": "#Learn/ch04-nomenclature"
+    },
+    {
+      "id": "p-orbital",
+      "term": "p orbital",
+      "definition": "A p orbital has two lobes and l = 1. A p subshell has three orbitals, along three perpendicular directions, and holds up to six electrons.",
+      "ch": 3,
+      "href": "#Learn/ch03-quantum"
+    },
+    {
+      "id": "paramagnetic",
+      "term": "paramagnetic",
+      "definition": "A paramagnetic substance is pulled into a magnetic field because it has one or more unpaired electrons.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-trends"
+    },
+    {
+      "id": "partial-pressure",
+      "term": "partial pressure",
+      "definition": "The partial pressure of a gas in a mixture is the pressure that gas would exert if it alone filled the container. The total pressure is the sum of the partial pressures.",
+      "ch": 8,
+      "href": "#Learn/8.3-mixtures"
+    },
+    {
+      "id": "ppb",
+      "term": "parts per billion",
+      "definition": "Parts per billion is a thousand times smaller than parts per million. It is used when the solute is hazardous at very low levels.",
+      "ch": 6,
+      "href": "#Learn/ch06-concentration"
+    },
+    {
+      "id": "ppm",
+      "term": "parts per million",
+      "definition": "Parts per million is a tiny concentration. For dilute water solutions it is about the milligrams of solute in one liter, because a liter of water has a mass near a million milligrams.",
+      "ch": 6,
+      "href": "#Learn/ch06-concentration"
+    },
+    {
+      "id": "pascal",
+      "term": "pascal",
+      "definition": "The pascal, Pa, is the SI unit of pressure. One pascal is one newton of force on one square meter. Everyday air pressure is about 101325 Pa.",
+      "ch": 8,
+      "href": "#Learn/8.1-pressure"
+    },
+    {
+      "id": "path-function",
+      "term": "path function",
+      "definition": "A path function depends on how a change happens. Heat and work are path functions. Their values can differ even when the start and end states match.",
+      "ch": 9,
+      "href": "#Learn/ch09-enthalpy"
+    },
+    {
+      "id": "pauli-exclusion-principle",
+      "term": "Pauli exclusion principle",
+      "definition": "The Pauli exclusion principle says no two electrons in an atom can have the same four quantum numbers. An orbital therefore holds at most two electrons, and those two have opposite spins.",
+      "ch": 3,
+      "href": "#Learn/ch03-configurations"
+    },
+    {
+      "id": "percent-abundance",
+      "term": "percent abundance",
+      "definition": "Percent abundance is the percent of all atoms of an element that are one particular isotope.",
+      "ch": 2,
+      "href": "#Learn/ch2-structure"
+    },
+    {
+      "id": "percent-composition",
+      "term": "percent composition",
+      "definition": "Percent composition is the percent of a compound’s mass that comes from each element. Divide that element’s mass in the formula by the formula mass, then multiply by 100.",
+      "ch": 6,
+      "href": "#Learn/ch06-empirical"
+    },
+    {
+      "id": "percent-yield",
+      "term": "percent yield",
+      "definition": "Percent yield is the actual yield divided by the theoretical yield, times 100. It tells how much of the predicted product you managed to keep.",
+      "ch": 7,
+      "href": "#Learn/ch07-yield"
+    },
+    {
+      "id": "period",
+      "term": "period",
+      "definition": "A period is a horizontal row of the periodic table. Across a period, properties change as valence electrons are added to the same shell.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-table"
+    },
+    {
+      "id": "block",
+      "term": "periodic block",
+      "definition": "A periodic block is the region of the table where a particular subshell is filling: s, p, d, or f.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-table"
+    },
+    {
+      "id": "periodic-law",
+      "term": "periodic law",
+      "definition": "The periodic law says that when elements are ordered by atomic number, their properties repeat in a pattern.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-table"
+    },
+    {
+      "id": "periodic-trend",
+      "term": "periodic trend",
+      "definition": "A periodic trend is a property that changes in a regular way across a period or down a group, such as radius or ionization energy.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-trends"
+    },
+    {
+      "id": "photoelectric-effect",
+      "term": "photoelectric effect",
+      "definition": "The photoelectric effect is the ejection of electrons from a metal when light hits it. Electrons leave only if each photon has at least a minimum energy, no matter how bright a weaker color is.",
+      "ch": 3,
+      "href": "#Learn/ch03-electromagnetic"
+    },
+    {
+      "id": "photon",
+      "term": "photon",
+      "definition": "A photon is one packet of light energy. Its energy is E = hν, Planck’s constant times the frequency.",
+      "ch": 3,
+      "href": "#Learn/ch03-electromagnetic"
+    },
+    {
+      "id": "physical-change",
+      "term": "physical change",
+      "definition": "A physical change alters the form or state of a substance without turning it into a new substance.",
+      "ch": 1,
+      "href": "#Learn/ch01-properties"
+    },
+    {
+      "id": "physical-property",
+      "term": "physical property",
+      "definition": "A physical property can be observed without changing the substance into a new substance. Color, density, and melting point are examples.",
+      "ch": 1,
+      "href": "#Learn/ch01-properties"
+    },
+    {
+      "id": "pi-bond",
+      "term": "pi bond",
+      "definition": "A pi bond is a covalent bond from side-by-side overlap of p orbitals, above and below the internuclear line. It is the extra bond in a double or triple bond.",
+      "ch": 5,
+      "href": "#Learn/ch5-sigma-pi"
+    },
+    {
+      "id": "pi-star",
+      "term": "pi star orbital",
+      "definition": "A pi star orbital is the antibonding partner of a pi bond, written π*. It still has the side-by-side shape, with an extra node.",
+      "ch": 5,
+      "href": "#Learn/ch5-molecular-orbitals"
+    },
+    {
+      "id": "planck-constant",
+      "term": "Planck's constant",
+      "definition": "Planck's constant, h, is 6.626 × 10⁻³⁴ J·s. It converts a photon’s frequency into energy.",
+      "ch": 3,
+      "href": "#Learn/ch03-electromagnetic"
+    },
+    {
+      "id": "plasma",
+      "term": "plasma",
+      "definition": "Plasma is a gas-like state in which many particles have lost electrons, so the mix conducts electricity.",
+      "ch": 1,
+      "href": "#Learn/ch01-classify"
+    },
+    {
+      "id": "polar-covalent-bond",
+      "term": "polar covalent bond",
+      "definition": "A polar covalent bond is a covalent bond in which the electrons sit closer to the more electronegative atom, so that end is slightly negative.",
+      "ch": 4,
+      "href": "#Learn/ch04-covalent-bonding"
+    },
+    {
+      "id": "polar-molecule",
+      "term": "polar molecule",
+      "definition": "A polar molecule has bond dipoles that do not cancel, so one side of the molecule stays slightly negative and the other slightly positive.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "polyatomic-ion",
+      "term": "polyatomic ion",
+      "definition": "A polyatomic ion is a charged group of atoms that stays together through a reaction. The whole group has one charge.",
+      "ch": 3,
+      "href": "#Learn/ch03-compounds"
+    },
+    {
+      "id": "potential-energy",
+      "term": "potential energy",
+      "definition": "Potential energy is stored energy due to position or arrangement. Chemical potential energy sits in the arrangement of atoms and the attractions between charges.",
+      "ch": 9,
+      "href": "#Learn/ch09-energy"
+    },
+    {
+      "id": "precipitate",
+      "term": "precipitate",
+      "definition": "A precipitate is the insoluble solid that forms and falls out of a solution during a reaction.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "precipitation-reaction",
+      "term": "precipitation reaction",
+      "definition": "A precipitation reaction mixes solutions and makes an insoluble solid, the precipitate. The solubility rules predict which combinations do this.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "precision",
+      "term": "precision",
+      "definition": "Precision is how close repeated measurements are to each other. It does not, by itself, mean they are close to the true value.",
+      "ch": 1,
+      "href": "#Learn/ch01-sigfigs"
+    },
+    {
+      "id": "prefix-naming",
+      "term": "prefix naming",
+      "definition": "Prefix naming uses Greek prefixes to count atoms in a molecular compound of two nonmetals. Mono- is usually dropped on the first element.",
+      "ch": 4,
+      "href": "#Learn/ch04-nomenclature"
+    },
+    {
+      "id": "pressure",
+      "term": "pressure",
+      "definition": "Pressure is force spread over an area. A gas exerts pressure by particles colliding with the walls. The SI unit is the pascal.",
+      "ch": 8,
+      "href": "#Learn/8.1-pressure"
+    },
+    {
+      "id": "principal-quantum-number",
+      "term": "principal quantum number",
+      "definition": "The principal quantum number, n, is a positive integer that sets the size and energy of an orbital. Larger n means a larger orbital, farther from the nucleus on average.",
+      "ch": 3,
+      "href": "#Learn/ch03-quantum"
+    },
+    {
+      "id": "product",
+      "term": "product",
+      "definition": "A product is a substance made by the reaction. It is written on the right side of the equation.",
+      "ch": 7,
+      "href": "#Learn/ch07-balance"
+    },
+    {
+      "id": "proton",
+      "term": "proton",
+      "definition": "The proton is a positively charged particle in the nucleus. The number of protons is the atomic number and decides which element the atom is.",
+      "ch": 2,
+      "href": "#Learn/ch2-evolution"
+    },
+    {
+      "id": "pure-substance",
+      "term": "pure substance",
+      "definition": "A pure substance has a fixed composition and the same properties throughout. It is either an element or a compound.",
+      "ch": 1,
+      "href": "#Learn/ch01-classify"
+    },
+    {
+      "id": "q-equation",
+      "term": "q = mcΔT",
+      "definition": "The equation q = mcΔT gives the heat, q, gained or lost by a substance from its mass m, its specific heat c, and its temperature change ΔT. A positive q means the substance gained heat.",
+      "ch": 9,
+      "href": "#Learn/ch09-energy"
+    },
+    {
+      "id": "quantum",
+      "term": "quantum",
+      "definition": "A quantum is the smallest packet of energy an atom can gain or lose. Light delivers energy in quanta called photons.",
+      "ch": 3,
+      "href": "#Learn/ch03-quantum"
+    },
+    {
+      "id": "quantum-number",
+      "term": "quantum number",
+      "definition": "A quantum number is one of the four labels that specify an electron in an atom: n, l, mₗ, and mₛ.",
+      "ch": 3,
+      "href": "#Learn/ch03-quantum"
+    },
+    {
+      "id": "reactant",
+      "term": "reactant",
+      "definition": "A reactant is a substance you start with. It is written on the left side of the equation and is used up as the reaction runs.",
+      "ch": 7,
+      "href": "#Learn/ch07-balance"
+    },
+    {
+      "id": "reactivity",
+      "term": "reactivity",
+      "definition": "Reactivity is how readily a substance undergoes a chemical change. A more reactive metal loses electrons more easily.",
+      "ch": 4,
+      "href": "#Learn/ch04-ionic-bonding"
+    },
+    {
+      "id": "real-gas",
+      "term": "real gas",
+      "definition": "A real gas has particles with actual volume and with attractions. It departs from PV = nRT at high pressure or when the gas is close to liquefying.",
+      "ch": 8,
+      "href": "#Learn/8.6-real-gases"
+    },
+    {
+      "id": "redox-reaction",
+      "term": "redox reaction",
+      "definition": "A redox reaction is a reaction in which electrons move. One species is oxidized and another is reduced. The two always happen together.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "reducing-agent",
+      "term": "reducing agent",
+      "definition": "The reducing agent is the species that gives electrons away. It is oxidized.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "reduction",
+      "term": "reduction",
+      "definition": "Reduction is the gain of electrons. The oxidation number of the reduced atom goes down.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "representative-particle",
+      "term": "representative particle",
+      "definition": "The representative particle is the item a formula counts: an atom for most elements, a molecule for molecular substances, and a formula unit for ionic compounds.",
+      "ch": 2,
+      "href": "#Learn/ch2-formulas"
+    },
+    {
+      "id": "resonance",
+      "term": "resonance",
+      "definition": "Resonance means a molecule’s real structure is a blend of two or more valid Lewis drawings. The electrons are spread out. The atoms do not flip back and forth.",
+      "ch": 4,
+      "href": "#Learn/ch04-formal-charge-resonance"
+    },
+    {
+      "id": "resonance-hybrid",
+      "term": "resonance hybrid",
+      "definition": "The resonance hybrid is the real, blended structure. Bond lengths and charges are averages of the drawings, not any one drawing.",
+      "ch": 4,
+      "href": "#Learn/ch04-formal-charge-resonance"
+    },
+    {
+      "id": "roman-numeral",
+      "term": "Roman numeral",
+      "definition": "A Roman numeral in a name gives the positive charge of a metal that can take more than one charge. It sits in parentheses after the metal’s name.",
+      "ch": 4,
+      "href": "#Learn/ch04-nomenclature"
+    },
+    {
+      "id": "root-mean-square-speed",
+      "term": "root-mean-square speed",
+      "definition": "The root-mean-square speed is a typical speed of gas particles, u_rms = √(3RT/M). Higher temperature or smaller molar mass means a higher speed. M must be in kilograms per mole when R is 8.314 J/(mol·K).",
+      "ch": 8,
+      "href": "#Learn/8.5-kinetic"
+    },
+    {
+      "id": "rounding",
+      "term": "rounding",
+      "definition": "Rounding cuts a calculated result down to the significant figures the measurements can support. The first dropped digit decides whether the last kept digit moves up.",
+      "ch": 1,
+      "href": "#Learn/ch01-sigfigs"
+    },
+    {
+      "id": "rydberg",
+      "term": "Rydberg equation",
+      "definition": "The Rydberg equation gives the wavelengths of hydrogen’s lines from the two shell numbers the electron jumps between.",
+      "ch": 3,
+      "href": "#Learn/ch03-bohr"
+    },
+    {
+      "id": "s-orbital",
+      "term": "s orbital",
+      "definition": "An s orbital is a spherical orbital with l = 0. Each shell has one s orbital, and it holds at most two electrons.",
+      "ch": 3,
+      "href": "#Learn/ch03-quantum"
+    },
+    {
+      "id": "salt",
+      "term": "salt",
+      "definition": "In this course a salt is an ionic compound that can form when an acid and a base react. Table salt is only one example.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "saturated-solution",
+      "term": "saturated solution",
+      "definition": "A saturated solution holds as much solute as it can at that temperature. Extra solute stays undissolved, in contact with the solution.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "scientific-law",
+      "term": "scientific law",
+      "definition": "A scientific law is a compact statement of a pattern that keeps showing up. It says what happens, not the full story of why.",
+      "ch": 1,
+      "href": "#Learn/ch01-context"
+    },
+    {
+      "id": "scientific-method",
+      "term": "scientific method",
+      "definition": "The scientific method is a loop: notice something, ask a question, test an idea, and keep the explanation that matches the results.",
+      "ch": 1,
+      "href": "#Learn/ch01-context"
+    },
+    {
+      "id": "scientific-notation",
+      "term": "scientific notation",
+      "definition": "Scientific notation writes a number as a coefficient times a power of ten. It keeps very large and very small values readable.",
+      "ch": 1,
+      "href": "#Learn/ch01-sigfigs"
+    },
+    {
+      "id": "seesaw",
+      "term": "seesaw",
+      "definition": "A seesaw shape has four bonds and one lone pair around five electron regions. The lone pair takes an equatorial spot.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "semiconductor",
+      "term": "semiconductor",
+      "definition": "A semiconductor conducts electricity better than an insulator and worse than a metal, and its conductivity can be tuned by adding tiny amounts of other elements.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-table"
+    },
+    {
+      "id": "shielding",
+      "term": "shielding",
+      "definition": "Shielding is the blocking of nuclear pull by inner electrons. Outer electrons feel less than the full charge of the nucleus.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-trends"
+    },
+    {
+      "id": "si-prefix",
+      "term": "SI prefix",
+      "definition": "An SI prefix multiplies a unit by a power of ten. Milli- means 0.001 and kilo- means 1000.",
+      "ch": 1,
+      "href": "#Learn/ch01-measure"
+    },
+    {
+      "id": "si-unit",
+      "term": "SI unit",
+      "definition": "An SI unit is a base or derived unit from the international system used in science. Meter, kilogram, second, kelvin, and mole are ones you will use.",
+      "ch": 1,
+      "href": "#Learn/ch01-measure"
+    },
+    {
+      "id": "sigma-bond",
+      "term": "sigma bond",
+      "definition": "A sigma bond is a covalent bond from end-to-end overlap, along the line between the nuclei. Every single bond is a sigma bond, and every multiple bond contains one.",
+      "ch": 5,
+      "href": "#Learn/ch5-sigma-pi"
+    },
+    {
+      "id": "sigma-framework",
+      "term": "sigma framework",
+      "definition": "The sigma framework is the set of sigma bonds and lone pairs that sets the skeleton of a molecule. Pi bonds are added on top and do not change that skeleton.",
+      "ch": 5,
+      "href": "#Learn/ch5-multiple-bonds"
+    },
+    {
+      "id": "sigma-star",
+      "term": "sigma star orbital",
+      "definition": "A sigma star orbital is the antibonding partner of a sigma bond. It is written σ*. Electrons in it weaken the sigma bond.",
+      "ch": 5,
+      "href": "#Learn/ch5-molecular-orbitals"
+    },
+    {
+      "id": "significant-figures",
+      "term": "significant figures",
+      "definition": "Significant figures are the digits in a measurement that you actually know, plus the first uncertain digit. They show the precision of the tool.",
+      "ch": 1,
+      "href": "#Learn/ch01-sigfigs"
+    },
+    {
+      "id": "single-bond",
+      "term": "single bond",
+      "definition": "A single bond is one shared pair between two atoms. It is drawn as one line in a Lewis structure.",
+      "ch": 4,
+      "href": "#Learn/ch04-lewis-structures"
+    },
+    {
+      "id": "single-displacement",
+      "term": "single-displacement reaction",
+      "definition": "A single-displacement reaction is when one element replaces another in a compound. It is a redox reaction.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "solid",
+      "term": "solid",
+      "definition": "A solid keeps both its shape and its volume. The particles stay packed in place and only vibrate.",
+      "ch": 1,
+      "href": "#Learn/ch01-classify"
+    },
+    {
+      "id": "solubility",
+      "term": "solubility",
+      "definition": "Solubility is the maximum amount of a solute that will dissolve in a given amount of solvent at a stated temperature.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "solubility-rule",
+      "term": "solubility rule",
+      "definition": "A solubility rule is a pattern that says which ionic compounds dissolve in water. Nitrates dissolve. Most hydroxides do not, with a short list of exceptions.",
+      "ch": 7,
+      "href": "#Learn/ch07-classify"
+    },
+    {
+      "id": "solute",
+      "term": "solute",
+      "definition": "The solute is the substance that gets dissolved. It is often the one present in the smaller amount.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "solution",
+      "term": "solution",
+      "definition": "A solution is a homogeneous mixture of a solute spread evenly through a solvent. Samples taken from any part have the same composition.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "solvent",
+      "term": "solvent",
+      "definition": "The solvent is the substance that does the dissolving. In an aqueous solution the solvent is water.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "sp-hybrid",
+      "term": "sp hybrid orbital",
+      "definition": "An sp hybrid set is two orbitals made from one s and one p. They point 180° apart. The atom has two electron regions and two leftover p orbitals.",
+      "ch": 5,
+      "href": "#Learn/ch5-hybridization"
+    },
+    {
+      "id": "sp2-hybrid",
+      "term": "sp2 hybrid orbital",
+      "definition": "An sp² hybrid set is three orbitals made from one s and two p orbitals. They lie in a plane, 120° apart. One p orbital is left over for a pi bond.",
+      "ch": 5,
+      "href": "#Learn/ch5-hybridization"
+    },
+    {
+      "id": "sp3-hybrid",
+      "term": "sp3 hybrid orbital",
+      "definition": "An sp³ hybrid set is four orbitals made from one s and three p orbitals. They point to the corners of a tetrahedron, about 109.5° apart.",
+      "ch": 5,
+      "href": "#Learn/ch5-hybridization"
+    },
+    {
+      "id": "sp3d-hybrid",
+      "term": "sp3d hybrid orbital",
+      "definition": "An sp³d hybrid set is five orbitals for five electron regions, the trigonal bipyramidal arrangement. It uses s, p, and one d orbital.",
+      "ch": 5,
+      "href": "#Learn/ch5-hybridization"
+    },
+    {
+      "id": "sp3d2-hybrid",
+      "term": "sp3d2 hybrid orbital",
+      "definition": "An sp³d² hybrid set is six orbitals for six electron regions, the octahedral arrangement.",
+      "ch": 5,
+      "href": "#Learn/ch5-hybridization"
+    },
+    {
+      "id": "specific-heat",
+      "term": "specific heat",
+      "definition": "Specific heat is the heat needed to raise the temperature of one gram of a substance by one degree Celsius. For liquid water it is about 4.184 J/(g·°C).",
+      "ch": 9,
+      "href": "#Learn/ch09-energy"
+    },
+    {
+      "id": "spectator-ion",
+      "term": "spectator ion",
+      "definition": "A spectator ion is present in the solution but unchanged by the reaction. It appears on both sides of the complete ionic equation and is left out of the net ionic equation.",
+      "ch": 7,
+      "href": "#Learn/ch07-balance"
+    },
+    {
+      "id": "speed-of-light",
+      "term": "speed of light",
+      "definition": "The speed of light in a vacuum, c, is 2.998 × 10⁸ m/s. For light, c = λν, so wavelength times frequency equals that speed.",
+      "ch": 3,
+      "href": "#Learn/ch03-electromagnetic"
+    },
+    {
+      "id": "spin-quantum-number",
+      "term": "spin quantum number",
+      "definition": "The spin quantum number, mₛ, is +½ or −½. It labels the two electrons that can share one orbital.",
+      "ch": 3,
+      "href": "#Learn/ch03-quantum"
+    },
+    {
+      "id": "square-planar",
+      "term": "square planar",
+      "definition": "A square planar shape has four bonds and two lone pairs in a six-region geometry. The lone pairs sit opposite each other, and the atoms form a square.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "square-pyramidal",
+      "term": "square pyramidal",
+      "definition": "A square pyramidal shape has five bonds and one lone pair in a six-region geometry. Four atoms form a square base and one sits on top.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "standard-enthalpy-of-formation",
+      "term": "standard enthalpy of formation",
+      "definition": "The standard enthalpy of formation, ΔH_f°, is the enthalpy change to form one mole of a compound from its elements in their standard states. An element in its standard state has ΔH_f° of zero.",
+      "ch": 9,
+      "href": "#Learn/ch09-enthalpy"
+    },
+    {
+      "id": "standard-solution",
+      "term": "standard solution",
+      "definition": "A standard solution has a concentration you trust, measured carefully enough to use as the known side of a titration.",
+      "ch": 7,
+      "href": "#Learn/ch07-analysis"
+    },
+    {
+      "id": "standard-state",
+      "term": "standard state",
+      "definition": "The standard state of a substance is its stable form at 1 bar, about 1 atm, and a stated temperature, often 25 °C. The superscript degree mark on ΔH° means every substance was in its standard state.",
+      "ch": 9,
+      "href": "#Learn/ch09-enthalpy"
+    },
+    {
+      "id": "stp",
+      "term": "standard temperature and pressure",
+      "definition": "Standard temperature and pressure, STP, in this course is 273.15 K and 1 atm. One mole of ideal gas occupies 22.4 L there.",
+      "ch": 8,
+      "href": "#Learn/8.2-ideal-gas"
+    },
+    {
+      "id": "state-function",
+      "term": "state function",
+      "definition": "A state function depends only on the current state of the system, not on the path that got it there. Energy, enthalpy, pressure, and volume are state functions. Heat and work are not.",
+      "ch": 9,
+      "href": "#Learn/ch09-enthalpy"
+    },
+    {
+      "id": "state-symbol",
+      "term": "state symbol",
+      "definition": "A state symbol in parentheses tells the physical form: (s) solid, (l) liquid, (g) gas, and (aq) dissolved in water.",
+      "ch": 7,
+      "href": "#Learn/ch07-balance"
+    },
+    {
+      "id": "stock-solution",
+      "term": "stock solution",
+      "definition": "A stock solution is a concentrated solution kept on the shelf and diluted when a weaker one is needed.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "stock-system",
+      "term": "Stock system",
+      "definition": "The Stock system names a variable-charge metal with a Roman numeral and then names the anion. Prefixes are not used for these ionic compounds.",
+      "ch": 4,
+      "href": "#Learn/ch04-nomenclature"
+    },
+    {
+      "id": "stoichiometry",
+      "term": "stoichiometry",
+      "definition": "Stoichiometry is the calculation that converts the amount of one substance in a reaction into the amount of another, using the mole ratio from a balanced equation.",
+      "ch": 7,
+      "href": "#Learn/ch07-stoich"
+    },
+    {
+      "id": "strong-acid",
+      "term": "strong acid",
+      "definition": "A strong acid donates every acidic proton to water. In this course the six are HCl, HBr, HI, HNO₃, H₂SO₄, and HClO₄. Every other acid is treated as weak.",
+      "ch": 7,
+      "href": "#Learn/ch07-cards"
+    },
+    {
+      "id": "strong-base",
+      "term": "strong base",
+      "definition": "A strong base releases OH⁻ completely in water. The list is LiOH, NaOH, KOH, RbOH, CsOH, Ca(OH)₂, Sr(OH)₂, and Ba(OH)₂. Mg(OH)₂ and ammonia are not on it.",
+      "ch": 7,
+      "href": "#Learn/ch07-cards"
+    },
+    {
+      "id": "strong-electrolyte",
+      "term": "strong electrolyte",
+      "definition": "A strong electrolyte dissociates completely into ions in water. Soluble ionic compounds and strong acids are in this group.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "subatomic-particle",
+      "term": "subatomic particle",
+      "definition": "A subatomic particle is a particle smaller than an atom. The three you use here are the proton, the neutron, and the electron.",
+      "ch": 2,
+      "href": "#Learn/ch2-evolution"
+    },
+    {
+      "id": "subscript",
+      "term": "subscript",
+      "definition": "A subscript is the small number after an element symbol inside a formula. It counts atoms of that element in one unit of the formula. You do not change subscripts to balance an equation.",
+      "ch": 7,
+      "href": "#Learn/ch07-balance"
+    },
+    {
+      "id": "supersaturated-solution",
+      "term": "supersaturated solution",
+      "definition": "A supersaturated solution holds more solute than the normal solubility, usually after a hot saturated solution is cooled carefully. It is unstable.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "surroundings",
+      "term": "surroundings",
+      "definition": "The surroundings are everything outside the system. Heat that leaves the system enters the surroundings.",
+      "ch": 9,
+      "href": "#Learn/ch09-energy"
+    },
+    {
+      "id": "system",
+      "term": "system",
+      "definition": "The system is the part of the universe you choose to study. Everything else is the surroundings.",
+      "ch": 9,
+      "href": "#Learn/ch09-energy"
+    },
+    {
+      "id": "t-shaped",
+      "term": "T-shaped",
+      "definition": "A T-shaped molecule has three bonds and two lone pairs in a five-region electron geometry. The atoms draw a capital T.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "temperature",
+      "term": "temperature",
+      "definition": "Temperature measures how hot a sample is. It is not the same thing as the total heat energy stored in the sample.",
+      "ch": 1,
+      "href": "#Learn/ch01-convert"
+    },
+    {
+      "id": "tetrahedral",
+      "term": "tetrahedral",
+      "definition": "A tetrahedral arrangement has four electron regions pointing to the corners of a tetrahedron. The ideal bond angle is 109.5°.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "theoretical-yield",
+      "term": "theoretical yield",
+      "definition": "The theoretical yield is the maximum mass or moles of product predicted by stoichiometry, assuming the limiting reactant reacts completely.",
+      "ch": 7,
+      "href": "#Learn/ch07-yield"
+    },
+    {
+      "id": "theory",
+      "term": "theory",
+      "definition": "A theory is a well-tested explanation that ties many observations together. In science the word does not mean “a wild guess.”",
+      "ch": 1,
+      "href": "#Learn/ch01-context"
+    },
+    {
+      "id": "thermal-energy",
+      "term": "thermal energy",
+      "definition": "Thermal energy is the total kinetic energy of the random motion of particles in a sample. A bigger sample at the same temperature holds more of it.",
+      "ch": 9,
+      "href": "#Learn/ch09-energy"
+    },
+    {
+      "id": "thermal-equilibrium",
+      "term": "thermal equilibrium",
+      "definition": "Thermal equilibrium means two objects in contact have reached the same temperature, so heat no longer flows between them.",
+      "ch": 9,
+      "href": "#Learn/ch09-calorimetry"
+    },
+    {
+      "id": "thermochemical-equation",
+      "term": "thermochemical equation",
+      "definition": "A thermochemical equation is a balanced equation that includes the enthalpy change. The ΔH belongs to the equation as written, including the mole amounts the coefficients state.",
+      "ch": 9,
+      "href": "#Learn/ch09-enthalpy"
+    },
+    {
+      "id": "titrant",
+      "term": "titrant",
+      "definition": "The titrant is the solution of known concentration delivered from the buret.",
+      "ch": 7,
+      "href": "#Learn/ch07-analysis"
+    },
+    {
+      "id": "titration",
+      "term": "titration",
+      "definition": "A titration adds a solution of known concentration from a buret until the analyte has just reacted. The volume added gives the amount of the unknown.",
+      "ch": 7,
+      "href": "#Learn/ch07-analysis"
+    },
+    {
+      "id": "torr",
+      "term": "torr",
+      "definition": "A torr is a pressure unit equal to the pressure of a 1 mm column of mercury. 760 torr equals 1 atm.",
+      "ch": 8,
+      "href": "#Learn/8.1-pressure"
+    },
+    {
+      "id": "transition-metal",
+      "term": "transition metal",
+      "definition": "A transition metal is a d-block element. These metals often have colored compounds and more than one possible ion charge.",
+      "ch": 3,
+      "href": "#Learn/ch03-periodic-table"
+    },
+    {
+      "id": "trigonal-bipyramidal",
+      "term": "trigonal bipyramidal",
+      "definition": "Trigonal bipyramidal geometry has five electron regions: three in a triangle around the middle and two on an axis. Angles are 120° and 90°.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "trigonal-planar",
+      "term": "trigonal planar",
+      "definition": "Trigonal planar geometry has three electron regions in a triangle, with bond angles of about 120°. BF₃ is the molecular example with no lone pairs.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "trigonal-pyramidal",
+      "term": "trigonal pyramidal",
+      "definition": "A trigonal pyramidal shape has three bonds and one lone pair. The atoms form a pyramid. Ammonia is the usual example.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "triple-bond",
+      "term": "triple bond",
+      "definition": "A triple bond is three shared pairs between the same two atoms. It is short, strong, and counts as one region.",
+      "ch": 4,
+      "href": "#Learn/ch04-lewis-structures"
+    },
+    {
+      "id": "uncertainty",
+      "term": "uncertainty",
+      "definition": "Uncertainty is the range you should allow around a measurement. It comes from the tool and from how you use it.",
+      "ch": 1,
+      "href": "#Learn/ch01-sigfigs"
+    },
+    {
+      "id": "unsaturated-solution",
+      "term": "unsaturated solution",
+      "definition": "An unsaturated solution could still dissolve more solute at that temperature. It is below the solubility limit.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "valence-bond-theory",
+      "term": "valence bond theory",
+      "definition": "Valence bond theory says a covalent bond forms when orbitals on two atoms overlap and share a pair of electrons. The shape of the overlap decides sigma versus pi.",
+      "ch": 5,
+      "href": "#Learn/ch5-sigma-pi"
+    },
+    {
+      "id": "valence-electron",
+      "term": "valence electron",
+      "definition": "Valence electrons are the electrons in the outermost shell. They are the ones gained, lost, or shared in bonding.",
+      "ch": 3,
+      "href": "#Learn/ch03-configurations"
+    },
+    {
+      "id": "van-der-waals-equation",
+      "term": "van der Waals equation",
+      "definition": "The van der Waals equation corrects the ideal gas law. It adds a pressure term for attractions and subtracts a volume term for the space the particles themselves occupy: (P + a n²/V²)(V − nb) = nRT.",
+      "ch": 8,
+      "href": "#Learn/8.6-real-gases"
+    },
+    {
+      "id": "vapor-pressure",
+      "term": "vapor pressure",
+      "definition": "Vapor pressure is the partial pressure of a vapor in equilibrium with its liquid at a given temperature. It rises as the liquid gets hotter.",
+      "ch": 8,
+      "href": "#Learn/8.3-mixtures"
+    },
+    {
+      "id": "volume",
+      "term": "volume",
+      "definition": "Volume is the amount of space a sample takes up. Common lab units are the liter and the milliliter.",
+      "ch": 1,
+      "href": "#Learn/ch01-measure"
+    },
+    {
+      "id": "volume-percent",
+      "term": "volume percent",
+      "definition": "Volume percent is the volume of solute divided by the volume of solution, times 100. It is common for liquid mixed with liquid.",
+      "ch": 6,
+      "href": "#Learn/ch06-concentration"
+    },
+    {
+      "id": "volumetric-flask",
+      "term": "volumetric flask",
+      "definition": "A volumetric flask is a narrow-neck flask marked to hold one exact volume of solution when filled to the line.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "vsepr",
+      "term": "VSEPR",
+      "definition": "VSEPR is the idea that electron regions around a central atom stay as far apart as they can. The count of regions gives the electron-pair geometry. Lone pairs are then ignored to name the molecular shape.",
+      "ch": 4,
+      "href": "#Learn/ch04-shape-and-polarity"
+    },
+    {
+      "id": "water",
+      "term": "water",
+      "definition": "Water, H₂O, is the usual solvent in this course. It is bent and polar, so it dissolves many ionic compounds and other polar molecules.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "wavelength",
+      "term": "wavelength",
+      "definition": "Wavelength is the distance from one crest of a wave to the next crest. Its symbol is the Greek letter lambda, λ.",
+      "ch": 3,
+      "href": "#Learn/ch03-electromagnetic"
+    },
+    {
+      "id": "weak-acid",
+      "term": "weak acid",
+      "definition": "A weak acid only partly donates its protons in water. Most of the molecules stay intact. Any acid that is not one of the six strong acids is weak here.",
+      "ch": 7,
+      "href": "#Learn/ch07-cards"
+    },
+    {
+      "id": "weak-base",
+      "term": "weak base",
+      "definition": "A weak base only partly produces hydroxide ions in water. Ammonia is the usual example. It takes a proton from water and leaves some NH₃ unreacted.",
+      "ch": 7,
+      "href": "#Learn/ch07-cards"
+    },
+    {
+      "id": "weak-electrolyte",
+      "term": "weak electrolyte",
+      "definition": "A weak electrolyte only partly forms ions. Most of the solute stays as molecules, so the solution conducts poorly.",
+      "ch": 6,
+      "href": "#Learn/ch06-molarity"
+    },
+    {
+      "id": "weight",
+      "term": "weight",
+      "definition": "Weight is the pull of gravity on a mass. Change the planet, or even the altitude, and the weight changes while the mass does not.",
+      "ch": 1,
+      "href": "#Learn/ch01-classify"
+    },
+    {
+      "id": "work",
+      "term": "work",
+      "definition": "Work is energy transferred when a force moves something. A gas does work when it expands and pushes a piston.",
+      "ch": 9,
+      "href": "#Learn/ch09-energy"
+    },
+    {
+      "id": "work-function",
+      "term": "work function",
+      "definition": "The work function is the minimum energy a photon must have to knock an electron out of a particular metal.",
+      "ch": 3,
+      "href": "#Learn/ch03-electromagnetic"
+    }
+  ]
+}

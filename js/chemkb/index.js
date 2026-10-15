@@ -1,1 +1,1 @@
-export { CHEM_KEYS, attachChemKeyboard, insertText } from './keyboard.js';
+export { CHEM_KEYS, attachChemKeyboard, bindSharedKeypad, insertText, setKeyboardTarget } from './keyboard.js';

@@ -26,7 +26,7 @@ const AMU = {
 
 const lessonDir = new URL('../content/ch02/', import.meta.url);
 const lessons = readdirSync(lessonDir)
-  .filter((name) => name.endsWith('.json'))
+  .filter((name) => name.endsWith('.json') && name !== 'index.json')
   .sort()
   .map((name) => JSON.parse(readFileSync(new URL(name, lessonDir), 'utf8')));
 

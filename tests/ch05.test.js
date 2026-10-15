@@ -22,7 +22,7 @@ const OUTLINE = [
 ];
 
 const lessonDir = new URL('../content/ch05/', import.meta.url);
-const files = readdirSync(lessonDir).filter((name) => name.endsWith('.json')).sort();
+const files = readdirSync(lessonDir).filter((name) => name.endsWith('.json') && name !== 'index.json').sort();
 const lessons = files.map((name) => ({
   name,
   lesson: JSON.parse(readFileSync(new URL(name, lessonDir), 'utf8')),
@@ -232,8 +232,9 @@ test('sigma and pi counts follow the bond orders', () => {
 
 test('bond orders and magnetism come from the MO electron fill', () => {
   const lesson = lessons.find((item) => item.lesson.id === 'ch5-molecular-orbitals').lesson;
-  assert.equal(lesson.worked_example.answer, '2.000, paramagnetic');
-  assert.equal(lesson.similar_problem.answer, '3.000, diamagnetic');
+  assert.equal(lesson.worked_example.answer, '2, paramagnetic');
+  assert.equal(lesson.similar_problem.answer, '3, diamagnetic');
+  assert.doesNotMatch(JSON.stringify(lesson), /4 significant figures/);
   for (const [id, result] of Object.entries(MO_SPECIES)) {
     const order = byId(`${id}-order`);
     const magnetism = byId(`${id}-mag`);
@@ -246,13 +247,15 @@ test('bond orders and magnetism come from the MO electron fill', () => {
       assert.equal(grade('0', order.check).ok, true, id);
       assert.equal(grade('1', order.check).ok, false, id);
     } else {
+      const shown = String(result.order);
       assert.equal(order.check.kind, 'numeric', id);
       assert.equal(order.check.value, result.order, id);
-      assert.equal(order.check.sigFigs, 4, id);
+      assert.equal(order.check.sigFigs, countSigFigs(shown), id);
       assert.equal(order.check.tolerance, 0.5, id);
       assert.equal(order.check.unit, null, id);
-      assert.equal(order.a, result.order.toPrecision(4), id);
-      assert.equal(countSigFigs(order.a), 4, id);
+      assert.equal(order.a, shown, id);
+      assert.equal(countSigFigs(order.a), countSigFigs(shown), id);
+      assert.doesNotMatch(order.q, /4 significant/i, id);
       assert.deepEqual(grade(order.a, order.check), { ok: true }, id);
       const outside = result.order * 1.01;
       assert.equal(grade(String(outside), order.check).ok, false, id);
@@ -297,6 +300,15 @@ test('numeric keys use 4 sig figs with about 0.5% tolerance', () => {
     for (const problem of lesson.problems) {
       if (problem.check.kind !== 'numeric') continue;
       numeric.push(problem);
+      if (lesson.id === 'ch5-molecular-orbitals') {
+        assert.equal(problem.check.sigFigs, countSigFigs(problem.a), problem.id);
+        assert.ok(problem.check.sigFigs < 4, problem.id);
+        assert.equal(problem.check.tolerance, 0.5, problem.id);
+        assert.equal(problem.check.unit, null, problem.id);
+        assert.equal(Number(problem.a), problem.check.value, problem.id);
+        assert.deepEqual(grade(problem.a, problem.check), { ok: true }, problem.id);
+        continue;
+      }
       assert.equal(problem.check.sigFigs, 4, problem.id);
       assert.equal(problem.check.tolerance, 0.5, problem.id);
       assert.equal(problem.check.unit, null, problem.id);

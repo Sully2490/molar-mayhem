@@ -180,7 +180,7 @@ test('the map, cards, glossary, and drill queue are labeled and keyboard ready',
   for (let chapter = 1; chapter <= 9; chapter += 1) {
     const folder = `content/ch${String(chapter).padStart(2, '0')}`;
     for (const name of readdirSync(new URL(`../${folder}`, import.meta.url))) {
-      if (!name.endsWith('.json')) continue;
+      if (!name.endsWith('.json') || name === 'index.json') continue;
       chapterLessons.push(JSON.parse(readFileSync(new URL(`../${folder}/${name}`, import.meta.url), 'utf8')));
     }
   }

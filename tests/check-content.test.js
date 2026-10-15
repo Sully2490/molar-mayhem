@@ -3,7 +3,7 @@ import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { test } from 'node:test';
-import { checkContent } from '../scripts/check-content.js';
+import { checkContent, verifyFetchedPaths } from '../scripts/check-content.js';
 
 const LESSON = {
   id: 'sample',
@@ -93,4 +93,9 @@ test('a missing content directory is fine', async () => {
     log: { log: (line) => logs.push(line), warn() {} },
   });
   assert.match(logs.join('\n'), /check:content: ok/);
+});
+
+test('every chapter list and the glossary index is a real fetched path', async () => {
+  const repoRoot = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+  await verifyFetchedPaths(repoRoot);
 });

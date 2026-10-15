@@ -1,3 +1,4 @@
+import { bindSharedKeypad } from '../chemkb/keyboard.js';
 import { loadLessons } from '../learn.js';
 import { loadFinalProblems } from '../prep.js';
 import { readProgress } from '../progress.js';
@@ -7,6 +8,8 @@ import {
   gradeExam3,
   readFormAnswer,
   renderExam3,
+  renderExamProgress,
+  renderExamSummary,
   renderSimulator,
   renderWeakPage,
   startSession,
@@ -56,6 +59,32 @@ export function renderWeakSpots(lessons, storage) {
   return renderWeakPage(rows);
 }
 
+export function examOutcome(root, problems) {
+  const forms = typeof root?.querySelectorAll === 'function' ? [...root.querySelectorAll('[data-exam3]')] : [];
+  const total = problems?.length ?? 0;
+  let done = 0;
+  let correct = 0;
+  const misses = [];
+  for (const problem of problems ?? []) {
+    const form = forms.find((item) => item.getAttribute?.('data-exam3') === problem.id);
+    const status = form?.getAttribute?.('data-done') ?? '';
+    if (!status) continue;
+    done += 1;
+    if (status === 'correct') correct += 1;
+    else misses.push(problem);
+  }
+  return { done, correct, total, misses, finished: total > 0 && done === total };
+}
+
+export function paintExamChrome(root, problems) {
+  if (!root || typeof root.querySelector !== 'function') return;
+  const outcome = examOutcome(root, problems);
+  const progress = root.querySelector('[data-exam-progress]');
+  if (progress) progress.outerHTML = renderExamProgress(outcome.done, outcome.total);
+  const slot = root.querySelector('[data-exam-summary-slot]');
+  if (slot && outcome.finished) slot.innerHTML = renderExamSummary(outcome);
+}
+
 export function bindExam3(root, problems) {
   if (!root) return;
   root._mmExam3Abort?.abort();
@@ -63,6 +92,7 @@ export function bindExam3(root, problems) {
   root._mmExam3Abort = abort;
   const attempts = new Map();
   const bank = new Map((problems ?? []).map((problem) => [problem.id, problem]));
+  bindSharedKeypad(root);
   root.addEventListener('submit', (event) => {
     const form = event.target.closest?.('[data-exam3]');
     if (!form || !root.contains(form)) return;
@@ -78,6 +108,7 @@ export function bindExam3(root, problems) {
     if (feedback.done) {
       form.setAttribute('data-done', feedback.status);
       for (const input of form.querySelectorAll('input')) input.disabled = true;
+      paintExamChrome(root, problems);
     }
   }, { signal: abort.signal });
 }

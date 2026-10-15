@@ -1,4 +1,6 @@
+import { bindSharedKeypad } from '../chemkb/keyboard.js';
 import { keypadFor } from '../learn.js';
+import { renderMath } from '../math/render.js';
 import { awardXp, readProgress, writeProgress } from '../progress.js';
 import {
   PROBLEM_XP,
@@ -41,17 +43,17 @@ function stepBody(problem, session, step, index) {
       <label for="${inputId}">${escapeHtml(labelFor(step))}</label>
       <input id="${inputId}" name="answer" autocomplete="off" autocapitalize="off" spellcheck="false"${keypadFor(step)} aria-describedby="${liveId}">
       <button type="submit">Check</button>
-      <p class="feedback" id="${liveId}" aria-live="polite">${escapeHtml(note)}</p>
+      <p class="feedback" id="${liveId}" aria-live="polite">${renderMath(note)}</p>
     `;
   } else if (state === 'correct' || state === 'revealed') {
     const text = note || (state === 'correct' ? `Correct. ${expected}` : `Revealed. Solution: ${expected}`);
-    controls = `<p class="feedback mm-guided-result" id="${liveId}" aria-live="polite">${escapeHtml(text)}</p>`;
+    controls = `<p class="feedback mm-guided-result" id="${liveId}" aria-live="polite">${renderMath(text)}</p>`;
   } else {
     controls = `<p class="mm-guided-result">Not open yet.</p>`;
   }
   return `
     <li class="mm-guided-step" data-step="${index}" data-state="${state}">
-      <p class="mm-guided-prompt" id="${promptId}">Step ${index + 1}. ${escapeHtml(step.prompt)}</p>
+      <p class="mm-guided-prompt" id="${promptId}">Step ${index + 1}. ${renderMath(step.prompt)}</p>
       ${controls}
     </li>
   `;
@@ -66,8 +68,8 @@ function finalBlock(problem, session) {
   return `
     <section class="mm-guided-final">
       <h3>Final answer</h3>
-      <p>${escapeHtml(problem.a)}</p>
-      <p>${escapeHtml(problem.why)}</p>
+      <p>${renderMath(problem.a)}</p>
+      <p>${renderMath(problem.why)}</p>
       <p class="mm-guided-xp">${pointsText}</p>
     </section>
   `;
@@ -118,6 +120,7 @@ export function bindGuided(root, problem, options = {}) {
 
   function paint(moveFocus) {
     form.innerHTML = guidedInner(problem, session);
+    bindSharedKeypad(form);
     if (!moveFocus) return;
     form.querySelector('.mm-guided-step[data-state="active"] input')?.focus();
   }

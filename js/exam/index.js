@@ -21,6 +21,7 @@ export {
 } from './report.js';
 export {
   answerFields,
+  choiceSet,
   escapeHtml,
   formatClock,
   freshSession,
@@ -28,6 +29,8 @@ export {
   needsUnit,
   readFormAnswer,
   renderExam3,
+  renderExamProgress,
+  renderExamSummary,
   renderReport,
   renderRun,
   renderSetup,
@@ -40,6 +43,8 @@ export {
 export {
   bindExam3,
   bindSimulator,
+  examOutcome,
+  paintExamChrome,
   ensureExamCss,
   examHash,
   mountLane,

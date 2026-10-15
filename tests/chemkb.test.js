@@ -104,6 +104,30 @@ test('attaching twice uses one keyboard, including inputs added on the page', ()
   stop();
 });
 
+test('one keypad follows the focused answer field', () => {
+  const doc = createDoc();
+  const first = doc.createElement('input');
+  const second = doc.createElement('input');
+  first.value = 'H';
+  second.value = 'O';
+  doc.body.append(first, second);
+  const left = attachChemKeyboard(first);
+  const right = attachChemKeyboard(second);
+  assert.equal(doc.querySelectorAll('.chem-kb').length, 1);
+  assert.equal(left.element, right.element);
+  const radio = doc.createElement('input');
+  radio.type = 'radio';
+  assert.equal(attachChemKeyboard(radio).element, null);
+  assert.equal(doc.querySelectorAll('.chem-kb').length, 1);
+  buttonByName(left, 'subscript 2').dispatchEvent({ type: 'click' });
+  assert.equal(first.value, 'H₂');
+  assert.equal(second.value, 'O');
+  second.dispatchEvent({ type: 'focus' });
+  buttonByName(left, 'subscript 2').dispatchEvent({ type: 'click' });
+  assert.equal(first.value, 'H₂');
+  assert.equal(second.value, 'O₂');
+});
+
 test('inserted scientific notation, charges, and formulas pass through parseAnswer', () => {
   const negative = typeKeys('4.307', [
     'times ten to the',

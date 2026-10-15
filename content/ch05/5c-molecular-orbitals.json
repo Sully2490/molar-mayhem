@@ -6,7 +6,7 @@
   "steps": [
     "Molecular orbital theory combines atomic orbitals into orbitals that spread over the whole molecule. A bonding orbital puts electron density between the nuclei and lowers the energy. An antibonding orbital has a node between the nuclei and raises the energy.",
     "Electrons fill the lowest molecular orbitals first. Each orbital holds at most two electrons. When two orbitals have the same energy, put one electron in each before any pairing.",
-    "Bond order = 1/2 (bonding electrons − antibonding electrons). Give a nonzero bond order to 4 significant figures, such as 1.000 or 0.5000. A bond order of 0 means no stable bond forms.",
+    "Bond order = 1/2 (bonding electrons − antibonding electrons). Write a nonzero bond order as a decimal, such as 1 or 0.5. A bond order of 0 means no stable bond forms.",
     "H2 and He2 use only the 1s orbitals: sigma 1s, then sigma-star 1s. Period-2 diatomic molecules use the valence 2s and 2p orbitals.",
     "From Li2 through N2, s-p mixing puts the pi 2p set below sigma 2p. For O2, F2, and Ne2, sigma 2p is below the pi 2p set. Add or remove electrons from that same diagram to get an ion.",
     "If any electron is unpaired, the species is paramagnetic and is pulled into a magnetic field. If every electron is paired, it is diamagnetic. O2 is paramagnetic. N2 is diamagnetic."
@@ -17,14 +17,14 @@
       "Each oxygen atom has 6 valence electrons, so O2 has 12.",
       "The O2 order is sigma 2s, sigma-star 2s, sigma 2p, pi 2p, then pi-star 2p.",
       "The fill is 2, 2, 2, 4, and 2. That is 8 bonding electrons and 4 antibonding electrons.",
-      "Bond order = 1/2 (8 − 4) = 2.000. The two pi-star electrons are unpaired, so O2 is paramagnetic."
+      "Bond order = 1/2 (8 − 4) = 2. The two pi-star electrons are unpaired, so O2 is paramagnetic."
     ],
-    "answer": "2.000, paramagnetic"
+    "answer": "2, paramagnetic"
   },
   "similar_problem": {
     "q": "What is the bond order of N2, and is N2 paramagnetic or diamagnetic?",
     "hint": "N2 has 10 valence electrons and uses the early order, with the pi 2p set below sigma 2p.",
-    "answer": "3.000, diamagnetic"
+    "answer": "3, diamagnetic"
   },
   "sources": [
     "OpenStax AF2e §5.4"
@@ -32,18 +32,18 @@
   "problems": [
     {
       "id": "ch5-mo-h2-order",
-      "q": "What is the bond order of H2? Give 4 significant figures.",
-      "a": "1.000",
-      "why": "H2 puts both electrons in the sigma 1s bonding orbital: 2 bonding and 0 antibonding. Bond order = 1/2 (2 − 0) = 1.000.",
+      "q": "What is the bond order of H2? Write the bond order.",
+      "a": "1",
+      "why": "H2 puts both electrons in the sigma 1s bonding orbital: 2 bonding and 0 antibonding. Bond order = 1/2 (2 − 0) = 1.",
       "hints": [
         "H2 has 2 electrons, and both go into the sigma 1s bonding orbital.",
-        "Two bonding electrons and no antibonding electrons give H2 a bond order of 1.000."
+        "Two bonding electrons and no antibonding electrons give H2 a bond order of 1."
       ],
       "check": {
         "kind": "numeric",
         "value": 1,
         "tolerance": 0.5,
-        "sigFigs": 4,
+        "sigFigs": 1,
         "unit": null
       }
     },
@@ -64,18 +64,18 @@
     },
     {
       "id": "ch5-mo-h2plus-order",
-      "q": "What is the bond order of H2+? Give 4 significant figures.",
-      "a": "0.5000",
-      "why": "H2+ has one electron in the sigma 1s bonding orbital and none in the antibonding orbital. Bond order = 1/2 (1 − 0) = 0.5000.",
+      "q": "What is the bond order of H2+? Write the bond order.",
+      "a": "0.5",
+      "why": "H2+ has one electron in the sigma 1s bonding orbital and none in the antibonding orbital. Bond order = 1/2 (1 − 0) = 0.5.",
       "hints": [
         "H2+ has only one electron, and it sits in the sigma 1s bonding orbital.",
-        "One bonding electron gives H2+ a bond order of 0.5000."
+        "One bonding electron gives H2+ a bond order of 0.5."
       ],
       "check": {
         "kind": "numeric",
         "value": 0.5,
         "tolerance": 0.5,
-        "sigFigs": 4,
+        "sigFigs": 1,
         "unit": null
       }
     },
@@ -132,18 +132,18 @@
     },
     {
       "id": "ch5-mo-he2plus-order",
-      "q": "What is the bond order of He2+? Give 4 significant figures.",
-      "a": "0.5000",
-      "why": "He2+ has 2 electrons in sigma 1s and 1 in sigma-star 1s. Bond order = 1/2 (2 − 1) = 0.5000.",
+      "q": "What is the bond order of He2+? Write the bond order.",
+      "a": "0.5",
+      "why": "He2+ has 2 electrons in sigma 1s and 1 in sigma-star 1s. Bond order = 1/2 (2 − 1) = 0.5.",
       "hints": [
         "He2+ has 3 electrons: a pair in sigma 1s and one electron in sigma-star 1s.",
-        "Two bonding electrons minus one antibonding electron give He2+ a bond order of 0.5000."
+        "Two bonding electrons minus one antibonding electron give He2+ a bond order of 0.5."
       ],
       "check": {
         "kind": "numeric",
         "value": 0.5,
         "tolerance": 0.5,
-        "sigFigs": 4,
+        "sigFigs": 1,
         "unit": null
       }
     },
@@ -164,18 +164,18 @@
     },
     {
       "id": "ch5-mo-li2-order",
-      "q": "What is the bond order of Li2? Give 4 significant figures.",
-      "a": "1.000",
-      "why": "Each lithium contributes one valence electron. Both go into sigma 2s: 2 bonding and 0 antibonding. Bond order = 1/2 (2 − 0) = 1.000.",
+      "q": "What is the bond order of Li2? Write the bond order.",
+      "a": "1",
+      "why": "Each lithium contributes one valence electron. Both go into sigma 2s: 2 bonding and 0 antibonding. Bond order = 1/2 (2 − 0) = 1.",
       "hints": [
         "Li2 has 2 valence electrons, and both occupy the sigma 2s bonding orbital.",
-        "Two bonding valence electrons give Li2 a bond order of 1.000."
+        "Two bonding valence electrons give Li2 a bond order of 1."
       ],
       "check": {
         "kind": "numeric",
         "value": 1,
         "tolerance": 0.5,
-        "sigFigs": 4,
+        "sigFigs": 1,
         "unit": null
       }
     },
@@ -232,18 +232,18 @@
     },
     {
       "id": "ch5-mo-b2-order",
-      "q": "What is the bond order of B2? Give 4 significant figures.",
-      "a": "1.000",
-      "why": "B2 has 6 valence electrons. s-p mixing puts the pi 2p set under sigma 2p, so the last two electrons go into pi 2p. That is 4 bonding and 2 antibonding. Bond order = 1/2 (4 − 2) = 1.000.",
+      "q": "What is the bond order of B2? Write the bond order.",
+      "a": "1",
+      "why": "B2 has 6 valence electrons. s-p mixing puts the pi 2p set under sigma 2p, so the last two electrons go into pi 2p. That is 4 bonding and 2 antibonding. Bond order = 1/2 (4 − 2) = 1.",
       "hints": [
         "B2 has 6 valence electrons. After sigma 2s and sigma-star 2s, the next orbital is the pi 2p set.",
-        "Four bonding electrons and two antibonding electrons give B2 a bond order of 1.000."
+        "Four bonding electrons and two antibonding electrons give B2 a bond order of 1."
       ],
       "check": {
         "kind": "numeric",
         "value": 1,
         "tolerance": 0.5,
-        "sigFigs": 4,
+        "sigFigs": 1,
         "unit": null
       }
     },
@@ -264,18 +264,18 @@
     },
     {
       "id": "ch5-mo-c2-order",
-      "q": "What is the bond order of C2? Give 4 significant figures.",
-      "a": "2.000",
-      "why": "C2 has 8 valence electrons. The pi 2p set fills completely: 6 bonding and 2 antibonding. Bond order = 1/2 (6 − 2) = 2.000.",
+      "q": "What is the bond order of C2? Write the bond order.",
+      "a": "2",
+      "why": "C2 has 8 valence electrons. The pi 2p set fills completely: 6 bonding and 2 antibonding. Bond order = 1/2 (6 − 2) = 2.",
       "hints": [
         "C2 has 8 valence electrons, enough to fill sigma 2s, sigma-star 2s, and the pi 2p set.",
-        "Six bonding electrons and two antibonding electrons give C2 a bond order of 2.000."
+        "Six bonding electrons and two antibonding electrons give C2 a bond order of 2."
       ],
       "check": {
         "kind": "numeric",
         "value": 2,
         "tolerance": 0.5,
-        "sigFigs": 4,
+        "sigFigs": 1,
         "unit": null
       },
       "guided": [
@@ -306,15 +306,15 @@
           }
         },
         {
-          "prompt": "What is the bond order of C2, to 4 significant figures?",
-          "hint": "1/2 (6 − 2) = 2.000.",
-          "answer": "2.000",
-          "expected": "2.000",
+          "prompt": "What is the bond order of C2?",
+          "hint": "1/2 (6 − 2) = 2.",
+          "answer": "2",
+          "expected": "2",
           "check": {
             "kind": "numeric",
             "value": 2,
             "tolerance": 0.5,
-            "sigFigs": 4,
+            "sigFigs": 1,
             "unit": null
           },
           "overcount": "sp2"
@@ -338,18 +338,18 @@
     },
     {
       "id": "ch5-mo-n2-order",
-      "q": "What is the bond order of N2? Give 4 significant figures.",
-      "a": "3.000",
-      "why": "N2 has 10 valence electrons. They fill through sigma 2p: 8 bonding and 2 antibonding. Bond order = 1/2 (8 − 2) = 3.000.",
+      "q": "What is the bond order of N2? Write the bond order.",
+      "a": "3",
+      "why": "N2 has 10 valence electrons. They fill through sigma 2p: 8 bonding and 2 antibonding. Bond order = 1/2 (8 − 2) = 3.",
       "hints": [
         "N2 has 10 valence electrons. The early order fills pi 2p before sigma 2p.",
-        "Eight bonding electrons and two antibonding electrons give N2 a bond order of 3.000."
+        "Eight bonding electrons and two antibonding electrons give N2 a bond order of 3."
       ],
       "check": {
         "kind": "numeric",
         "value": 3,
         "tolerance": 0.5,
-        "sigFigs": 4,
+        "sigFigs": 1,
         "unit": null
       },
       "guided": [
@@ -380,15 +380,15 @@
           }
         },
         {
-          "prompt": "What is the bond order of N2, to 4 significant figures?",
-          "hint": "1/2 (8 − 2) = 3.000.",
-          "answer": "3.000",
-          "expected": "3.000",
+          "prompt": "What is the bond order of N2?",
+          "hint": "1/2 (8 − 2) = 3.",
+          "answer": "3",
+          "expected": "3",
           "check": {
             "kind": "numeric",
             "value": 3,
             "tolerance": 0.5,
-            "sigFigs": 4,
+            "sigFigs": 1,
             "unit": null
           },
           "overcount": "sp2"
@@ -412,18 +412,18 @@
     },
     {
       "id": "ch5-mo-n2plus-order",
-      "q": "What is the bond order of N2+? Give 4 significant figures.",
-      "a": "2.500",
-      "why": "N2+ has 9 valence electrons, one fewer than N2. The missing electron comes out of sigma 2p: 7 bonding and 2 antibonding. Bond order = 1/2 (7 − 2) = 2.500.",
+      "q": "What is the bond order of N2+? Write the bond order.",
+      "a": "2.5",
+      "why": "N2+ has 9 valence electrons, one fewer than N2. The missing electron comes out of sigma 2p: 7 bonding and 2 antibonding. Bond order = 1/2 (7 − 2) = 2.5.",
       "hints": [
         "N2+ has 9 valence electrons. Remove one electron from the sigma 2p bonding orbital of N2.",
-        "Seven bonding electrons and two antibonding electrons give N2+ a bond order of 2.500."
+        "Seven bonding electrons and two antibonding electrons give N2+ a bond order of 2.5."
       ],
       "check": {
         "kind": "numeric",
         "value": 2.5,
         "tolerance": 0.5,
-        "sigFigs": 4,
+        "sigFigs": 2,
         "unit": null
       }
     },
@@ -444,18 +444,18 @@
     },
     {
       "id": "ch5-mo-o2-order",
-      "q": "What is the bond order of O2? Give 4 significant figures.",
-      "a": "2.000",
-      "why": "O2 has 12 valence electrons. Sigma 2p is below the pi 2p set, and the last two electrons enter pi-star: 8 bonding and 4 antibonding. Bond order = 1/2 (8 − 4) = 2.000.",
+      "q": "What is the bond order of O2? Write the bond order.",
+      "a": "2",
+      "why": "O2 has 12 valence electrons. Sigma 2p is below the pi 2p set, and the last two electrons enter pi-star: 8 bonding and 4 antibonding. Bond order = 1/2 (8 − 4) = 2.",
       "hints": [
         "O2 has 12 valence electrons. The last two go into the pi-star set, not into a bonding orbital.",
-        "Eight bonding electrons and four antibonding electrons give O2 a bond order of 2.000."
+        "Eight bonding electrons and four antibonding electrons give O2 a bond order of 2."
       ],
       "check": {
         "kind": "numeric",
         "value": 2,
         "tolerance": 0.5,
-        "sigFigs": 4,
+        "sigFigs": 1,
         "unit": null
       },
       "guided": [
@@ -486,15 +486,15 @@
           }
         },
         {
-          "prompt": "What is the bond order, to 4 significant figures? Bond order = 1/2 (bonding − antibonding).",
-          "hint": "1/2 (8 − 4) = 2.000.",
-          "answer": "2.000",
-          "expected": "2.000",
+          "prompt": "What is the bond order? Bond order = 1/2 (bonding − antibonding).",
+          "hint": "1/2 (8 − 4) = 2.",
+          "answer": "2",
+          "expected": "2",
           "check": {
             "kind": "numeric",
             "value": 2,
             "tolerance": 0.5,
-            "sigFigs": 4,
+            "sigFigs": 1,
             "unit": null
           },
           "overcount": "sp3"
@@ -518,18 +518,18 @@
     },
     {
       "id": "ch5-mo-o2plus-order",
-      "q": "What is the bond order of O2+? Give 4 significant figures.",
-      "a": "2.500",
-      "why": "O2+ has 11 valence electrons, one fewer than O2. Removing a pi-star electron leaves 8 bonding and 3 antibonding. Bond order = 1/2 (8 − 3) = 2.500.",
+      "q": "What is the bond order of O2+? Write the bond order.",
+      "a": "2.5",
+      "why": "O2+ has 11 valence electrons, one fewer than O2. Removing a pi-star electron leaves 8 bonding and 3 antibonding. Bond order = 1/2 (8 − 3) = 2.5.",
       "hints": [
         "O2+ has 11 valence electrons. Take one electron out of the pi-star set of O2.",
-        "Eight bonding electrons and three antibonding electrons give O2+ a bond order of 2.500."
+        "Eight bonding electrons and three antibonding electrons give O2+ a bond order of 2.5."
       ],
       "check": {
         "kind": "numeric",
         "value": 2.5,
         "tolerance": 0.5,
-        "sigFigs": 4,
+        "sigFigs": 2,
         "unit": null
       }
     },
@@ -550,18 +550,18 @@
     },
     {
       "id": "ch5-mo-o2minus-order",
-      "q": "What is the bond order of O2−? Give 4 significant figures.",
-      "a": "1.500",
-      "why": "O2− has 13 valence electrons. The extra electron enters the pi-star set: 8 bonding and 5 antibonding. Bond order = 1/2 (8 − 5) = 1.500.",
+      "q": "What is the bond order of O2−? Write the bond order.",
+      "a": "1.5",
+      "why": "O2− has 13 valence electrons. The extra electron enters the pi-star set: 8 bonding and 5 antibonding. Bond order = 1/2 (8 − 5) = 1.5.",
       "hints": [
         "O2− has 13 valence electrons. The extra electron goes into the pi-star set.",
-        "Eight bonding electrons and five antibonding electrons give O2− a bond order of 1.500."
+        "Eight bonding electrons and five antibonding electrons give O2− a bond order of 1.5."
       ],
       "check": {
         "kind": "numeric",
         "value": 1.5,
         "tolerance": 0.5,
-        "sigFigs": 4,
+        "sigFigs": 2,
         "unit": null
       }
     },
@@ -582,18 +582,18 @@
     },
     {
       "id": "ch5-mo-o22minus-order",
-      "q": "What is the bond order of O2^2−? Give 4 significant figures.",
-      "a": "1.000",
-      "why": "O2^2− has 14 valence electrons. Both extra electrons fill the pi-star set: 8 bonding and 6 antibonding. Bond order = 1/2 (8 − 6) = 1.000.",
+      "q": "What is the bond order of O2^2−? Write the bond order.",
+      "a": "1",
+      "why": "O2^2− has 14 valence electrons. Both extra electrons fill the pi-star set: 8 bonding and 6 antibonding. Bond order = 1/2 (8 − 6) = 1.",
       "hints": [
         "O2^2− has 14 valence electrons. Both added electrons go into the pi-star set.",
-        "Eight bonding electrons and six antibonding electrons give O2^2− a bond order of 1.000."
+        "Eight bonding electrons and six antibonding electrons give O2^2− a bond order of 1."
       ],
       "check": {
         "kind": "numeric",
         "value": 1,
         "tolerance": 0.5,
-        "sigFigs": 4,
+        "sigFigs": 1,
         "unit": null
       }
     },
@@ -614,18 +614,18 @@
     },
     {
       "id": "ch5-mo-f2-order",
-      "q": "What is the bond order of F2? Give 4 significant figures.",
-      "a": "1.000",
-      "why": "F2 has 14 valence electrons, the same fill as O2^2−: 8 bonding and 6 antibonding. Bond order = 1/2 (8 − 6) = 1.000.",
+      "q": "What is the bond order of F2? Write the bond order.",
+      "a": "1",
+      "why": "F2 has 14 valence electrons, the same fill as O2^2−: 8 bonding and 6 antibonding. Bond order = 1/2 (8 − 6) = 1.",
       "hints": [
         "F2 has 14 valence electrons, enough to fill the pi-star set.",
-        "Eight bonding electrons and six antibonding electrons give F2 a bond order of 1.000."
+        "Eight bonding electrons and six antibonding electrons give F2 a bond order of 1."
       ],
       "check": {
         "kind": "numeric",
         "value": 1,
         "tolerance": 0.5,
-        "sigFigs": 4,
+        "sigFigs": 1,
         "unit": null
       }
     },

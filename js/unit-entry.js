@@ -1,3 +1,4 @@
+import { bindSharedKeypad } from './chemkb/keyboard.js';
 import { toastHtml } from './celebrate.js';
 import { renderDrillQueue } from './drills.js';
 import { grade } from './grade.js';
@@ -87,6 +88,7 @@ const unitBound = new WeakSet();
 export function bindUnitEntry(root, problems = UNIT_PROBLEMS) {
   if (unitBound.has(root)) return;
   unitBound.add(root);
+  bindSharedKeypad(root);
   const attempts = new Map();
   root.addEventListener('submit', (event) => {
     const form = event.target.closest?.('[data-unit-problem]');

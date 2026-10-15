@@ -31,7 +31,7 @@ function lessons() {
       continue;
     }
     for (const name of names) {
-      if (!name.endsWith('.json')) continue;
+      if (!name.endsWith('.json') || name === 'index.json') continue;
       found.push(JSON.parse(readFileSync(new URL(name, chapter), 'utf8')));
     }
   }
@@ -309,7 +309,8 @@ test('the guided form reveals after three misses and focuses the next input', ()
 const MAIN_LESSON_HASHES = {
   'content/ch05/5a-hybridization.json': '89898cce77a7430a0ce4da5bf08dad7b04579bc28bd0b2d2bbb5192d717a0bf8',
   'content/ch05/5b-sigma-pi.json': '3765196db18303ee44c28947a7c5d357bd77db301e734dd0baf07ace67be4f1b',
-  'content/ch05/5c-molecular-orbitals.json': '109fac5534887dd6f36a426282605606fef7d8794b65dffb5a63fcd088afe732',
+  // Bond order is a plain decimal (1, 0.5, 2.5), not 4 significant figures.
+  'content/ch05/5c-molecular-orbitals.json': 'd8496d1d3bac8ae0f7d31e19c3b3943c63ea0be077cc08fd650aa3b614ed96eb',
   'content/ch05/5d-multiple-bonds.json': 'd6090d826dc000757511d7abbb48e6f8ca2c6d48faa02b2fd9058c805dc70cff',
   'content/ch07/7-1-balancing.json': '9359e2096a912cec2ed39cf625cfeab679499b66c6aac08a54fb87f0e4907e52',
   'content/ch07/7-2-classifying.json': '5df23d01ad75b0a0f5a1deba191db4f61e95b0cd8290325bdd27b9109f70c32c',
