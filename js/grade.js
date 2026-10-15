@@ -92,7 +92,7 @@ export function gradeNumeric(input, check) {
 
 export function withinRelativePercent(actual, expected, percent) {
   const limit = Math.abs(expected) * (percent / 100);
-  return Math.abs(actual - expected) <= limit + 1e-9;
+  return Math.abs(actual - expected) <= limit + Math.abs(expected) * 1e-12;
 }
 
 export function gradeExact(input, check) {
