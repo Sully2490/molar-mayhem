@@ -27,9 +27,12 @@ function isMissing(error) {
   return error?.status === 404 || error?.code === 'ENOENT';
 }
 
+/** Published practice final. Questions stay in this file, not in the player. */
+export const FINAL_URL = 'content/final/practice-final.json';
+
 /**
- * Load the practice final from content/final/index.json.
- * The index may be problem objects, file names, `{ files }`, or `{ problems }`.
+ * Load the practice final from content/final/practice-final.json.
+ * The file may be problem objects, file names, `{ files }`, or `{ problems }`.
  * A named file may be one problem or `{ problems: [...] }`.
  * Questions are not stored in this module.
  * @param {(url: string) => Promise<string>} [fetchText]
@@ -37,7 +40,7 @@ function isMissing(error) {
 export async function loadFinalProblems(fetchText = browserFetchText) {
   let raw;
   try {
-    raw = await fetchText('content/final/index.json');
+    raw = await fetchText(FINAL_URL);
   } catch (error) {
     if (isMissing(error)) return [];
     throw error;
@@ -74,13 +77,13 @@ async function readIndex(index, fetchText) {
       }
       return groups;
     }
-    return index.flatMap((item) => problemsFrom(item, 'index.json'));
+    return index.flatMap((item) => problemsFrom(item, 'practice-final.json'));
   }
   if (index && Array.isArray(index.files)) return readIndex(index.files, fetchText);
   if (index && Array.isArray(index.problems)) {
-    return index.problems.flatMap((item) => problemsFrom(item, 'index.json'));
+    return index.problems.flatMap((item) => problemsFrom(item, 'practice-final.json'));
   }
-  throw new Error('content/final/index.json must list practice-final problems');
+  throw new Error('content/final/practice-final.json must list practice-final problems');
 }
 
 function problemsFrom(data, name) {

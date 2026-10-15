@@ -1,0 +1,1290 @@
+{
+  "id": "practice-final",
+  "ch": 9,
+  "title": "Cumulative practice final",
+  "timed": false,
+  "covers": "OpenStax Chemistry: Atoms First 2e, chapters 1–9",
+  "weighting": "Most of the points are on Chapter 8 (gases) and Chapter 9 (thermochemistry). Heavy review covers molarity, dilution, grams and moles, Lewis structures, and polarity. The bonus is extra and is worth 40 points. This practice final is not timed.",
+  "openstax_section": "OpenStax AF2e §9.3",
+  "guide_line": "Untimed cumulative practice for chapters 1–9. Most of the points are on gases and thermochemistry. The bonus is extra.",
+  "steps": [
+    "Start with pressure, the gas laws, and PV = nRT. The value of R is given in each problem.",
+    "Then do heat and enthalpy. Use c = 4.184 J/(g °C) when the problem says to.",
+    "Heavy review is molarity, dilution, grams and moles, Lewis structures, and polarity.",
+    "The bonus is not timed. List the strong acids and the soluble strong bases."
+  ],
+  "worked_example": {
+    "q": "A rigid tank holds gas at 1.200 atm and 300.0 K. What is the pressure at 360.0 K? Report 4 significant figures and include the unit.",
+    "steps": [
+      "Volume and amount stay fixed, so P1 / T1 = P2 / T2.",
+      "P2 = 1.200 atm × 360.0 K / 300.0 K = 1.440 atm."
+    ],
+    "answer": "1.440 atm"
+  },
+  "similar_problem": {
+    "q": "A 20.00 g sample of water warms from 20.00 °C to 25.00 °C. How much heat does the water absorb? Use c = 4.184 J/(g °C). Report 4 significant figures and include the unit.",
+    "hint": "ΔT is 5.000 °C. Multiply mass × 4.184 × ΔT.",
+    "answer": "418.4 J"
+  },
+  "sources": [
+    "OpenStax AF2e §1.3",
+    "OpenStax AF2e §1.4",
+    "OpenStax AF2e §1.5",
+    "OpenStax AF2e §1.6",
+    "OpenStax AF2e §2.3",
+    "OpenStax AF2e §3.3",
+    "OpenStax AF2e §3.4",
+    "OpenStax AF2e §3.5",
+    "OpenStax AF2e §4.2",
+    "OpenStax AF2e §4.3",
+    "OpenStax AF2e §4.4",
+    "OpenStax AF2e §4.5",
+    "OpenStax AF2e §4.6",
+    "OpenStax AF2e §5.2",
+    "OpenStax AF2e §5.3",
+    "OpenStax AF2e §5.4",
+    "OpenStax AF2e §6.1",
+    "OpenStax AF2e §6.2",
+    "OpenStax AF2e §6.3",
+    "OpenStax AF2e §6.4",
+    "OpenStax AF2e §7.2",
+    "OpenStax AF2e §7.3",
+    "OpenStax AF2e §7.4",
+    "OpenStax AF2e §8.1",
+    "OpenStax AF2e §8.2",
+    "OpenStax AF2e §9.1",
+    "OpenStax AF2e §9.2",
+    "OpenStax AF2e §9.3"
+  ],
+  "problems": [
+    {
+      "id": "final-g01",
+      "ch": 8,
+      "group": "gases",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §8.1",
+      "q": "Convert 812.5 torr to atmospheres. Use 1 atm = 760.0 torr. Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §8.1. Divide by the number of torr in 1 atm: 812.5 / 760.0 = 1.069 atm.",
+      "hints": [
+        "812.5 torr is a bit more than 760 torr, so the answer is a bit more than 1 atm."
+      ],
+      "a": "1.069 atm",
+      "check": {
+        "kind": "numeric",
+        "value": 1.069078947368421,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "final-g02",
+      "ch": 8,
+      "group": "gases",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §8.1",
+      "q": "Convert 1.840 atm to kilopascals. Use 1 atm = 101.325 kPa. Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §8.1. Multiply by the kilopascals in 1 atm: 1.840 × 101.325 = 186.4 kPa.",
+      "hints": [
+        "Each atmosphere is 101.325 kPa, so multiply 1.840 by 101.325."
+      ],
+      "a": "186.4 kPa",
+      "check": {
+        "kind": "numeric",
+        "value": 186.43800000000002,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "kPa"
+      }
+    },
+    {
+      "id": "final-g03",
+      "ch": 8,
+      "group": "gases",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §8.1",
+      "q": "A mercury barometer stands at 71.85 cm. What is the air pressure in atmospheres? Use 760.0 mm Hg = 1 atm, and 1 cm = 10 mm. Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §8.1. The height of the mercury column is the air pressure. 71.85 cm = 718.5 mm Hg. 718.5 / 760.0 = 0.9454 atm.",
+      "hints": [
+        "Change 71.85 cm into mm Hg first. That height, in mm Hg, is the pressure to divide by 760.0."
+      ],
+      "a": "0.9454 atm",
+      "check": {
+        "kind": "numeric",
+        "value": 0.9453947368421053,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "final-g04",
+      "ch": 8,
+      "group": "gases",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §8.1",
+      "q": "An open-end mercury manometer is used where the air pressure is 741.0 torr. The mercury stands 2.650 cm higher on the gas side than on the open side. What is the gas pressure in torr? Use 1 mm Hg = 1 torr. Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §8.1. 2.650 cm = 26.50 mm Hg = 26.50 torr. The mercury is higher on the gas side, so the gas is at a lower pressure than the air: 741.0 − 26.50 = 714.5 torr.",
+      "hints": [
+        "Convert 2.650 cm of mercury into torr, then subtract it from 741.0 torr because the gas side is the high side."
+      ],
+      "a": "714.5 torr",
+      "check": {
+        "kind": "numeric",
+        "value": 714.5,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "torr"
+      }
+    },
+    {
+      "id": "final-g05",
+      "ch": 8,
+      "group": "gases",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §8.2",
+      "q": "A gas has volume 6.250 L at 0.8800 atm. Temperature and amount stay fixed. What is the volume at 1.650 atm? Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §8.2. Boyle’s law: P1 V1 = P2 V2. V2 = 6.250 × (0.8800 / 1.650) = 3.333 L.",
+      "hints": [
+        "Pressure went up, so volume goes down. Multiply 6.250 L by 0.8800/1.650."
+      ],
+      "a": "3.333 L",
+      "check": {
+        "kind": "numeric",
+        "value": 3.3333333333333335,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "L"
+      }
+    },
+    {
+      "id": "final-g06",
+      "ch": 8,
+      "group": "gases",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §8.2",
+      "q": "A gas has volume 2.450 L at 295.0 K. Pressure and amount stay fixed. What is the volume at 360.0 K? Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §8.2. Charles’s law: V1/T1 = V2/T2. V2 = 2.450 × (360.0 / 295.0) = 2.990 L.",
+      "hints": [
+        "The kelvin temperature rose, so multiply 2.450 L by 360.0/295.0."
+      ],
+      "a": "2.990 L",
+      "check": {
+        "kind": "numeric",
+        "value": 2.9898305084745767,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "L"
+      }
+    },
+    {
+      "id": "final-g07",
+      "ch": 8,
+      "group": "gases",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §8.2",
+      "q": "At fixed temperature and pressure, 1.250 mol of gas occupies 5.600 L. What volume does 2.750 mol occupy? Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §8.2. Avogadro’s law: V1/n1 = V2/n2. V2 = 5.600 × (2.750 / 1.250) = 12.32 L.",
+      "hints": [
+        "More moles take more volume. Multiply 5.600 L by 2.750/1.250."
+      ],
+      "a": "12.32 L",
+      "check": {
+        "kind": "numeric",
+        "value": 12.319999999999999,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "L"
+      }
+    },
+    {
+      "id": "final-g08",
+      "ch": 8,
+      "group": "gases",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §8.2",
+      "q": "A rigid tank holds gas at 1.850 atm and 290.0 K. The volume and the amount stay fixed. What is the pressure at 340.0 K? Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §8.2. Gay-Lussac’s law, also called Amontons’s law, is P1/T1 = P2/T2 at constant volume. P2 = 1.850 × (340.0 / 290.0) = 2.169 atm.",
+      "hints": [
+        "Volume is fixed, so pressure rises with kelvin temperature. Multiply 1.850 atm by 340.0/290.0."
+      ],
+      "a": "2.169 atm",
+      "check": {
+        "kind": "numeric",
+        "value": 2.168965517241379,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "final-g09",
+      "ch": 8,
+      "group": "gases",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §8.2",
+      "q": "What volume does 0.4200 mol of ideal gas occupy at 0.9800 atm and 305.0 K? Use R = 0.08206 L atm/(mol K). Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §8.2. V = nRT/P = (0.4200)(0.08206)(305.0) / 0.9800 = 10.73 L.",
+      "hints": [
+        "Rearrange PV = nRT to V = nRT/P. Temperature is already in kelvin."
+      ],
+      "a": "10.73 L",
+      "check": {
+        "kind": "numeric",
+        "value": 10.726414285714284,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "L"
+      }
+    },
+    {
+      "id": "final-g10",
+      "ch": 8,
+      "group": "gases",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §8.2",
+      "q": "What is the pressure of 0.1550 mol of ideal gas in a 3.750 L tank at 285.0 K? Use R = 0.08206 L atm/(mol K). Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §8.2. P = nRT/V = (0.1550)(0.08206)(285.0) / 3.750 = 0.9667 atm.",
+      "hints": [
+        "Rearrange PV = nRT to P = nRT/V. Use the kelvin temperature that is already given."
+      ],
+      "a": "0.9667 atm",
+      "check": {
+        "kind": "numeric",
+        "value": 0.9666667999999999,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "final-g11",
+      "ch": 8,
+      "group": "gases",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §8.2",
+      "q": "What is the volume of 0.6500 mol of ideal gas at STP? One mole of ideal gas occupies 22.41 L at STP. Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §8.2. STP here is 273.15 K and 1 atm. V = 0.6500 mol × 22.41 L/mol = 14.57 L.",
+      "hints": [
+        "At STP, multiply the moles by 22.41 L/mol."
+      ],
+      "a": "14.57 L",
+      "check": {
+        "kind": "numeric",
+        "value": 14.566500000000001,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "L"
+      }
+    },
+    {
+      "id": "final-g12",
+      "ch": 8,
+      "group": "gases",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §8.2",
+      "q": "What volume does 9.600 g of CH4 occupy at STP? C is 12.011 and H is 1.008. One mole of ideal gas occupies 22.41 L at STP. Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §8.2. Molar mass of CH4 = 12.011 + 4(1.008) = 16.043 g/mol. Moles = 9.600 / 16.043 = 0.5984 mol. V = 0.5984 × 22.41 = 13.41 L.",
+      "hints": [
+        "Find moles of CH4 from 12.011 + 4(1.008) g/mol, then multiply by 22.41 L/mol."
+      ],
+      "a": "13.41 L",
+      "check": {
+        "kind": "numeric",
+        "value": 13.409960730536683,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "L"
+      }
+    },
+    {
+      "id": "final-t01",
+      "ch": 9,
+      "group": "thermochemistry",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §9.1",
+      "q": "A chemical cold pack gets colder as the salt dissolves. Is that process exothermic or endothermic? Write one word.",
+      "why": "OpenStax AF2e §9.1. The pack feels cold because the dissolving process absorbs heat from the surroundings. A process that absorbs heat is endothermic.",
+      "hints": [
+        "The pack takes heat in, which is why your hand feels cold."
+      ],
+      "a": "endothermic",
+      "check": {
+        "kind": "exact",
+        "text": "endothermic",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "final-t02",
+      "ch": 9,
+      "group": "thermochemistry",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §9.1",
+      "q": "A reaction has ΔH = −245.0 kJ as written. Is the reaction exothermic or endothermic? Write one word.",
+      "why": "OpenStax AF2e §9.1. A negative ΔH means the system releases heat. The reaction is exothermic.",
+      "hints": [
+        "Look at the sign of ΔH. Negative means heat leaves the system."
+      ],
+      "a": "exothermic",
+      "check": {
+        "kind": "exact",
+        "text": "exothermic",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "final-t03",
+      "ch": 9,
+      "group": "thermochemistry",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §9.2",
+      "q": "48.50 g of water is heated from 18.60 °C to 31.20 °C. Use c = 4.184 J/(g °C). How much heat, in J, does the water absorb? Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §9.2. ΔT = 31.20 − 18.60 = 12.60 °C. q = mcΔT = (48.50)(4.184)(12.60) = 2557 J.",
+      "hints": [
+        "The temperature change is 31.20 minus 18.60. Then multiply mass, 4.184, and that change."
+      ],
+      "a": "2557 J",
+      "check": {
+        "kind": "numeric",
+        "value": 2556.8424,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "J"
+      }
+    },
+    {
+      "id": "final-t04",
+      "ch": 9,
+      "group": "thermochemistry",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §9.2",
+      "q": "A coffee-cup calorimeter holds 75.00 g of solution with c = 4.184 J/(g °C). The temperature rises by 4.150 °C. How much heat, in J, did the solution absorb? Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §9.2. The solution is the calorimeter contents. q = (75.00)(4.184)(4.150) = 1302 J.",
+      "hints": [
+        "Use q = mcΔT with 75.00 g, 4.184 J/(g °C), and a temperature rise of 4.150 °C."
+      ],
+      "a": "1302 J",
+      "check": {
+        "kind": "numeric",
+        "value": 1302.2700000000002,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "J"
+      }
+    },
+    {
+      "id": "final-t05",
+      "ch": 9,
+      "group": "thermochemistry",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §9.2",
+      "q": "Convert 24.60 cal to joules. Use 1 cal = 4.184 J. Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §9.2. 24.60 cal × 4.184 J/cal = 102.9 J.",
+      "hints": [
+        "Multiply 24.60 by 4.184. The calorie is the smaller unit, so the joule number is larger."
+      ],
+      "a": "102.9 J",
+      "check": {
+        "kind": "numeric",
+        "value": 102.92640000000002,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "J"
+      }
+    },
+    {
+      "id": "final-t06",
+      "ch": 9,
+      "group": "thermochemistry",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §9.2",
+      "q": "Convert 186.0 J to calories. Use 1 cal = 4.184 J. Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §9.2. 186.0 J / 4.184 J/cal = 44.46 cal.",
+      "hints": [
+        "Divide 186.0 by 4.184 to land on calories."
+      ],
+      "a": "44.46 cal",
+      "check": {
+        "kind": "numeric",
+        "value": 44.45506692160612,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "cal"
+      }
+    },
+    {
+      "id": "final-t07",
+      "ch": 9,
+      "group": "thermochemistry",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §9.3",
+      "q": "Burning 0.03800 mol of a fuel releases 48.20 kJ. What is ΔH for the combustion, in kJ/mol? Use a negative sign because heat is released. Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §9.3. Heat released makes q negative. ΔH = q/n = −48.20 kJ / 0.03800 mol = −1268 kJ/mol.",
+      "hints": [
+        "Divide 48.20 kJ by 0.03800 mol, and keep the negative sign because the fuel releases heat."
+      ],
+      "a": "-1268 kJ/mol",
+      "check": {
+        "kind": "numeric",
+        "value": -1268.421052631579,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "kJ/mol"
+      }
+    },
+    {
+      "id": "final-t08",
+      "ch": 9,
+      "group": "thermochemistry",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §9.3",
+      "q": "Find ΔH for 2 SO2(g) + O2(g) → 2 SO3(g). Use these ΔH°f values: SO2(g) −296.8 kJ/mol, SO3(g) −395.7 kJ/mol, and O2(g) 0. Report 4 significant figures, in kJ, and include the unit.",
+      "why": "OpenStax AF2e §9.3. ΔH = Σ ΔH°f(products) − Σ ΔH°f(reactants) = 2(−395.7) − 2(−296.8) = −791.4 − (−593.6) = −197.8 kJ.",
+      "hints": [
+        "Products are two SO3. Reactants are two SO2. Oxygen is an element, so its ΔH°f is 0."
+      ],
+      "a": "-197.8 kJ",
+      "check": {
+        "kind": "numeric",
+        "value": -197.79999999999995,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "kJ"
+      }
+    },
+    {
+      "id": "final-t09",
+      "ch": 9,
+      "group": "thermochemistry",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §9.3",
+      "q": "Find ΔH for C2H4(g) + H2(g) → C2H6(g). Use ΔH°f C2H4(g) = −52.40 kJ/mol and ΔH°f C2H6(g) = −84.70 kJ/mol. H2(g) is 0. Report 4 significant figures, in kJ, and include the unit.",
+      "why": "OpenStax AF2e §9.3. ΔH = −84.70 − (−52.40) = −32.30 kJ. The H2 term is zero because it is an element in its standard state.",
+      "hints": [
+        "Subtract the reactant ΔH°f from the product ΔH°f. H2 contributes 0."
+      ],
+      "a": "-32.30 kJ",
+      "check": {
+        "kind": "numeric",
+        "value": -32.300000000000004,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "kJ"
+      }
+    },
+    {
+      "id": "final-t10",
+      "ch": 9,
+      "group": "thermochemistry",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §9.3",
+      "q": "Use Hess’s law. (1) C2H2(g) + H2(g) → C2H4(g) has ΔH = −174.4 kJ. (2) C2H4(g) + H2(g) → C2H6(g) has ΔH = −137.0 kJ. Find ΔH for C2H2(g) + 2 H2(g) → C2H6(g). Report 4 significant figures, in kJ, and include the unit.",
+      "why": "OpenStax AF2e §9.3. Add the steps. C2H4 cancels. ΔH = −174.4 + (−137.0) = −311.4 kJ.",
+      "hints": [
+        "The target is step 1 followed by step 2. Add the two ΔH values."
+      ],
+      "a": "-311.4 kJ",
+      "check": {
+        "kind": "numeric",
+        "value": -311.4,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "kJ"
+      }
+    },
+    {
+      "id": "final-t11",
+      "ch": 9,
+      "group": "thermochemistry",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §9.3",
+      "q": "Use Hess’s law. (1) 2 H2O(l) → 2 H2(g) + O2(g) has ΔH = +571.6 kJ. (2) H2(g) + O2(g) → H2O2(l) has ΔH = −187.8 kJ. Find ΔH for 2 H2O2(l) → 2 H2O(l) + O2(g). Report 4 significant figures, in kJ, and include the unit.",
+      "why": "OpenStax AF2e §9.3. Reverse step 2 and double it: 2 H2O2 → 2 H2 + 2 O2, ΔH = +375.6 kJ. Reverse step 1: 2 H2 + O2 → 2 H2O, ΔH = −571.6 kJ. Add them: ΔH = 375.6 − 571.6 = −196.0 kJ.",
+      "hints": [
+        "The target has H2O2 on the left, so reverse step 2 and multiply it by 2. Then reverse step 1 and add."
+      ],
+      "a": "-196.0 kJ",
+      "check": {
+        "kind": "numeric",
+        "value": -196,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "kJ"
+      }
+    },
+    {
+      "id": "final-t12",
+      "ch": 9,
+      "group": "thermochemistry",
+      "points": 3,
+      "openstax_section": "OpenStax AF2e §9.2",
+      "q": "A reaction of 0.02500 mol is run in 75.00 g of solution with c = 4.184 J/(g °C). The solution temperature rises 2.640 °C. What is ΔH of the reaction in kJ/mol? Heat gained by the solution was lost by the reaction. Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §9.2. q(solution) = (75.00)(4.184)(2.640) = 828.4 J = 0.8284 kJ. The reaction lost that heat, so q = −0.8284 kJ. ΔH = −0.8284 / 0.02500 = −33.14 kJ/mol.",
+      "hints": [
+        "Find q = mcΔT for the solution, change the sign, convert J to kJ, and divide by 0.02500 mol."
+      ],
+      "a": "-33.14 kJ/mol",
+      "check": {
+        "kind": "numeric",
+        "value": -33.13728,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "kJ/mol"
+      }
+    },
+    {
+      "id": "final-h01",
+      "ch": 6,
+      "group": "heavy-review",
+      "points": 2,
+      "openstax_section": "OpenStax AF2e §6.1",
+      "q": "How many moles are in 18.40 g of CO2? C is 12.011 and O is 15.999. Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §6.1. Molar mass = 12.011 + 2(15.999) = 44.009 g/mol. Moles = 18.40 / 44.009 = 0.4181 mol.",
+      "hints": [
+        "The molar mass of CO2 is 12.011 plus two times 15.999. Divide 18.40 g by that mass."
+      ],
+      "a": "0.4181 mol",
+      "check": {
+        "kind": "numeric",
+        "value": 0.4180962984844009,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "mol"
+      }
+    },
+    {
+      "id": "final-h02",
+      "ch": 6,
+      "group": "heavy-review",
+      "points": 2,
+      "openstax_section": "OpenStax AF2e §6.1",
+      "q": "What is the mass of 0.2750 mol of MgCl2? Mg is 24.305 and Cl is 35.45. Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §6.1. Molar mass = 24.305 + 2(35.45) = 95.205 g/mol. Mass = 0.2750 × 95.205 = 26.18 g.",
+      "hints": [
+        "Add 24.305 to two times 35.45, then multiply by 0.2750 mol."
+      ],
+      "a": "26.18 g",
+      "check": {
+        "kind": "numeric",
+        "value": 26.181375000000006,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "g"
+      }
+    },
+    {
+      "id": "final-h03",
+      "ch": 6,
+      "group": "heavy-review",
+      "points": 2,
+      "openstax_section": "OpenStax AF2e §6.3",
+      "q": "4.280 g of KCl is dissolved to make 200.0 mL of solution. K is 39.098 and Cl is 35.45. What is the molarity? Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §6.3. Molar mass = 39.098 + 35.45 = 74.548 g/mol. Moles = 4.280 / 74.548 = 0.05741 mol. Volume = 0.2000 L. Molarity = 0.05741 / 0.2000 = 0.2871 M.",
+      "hints": [
+        "Change 200.0 mL into 0.2000 L. Moles are 4.280 divided by (39.098 + 35.45)."
+      ],
+      "a": "0.2871 M",
+      "check": {
+        "kind": "numeric",
+        "value": 0.28706336856790254,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "M"
+      }
+    },
+    {
+      "id": "final-h04",
+      "ch": 6,
+      "group": "heavy-review",
+      "points": 2,
+      "openstax_section": "OpenStax AF2e §6.3",
+      "q": "What volume of 6.000 M stock, in mL, is needed to prepare 250.0 mL of 0.8000 M solution? Use C1 V1 = C2 V2. Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §6.3. V1 = C2 V2 / C1 = (0.8000)(250.0) / 6.000 = 33.33 mL.",
+      "hints": [
+        "The diluted solution is 250.0 mL at 0.8000 M. Multiply those, then divide by 6.000 M."
+      ],
+      "a": "33.33 mL",
+      "check": {
+        "kind": "numeric",
+        "value": 33.333333333333336,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "mL"
+      }
+    },
+    {
+      "id": "final-h05",
+      "ch": 4,
+      "group": "heavy-review",
+      "points": 2,
+      "openstax_section": "OpenStax AF2e §4.4",
+      "q": "How many valence electrons belong in the Lewis structure of SO3^2−? S has 6 valence electrons and each O has 6. Write the count as a whole number.",
+      "why": "OpenStax AF2e §4.4. The atoms contribute 6 + 3(6) = 24 electrons. The 2− charge adds 2 more. The structure has 26 valence electrons.",
+      "hints": [
+        "Add the valence electrons of one S and three O atoms, then add 2 for the negative charge."
+      ],
+      "a": "26",
+      "check": {
+        "kind": "exact",
+        "text": "26",
+        "case": "insensitive",
+        "answers": [
+          "26 electrons"
+        ]
+      }
+    },
+    {
+      "id": "final-h06",
+      "ch": 4,
+      "group": "heavy-review",
+      "points": 2,
+      "openstax_section": "OpenStax AF2e §4.4",
+      "q": "In the Lewis structure of NH3, how many lone pairs are on the nitrogen atom? Write a whole number.",
+      "why": "OpenStax AF2e §4.4. Nitrogen has 5 valence electrons. Three of them form N–H bonds, so one pair is left over. Nitrogen has 1 lone pair.",
+      "hints": [
+        "Nitrogen has 5 valence electrons and uses 3 of them to bond to hydrogen."
+      ],
+      "a": "1",
+      "check": {
+        "kind": "exact",
+        "text": "1",
+        "case": "insensitive",
+        "answers": [
+          "1 lone pair",
+          "one"
+        ]
+      }
+    },
+    {
+      "id": "final-h07",
+      "ch": 4,
+      "group": "heavy-review",
+      "points": 2,
+      "openstax_section": "OpenStax AF2e §4.2",
+      "q": "Electronegativity is 2.55 for C and 2.20 for H. A bond is nonpolar when ΔEN is below 0.4. Is a C–H bond polar or nonpolar? Write polar or nonpolar.",
+      "why": "OpenStax AF2e §4.2. ΔEN = 2.55 − 2.20 = 0.35. That is below 0.4, so the C–H bond is nonpolar.",
+      "hints": [
+        "Subtract 2.20 from 2.55. Compare the difference with 0.4."
+      ],
+      "a": "nonpolar",
+      "check": {
+        "kind": "exact",
+        "text": "nonpolar",
+        "case": "insensitive",
+        "answers": [
+          "non-polar"
+        ]
+      }
+    },
+    {
+      "id": "final-h08",
+      "ch": 4,
+      "group": "heavy-review",
+      "points": 2,
+      "openstax_section": "OpenStax AF2e §4.6",
+      "q": "SF6 is octahedral, and its six S–F bonds are identical. Is the molecule polar or nonpolar? Write polar or nonpolar.",
+      "why": "OpenStax AF2e §4.6. The six equal bond dipoles point to opposite corners of an octahedron and cancel. SF6 is nonpolar.",
+      "hints": [
+        "A symmetric shape with identical outer atoms cancels the bond dipoles. SF6 is octahedral."
+      ],
+      "a": "nonpolar",
+      "check": {
+        "kind": "exact",
+        "text": "nonpolar",
+        "case": "insensitive",
+        "answers": [
+          "non-polar"
+        ]
+      }
+    },
+    {
+      "id": "final-l01",
+      "ch": 1,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §1.4",
+      "q": "A 36.48 g piece of metal is dropped into a graduated cylinder. The water rises from 25.00 mL to 29.20 mL. What is the density of the metal in g/mL? Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §1.4. The displaced volume is the metal’s volume: 29.20 − 25.00 = 4.20 mL. Density = 36.48 / 4.20 = 8.686 g/mL.",
+      "hints": [
+        "The volume of the metal is how far the water rose. Divide 36.48 g by that volume in mL."
+      ],
+      "a": "8.686 g/mL",
+      "check": {
+        "kind": "numeric",
+        "value": 8.685714285714287,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "g/mL"
+      }
+    },
+    {
+      "id": "final-l02",
+      "ch": 1,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §1.3",
+      "q": "An iron nail forms rust when it is left in damp air. Is that a physical change or a chemical change? Write physical or chemical.",
+      "why": "OpenStax AF2e §1.3. Rust is a new substance, iron oxide, not just iron in a new shape. Forming a new substance is a chemical change.",
+      "hints": [
+        "Ask whether a new substance appears. Rust is not still the same iron."
+      ],
+      "a": "chemical",
+      "check": {
+        "kind": "exact",
+        "text": "chemical",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "final-l03",
+      "ch": 1,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §1.5",
+      "q": "How many significant figures are in 0.01090? Write a whole number.",
+      "why": "OpenStax AF2e §1.5. The zeros before the 1 are placeholders. The digits that count are 1, 0, 9, and the final 0. That is 4 significant figures.",
+      "hints": [
+        "Ignore the zeros that only locate the decimal point. Keep the zero trapped between 1 and 9, and keep the last zero."
+      ],
+      "a": "4",
+      "check": {
+        "kind": "exact",
+        "text": "4",
+        "case": "insensitive",
+        "answers": [
+          "four"
+        ]
+      }
+    },
+    {
+      "id": "final-l04",
+      "ch": 1,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §1.6",
+      "q": "Convert 7.650 mg to grams. Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §1.6. The prefix milli means 10^−3. 7.650 mg × (1 g / 1000 mg) = 0.007650 g.",
+      "hints": [
+        "Milli means one thousandth. Divide 7.650 by 1000."
+      ],
+      "a": "0.007650 g",
+      "check": {
+        "kind": "numeric",
+        "value": 0.0076500000000000005,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "g"
+      }
+    },
+    {
+      "id": "final-l05",
+      "ch": 2,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §2.3",
+      "q": "Element Q has two isotopes: 78.00% has mass 23.99 u, and 22.00% has mass 25.98 u. What is the average atomic mass in u? Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §2.3. Average mass = (0.7800)(23.99) + (0.2200)(25.98) = 18.71 + 5.716 = 24.43 u.",
+      "hints": [
+        "Turn each percent into a decimal, multiply by that isotope’s mass, and add the two products."
+      ],
+      "a": "24.43 u",
+      "check": {
+        "kind": "numeric",
+        "value": 24.427799999999998,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "u"
+      }
+    },
+    {
+      "id": "final-l06",
+      "ch": 6,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §6.2",
+      "q": "A sample contains 24.022 g C, 6.048 g H, and 15.999 g O. What is the empirical formula? Use C 12.011, H 1.008, and O 15.999. Write C, then H, then O, and omit a subscript of 1.",
+      "why": "OpenStax AF2e §6.2. Moles of C = 24.022 / 12.011 = 2.000. Moles of H = 6.048 / 1.008 = 6.000. Moles of O = 15.999 / 15.999 = 1.000. Divide by 1.000. The empirical formula is C2H6O.",
+      "hints": [
+        "Divide each mass by the atomic mass given for that element, then divide all three mole amounts by the smallest one."
+      ],
+      "a": "C2H6O",
+      "check": {
+        "kind": "exact",
+        "text": "C2H6O",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "final-l07",
+      "ch": 6,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §6.4",
+      "q": "8.400 g of solute is dissolved in 141.6 g of water. What is the mass percent of the solute? Report 4 significant figures and include the unit %.",
+      "why": "OpenStax AF2e §6.4. Mass of solution = 8.400 + 141.6 = 150.0 g. Mass percent = (8.400 / 150.0) × 100 = 5.600%.",
+      "hints": [
+        "Add the solute mass to the water mass before you divide. Then multiply by 100."
+      ],
+      "a": "5.600 %",
+      "check": {
+        "kind": "numeric",
+        "value": 5.6000000000000005,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "%"
+      }
+    },
+    {
+      "id": "final-l08",
+      "ch": 6,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §6.4",
+      "q": "12.50 mL of ethanol is diluted with water to 200.0 mL of solution. What is the volume percent of ethanol? Report 4 significant figures and include the unit %.",
+      "why": "OpenStax AF2e §6.4. Volume percent = (12.50 mL / 200.0 mL) × 100 = 6.250%.",
+      "hints": [
+        "Divide the ethanol volume by the total solution volume, then multiply by 100."
+      ],
+      "a": "6.250 %",
+      "check": {
+        "kind": "numeric",
+        "value": 6.25,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "%"
+      }
+    },
+    {
+      "id": "final-l09",
+      "ch": 6,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §6.4",
+      "q": "A sample contains 2.750 mg of nitrate in 250.0 g of solution. What is the concentration in ppm? Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §6.4. 2.750 mg = 0.002750 g. ppm = (0.002750 / 250.0) × 10^6 = 11.00 ppm.",
+      "hints": [
+        "Put the solute in grams, divide by 250.0 g, and multiply by 1,000,000."
+      ],
+      "a": "11.00 ppm",
+      "check": {
+        "kind": "numeric",
+        "value": 11,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "ppm"
+      }
+    },
+    {
+      "id": "final-l10",
+      "ch": 6,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §6.4",
+      "q": "A sample contains 8.400 µg of lead in 200.0 g of solution. What is the concentration in ppb? Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §6.4. 8.400 µg = 8.400 × 10^−6 g. ppb = (8.400 × 10^−6 / 200.0) × 10^9 = 42.00 ppb.",
+      "hints": [
+        "A microgram is 10^−6 g. Divide that mass by 200.0 g and multiply by 1,000,000,000."
+      ],
+      "a": "42.00 ppb",
+      "check": {
+        "kind": "numeric",
+        "value": 42,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "ppb"
+      }
+    },
+    {
+      "id": "final-l11",
+      "ch": 3,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §3.4",
+      "q": "Write the electron configuration of Co2+. Cobalt is atomic number 27. Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ar] is fine.",
+      "why": "OpenStax AF2e §3.4. Neutral cobalt is [Ar] 4s2 3d7. A cation loses the 4s electrons first. Co2+ is [Ar] 3d7.",
+      "hints": [
+        "Start from neutral cobalt, [Ar] 4s2 3d7. Remove the two 4s electrons before any 3d electron."
+      ],
+      "a": "[Ar] 3d7",
+      "check": {
+        "kind": "config",
+        "text": "[Ar] 3d7"
+      }
+    },
+    {
+      "id": "final-l12",
+      "ch": 3,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §3.3",
+      "q": "An electron has n = 4 and l = 1. What is the largest allowed value of ml? Write a whole number.",
+      "why": "OpenStax AF2e §3.3. ml runs from −l to +l. Here l = 1, so the largest ml is 1.",
+      "hints": [
+        "ml cannot be larger than l. This electron has l = 1."
+      ],
+      "a": "1",
+      "check": {
+        "kind": "exact",
+        "text": "1",
+        "case": "insensitive",
+        "answers": [
+          "+1"
+        ]
+      }
+    },
+    {
+      "id": "final-l13",
+      "ch": 3,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §3.5",
+      "q": "Which atom has the smaller atomic radius, Mg or Ba? Write the element symbol.",
+      "why": "OpenStax AF2e §3.5. Atomic radius grows down a group because the outer shell is farther from the nucleus. Mg is above Ba, so Mg is smaller.",
+      "hints": [
+        "Mg and Ba are in the same group. The atom higher in the group is smaller."
+      ],
+      "a": "Mg",
+      "check": {
+        "kind": "exact",
+        "text": "Mg",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "final-l14",
+      "ch": 4,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §4.3",
+      "q": "Name the ionic compound K2SO4.",
+      "why": "OpenStax AF2e §4.3. K+ is potassium and SO4^2− is sulfate. Potassium has only one common charge, so no Roman numeral is used. The name is potassium sulfate.",
+      "hints": [
+        "K is the metal potassium. SO4^2− is the polyatomic ion sulfate."
+      ],
+      "a": "potassium sulfate",
+      "check": {
+        "kind": "exact",
+        "text": "potassium sulfate",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "final-l15",
+      "ch": 4,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §4.5",
+      "q": "How many equivalent resonance structures does NO3− have? Write a whole number.",
+      "why": "OpenStax AF2e §4.5. The double bond can sit on any of the three oxygen atoms. Nitrate has 3 resonance structures.",
+      "hints": [
+        "The double bond is shared equally among the three oxygen atoms. Count those placements."
+      ],
+      "a": "3",
+      "check": {
+        "kind": "exact",
+        "text": "3",
+        "case": "insensitive",
+        "answers": [
+          "three"
+        ]
+      }
+    },
+    {
+      "id": "final-l16",
+      "ch": 4,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §4.4",
+      "q": "BF3 is an octet exception. In its Lewis structure, how many electrons surround the boron atom? Write a whole number.",
+      "why": "OpenStax AF2e §4.4. Boron forms three single bonds and has no lone pair. Three bonds are 6 electrons, which is short of an octet.",
+      "hints": [
+        "Count the electrons in the three B–F bonds. Boron has no lone pair in BF3."
+      ],
+      "a": "6",
+      "check": {
+        "kind": "exact",
+        "text": "6",
+        "case": "insensitive",
+        "answers": [
+          "six"
+        ]
+      }
+    },
+    {
+      "id": "final-l17",
+      "ch": 4,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §4.6",
+      "q": "What is the ideal bond angle, in degrees, for a trigonal planar atom such as the boron in BF3? Report 4 significant figures and include the unit degrees.",
+      "why": "OpenStax AF2e §4.6. Three electron groups spread to the corners of a triangle. The ideal angle is 120.0 degrees.",
+      "hints": [
+        "Three groups in one plane divide a full circle into three equal angles."
+      ],
+      "a": "120.0 degrees",
+      "check": {
+        "kind": "numeric",
+        "value": 120,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "degrees"
+      }
+    },
+    {
+      "id": "final-l18",
+      "ch": 5,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §5.2",
+      "q": "What hybridization does C use in H2CO? The carbon is bonded to two H atoms and one O atom by a double bond.",
+      "why": "OpenStax AF2e §5.2. The C=O double bond is one electron group, and each C–H bond is another. Three groups use sp2 hybrids.",
+      "hints": [
+        "Count electron groups on carbon, not atoms only. A double bond is one group."
+      ],
+      "a": "sp2",
+      "check": {
+        "kind": "exact",
+        "text": "sp2",
+        "case": "insensitive",
+        "answers": [
+          "sp^2"
+        ]
+      }
+    },
+    {
+      "id": "final-l19",
+      "ch": 5,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §5.3",
+      "q": "How many pi bonds are in one molecule of HCN (H–C≡N)? Write a whole number.",
+      "why": "OpenStax AF2e §5.3. A triple bond is one sigma bond plus two pi bonds. HCN has 2 pi bonds.",
+      "hints": [
+        "The C≡N triple bond holds the pi bonds. A triple bond has two of them."
+      ],
+      "a": "2",
+      "check": {
+        "kind": "exact",
+        "text": "2",
+        "case": "insensitive",
+        "answers": [
+          "two"
+        ]
+      }
+    },
+    {
+      "id": "final-l20",
+      "ch": 5,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §5.4",
+      "q": "What is the molecular-orbital bond order of F2? F2 has 14 valence electrons, with 8 in bonding orbitals and 6 in antibonding orbitals. Give 4 significant figures and do not write a unit.",
+      "why": "OpenStax AF2e §5.4. Bond order = 1/2 (bonding electrons − antibonding electrons) = 1/2 (8 − 6) = 1.000.",
+      "hints": [
+        "Subtract the antibonding count from the bonding count, then multiply by 1/2."
+      ],
+      "a": "1.000",
+      "check": {
+        "kind": "numeric",
+        "value": 1,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "final-l21",
+      "ch": 7,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §7.3",
+      "q": "How many grams of H2O form when 4.000 g of H2 reacts with excess O2? The equation is 2 H2 + O2 → 2 H2O. H is 1.008 and O is 15.999. Report 4 significant figures and include the unit.",
+      "why": "OpenStax AF2e §7.3. Molar mass of H2 = 2.016 g/mol, so moles of H2 = 4.000 / 2.016 = 1.984 mol. The mole ratio of H2O to H2 is 1. Molar mass of H2O = 18.015 g/mol. Mass = 1.984 × 18.015 = 35.74 g.",
+      "hints": [
+        "Convert 4.000 g of H2 to moles with 2(1.008) g/mol. The balanced equation makes the same number of moles of H2O."
+      ],
+      "a": "35.74 g",
+      "check": {
+        "kind": "numeric",
+        "value": 35.74404761904762,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "g"
+      }
+    },
+    {
+      "id": "final-l22",
+      "ch": 7,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §7.4",
+      "q": "3.000 g of Mg is mixed with 4.000 g of Cl2. The equation is Mg + Cl2 → MgCl2. Which reactant is limiting? Write its formula. Mg is 24.305 and Cl is 35.45.",
+      "why": "OpenStax AF2e §7.4. Moles of Mg = 3.000 / 24.305 = 0.1234 mol. Moles of Cl2 = 4.000 / 70.90 = 0.05642 mol. The reactants combine 1 to 1, and there is less Cl2, so Cl2 is limiting.",
+      "hints": [
+        "Convert both masses to moles. Cl2 is 2(35.45) g/mol. Compare those moles with the 1-to-1 ratio."
+      ],
+      "a": "Cl2",
+      "check": {
+        "kind": "exact",
+        "text": "Cl2",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "final-l23",
+      "ch": 7,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §7.4",
+      "q": "A reaction has a theoretical yield of 12.40 g. The actual yield is 9.300 g. What is the percent yield? Report 4 significant figures and include the unit %.",
+      "why": "OpenStax AF2e §7.4. Percent yield = (actual / theoretical) × 100 = (9.300 / 12.40) × 100 = 75.00%.",
+      "hints": [
+        "Divide 9.300 g by 12.40 g and multiply by 100."
+      ],
+      "a": "75.00 %",
+      "check": {
+        "kind": "numeric",
+        "value": 75,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "%"
+      }
+    },
+    {
+      "id": "final-l24",
+      "ch": 7,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §7.2",
+      "q": "2 KClO3(s) → 2 KCl(s) + 3 O2(g). Is this combination, decomposition, single displacement, or double displacement? Write one of those four names.",
+      "why": "OpenStax AF2e §7.2. One compound breaks into two simpler substances. That pattern is decomposition.",
+      "hints": [
+        "One reactant splits into more than one product. That is not a swap of partners."
+      ],
+      "a": "decomposition",
+      "check": {
+        "kind": "exact",
+        "text": "decomposition",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "final-l25",
+      "ch": 7,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §7.2",
+      "q": "What is the oxidation number of Cr in Cr2O7^2−? Each O is −2. Write the number with its sign, such as +1 or −1.",
+      "why": "OpenStax AF2e §7.2. Seven oxygen atoms contribute 7(−2) = −14. The ion charge is −2, so the two chromium atoms contribute +12 together. Each Cr is +6.",
+      "hints": [
+        "Let the two chromium atoms share the charge that remains after 7(−2) and the ion charge of 2−."
+      ],
+      "a": "+6",
+      "check": {
+        "kind": "exact",
+        "text": "+6",
+        "case": "insensitive",
+        "answers": [
+          "6+",
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "final-l26",
+      "ch": 7,
+      "group": "light-review",
+      "points": 1,
+      "openstax_section": "OpenStax AF2e §7.2",
+      "q": "Balance MnO4− + Fe2+ → Mn2+ + Fe3+ in acidic solution. Mn goes from +7 to +2, and Fe goes from +2 to +3. What is the smallest whole-number coefficient of Fe2+ when MnO4− has coefficient 1?",
+      "why": "OpenStax AF2e §7.2. Each MnO4− gains 5 electrons as Mn goes from +7 to +2. Each Fe2+ loses 1 electron. Five Fe2+ are needed for one MnO4−, so the coefficient is 5.",
+      "hints": [
+        "The manganese change is a gain of 5 electrons. Each iron(II) ion loses only 1 electron."
+      ],
+      "a": "5",
+      "check": {
+        "kind": "exact",
+        "text": "5",
+        "case": "insensitive",
+        "answers": [
+          "five"
+        ]
+      }
+    },
+    {
+      "id": "final-b01",
+      "ch": 7,
+      "group": "bonus",
+      "bonus": true,
+      "points": 30,
+      "openstax_section": "OpenStax AF2e §7.2",
+      "q": "Bonus. List the six strong acids. Write the formulas separated by commas. This practice final is not timed.",
+      "why": "OpenStax AF2e §7.2. The six strong acids are HCl, HBr, HI, HNO3, H2SO4, and HClO4. They ionize completely in water.",
+      "hints": [
+        "Three of them are the binary acids of Cl, Br, and I. The other three are nitric acid, sulfuric acid, and perchloric acid."
+      ],
+      "a": "HCl, HBr, HI, HNO3, H2SO4, HClO4",
+      "check": {
+        "kind": "set",
+        "case": "sensitive",
+        "answers": [
+          "HCl",
+          "HBr",
+          "HI",
+          "HNO3",
+          "H2SO4",
+          "HClO4"
+        ],
+        "nearMiss": [
+          {
+            "text": "HClO3",
+            "hint": "HClO3 is one oxygen short of the strong chlorine oxyacid. Use HClO4."
+          },
+          {
+            "text": "HF",
+            "hint": "HF is a weak acid. The strong halogen acids are HCl, HBr, and HI."
+          }
+        ]
+      }
+    },
+    {
+      "id": "final-b02",
+      "ch": 7,
+      "group": "bonus",
+      "bonus": true,
+      "points": 10,
+      "openstax_section": "OpenStax AF2e §7.2",
+      "q": "Bonus. List the soluble strong bases that are metal hydroxides. Write the formulas separated by commas. This practice final is not timed.",
+      "why": "OpenStax AF2e §7.2. The strong bases on this list are LiOH, NaOH, KOH, RbOH, CsOH, Ca(OH)2, Sr(OH)2, and Ba(OH)2.",
+      "hints": [
+        "Include the soluble group 1 hydroxides and the group 2 hydroxides that start with calcium."
+      ],
+      "a": "LiOH, NaOH, KOH, RbOH, CsOH, Ca(OH)2, Sr(OH)2, Ba(OH)2",
+      "check": {
+        "kind": "set",
+        "case": "sensitive",
+        "answers": [
+          "LiOH",
+          "NaOH",
+          "KOH",
+          "RbOH",
+          "CsOH",
+          "Ca(OH)2",
+          "Sr(OH)2",
+          "Ba(OH)2"
+        ],
+        "nearMiss": [
+          {
+            "text": "Mg(OH)2",
+            "hint": "Mg(OH)2 does not dissolve well, so leave it off. Start the group 2 hydroxides at Ca(OH)2."
+          },
+          {
+            "text": "NH3",
+            "hint": "NH3 is a weak base, not a soluble metal hydroxide."
+          }
+        ]
+      }
+    }
+  ]
+}

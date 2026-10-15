@@ -21,7 +21,7 @@ function problem(id, overrides = {}) {
 
 test('a file index loads every problem and each key grades correct', async () => {
   const files = {
-    'content/final/index.json': JSON.stringify(['one.json', 'two.json']),
+    'content/final/practice-final.json': JSON.stringify(['one.json', 'two.json']),
     'content/final/one.json': JSON.stringify(problem('one', { ch: 5, a: '4' })),
     'content/final/two.json': JSON.stringify({
       problems: [problem('two', {
@@ -69,7 +69,7 @@ test('inline problems and a problems list are accepted', async () => {
 
 test('a missing final folder yields no questions', async () => {
   const problems = await loadFinalProblems(async () => {
-    const error = new Error('Missing content/final/index.json');
+    const error = new Error('Missing content/final/practice-final.json');
     error.status = 404;
     throw error;
   });
@@ -98,19 +98,14 @@ test('the prep page is untimed and labels every loaded answer', () => {
   assert.equal(/class="answer-label"/.test(empty), false);
 });
 
-test('published content/final keys all grade correct', async () => {
-  const indexPath = new URL('../content/final/index.json', import.meta.url);
-  try {
-    await access(indexPath);
-  } catch {
-    return;
-  }
-  const dir = path.dirname(indexPath.pathname);
+test('published practice-final.json keys all grade correct', async () => {
+  const finalPath = new URL('../content/final/practice-final.json', import.meta.url);
+  await access(finalPath);
   const problems = await loadFinalProblems(async (url) => {
-    const name = url.replace(/^content\/final\//, '');
-    return readFile(path.join(dir, name), 'utf8');
+    assert.equal(url, 'content/final/practice-final.json');
+    return readFile(finalPath, 'utf8');
   });
-  assert.ok(problems.length > 0);
+  assert.ok(problems.length >= 60);
   for (const item of problems) {
     assert.equal(grade(item.a, item.check).ok, true, item.id);
   }
@@ -119,7 +114,7 @@ test('published content/final keys all grade correct', async () => {
 test('loader reads files written in a folder', async () => {
   const dir = await mkdtemp(path.join(tmpdir(), 'mm-final-'));
   try {
-    await writeFile(path.join(dir, 'index.json'), '["item.json"]');
+    await writeFile(path.join(dir, 'practice-final.json'), '["item.json"]');
     await writeFile(path.join(dir, 'item.json'), `${JSON.stringify(problem('disk'))}\n`);
     const problems = await loadFinalProblems(async (url) => {
       const name = url.replace(/^content\/final\//, '');
