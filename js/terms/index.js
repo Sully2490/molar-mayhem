@@ -10,10 +10,16 @@ export {
   INERT_PAGE_SELECTOR,
 } from './dialog.js';
 export {
+  CHAPTER_TITLES,
   filterTerms,
+  letterOf,
+  cardBlurb,
+  groupTerms,
   renderTermsIndex,
+  renderTermGroups,
   renderTermItems,
   bindTermsIndex,
+  jumpToLetter,
   termIdFromHash,
 } from './index-page.js';
 export {

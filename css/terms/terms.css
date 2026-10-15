@@ -104,15 +104,38 @@ body.term-open { overflow: hidden; }
   list-style: none;
 }
 
-.terms-page,
+.terms-page {
+  width: min(72rem, 100%);
+  margin: 0 auto;
+  padding: 1.5rem 1.15rem 3rem;
+}
+
 .recall-page {
-  max-width: 44rem;
+  width: min(44rem, 100%);
+  margin: 0 auto;
+  padding: 1.5rem 1.15rem 3rem;
+}
+
+.terms-head,
+.terms-count,
+.terms-actions {
+  text-align: center;
+}
+
+.terms-lead {
+  max-width: 38rem;
+  margin: 0.35rem auto 0;
+}
+
+.terms-tools-slot:empty {
+  display: none;
 }
 
 .terms-search {
   display: grid;
   gap: 0.3rem;
-  margin: 0.6rem 0;
+  max-width: 36rem;
+  margin: 0.9rem auto 0.4rem;
 }
 
 .terms-search input,
@@ -135,19 +158,147 @@ body.term-open { overflow: hidden; }
   align-items: center;
 }
 
+.terms-chapters,
+.terms-actions {
+  justify-content: center;
+}
+
+.terms-chapters button {
+  position: relative;
+  border-radius: 999px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.15;
+  min-width: 2.75rem;
+  min-height: 44px;
+}
+
+.terms-chip-name {
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.terms-az {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem;
+  margin: 0.75rem 0 0.2rem;
+}
+
+.terms-az button {
+  min-width: 2.75rem;
+  min-height: 44px;
+  padding: 0.2rem 0.35rem;
+  border: 1px solid var(--line, #ddd4c3);
+  border-radius: 8px;
+  background: var(--card, #fffaf2);
+  color: var(--teal-deep, #0a3d39);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.terms-az button[aria-current="true"] {
+  background: var(--teal, #0f5c56);
+  border-color: var(--teal, #0f5c56);
+  color: white;
+}
+
+.terms-az button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.terms-chapter {
+  scroll-margin-top: 6.5rem;
+}
+
+.terms-chapter h2 {
+  margin: 1.7rem 0 0.35rem;
+  font-size: 1.45rem;
+  text-align: center;
+}
+
+.terms-chapter h2 span {
+  display: block;
+  margin-top: 0.15rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted, #5d675f);
+}
+
+.terms-letter-block {
+  scroll-margin-top: 6.5rem;
+}
+
+.terms-letter-block h3 {
+  margin: 0.85rem 0 0.35rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--teal, #0f5c56);
+}
+
+.terms-letter-block h3:focus {
+  outline: 3px solid var(--focus, #9a3412);
+  outline-offset: 3px;
+}
+
+.terms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
+  gap: 0.7rem;
+}
+
+.term-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-height: 7.25rem;
+  padding: 0.9rem 1rem;
+  background: var(--card, #fffaf2);
+  border: 1px solid var(--line, #ddd4c3);
+  border-radius: 0.9rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.term-tile:hover {
+  border-color: var(--teal, #0f5c56);
+}
+
+.term-tile:focus-visible {
+  outline: 3px solid var(--focus, #9a3412);
+  outline-offset: 2px;
+}
+
+.term-tile-name {
+  font-family: Georgia, "Iowan Old Style", Palatino, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--teal-deep, #0a3d39);
+}
+
+.term-tile-def {
+  font-size: 0.92rem;
+}
+
 .terms-chapters button[aria-pressed="true"],
 .recall-actions button[aria-pressed="true"] {
   background: var(--teal, #0f5c56);
   color: white;
 }
 
-.terms-index,
 .recall-decks {
   padding-left: 0;
   list-style: none;
 }
 
-.terms-index li,
 .recall-decks li {
   display: flex;
   justify-content: space-between;
@@ -156,7 +307,6 @@ body.term-open { overflow: hidden; }
   border-bottom: 1px solid var(--line, #ddd4c3);
 }
 
-.terms-ch,
 .recall-decks span {
   color: var(--muted, #5d675f);
   font-size: 0.85rem;
@@ -173,6 +323,37 @@ body.term-open { overflow: hidden; }
   margin-top: 1rem;
   padding-top: 0.6rem;
   border-top: 1px solid var(--line, #ddd4c3);
+}
+
+@media (max-width: 599px) {
+  .terms-page,
+  .recall-page {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .terms-chip-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .terms-az {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
+  }
+
+  .terms-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
