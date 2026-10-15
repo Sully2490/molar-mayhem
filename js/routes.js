@@ -67,7 +67,7 @@ const ROUTES = {
 };
 
 export function routeFromHash(hash) {
-  const raw = String(hash ?? '').replace(/^#/, '').trim().split(/[/?]/)[0];
+  const raw = String(hash ?? '').replace(/^#/, '').trim();
   if (!raw) return 'Home';
   const head = raw.split(/[/?]/)[0];
   const match = ROUTE_IDS.find((id) => id.toLowerCase() === head.toLowerCase());
