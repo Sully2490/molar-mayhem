@@ -2,7 +2,7 @@
   "id": "ch07-stoich",
   "ch": 7,
   "openstax_section": "OpenStax AF2e §7.3",
-  "guide_line": "Use the mole ratio and the molar mass to convert between grams and moles of reactants and products.",
+  "guide_line": "Use the mole ratio to convert a given mass or a known solution volume into the amount of another substance.",
   "steps": [
     "Balance the equation. The coefficients are the mole ratio.",
     "Change a given mass into moles by dividing by the molar mass. Change a solution volume into moles with molarity times liters.",
@@ -129,6 +129,38 @@
       "why": "Moles of Mg = 6.000 / 24.305 = 0.2469 mol. Moles of O2 = half of that = 0.1234 mol. Mass of O2 = 0.1234 times 31.998 = 3.950 g.",
       "hints": ["Divide 6.000 g by 24.305 g/mol of Mg, take half of those moles because 2 Mg need 1 O2, then use 31.998 g/mol."],
       "check": { "kind": "numeric", "value": 3.95, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch07-vol-sulfuric",
+      "q": "What volume, in mL, of 0.4000 M NaOH reacts with 20.00 mL of 0.2500 M H2SO4? H2SO4 + 2 NaOH -> Na2SO4 + 2 H2O.",
+      "a": "25.00 mL",
+      "why": "Moles of H2SO4 = 0.02000 times 0.2500 = 0.005000 mol. Moles of NaOH = 0.01000 mol. Volume = 0.01000 / 0.4000 = 0.02500 L = 25.00 mL.",
+      "hints": ["20.00 mL of 0.2500 M H2SO4 contains 0.005000 mol, and the base ratio is 2 NaOH per acid."],
+      "check": { "kind": "numeric", "value": 25, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
+    },
+    {
+      "id": "ch07-vol-lime",
+      "q": "What volume, in mL, of 0.1800 M HCl reacts with 15.00 mL of 0.1200 M Ca(OH)2? Ca(OH)2 + 2 HCl -> CaCl2 + 2 H2O.",
+      "a": "20.00 mL",
+      "why": "Moles of Ca(OH)2 = 0.01500 times 0.1200 = 0.001800 mol. Moles of HCl = 0.003600 mol. Volume = 0.003600 / 0.1800 = 0.02000 L = 20.00 mL.",
+      "hints": ["15.00 mL of 0.1200 M Ca(OH)2 contains 0.001800 mol, and each mole needs 2 mol HCl."],
+      "check": { "kind": "numeric", "value": 20, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
+    },
+    {
+      "id": "ch07-vol-barium",
+      "q": "What volume, in mL, of 0.1500 M Ba(OH)2 reacts with 25.00 mL of 0.2000 M HNO3? 2 HNO3 + Ba(OH)2 -> Ba(NO3)2 + 2 H2O.",
+      "a": "16.67 mL",
+      "why": "Moles of HNO3 = 0.02500 times 0.2000 = 0.005000 mol. Moles of Ba(OH)2 = half of that = 0.002500 mol. Volume = 0.002500 / 0.1500 = 0.01667 L = 16.67 mL.",
+      "hints": ["25.00 mL of 0.2000 M HNO3 contains 0.005000 mol of H+. Each Ba(OH)2 supplies two OH-."],
+      "check": { "kind": "numeric", "value": 16.67, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
+    },
+    {
+      "id": "ch07-vol-oxalic",
+      "q": "What volume, in mL, of 0.1000 M NaOH reacts with 15.00 mL of 0.08000 M H2C2O4? H2C2O4 + 2 NaOH -> Na2C2O4 + 2 H2O.",
+      "a": "24.00 mL",
+      "why": "Moles of oxalic acid = 0.01500 times 0.08000 = 0.001200 mol. Moles of NaOH = 0.002400 mol. Volume = 0.002400 / 0.1000 = 0.02400 L = 24.00 mL.",
+      "hints": ["15.00 mL of 0.08000 M H2C2O4 contains 0.001200 mol, and oxalic acid donates two H+."],
+      "check": { "kind": "numeric", "value": 24, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
     }
   ]
 }

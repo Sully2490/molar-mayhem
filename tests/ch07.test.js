@@ -139,6 +139,39 @@ test('formula and element-symbol answers are case sensitive', async () => {
   assert.equal(grade('HCl', hydrochloric.check).ok, true);
 });
 
+test('each topic cites the Atoms First 2e section that teaches it', async () => {
+  const lessons = await loadLessons();
+  const byId = new Map();
+  for (const { lesson } of lessons) {
+    for (const problem of lesson.problems) byId.set(problem.id, lesson.openstax_section);
+  }
+  const expectSection = (id, section) => {
+    assert.equal(byId.get(id), section, id);
+  };
+  // §7.1 is molecular, complete ionic, and net ionic equations. Solubility rules are Table 7.1 in §7.2.
+  for (const id of ['ch07-net-silver-chloride', 'ch07-spectators-barium-sulfate', 'ch07-net-strong-neutralization', 'ch07-net-zinc-copper', 'ch07-balance-chlorate']) {
+    expectSection(id, 'OpenStax AF2e §7.1');
+  }
+  for (const id of ['ch07-precip-lead-iodide', 'ch07-no-precipitate', 'ch07-precip-calcium-carbonate', 'ch07-class-precip', 'ch07-ox-sulfur', 'ch07-class-hf', 'ch07-permanganate-protons']) {
+    expectSection(id, 'OpenStax AF2e §7.2');
+  }
+  // §7.3 includes solution molarity when both amounts are known. Limiting reactant is a §7.4 objective.
+  for (const id of ['ch07-stoich-water-4', 'ch07-vol-sulfuric', 'ch07-vol-lime', 'ch07-vol-barium', 'ch07-vol-oxalic', 'ch07-stoich-limewater-acid']) {
+    expectSection(id, 'OpenStax AF2e §7.3');
+  }
+  for (const id of ['ch07-limit-nitrogen', 'ch07-yield-ammonia-percent', 'ch07-excess-ethanol']) {
+    expectSection(id, 'OpenStax AF2e §7.4');
+  }
+  // §7.5 is an unknown analyte concentration or a percent from a weighed precipitate.
+  for (const id of ['ch07-titrate-hcl', 'ch07-titrate-sulfuric', 'ch07-grav-chloride', 'ch07-grav-chloride-small', 'ch07-vinegar', 'ch07-grav-sulfur']) {
+    expectSection(id, 'OpenStax AF2e §7.5');
+  }
+  const balance = lessons.find(({ lesson }) => lesson.id === 'ch07-balance').lesson;
+  assert.doesNotMatch(balance.steps.join(' '), /Solubility shortcuts|Ag\+/);
+  const classify = lessons.find(({ lesson }) => lesson.id === 'ch07-classify').lesson;
+  assert.match(classify.steps.join(' '), /Ag\+/);
+});
+
 test('strong-acid cards use the set check and flag HClO3', async () => {
   const lessons = await loadLessons();
   const cards = lessons.find(({ lesson }) => lesson.id === 'ch07-cards').lesson;

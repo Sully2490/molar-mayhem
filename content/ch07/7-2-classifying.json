@@ -4,7 +4,7 @@
   "openstax_section": "OpenStax AF2e §7.2",
   "guide_line": "Sort a reaction as precipitation, acid-base, or redox, and find oxidation numbers.",
   "steps": [
-    "Precipitation: two aqueous solutions produce an insoluble solid. Check the solubility shortcuts before you name the solid.",
+    "Precipitation: two aqueous solutions produce an insoluble solid. Nitrates, ammonium, and group 1 salts dissolve. Chlorides and iodides dissolve except with Ag+, Pb2+, and Hg2+. Sulfates dissolve except with Ba2+, Pb2+, Sr2+, and Ca2+. Carbonates do not dissolve except with group 1 ions and ammonium.",
     "Acid-base: H+ moves from an acid to a base. A strong acid plus a strong base makes water, and the net ionic equation is H+ + OH- -> H2O.",
     "Only six common acids are strong: HCl, HBr, HI, HNO3, H2SO4, and HClO4. Every other acid is weak.",
     "Redox: one element's oxidation number goes up (it is oxidized) and another goes down (it is reduced).",
@@ -49,6 +49,30 @@
       "why": "Two dissolved salts produce solid AgCl. No oxidation number changes, and no H+ is transferred. This is precipitation.",
       "hints": ["Look for a solid forming from two dissolved salts, with no element changing its oxidation number."],
       "check": { "kind": "exact", "text": "precipitation", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-precip-lead-iodide",
+      "q": "Aqueous lead(II) nitrate is mixed with aqueous potassium iodide. What is the formula of the solid that forms?",
+      "a": "PbI2",
+      "why": "Lead(II) iodide is insoluble. The other product, potassium nitrate, dissolves. The solid is PbI2.",
+      "hints": ["Potassium nitrate stays dissolved. Lead(II) and iodide are the pair that forms the solid."],
+      "check": { "kind": "exact", "text": "PbI2", "case": "sensitive" }
+    },
+    {
+      "id": "ch07-no-precipitate",
+      "q": "Aqueous potassium nitrate is mixed with aqueous sodium chloride. Does a precipitate form? Answer yes or no.",
+      "a": "no",
+      "why": "Swapping partners would give KCl and NaNO3. Group 1 salts and nitrates both dissolve, so no solid forms.",
+      "hints": ["The swapped products would be KCl and NaNO3, and both a group 1 salt and a nitrate dissolve."],
+      "check": { "kind": "exact", "text": "no", "case": "insensitive" }
+    },
+    {
+      "id": "ch07-precip-calcium-carbonate",
+      "q": "Aqueous calcium chloride is mixed with aqueous sodium carbonate. What is the formula of the precipitate?",
+      "a": "CaCO3",
+      "why": "Carbonates do not dissolve with calcium. The other product, NaCl, dissolves. The precipitate is CaCO3.",
+      "hints": ["Sodium stays with chloride in solution. Calcium and carbonate are the pair that does not dissolve."],
+      "check": { "kind": "exact", "text": "CaCO3", "case": "sensitive" }
     },
     {
       "id": "ch07-class-acid",

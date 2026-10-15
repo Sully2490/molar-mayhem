@@ -43,38 +43,6 @@
       "check": { "kind": "numeric", "value": 0.12, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
     },
     {
-      "id": "ch07-titrate-sulfuric",
-      "q": "What volume, in mL, of 0.4000 M NaOH reacts with 20.00 mL of 0.2500 M H2SO4? H2SO4 + 2 NaOH -> Na2SO4 + 2 H2O.",
-      "a": "25.00 mL",
-      "why": "Moles of H2SO4 = 0.02000 times 0.2500 = 0.005000 mol. Moles of NaOH = 0.01000 mol. Volume = 0.01000 / 0.4000 = 0.02500 L = 25.00 mL.",
-      "hints": ["20.00 mL of 0.2500 M H2SO4 contains 0.005000 mol, and the base ratio is 2 NaOH per acid."],
-      "check": { "kind": "numeric", "value": 25, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
-    },
-    {
-      "id": "ch07-titrate-lime",
-      "q": "What volume, in mL, of 0.1800 M HCl reacts with 15.00 mL of 0.1200 M Ca(OH)2? Ca(OH)2 + 2 HCl -> CaCl2 + 2 H2O.",
-      "a": "20.00 mL",
-      "why": "Moles of Ca(OH)2 = 0.01500 times 0.1200 = 0.001800 mol. Moles of HCl = 0.003600 mol. Volume = 0.003600 / 0.1800 = 0.02000 L = 20.00 mL.",
-      "hints": ["15.00 mL of 0.1200 M Ca(OH)2 contains 0.001800 mol, and each mole needs 2 mol HCl."],
-      "check": { "kind": "numeric", "value": 20, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
-    },
-    {
-      "id": "ch07-titrate-barium",
-      "q": "What volume, in mL, of 0.1500 M Ba(OH)2 reacts with 25.00 mL of 0.2000 M HNO3? 2 HNO3 + Ba(OH)2 -> Ba(NO3)2 + 2 H2O.",
-      "a": "16.67 mL",
-      "why": "Moles of HNO3 = 0.02500 times 0.2000 = 0.005000 mol. Moles of Ba(OH)2 = half of that = 0.002500 mol. Volume = 0.002500 / 0.1500 = 0.01667 L = 16.67 mL.",
-      "hints": ["25.00 mL of 0.2000 M HNO3 contains 0.005000 mol of H+. Each Ba(OH)2 supplies two OH-."],
-      "check": { "kind": "numeric", "value": 16.67, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
-    },
-    {
-      "id": "ch07-titrate-oxalic",
-      "q": "What volume, in mL, of 0.1000 M NaOH reacts with 15.00 mL of 0.08000 M H2C2O4? H2C2O4 + 2 NaOH -> Na2C2O4 + 2 H2O.",
-      "a": "24.00 mL",
-      "why": "Moles of oxalic acid = 0.01500 times 0.08000 = 0.001200 mol. Moles of NaOH = 0.002400 mol. Volume = 0.002400 / 0.1000 = 0.02400 L = 24.00 mL.",
-      "hints": ["15.00 mL of 0.08000 M H2C2O4 contains 0.001200 mol, and oxalic acid donates two H+."],
-      "check": { "kind": "numeric", "value": 24, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
-    },
-    {
       "id": "ch07-grav-chloride",
       "q": "A 0.8500 g chloride sample gives 1.240 g of AgCl. What is the mass percent of Cl in the sample?",
       "a": "36.08 %",
@@ -121,6 +89,22 @@
       "why": "The ratio is 1 to 1. Moles of acid = 0.02450 L times 0.1050 mol/L = 0.002573 mol.",
       "hints": ["A 1-to-1 titration means the acid moles equal 0.02450 L times 0.1050 mol/L of NaOH."],
       "check": { "kind": "numeric", "value": 0.002573, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
+    },
+    {
+      "id": "ch07-titrate-sulfuric",
+      "q": "30.00 mL of H2SO4 is titrated with 24.60 mL of 0.1500 M NaOH. H2SO4 + 2 NaOH -> Na2SO4 + 2 H2O. What is the molarity of the H2SO4?",
+      "a": "0.06150 M",
+      "why": "Moles of NaOH = 0.02460 times 0.1500 = 0.003690 mol. The acid takes half of that, 0.001845 mol. Molarity = 0.001845 / 0.03000 = 0.06150 M.",
+      "hints": ["24.60 mL of 0.1500 M NaOH is 0.003690 mol of base, and sulfuric acid takes two of those moles. Divide the acid moles by 0.03000 L."],
+      "check": { "kind": "numeric", "value": 0.0615, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
+    },
+    {
+      "id": "ch07-grav-chloride-small",
+      "q": "A 1.050 g chloride sample gives 0.6450 g of AgCl. What is the mass percent of Cl in the sample?",
+      "a": "15.19 %",
+      "why": "Moles of AgCl = 0.6450 / 143.318 = 0.004500 mol. Mass of Cl = 0.004500 times 35.45 = 0.1595 g. Percent = (0.1595 / 1.050) times 100 = 15.19%.",
+      "hints": ["0.6450 g of AgCl over 143.318 g/mol is the moles of Cl. Multiply by 35.45 g/mol and compare with the 1.050 g sample."],
+      "check": { "kind": "numeric", "value": 15.19, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
     }
   ]
 }
