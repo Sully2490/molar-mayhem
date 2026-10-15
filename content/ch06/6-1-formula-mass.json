@@ -1,0 +1,126 @@
+{
+  "id": "ch06-formula-mass",
+  "ch": 6,
+  "openstax_section": "OpenStax AF2e §6.1",
+  "guide_line": "Add the atomic masses in a formula, then use that molar mass to move between grams and moles.",
+  "steps": [
+    "6.1 Formula Mass: add the atomic mass of every atom the formula shows. That sum is the formula mass in amu.",
+    "The same number in g/mol is the molar mass. One mole of the substance has that mass in grams.",
+    "Use these OpenStax AF2e atomic masses: H 1.00794, C 12.011, N 14.0067, O 15.9994, Na 22.989769, Mg 24.305, Al 26.981539, P 30.973762, S 32.066, Cl 35.453, K 39.0983, Ca 40.078, Fe 55.845, Cu 63.546, Zn 65.38.",
+    "A mole is 6.022×10^23 particles. Use 6.022e23 when you need a count to 4 significant figures.",
+    "Chain the units. Grams times (1 mol / molar mass in g) gives moles. Moles times the molar mass gives grams. Moles times 6.022e23 gives particles. Multiply by a subscript to count one element."
+  ],
+  "worked_example": {
+    "q": "How many molecules are in 4.500 g of water? H is 1.00794 and O is 15.9994. Use 6.022e23 per mole. Write the count as 1.504e23 molecules.",
+    "steps": [
+      "Molar mass of H2O = 2(1.00794) + 15.9994 = 18.01528 g/mol.",
+      "Moles = 4.500 g × (1 mol / 18.01528 g) = 0.2498 mol.",
+      "Molecules = 0.2498 mol × (6.022e23 / 1 mol) = 1.504e23."
+    ],
+    "answer": "1.504e23 molecules"
+  },
+  "similar_problem": {
+    "q": "How many molecules are in 9.000 g of water? Use H 1.00794, O 15.9994, and 6.022e23 per mole.",
+    "hint": "Divide 9.000 g by the water molar mass, about 18.02 g/mol, then multiply those moles by 6.022e23.",
+    "answer": "3.008e23 molecules"
+  },
+  "sources": ["OpenStax AF2e §6.1"],
+  "problems": [
+    {
+      "id": "ch06-mm-nahco3",
+      "q": "What is the molar mass of NaHCO3? Use Na 22.989769, H 1.00794, C 12.011, and O 15.9994. Give 4 significant figures.",
+      "a": "84.01 g/mol",
+      "why": "NaHCO3 has one Na, one H, one C, and three O. 22.989769 + 1.00794 + 12.011 + 3(15.9994) = 84.0069 g/mol, which rounds to 84.01 g/mol.",
+      "hints": ["Add one sodium, one hydrogen, one carbon, and three oxygens. The three oxygens are the heavy part."],
+      "check": { "kind": "numeric", "value": 84.01, "tolerance": 0.5, "sigFigs": 4, "unit": "g/mol" }
+    },
+    {
+      "id": "ch06-mm-nitrate",
+      "q": "What is the molar mass of Mg(NO3)2? Use Mg 24.305, N 14.0067, and O 15.9994. Give 4 significant figures.",
+      "a": "148.3 g/mol",
+      "why": "Two nitrate groups mean 2 N and 6 O. 24.305 + 2(14.0067) + 6(15.9994) = 148.3148 g/mol, which rounds to 148.3 g/mol.",
+      "hints": ["Count two nitrogens and six oxygens inside the two nitrate groups, then add one magnesium."],
+      "check": { "kind": "numeric", "value": 148.3, "tolerance": 0.5, "sigFigs": 4, "unit": "g/mol" }
+    },
+    {
+      "id": "ch06-mol-co2",
+      "q": "How many moles are in 8.500 g of CO2? C is 12.011 and O is 15.9994. Give 4 significant figures.",
+      "a": "0.1931 mol",
+      "why": "Molar mass = 12.011 + 2(15.9994) = 44.0098 g/mol. Moles = 8.500 g × (1 mol / 44.0098 g) = 0.1931 mol.",
+      "hints": ["Build the CO2 molar mass from one C and two O, then divide 8.500 g by that mass."],
+      "check": { "kind": "numeric", "value": 0.1931, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
+    },
+    {
+      "id": "ch06-g-cacl2",
+      "q": "What is the mass of 0.2500 mol of CaCl2? Ca is 40.078 and Cl is 35.453. Give 4 significant figures.",
+      "a": "27.75 g",
+      "why": "Molar mass = 40.078 + 2(35.453) = 110.984 g/mol. Mass = 0.2500 mol × (110.984 g / 1 mol) = 27.75 g.",
+      "hints": ["The formula has two chlorines. Multiply 0.2500 mol by the full CaCl2 molar mass."],
+      "check": { "kind": "numeric", "value": 27.75, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch06-n-molecules",
+      "q": "How many molecules are in 0.1800 mol of NH3? Use 6.022e23 per mole. Give 4 significant figures.",
+      "a": "1.084e23 molecules",
+      "why": "The moles are already known. 0.1800 mol × (6.022e23 molecules / 1 mol) = 1.084e23 molecules.",
+      "hints": ["0.1800 mol is already moles. Multiply by 6.022e23. Skip the molar mass."],
+      "check": { "kind": "numeric", "value": 1.084e23, "tolerance": 0.5, "sigFigs": 4, "unit": "molecules" }
+    },
+    {
+      "id": "ch06-g-water-count",
+      "q": "What is the mass of 2.500e22 molecules of H2O? H is 1.00794, O is 15.9994, and 1 mol is 6.022e23 molecules. Give 4 significant figures.",
+      "a": "0.7479 g",
+      "why": "Moles = 2.500e22 × (1 mol / 6.022e23) = 0.04151 mol. Molar mass = 18.01528 g/mol. Mass = 0.04151 mol × 18.01528 g/mol = 0.7479 g.",
+      "hints": ["Divide 2.500e22 by 6.022e23 to get moles of water, then multiply by about 18.02 g/mol."],
+      "check": { "kind": "numeric", "value": 0.7479, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch06-o-atoms",
+      "q": "How many oxygen atoms are in 4.200 g of H2SO4? H is 1.00794, S is 32.066, and O is 15.9994. Use 6.022e23. Give 4 significant figures.",
+      "a": "1.032e23 atoms",
+      "why": "Molar mass = 2(1.00794) + 32.066 + 4(15.9994) = 98.07948 g/mol. Moles of acid = 4.200 / 98.07948 = 0.04282 mol. Oxygen atoms = 0.04282 mol × 4 × 6.022e23 = 1.032e23.",
+      "hints": ["H2SO4 has four oxygens. After moles of acid, multiply by 4 and then by 6.022e23."],
+      "check": { "kind": "numeric", "value": 1.032e23, "tolerance": 0.5, "sigFigs": 4, "unit": "atoms" }
+    },
+    {
+      "id": "ch06-mol-cl",
+      "q": "How many moles of Cl are in 5.000 g of CaCl2? Ca is 40.078 and Cl is 35.453. Give 4 significant figures.",
+      "a": "0.09010 mol",
+      "why": "Molar mass = 110.984 g/mol. Moles of CaCl2 = 5.000 g × (1 mol / 110.984 g) = 0.04505 mol. Moles of Cl = 0.04505 mol × 2 = 0.09010 mol.",
+      "hints": ["Change 5.000 g of CaCl2 into moles, then multiply by the subscript 2."],
+      "check": { "kind": "numeric", "value": 0.0901, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
+    },
+    {
+      "id": "ch06-g-carbon",
+      "q": "What mass of carbon is in 10.00 g of C6H12O6? C is 12.011, H is 1.00794, and O is 15.9994. Give 4 significant figures.",
+      "a": "4.000 g",
+      "why": "Molar mass = 6(12.011) + 12(1.00794) + 6(15.9994) = 180.15768 g/mol. Mass of C = 10.00 g × (72.066 g C / 180.15768 g) = 4.000 g.",
+      "hints": ["Six carbons weigh 6 times 12.011 g in one mole of glucose. That fraction of 10.00 g is the carbon mass."],
+      "check": { "kind": "numeric", "value": 4, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch06-al-atoms",
+      "q": "How many atoms are in 3.400 g of Al? Al is 26.981539. Use 6.022e23 per mole. Give 4 significant figures.",
+      "a": "7.588e22 atoms",
+      "why": "Moles = 3.400 g × (1 mol / 26.981539 g) = 0.1260 mol. Atoms = 0.1260 mol × 6.022e23 = 7.588e22.",
+      "hints": ["Divide 3.400 g by 26.981539 g/mol, then multiply by 6.022e23. Aluminum's subscript is 1."],
+      "check": { "kind": "numeric", "value": 7.588e22, "tolerance": 0.5, "sigFigs": 4, "unit": "atoms" }
+    },
+    {
+      "id": "ch06-g-rust",
+      "q": "What is the mass of 1.250 mol of Fe2O3? Fe is 55.845 and O is 15.9994. Give 4 significant figures.",
+      "a": "199.6 g",
+      "why": "Molar mass = 2(55.845) + 3(15.9994) = 159.6882 g/mol. Mass = 1.250 mol × (159.6882 g / 1 mol) = 199.6 g.",
+      "hints": ["Add two irons and three oxygens, then multiply that molar mass by 1.250 mol."],
+      "check": { "kind": "numeric", "value": 199.6, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch06-mol-n-salt",
+      "q": "How many moles of N are in 6.800 g of (NH4)2SO4? N is 14.0067, H is 1.00794, S is 32.066, and O is 15.9994. Give 4 significant figures.",
+      "a": "0.1029 mol",
+      "why": "Molar mass = 2(14.0067) + 8(1.00794) + 32.066 + 4(15.9994) = 132.14052 g/mol. Moles of salt = 6.800 / 132.14052 = 0.05146 mol. Moles of N = 0.05146 × 2 = 0.1029 mol.",
+      "hints": ["(NH4)2SO4 holds two nitrogens. Divide 6.800 g by the molar mass, then multiply by 2."],
+      "check": { "kind": "numeric", "value": 0.1029, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
+    }
+  ]
+}

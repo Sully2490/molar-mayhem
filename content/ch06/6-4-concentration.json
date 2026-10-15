@@ -1,0 +1,127 @@
+{
+  "id": "ch06-concentration",
+  "ch": 6,
+  "openstax_section": "OpenStax AF2e §6.4",
+  "guide_line": "Report concentration as a mass percent, a volume percent, ppm, or ppb, and convert a mass percent to molarity when a density is given.",
+  "steps": [
+    "6.4 Other Units for Solution Concentrations: mass percent = (mass of solute / mass of solution) × 100. The solution mass includes the solute.",
+    "Volume percent = (volume of solute / volume of solution) × 100. Mass/volume percent = (grams of solute / milliliters of solution) × 100.",
+    "ppm = (mass of solute / mass of solution) × 10^6. ppb uses 10^9. Put both masses in the same unit before you multiply.",
+    "A concentrated solution can be cut by mass percent the same way dilution works: percent1 × mass1 = percent2 × mass2.",
+    "With a density, mass percent can become molarity. Pick 100 g of solution, take the solute grams from the percent, change grams to moles, and change the solution mass to liters with the density."
+  ],
+  "worked_example": {
+    "q": "An NaCl solution is 10.00% NaCl by mass and has density 1.074 g/mL. What is the molarity? Na is 22.989769 and Cl is 35.453.",
+    "steps": [
+      "Assume 100.0 g of solution. The salt mass is 10.00 g.",
+      "Moles = 10.00 g / 58.442769 g/mol = 0.1711 mol.",
+      "Volume = 100.0 g / 1.074 g/mL = 93.11 mL = 0.09311 L.",
+      "Molarity = 0.1711 mol / 0.09311 L = 1.838 M."
+    ],
+    "answer": "1.838 M"
+  },
+  "similar_problem": {
+    "q": "An NaCl solution is 5.000% NaCl by mass and has density 1.034 g/mL. What is the molarity? Na is 22.989769 and Cl is 35.453.",
+    "hint": "Start from 100.0 g of the 5.000% solution, so the salt is 5.000 g. Divide 100.0 g by 1.034 g/mL and change mL to L before you divide the moles.",
+    "answer": "0.8846 M"
+  },
+  "sources": ["OpenStax AF2e §6.4"],
+  "problems": [
+    {
+      "id": "ch06-mass-pct",
+      "q": "A solution contains 25.00 g of NaCl in 150.0 g of solution. What is the mass percent of NaCl? Give 4 significant figures.",
+      "a": "16.67 %",
+      "why": "Mass percent = (25.00 g / 150.0 g) × 100 = 16.67%.",
+      "hints": ["The 150.0 g is the whole solution. Divide 25.00 g by 150.0 g and multiply by 100."],
+      "check": { "kind": "numeric", "value": 16.67, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch06-g-from-pct",
+      "q": "How many grams of solute are in 400.0 g of an 8.500% solution by mass? Give 4 significant figures.",
+      "a": "34.00 g",
+      "why": "Mass of solute = 400.0 g × (8.500 / 100) = 34.00 g.",
+      "hints": ["8.500% of 400.0 g is the solute. Multiply 400.0 by 0.08500."],
+      "check": { "kind": "numeric", "value": 34, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch06-mass-dilute",
+      "q": "What mass of a 68.00% stock solution by mass is needed to prepare 250.0 g of a 10.00% solution by mass? Give 4 significant figures.",
+      "a": "36.76 g",
+      "why": "Percent1 × mass1 = percent2 × mass2. Mass1 = (10.00 × 250.0 g) / 68.00 = 36.76 g.",
+      "hints": ["Solute is conserved. 0.6800 times the stock mass equals 0.1000 times 250.0 g."],
+      "check": { "kind": "numeric", "value": 36.76, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch06-vol-pct",
+      "q": "30.00 mL of ethanol is diluted with water to 250.0 mL of solution. What is the volume percent of ethanol? Give 4 significant figures.",
+      "a": "12.00 %",
+      "why": "Volume percent = (30.00 mL / 250.0 mL) × 100 = 12.00%.",
+      "hints": ["Both 30.00 and 250.0 are milliliters. Divide them and multiply by 100. Density is not needed."],
+      "check": { "kind": "numeric", "value": 12, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch06-mv-pct",
+      "q": "5.000 g of solute is dissolved to make 200.0 mL of solution. What is the mass/volume percent? Give 4 significant figures.",
+      "a": "2.500 %",
+      "why": "Mass/volume percent = (5.000 g / 200.0 mL) × 100 = 2.500%.",
+      "hints": ["Divide 5.000 g by 200.0 mL and multiply by 100. This percent mixes grams with milliliters."],
+      "check": { "kind": "numeric", "value": 2.5, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch06-ppm-cu",
+      "q": "A water sample contains 3.250 mg of copper in 500.0 g of water. What is the concentration in ppm? Give 4 significant figures.",
+      "a": "6.500 ppm",
+      "why": "3.250 mg = 0.003250 g. ppm = (0.003250 g / 500.0 g) × 1e6 = 6.500 ppm.",
+      "hints": ["Change 3.250 mg into 0.003250 g, divide by 500.0 g, and multiply by 1e6."],
+      "check": { "kind": "numeric", "value": 6.5, "tolerance": 0.5, "sigFigs": 4, "unit": "ppm" }
+    },
+    {
+      "id": "ch06-ppb-hg",
+      "q": "A water sample contains 4.200 µg of mercury in 250.0 g of water. What is the concentration in ppb? Give 4 significant figures.",
+      "a": "16.80 ppb",
+      "why": "4.200 µg = 4.200e-6 g. ppb = (4.200e-6 g / 250.0 g) × 1e9 = 16.80 ppb.",
+      "hints": ["Change 4.200 µg into 4.200e-6 g, divide by 250.0 g, and multiply by 1e9, not 1e6."],
+      "check": { "kind": "numeric", "value": 16.8, "tolerance": 0.5, "sigFigs": 4, "unit": "ppb" }
+    },
+    {
+      "id": "ch06-ppm-to-m",
+      "q": "An aqueous sample is 25.00 ppm copper by mass and has density 1.000 g/mL. What is the molarity of Cu? Cu is 63.546. Give 4 significant figures.",
+      "a": "3.934e-4 M",
+      "why": "25.00 ppm means 25.00 g Cu in 1e6 g of solution, or 0.02500 g in 1000 g. At 1.000 g/mL, 1000 g is 1.000 L. Moles = 0.02500 / 63.546 = 0.0003934 mol. Molarity = 3.934e-4 M.",
+      "hints": ["25.00 ppm is 25.00 g of copper in 1e6 g of solution. At 1.000 g/mL, 1.000 L holds 0.02500 g Cu."],
+      "check": { "kind": "numeric", "value": 0.0003934, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
+    },
+    {
+      "id": "ch06-hardness",
+      "q": "A water sample has 175.0 mg of CaCO3 per liter. What is the molarity of Ca2+? Ca is 40.078, C is 12.011, and O is 15.9994. Give 4 significant figures.",
+      "a": "0.001748 M",
+      "why": "175.0 mg = 0.1750 g in 1.000 L. Molar mass of CaCO3 = 40.078 + 12.011 + 3(15.9994) = 100.0872 g/mol. Molarity = 0.1750 / 100.0872 = 0.001748 M. One CaCO3 gives one Ca2+.",
+      "hints": ["175.0 mg is 0.1750 g of CaCO3 in 1.000 L. Divide by the CaCO3 molar mass. One formula unit gives one Ca2+."],
+      "check": { "kind": "numeric", "value": 0.001748, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
+    },
+    {
+      "id": "ch06-g-ethanol",
+      "q": "How many grams of ethanol are in 80.00 g of a 12.00% ethanol solution by mass? Give 4 significant figures.",
+      "a": "9.600 g",
+      "why": "Mass = 80.00 g × (12.00 / 100) = 9.600 g.",
+      "hints": ["Multiply 80.00 g by 0.1200. No density is given, and you do not need one."],
+      "check": { "kind": "numeric", "value": 9.6, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch06-ppm-soil",
+      "q": "A soil sample contains 8.400 mg of lead in 2.000 kg of soil. What is the lead concentration in ppm? Give 4 significant figures.",
+      "a": "4.200 ppm",
+      "why": "8.400 mg = 0.008400 g and 2.000 kg = 2000 g. ppm = (0.008400 / 2000) × 1e6 = 4.200 ppm.",
+      "hints": ["2.000 kg is 2000 g and 8.400 mg is 0.008400 g. Divide, then multiply by 1e6."],
+      "check": { "kind": "numeric", "value": 4.2, "tolerance": 0.5, "sigFigs": 4, "unit": "ppm" }
+    },
+    {
+      "id": "ch06-sugar-pct",
+      "q": "18.00 g of sugar is dissolved in 142.0 g of water. What is the mass percent of sugar? Give 4 significant figures.",
+      "a": "11.25 %",
+      "why": "Solution mass = 18.00 g + 142.0 g = 160.0 g. Mass percent = (18.00 / 160.0) × 100 = 11.25%.",
+      "hints": ["Add 18.00 g of sugar to 142.0 g of water first. Divide 18.00 g by 160.0 g, not by 142.0 g."],
+      "check": { "kind": "numeric", "value": 11.25, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    }
+  ]
+}

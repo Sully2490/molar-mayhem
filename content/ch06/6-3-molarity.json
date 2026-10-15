@@ -1,0 +1,127 @@
+{
+  "id": "ch06-molarity",
+  "ch": 6,
+  "openstax_section": "OpenStax AF2e §6.3",
+  "guide_line": "Find molarity from moles and liters, and use M1V1 = M2V2 when you dilute.",
+  "steps": [
+    "6.3 Molarity: molarity is moles of solute divided by liters of solution. The unit M means mol/L.",
+    "To start from a solid, change grams to moles with the molar mass, change milliliters to liters, then divide.",
+    "To find a mass to weigh, multiply liters by molarity to get moles, then multiply by the molar mass.",
+    "Dilution adds solvent. The moles of solute stay the same, so M1 × V1 = M2 × V2. Use the same volume unit on both sides.",
+    "Round the final number to 4 significant figures. Use the OpenStax AF2e atomic masses when a problem needs a molar mass."
+  ],
+  "worked_example": {
+    "q": "What is the molarity when 12.50 g of NaCl is dissolved and diluted to 250.0 mL? Na is 22.989769 and Cl is 35.453.",
+    "steps": [
+      "Molar mass of NaCl = 22.989769 + 35.453 = 58.442769 g/mol.",
+      "Moles = 12.50 g × (1 mol / 58.442769 g) = 0.2139 mol.",
+      "250.0 mL = 0.2500 L.",
+      "Molarity = 0.2139 mol / 0.2500 L = 0.8555 M."
+    ],
+    "answer": "0.8555 M"
+  },
+  "similar_problem": {
+    "q": "What is the molarity when 6.250 g of NaCl is dissolved and diluted to 500.0 mL? Na is 22.989769 and Cl is 35.453.",
+    "hint": "Change 6.250 g of NaCl into moles with the molar mass near 58.44 g/mol, and divide by 0.5000 L, not by 500.0.",
+    "answer": "0.2139 M"
+  },
+  "sources": ["OpenStax AF2e §6.3"],
+  "problems": [
+    {
+      "id": "ch06-m-from-mol",
+      "q": "What is the molarity of a solution that contains 0.3550 mol of solute in 0.5000 L? Give 4 significant figures.",
+      "a": "0.7100 M",
+      "why": "Molarity = 0.3550 mol / 0.5000 L = 0.7100 M. No molar mass is needed.",
+      "hints": ["Divide 0.3550 mol by 0.5000 L. You do not need a molar mass."],
+      "check": { "kind": "numeric", "value": 0.71, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
+    },
+    {
+      "id": "ch06-g-koh",
+      "q": "What mass of KOH is needed to prepare 0.5000 L of 0.2000 M KOH? K is 39.0983, O is 15.9994, and H is 1.00794. Give 4 significant figures.",
+      "a": "5.611 g",
+      "why": "Moles = 0.5000 L × 0.2000 mol/L = 0.1000 mol. Molar mass = 39.0983 + 15.9994 + 1.00794 = 56.10564 g/mol. Mass = 0.1000 mol × 56.10564 g/mol = 5.611 g.",
+      "hints": ["Multiply 0.5000 L by 0.2000 mol/L, then multiply those moles by the KOH molar mass."],
+      "check": { "kind": "numeric", "value": 5.611, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch06-mol-acid",
+      "q": "How many moles of H2SO4 are in 75.00 mL of 0.1800 M H2SO4? Give 4 significant figures.",
+      "a": "0.01350 mol",
+      "why": "75.00 mL = 0.07500 L. Moles = 0.1800 mol/L × 0.07500 L = 0.01350 mol.",
+      "hints": ["Write 75.00 mL as 0.07500 L, then multiply by 0.1800 mol/L."],
+      "check": { "kind": "numeric", "value": 0.0135, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
+    },
+    {
+      "id": "ch06-ml-nacl",
+      "q": "What volume of 0.2500 M NaCl contains 3.000 g of NaCl? Na is 22.989769 and Cl is 35.453. Answer in mL to 4 significant figures.",
+      "a": "205.3 mL",
+      "why": "Molar mass = 58.442769 g/mol. Moles = 3.000 / 58.442769 = 0.05133 mol. Volume = 0.05133 mol / 0.2500 mol/L = 0.2053 L = 205.3 mL.",
+      "hints": ["Change 3.000 g NaCl into moles, divide by 0.2500 mol/L, and convert that volume to mL."],
+      "check": { "kind": "numeric", "value": 205.3, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
+    },
+    {
+      "id": "ch06-dilute-v1",
+      "q": "What volume of 12.00 M HCl is needed to prepare 500.0 mL of 0.2500 M HCl? Answer in mL to 4 significant figures.",
+      "a": "10.42 mL",
+      "why": "M1V1 = M2V2. V1 = (0.2500 M × 500.0 mL) / 12.00 M = 10.42 mL.",
+      "hints": ["V1 equals 0.2500 M times 500.0 mL, divided by 12.00 M. Leave the volume in mL."],
+      "check": { "kind": "numeric", "value": 10.42, "tolerance": 0.5, "sigFigs": 4, "unit": "mL" }
+    },
+    {
+      "id": "ch06-dilute-m2",
+      "q": "25.00 mL of 1.800 M solution is diluted to 100.0 mL. What is the new molarity? Give 4 significant figures.",
+      "a": "0.4500 M",
+      "why": "M2 = (1.800 M × 25.00 mL) / 100.0 mL = 0.4500 M. The moles of solute do not change.",
+      "hints": ["Moles of solute stay the same. Multiply 1.800 M by 25.00 mL and divide by 100.0 mL."],
+      "check": { "kind": "numeric", "value": 0.45, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
+    },
+    {
+      "id": "ch06-g-glucose",
+      "q": "What mass of C6H12O6 is in 0.2500 L of 0.1500 M solution? C is 12.011, H is 1.00794, and O is 15.9994. Give 4 significant figures.",
+      "a": "6.756 g",
+      "why": "Moles = 0.2500 L × 0.1500 mol/L = 0.03750 mol. Molar mass = 6(12.011) + 12(1.00794) + 6(15.9994) = 180.15768 g/mol. Mass = 0.03750 × 180.15768 = 6.756 g.",
+      "hints": ["Moles are 0.2500 L times 0.1500 mol/L. Multiply by the glucose molar mass, near 180.2 g/mol."],
+      "check": { "kind": "numeric", "value": 6.756, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch06-m-kno3",
+      "q": "What is the molarity of 2.450 g of KNO3 dissolved to 100.0 mL? K is 39.0983, N is 14.0067, and O is 15.9994. Give 4 significant figures.",
+      "a": "0.2423 M",
+      "why": "Molar mass = 39.0983 + 14.0067 + 3(15.9994) = 101.1032 g/mol. Moles = 2.450 / 101.1032 = 0.02423 mol. 100.0 mL = 0.1000 L. Molarity = 0.02423 / 0.1000 = 0.2423 M.",
+      "hints": ["Convert 2.450 g to moles and 100.0 mL to 0.1000 L, then divide moles by liters."],
+      "check": { "kind": "numeric", "value": 0.2423, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
+    },
+    {
+      "id": "ch06-l-cacl2",
+      "q": "What volume of 0.4000 M CaCl2 contains 0.08000 mol of CaCl2? Answer in L to 4 significant figures.",
+      "a": "0.2000 L",
+      "why": "Volume = 0.08000 mol / 0.4000 mol/L = 0.2000 L.",
+      "hints": ["Divide 0.08000 mol by 0.4000 mol/L. The formula mass of CaCl2 is not used."],
+      "check": { "kind": "numeric", "value": 0.2, "tolerance": 0.5, "sigFigs": 4, "unit": "L" }
+    },
+    {
+      "id": "ch06-dilute-acid",
+      "q": "15.00 mL of 6.000 M acid is diluted to a final volume of 250.0 mL. What is the new molarity? Give 4 significant figures.",
+      "a": "0.3600 M",
+      "why": "M2 = (6.000 M × 15.00 mL) / 250.0 mL = 0.3600 M. Do not add 15.00 mL to 250.0 mL.",
+      "hints": ["The final volume is 250.0 mL, not 265.0 mL. M2 is 6.000 times 15.00, divided by 250.0."],
+      "check": { "kind": "numeric", "value": 0.36, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
+    },
+    {
+      "id": "ch06-g-naoh",
+      "q": "What mass of NaOH is dissolved in 2.000 L of 0.1250 M NaOH? Na is 22.989769, O is 15.9994, and H is 1.00794. Give 4 significant figures.",
+      "a": "9.999 g",
+      "why": "Moles = 2.000 L × 0.1250 mol/L = 0.2500 mol. Molar mass = 22.989769 + 15.9994 + 1.00794 = 39.99711 g/mol. Mass = 0.2500 × 39.99711 = 9.999 g.",
+      "hints": ["Moles are 2.000 L times 0.1250 mol/L. Multiply by the NaOH molar mass, near 40.00 g/mol."],
+      "check": { "kind": "numeric", "value": 9.999, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch06-dilute-ml-to-l",
+      "q": "40.00 mL of 2.500 M NaCl is diluted to 0.5000 L. What is the new molarity? Give 4 significant figures.",
+      "a": "0.2000 M",
+      "why": "40.00 mL = 0.04000 L. M2 = (2.500 M × 0.04000 L) / 0.5000 L = 0.2000 M.",
+      "hints": ["Write 40.00 mL as 0.04000 L so it matches 0.5000 L. Then M2 is 2.500 times 0.04000, divided by 0.5000."],
+      "check": { "kind": "numeric", "value": 0.2, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
+    }
+  ]
+}
