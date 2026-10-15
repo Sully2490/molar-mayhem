@@ -731,7 +731,7 @@
       "mistakes": [
         {
           "id": "skip-moles",
-          "describe": "You went straight from grams to grams. Convert to moles first.",
+          "describe": "The mistake is skipping the mL to L conversion.",
           "wrong": "16.46 atm",
           "value": 16.461236,
           "unit": "atm"

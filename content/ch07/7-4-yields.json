@@ -38,7 +38,7 @@
       "id": "ch07-limit-hydrogen",
       "q": "20.00 g of N2 is mixed with 4.000 g of H2. N2 + 3 H2 -> 2 NH3. Which reactant is limiting? Write its formula.",
       "a": "H2",
-      "why": "Moles of N2 = 20.00 / 28.014 = 0.7143 mol, which needs 2.143 mol of H2. Moles of H2 on hand = 4.000 / 2.016 = 1.984 mol. H2 runs out first.",
+      "why": "Moles of N2 = 20.00 / 28.014 = 0.7139 mol, which needs 2.142 mol of H2. Moles of H2 on hand = 4.000 / 2.016 = 1.984 mol. H2 runs out first.",
       "hints": ["20.00 g of N2 needs three times its moles in H2. H2 is only 2.016 g/mol, so convert 4.000 g and compare."],
       "check": { "kind": "exact", "text": "H2", "case": "sensitive" },
       "guided": [

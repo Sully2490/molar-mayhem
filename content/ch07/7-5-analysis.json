@@ -127,7 +127,7 @@
       "mistakes": [
         {
           "id": "skip-moles",
-          "describe": "You went straight from grams to grams. Convert to moles first.",
+          "describe": "The mistake is skipping the mL to L conversion.",
           "wrong": "51.70 %",
           "value": 51.7,
           "unit": "%"

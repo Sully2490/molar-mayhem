@@ -50,6 +50,11 @@ function guidedProblems() {
   return problems;
 }
 
+test('guided-problem count stays at or above 60', () => {
+  const count = guidedProblems().length;
+  assert.ok(count >= 60, `guided-problem count dropped to ${count}`);
+});
+
 test('guided problems cover the chapter counts', () => {
   const problems = guidedProblems();
   const count = (ch) => problems.filter((item) => item.ch === ch).length;
@@ -309,10 +314,14 @@ const MAIN_LESSON_HASHES = {
   'content/ch07/7-1-balancing.json': '9359e2096a912cec2ed39cf625cfeab679499b66c6aac08a54fb87f0e4907e52',
   'content/ch07/7-2-classifying.json': '5df23d01ad75b0a0f5a1deba191db4f61e95b0cd8290325bdd27b9109f70c32c',
   'content/ch07/7-3-stoichiometry.json': 'e04ac5e74f5ff9a7f8c2f6b3bd627479078f0e884d82194dd3ff5dbc5986cb97',
-  'content/ch07/7-4-yields.json': '53ce9b009fbd5b3ceacd0615d430d096ab5aa77a398e3ccaf4cf6c7edd4ff591',
+  // Intentional change from main: ch07-limit-hydrogen explains
+  // "20.00 / 28.014 = 0.7139 mol, which needs 2.142 mol of H2."
+  'content/ch07/7-4-yields.json': '8704f001534a18062191f6eb00cbd35f0a5f0b4ef9dc335462523768843bb91a',
+  // mL-to-L note is inside mistakes, so this lesson hash stays the same.
   'content/ch07/7-5-analysis.json': '5352245ba29f87c0c16614ff7e87620000333d8c8f8319faba7ffd531a70364f',
   'content/ch07/cards.json': 'b681c96550bd16376c9c11fdb1be943c38bf9d719699ad435ba71d29b878a22c',
   'content/ch08/8.1-pressure.json': '987c09b57fbc4be5b5ea89f6a0a98bdb49265238bad50ecac93e05a6009e4aa6',
+  // AgCl and He mL-to-L notes live in mistakes, so these lesson hashes stay put.
   'content/ch08/8.2-ideal-gas.json': '9fd704a5bf78b23cb57a13186f773216d43cac828c5fd4d27a79e3e7d4fb9118',
   'content/ch08/8.3-mixtures.json': '92e67bcb1719184db633437517c61b3d2dcda3448d55f7406e0323f30fcf1a04',
   'content/ch08/8.4-effusion.json': 'f102db3dc84f80f0a1491a553a6fdf80b5af6381c9a654c1873c55ed3318a750',
@@ -339,6 +348,17 @@ test('section 7.4 guided steps show 0.7139 mol N2 and 2.142 mol H2 needed', () =
   assert.equal(needed.expected, '2.142 mol');
   assert.equal(needed.check.value, 2.142);
   assert.equal(grade(needed.answer, needed.check).ok, true);
+  assert.match(problem.why, /20\.00 \/ 28\.014 = 0\.7139 mol, which needs 2\.142 mol of H2/);
+});
+
+test('AgCl and helium notes say the mistake is skipping the mL to L conversion', () => {
+  const analysis = JSON.parse(readFileSync(new URL('../content/ch07/7-5-analysis.json', import.meta.url), 'utf8'));
+  const gas = JSON.parse(readFileSync(new URL('../content/ch08/8.2-ideal-gas.json', import.meta.url), 'utf8'));
+  const chloride = analysis.problems.find((item) => item.id === 'ch07-grav-chloride');
+  const helium = gas.problems.find((item) => item.id === '8.2-16');
+  for (const problem of [chloride, helium]) {
+    assert.equal(problem.mistakes[0].describe, 'The mistake is skipping the mL to L conversion.');
+  }
 });
 
 function stepHtml(check) {
@@ -378,7 +398,7 @@ test('chapter 5, 7, 8, and 9 keep every existing answer, check, and value', () =
       delete problem.mistakes;
     }
     const hash = createHash('sha256').update(JSON.stringify(lesson)).digest('hex');
-    assert.equal(hash, expected, `${rel} changed more than guided and mistakes since main e57d6a9`);
+    assert.equal(hash, expected, `${rel} changed more than guided and mistakes since main e57d6a9, apart from the noted 0.7139 mol N2 explanation`);
   }
 });
 
