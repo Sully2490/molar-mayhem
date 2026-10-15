@@ -1,5 +1,6 @@
+import { bindLearn, loadLessons, renderLearn } from './learn.js';
 import { bindPrep, loadFinalProblems, renderPrepPage } from './prep.js';
-import { renderRoute, routeFromHash, routeTitle } from './routes.js';
+import { lessonIdFromHash, renderRoute, routeFromHash, routeTitle } from './routes.js';
 import { renderTable } from './periodic.js';
 
 const view = document.querySelector('#view');
@@ -12,22 +13,34 @@ const closeButton = document.querySelector('#close-tray');
 let trendId = 'radius';
 let selectedZ = null;
 let lastFocus = null;
+let paintGeneration = 0;
 
-function paintRoute() {
+async function paintRoute() {
+  const generation = ++paintGeneration;
   const id = routeFromHash(location.hash);
-  view.innerHTML = renderRoute(id);
-  if (id === 'Prep') {
+  if (id === 'Learn') {
+    const lessons = await loadLessons();
+    if (generation !== paintGeneration) return;
+    view.innerHTML = renderLearn(lessons, lessonIdFromHash(location.hash));
+    bindLearn(view, lessons);
+  } else if (id === 'Prep') {
+    if (generation !== paintGeneration) return;
+    view.innerHTML = renderRoute(id);
     bindPrep(view);
     loadFinalProblems()
       .then((problems) => {
-        if (routeFromHash(location.hash) !== 'Prep') return;
+        if (generation !== paintGeneration || routeFromHash(location.hash) !== 'Prep') return;
         view.innerHTML = renderPrepPage(problems);
+        bindPrep(view);
       })
       .catch((error) => {
-        if (routeFromHash(location.hash) !== 'Prep') return;
+        if (generation !== paintGeneration || routeFromHash(location.hash) !== 'Prep') return;
         view.innerHTML = renderPrepPage([], error.message);
       });
+  } else {
+    view.innerHTML = renderRoute(id);
   }
+  if (generation !== paintGeneration) return;
   document.title = id === 'Home' ? 'Molar Mayhem' : `${routeTitle(id)} — Molar Mayhem`;
   for (const link of navLinks) {
     if (link.getAttribute('data-nav') === id) link.setAttribute('aria-current', 'page');

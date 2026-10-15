@@ -4,7 +4,7 @@ _Last updated: 2026-10-15. This branch adds the exam-prep screen. Questions stay
 
 ## State
 - Features passing: F00, F03. See `feature_list.json`.
-- Static site loads from `index.html` with no build step. `#Prep` is an untimed practice final that loads chapter-schema problems from `content/final/practice-final.json`. This screen does not contain the questions. `#Map`, `#Learn`, `#Drill`, and `#Cards` are still placeholders. The periodic-table tray colors atomic radius, ionization energy, and electronegativity.
+- Static site loads from `index.html` with no build step. `#Learn` loads each lesson in `content/chNN/`. `#Prep` is an untimed practice final that loads chapter-schema problems from `content/final/practice-final.json`. This screen does not contain the questions. `#Map`, `#Drill`, and `#Cards` show placeholders. The periodic-table tray colors atomic radius, ionization energy, and electronegativity.
 - `content/final/practice-final.json` may be a list of problem objects, a list of file names in that folder, `{ "files": [...] }`, or `{ "problems": [...] }`. A named file may be one problem or `{ "problems": [...] }`. Each problem uses `id`, `q`, `a`, `why`, `hints`, and `check`. P1 stays `passing: false` because GF, I1, and I3 are still open.
 - `npm test` and `npm run check:content` run locally. GitHub Actions runs `npm test`.
 - `check:content` walks `content/` including chapter folders, checks each lesson against the lesson schema, and skips the coverage manifest when `MM_SOURCES` is unset. `schema.json` and `coverage.json` are parsed only. The manifest mapping itself is F01.
@@ -17,7 +17,7 @@ Chapters are built in parallel. Each chapter pull request may add only `content/
 
 F01 and F02 stay on hold.
 
-The first chapter with answer boxes must give every input a visible label and put feedback in an aria-live region.
+Practice on `#Learn` uses a visible "Your answer" label and an `aria-live="polite"` region. A miss shows a hint. The third miss shows the solution and disables the box.
 
 ## Blockers
-- F01 and F02 are on hold. This branch does not add a chapter.
+- F01 and F02 are on hold. This branch does not add chapter content.

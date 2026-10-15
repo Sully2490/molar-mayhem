@@ -32,9 +32,9 @@ const ROUTES = {
   Learn: {
     title: 'Learn',
     body: `
-      <p class="kicker">Coming soon</p>
+      <p class="kicker">Chapters 1–9</p>
       <h1>Learn</h1>
-      <p>Lessons are not here yet. Each one will teach a topic from scratch, then show a worked example and a similar problem.</p>
+      <p>Lessons load from the chapter folders.</p>
     `,
   },
   Drill: {
@@ -68,10 +68,18 @@ const ROUTES = {
 };
 
 export function routeFromHash(hash) {
-  const raw = String(hash ?? '').replace(/^#/, '').trim().split(/[/?]/)[0];
+  const raw = String(hash ?? '').replace(/^#/, '').trim();
   if (!raw) return 'Home';
-  const match = ROUTE_IDS.find((id) => id.toLowerCase() === raw.toLowerCase());
+  const head = raw.split(/[/?]/)[0];
+  const match = ROUTE_IDS.find((id) => id.toLowerCase() === head.toLowerCase());
   return match ?? 'Home';
+}
+
+export function lessonIdFromHash(hash) {
+  const raw = String(hash ?? '').replace(/^#/, '').trim();
+  const parts = raw.split('/');
+  if (parts[0]?.toLowerCase() !== 'learn') return '';
+  return decodeURIComponent(parts[1] ?? '');
 }
 
 export function routeTitle(id) {
