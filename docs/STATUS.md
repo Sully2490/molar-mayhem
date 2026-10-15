@@ -1,6 +1,6 @@
 # STATUS
 
-_Last updated: 2026-10-15. F00 is on main. This branch is the F03 grader after review._
+_Last updated: 2026-10-15. This branch records the sync and Lab rules in `docs/PARITY.md`._
 
 ## State
 - Features passing: F00, F03. See `feature_list.json`.
@@ -9,6 +9,7 @@ _Last updated: 2026-10-15. F00 is on main. This branch is the F03 grader after r
 - `check:content` parses any `content/*.json` files and skips the coverage manifest when `MM_SOURCES` is unset. The manifest mapping itself is F01.
 - Course source material and the coverage manifest stay outside the repo, at the path set in `MM_SOURCES`.
 - Numeric tolerance is a relative percent (default 0.5%). A sig-fig mismatch returns a hint and still counts. Exact checks fold Unicode subscripts and superscripts into ASCII digits, collapse whitespace, follow a case rule, and accept any listed answer. An unordered set can mark near-miss items. A config check expands [He] through [Rn] and matches orbitals in any order.
+- `docs/PARITY.md` is the feature map. Sync is a manual export/import code in `localStorage` only: no accounts, logins, or backend. Every Lab tool needs a text description in an `aria-live` or `aria-describedby` region, full keyboard control, a static frame under `prefers-reduced-motion`, and touch on phone widths.
 
 ## Priorities
 The grader review fixes land before chapter content. After that:
