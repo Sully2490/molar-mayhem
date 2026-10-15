@@ -1,0 +1,230 @@
+{
+  "id": "ch04-formal-charge-resonance",
+  "ch": 4,
+  "openstax_section": "OpenStax AF2e §4.5",
+  "guide_line": "Formal charge equals valence electrons minus lone electrons minus half the bonding electrons. Prefer the structure whose formal charges are closest to zero.",
+  "steps": [
+    "Formal charge is a bookkeeping count. It is not the real charge on the atom.",
+    "For one atom, formal charge = valence electrons − electrons in lone pairs − half the electrons in bonds. Bonds can be counted as sticks: valence − dots − sticks.",
+    "The formal charges in a structure add up to the charge of the molecule or ion.",
+    "The better Lewis structure has formal charges as close to zero as possible. If a negative formal charge is required, put it on the more electronegative atom.",
+    "Resonance means two or more valid Lewis structures with the same atoms in the same places and different electron placements. The real ion is the average, called the resonance hybrid, not a flip between the drawings."
+  ],
+  "worked_example": {
+    "q": "What is the formal charge on carbon in CO2? Carbon has two double bonds and no lone pair.",
+    "steps": [
+      "Carbon has 4 valence electrons.",
+      "It has 0 lone-pair electrons.",
+      "Four bonds mean 8 bonding electrons, and half of those is 4.",
+      "Formal charge = 4 − 0 − 4 = 0."
+    ],
+    "answer": "0"
+  },
+  "similar_problem": {
+    "q": "What is the formal charge on nitrogen in NH4+? Nitrogen has four bonds and no lone pair. Write the sign.",
+    "hint": "Nitrogen has 5 valence electrons and no lone pair. Subtract one for each of the four bonds: 5 − 4.",
+    "answer": "+1"
+  },
+  "sources": ["OpenStax AF2e §4.5"],
+  "problems": [
+    {
+      "id": "ch04-45-01",
+      "q": "What is the formal charge on nitrogen in NH4+? Nitrogen has four bonds and no lone pair. Write the sign.",
+      "a": "+1",
+      "why": "Nitrogen has 5 valence electrons, 0 lone-pair electrons, and 4 bonds. Formal charge = 5 − 0 − 4 = +1. The ion’s charge is +1, and each hydrogen is 0.",
+      "hints": ["Nitrogen has 5 valence electrons and no lone pair. Subtract one for each of the four bonds: 5 − 4."],
+      "check": {
+        "kind": "exact",
+        "text": "+1",
+        "answers": ["1+"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-45-02",
+      "q": "What is the formal charge on carbon in CO2? Carbon has two double bonds and no lone pair.",
+      "a": "0",
+      "why": "Carbon has 4 valence electrons and 4 bonds, with no lone pair. Formal charge = 4 − 0 − 4 = 0.",
+      "hints": ["Carbon’s valence count is 4, and the two double bonds are 4 sticks. Subtract those sticks from 4."],
+      "check": {
+        "kind": "exact",
+        "text": "0",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-45-03",
+      "q": "In one resonance form of CO3 2−, a single-bonded oxygen has three lone pairs and one bond. What is that oxygen’s formal charge? Write the sign.",
+      "a": "-1",
+      "why": "Oxygen has 6 valence electrons. Three lone pairs are 6 electrons, and one bond counts as 1. Formal charge = 6 − 6 − 1 = −1.",
+      "hints": ["That oxygen owns 6 electrons from its three lone pairs, plus half of the one bond. Start from oxygen’s 6 valence electrons."],
+      "check": {
+        "kind": "exact",
+        "text": "-1",
+        "answers": ["1-"],
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-45-04",
+      "q": "In CO3 2−, carbon has four bonds and no lone pair. What is the formal charge on carbon?",
+      "a": "0",
+      "why": "Carbon has 4 valence electrons and 4 bonds. Formal charge = 4 − 0 − 4 = 0.",
+      "hints": ["Use carbon’s valence count of 4. Four bonds and no lone pair leave a formal charge of zero on carbon in carbonate."],
+      "check": {
+        "kind": "exact",
+        "text": "0",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-45-05",
+      "q": "How many resonance forms does CO3 2− have?",
+      "a": "3",
+      "why": "The double bond can be drawn to any of the three oxygen atoms. Those three placements are the resonance forms. The real ion averages them.",
+      "hints": ["The double bond in carbonate can sit on any oxygen. Count the different oxygen atoms that can hold it."],
+      "check": {
+        "kind": "numeric",
+        "value": 3,
+        "tolerance": 0,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-45-06",
+      "q": "How many resonance forms does NO3− have?",
+      "a": "3",
+      "why": "Nitrate has one double bond and two single bonds. The double bond can be placed on any of the three oxygens, so there are 3 resonance forms.",
+      "hints": ["Nitrate’s skeleton matches carbonate: one N–O link is double and the other two are single. Move that double bond around the three oxygens."],
+      "check": {
+        "kind": "numeric",
+        "value": 3,
+        "tolerance": 0,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-45-07",
+      "q": "How many resonance forms does O3 have?",
+      "a": "2",
+      "why": "Ozone has one double bond and one single bond. The double bond can be on the left or on the right, so O3 has 2 resonance forms.",
+      "hints": ["Ozone has two end oxygens. The double bond can be drawn to either end, and those are the only two placements."],
+      "check": {
+        "kind": "numeric",
+        "value": 2,
+        "tolerance": 0,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-45-08",
+      "q": "In the resonance hybrid of NO3−, are all three N–O bonds the same length? Answer yes or no.",
+      "a": "yes",
+      "why": "The three resonance forms are equivalent, so the double-bond character is shared equally. All three N–O bonds in nitrate are the same length.",
+      "hints": ["The three drawings of nitrate are equivalent. The real ion does not keep one short bond and two long bonds."],
+      "check": {
+        "kind": "exact",
+        "text": "yes",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-45-09",
+      "q": "What is the formal charge on oxygen in H2O? Oxygen has two bonds and two lone pairs.",
+      "a": "0",
+      "why": "Oxygen has 6 valence electrons, 4 electrons in lone pairs, and 2 bonds. Formal charge = 6 − 4 − 2 = 0.",
+      "hints": ["Two lone pairs are 4 electrons. Subtract those and the two O–H sticks from oxygen’s 6 valence electrons."],
+      "check": {
+        "kind": "exact",
+        "text": "0",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-45-10",
+      "q": "Which CO2 Lewis structure is better: two double bonds, or one triple bond and one single bond? Answer two double bonds or triple and single.",
+      "a": "two double bonds",
+      "why": "Two double bonds give every atom a formal charge of 0. A triple bond plus a single bond leaves nonzero formal charges. The better structure is two double bonds.",
+      "hints": ["Compute the formal charges both ways. Keep the drawing in which every atom is zero."],
+      "check": {
+        "kind": "exact",
+        "text": "two double bonds",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-45-11",
+      "q": "In the better Lewis structure of OCN−, which atom has the formal charge of −1? Write the element symbol.",
+      "a": "O",
+      "why": "The form −O–C≡N has formal charges −1, 0, and 0. The form O=C=N− puts −1 on nitrogen. Both have small charges, and the negative charge belongs on oxygen, the more electronegative end. The atom is O.",
+      "hints": ["Two drawings of OCN− have small formal charges. Put the negative formal charge on the more electronegative end atom."],
+      "check": {
+        "kind": "exact",
+        "text": "O",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-45-12",
+      "q": "In one resonance form of CO3 2−, the double-bonded oxygen has two lone pairs and two bonds. What is that oxygen’s formal charge?",
+      "a": "0",
+      "why": "That oxygen has 6 valence electrons, 4 lone-pair electrons, and 2 bonds. Formal charge = 6 − 4 − 2 = 0.",
+      "hints": ["This oxygen is the one with the double bond, so it has two lone pairs, not three. Subtract 4 lone electrons and 2 sticks from 6."],
+      "check": {
+        "kind": "exact",
+        "text": "0",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-45-13",
+      "q": "How many resonance forms does SO2 have if one S–O link is double and the other is single?",
+      "a": "2",
+      "why": "The double bond can be drawn to either oxygen. SO2 has 2 resonance forms, and the real bonds are equal.",
+      "hints": ["SO2 has two oxygens that can trade the double bond. That swap gives the second form."],
+      "check": {
+        "kind": "numeric",
+        "value": 2,
+        "tolerance": 0,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-45-14",
+      "q": "In the resonance hybrid of O3, are the two O–O bonds the same length? Answer yes or no.",
+      "a": "yes",
+      "why": "The two resonance forms swap which O–O link is double. The hybrid averages them, so the two bonds are the same length. The answer is yes.",
+      "hints": ["The two forms trade which bond is double. The hybrid averages those drawings, so the lengths match."],
+      "check": {
+        "kind": "exact",
+        "text": "yes",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-45-15",
+      "q": "When two Lewis structures are otherwise equal, should a negative formal charge sit on the more electronegative atom or the less electronegative atom? Answer more or less.",
+      "a": "more",
+      "why": "A negative formal charge means extra electron density. That charge is more stable on the atom that already pulls electrons harder. The answer is more.",
+      "hints": ["Extra electron density belongs on the atom that pulls harder. Choose more or less from that idea."],
+      "check": {
+        "kind": "exact",
+        "text": "more",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-45-16",
+      "q": "In NO3−, nitrogen has four bonds and no lone pair. What is the formal charge on nitrogen? Write the sign.",
+      "a": "+1",
+      "why": "Nitrogen has 5 valence electrons, 0 lone electrons, and 4 bonds. Formal charge = 5 − 0 − 4 = +1.",
+      "hints": ["Nitrate’s nitrogen is drawn with four bonds and no lone pair. Start from 5 valence electrons and subtract one per bond."],
+      "check": {
+        "kind": "exact",
+        "text": "+1",
+        "answers": ["1+"],
+        "case": "insensitive"
+      }
+    }
+  ]
+}

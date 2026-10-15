@@ -1,0 +1,410 @@
+{
+  "id": "ch04-covalent-bonding",
+  "ch": 4,
+  "openstax_section": "OpenStax AF2e §4.2",
+  "guide_line": "Two nonmetals share electrons. A metal with a nonmetal, or with a polyatomic ion, makes an ionic compound.",
+  "steps": [
+    "A covalent bond is a shared pair of electrons. It forms when both atoms are nonmetals.",
+    "If the two atoms are the same, they share equally. That bond is nonpolar covalent, and the electronegativity difference is 0.",
+    "Electronegativity is how hard an atom pulls on bonding electrons. It rises toward fluorine. The atom with the higher value gets the partial negative charge, written δ−.",
+    "A small difference means a polar covalent bond. A rough guide is under 0.4 for nonpolar, about 0.4 to 1.8 for polar covalent, and above about 1.8 for ionic. Atom type wins when the guide disagrees: HF is still covalent, and a metal plus a nonmetal is ionic.",
+    "Use these Pauling values, to one decimal: H 2.1, C 2.5, N 3.0, O 3.5, F 4.0, Na 0.9, Mg 1.2, Si 1.8, P 2.1, S 2.5, Cl 3.0, K 0.8, Ca 1.0.",
+    "Atoms inside a polyatomic ion, such as nitrate, are covalent. That ion then forms an ionic compound with a metal ion. Mg(NO3)2 is ionic overall."
+  ],
+  "worked_example": {
+    "q": "Classify the H–Cl bond, and name the atom that carries δ−. H is 2.1 and Cl is 3.0.",
+    "steps": [
+      "Hydrogen and chlorine are both nonmetals, so the bond is covalent.",
+      "ΔEN = 3.0 − 2.1 = 0.9, so the share is unequal.",
+      "Chlorine has the higher electronegativity, so chlorine is δ−.",
+      "The bond is polar covalent."
+    ],
+    "answer": "polar covalent"
+  },
+  "similar_problem": {
+    "q": "Is N2 ionic or covalent?",
+    "hint": "Both atoms in N2 are nitrogen. Identical nonmetals share electrons instead of forming ions.",
+    "answer": "covalent"
+  },
+  "sources": ["OpenStax AF2e §4.2"],
+  "problems": [
+    {
+      "id": "ch04-42-01",
+      "q": "Is N2 ionic or covalent?",
+      "a": "covalent",
+      "why": "N2 joins two nitrogen atoms. Both are nonmetals, so they share electrons and the compound is covalent.",
+      "hints": ["Both atoms in N2 are nitrogen. Identical nonmetals share electrons instead of forming ions."],
+      "check": {
+        "kind": "exact",
+        "text": "covalent",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-02",
+      "q": "Is the bond in Cl2 polar or nonpolar?",
+      "a": "nonpolar",
+      "why": "The two chlorine atoms have the same electronegativity, so ΔEN is 0. The bond in Cl2 is nonpolar covalent.",
+      "hints": ["Compare the two atoms in Cl2. They are the same element, so neither end pulls harder."],
+      "check": {
+        "kind": "exact",
+        "text": "nonpolar",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-03",
+      "q": "Is NaCl ionic or covalent?",
+      "a": "ionic",
+      "why": "Sodium is a metal and chlorine is a nonmetal. Sodium transfers an electron to chlorine, so NaCl is ionic. ΔEN is about 2.1, which agrees.",
+      "hints": ["Sodium is a group 1 metal. Pairing it with chlorine is electron transfer, not a shared pair."],
+      "check": {
+        "kind": "exact",
+        "text": "ionic",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-04",
+      "q": "Is CO2 ionic or covalent?",
+      "a": "covalent",
+      "why": "Carbon and oxygen are both nonmetals. CO2 is a molecular compound with covalent bonds.",
+      "hints": ["Check both elements in CO2 on the periodic table. Neither one is a metal."],
+      "check": {
+        "kind": "exact",
+        "text": "covalent",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-05",
+      "q": "Is MgCl2 ionic or covalent?",
+      "a": "ionic",
+      "why": "Magnesium is a metal and chlorine is a nonmetal. MgCl2 is built from Mg2+ and Cl− ions, so it is ionic.",
+      "hints": ["Magnesium chloride starts with a group 2 metal. That metal plus chlorine is the ionic pattern."],
+      "check": {
+        "kind": "exact",
+        "text": "ionic",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-06",
+      "q": "Is MgO ionic or covalent?",
+      "a": "ionic",
+      "why": "Magnesium is a metal and oxygen is a nonmetal. The ions are Mg2+ and O2−, so MgO is ionic.",
+      "hints": ["Do not treat MgO like CO2. The first element, magnesium, is a metal."],
+      "check": {
+        "kind": "exact",
+        "text": "ionic",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-07",
+      "q": "Is Mg(NO3)2 ionic or covalent?",
+      "a": "ionic",
+      "why": "Mg(NO3)2 contains the metal ion Mg2+ and the polyatomic ion NO3−. The compound is ionic. The N–O bonds inside each nitrate ion are covalent.",
+      "hints": ["Name the two pieces of Mg(NO3)2: a magnesium ion and nitrate ions. Classify the attraction between those pieces."],
+      "check": {
+        "kind": "exact",
+        "text": "ionic",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-08",
+      "q": "Is CaF2 ionic or covalent?",
+      "a": "ionic",
+      "why": "Calcium is a metal and fluorine is a nonmetal. CaF2 is made of Ca2+ and F− ions, so it is ionic.",
+      "hints": ["Calcium is in group 2 and fluorine is a halogen. Metal plus halogen is electron transfer."],
+      "check": {
+        "kind": "exact",
+        "text": "ionic",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-09",
+      "q": "Is PCl3 ionic or covalent?",
+      "a": "covalent",
+      "why": "Phosphorus and chlorine are both nonmetals. PCl3 is a molecular compound, so its bonds are covalent.",
+      "hints": ["Phosphorus is a nonmetal, and so is chlorine. Two nonmetals share electrons."],
+      "check": {
+        "kind": "exact",
+        "text": "covalent",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-10",
+      "q": "In an H–Cl bond, which atom is δ−? Write the element symbol. H is 2.1 and Cl is 3.0.",
+      "a": "Cl",
+      "why": "ΔEN = 3.0 − 2.1 = 0.9. Chlorine has the larger electronegativity, so the shared electrons spend more time on Cl. Chlorine is δ−.",
+      "hints": ["Subtract 2.1 from 3.0 only to see that the bond is polar. The δ− sign goes on the atom with the larger Pauling value."],
+      "check": {
+        "kind": "exact",
+        "text": "Cl",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-42-11",
+      "q": "Using C = 2.5 and O = 3.5, what is ΔEN for a C–O bond?",
+      "a": "1.0",
+      "why": "ΔEN is the positive difference: 3.5 − 2.5 = 1.0.",
+      "hints": ["Use the two Pauling numbers in the question. Subtract the smaller from the larger and keep one decimal place."],
+      "check": {
+        "kind": "numeric",
+        "value": 1,
+        "tolerance": 0.5,
+        "sigFigs": 2,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-42-12",
+      "q": "Is a C–O bond nonpolar covalent, polar covalent, or ionic? C is 2.5 and O is 3.5.",
+      "a": "polar covalent",
+      "why": "Carbon and oxygen are nonmetals, so the bond is covalent. ΔEN = 1.0, which is an unequal share. The bond is polar covalent.",
+      "hints": ["Both atoms are nonmetals, so drop the ionic choice. A difference of 1.0 is too large for an equal share."],
+      "check": {
+        "kind": "exact",
+        "text": "polar covalent",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-13",
+      "q": "In an O–H bond, which atom is δ−? Write the element symbol. O is 3.5 and H is 2.1.",
+      "a": "O",
+      "why": "ΔEN = 3.5 − 2.1 = 1.4. Oxygen has the higher electronegativity, so oxygen is δ−.",
+      "hints": ["Compare 3.5 with 2.1. The partial negative charge goes to the larger of those two Pauling values."],
+      "check": {
+        "kind": "exact",
+        "text": "O",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-42-14",
+      "q": "Is KNO3 ionic or covalent overall?",
+      "a": "ionic",
+      "why": "KNO3 is K+ with the nitrate ion NO3−. That ion-to-ion attraction is ionic. Inside nitrate, the N–O bonds are covalent.",
+      "hints": ["Potassium is the metal in KNO3. The rest of the formula is one nitrate ion, not a separate covalent molecule of the whole compound."],
+      "check": {
+        "kind": "exact",
+        "text": "ionic",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-15",
+      "q": "Is HF ionic or covalent? H is 2.1 and F is 4.0.",
+      "a": "covalent",
+      "why": "Hydrogen and fluorine are both nonmetals, so HF is covalent. ΔEN = 1.9 is large, and the bond is very polar, but the atoms still share the pair. The rough 1.8 cutoff is only a guide.",
+      "hints": ["Fluorine pulls hard, so the bond is very polar. Still check the element types: hydrogen and fluorine are both nonmetals."],
+      "check": {
+        "kind": "exact",
+        "text": "covalent",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-16",
+      "q": "Which of these compounds are ionic? MgCl2, CO2, NaCl, PCl3, Mg(NO3)2. List every ionic formula.",
+      "a": "MgCl2, NaCl, Mg(NO3)2",
+      "why": "MgCl2, NaCl, and Mg(NO3)2 each start with a metal ion. CO2 and PCl3 are two nonmetals, so those two are covalent.",
+      "hints": ["Keep a formula when the first symbol is a metal. Drop the two formulas that contain only nonmetals."],
+      "check": {
+        "kind": "set",
+        "case": "sensitive",
+        "answers": ["MgCl2", "NaCl", "Mg(NO3)2"],
+        "nearMiss": [
+          {
+            "text": "CO2",
+            "hint": "CO2 is carbon and oxygen, two nonmetals, so leave it off the ionic list."
+          },
+          {
+            "text": "PCl3",
+            "hint": "PCl3 is phosphorus and chlorine. Both are nonmetals, so it does not belong with the ionic formulas."
+          }
+        ]
+      }
+    },
+    {
+      "id": "ch04-42-17",
+      "q": "Using Na = 0.9 and Cl = 3.0, what is ΔEN for Na–Cl?",
+      "a": "2.1",
+      "why": "ΔEN = 3.0 − 0.9 = 2.1. That large difference matches the ionic compound NaCl.",
+      "hints": ["The chlorine value is 3.0 and the sodium value is 0.9. Report the positive difference to one decimal place."],
+      "check": {
+        "kind": "numeric",
+        "value": 2.1,
+        "tolerance": 0.5,
+        "sigFigs": 2,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-42-18",
+      "q": "Is the bond in H2 nonpolar covalent, polar covalent, or ionic?",
+      "a": "nonpolar covalent",
+      "why": "H2 joins two hydrogen atoms. They share one pair equally, so the bond is nonpolar covalent.",
+      "hints": ["H2 has two atoms of one element. Equal atoms make an equal share, and the bond is still a shared pair."],
+      "check": {
+        "kind": "exact",
+        "text": "nonpolar covalent",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-19",
+      "q": "Using C = 2.5 and H = 2.1, what is ΔEN for a C–H bond?",
+      "a": "0.4",
+      "why": "ΔEN is the positive difference of the Pauling values: 2.5 − 2.1 = 0.4.",
+      "hints": ["Subtract the hydrogen value 2.1 from the carbon value 2.5. Keep the result to one decimal place."],
+      "check": {
+        "kind": "numeric",
+        "value": 0.4,
+        "tolerance": 0.5,
+        "sigFigs": 1,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-42-20",
+      "q": "Is an Si–H bond nonpolar covalent, polar covalent, or ionic? Si is 1.8 and H is 2.1.",
+      "a": "nonpolar covalent",
+      "why": "Silicon and hydrogen are both nonmetals, so the bond is covalent. ΔEN = 2.1 − 1.8 = 0.3, which is under 0.4, so the bond is nonpolar covalent.",
+      "hints": ["Both atoms are nonmetals. Subtract 1.8 from 2.1 and compare that difference with 0.4."],
+      "check": {
+        "kind": "exact",
+        "text": "nonpolar covalent",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-21",
+      "q": "Is a C–Cl bond nonpolar covalent, polar covalent, or ionic? C is 2.5 and Cl is 3.0.",
+      "a": "polar covalent",
+      "why": "Carbon and chlorine are nonmetals. ΔEN = 3.0 − 2.5 = 0.5, which is above 0.4 and far below an ionic difference. The bond is polar covalent.",
+      "hints": ["Stay with the covalent choices because both atoms are nonmetals. A difference of 0.5 is just past the 0.4 cutoff."],
+      "check": {
+        "kind": "exact",
+        "text": "polar covalent",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-22",
+      "q": "Is a P–H bond nonpolar covalent, polar covalent, or ionic? P is 2.1 and H is 2.1.",
+      "a": "nonpolar covalent",
+      "why": "Phosphorus and hydrogen are nonmetals with the same electronegativity. ΔEN = 0, so they share the pair equally. The bond is nonpolar covalent.",
+      "hints": ["The two Pauling values in the question are identical. An equal share between nonmetals is still a covalent bond."],
+      "check": {
+        "kind": "exact",
+        "text": "nonpolar covalent",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-23",
+      "q": "Using Si = 1.8 and Cl = 3.0, what is ΔEN for an Si–Cl bond?",
+      "a": "1.2",
+      "why": "ΔEN = 3.0 − 1.8 = 1.2.",
+      "hints": ["Chlorine’s value is 3.0 and silicon’s value is 1.8. Report the positive difference to one decimal place."],
+      "check": {
+        "kind": "numeric",
+        "value": 1.2,
+        "tolerance": 0.5,
+        "sigFigs": 2,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-42-24",
+      "q": "Is an Si–Cl bond nonpolar covalent, polar covalent, or ionic? Si is 1.8 and Cl is 3.0.",
+      "a": "polar covalent",
+      "why": "Silicon and chlorine are both nonmetals, so the bond is covalent even though ΔEN = 1.2. That difference is an unequal share, so the bond is polar covalent.",
+      "hints": ["A difference of 1.2 looks large, but check the elements first. Silicon and chlorine are both nonmetals."],
+      "check": {
+        "kind": "exact",
+        "text": "polar covalent",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-25",
+      "q": "In an N–H bond, which atom is δ−? Write the element symbol. N is 3.0 and H is 2.1.",
+      "a": "N",
+      "why": "ΔEN = 3.0 − 2.1 = 0.9. Nitrogen has the higher electronegativity, so the shared electrons sit closer to N. Nitrogen is δ−.",
+      "hints": ["Compare 3.0 with 2.1. The δ− label goes on the atom with the higher Pauling value."],
+      "check": {
+        "kind": "exact",
+        "text": "N",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-42-26",
+      "q": "Using K = 0.8 and F = 4.0, what is ΔEN for a K–F bond?",
+      "a": "3.2",
+      "why": "ΔEN = 4.0 − 0.8 = 3.2. That large gap fits an ionic bond between a metal and a nonmetal.",
+      "hints": ["Fluorine is 4.0 and potassium is 0.8. Subtract and keep one decimal place."],
+      "check": {
+        "kind": "numeric",
+        "value": 3.2,
+        "tolerance": 0.5,
+        "sigFigs": 2,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch04-42-27",
+      "q": "Is KF ionic or covalent?",
+      "a": "ionic",
+      "why": "Potassium is a metal and fluorine is a nonmetal. KF is ionic. The electronegativity gap, 4.0 − 0.8 = 3.2, agrees.",
+      "hints": ["Look at the element types in KF before you use the electronegativity gap. One atom is a metal."],
+      "check": {
+        "kind": "exact",
+        "text": "ionic",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-28",
+      "q": "Is an N–Cl bond nonpolar covalent, polar covalent, or ionic? N is 3.0 and Cl is 3.0.",
+      "a": "nonpolar covalent",
+      "why": "Nitrogen and chlorine are different nonmetals, but both have electronegativity 3.0. ΔEN = 0, so the bond is nonpolar covalent.",
+      "hints": ["Different element symbols do not force a polar bond. Compare the two values 3.0 and 3.0 first."],
+      "check": {
+        "kind": "exact",
+        "text": "nonpolar covalent",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-42-29",
+      "q": "Which of these bonds are nonpolar covalent? C–Cl, P–H, N–H, H–H. List every nonpolar bond.",
+      "a": "P–H, H–H",
+      "why": "P–H has ΔEN = 2.1 − 2.1 = 0, and H–H has ΔEN = 0. Both are nonpolar covalent. C–Cl is 0.5 and N–H is 0.9, so those two are polar covalent.",
+      "hints": ["Use H 2.1, C 2.5, N 3.0, P 2.1, and Cl 3.0. Keep a bond only when the difference is under 0.4."],
+      "check": {
+        "kind": "set",
+        "case": "sensitive",
+        "answers": ["P–H", "H–H"],
+        "nearMiss": [
+          {
+            "text": "C–Cl",
+            "hint": "C–Cl has ΔEN = 3.0 − 2.5 = 0.5, which is past 0.4, so leave that bond off the nonpolar list."
+          },
+          {
+            "text": "N–H",
+            "hint": "N–H has ΔEN = 3.0 − 2.1 = 0.9. That unequal share is polar covalent, not nonpolar."
+          }
+        ]
+      }
+    }
+  ]
+}

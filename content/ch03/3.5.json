@@ -1,0 +1,357 @@
+{
+  "id": "ch03-periodic-trends",
+  "ch": 3,
+  "openstax_section": "OpenStax AF2e §3.5",
+  "guide_line": "Compare radius, ionization energy, and electron affinity, and watch the Be, N, and Mg exceptions.",
+  "steps": [
+    "Atomic radius grows down a group because n gets larger. Across a period, radius shrinks because the nucleus pulls harder on the same shell.",
+    "A cation is smaller than its atom. An anion is larger than its atom. When ions have the same number of electrons, more protons means a smaller ion.",
+    "Ionization energy is the energy needed to remove an electron. It mostly rises across a period and falls down a group. Remember the exceptions: Be is higher than B, N is higher than O, and Mg is higher than Al.",
+    "A big jump in successive ionization energies means the next electron comes from a full inner shell. Two or fewer easy electrons gives group 1 or 2. More than two easy electrons gives a group whose ones digit matches that count.",
+    "Electron affinity is the energy change when a gas atom gains an electron. A negative value means energy is released. Halogens release energy. A noble gas does not follow that trend, because the next electron would start a new shell.",
+    "Electronegativity rises toward fluorine. Metallic character rises toward cesium. Chlorine releases more energy than fluorine when it gains one electron."
+  ],
+  "worked_example": {
+    "q": "Which atom has the largest radius: Li, Be, or B? Write the element symbol.",
+    "steps": [
+      "Li, Be, and B are in the same period.",
+      "Radius shrinks from left to right, so Li is the largest."
+    ],
+    "answer": "Li"
+  },
+  "similar_problem": {
+    "q": "Which atom has the highest ionization energy: N, O, or F? Write the element symbol.",
+    "hint": "In period 2 the general rise points to the right, and the N-versus-O exception still leaves F highest.",
+    "answer": "F"
+  },
+  "sources": [
+    "OpenStax AF2e §3.5"
+  ],
+  "problems": [
+    {
+      "id": "ch03-s35-p01",
+      "q": "Which atom has the largest radius: Na, Mg, or Al? Write the element symbol with a capital letter, like He.",
+      "a": "Na",
+      "why": "Na, Mg, and Al are in period 3. Radius shrinks across a period, so Na is the largest.",
+      "hints": [
+        "These three are in one period. Pick the one farthest left."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Na",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p02",
+      "q": "Which atom has the smallest radius: F, Cl, or Br? Write the element symbol with a capital letter, like He.",
+      "a": "F",
+      "why": "F, Cl, and Br are in group 17. Radius grows down a group, so F is the smallest.",
+      "hints": [
+        "These three are in one group. The top atom has the smallest n."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "F",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p03",
+      "q": "Rank Cl, Si, Mg, and Na from smallest radius to largest. Separate the symbols with <, with spaces around the sign.",
+      "a": "Cl < Si < Mg < Na",
+      "why": "All four are in period 3. Radius shrinks as atomic number rises, so Cl < Si < Mg < Na.",
+      "hints": [
+        "Stay in period 3 and put the rightmost atom first."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Cl < Si < Mg < Na",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p04",
+      "q": "Which is larger, a K atom or a K+ ion? Write the element symbol with a capital letter, like He. Type K or K+.",
+      "a": "K",
+      "why": "K+ has lost the 4s electron, so it has one fewer shell than the K atom. The atom is larger.",
+      "hints": [
+        "The positive ion lost the outer electron. Compare the atom with that ion."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "K",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p05",
+      "q": "Which is larger, an S atom or an S2- ion? Type S or S2-.",
+      "a": "S2-",
+      "why": "S2- has two extra electrons in the same shell and more repulsion, so the ion is larger than the atom.",
+      "hints": [
+        "Adding electrons to make the anion spreads the cloud out."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "S2-",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p06",
+      "q": "Rank these ions from smallest to largest: Na+, Mg2+, O2-, F-. They all have 10 electrons. Separate the ions with < and put spaces around the sign.",
+      "a": "Mg2+ < Na+ < F- < O2-",
+      "why": "Same electron count: more protons pull harder. Proton counts are Mg 12, Na 11, F 9, O 8, so Mg2+ < Na+ < F- < O2-.",
+      "hints": [
+        "Line the four ions up by the number of protons. The most protons make the smallest ion."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Mg2+ < Na+ < F- < O2-",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p07",
+      "q": "Which atom has the higher first ionization energy, Mg or Al? Write the element symbol with a capital letter, like He.",
+      "a": "Mg",
+      "why": "Al starts a 3p electron, which is easier to remove than a paired electron from Mg's full 3s. Mg is higher.",
+      "hints": [
+        "This is the period-3 exception. The new p electron is easier to remove than the full s pair."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Mg",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p08",
+      "q": "Which atom has the higher first ionization energy, N or O? Write the element symbol with a capital letter, like He.",
+      "a": "N",
+      "why": "Oxygen's fourth 2p electron is paired. That pair is easier to remove than one of nitrogen's three unpaired 2p electrons. N is higher.",
+      "hints": [
+        "This is the period-2 exception just before oxygen. The half-full 2p subshell is harder to break."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "N",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p09",
+      "q": "Which atom has the highest first ionization energy: N, O, or F? Write the element symbol with a capital letter, like He.",
+      "a": "F",
+      "why": "F is farthest right. The N > O exception does not put N above F.",
+      "hints": [
+        "Move toward the right side of period 2. The exception is only between N and O."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "F",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p10",
+      "q": "A period-4 atom has these successive ionization energies, in kJ/mol, rounded: 520, 1400, 18000, 21000. What is its group number? Type the number only.",
+      "a": "2",
+      "why": "The first jump that more than triples is from 1400 to 18000, after two electrons. Two easy electrons means group 2.",
+      "hints": [
+        "Find the first energy that is more than triple the one before it in 520, 1400, 18000, 21000."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s35-p11",
+      "q": "An atom has these successive ionization energies, in kJ/mol, rounded: 1100, 2400, 4600, 6200, 38000. What is its group number? Type the number only.",
+      "a": "14",
+      "why": "The big jump is from 6200 to 38000, after four electrons. Four easy electrons means group 14.",
+      "hints": [
+        "In 1100, 2400, 4600, 6200, 38000, count the energies before the jump that more than triples, then add 10."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 14,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s35-p12",
+      "q": "An atom has these successive ionization energies, in kJ/mol, rounded: 500, 4600, 6900. What is its group number? Type the number only.",
+      "a": "1",
+      "why": "The jump from 500 to 4600 comes after one electron. One easy electron means group 1.",
+      "hints": [
+        "The first gap in 500, 4600, 6900 is already more than triple. Count only the energies before it."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s35-p13",
+      "q": "Which is more metallic, Ca or Ge? Write the element symbol with a capital letter, like He.",
+      "a": "Ca",
+      "why": "Metallic character falls across a period. Ca is left of Ge, so Ca is more metallic.",
+      "hints": [
+        "Pick the atom farther toward the lower left. Ge is on the staircase."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Ca",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p14",
+      "q": "Which atom has the higher electronegativity, S or Cl? Write the element symbol with a capital letter, like He.",
+      "a": "Cl",
+      "why": "Electronegativity rises across a period toward fluorine. Cl is right of S.",
+      "hints": [
+        "In period 3, the atom closer to fluorine holds bonding electrons more tightly."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Cl",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p15",
+      "q": "Which atom releases more energy when it gains one electron, F or Cl? Write the element symbol with a capital letter, like He.",
+      "a": "Cl",
+      "why": "Chlorine's added electron goes into a roomier n = 3 shell, so Cl releases more energy than F.",
+      "hints": [
+        "This pair breaks the simple left-to-right pattern. Compare the shell the new electron enters."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Cl",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p16",
+      "q": "Which ion is larger, Ca2+ or K+? Type Ca2+ or K+.",
+      "a": "K+",
+      "why": "Both ions have 18 electrons. Ca has 20 protons and K has 19, so K+ is larger.",
+      "hints": [
+        "The electron count is the same. The ion with fewer protons is larger."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "K+",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p17",
+      "q": "Which atom has the higher effective nuclear charge felt by its valence electrons, Na or Cl? Write the element symbol with a capital letter, like He.",
+      "a": "Cl",
+      "why": "Across period 3 the nucleus has more protons while the valence shell stays n = 3. Cl feels the higher pull.",
+      "hints": [
+        "Compare atoms in the same period. More protons with the same n means a stronger pull."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Cl",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p18",
+      "q": "Rank K, Na, and Li by increasing first ionization energy. Separate the symbols with <, with spaces around the sign.",
+      "a": "K < Na < Li",
+      "why": "Ionization energy falls down group 1, so the increasing order is K < Na < Li.",
+      "hints": [
+        "Put the bottom of group 1 first. The smallest atom holds its electron hardest."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "K < Na < Li",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p19",
+      "q": "Which atom loses one electron more easily, Sr or Br? Write the element symbol with a capital letter, like He.",
+      "a": "Sr",
+      "why": "Sr is a group 2 metal and Br is a halogen. The metal's outer electron is easier to remove.",
+      "hints": [
+        "The metal is on the left. A low ionization energy means the electron leaves more easily."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Sr",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p20",
+      "q": "Which atom has the higher first ionization energy, Be or B? Write the element symbol with a capital letter, like He.",
+      "a": "Be",
+      "why": "Boron starts a 2p electron. That electron is easier to remove than one from beryllium's full 2s. Be is higher.",
+      "hints": [
+        "This is the period-2 exception at the start of the p block. A full 2s holds its electrons more tightly than the new 2p electron."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Be",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p21",
+      "q": "Rank N, P, and As by increasing atomic radius. Separate the symbols with <, with spaces around the sign.",
+      "a": "N < P < As",
+      "why": "N, P, and As are in group 15. Radius grows as n grows, so N < P < As.",
+      "hints": [
+        "Stay in one group and put the top of the group first. The shell number increases down the column."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "N < P < As",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p22",
+      "q": "A chlorine atom releases energy when it gains one electron. Is the electron affinity of chlorine positive or negative? Type positive or negative.",
+      "a": "negative",
+      "why": "Energy leaving the atom is a negative energy change. Chlorine's electron affinity is negative.",
+      "hints": [
+        "Released energy is written with a negative sign. Chlorine does release energy when the electron is added."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "negative",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s35-p23",
+      "q": "Which atom has the more favorable electron affinity, Br or Kr? Write the element symbol with a capital letter, like He.",
+      "a": "Br",
+      "why": "Bromine can place the new electron in 4p. Krypton already has a full shell, so the next electron would start 5s. Br is more favorable.",
+      "hints": [
+        "A halogen can finish its p subshell. A noble gas cannot take an electron into the same shell."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Br",
+        "case": "sensitive"
+      }
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "id": "ch04-ionic-bonding",
+  "ch": 4,
+  "openstax_section": "OpenStax AF2e §4.1",
+  "guide_line": "A metal loses electrons, a nonmetal gains them, and the ion charges in the formula add to zero.",
+  "steps": [
+    "A metal atom loses valence electrons and becomes a positive ion, a cation. A nonmetal atom gains electrons and becomes a negative ion, an anion.",
+    "Main-group metals lose enough electrons to match the previous noble gas. Group 1 ions are 1+, group 2 ions are 2+, and aluminum is 3+.",
+    "Nonmetals gain enough electrons to match the next noble gas. Group 17 ions are 1−, group 16 ions are 2−, and group 15 ions are 3−.",
+    "The compound is neutral. Choose the smallest whole-number counts so the total positive charge equals the total negative charge. Write the cation first.",
+    "When a molar mass is requested, add the OpenStax atomic masses with every digit kept, then round the final mass to 4 significant figures."
+  ],
+  "worked_example": {
+    "q": "Potassium and sulfur form an ionic compound. What is its formula?",
+    "steps": [
+      "Potassium is in group 1, so the ion is K+.",
+      "Sulfur is in group 16, so the ion is S2−.",
+      "Two K+ ions cancel one S2− ion.",
+      "The formula is K2S."
+    ],
+    "answer": "K2S"
+  },
+  "similar_problem": {
+    "q": "What is the formula of calcium nitride?",
+    "hint": "Calcium is 2+ and nitride is 3−. Three calcium ions and two nitride ions make the charges add to zero.",
+    "answer": "Ca3N2"
+  },
+  "sources": ["OpenStax AF2e §4.1"],
+  "problems": [
+    {
+      "id": "ch04-41-01",
+      "q": "What is the formula of calcium nitride?",
+      "a": "Ca3N2",
+      "why": "Ca is 2+ and N is 3−. Three Ca2+ give +6 and two N3− give −6. The neutral formula is Ca3N2.",
+      "hints": ["Calcium is 2+ and nitride is 3−. Three calcium ions and two nitride ions make the charges add to zero."],
+      "check": {
+        "kind": "exact",
+        "text": "Ca3N2",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-41-02",
+      "q": "What is the charge on a potassium ion? Use a sign, such as 1+ or 2−.",
+      "a": "1+",
+      "why": "Potassium is in group 1 and has one valence electron. It loses that electron, so the ion is K+ with charge 1+.",
+      "hints": ["Potassium sits in group 1 and has a single valence electron to lose."],
+      "check": {
+        "kind": "exact",
+        "text": "1+",
+        "answers": ["+1", "K+"],
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-41-03",
+      "q": "What is the charge on an oxide ion? Use a sign, such as 1− or 2−.",
+      "a": "2-",
+      "why": "Oxygen is in group 16 and has six valence electrons. It gains two electrons to match neon, so oxide is O2−.",
+      "hints": ["Oxygen has six valence electrons and needs two more to reach a full outer shell."],
+      "check": {
+        "kind": "exact",
+        "text": "2-",
+        "answers": ["-2", "O2-"],
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-41-04",
+      "q": "What is the charge on an aluminum ion? Use a sign, such as 2+ or 3+.",
+      "a": "3+",
+      "why": "Aluminum is in group 13 and has three valence electrons. It loses all three, so the ion is Al3+.",
+      "hints": ["Aluminum is in group 13. Count those three valence electrons and remove all of them."],
+      "check": {
+        "kind": "exact",
+        "text": "3+",
+        "answers": ["+3", "Al3+"],
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-41-05",
+      "q": "What is the formula of sodium oxide?",
+      "a": "Na2O",
+      "why": "Na+ is 1+ and O2− is 2−. Two sodium ions balance one oxide ion, so the formula is Na2O.",
+      "hints": ["Each sodium ion is only 1+. An oxide ion is 2−, so count how many sodium ions that takes."],
+      "check": {
+        "kind": "exact",
+        "text": "Na2O",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-41-06",
+      "q": "What is the formula of magnesium chloride?",
+      "a": "MgCl2",
+      "why": "Mg2+ is 2+ and each Cl− is 1−. Two chloride ions balance one magnesium ion. The formula is MgCl2.",
+      "hints": ["Magnesium forms a 2+ ion. Each chloride is 1−, so the formula needs more than one chlorine."],
+      "check": {
+        "kind": "exact",
+        "text": "MgCl2",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-41-07",
+      "q": "What is the formula of magnesium nitride?",
+      "a": "Mg3N2",
+      "why": "Mg2+ and N3− need a common total of 6. Three magnesium ions and two nitride ions give Mg3N2.",
+      "hints": ["Magnesium is 2+ and nitride is 3−. Find the smallest counts whose charges cancel. This pair is not 1 and 1."],
+      "check": {
+        "kind": "exact",
+        "text": "Mg3N2",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-41-08",
+      "q": "What is the formula of calcium oxide?",
+      "a": "CaO",
+      "why": "Ca2+ and O2− already have equal and opposite charges. One of each gives the formula CaO.",
+      "hints": ["Calcium and oxide both carry a charge of size 2, so the ratio is not 2 to 1."],
+      "check": {
+        "kind": "exact",
+        "text": "CaO",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-41-09",
+      "q": "What is the formula of aluminum sulfide?",
+      "a": "Al2S3",
+      "why": "Al3+ and S2− cross to two aluminums and three sulfides. The charges are +6 and −6. The formula is Al2S3.",
+      "hints": ["Aluminum is 3+ and sulfide is 2−. Cross those charge numbers to choose the subscripts."],
+      "check": {
+        "kind": "exact",
+        "text": "Al2S3",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-41-10",
+      "q": "Is MgCl2 ionic or covalent?",
+      "a": "ionic",
+      "why": "Magnesium is a metal and chlorine is a nonmetal. Magnesium gives electrons to chlorine, so MgCl2 is ionic.",
+      "hints": ["Look at magnesium first. It is a metal paired with a halogen, which is the transfer case."],
+      "check": {
+        "kind": "exact",
+        "text": "ionic",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-41-11",
+      "q": "Is MgO ionic or covalent?",
+      "a": "ionic",
+      "why": "Magnesium is a metal and oxygen is a nonmetal. The ions are Mg2+ and O2−, so MgO is ionic.",
+      "hints": ["Oxygen can share electrons with other nonmetals, but the partner here is the metal magnesium."],
+      "check": {
+        "kind": "exact",
+        "text": "ionic",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-41-12",
+      "q": "Is Mg(NO3)2 ionic or covalent?",
+      "a": "ionic",
+      "why": "Mg(NO3)2 is made of Mg2+ and two NO3− ions. The attraction between those ions is ionic, even though the bonds inside nitrate are covalent.",
+      "hints": ["Split the formula into a metal ion and nitrate ions before you decide. The link between those ions is the one to classify."],
+      "check": {
+        "kind": "exact",
+        "text": "ionic",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch04-41-14",
+      "q": "Use the OpenStax atomic masses Mg = 24.3050 and Cl = 35.4527. What is the molar mass of MgCl2, in g/mol, to 4 significant figures?",
+      "a": "95.21 g/mol",
+      "why": "24.3050 + 2(35.4527) = 24.3050 + 70.9054 = 95.2104. Rounded to 4 significant figures, the molar mass is 95.21 g/mol.",
+      "hints": ["Add the magnesium mass to two chlorine masses. Do not round either mass before you add."],
+      "check": {
+        "kind": "numeric",
+        "value": 95.21,
+        "tolerance": 0.05,
+        "sigFigs": 4,
+        "unit": "g/mol"
+      }
+    },
+    {
+      "id": "ch04-41-15",
+      "q": "Use Mg = 24.3050, N = 14.0067, and O = 15.9994. What is the molar mass of Mg(NO3)2, in g/mol, to 4 significant figures?",
+      "a": "148.3 g/mol",
+      "why": "The formula contains 1 Mg, 2 N, and 6 O. 24.3050 + 2(14.0067) + 6(15.9994) = 24.3050 + 28.0134 + 95.9964 = 148.3148, which is 148.3 g/mol to 4 significant figures.",
+      "hints": ["The subscript after the parentheses applies to both N and O. Count six oxygens, not three."],
+      "check": {
+        "kind": "numeric",
+        "value": 148.3,
+        "tolerance": 0.05,
+        "sigFigs": 4,
+        "unit": "g/mol"
+      }
+    },
+    {
+      "id": "ch04-41-16",
+      "q": "Write the electron configuration of Mg2+. A noble-gas core is fine.",
+      "a": "[Ne]",
+      "why": "A magnesium atom is [Ne] 3s2. The Mg2+ ion loses both 3s electrons, so the configuration is [Ne], or 1s2 2s2 2p6.",
+      "hints": ["A neutral magnesium atom ends in 3s2. The ion has lost both of those electrons."],
+      "check": {
+        "kind": "config",
+        "text": "[Ne]",
+        "answers": ["1s2 2s2 2p6"]
+      }
+    },
+    {
+      "id": "ch04-41-17",
+      "q": "Write the electron configuration of Cl−. A noble-gas core is fine.",
+      "a": "[Ar]",
+      "why": "A chlorine atom is [Ne] 3s2 3p5. The chloride ion gains one electron and fills 3p, so the configuration is [Ar], or 1s2 2s2 2p6 3s2 3p6.",
+      "hints": ["Chlorine’s 3p subshell has five electrons. The anion fills that subshell."],
+      "check": {
+        "kind": "config",
+        "text": "[Ar]",
+        "answers": ["1s2 2s2 2p6 3s2 3p6"]
+      }
+    },
+    {
+      "id": "ch04-41-18",
+      "q": "Write the electron configuration of Na+. A noble-gas core is fine.",
+      "a": "[Ne]",
+      "why": "A sodium atom is [Ne] 3s1. Na+ loses that one 3s electron, so the configuration is [Ne], or 1s2 2s2 2p6.",
+      "hints": ["Sodium has one electron past neon. The cation loses only that electron."],
+      "check": {
+        "kind": "config",
+        "text": "[Ne]",
+        "answers": ["1s2 2s2 2p6"]
+      }
+    },
+    {
+      "id": "ch04-41-19",
+      "q": "What is the formula of aluminum oxide?",
+      "a": "Al2O3",
+      "why": "Aluminum forms Al3+ and oxygen forms O2−. Two aluminum ions are 6+, and three oxide ions are 6−. The formula is Al2O3.",
+      "hints": ["Aluminum is 3+ and oxide is 2−. Use two aluminum ions and three oxide ions so the charges cancel."],
+      "check": {
+        "kind": "exact",
+        "text": "Al2O3",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch04-41-20",
+      "q": "What is the formula of sodium nitride?",
+      "a": "Na3N",
+      "why": "Sodium forms Na+ and nitrogen forms N3−. Three sodium ions balance one nitride ion. The formula is Na3N.",
+      "hints": ["Sodium is 1+ and nitride is 3−. Only three sodium ions cancel one nitride ion."],
+      "check": {
+        "kind": "exact",
+        "text": "Na3N",
+        "case": "sensitive"
+      }
+    }
+  ]
+}

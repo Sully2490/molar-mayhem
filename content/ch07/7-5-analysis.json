@@ -1,0 +1,135 @@
+{
+  "id": "ch07-analysis",
+  "ch": 7,
+  "openstax_section": "OpenStax AF2e §7.5",
+  "guide_line": "Use a titration volume, a weighed precipitate, or a combustion analysis to find concentration, percent, or an empirical formula.",
+  "steps": [
+    "Write the balanced equation so you know how many H+ or OH- each formula supplies.",
+    "Moles of titrant = molarity times liters. At the endpoint, convert those moles to moles of analyte with the mole ratio.",
+    "Molarity of the analyte = moles of analyte divided by liters of analyte.",
+    "In a gravimetric analysis, moles of the weighed solid equal moles of the ion you are tracking. Change that to grams, then to a percent of the sample mass.",
+    "In a combustion analysis, every carbon atom becomes one CO2 and every two hydrogen atoms become one H2O. Moles of H are twice the moles of water. Divide by the smaller mole amount for the empirical formula.",
+    "Round the final answer to 4 significant figures. Atomic masses, at OpenStax full precision: H 1.008, C 12.011, O 15.999, Na 22.990, S 32.06, Cl 35.45, Ba 137.33, Ag 107.868."
+  ],
+  "worked_example": {
+    "q": "25.00 mL of HCl is titrated with 18.40 mL of 0.1000 M NaOH. What is the molarity of the HCl? HCl + NaOH -> NaCl + H2O.",
+    "steps": [
+      "Moles of NaOH = 0.01840 L times 0.1000 mol/L = 0.001840 mol.",
+      "The ratio is 1 to 1, so moles of HCl = 0.001840 mol.",
+      "Molarity = 0.001840 mol / 0.02500 L = 0.07360 M."
+    ],
+    "answer": "0.07360 M"
+  },
+  "similar_problem": {
+    "q": "22.50 mL of KOH is titrated with 15.00 mL of 0.1800 M HCl. What is the molarity of the KOH? KOH + HCl -> KCl + H2O.",
+    "hint": "Moles of acid equal moles of base. Divide those moles by the analyte volume in liters.",
+    "answer": "0.1200 M"
+  },
+  "sources": ["OpenStax AF2e §7.5"],
+  "problems": [
+    {
+      "id": "ch07-titrate-hcl",
+      "q": "25.00 mL of HCl is titrated with 18.40 mL of 0.1000 M NaOH. HCl + NaOH -> NaCl + H2O. What is the molarity of the HCl?",
+      "a": "0.07360 M",
+      "why": "Moles of NaOH = 0.01840 times 0.1000 = 0.001840 mol. The ratio is 1 to 1. Molarity of HCl = 0.001840 / 0.02500 = 0.07360 M.",
+      "hints": ["Moles of NaOH are 0.01840 L times 0.1000 mol/L. The HCl sample volume is 0.02500 L."],
+      "check": { "kind": "numeric", "value": 0.0736, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
+    },
+    {
+      "id": "ch07-titrate-koh",
+      "q": "22.50 mL of KOH is titrated with 15.00 mL of 0.1800 M HCl. KOH + HCl -> KCl + H2O. What is the molarity of the KOH?",
+      "a": "0.1200 M",
+      "why": "Moles of HCl = 0.01500 times 0.1800 = 0.002700 mol. The ratio is 1 to 1. Molarity of KOH = 0.002700 / 0.02250 = 0.1200 M.",
+      "hints": ["Moles of HCl are 0.01500 L times 0.1800 mol/L. Divide by 0.02250 L of the KOH sample."],
+      "check": { "kind": "numeric", "value": 0.12, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
+    },
+    {
+      "id": "ch07-grav-chloride",
+      "q": "A 0.8500 g chloride sample gives 1.240 g of AgCl. What is the mass percent of Cl in the sample?",
+      "a": "36.08 %",
+      "why": "Moles of AgCl = 1.240 / 143.318 = 0.008652 mol. Mass of Cl = 0.008652 times 35.45 = 0.3067 g. Percent = (0.3067 / 0.8500) times 100 = 36.08%.",
+      "hints": ["Convert 1.240 g of AgCl to moles with 143.318 g/mol, then to grams of Cl with 35.45 g/mol."],
+      "check": { "kind": "numeric", "value": 36.08, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch07-vinegar",
+      "q": "A 10.00 g vinegar sample needs 16.50 mL of 0.5000 M NaOH. CH3COOH + NaOH -> NaCH3COO + H2O. What is the mass percent of acetic acid?",
+      "a": "4.954 %",
+      "why": "Moles of acetic acid = 0.01650 times 0.5000 = 0.008250 mol. Molar mass = 2(12.011) + 4(1.008) + 2(15.999) = 60.052 g/mol. Mass = 0.4954 g. Percent = (0.4954 / 10.00) times 100 = 4.954%.",
+      "hints": ["16.50 mL of 0.5000 M NaOH equals the moles of CH3COOH. The acid molar mass is 60.052 g/mol, and the sample is 10.00 g."],
+      "check": { "kind": "numeric", "value": 4.954, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch07-soda-ash",
+      "q": "A 0.4200 g sample of impure Na2CO3 needs 32.10 mL of 0.2000 M HCl. Na2CO3 + 2 HCl -> 2 NaCl + CO2 + H2O. What is the mass percent of Na2CO3?",
+      "a": "81.01 %",
+      "why": "Moles of HCl = 0.03210 times 0.2000 = 0.006420 mol. Moles of Na2CO3 = 0.003210 mol. Molar mass = 2(22.990) + 12.011 + 3(15.999) = 105.988 g/mol. Mass = 0.3402 g. Percent = (0.3402 / 0.4200) times 100 = 81.01%.",
+      "hints": ["32.10 mL of 0.2000 M HCl is 0.006420 mol of acid, and the carbonate takes two HCl. Na2CO3 is 105.988 g/mol."],
+      "check": { "kind": "numeric", "value": 81.01, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch07-grav-sulfur",
+      "q": "A 1.200 g sample yields 0.9800 g of BaSO4. What is the mass percent of S in the sample?",
+      "a": "11.22 %",
+      "why": "Molar mass of BaSO4 = 137.33 + 32.06 + 4(15.999) = 233.386 g/mol. Moles = 0.9800 / 233.386 = 0.004199 mol of S. Mass of S = 0.004199 times 32.06 = 0.1346 g. Percent = (0.1346 / 1.200) times 100 = 11.22%.",
+      "hints": ["0.9800 g of BaSO4 over 233.386 g/mol is the moles of S. Multiply by 32.06 g/mol and compare with 1.200 g."],
+      "check": { "kind": "numeric", "value": 11.22, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch07-flask-naoh",
+      "q": "10.00 mL of a NaOH solution needs 14.20 mL of 0.1000 M HCl. How many grams of NaOH are in 250.0 mL of that same solution?",
+      "a": "1.420 g",
+      "why": "Moles in the 10.00 mL aliquot = 0.01420 times 0.1000 = 0.001420 mol. The 250.0 mL flask holds 25 times that aliquot, so 0.03550 mol. Molar mass of NaOH = 22.990 + 15.999 + 1.008 = 39.997 g/mol. Mass = 1.420 g.",
+      "hints": ["The 10.00 mL aliquot is 1/25 of 250.0 mL. Find moles in the aliquot from 14.20 mL of 0.1000 M HCl, then scale up."],
+      "check": { "kind": "numeric", "value": 1.42, "tolerance": 0.5, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch07-endpoint-moles",
+      "q": "A monoprotic acid sample needs 24.50 mL of 0.1050 M NaOH to reach the endpoint. How many moles of acid were in the sample?",
+      "a": "0.002573 mol",
+      "why": "The ratio is 1 to 1. Moles of acid = 0.02450 L times 0.1050 mol/L = 0.002573 mol.",
+      "hints": ["A 1-to-1 titration means the acid moles equal 0.02450 L times 0.1050 mol/L of NaOH."],
+      "check": { "kind": "numeric", "value": 0.002573, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
+    },
+    {
+      "id": "ch07-titrate-sulfuric",
+      "q": "30.00 mL of H2SO4 is titrated with 24.60 mL of 0.1500 M NaOH. H2SO4 + 2 NaOH -> Na2SO4 + 2 H2O. What is the molarity of the H2SO4?",
+      "a": "0.06150 M",
+      "why": "Moles of NaOH = 0.02460 times 0.1500 = 0.003690 mol. The acid takes half of that, 0.001845 mol. Molarity = 0.001845 / 0.03000 = 0.06150 M.",
+      "hints": ["24.60 mL of 0.1500 M NaOH is 0.003690 mol of base, and sulfuric acid takes two of those moles. Divide the acid moles by 0.03000 L."],
+      "check": { "kind": "numeric", "value": 0.0615, "tolerance": 0.5, "sigFigs": 4, "unit": "M" }
+    },
+    {
+      "id": "ch07-grav-chloride-small",
+      "q": "A 1.050 g chloride sample gives 0.6450 g of AgCl. What is the mass percent of Cl in the sample?",
+      "a": "15.19 %",
+      "why": "Moles of AgCl = 0.6450 / 143.318 = 0.004500 mol. Mass of Cl = 0.004500 times 35.45 = 0.1595 g. Percent = (0.1595 / 1.050) times 100 = 15.19%.",
+      "hints": ["0.6450 g of AgCl over 143.318 g/mol is the moles of Cl. Multiply by 35.45 g/mol and compare with the 1.050 g sample."],
+      "check": { "kind": "numeric", "value": 15.19, "tolerance": 0.5, "sigFigs": 4, "unit": "%" }
+    },
+    {
+      "id": "ch07-combust-carbon",
+      "q": "A compound of carbon and hydrogen is burned. The carbon is collected as 4.401 g of CO2. How many moles of carbon were in the sample? Include the unit mol.",
+      "a": "0.1000 mol",
+      "why": "Molar mass of CO2 = 12.011 + 2(15.999) = 44.009 g/mol. Moles of CO2 = 4.401 / 44.009 = 0.1000 mol. Each CO2 holds one C, so moles of C = 0.1000 mol.",
+      "hints": ["Divide 4.401 g by 44.009 g/mol of CO2. Each carbon dioxide molecule holds one carbon atom."],
+      "check": { "kind": "numeric", "value": 0.1, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
+    },
+    {
+      "id": "ch07-combust-hydrogen",
+      "q": "The same combustion collects the hydrogen as 1.802 g of H2O. How many moles of hydrogen were in the sample? Include the unit mol.",
+      "a": "0.2000 mol",
+      "why": "Molar mass of H2O = 2(1.008) + 15.999 = 18.015 g/mol. Moles of water = 1.802 / 18.015 = 0.1000 mol. Each water holds two H, so moles of H = 0.2000 mol.",
+      "hints": ["Divide 1.802 g by 18.015 g/mol, then multiply by 2 because each water molecule holds two hydrogen atoms."],
+      "check": { "kind": "numeric", "value": 0.2, "tolerance": 0.5, "sigFigs": 4, "unit": "mol" }
+    },
+    {
+      "id": "ch07-combust-formula",
+      "q": "A combustion analysis finds 0.1000 mol of C and 0.2000 mol of H in a sample. What is the empirical formula? Write it with no spaces.",
+      "a": "CH2",
+      "why": "Divide both amounts by 0.1000 mol. The ratio is 1 C to 2 H, so the empirical formula is CH2.",
+      "hints": ["The sample produced 0.1000 mol of C and 0.2000 mol of H. Divide both by 0.1000."],
+      "check": { "kind": "exact", "text": "CH2", "case": "sensitive" }
+    }
+  ]
+}

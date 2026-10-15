@@ -1,0 +1,221 @@
+{
+  "id": "ch01-measure",
+  "ch": 1,
+  "openstax_section": "OpenStax AF2e §1.4",
+  "guide_line": "Use SI units and prefixes, and find density from mass and volume.",
+  "steps": [
+    "A measurement has three parts: a number, a unit, and some uncertainty in the last digit.",
+    "Base SI units for now: meter (m) for length, kilogram (kg) for mass, second (s) for time, and kelvin (K) for temperature.",
+    "kilo (k) means 10^3, centi (c) means 10^-2, milli (m) means 10^-3, and micro means 10^-6. Lowercase m is milli. Capital M is mega.",
+    "Density is mass divided by volume. For liquids and solids, 1 mL = 1 cm3, so g/mL and g/cm3 match. Report these results to four significant figures.",
+    "Water freezes at 273.15 K, which is 0 °C, and boils at 373.15 K, which is 100 °C. Changing a temperature into another scale comes in the conversions lesson.",
+    "Scientific notation writes a number as a coefficient times a power of ten, such as 3.20 × 10^2. The coefficient keeps the significant figures."
+  ],
+  "worked_example": {
+    "q": "A block has a mass of 24.00 g and a volume of 3.000 mL. What is its density in g/mL?",
+    "steps": [
+      "Divide the mass by the volume.",
+      "24.00 ÷ 3.000 = 8.000, so the density is 8.000 g/mL."
+    ],
+    "answer": "8.000 g/mL"
+  },
+  "similar_problem": {
+    "q": "A block has a mass of 12.00 g and a volume of 4.000 mL. What is its density in g/mL?",
+    "hint": "Divide 12.00 g by 4.000 mL and keep four figures in the result.",
+    "answer": "3.000 g/mL"
+  },
+  "sources": ["OpenStax AF2e §1.4"],
+  "problems": [
+    {
+      "id": "ch01-measure-01",
+      "q": "Convert 4.250 km to meters.",
+      "a": "4.250 × 10^3 m",
+      "why": "Kilo means 1000. 4.250 km × 1000 m/km = 4250 m, written 4.250 × 10^3 m so four figures stay visible.",
+      "hints": ["Multiply 4.250 by 1000. Write the result in scientific notation so the trailing zeros still count."],
+      "check": { "kind": "numeric", "value": 4250, "tolerance": 0.05, "sigFigs": 4, "unit": "m" }
+    },
+    {
+      "id": "ch01-measure-02",
+      "q": "Convert 7.500 cm to meters.",
+      "a": "0.07500 m",
+      "why": "Centi means 0.01. 7.500 cm × 0.01 m/cm = 0.07500 m.",
+      "hints": ["Move the decimal two places left. Keep the last two zeros so the result still has four figures."],
+      "check": { "kind": "numeric", "value": 0.075, "tolerance": 0.05, "sigFigs": 4, "unit": "m" }
+    },
+    {
+      "id": "ch01-measure-03",
+      "q": "Convert 2.500 mg to grams.",
+      "a": "0.002500 g",
+      "why": "Milli means 0.001. 2.500 mg × 0.001 g/mg = 0.002500 g.",
+      "hints": ["A milligram is one-thousandth of a gram. Divide 2.500 by 1000."],
+      "check": { "kind": "numeric", "value": 0.0025, "tolerance": 0.05, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch01-measure-04",
+      "q": "Convert 1.250 L to milliliters.",
+      "a": "1.250 × 10^3 mL",
+      "why": "1 L = 1000 mL. 1.250 L × 1000 mL/L = 1250 mL, written 1.250 × 10^3 mL.",
+      "hints": ["One liter is one thousand milliliters. Multiply 1.250 by 1000."],
+      "check": { "kind": "numeric", "value": 1250, "tolerance": 0.05, "sigFigs": 4, "unit": "mL" }
+    },
+    {
+      "id": "ch01-measure-05",
+      "q": "A metal sample has a mass of 45.20 g and a volume of 5.680 mL. What is its density in g/mL?",
+      "a": "7.958 g/mL",
+      "why": "Density = mass / volume = 45.20 g / 5.680 mL = 7.9577... g/mL, which rounds to 7.958 g/mL.",
+      "hints": ["Divide 45.20 g by 5.680 mL. Round the calculator result to four figures."],
+      "check": { "kind": "numeric", "value": 7.958, "tolerance": 0.05, "sigFigs": 4, "unit": "g/mL" }
+    },
+    {
+      "id": "ch01-measure-06",
+      "q": "A liquid has a density of 0.7892 g/mL. What volume, in mL, does 25.00 g occupy?",
+      "a": "31.68 mL",
+      "why": "Volume = mass / density = 25.00 g / 0.7892 g/mL = 31.6776... mL, which rounds to 31.68 mL.",
+      "hints": ["Volume is the mass divided by the density. Divide 25.00 by 0.7892."],
+      "check": { "kind": "numeric", "value": 31.68, "tolerance": 0.05, "sigFigs": 4, "unit": "mL" }
+    },
+    {
+      "id": "ch01-measure-07",
+      "q": "A liquid has a density of 1.261 g/mL. What is the mass, in grams, of 18.50 mL?",
+      "a": "23.33 g",
+      "why": "Mass = density × volume = 1.261 g/mL × 18.50 mL = 23.3285 g, which rounds to 23.33 g.",
+      "hints": ["Mass is the density times the volume. Multiply 1.261 by 18.50."],
+      "check": { "kind": "numeric", "value": 23.33, "tolerance": 0.05, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch01-measure-08",
+      "q": "A cube has an edge of 2.500 cm and a mass of 140.6 g. What is its density in g/mL? One cubic centimeter is 1 mL.",
+      "a": "8.998 g/mL",
+      "why": "Volume = 2.500 × 2.500 × 2.500 = 15.625 mL. Density = 140.6 g / 15.625 mL = 8.9984 g/mL, which rounds to 8.998 g/mL.",
+      "hints": ["Cube the 2.500 cm edge to get the volume in mL, then divide 140.6 g by that volume."],
+      "check": { "kind": "numeric", "value": 8.998, "tolerance": 0.05, "sigFigs": 4, "unit": "g/mL" }
+    },
+    {
+      "id": "ch01-measure-09",
+      "q": "A solid raises the water level in a cylinder from 22.05 mL to 38.47 mL. The solid has a mass of 146.8 g. What is its density in g/mL?",
+      "a": "8.940 g/mL",
+      "why": "The displaced volume is 38.47 mL − 22.05 mL = 16.42 mL. Density = 146.8 g / 16.42 mL = 8.9403... g/mL, which rounds to 8.940 g/mL.",
+      "hints": ["Subtract 22.05 mL from 38.47 mL to get the solid's volume, then divide 146.8 g by that volume."],
+      "check": { "kind": "numeric", "value": 8.94, "tolerance": 0.05, "sigFigs": 4, "unit": "g/mL" }
+    },
+    {
+      "id": "ch01-measure-10",
+      "q": "A gas sample has a mass of 2.640 g and a volume of 2.015 L. What is its density in g/L?",
+      "a": "1.310 g/L",
+      "why": "Density = 2.640 g / 2.015 L = 1.31017... g/L, which rounds to 1.310 g/L.",
+      "hints": ["Divide 2.640 g by 2.015 L. Keep the zero at the end of the four-figure result."],
+      "check": { "kind": "numeric", "value": 1.31, "tolerance": 0.05, "sigFigs": 4, "unit": "g/L" }
+    },
+    {
+      "id": "ch01-measure-11",
+      "q": "Convert 3.000 × 10^2 g to kilograms.",
+      "a": "0.3000 kg",
+      "why": "The SI mass unit is the kilogram, and 1 kg = 1000 g. 300.0 g / 1000 = 0.3000 kg.",
+      "hints": ["A kilogram contains 1000 grams. Divide 3.000 × 10^2 by 1000."],
+      "check": { "kind": "numeric", "value": 0.3, "tolerance": 0.05, "sigFigs": 4, "unit": "kg" }
+    },
+    {
+      "id": "ch01-measure-12",
+      "q": "Convert 2.500 min to seconds. One minute is exactly 60 seconds.",
+      "a": "1.500 × 10^2 s",
+      "why": "2.500 min × 60 s/min = 150.0 s, written 1.500 × 10^2 s. The 60 is exact, so it does not cut the four figures from 2.500.",
+      "hints": ["Multiply 2.500 by 60. The 60 is exact, so it does not reduce the number of figures."],
+      "check": { "kind": "numeric", "value": 150, "tolerance": 0.05, "sigFigs": 4, "unit": "s" }
+    },
+    {
+      "id": "ch01-measure-13",
+      "q": "What is the SI symbol for kelvin?",
+      "a": "K",
+      "why": "The kelvin symbol is a capital K. It has no degree sign.",
+      "hints": ["Write a capital K and leave off the degree sign."],
+      "check": { "kind": "exact", "text": "K", "case": "sensitive" }
+    },
+    {
+      "id": "ch01-measure-14",
+      "q": "What is the SI base-unit symbol for mass?",
+      "a": "kg",
+      "why": "The SI base unit of mass is the kilogram, symbol kg. The gram is 1/1000 of that unit.",
+      "hints": ["The base unit is the kilogram, not the gram. Use the lowercase symbol."],
+      "check": { "kind": "exact", "text": "kg", "case": "sensitive" }
+    },
+    {
+      "id": "ch01-measure-15",
+      "q": "Name the three parts of a measurement.",
+      "a": "number, unit, and uncertainty",
+      "why": "Every measurement has a number (the size), a unit (the standard), and uncertainty (doubt in the last digit).",
+      "hints": ["One part is the size, one is the standard you compare it with, and one is the doubt in the last digit."],
+      "check": {
+        "kind": "set",
+        "case": "insensitive",
+        "answers": ["number", "unit", "uncertainty"],
+        "nearMiss": [
+          { "text": "precision", "hint": "Precision compares repeated readings. A single measurement's third part is its uncertainty." }
+        ]
+      }
+    },
+    {
+      "id": "ch01-measure-16",
+      "q": "At what temperature, in kelvin, does water freeze?",
+      "a": "273.15 K",
+      "why": "Water freezes at 0 °C, which is 273.15 K.",
+      "hints": ["The freezing point is a little more than 273 kelvin. Include the hundredths."],
+      "check": { "kind": "numeric", "value": 273.15, "tolerance": 0.02, "sigFigs": 5, "unit": "K" }
+    },
+    {
+      "id": "ch01-measure-17",
+      "q": "What power of ten does the prefix milli stand for? Write it as 10 raised to an integer.",
+      "a": "10^-3",
+      "why": "Milli means one thousandth, which is 10^-3. Example: 1 mg = 10^-3 g.",
+      "hints": ["Milli means one thousandth of the base unit. Write that factor as a power of ten."],
+      "check": { "kind": "exact", "text": "10^-3", "answers": ["1e-3", "0.001"], "case": "insensitive" }
+    },
+    {
+      "id": "ch01-measure-18",
+      "q": "Write the symbol for the prefix milli.",
+      "a": "m",
+      "why": "The symbol for milli is a lowercase m. Capital M is the symbol for mega, 10^6.",
+      "hints": ["Use one lowercase letter. The capital form of that letter means mega, not milli."],
+      "check": { "kind": "exact", "text": "m", "case": "sensitive" }
+    },
+    {
+      "id": "ch01-measure-19",
+      "q": "Write the symbol for the prefix kilo.",
+      "a": "k",
+      "why": "The symbol for kilo is a lowercase k. Capital K is the kelvin symbol, not the kilo prefix.",
+      "hints": ["Use one lowercase letter. A capital K names the temperature unit, not this prefix."],
+      "check": { "kind": "exact", "text": "k", "case": "sensitive" }
+    },
+    {
+      "id": "ch01-measure-20",
+      "q": "Write 0.000640 in scientific notation.",
+      "a": "6.40 × 10^-4",
+      "why": "Move the decimal four places to the right to get 6.40. The value is 6.40 × 10^-4. The final zero stays because it was significant.",
+      "hints": ["Move the decimal until 6.40 is in front, and keep that last zero in the coefficient."],
+      "check": { "kind": "numeric", "value": 0.00064, "tolerance": 0, "sigFigs": 3, "unit": null }
+    },
+    {
+      "id": "ch01-measure-21",
+      "q": "Write 7.15 × 10^-3 in standard decimal notation.",
+      "a": "0.00715",
+      "why": "A power of -3 moves the decimal three places left: 7.15 × 10^-3 = 0.00715.",
+      "hints": ["A negative exponent moves the decimal left. Count three places from 7.15."],
+      "check": { "kind": "numeric", "value": 0.00715, "tolerance": 0, "sigFigs": 3, "unit": null }
+    },
+    {
+      "id": "ch01-measure-22",
+      "q": "Convert 3.600 km to centimeters.",
+      "a": "3.600 × 10^5 cm",
+      "why": "3.600 km × 1000 m/km = 3600 m. Then 3600 m × 100 cm/m = 360000 cm, written 3.600 × 10^5 cm.",
+      "hints": ["Go through meters. Kilo to the base unit is one step, and the base unit to centi is a second step."],
+      "check": { "kind": "numeric", "value": 360000, "tolerance": 0.05, "sigFigs": 4, "unit": "cm" }
+    },
+    {
+      "id": "ch01-measure-23",
+      "q": "A metal cube has an edge of 15.00 mm and a mass of 26.80 g. What is its density in g/mL? Change millimeters to centimeters before you cube the edge. One cubic centimeter is 1 mL.",
+      "a": "7.941 g/mL",
+      "why": "15.00 mm = 1.500 cm. Volume = 1.500^3 = 3.375 cm3 = 3.375 mL. Density = 26.80 g / 3.375 mL = 7.9407... g/mL, which rounds to 7.941 g/mL.",
+      "hints": ["Divide the edge by 10 to get centimeters, cube that length, then divide 26.80 g by the volume."],
+      "check": { "kind": "numeric", "value": 7.941, "tolerance": 0.05, "sigFigs": 4, "unit": "g/mL" }
+    }
+  ]
+}

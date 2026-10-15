@@ -1,0 +1,271 @@
+{
+  "id": "8.6-real-gases",
+  "ch": 8,
+  "openstax_section": "OpenStax AF2e §8.6",
+  "guide_line": "Use the van der Waals equation and tell when a gas is not ideal.",
+  "steps": [
+    "A real gas is closest to ideal at low pressure and high temperature. The particles are then far apart and moving fast, so size and attractions barely matter.",
+    "The van der Waals equation is (P + a n^2/V^2)(V − nb) = nRT. The constant a corrects for attractions. The constant b corrects for the space the particles take up.",
+    "Solved for pressure: P = nRT/(V − nb) − a n^2/V^2.",
+    "The compressibility factor is Z = PV/nRT. Z near 1 means nearly ideal. Z below 1 means attractions dominate. Z above 1 means particle volume dominates."
+  ],
+  "worked_example": {
+    "q": "One mole of a gas has a = 2.250 L^2 atm/mol^2 and b = 0.04000 L/mol. Find the van der Waals pressure, in atm, when V = 1.000 L and T = 300.0 K. Use R = 0.08206 L atm/(mol K).",
+    "steps": [
+      "nRT = (1)(0.08206)(300.0) = 24.618 L atm.",
+      "Free volume = 1.000 − 0.04000 = 0.9600 L. Attraction term = 2.250/(1.000)^2 = 2.250 atm.",
+      "P = 24.618/0.9600 − 2.250 = 23.39 atm."
+    ],
+    "answer": "23.39 atm"
+  },
+  "similar_problem": {
+    "q": "Use the same gas: n = 1.000 mol, a = 2.250 L^2 atm/mol^2, b = 0.04000 L/mol, T = 300.0 K, and R = 0.08206 L atm/(mol K). What is the van der Waals pressure, in atm, when V = 1.500 L?",
+    "hint": "Free volume is 1.500 − 0.04000. Divide 24.618 by that volume, then subtract 2.250/(1.500)^2.",
+    "answer": "15.86 atm"
+  },
+  "sources": [
+    "OpenStax AF2e §8.6"
+  ],
+  "problems": [
+    {
+      "id": "8.6-01",
+      "q": "A sample has V = 0.5000 L, n = 1.000 mol, and b = 0.04000 L/mol. What is the free volume, V − nb, in liters?",
+      "a": "0.4600 L",
+      "why": "V − nb = 0.5000 − 0.04000 = 0.4600 L.",
+      "hints": [
+        "Subtract nb from the container: 0.5000 L minus 0.04000 L."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.46,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "L"
+      }
+    },
+    {
+      "id": "8.6-02",
+      "q": "For n = 1.000 mol, V = 0.5000 L, and a = 2.250 L^2 atm/mol^2, what is the attraction correction a n^2/V^2, in atm?",
+      "a": "9.000 atm",
+      "why": "a n^2/V^2 = 2.250 / (0.5000)^2 = 9.000 atm.",
+      "hints": [
+        "Here a(n/V)^2 is 2.250 divided by (0.5000)^2."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 9,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "8.6-03",
+      "q": "Find the van der Waals pressure, in atm, for n = 1.000 mol, V = 0.5000 L, T = 300.0 K, a = 2.250 L^2 atm/mol^2, and b = 0.04000 L/mol. Use R = 0.08206 L atm/(mol K). nRT = 24.618 L atm.",
+      "a": "44.52 atm",
+      "why": "P = 24.618/0.4600 − 9.000 = 44.52 atm.",
+      "hints": [
+        "Divide 24.618 L atm by the free volume 0.4600 L, then subtract 9.000 atm."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 44.52,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "8.6-04",
+      "q": "What is the ideal pressure, in atm, of 1.000 mol of gas in 0.5000 L at 300.0 K? Use R = 0.08206 L atm/(mol K). Ignore a and b. nRT = 24.618 L atm.",
+      "a": "49.24 atm",
+      "why": "P = nRT/V = 24.618/0.5000 = 49.24 atm.",
+      "hints": [
+        "Ignore a and b for this ideal comparison. Divide 24.618 by 0.5000."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 49.24,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "8.6-05",
+      "q": "A measured sample has P = 44.52 atm, V = 0.5000 L, n = 1.000 mol, and T = 300.0 K. What is Z = PV/nRT? Use R = 0.08206 L atm/(mol K).",
+      "a": "0.9042",
+      "why": "Z = (44.52)(0.5000)/((0.08206)(300.0)) = 0.9042. Z below 1 means attractions dominate.",
+      "hints": [
+        "Z = PV/nRT. Multiply 44.52 by 0.5000, then divide by (0.08206 × 300.0)."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.9042,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "8.6-06",
+      "q": "Find the van der Waals pressure, in atm, for the same gas at a larger volume: n = 1.000 mol, V = 20.00 L, T = 300.0 K, a = 2.250, b = 0.04000, and R = 0.08206. nRT = 24.618 L atm.",
+      "a": "1.228 atm",
+      "why": "P = 24.618/19.96 − 2.250/400.0 = 1.228 atm.",
+      "hints": [
+        "Free volume is 20.00 − 0.04000 = 19.96 L. Divide 24.618 by 19.96, then subtract 2.250/(20.00)^2."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.228,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "8.6-07",
+      "q": "What is the ideal pressure, in atm, of 1.000 mol in 20.00 L at 300.0 K? Use nRT = 24.618 L atm and ignore a and b.",
+      "a": "1.231 atm",
+      "why": "P = 24.618/20.00 = 1.231 atm.",
+      "hints": [
+        "For the ideal gas in this 20.00 L container, divide 24.618 by 20.00."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.231,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": "atm"
+      }
+    },
+    {
+      "id": "8.6-08",
+      "q": "A sample has P = 1.228 atm, V = 20.00 L, n = 1.000 mol, and T = 300.0 K. What is Z = PV/nRT? Use R = 0.08206 L atm/(mol K).",
+      "a": "0.9976",
+      "why": "Z = (1.228)(20.00)/((0.08206)(300.0)) = 0.9976.",
+      "hints": [
+        "Compute (1.228 × 20.00) / (0.08206 × 300.0). A result near 1 means nearly ideal."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.9976,
+        "tolerance": 0.5,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "8.6-09",
+      "q": "In the van der Waals equation, which constant corrects for attractions between particles? Type a or b.",
+      "a": "a",
+      "why": "a multiplies the attraction term a n^2/V^2.",
+      "hints": [
+        "The pressure correction is a n^2/V^2, so the attractions constant is a."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "a",
+        "case": "sensitive",
+        "answers": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "8.6-10",
+      "q": "In the van der Waals equation, which constant corrects for the volume of the particles? Type a or b.",
+      "a": "b",
+      "why": "b is subtracted, with n, from the container volume.",
+      "hints": [
+        "The free volume is written V − nb, so the volume constant is b."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "b",
+        "case": "sensitive",
+        "answers": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "8.6-11",
+      "q": "Which pressure makes a gas behave more like an ideal gas? Type low or high.",
+      "a": "low",
+      "why": "Low pressure means few collisions and little crowding, so the gas is closer to ideal.",
+      "hints": [
+        "Particles stay far apart when the pressure is low. Type low."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "low",
+        "case": "insensitive",
+        "answers": [
+          "low"
+        ]
+      }
+    },
+    {
+      "id": "8.6-12",
+      "q": "Which temperature makes a gas behave more like an ideal gas? Type low or high.",
+      "a": "high",
+      "why": "High temperature makes attractions less important, so the gas is closer to ideal.",
+      "hints": [
+        "Fast particles at high temperature are less affected by attractions. Type high."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "high",
+        "case": "insensitive",
+        "answers": [
+          "high"
+        ]
+      }
+    },
+    {
+      "id": "8.6-13",
+      "q": "A gas has Z = 0.8124. Do attractions or particle volume dominate? Type attractions or volume.",
+      "a": "attractions",
+      "why": "Z < 1 means attractions pull the pressure down. Particle volume would push Z above 1.",
+      "hints": [
+        "Z = 0.8124 is below 1, so the measured pressure is lower than the ideal pressure. Type attractions."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "attractions",
+        "case": "insensitive",
+        "answers": [
+          "attractions"
+        ]
+      }
+    },
+    {
+      "id": "8.6-14",
+      "q": "Which pair of conditions makes a gas most like an ideal gas? Type both: low pressure, high pressure, low temperature, high temperature.",
+      "a": "low pressure, high temperature",
+      "why": "Low pressure and high temperature keep particles far apart and moving fast.",
+      "hints": [
+        "List the two ideal conditions together: low pressure and high temperature."
+      ],
+      "check": {
+        "kind": "set",
+        "answers": [
+          "low pressure",
+          "high temperature"
+        ],
+        "case": "insensitive",
+        "nearMiss": [
+          {
+            "text": "high pressure",
+            "hint": "High pressure crowds the particles, so the gas is less ideal."
+          },
+          {
+            "text": "low temperature",
+            "hint": "Low temperature lets attractions matter, so the gas is less ideal."
+          }
+        ]
+      }
+    }
+  ]
+}

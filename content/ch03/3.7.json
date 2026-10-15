@@ -1,0 +1,229 @@
+{
+  "id": "ch03-compounds",
+  "ch": 3,
+  "openstax_section": "OpenStax AF2e §3.7",
+  "guide_line": "Decide whether a compound is ionic or molecular, then write the formula that cancels the charges.",
+  "steps": [
+    "A metal with a nonmetal makes an ionic compound. Two nonmetals make a molecular compound.",
+    "In an ionic formula the positive ion is written first. The subscripts are the smallest whole numbers that make the charges add to zero.",
+    "Group 1 ions are 1+. Group 2 ions are 2+. Aluminum is Al3+. Group 16 ions are 2-. Group 17 ions are 1-.",
+    "Cross the charge numbers to get the subscripts. Ca2+ and N3- make Ca3N2. A subscript of 1 is left off.",
+    "Keep parentheses around a polyatomic ion when its subscript is greater than 1. Ammonium sulfate is (NH4)2SO4."
+  ],
+  "worked_example": {
+    "q": "Write the formula of the compound formed by sodium and chlorine. Use no spaces.",
+    "steps": [
+      "Sodium is Na+ and chlorine is Cl-.",
+      "The charges already add to zero, so the formula is NaCl."
+    ],
+    "answer": "NaCl"
+  },
+  "similar_problem": {
+    "q": "Write the formula of the compound formed by magnesium and oxygen. Use no spaces.",
+    "hint": "Magnesium is 2+ and oxygen is 2-. The charges already match, so both subscripts drop off.",
+    "answer": "MgO"
+  },
+  "sources": [
+    "OpenStax AF2e §3.7"
+  ],
+  "problems": [
+    {
+      "id": "ch03-s37-p01",
+      "q": "Is the compound of magnesium and chlorine ionic or molecular? Type one word.",
+      "a": "ionic",
+      "why": "Magnesium is a metal and chlorine is a nonmetal, so the compound is ionic.",
+      "hints": [
+        "Look for a metal paired with a nonmetal. Magnesium is the metal."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "ionic",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s37-p02",
+      "q": "Is CO2 ionic or molecular? Type one word.",
+      "a": "molecular",
+      "why": "Carbon and oxygen are both nonmetals, so CO2 is molecular.",
+      "hints": [
+        "Both elements in CO2 sit on the nonmetal side of the staircase."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "molecular",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s37-p03",
+      "q": "Is KBr ionic or molecular? Type one word.",
+      "a": "ionic",
+      "why": "Potassium is a metal and bromine is a nonmetal, so KBr is ionic.",
+      "hints": [
+        "Potassium is in group 1. A group 1 element with a halogen is ionic."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "ionic",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s37-p04",
+      "q": "Write the formula of the compound formed by magnesium and chlorine. Use no spaces.",
+      "a": "MgCl2",
+      "why": "Mg is 2+ and Cl is 1-. Two chloride ions balance one magnesium ion: MgCl2.",
+      "hints": [
+        "Magnesium loses two electrons and each chlorine gains one. Cross the 2 onto chlorine."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "MgCl2",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s37-p05",
+      "q": "Write the formula of the compound formed by aluminum and oxygen. Use no spaces.",
+      "a": "Al2O3",
+      "why": "Al is 3+ and O is 2-. Crossing charges gives Al2O3.",
+      "hints": [
+        "Aluminum is 3+ and oxygen is 2-. The subscripts are the opposite charges, reduced if needed."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Al2O3",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s37-p06",
+      "q": "Write the formula of the compound formed by calcium and nitrogen. Use no spaces.",
+      "a": "Ca3N2",
+      "why": "Ca is 2+ and N is 3-. Crossing charges gives Ca3N2.",
+      "hints": [
+        "Calcium is 2+ and nitride is 3-. Cross 3 onto calcium and 2 onto nitrogen."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Ca3N2",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s37-p07",
+      "q": "Write the formula of the compound formed by sodium and oxygen. Use no spaces.",
+      "a": "Na2O",
+      "why": "Na is 1+ and O is 2-. Two sodium ions balance one oxide ion: Na2O.",
+      "hints": [
+        "Oxygen is 2- and sodium is 1+. The subscript 2 goes on sodium."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Na2O",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s37-p08",
+      "q": "Write the formula of the compound of Fe3+ and O2-. Use no spaces.",
+      "a": "Fe2O3",
+      "why": "The charges 3+ and 2- cross to Fe2O3.",
+      "hints": [
+        "Use the given charges, 3+ and 2-. Cross them and do not reduce 2 and 3."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Fe2O3",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s37-p09",
+      "q": "Write the formula of ammonium sulfate. Ammonium is NH4+ and sulfate is SO4 2-. Use no spaces, and use parentheses when a subscript belongs to a whole ion.",
+      "a": "(NH4)2SO4",
+      "why": "Two NH4+ ions balance one SO4 2-, so the formula is (NH4)2SO4.",
+      "hints": [
+        "Sulfate is 2- and ammonium is 1+. Put parentheses around NH4 because its subscript is greater than 1."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "(NH4)2SO4",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s37-p10",
+      "q": "What is the formula mass of H2SO4? Use H = 1.008, S = 32.06, and O = 15.999 g/mol. Type the number and the unit g/mol.",
+      "a": "98.07 g/mol",
+      "why": "2(1.008) + 32.06 + 4(15.999) = 98.07 g/mol.",
+      "hints": [
+        "Add two hydrogens, one sulfur, and four oxygens using the masses given in the question."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 98.072,
+        "tolerance": 0.5,
+        "unit": "g/mol",
+        "sigFigs": 4
+      }
+    },
+    {
+      "id": "ch03-s37-p11",
+      "q": "Name the compound Al2O3. Type the full name in lowercase words.",
+      "a": "aluminum oxide",
+      "why": "Aluminum is the metal and oxygen becomes oxide. The name is aluminum oxide.",
+      "hints": [
+        "Name the metal first. Change the nonmetal ending to -ide. Subscripts are not spoken as prefixes here."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "aluminum oxide",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s37-p12",
+      "q": "Is N2O5 ionic or molecular? Type one word.",
+      "a": "molecular",
+      "why": "Nitrogen and oxygen are both nonmetals, so N2O5 is molecular.",
+      "hints": [
+        "There is no metal in N2O5. Two nonmetals make a molecular compound."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "molecular",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s37-p13",
+      "q": "What is the usual charge of an aluminum ion? Type it like 3+ or 2-.",
+      "a": "3+",
+      "why": "Aluminum is in group 13 and loses three valence electrons. The ion is Al3+, written 3+.",
+      "hints": [
+        "Group 13 metals lose three electrons. The charge is positive."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "3+",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s37-p14",
+      "q": "Write the formula of calcium bromide. Use no spaces.",
+      "a": "CaBr2",
+      "why": "Ca is 2+ and Br is 1-. The formula is CaBr2.",
+      "hints": [
+        "Calcium is 2+ and each bromide is 1-. The subscript 2 belongs on bromine."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "CaBr2",
+        "case": "sensitive"
+      }
+    }
+  ]
+}

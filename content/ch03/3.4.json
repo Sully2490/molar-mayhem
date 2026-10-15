@@ -1,0 +1,770 @@
+{
+  "id": "ch03-configurations",
+  "ch": 3,
+  "openstax_section": "OpenStax AF2e §3.4",
+  "guide_line": "Build a configuration or an orbital-box diagram, including the chromium and copper exceptions.",
+  "steps": [
+    "Orbitals fill in this order: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p. An s subshell holds 2 electrons, a p holds 6, a d holds 10, and an f holds 14.",
+    "A noble-gas core stands for the finished inner orbitals. [He] is 1s2. [Ne] is 1s2 2s2 2p6. [Ar] is that plus 3s2 3p6. [Kr] adds 4s2 3d10 4p6.",
+    "An orbital-box diagram uses one box for each orbital. An arrow is one electron. In a subshell, give every box one electron before you pair any. Paired arrows in one box point opposite ways.",
+    "Chromium and copper break the usual order. Cr is [Ar] 4s1 3d5, not 4s2 3d4. Cu is [Ar] 4s1 3d10, not 4s2 3d9.",
+    "A cation loses electrons from the highest n first. Remove 4s before 3d. Fe2+ is [Ar] 3d6. Fe3+ is [Ar] 3d5. Cu+ is [Ar] 3d10.",
+    "To name the element from a configuration, add up the electrons. For a neutral atom, that sum is the atomic number.",
+    "Reject a configuration that overfills a subshell. An s subshell stops at 2, a p at 6, and a d at 10. The noble-gas core must be the last noble gas that is actually finished."
+  ],
+  "worked_example": {
+    "q": "Write the electron configuration of iron (Fe). Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+    "steps": [
+      "Iron has atomic number 26, so a neutral atom has 26 electrons.",
+      "The argon core accounts for 18. The next eight are 4s2 3d6."
+    ],
+    "answer": "[Ar] 4s2 3d6"
+  },
+  "similar_problem": {
+    "q": "A neutral atom has the configuration [Ar] 4s2 3d10 4p3. Write the element symbol with a capital letter, like He.",
+    "hint": "Argon is 18 electrons. Add 2 + 10 + 3 more, and match that atomic number to the symbol.",
+    "answer": "As"
+  },
+  "sources": [
+    "OpenStax AF2e §3.4"
+  ],
+  "problems": [
+    {
+      "id": "ch03-s34-cfg-C",
+      "q": "Write the electron configuration of carbon (C). Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[He] 2s2 2p2",
+      "why": "Carbon has atomic number 6, so the neutral atom has 6 electrons. Filled in order, that is [He] 2s2 2p2.",
+      "hints": [
+        "After 1s2 2s2, carbon still has two electrons. They go in 2p."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[He] 2s2 2p2",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-cfg-O",
+      "q": "Write the electron configuration of oxygen (O). Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[He] 2s2 2p4",
+      "why": "Oxygen has atomic number 8, so the neutral atom has 8 electrons. Filled in order, that is [He] 2s2 2p4.",
+      "hints": [
+        "Oxygen has eight electrons. After 1s2 2s2, four electrons remain for 2p."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[He] 2s2 2p4",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-cfg-Na",
+      "q": "Write the electron configuration of sodium (Na). Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Ne] 3s1",
+      "why": "Sodium has atomic number 11, so the neutral atom has 11 electrons. Filled in order, that is [Ne] 3s1.",
+      "hints": [
+        "Sodium has one electron past the neon core. That electron is in 3s."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Ne] 3s1",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-cfg-P",
+      "q": "Write the electron configuration of phosphorus (P). Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Ne] 3s2 3p3",
+      "why": "Phosphorus has atomic number 15, so the neutral atom has 15 electrons. Filled in order, that is [Ne] 3s2 3p3.",
+      "hints": [
+        "Phosphorus is past neon. Put two electrons in 3s and the other three, unpaired, in 3p."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Ne] 3s2 3p3",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-cfg-Ca",
+      "q": "Write the electron configuration of calcium (Ca). Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Ar] 4s2",
+      "why": "Calcium has atomic number 20, so the neutral atom has 20 electrons. Filled in order, that is [Ar] 4s2.",
+      "hints": [
+        "Calcium finishes argon and then fills 4s. The 3d subshell is still empty."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Ar] 4s2",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-cfg-Fe",
+      "q": "Write the electron configuration of iron (Fe). Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Ar] 4s2 3d6",
+      "why": "Iron has atomic number 26, so the neutral atom has 26 electrons. Filled in order, that is [Ar] 4s2 3d6.",
+      "hints": [
+        "Iron finishes 4s and then places six electrons in 3d. Do not remove 4s for a neutral atom."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Ar] 4s2 3d6",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-cfg-Cr",
+      "q": "Write the electron configuration of chromium (Cr). Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Ar] 4s1 3d5",
+      "why": "Chromium has atomic number 24. The usual fill would end in 4s2 3d4. One 4s electron moves into 3d, so the configuration is [Ar] 4s1 3d5.",
+      "hints": [
+        "Chromium does not stay at 4s2 3d4. Move one electron so 3d is half full."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Ar] 4s1 3d5",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-cfg-Cu",
+      "q": "Write the electron configuration of copper (Cu). Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Ar] 4s1 3d10",
+      "why": "Copper has atomic number 29. The usual fill would end in 4s2 3d9. One 4s electron moves into 3d, so the configuration is [Ar] 4s1 3d10.",
+      "hints": [
+        "Copper does not stay at 4s2 3d9. Move one electron so 3d is full."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Ar] 4s1 3d10",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-cfg-Br",
+      "q": "Write the electron configuration of bromine (Br). Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Ar] 4s2 3d10 4p5",
+      "why": "Bromine has atomic number 35, so the neutral atom has 35 electrons. Filled in order, that is [Ar] 4s2 3d10 4p5.",
+      "hints": [
+        "Bromine is five electrons into 4p, after a full 3d and a full 4s."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Ar] 4s2 3d10 4p5",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-cfg-Mn",
+      "q": "Write the electron configuration of manganese (Mn). Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Ar] 4s2 3d5",
+      "why": "Manganese has atomic number 25, so the neutral atom has 25 electrons. Filled in order, that is [Ar] 4s2 3d5.",
+      "hints": [
+        "Manganese has a half-full 3d subshell and a full 4s. It is not the chromium exception."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Ar] 4s2 3d5",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-cfg-Zn",
+      "q": "Write the electron configuration of zinc (Zn). Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Ar] 4s2 3d10",
+      "why": "Zinc has atomic number 30, so the neutral atom has 30 electrons. Filled in order, that is [Ar] 4s2 3d10.",
+      "hints": [
+        "Zinc has a full 3d subshell and a full 4s. Both 4s electrons stay."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Ar] 4s2 3d10",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-cfg-Fe3plus",
+      "q": "Write the electron configuration of Fe3+. Remove electrons from the highest n first. Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Ar] 3d5",
+      "why": "Start with neutral iron, [Ar] 4s2 3d6. Remove 3 electrons from the highest n first. Fe3+ is [Ar] 3d5.",
+      "hints": [
+        "Start from neutral iron, then remove three electrons. Take both 4s electrons before any 3d electron."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Ar] 3d5",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-cfg-Cl1minus",
+      "q": "Write the electron configuration of Cl-. Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Ar]",
+      "why": "Neutral chlorine is [Ne] 3s2 3p5. The added electron completes the open subshell. Cl- is [Ar].",
+      "hints": [
+        "Chlorine's neutral atom ends in 3p5. The extra electron fills that 3p subshell."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Ar]",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-cfg-Cu1plus",
+      "q": "Write the electron configuration of Cu+. Remove electrons from the highest n first. Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Ar] 3d10",
+      "why": "Start with neutral copper, [Ar] 4s1 3d10. Remove 1 electron from the highest n first. Cu+ is [Ar] 3d10.",
+      "hints": [
+        "Start from copper's exception, [Ar] 4s1 3d10, then remove the 4s electron."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Ar] 3d10",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-cfg-Co2plus",
+      "q": "Write the electron configuration of Co2+. Remove electrons from the highest n first. Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Ar] 3d7",
+      "why": "Start with neutral cobalt, [Ar] 4s2 3d7. Remove 2 electrons from the highest n first. Co2+ is [Ar] 3d7.",
+      "hints": [
+        "Neutral cobalt is [Ar] 4s2 3d7. A 2+ ion loses the two 4s electrons and keeps 3d7."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Ar] 3d7",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-who-S",
+      "q": "A neutral atom has the configuration [Ne] 3s2 3p4. Write the element symbol with a capital letter, like He.",
+      "a": "S",
+      "why": "The electrons add to 16. Atomic number 16 is S.",
+      "hints": [
+        "Neon is 10. This configuration adds four electrons in 3p and two in 3s."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "S",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-who-Cl",
+      "q": "A neutral atom has the configuration [Ne] 3s2 3p5. Write the element symbol with a capital letter, like He.",
+      "a": "Cl",
+      "why": "The electrons add to 17. Atomic number 17 is Cl.",
+      "hints": [
+        "The 3p subshell is one electron short of full. Count from neon, not from argon."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Cl",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-who-Ge",
+      "q": "A neutral atom has the configuration [Ar] 4s2 3d10 4p2. Write the element symbol with a capital letter, like He.",
+      "a": "Ge",
+      "why": "The electrons add to 32. Atomic number 32 is Ge.",
+      "hints": [
+        "Argon is 18. Add the 4s, 3d, and 4p electrons in this configuration."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Ge",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-who-Cr",
+      "q": "A neutral atom has the configuration [Ar] 4s1 3d5. Write the element symbol with a capital letter, like He.",
+      "a": "Cr",
+      "why": "The electrons add to 24. Atomic number 24 is Cr.",
+      "hints": [
+        "A 4s1 3d5 ending is the half-full exception. Add 1 + 5 to argon's 18."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Cr",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-who-Cu",
+      "q": "A neutral atom has the configuration [Ar] 4s1 3d10. Write the element symbol with a capital letter, like He.",
+      "a": "Cu",
+      "why": "The electrons add to 29. Atomic number 29 is Cu.",
+      "hints": [
+        "A 4s1 3d10 ending is the full-d exception. Add 1 + 10 to argon's 18."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Cu",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-who-Kr",
+      "q": "A neutral atom has the configuration [Ar] 4s2 3d10 4p6. Write the element symbol with a capital letter, like He.",
+      "a": "Kr",
+      "why": "The electrons add to 36. Atomic number 36 is Kr.",
+      "hints": [
+        "The 4p subshell is full. Adding those electrons to argon finishes the next noble gas."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Kr",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-who-Sr",
+      "q": "A neutral atom has the configuration [Kr] 5s2. Write the element symbol with a capital letter, like He.",
+      "a": "Sr",
+      "why": "The electrons add to 38. Atomic number 38 is Sr.",
+      "hints": [
+        "Krypton is 36 electrons. Two more electrons sit in 5s."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Sr",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-who-N",
+      "q": "A neutral atom has the configuration 1s2 2s2 2p3. Write the element symbol with a capital letter, like He.",
+      "a": "N",
+      "why": "The electrons add to 7. Atomic number 7 is N.",
+      "hints": [
+        "Add 2 + 2 + 3. There is no noble-gas core hiding extra electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "N",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-who-Fe",
+      "q": "A neutral atom has the configuration [Ar] 4s2 3d6. Write the element symbol with a capital letter, like He.",
+      "a": "Fe",
+      "why": "The electrons add to 26. Atomic number 26 is Fe.",
+      "hints": [
+        "Past argon, count two 4s electrons and six 3d electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Fe",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-who-Ni",
+      "q": "A neutral atom has the configuration [Ar] 4s2 3d8. Write the element symbol with a capital letter, like He.",
+      "a": "Ni",
+      "why": "The electrons add to 28. Atomic number 28 is Ni.",
+      "hints": [
+        "This is two electrons past iron's 3d6. Keep both electrons in 4s."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Ni",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-who-I",
+      "q": "A neutral atom has the configuration [Kr] 5s2 4d10 5p5. Write the element symbol with a capital letter, like He.",
+      "a": "I",
+      "why": "The electrons add to 53. Atomic number 53 is I.",
+      "hints": [
+        "Krypton is 36. Add the 5s, 4d, and 5p electrons shown here."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "I",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-who-As",
+      "q": "A neutral atom has the configuration [Ar] 4s2 3d10 4p3. Write the element symbol with a capital letter, like He.",
+      "a": "As",
+      "why": "The electrons add to 33. Atomic number 33 is As.",
+      "hints": [
+        "The 4p subshell is half full. Add 2 + 10 + 3 to argon's 18."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "As",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-ion-Fe2plus",
+      "q": "An ion with charge 2+ has the configuration [Ar] 3d6. Write the ion symbol with a plain plus or hyphen, like Mg2+ or O2-.",
+      "a": "Fe2+",
+      "why": "[Ar] 3d6 has 24 electrons. A 2+ ion has atomic number 26, so the symbol is Fe2+.",
+      "hints": [
+        "The ion is 2+, and the configuration has no 4s electrons. Add 6 to argon, then add the 2 lost electrons to get the atomic number."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Fe2+",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-ion-Fe3plus",
+      "q": "An ion with charge 3+ has the configuration [Ar] 3d5. Write the ion symbol with a plain plus or hyphen, like Mg2+ or O2-.",
+      "a": "Fe3+",
+      "why": "[Ar] 3d5 has 23 electrons. A 3+ ion has atomic number 26, so the symbol is Fe3+.",
+      "hints": [
+        "A 3+ charge means three more protons than electrons. The configuration shows 18 + 5 electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Fe3+",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-ion-Cuplus",
+      "q": "An ion with charge 1+ has the configuration [Ar] 3d10. Write the ion symbol with a plain plus or hyphen, like Mg2+ or O2-.",
+      "a": "Cu+",
+      "why": "[Ar] 3d10 has 28 electrons. A 1+ ion has atomic number 29, so the symbol is Cu+.",
+      "hints": [
+        "A 1+ ion with a full 3d and no 4s electron is one proton past the electron count."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Cu+",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-unpaired-O",
+      "q": "How many unpaired electrons does a neutral oxygen atom have? Type the number only.",
+      "a": "2",
+      "why": "Oxygen is [He] 2s2 2p4. Placing those electrons by Hund's rule leaves 2 unpaired.",
+      "hints": [
+        "In oxygen, the 2p subshell has four electrons and three orbitals. Two electrons are paired and two are alone."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s34-unpaired-N",
+      "q": "How many unpaired electrons does a neutral nitrogen atom have? Type the number only.",
+      "a": "3",
+      "why": "Nitrogen is [He] 2s2 2p3. Placing those electrons by Hund's rule leaves 3 unpaired.",
+      "hints": [
+        "Nitrogen's 2p subshell has three electrons in three orbitals. Hund's rule leaves all three unpaired."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 3,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s34-unpaired-Fe",
+      "q": "How many unpaired electrons does a neutral iron atom have? Type the number only.",
+      "a": "4",
+      "why": "Iron is [Ar] 4s2 3d6. Placing those electrons by Hund's rule leaves 4 unpaired.",
+      "hints": [
+        "Neutral iron is 4s2 3d6. The 4s electrons are paired. Count the singles left in 3d."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s34-unpaired-Cr",
+      "q": "How many unpaired electrons does a neutral chromium atom have? Type the number only.",
+      "a": "6",
+      "why": "Chromium is [Ar] 4s1 3d5. Placing those electrons by Hund's rule leaves 6 unpaired.",
+      "hints": [
+        "Use chromium's real configuration, 4s1 3d5. Every one of those six electrons is unpaired."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 6,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s34-unpaired-Cu",
+      "q": "How many unpaired electrons does a neutral copper atom have? Type the number only.",
+      "a": "1",
+      "why": "Copper is [Ar] 4s1 3d10. Placing those electrons by Hund's rule leaves 1 unpaired.",
+      "hints": [
+        "Use copper's real configuration, 4s1 3d10. The 3d subshell is full, so only the 4s electron is unpaired."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s34-unpaired-Zn",
+      "q": "How many unpaired electrons does a neutral zinc atom have? Type the number only.",
+      "a": "0",
+      "why": "Zinc is [Ar] 4s2 3d10. Placing those electrons by Hund's rule leaves 0 unpaired.",
+      "hints": [
+        "Zinc is 4s2 3d10. Both subshells are full, so every electron has a partner."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s34-valence-S",
+      "q": "How many valence electrons does neutral sulfur have? Type the number only.",
+      "a": "6",
+      "why": "Sulfur is [Ne] 3s2 3p4. The electrons in the highest n add to 6.",
+      "hints": [
+        "Sulfur's highest shell is n = 3. Add the 3s and 3p electrons, and do not count the neon core."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 6,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s34-valence-Ca",
+      "q": "How many valence electrons does neutral calcium have? Type the number only.",
+      "a": "2",
+      "why": "Calcium is [Ar] 4s2. The electrons in the highest n add to 2.",
+      "hints": [
+        "Calcium's highest shell is n = 4, and only the 4s electrons are in it."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s34-valence-Br",
+      "q": "How many valence electrons does neutral bromine have? Type the number only.",
+      "a": "7",
+      "why": "Bromine is [Ar] 4s2 3d10 4p5. The electrons in the highest n add to 7.",
+      "hints": [
+        "Bromine's highest shell is n = 4. Count 4s and 4p. Leave the 3d electrons out of the valence count."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 7,
+        "tolerance": 0.5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch03-s34-box-O",
+      "q": "Type the orbital-box diagram for neutral oxygen. Include every occupied subshell from 1s through 2p. Use ↑ and ↓, one space between orbitals, [] for an empty orbital, and | between subshells. Unpaired arrows are ↑. A filled orbital is written ↑↓.",
+      "a": "1s ↑↓ | 2s ↑↓ | 2p ↑↓ ↑ ↑",
+      "why": "Oxygen is [He] 2s2 2p4. Drawing every occupied subshell with one arrow in each orbital before pairing gives 1s ↑↓ | 2s ↑↓ | 2p ↑↓ ↑ ↑.",
+      "hints": [
+        "Oxygen has four 2p electrons. Pair the first 2p orbital only after each 2p orbital has one arrow."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "1s ↑↓ | 2s ↑↓ | 2p ↑↓ ↑ ↑",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-box-N",
+      "q": "Type the orbital-box diagram for neutral nitrogen. Include every occupied subshell from 1s through 2p. Use ↑ and ↓, one space between orbitals, [] for an empty orbital, and | between subshells. Unpaired arrows are ↑. A filled orbital is written ↑↓.",
+      "a": "1s ↑↓ | 2s ↑↓ | 2p ↑ ↑ ↑",
+      "why": "Nitrogen is [He] 2s2 2p3. Drawing every occupied subshell with one arrow in each orbital before pairing gives 1s ↑↓ | 2s ↑↓ | 2p ↑ ↑ ↑.",
+      "hints": [
+        "Nitrogen has three 2p electrons. Draw three 2p arrows in three different orbitals, all pointing up."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "1s ↑↓ | 2s ↑↓ | 2p ↑ ↑ ↑",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-box-C",
+      "q": "Type the orbital-box diagram for neutral carbon. Include every occupied subshell from 1s through 2p. Use ↑ and ↓, one space between orbitals, [] for an empty orbital, and | between subshells. Unpaired arrows are ↑. A filled orbital is written ↑↓.",
+      "a": "1s ↑↓ | 2s ↑↓ | 2p ↑ ↑ []",
+      "why": "Carbon is [He] 2s2 2p2. Drawing every occupied subshell with one arrow in each orbital before pairing gives 1s ↑↓ | 2s ↑↓ | 2p ↑ ↑ [].",
+      "hints": [
+        "Carbon has two 2p electrons. Show the empty 2p orbital as [] instead of pairing the two arrows."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "1s ↑↓ | 2s ↑↓ | 2p ↑ ↑ []",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-box-Cr",
+      "q": "Type the orbital-box diagram for neutral chromium. Show only the 4s and 3d orbitals. Use ↑ and ↓, one space between orbitals, [] for an empty orbital, and | between subshells. Unpaired arrows are ↑. A filled orbital is written ↑↓.",
+      "a": "4s ↑ | 3d ↑ ↑ ↑ ↑ ↑",
+      "why": "Chromium is [Ar] 4s1 3d5. Drawing only 4s and 3d with one arrow in each orbital before pairing gives 4s ↑ | 3d ↑ ↑ ↑ ↑ ↑.",
+      "hints": [
+        "Draw chromium's exception, not 4s2 3d4. One 4s arrow and five separate 3d arrows."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "4s ↑ | 3d ↑ ↑ ↑ ↑ ↑",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-box-Cu",
+      "q": "Type the orbital-box diagram for neutral copper. Show only the 4s and 3d orbitals. Use ↑ and ↓, one space between orbitals, [] for an empty orbital, and | between subshells. Unpaired arrows are ↑. A filled orbital is written ↑↓.",
+      "a": "4s ↑ | 3d ↑↓ ↑↓ ↑↓ ↑↓ ↑↓",
+      "why": "Copper is [Ar] 4s1 3d10. Drawing only 4s and 3d with one arrow in each orbital before pairing gives 4s ↑ | 3d ↑↓ ↑↓ ↑↓ ↑↓ ↑↓.",
+      "hints": [
+        "Draw copper's exception, not 4s2 3d9. One 4s arrow, and every 3d orbital paired."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "4s ↑ | 3d ↑↓ ↑↓ ↑↓ ↑↓ ↑↓",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-box-F",
+      "q": "Type the orbital-box diagram for neutral fluorine. Include every occupied subshell from 1s through 2p. Use ↑ and ↓, one space between orbitals, [] for an empty orbital, and | between subshells. Unpaired arrows are ↑. A filled orbital is written ↑↓.",
+      "a": "1s ↑↓ | 2s ↑↓ | 2p ↑↓ ↑↓ ↑",
+      "why": "Fluorine is [He] 2s2 2p5. Drawing every occupied subshell with one arrow in each orbital before pairing gives 1s ↑↓ | 2s ↑↓ | 2p ↑↓ ↑↓ ↑.",
+      "hints": [
+        "Fluorine has five 2p electrons. Pair two of the 2p orbitals and leave one arrow alone."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "1s ↑↓ | 2s ↑↓ | 2p ↑↓ ↑↓ ↑",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-box-read-O",
+      "q": "This orbital-box diagram is 1s ↑↓ | 2s ↑↓ | 2p ↑↓ ↑ ↑. Write the electron configuration. Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[He] 2s2 2p4",
+      "why": "Each ↑↓ is two electrons and each single ↑ is one. The diagram has 1s2 2s2 2p4, which is [He] 2s2 2p4.",
+      "hints": [
+        "Count the arrows in each labeled subshell. Two arrows in one orbital count as 2."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[He] 2s2 2p4",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-box-who-N",
+      "q": "This orbital-box diagram belongs to a neutral atom: 1s ↑↓ | 2s ↑↓ | 2p ↑ ↑ ↑. Write the element symbol with a capital letter, like He.",
+      "a": "N",
+      "why": "The arrows add to 7 electrons. Atomic number 7 is N.",
+      "hints": [
+        "Add every arrow. A neutral atom with that many electrons has that atomic number."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "N",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-box-who-Cr",
+      "q": "These are the outer boxes of a neutral atom: 4s ↑ | 3d ↑ ↑ ↑ ↑ ↑. The core is argon. Write the element symbol with a capital letter, like He.",
+      "a": "Cr",
+      "why": "One 4s arrow and five 3d arrows are 6 electrons past argon's 18. Atomic number 24 is Cr.",
+      "hints": [
+        "Count the outer arrows and add them to 18. The single 4s arrow is the chromium pattern."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "Cr",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-valid-s3",
+      "q": "Is 1s2 2s2 2p6 3s3 a possible electron configuration? Type yes or no.",
+      "a": "no",
+      "why": "A 3s subshell holds 2 electrons. A count of 3 is past that limit, so this configuration is not possible. The answer is no.",
+      "hints": [
+        "Check the capacity of the last subshell. An s subshell stops at 2."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "no",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-valid-core",
+      "q": "A student shortens 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 to [Ar] 5s2. Is that the right noble-gas core? Type yes or no.",
+      "a": "no",
+      "why": "The orbitals through 4p are full, and that finished core is krypton, not argon. [Ar] 5s2 leaves out 4s, 3d, and 4p. The answer is no.",
+      "hints": [
+        "Argon stops at 3p. Count whether 4s, 3d, and 4p are already full before the 5s electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "no",
+        "case": "insensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-valid-kr",
+      "q": "Rewrite 1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 with the correct noble-gas core. Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Kr] 5s2",
+      "why": "Every subshell through 4p is full. That is the krypton core, and two electrons remain in 5s. The configuration is [Kr] 5s2.",
+      "hints": [
+        "The last noble gas whose orbitals are all full is Kr. Only 5s2 sits outside that core."
+      ],
+      "check": {
+        "kind": "config",
+        "text": "[Kr] 5s2",
+        "case": "sensitive"
+      }
+    },
+    {
+      "id": "ch03-s34-valid-order",
+      "q": "Which subshell is filled before 3d begins? Type the label, like 2p.",
+      "a": "4s",
+      "why": "After 3p, the next subshell in the filling order is 4s. The 3d subshell comes after 4s. The label is 4s.",
+      "hints": [
+        "Look at the order past 3p. The s subshell of the next shell comes before 3d."
+      ],
+      "check": {
+        "kind": "exact",
+        "text": "4s",
+        "case": "sensitive"
+      }
+    }
+  ]
+}

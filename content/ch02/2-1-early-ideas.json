@@ -1,0 +1,132 @@
+{
+  "id": "ch2-early-ideas",
+  "ch": 2,
+  "openstax_section": "OpenStax AF2e §2.1",
+  "guide_line": "Use Dalton's picture: closed changes keep the same mass, and one compound keeps one ratio.",
+  "steps": [
+    "Dalton said each element is its own kind of atom. Atoms of different elements join in small whole-number ratios to make a compound.",
+    "Law of conservation of mass: a closed change does not make or destroy mass. Add the reactant masses to get the product mass.",
+    "Law of definite proportions: every sample of one compound has the same elements in the same mass ratio.",
+    "Law of multiple proportions: if two elements make more than one compound, fix the mass of one element. The masses of the other element are in a small whole-number ratio."
+  ],
+  "worked_example": {
+    "q": "In a closed flask, 12.00 g of carbon reacts with 32.00 g of oxygen and makes only one product. What mass of product forms?",
+    "steps": [
+      "The flask is closed, so no mass enters or leaves.",
+      "12.00 g + 32.00 g = 44.00 g."
+    ],
+    "answer": "44.00 g"
+  },
+  "similar_problem": {
+    "q": "In a closed flask, 8.000 g of sulfur reacts with 8.000 g of oxygen and makes only one product. What mass of product forms?",
+    "hint": "Add the 8.000 g of sulfur to the 8.000 g of oxygen. Nothing else is in the flask.",
+    "answer": "16.00 g"
+  },
+  "sources": ["OpenStax AF2e §2.1"],
+  "problems": [
+    {
+      "id": "ch2-21-product",
+      "q": "In a closed flask, 24.00 g of magnesium reacts with 16.00 g of oxygen and makes only one product. What mass of product forms?",
+      "a": "40.00 g",
+      "why": "Mass is conserved in the closed flask. 24.00 g + 16.00 g = 40.00 g of product.",
+      "hints": ["Add 24.00 g of magnesium to 16.00 g of oxygen. The flask makes only that product."],
+      "check": { "kind": "numeric", "value": 40, "tolerance": 0.05, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch2-21-missing",
+      "q": "15.00 g of compound A reacts with element B in a closed flask. The only product has mass 27.50 g. What mass of B reacted?",
+      "a": "12.50 g",
+      "why": "Product mass equals A plus B. 27.50 g − 15.00 g = 12.50 g of B.",
+      "hints": ["Subtract the 15.00 g of compound A from the 27.50 g of product."],
+      "check": { "kind": "numeric", "value": 12.5, "tolerance": 0.05, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch2-21-gas",
+      "q": "A 10.00 g solid breaks down in an open dish. 6.000 g of solid is left, and the rest leaves as a gas. What mass of gas left?",
+      "a": "4.000 g",
+      "why": "The missing mass is the gas. 10.00 g − 6.000 g = 4.000 g.",
+      "hints": ["Subtract the 6.000 g of leftover solid from the 10.00 g that started in the dish."],
+      "check": { "kind": "numeric", "value": 4, "tolerance": 0.05, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch2-21-percent",
+      "q": "Every sample of compound Z is 40.00% element Q by mass. What mass of Q is in 12.50 g of Z?",
+      "a": "5.000 g",
+      "why": "Definite proportions keeps the percent fixed. 0.4000 × 12.50 g = 5.000 g of Q.",
+      "hints": ["40.00% of 12.50 g means multiply 12.50 by 0.4000."],
+      "check": { "kind": "numeric", "value": 5, "tolerance": 0.05, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch2-21-scale",
+      "q": "A 20.00 g sample of compound W contains 8.000 g of element X. What mass of X is in 50.00 g of W?",
+      "a": "20.00 g",
+      "why": "The fraction of X is 8.000/20.00 = 0.4000. 0.4000 × 50.00 g = 20.00 g of X.",
+      "hints": ["Element X is 8.000 g in every 20.00 g of W. Apply 8.000/20.00 to 50.00 g."],
+      "check": { "kind": "numeric", "value": 20, "tolerance": 0.05, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch2-21-iron",
+      "q": "A 4.000 g sample of a compound contains 1.500 g of iron. What mass of iron is in 10.00 g of the same compound?",
+      "a": "3.750 g",
+      "why": "The iron fraction is 1.500/4.000 = 0.3750. 0.3750 × 10.00 g = 3.750 g of iron.",
+      "hints": ["Iron is 1.500 g in every 4.000 g of this compound. Scale that fraction to 10.00 g."],
+      "check": { "kind": "numeric", "value": 3.75, "tolerance": 0.05, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch2-21-ratio-oxygen",
+      "q": "With 1.000 g of carbon, compound A contains 2.284 g of oxygen and compound B contains 4.568 g of oxygen. What is the ratio of the oxygen mass in B to the oxygen mass in A? Use 4 significant figures.",
+      "a": "2.000",
+      "why": "Fix the carbon mass, then divide the oxygen masses. 4.568 g / 2.284 g = 2.000, a 2-to-1 ratio.",
+      "hints": ["Divide 4.568 g of oxygen by 2.284 g of oxygen. Leave the 1.000 g of carbon out of the division."],
+      "check": { "kind": "numeric", "value": 2, "tolerance": 0.05, "sigFigs": 4, "unit": null }
+    },
+    {
+      "id": "ch2-21-ratio-q",
+      "q": "With 2.000 g of element M, compound 1 contains 3.000 g of Q and compound 2 contains 9.000 g of Q. What is the ratio of the Q mass in compound 2 to the Q mass in compound 1? Use 4 significant figures.",
+      "a": "3.000",
+      "why": "The mass of M is the same in both compounds. 9.000 g / 3.000 g = 3.000.",
+      "hints": ["Divide 9.000 g of Q by 3.000 g of Q. The 2.000 g of M is the same in both, so it is not the ratio."],
+      "check": { "kind": "numeric", "value": 3, "tolerance": 0.05, "sigFigs": 4, "unit": null }
+    },
+    {
+      "id": "ch2-21-conservation",
+      "q": "A sealed flask has mass 36.00 g before a reaction inside it and 36.00 g after. Which mass law is this?",
+      "a": "conservation of mass",
+      "why": "The flask is sealed and the mass does not change. That is the law of conservation of mass.",
+      "hints": ["The sealed flask stays 36.00 g. Name the law that says mass in a closed change does not change."],
+      "check": { "kind": "exact", "text": "conservation of mass", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-21-definite",
+      "q": "Water from a river and water made in a lab both contain 8 g of oxygen for every 1 g of hydrogen. Which mass law is this?",
+      "a": "definite proportions",
+      "why": "Both samples are the same compound and the oxygen-to-hydrogen mass ratio matches. That is the law of definite proportions.",
+      "hints": ["River water and lab-made water share one oxygen-to-hydrogen mass ratio. Name the law about one compound having one ratio."],
+      "check": { "kind": "exact", "text": "definite proportions", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-21-multiple",
+      "q": "Carbon and oxygen form two compounds. For the same mass of carbon, the oxygen masses are in a 1-to-2 ratio. Which mass law is this?",
+      "a": "multiple proportions",
+      "why": "Two compounds of the same two elements give a small whole-number mass ratio. That is the law of multiple proportions.",
+      "hints": ["Two carbon-oxygen compounds give oxygen masses in a 1-to-2 ratio for the same carbon mass. Name the law about that whole-number ratio."],
+      "check": { "kind": "exact", "text": "multiple proportions", "case": "insensitive" }
+    },
+    {
+      "id": "ch2-21-other",
+      "q": "A compound is 60.00% carbon by mass. In 25.00 g of the compound, what mass is not carbon?",
+      "a": "10.00 g",
+      "why": "Carbon is 0.6000 × 25.00 g = 15.00 g. The rest is 25.00 g − 15.00 g = 10.00 g.",
+      "hints": ["Find 60.00% of 25.00 g, then subtract that carbon mass from 25.00 g."],
+      "check": { "kind": "numeric", "value": 10, "tolerance": 0.05, "sigFigs": 4, "unit": "g" }
+    },
+    {
+      "id": "ch2-21-same-mass",
+      "q": "Dalton treated every atom of one element as having the same mass. What are atoms of one element called when their masses differ?",
+      "a": "isotopes",
+      "why": "Atoms of one element share a proton count. Different masses mean different neutron counts. Those atoms are isotopes. Dalton's same-mass claim does not cover them.",
+      "hints": ["The proton count stays the same and the neutron count changes. Name those different-mass atoms."],
+      "check": { "kind": "exact", "text": "isotopes", "case": "insensitive" }
+    }
+  ]
+}
