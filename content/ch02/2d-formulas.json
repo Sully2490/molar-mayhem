@@ -1,0 +1,227 @@
+{
+  "id": "ch2-formulas",
+  "ch": 2,
+  "openstax_section": "OpenStax AF2e §2.7",
+  "guide_line": "Name an ionic compound, or write its formula.",
+  "steps": [
+    "Write the cation first, then the anion.",
+    "A monatomic anion ends in -ide. Use the polyatomic name as it is: nitrate, sulfate, phosphate, carbonate, hydroxide.",
+    "Crisscross the charges, then reduce. Put parentheses around a polyatomic ion used more than once.",
+    "A transition metal gets a Roman numeral for its charge.",
+    "For a formula, use symbols such as Al2O3. For a name, use words."
+  ],
+  "worked_example": {
+    "q": "Write the formula for aluminum oxide.",
+    "steps": [
+      "Al3+ and O2−.",
+      "Crisscross: Al2O3."
+    ],
+    "answer": "Al2O3"
+  },
+  "similar_problem": {
+    "q": "Write the formula for calcium phosphate.",
+    "hint": "Calcium is 2+. Phosphate is 3−.",
+    "answer": "Ca3(PO4)2"
+  },
+  "sources": [
+    "OpenStax AF2e §2.7"
+  ],
+  "problems": [
+    {
+      "id": "ch2-f-al",
+      "q": "Write the formula for aluminum oxide.",
+      "a": "Al2O3",
+      "why": "Al3+ and O2− crisscross to Al2O3.",
+      "hints": [
+        "Balance the charges. Parentheses go around a polyatomic ion used more than once."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "Al2O3"
+      }
+    },
+    {
+      "id": "ch2-f-ca",
+      "q": "Write the formula for calcium phosphate.",
+      "a": "Ca3(PO4)2",
+      "why": "Ca2+ and PO4 3− need three calcium and two phosphate.",
+      "hints": [
+        "Balance the charges. Parentheses go around a polyatomic ion used more than once."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "Ca3(PO4)2"
+      }
+    },
+    {
+      "id": "ch2-f-fe",
+      "q": "Write the formula for iron(III) chloride.",
+      "a": "FeCl3",
+      "why": "Iron(III) is Fe3+. Three Cl− balance it.",
+      "hints": [
+        "Balance the charges. Parentheses go around a polyatomic ion used more than once."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "FeCl3"
+      }
+    },
+    {
+      "id": "ch2-f-nh",
+      "q": "Write the formula for ammonium sulfate.",
+      "a": "(NH4)2SO4",
+      "why": "Two NH4+ balance one SO4 2−.",
+      "hints": [
+        "Balance the charges. Parentheses go around a polyatomic ion used more than once."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "(NH4)2SO4"
+      }
+    },
+    {
+      "id": "ch2-f-na",
+      "q": "Write the formula for sodium carbonate.",
+      "a": "Na2CO3",
+      "why": "Two Na+ balance one CO3 2−.",
+      "hints": [
+        "Balance the charges. Parentheses go around a polyatomic ion used more than once."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "Na2CO3"
+      }
+    },
+    {
+      "id": "ch2-f-cu",
+      "q": "Write the formula for copper(II) nitrate.",
+      "a": "Cu(NO3)2",
+      "why": "Cu2+ needs two nitrate ions. Use parentheses.",
+      "hints": [
+        "Balance the charges. Parentheses go around a polyatomic ion used more than once."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "Cu(NO3)2"
+      }
+    },
+    {
+      "id": "ch2-f-mg",
+      "q": "Write the formula for magnesium hydroxide.",
+      "a": "Mg(OH)2",
+      "why": "Mg2+ needs two OH−. Use parentheses.",
+      "hints": [
+        "Balance the charges. Parentheses go around a polyatomic ion used more than once."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "Mg(OH)2"
+      }
+    },
+    {
+      "id": "ch2-f-k",
+      "q": "Write the formula for potassium sulfide.",
+      "a": "K2S",
+      "why": "Two K+ balance one S2−.",
+      "hints": [
+        "Balance the charges. Parentheses go around a polyatomic ion used more than once."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "K2S"
+      }
+    },
+    {
+      "id": "ch2-f-pb",
+      "q": "Write the formula for lead(II) iodide.",
+      "a": "PbI2",
+      "why": "Lead(II) is Pb2+. Two I− balance it.",
+      "hints": [
+        "Balance the charges. Parentheses go around a polyatomic ion used more than once."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "PbI2"
+      }
+    },
+    {
+      "id": "ch2-f-ba",
+      "q": "Write the formula for barium nitrate.",
+      "a": "Ba(NO3)2",
+      "why": "Ba2+ needs two nitrate ions.",
+      "hints": [
+        "Balance the charges. Parentheses go around a polyatomic ion used more than once."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "formula",
+        "text": "Ba(NO3)2"
+      }
+    },
+    {
+      "id": "ch2-n-na",
+      "q": "Name Na2CO3.",
+      "a": "sodium carbonate",
+      "why": "Na+ is sodium. CO3 2− is carbonate. No prefixes.",
+      "hints": [
+        "Balance the charges. Parentheses go around a polyatomic ion used more than once."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "sodium carbonate"
+      }
+    },
+    {
+      "id": "ch2-n-fe",
+      "q": "Name FeCl3.",
+      "a": "iron(III) chloride",
+      "why": "Three Cl− means iron is 3+.",
+      "hints": [
+        "Balance the charges. Parentheses go around a polyatomic ion used more than once."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "iron(III) chloride"
+      }
+    },
+    {
+      "id": "ch2-n-cu",
+      "q": "Name Cu(NO3)2.",
+      "a": "copper(II) nitrate",
+      "why": "Two nitrate ions mean copper is 2+.",
+      "hints": [
+        "Balance the charges. Parentheses go around a polyatomic ion used more than once."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "copper(II) nitrate"
+      }
+    },
+    {
+      "id": "ch2-n-k",
+      "q": "Name K2S.",
+      "a": "potassium sulfide",
+      "why": "K+ is potassium. S2− is sulfide.",
+      "hints": [
+        "Balance the charges. Parentheses go around a polyatomic ion used more than once."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "potassium sulfide"
+      }
+    }
+  ]
+}

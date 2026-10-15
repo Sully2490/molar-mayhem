@@ -1,0 +1,182 @@
+{
+  "id": "ch2-isotopes",
+  "ch": 2,
+  "openstax_section": "OpenStax AF2e §2.3",
+  "guide_line": "Find a weighted average atomic mass.",
+  "steps": [
+    "Isotopes share a proton count and differ in neutrons.",
+    "Change each percent to a decimal.",
+    "Average = (mass × fraction) + (mass × fraction).",
+    "The more abundant isotope pulls the average toward itself.",
+    "Type the number only."
+  ],
+  "worked_example": {
+    "q": "Chlorine: 34.969 amu at 75.76%, and 36.966 amu for the rest. Average mass?",
+    "steps": [
+      "0.7576 × 34.969 = 26.493.",
+      "0.2424 × 36.966 = 8.961.",
+      "Add: 35.453 amu."
+    ],
+    "answer": "35.453 amu"
+  },
+  "similar_problem": {
+    "q": "Copper: 62.930 amu at 69.15%, and 64.928 amu for the rest. Average mass?",
+    "hint": "Weight each mass by its fraction. The rest is 30.85%.",
+    "answer": "63.546 amu"
+  },
+  "sources": [
+    "OpenStax AF2e §2.3"
+  ],
+  "problems": [
+    {
+      "id": "ch2-m-cl",
+      "q": "Isotopes 34.969 amu (75.76%) and 36.966 amu (the rest). Average mass in amu?",
+      "a": "35.453 amu",
+      "why": "Multiply each mass by its fraction, then add.",
+      "hints": [
+        "Do not average the two masses equally."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 35.453,
+        "sigFigs": 5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch2-m-cu",
+      "q": "Isotopes 62.930 amu (69.15%) and 64.928 amu (the rest). Average mass in amu?",
+      "a": "63.546 amu",
+      "why": "Multiply each mass by its fraction, then add.",
+      "hints": [
+        "Do not average the two masses equally."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 63.546,
+        "sigFigs": 5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch2-m-b",
+      "q": "Isotopes 10.013 amu (19.90%) and 11.009 amu (the rest). Average mass in amu?",
+      "a": "10.811 amu",
+      "why": "Multiply each mass by its fraction, then add.",
+      "hints": [
+        "Do not average the two masses equally."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 10.811,
+        "sigFigs": 5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch2-m-li",
+      "q": "Isotopes 6.015 amu (7.59%) and 7.016 amu (the rest). Average mass in amu?",
+      "a": "6.940 amu",
+      "why": "Multiply each mass by its fraction, then add.",
+      "hints": [
+        "Do not average the two masses equally."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 6.94,
+        "sigFigs": 4,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch2-m-br",
+      "q": "Isotopes 78.918 amu (50.69%) and 80.916 amu (the rest). Average mass in amu?",
+      "a": "79.903 amu",
+      "why": "Multiply each mass by its fraction, then add.",
+      "hints": [
+        "Do not average the two masses equally."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 79.903,
+        "sigFigs": 5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch2-m-ag",
+      "q": "Isotopes 106.905 amu (51.84%) and 108.905 amu (the rest). Average mass in amu?",
+      "a": "107.87 amu",
+      "why": "Multiply each mass by its fraction, then add.",
+      "hints": [
+        "Do not average the two masses equally."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 107.87,
+        "sigFigs": 5,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch2-m-xcu",
+      "q": "Masses 62.930 and 64.928 amu. Average is 63.546 amu. Percent of the lighter isotope?",
+      "a": "69.2%",
+      "why": "Let x be the lighter fraction: x·m1 + (1 − x)·m2 = average.",
+      "hints": [
+        "Solve for x, then multiply by 100."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 69.2,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch2-m-xsr",
+      "q": "Masses 84.912 and 86.909 amu. Average is 85.468 amu. Percent of the lighter isotope?",
+      "a": "72.2%",
+      "why": "Let x be the lighter fraction: x·m1 + (1 − x)·m2 = average.",
+      "hints": [
+        "Solve for x, then multiply by 100."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 72.2,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch2-m-xga",
+      "q": "Masses 68.926 and 70.925 amu. Average is 69.723 amu. Percent of the lighter isotope?",
+      "a": "60.1%",
+      "why": "Let x be the lighter fraction: x·m1 + (1 − x)·m2 = average.",
+      "hints": [
+        "Solve for x, then multiply by 100."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 60.1,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch2-m-xsb",
+      "q": "Masses 120.904 and 122.904 amu. Average is 121.760 amu. Percent of the lighter isotope?",
+      "a": "57.2%",
+      "why": "Let x be the lighter fraction: x·m1 + (1 − x)·m2 = average.",
+      "hints": [
+        "Solve for x, then multiply by 100."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 57.2,
+        "sigFigs": 3,
+        "unit": null
+      }
+    }
+  ]
+}

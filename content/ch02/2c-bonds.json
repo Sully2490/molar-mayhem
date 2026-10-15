@@ -1,0 +1,199 @@
+{
+  "id": "ch2-bonds",
+  "ch": 2,
+  "openstax_section": "OpenStax AF2e §2.6",
+  "guide_line": "Tell an ionic compound from a covalent compound.",
+  "steps": [
+    "A metal with a nonmetal makes an ionic compound. Electrons move, forming ions.",
+    "Two nonmetals make a covalent compound. Electrons are shared.",
+    "Ammonium (NH4+) or another polyatomic ion with a metal is still ionic.",
+    "Type ionic or covalent."
+  ],
+  "worked_example": {
+    "q": "Is MgCl2 ionic or covalent?",
+    "steps": [
+      "Mg is a metal.",
+      "Cl is a nonmetal.",
+      "Metal + nonmetal is ionic."
+    ],
+    "answer": "ionic"
+  },
+  "similar_problem": {
+    "q": "Is CO2 ionic or covalent?",
+    "hint": "Are carbon and oxygen both nonmetals?",
+    "answer": "covalent"
+  },
+  "sources": [
+    "OpenStax AF2e §2.6"
+  ],
+  "problems": [
+    {
+      "id": "ch2-b-mgcl",
+      "q": "Is MgCl2 ionic or covalent?",
+      "a": "ionic",
+      "why": "Mg is a metal.",
+      "hints": [
+        "Metal or polyatomic ion → ionic. Two nonmetals → covalent."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "ionic"
+      }
+    },
+    {
+      "id": "ch2-b-co2",
+      "q": "Is CO2 ionic or covalent?",
+      "a": "covalent",
+      "why": "C and O are both nonmetals.",
+      "hints": [
+        "Metal or polyatomic ion → ionic. Two nonmetals → covalent."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "covalent"
+      }
+    },
+    {
+      "id": "ch2-b-mgo",
+      "q": "Is MgO ionic or covalent?",
+      "a": "ionic",
+      "why": "Mg is a metal.",
+      "hints": [
+        "Metal or polyatomic ion → ionic. Two nonmetals → covalent."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "ionic"
+      }
+    },
+    {
+      "id": "ch2-b-nh3",
+      "q": "Is NH3 ionic or covalent?",
+      "a": "covalent",
+      "why": "N and H are both nonmetals.",
+      "hints": [
+        "Metal or polyatomic ion → ionic. Two nonmetals → covalent."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "covalent"
+      }
+    },
+    {
+      "id": "ch2-b-mgno",
+      "q": "Is Mg(NO3)2 ionic or covalent?",
+      "a": "ionic",
+      "why": "Mg is a metal, and nitrate is a polyatomic ion.",
+      "hints": [
+        "Metal or polyatomic ion → ionic. Two nonmetals → covalent."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "ionic"
+      }
+    },
+    {
+      "id": "ch2-b-so3",
+      "q": "Is SO3 ionic or covalent?",
+      "a": "covalent",
+      "why": "S and O are both nonmetals.",
+      "hints": [
+        "Metal or polyatomic ion → ionic. Two nonmetals → covalent."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "covalent"
+      }
+    },
+    {
+      "id": "ch2-b-naf",
+      "q": "Is NaF ionic or covalent?",
+      "a": "ionic",
+      "why": "Na is a metal.",
+      "hints": [
+        "Metal or polyatomic ion → ionic. Two nonmetals → covalent."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "ionic"
+      }
+    },
+    {
+      "id": "ch2-b-ccl",
+      "q": "Is CCl4 ionic or covalent?",
+      "a": "covalent",
+      "why": "C and Cl are both nonmetals.",
+      "hints": [
+        "Metal or polyatomic ion → ionic. Two nonmetals → covalent."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "covalent"
+      }
+    },
+    {
+      "id": "ch2-b-nh4",
+      "q": "Is NH4Cl ionic or covalent?",
+      "a": "ionic",
+      "why": "Ammonium is a polyatomic ion paired with chloride.",
+      "hints": [
+        "Metal or polyatomic ion → ionic. Two nonmetals → covalent."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "ionic"
+      }
+    },
+    {
+      "id": "ch2-b-n2o",
+      "q": "Is N2O4 ionic or covalent?",
+      "a": "covalent",
+      "why": "N and O are both nonmetals.",
+      "hints": [
+        "Metal or polyatomic ion → ionic. Two nonmetals → covalent."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "covalent"
+      }
+    },
+    {
+      "id": "ch2-b-ca",
+      "q": "Is CaCO3 ionic or covalent?",
+      "a": "ionic",
+      "why": "Ca is a metal, and carbonate is a polyatomic ion.",
+      "hints": [
+        "Metal or polyatomic ion → ionic. Two nonmetals → covalent."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "ionic"
+      }
+    },
+    {
+      "id": "ch2-b-pcl",
+      "q": "Is PCl5 ionic or covalent?",
+      "a": "covalent",
+      "why": "P and Cl are both nonmetals.",
+      "hints": [
+        "Metal or polyatomic ion → ionic. Two nonmetals → covalent."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "covalent"
+      }
+    }
+  ]
+}

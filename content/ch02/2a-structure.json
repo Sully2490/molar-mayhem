@@ -1,0 +1,202 @@
+{
+  "id": "ch2-structure",
+  "ch": 2,
+  "openstax_section": "OpenStax AF2e §2.3",
+  "guide_line": "Count protons, neutrons, and electrons.",
+  "steps": [
+    "The atomic number Z is the number of protons. It names the element.",
+    "The mass number A is protons plus neutrons. Neutrons = A − Z.",
+    "A neutral atom has electrons = protons.",
+    "A positive charge means electrons were lost. Electrons = Z − charge.",
+    "Type three numbers: protons, neutrons, electrons. Example: 6, 7, 6."
+  ],
+  "worked_example": {
+    "q": "Give protons, neutrons, and electrons for carbon-13.",
+    "steps": [
+      "Z(C) = 6.",
+      "Neutrons = 13 − 6 = 7.",
+      "Neutral, so electrons = 6."
+    ],
+    "answer": "6, 7, 6"
+  },
+  "similar_problem": {
+    "q": "Give protons, neutrons, and electrons for chlorine-37.",
+    "hint": "Z(Cl) = 17. Neutrons = 37 − 17.",
+    "answer": "17, 20, 17"
+  },
+  "sources": [
+    "OpenStax AF2e §2.3"
+  ],
+  "problems": [
+    {
+      "id": "ch2-p-c13",
+      "q": "Carbon-13. Protons, neutrons, electrons?",
+      "a": "6, 7, 6",
+      "why": "Z = 6, neutrons = 13 − 6, electrons = 6.",
+      "hints": [
+        "Neutrons = mass number − atomic number. A positive ion has fewer electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "6, 7, 6",
+        "answers": [
+          "6,7,6"
+        ]
+      }
+    },
+    {
+      "id": "ch2-p-cl37",
+      "q": "Chlorine-37. Protons, neutrons, electrons?",
+      "a": "17, 20, 17",
+      "why": "Z = 17, neutrons = 37 − 17, electrons = 17.",
+      "hints": [
+        "Neutrons = mass number − atomic number. A positive ion has fewer electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "17, 20, 17",
+        "answers": [
+          "17,20,17"
+        ]
+      }
+    },
+    {
+      "id": "ch2-p-fe",
+      "q": "Iron-56 with a 3+ charge. Protons, neutrons, electrons?",
+      "a": "26, 30, 23",
+      "why": "Z = 26, neutrons = 30, electrons = 26 − 3.",
+      "hints": [
+        "Neutrons = mass number − atomic number. A positive ion has fewer electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "26, 30, 23",
+        "answers": [
+          "26,30,23"
+        ]
+      }
+    },
+    {
+      "id": "ch2-p-o",
+      "q": "Oxygen-16 with a 2− charge. Protons, neutrons, electrons?",
+      "a": "8, 8, 10",
+      "why": "Z = 8, neutrons = 8, electrons = 8 + 2.",
+      "hints": [
+        "Neutrons = mass number − atomic number. A positive ion has fewer electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "8, 8, 10",
+        "answers": [
+          "8,8,10"
+        ]
+      }
+    },
+    {
+      "id": "ch2-p-na",
+      "q": "Sodium-23 with a 1+ charge. Protons, neutrons, electrons?",
+      "a": "11, 12, 10",
+      "why": "Z = 11, neutrons = 12, electrons = 11 − 1.",
+      "hints": [
+        "Neutrons = mass number − atomic number. A positive ion has fewer electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "11, 12, 10",
+        "answers": [
+          "11,12,10"
+        ]
+      }
+    },
+    {
+      "id": "ch2-p-u",
+      "q": "Uranium-238. Protons, neutrons, electrons?",
+      "a": "92, 146, 92",
+      "why": "Z = 92, neutrons = 238 − 92, electrons = 92.",
+      "hints": [
+        "Neutrons = mass number − atomic number. A positive ion has fewer electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "92, 146, 92",
+        "answers": [
+          "92,146,92"
+        ]
+      }
+    },
+    {
+      "id": "ch2-p-s",
+      "q": "Sulfur-32 with a 2− charge. Protons, neutrons, electrons?",
+      "a": "16, 16, 18",
+      "why": "Z = 16, neutrons = 16, electrons = 16 + 2.",
+      "hints": [
+        "Neutrons = mass number − atomic number. A positive ion has fewer electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "16, 16, 18",
+        "answers": [
+          "16,16,18"
+        ]
+      }
+    },
+    {
+      "id": "ch2-p-ca",
+      "q": "Calcium-40 with a 2+ charge. Protons, neutrons, electrons?",
+      "a": "20, 20, 18",
+      "why": "Z = 20, neutrons = 20, electrons = 20 − 2.",
+      "hints": [
+        "Neutrons = mass number − atomic number. A positive ion has fewer electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "20, 20, 18",
+        "answers": [
+          "20,20,18"
+        ]
+      }
+    },
+    {
+      "id": "ch2-p-br",
+      "q": "Bromine-81 with a 1− charge. Protons, neutrons, electrons?",
+      "a": "35, 46, 36",
+      "why": "Z = 35, neutrons = 81 − 35, electrons = 35 + 1.",
+      "hints": [
+        "Neutrons = mass number − atomic number. A positive ion has fewer electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "35, 46, 36",
+        "answers": [
+          "35,46,36"
+        ]
+      }
+    },
+    {
+      "id": "ch2-p-al",
+      "q": "Aluminum-27 with a 3+ charge. Protons, neutrons, electrons?",
+      "a": "13, 14, 10",
+      "why": "Z = 13, neutrons = 14, electrons = 13 − 3.",
+      "hints": [
+        "Neutrons = mass number − atomic number. A positive ion has fewer electrons."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "13, 14, 10",
+        "answers": [
+          "13,14,10"
+        ]
+      }
+    }
+  ]
+}

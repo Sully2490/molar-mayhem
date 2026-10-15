@@ -1,0 +1,176 @@
+{
+  "id": "ch2-covalent-names",
+  "ch": 2,
+  "openstax_section": "OpenStax AF2e §2.7",
+  "guide_line": "Name a covalent compound with prefixes.",
+  "steps": [
+    "Use prefixes: mono, di, tri, tetra, penta, hexa, hepta, octa, nona, deca.",
+    "Skip mono- on the first element.",
+    "The second element ends in -ide.",
+    "Do not use these prefixes on ionic compounds."
+  ],
+  "worked_example": {
+    "q": "Name N2O5.",
+    "steps": [
+      "Two nitrogen atoms: dinitrogen.",
+      "Five oxygen atoms: pentoxide."
+    ],
+    "answer": "dinitrogen pentoxide"
+  },
+  "similar_problem": {
+    "q": "Name CO.",
+    "hint": "Skip mono- on carbon. Keep it on oxygen.",
+    "answer": "carbon monoxide"
+  },
+  "sources": [
+    "OpenStax AF2e §2.7"
+  ],
+  "problems": [
+    {
+      "id": "ch2-c-n2o5",
+      "q": "Name N2O5.",
+      "a": "dinitrogen pentoxide",
+      "why": "Two N, five O. Drop the a in penta before oxide.",
+      "hints": [
+        "Count each atom. Skip mono- on the first element."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "dinitrogen pentoxide",
+        "answers": [
+          "dinitrogen pentaoxide"
+        ]
+      }
+    },
+    {
+      "id": "ch2-c-co",
+      "q": "Name CO.",
+      "a": "carbon monoxide",
+      "why": "One carbon (no mono on the first element) and one oxygen.",
+      "hints": [
+        "Count each atom. Skip mono- on the first element."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "carbon monoxide"
+      }
+    },
+    {
+      "id": "ch2-c-sf6",
+      "q": "Name SF6.",
+      "a": "sulfur hexafluoride",
+      "why": "One S, six F.",
+      "hints": [
+        "Count each atom. Skip mono- on the first element."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "sulfur hexafluoride"
+      }
+    },
+    {
+      "id": "ch2-c-pcl3",
+      "q": "Name PCl3.",
+      "a": "phosphorus trichloride",
+      "why": "One P, three Cl.",
+      "hints": [
+        "Count each atom. Skip mono- on the first element."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "phosphorus trichloride"
+      }
+    },
+    {
+      "id": "ch2-c-n2o",
+      "q": "Name N2O.",
+      "a": "dinitrogen monoxide",
+      "why": "Two N, one O.",
+      "hints": [
+        "Count each atom. Skip mono- on the first element."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "dinitrogen monoxide"
+      }
+    },
+    {
+      "id": "ch2-c-sio2",
+      "q": "Name SiO2.",
+      "a": "silicon dioxide",
+      "why": "One Si, two O.",
+      "hints": [
+        "Count each atom. Skip mono- on the first element."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "silicon dioxide"
+      }
+    },
+    {
+      "id": "ch2-c-p4",
+      "q": "Name P4O10.",
+      "a": "tetraphosphorus decoxide",
+      "why": "Four P, ten O. Deca + oxide becomes decoxide.",
+      "hints": [
+        "Count each atom. Skip mono- on the first element."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "tetraphosphorus decoxide",
+        "answers": [
+          "tetraphosphorus decaoxide"
+        ]
+      }
+    },
+    {
+      "id": "ch2-c-ccl4",
+      "q": "Name CCl4.",
+      "a": "carbon tetrachloride",
+      "why": "One C, four Cl.",
+      "hints": [
+        "Count each atom. Skip mono- on the first element."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "carbon tetrachloride"
+      }
+    },
+    {
+      "id": "ch2-c-so3",
+      "q": "Name SO3.",
+      "a": "sulfur trioxide",
+      "why": "One S, three O.",
+      "hints": [
+        "Count each atom. Skip mono- on the first element."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "sulfur trioxide"
+      }
+    },
+    {
+      "id": "ch2-c-if7",
+      "q": "Name IF7.",
+      "a": "iodine heptafluoride",
+      "why": "One I, seven F.",
+      "hints": [
+        "Count each atom. Skip mono- on the first element."
+      ],
+      "check": {
+        "kind": "exact",
+        "case": "insensitive",
+        "text": "iodine heptafluoride"
+      }
+    }
+  ]
+}
