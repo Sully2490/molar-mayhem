@@ -1,0 +1,179 @@
+{
+  "id": "ch8-stp",
+  "ch": 8,
+  "openstax_section": "OpenStax AF2e §8.3",
+  "guide_line": "Use 22.4 L per mole at STP.",
+  "steps": [
+    "STP here is 0 °C and 1 atm. One mole of ideal gas is 22.4 L.",
+    "Use 22.4 only at STP. Anywhere else, use PV = nRT.",
+    "Gas stoichiometry still uses the mole ratio from the equation.",
+    "H2 is 2.016 g/mol, O2 is 32.00, CO2 is 44.01, CaCO3 is 100.09, KClO3 is 122.55."
+  ],
+  "worked_example": {
+    "q": "Volume of 2.50 mol H2 at STP?",
+    "steps": [
+      "2.50 × 22.4 = 56.0 L."
+    ],
+    "answer": "56.0 L"
+  },
+  "similar_problem": {
+    "q": "Moles in 11.2 L at STP?",
+    "hint": "Divide by 22.4.",
+    "answer": "0.500 mol"
+  },
+  "sources": [
+    "OpenStax AF2e §8.3"
+  ],
+  "problems": [
+    {
+      "id": "ch8-s-h",
+      "q": "Volume in L of 2.50 mol H2 at STP?",
+      "a": "56",
+      "why": "Multiply by 22.4 L/mol.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 56,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-s-n",
+      "q": "Moles in 11.2 L at STP?",
+      "a": "0.5",
+      "why": "Divide by 22.4.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.5,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-s-o",
+      "q": "Volume in L of 32.0 g O2 at STP?",
+      "a": "22.4",
+      "why": "32.0 g is 1.00 mol.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 22.4,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-s-co",
+      "q": "Mass in g of 5.60 L CO2 at STP?",
+      "a": "11",
+      "why": "Moles = 5.60 / 22.4, then times 44.01.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 11,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-s-rx",
+      "q": "2H2 + O2 -> 2H2O. Liters of O2 at STP for 4.00 g H2?",
+      "a": "22.2",
+      "why": "Moles of H2 times 1/2, then times 22.4.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 22.2,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-s-nh",
+      "q": "N2 + 3H2 -> 2NH3. Liters of NH3 at STP from 6.72 L H2?",
+      "a": "4.48",
+      "why": "At the same T and P, the volume ratio equals the mole ratio.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 4.48,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-s-ca",
+      "q": "CaCO3 -> CaO + CO2. Liters of CO2 at STP from 50.0 g CaCO3?",
+      "a": "11.2",
+      "why": "One mole of CO2 per mole of CaCO3.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 11.2,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-s-k",
+      "q": "2KClO3 -> 2KCl + 3O2. Liters of O2 at STP from 24.5 g KClO3?",
+      "a": "6.72",
+      "why": "The mole ratio is 3 O2 / 2 KClO3.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 6.72,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-s-mm",
+      "q": "Molar mass of a gas with density 1.96 g/L at STP?",
+      "a": "43.9",
+      "why": "At STP, molar mass = density × 22.4.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 43.9,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-s-burn",
+      "q": "Liters of O2 at 1.00 atm and 298 K to burn 1.00 mol CH4? CH4 + 2O2 -> CO2 + 2H2O.",
+      "a": "48.9",
+      "why": "Two moles of O2. This is not STP, so use PV = nRT.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 48.9,
+        "sigFigs": 3,
+        "unit": null
+      }
+    }
+  ]
+}

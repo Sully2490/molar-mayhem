@@ -1,0 +1,180 @@
+{
+  "id": "ch8-pressure",
+  "ch": 8,
+  "openstax_section": "OpenStax AF2e §8.1",
+  "guide_line": "Convert a pressure, and read an open manometer.",
+  "steps": [
+    "1 atm = 760 mm Hg = 760 torr = 101.325 kPa.",
+    "To a smaller unit, multiply. To a larger unit, divide.",
+    "On an open manometer, mercury higher on the open side means the gas pressure is higher. Add the height.",
+    "Mercury higher on the gas side means the gas pressure is lower. Subtract the height.",
+    "Type the number only."
+  ],
+  "worked_example": {
+    "q": "745 mm Hg in atm?",
+    "steps": [
+      "745 / 760 = 0.980 atm."
+    ],
+    "answer": "0.980 atm"
+  },
+  "similar_problem": {
+    "q": "1.50 atm in torr?",
+    "hint": "Multiply by 760.",
+    "answer": "1140 torr"
+  },
+  "sources": [
+    "OpenStax AF2e §8.1"
+  ],
+  "problems": [
+    {
+      "id": "ch8-p-745",
+      "q": "745 mm Hg in atm?",
+      "a": "0.98",
+      "why": "Divide by 760.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.98,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-p-15",
+      "q": "1.50 atm in torr?",
+      "a": "1140",
+      "why": "Multiply by 760.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1140,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-p-kpa",
+      "q": "98.5 kPa in atm?",
+      "a": "0.972",
+      "why": "Divide by 101.325.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.972,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-p-380",
+      "q": "380 torr in atm?",
+      "a": "0.5",
+      "why": "380 is half of 760.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.5,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-p-875",
+      "q": "0.875 atm in kPa?",
+      "a": "88.7",
+      "why": "Multiply by 101.325.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 88.7,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-p-in",
+      "q": "29.9 in Hg in atm? 1 in = 25.4 mm.",
+      "a": "0.999",
+      "why": "Change inches to mm Hg, then divide by 760.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.999,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-p-2",
+      "q": "2.00 atm in mm Hg?",
+      "a": "1520",
+      "why": "Multiply by 760.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1520,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-p-add",
+      "q": "Open manometer. Atmosphere is 760 mm Hg. Mercury is 25 mm higher on the open side. Gas pressure in mm Hg?",
+      "a": "785",
+      "why": "The gas pushes harder, so add.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 785,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-p-sub",
+      "q": "Open manometer. Atmosphere is 755 mm Hg. Mercury is 40 mm higher on the gas side. Gas pressure in mm Hg?",
+      "a": "715",
+      "why": "The atmosphere pushes harder, so subtract.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 715,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-p-add2",
+      "q": "Open manometer. Atmosphere is 760 mm Hg. Mercury is 110 mm higher on the open side. Gas pressure in mm Hg?",
+      "a": "870",
+      "why": "Add the height to the atmosphere.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 870,
+        "sigFigs": 3,
+        "unit": null
+      }
+    }
+  ]
+}

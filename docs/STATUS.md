@@ -1,6 +1,6 @@
 # STATUS
 
-_Last updated: 2026-10-15. F00 is on main. This branch is the F03 grader after review._
+_Last updated: 2026-10-15. This branch adds Chapter 8 lessons._
 
 ## State
 - Features passing: F00, F03. See `feature_list.json`.
@@ -23,4 +23,4 @@ The grader review fixes land before chapter content. After that:
 The first chapter with answer boxes must give every input a visible label and put feedback in an aria-live region.
 
 ## Blockers
-- None on the grader. Chapter lessons are not part of this branch.
+- None on these lessons. C8 stays not passing until coverage mapping (F01) exists. Answer boxes are on the Chapter 1 draft.

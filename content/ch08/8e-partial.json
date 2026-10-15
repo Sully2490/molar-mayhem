@@ -1,0 +1,179 @@
+{
+  "id": "ch8-partial",
+  "ch": 8,
+  "openstax_section": "OpenStax AF2e §8.4",
+  "guide_line": "Add partial pressures.",
+  "steps": [
+    "Total pressure is the sum of the partial pressures.",
+    "Partial pressure = mole fraction × total pressure.",
+    "A gas collected over water: P(gas) = P(total) − P(water vapor).",
+    "Type the number only."
+  ],
+  "worked_example": {
+    "q": "Partial pressures 0.70, 0.25, and 0.05 atm. Total?",
+    "steps": [
+      "Add them: 1.00 atm."
+    ],
+    "answer": "1.00 atm"
+  },
+  "similar_problem": {
+    "q": "O2 collected over water. Total 755 torr. Water vapor 23.8 torr. P(O2)?",
+    "hint": "Subtract the water vapor.",
+    "answer": "731 torr"
+  },
+  "sources": [
+    "OpenStax AF2e §8.4"
+  ],
+  "problems": [
+    {
+      "id": "ch8-d-sum",
+      "q": "P(N2) = 0.70 atm, P(O2) = 0.25 atm, P(Ar) = 0.05 atm. Total pressure in atm?",
+      "a": "1",
+      "why": "Add the partial pressures.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-d-he",
+      "q": "1.0 mol He and 3.0 mol Ne at 2.00 atm total. P(He) in atm?",
+      "a": "0.5",
+      "why": "Mole fraction of He is 1/4.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.5,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-d-wet",
+      "q": "O2 over water. Total 755 torr. Water vapor 23.8 torr. P(O2) in torr?",
+      "a": "731",
+      "why": "Subtract the vapor pressure.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 731,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-d-air",
+      "q": "Air is 21.0% O2. P(O2) at 1.00 atm?",
+      "a": "0.21",
+      "why": "Mole percent is the mole fraction times 100.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.21,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-d-chi",
+      "q": "Mole fraction of a gas at 150 torr in a 600 torr mixture?",
+      "a": "0.25",
+      "why": "χ = partial / total.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.25,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-d-mix",
+      "q": "2.00 g H2 and 8.00 g He in 10.0 L at 300. K. Total pressure in atm?",
+      "a": "7.36",
+      "why": "Add the moles, then use PV = nRT. He is 4.003 g/mol.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 7.36,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-d-co2",
+      "q": "Total pressure 1.50 atm and mole fraction of CO2 is 0.200. P(CO2) in atm?",
+      "a": "0.3",
+      "why": "Partial = χ × total.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.3,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-d-frac",
+      "q": "H2 over water at 25 °C. Vapor is 23.8 torr and the total is 760 torr. Mole fraction of H2?",
+      "a": "0.969",
+      "why": "The dry hydrogen pressure over the total pressure.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.969,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-d-n2",
+      "q": "0.30 mol N2 and 0.20 mol O2 at 750 torr total. P(N2) in torr?",
+      "a": "450",
+      "why": "Mole fraction of N2 is 0.60.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 450,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-d-atm",
+      "q": "Three gases at 200, 300, and 250 torr. Total in atm?",
+      "a": "0.987",
+      "why": "Add the torr, then divide by 760.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.987,
+        "sigFigs": 3,
+        "unit": null
+      }
+    }
+  ]
+}

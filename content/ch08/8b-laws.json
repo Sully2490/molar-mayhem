@@ -1,0 +1,180 @@
+{
+  "id": "ch8-laws",
+  "ch": 8,
+  "openstax_section": "OpenStax AF2e §8.2",
+  "guide_line": "Use Boyle, Charles, Avogadro, and the combined gas law.",
+  "steps": [
+    "Boyle: P1 V1 = P2 V2 at constant temperature.",
+    "Charles and Gay-Lussac need kelvin. K = °C + 273.",
+    "Avogadro: V1 / n1 = V2 / n2 at the same T and P.",
+    "Combined: P1 V1 / T1 = P2 V2 / T2.",
+    "Type the number only."
+  ],
+  "worked_example": {
+    "q": "1.00 atm and 4.00 L compressed to 2.50 L. New pressure?",
+    "steps": [
+      "P2 = 1.00 × 4.00 / 2.50 = 1.60 atm."
+    ],
+    "answer": "1.60 atm"
+  },
+  "similar_problem": {
+    "q": "5.00 L at 25 °C heated to 100 °C at constant pressure. New volume?",
+    "hint": "Use 298 K and 373 K.",
+    "answer": "6.26 L"
+  },
+  "sources": [
+    "OpenStax AF2e §8.2"
+  ],
+  "problems": [
+    {
+      "id": "ch8-l-boyle",
+      "q": "1.00 atm and 4.00 L compressed to 2.50 L at constant T. New P in atm?",
+      "a": "1.6",
+      "why": "P2 = P1 V1 / V2.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.6,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-l-boyle2",
+      "q": "2.00 L at 745 torr expands to 6.00 L. New P in torr?",
+      "a": "248",
+      "why": "Pressure falls as volume rises.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 248,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-l-charles",
+      "q": "5.00 L at 25 °C heated to 100 °C at constant P. New V in L?",
+      "a": "6.26",
+      "why": "V2 = V1 × T2 / T1, with kelvin.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 6.26,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-l-balloon",
+      "q": "A balloon is 3.00 L at 300. K. Volume at 250. K?",
+      "a": "2.5",
+      "why": "Volume is proportional to kelvin temperature.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2.5,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-l-tank",
+      "q": "A tank is at 2.00 atm at 20 °C. Pressure at 80 °C?",
+      "a": "2.41",
+      "why": "P2 = P1 × T2 / T1.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 2.41,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-l-tire",
+      "q": "A tire is 32.0 psi at 10 °C. Pressure at 45 °C?",
+      "a": "36",
+      "why": "Use kelvin, not Celsius, in the ratio.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 36,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-l-avo",
+      "q": "1.00 mol occupies 22.4 L. Volume of 2.50 mol at the same T and P?",
+      "a": "56",
+      "why": "Volume is proportional to moles.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 56,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-l-mol",
+      "q": "6.00 L contains 0.500 mol. Moles in 9.00 L at the same T and P?",
+      "a": "0.75",
+      "why": "n2 = n1 × V2 / V1.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.75,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-l-comb",
+      "q": "1.00 atm, 2.00 L, 273 K goes to 2.50 atm and 350. K. New volume in L?",
+      "a": "1.03",
+      "why": "V2 = P1 V1 T2 / (T1 P2).",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.03,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-l-stp",
+      "q": "750 torr, 500. mL, 25 °C goes to STP (760 torr, 0 °C). New volume in mL?",
+      "a": "452",
+      "why": "STP is 760 torr and 273 K.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 452,
+        "sigFigs": 3,
+        "unit": null
+      }
+    }
+  ]
+}

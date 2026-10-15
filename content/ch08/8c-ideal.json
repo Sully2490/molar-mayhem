@@ -1,0 +1,180 @@
+{
+  "id": "ch8-ideal",
+  "ch": 8,
+  "openstax_section": "OpenStax AF2e §8.3",
+  "guide_line": "Use PV = nRT.",
+  "steps": [
+    "R = 0.08206 L·atm/(mol·K).",
+    "Pressure in atm, volume in L, temperature in K.",
+    "760 torr = 1 atm. 1000 mL = 1 L.",
+    "Molar mass = mass × R × T / (P × V). Density = P × molar mass / (R × T).",
+    "O2 is 32.00 g/mol. CO2 is 44.01 g/mol. N2 is 28.02 g/mol."
+  ],
+  "worked_example": {
+    "q": "Volume of 2.00 mol at 1.50 atm and 300. K?",
+    "steps": [
+      "V = nRT / P = 32.8 L."
+    ],
+    "answer": "32.8 L"
+  },
+  "similar_problem": {
+    "q": "Pressure of 0.500 mol in 10.0 L at 25 °C?",
+    "hint": "T = 298 K. Solve for P.",
+    "answer": "1.22 atm"
+  },
+  "sources": [
+    "OpenStax AF2e §8.3"
+  ],
+  "problems": [
+    {
+      "id": "ch8-i-v",
+      "q": "Volume in L of 2.00 mol at 1.50 atm and 300. K?",
+      "a": "32.8",
+      "why": "V = nRT / P.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 32.8,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-i-p",
+      "q": "Pressure in atm of 0.500 mol in 10.0 L at 25 °C?",
+      "a": "1.22",
+      "why": "T = 298 K. P = nRT / V.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.22,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-i-n",
+      "q": "Moles in 5.00 L at 2.00 atm and 350. K?",
+      "a": "0.348",
+      "why": "n = PV / RT.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.348,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-i-t",
+      "q": "Temperature in K of 1.00 mol in 20.0 L at 1.20 atm?",
+      "a": "292",
+      "why": "T = PV / nR.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 292,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-i-o2",
+      "q": "Pressure in atm of 8.00 g O2 in 4.00 L at 27 °C?",
+      "a": "1.54",
+      "why": "Moles = 8.00 / 32.00. T = 300 K.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.54,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-i-co2",
+      "q": "Volume in L of 10.0 g CO2 at 740 torr and 30 °C?",
+      "a": "5.8",
+      "why": "Change torr to atm and grams to moles.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 5.8,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-i-mm",
+      "q": "A 1.00 L flask at 1.00 atm and 273 K holds 1.25 g. Molar mass?",
+      "a": "28",
+      "why": "M = mRT / PV.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 28,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-i-d",
+      "q": "Density of N2 in g/L at 1.00 atm and 298 K?",
+      "a": "1.15",
+      "why": "d = PM / RT.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 1.15,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-i-mm2",
+      "q": "0.750 g of gas in 500. mL at 0.985 atm and 25 °C. Molar mass?",
+      "a": "37.2",
+      "why": "500. mL is 0.500 L. T = 298 K.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 37.2,
+        "sigFigs": 3,
+        "unit": null
+      }
+    },
+    {
+      "id": "ch8-i-n2",
+      "q": "Moles in 250. mL at 645 torr and 20 °C?",
+      "a": "0.00882",
+      "why": "Change mL to L and torr to atm. T = 293 K.",
+      "hints": [
+        "Check the units. Temperature in a gas law is kelvin."
+      ],
+      "check": {
+        "kind": "numeric",
+        "value": 0.00882,
+        "sigFigs": 3,
+        "unit": null
+      }
+    }
+  ]
+}
