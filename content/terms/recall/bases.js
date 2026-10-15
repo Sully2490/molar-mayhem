@@ -1,0 +1,50 @@
+/** Rapid recall for the strong bases. */
+export const bases = {
+  id: 'strong-bases',
+  title: 'Strong bases',
+  chapter: 7,
+  lesson: 'ch07-cards',
+  intro: 'Group 1 hydroxides dissolve and give all of their OH−. Calcium, strontium, and barium hydroxides dissolve only slightly, and the part that does dissolve gives all of its OH−. Mg(OH)2 and ammonia are not on the list.',
+  cards: [
+    {
+      id: 'list',
+      kind: 'list',
+      prompt: 'List the strong bases. Formulas are enough: the group 1 hydroxides from Li through Cs, plus Ca(OH)2, Sr(OH)2, and Ba(OH)2.',
+      items: [
+        { id: 'lioh', label: 'LiOH', accepts: ['LiOH', 'lithium hydroxide'] },
+        { id: 'naoh', label: 'NaOH', accepts: ['NaOH', 'sodium hydroxide'] },
+        { id: 'koh', label: 'KOH', accepts: ['KOH', 'potassium hydroxide'] },
+        { id: 'rboh', label: 'RbOH', accepts: ['RbOH', 'rubidium hydroxide'] },
+        { id: 'csoh', label: 'CsOH', accepts: ['CsOH', 'cesium hydroxide'] },
+        { id: 'caoh2', label: 'Ca(OH)2', accepts: ['Ca(OH)2', 'calcium hydroxide'] },
+        { id: 'sroh2', label: 'Sr(OH)2', accepts: ['Sr(OH)2', 'strontium hydroxide'] },
+        { id: 'baoh2', label: 'Ba(OH)2', accepts: ['Ba(OH)2', 'barium hydroxide'] },
+      ],
+      nearMiss: [
+        { text: 'Mg(OH)2', hint: 'Mg(OH)2 is a group 2 hydroxide, but it does not dissolve well, so it is not on this list.' },
+        { text: 'NH3', hint: 'Ammonia is a base, and it is weak. This list is metal hydroxides only.' },
+        { text: 'ammonia', hint: 'Ammonia is a weak base, not one of these hydroxides.' },
+      ],
+    },
+    { id: 'name-naoh', kind: 'item', prompt: 'Name NaOH.', answer: 'sodium hydroxide', accepts: ['sodium hydroxide'] },
+    { id: 'name-koh', kind: 'item', prompt: 'Name KOH.', answer: 'potassium hydroxide', accepts: ['potassium hydroxide'] },
+    { id: 'name-ba', kind: 'item', prompt: 'Write the formula of barium hydroxide.', answer: 'Ba(OH)2', accepts: ['Ba(OH)2'] },
+    { id: 'name-ca', kind: 'item', prompt: 'Write the formula of calcium hydroxide.', answer: 'Ca(OH)2', accepts: ['Ca(OH)2'] },
+    {
+      id: 'mg',
+      kind: 'item',
+      prompt: 'Is Mg(OH)2 a strong base on this list? Answer yes or no.',
+      answer: 'no',
+      accepts: ['no'],
+      nearMiss: [{ text: 'yes', hint: 'Magnesium hydroxide is the group 2 hydroxide that stays off the strong-base list.' }],
+    },
+    {
+      id: 'ammonia',
+      kind: 'item',
+      prompt: 'Is NH3 a strong base? Answer yes or no.',
+      answer: 'no',
+      accepts: ['no'],
+      nearMiss: [{ text: 'yes', hint: 'NH3 is a weak base. It is not a metal hydroxide on this list.' }],
+    },
+  ],
+};

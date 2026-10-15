@@ -1,0 +1,180 @@
+/* Glossary, term card, index, and quick recall. Uses the site palette when styles.css is loaded. */
+
+.term-link {
+  color: var(--teal-deep, #0a3d39);
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+.term-link:hover {
+  text-decoration-style: solid;
+}
+
+.term-shell {
+  display: block;
+  height: 0;
+}
+
+.term-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgb(20 28 26 / 46%);
+  z-index: 30;
+}
+
+.term-dialog {
+  position: fixed;
+  z-index: 31;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(36rem, calc(100vw - 1.5rem));
+  max-height: min(86vh, 42rem);
+  overflow: auto;
+  background: var(--card, #fffaf2);
+  color: var(--ink, #1c2430);
+  border-radius: 14px;
+  padding: 0.9rem 1.1rem 1.2rem;
+  box-shadow: 0 18px 48px rgb(20 28 26 / 22%);
+}
+
+.term-dialog:focus {
+  outline: 3px solid var(--focus, #9a3412);
+  outline-offset: 3px;
+}
+
+body.term-open { overflow: hidden; }
+
+.term-card-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.term-card-bar h2 {
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.term-close,
+.terms-chapters button,
+.terms-actions button,
+.recall-actions button {
+  min-height: 2.5rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--teal, #0f5c56);
+  border-radius: 8px;
+  background: var(--card, #fffaf2);
+  color: var(--teal-deep, #0a3d39);
+  font: inherit;
+  cursor: pointer;
+}
+
+.term-meta,
+.term-hint,
+.terms-count,
+.recall-progress {
+  color: var(--muted, #5d675f);
+  font-size: 0.92rem;
+}
+
+.term-visual {
+  display: block;
+  width: 10rem;
+  height: auto;
+  margin: 0.35rem 0 0.2rem;
+}
+
+.term-card h3 {
+  margin: 0.9rem 0 0.2rem;
+  font-size: 1rem;
+}
+
+.term-related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.8rem;
+  margin: 0.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.terms-page,
+.recall-page {
+  max-width: 44rem;
+}
+
+.terms-search {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0.6rem 0;
+}
+
+.terms-search input,
+.recall-session textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--line, #ddd4c3);
+  border-radius: 8px;
+  background: white;
+  color: inherit;
+}
+
+.terms-chapters,
+.recall-actions,
+.terms-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.terms-chapters button[aria-pressed="true"],
+.recall-actions button[aria-pressed="true"] {
+  background: var(--teal, #0f5c56);
+  color: white;
+}
+
+.terms-index,
+.recall-decks {
+  padding-left: 0;
+  list-style: none;
+}
+
+.terms-index li,
+.recall-decks li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--line, #ddd4c3);
+}
+
+.terms-ch,
+.recall-decks span {
+  color: var(--muted, #5d675f);
+  font-size: 0.85rem;
+}
+
+.terms-empty { border: 0; }
+
+.recall-hint {
+  margin: 0.3rem 0;
+  color: var(--focus, #9a3412);
+}
+
+.recall-session {
+  margin-top: 1rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line, #ddd4c3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .term-dialog { scroll-behavior: auto; }
+}
