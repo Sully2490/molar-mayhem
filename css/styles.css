@@ -320,6 +320,47 @@ h1 { font-size: clamp(2rem, 5vw, 2.7rem); margin: 0 0 0.6rem; }
   outline-offset: 2px;
 }
 
+.final-ch { margin-top: 1.4rem; }
+
+.final-ch h2 { font-size: 1.35rem; margin-bottom: 0.4rem; }
+
+.final-q {
+  margin: 1rem 0;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+}
+
+.answer-label {
+  display: block;
+  font-weight: 700;
+  margin: 0.45rem 0 0.25rem;
+}
+
+.final-q input {
+  width: min(100%, 22rem);
+  font: inherit;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: white;
+}
+
+.feedback { margin: 0.8rem 0; }
+
+.correction {
+  margin: 0.9rem 0;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: var(--card);
+}
+
+.correction.is-miss { border-color: #b45309; }
+
+.correction.is-correct { border-color: var(--teal); }
+
+.steps { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+
 @media (max-width: 720px) {
   .table-btn { margin-left: 0; }
   .site-header .table-btn { margin-left: 0; }

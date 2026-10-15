@@ -4,7 +4,8 @@ _Last updated: 2026-10-15. This branch folds compound unit aliases, loads the pr
 
 ## State
 - Features passing: F00, F03, I1. See `feature_list.json`.
-- Static site loads from `index.html` with no build step. `#Learn` loads each lesson in `content/chNN/`. `#Drill` asks for a number and a unit in separate labeled boxes. `#Map`, `#Prep`, and `#Cards` show placeholders. The periodic-table tray colors atomic radius, ionization energy, and electronegativity.
+- Static site loads from `index.html` with no build step. `#Learn` loads each lesson in `content/chNN/`. `#Drill` asks for a number and a unit in separate labeled boxes. `#Prep` is an untimed practice final that loads chapter-schema problems from `content/final/practice-final.json`. This screen does not contain the questions. `#Map` and `#Cards` show placeholders. The periodic-table tray colors atomic radius, ionization energy, and electronegativity.
+- `content/final/practice-final.json` may be a list of problem objects, a list of file names in that folder, `{ "files": [...] }`, or `{ "problems": [...] }`. A named file may be one problem or `{ "problems": [...] }`. Each problem uses `id`, `q`, `a`, `why`, `hints`, and `check`. P1 stays `passing: false` because GF and I3 are still open.
 - `npm test` and `npm run check:content` run locally. GitHub Actions runs `npm test`.
 - `check:content` walks `content/` including chapter folders, checks each lesson against the lesson schema, and skips the coverage manifest when `MM_SOURCES` is unset. `schema.json` and `coverage.json` are parsed only. The manifest mapping itself is F01.
 - Course source material and the coverage manifest stay outside the repo, at the path set in `MM_SOURCES`.
