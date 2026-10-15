@@ -150,6 +150,13 @@ test('the wave, standing wave, and hydrogen photon numbers', () => {
   assert.match(levels, /data-n="1"/);
   assert.match(levels, /data-n="6"/);
   assert.match(levels, /data-motion="still"/);
+  assert.match(levels, /data-leader="4"/);
+  assert.match(levels, /data-leader="inf"/);
+  assert.match(levels, /data-band="uv"/);
+  assert.match(levels, /Lyman/);
+  assert.match(levels, /Paschen/);
+  assert.match(levels, /data-balmer="410"/);
+  assert.match(levels, /data-balmer="656"/);
 });
 
 test('orbital boxes enforce Pauli and Hund, including Cr and Cu', () => {

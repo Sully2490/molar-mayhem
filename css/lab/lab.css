@@ -248,6 +248,53 @@ mm-lab { display: block; }
   outline-offset: 2px;
 }
 
+.lab-help {
+  margin-top: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: white;
+  padding: 0.15rem 0.9rem 0.7rem;
+}
+
+.lab-help summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  touch-action: manipulation;
+}
+
+.lab-help h3 {
+  margin: 0.8rem 0 0.3rem;
+  font-size: 1rem;
+}
+
+.lab-help ol { margin: 0.2rem 0 0.6rem; padding-left: 1.2rem; }
+
+.lab-practice li { margin-bottom: 0.9rem; }
+
+.lab-help label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-weight: 600;
+  margin: 0.35rem 0;
+}
+
+.lab-help input[type="text"] {
+  min-height: 44px;
+  font: inherit;
+  width: min(100%, 18rem);
+  border: 1px solid var(--teal);
+  border-radius: 0.6rem;
+  padding: 0.3rem 0.6rem;
+}
+
+.lab-msg[data-tone="solution"] { background: #e7f3f1; }
+
+.lab-h-spectrum { background: var(--card); }
+
 @media (max-width: 720px) {
   .lab-lewis,
   .lab-svg,
