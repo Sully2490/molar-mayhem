@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { test } from 'node:test';
+import { equationHtml, equationText } from '../js/builders/html.js';
+import { grade } from '../js/grade.js';
 import { missFeedback } from '../js/builders/feedback.js';
 import { prefersReducedMotion } from '../js/builders/motion.js';
 import {
@@ -38,7 +40,7 @@ import {
   GAS_R,
   challengeById as gasChallenge,
   createGas,
-  equationText,
+  equationText as gasEquationText,
   expectedFor,
   gasParticles,
   gasSides,
@@ -183,7 +185,7 @@ test('the gas piston solves PV = nRT and stays still when asked', () => {
   assert.match(gradeGas('', challenge).hints[0], /V = n R T \/ P/);
   const balanced = { P: 1, V: stp, T: 273.15, n: 1 };
   assert.equal(gasSides(balanced).balanced, true);
-  assert.match(equationText(balanced), /P V/);
+  assert.match(gasEquationText(balanced), /P V/);
   assert.ok(pistonY(40) < pistonY(1));
   const still = gasParticles(4, { left: 10, right: 100, top: 10, bottom: 80 }, 0);
   const again = gasParticles(4, { left: 10, right: 100, top: 10, bottom: 80 }, 0);
@@ -195,6 +197,10 @@ test('the gas piston solves PV = nRT and stays still when asked', () => {
   assert.match(markup, /type="range"/);
   assert.match(markup, /Still frame/);
   assert.match(markup, /volume slider/i);
+  const start = createGas().values;
+  const right = start.n * GAS_R * start.T;
+  assert.ok(Math.abs(start.P * start.V - right) / right < 0.01);
+  assert.equal(start.V === 22.4 && start.T !== 273, false);
 });
 
 test('coffee-cup calorimetry uses q = mcΔT', () => {
@@ -252,6 +258,87 @@ test('limiting reactant leaves the excess and makes the right product', () => {
   assert.match(markup, /data-motion="still"/);
   assert.match(markup, /Still/);
   assert.match(markup, /aria-label="Add one/);
+  assert.equal(equationText('2 H2 + O2 → 2 H2O'), '2 H₂ + O₂ → 2 H₂O');
+  const waterHtml = equationHtml('2 H2 + O2 → 2 H2O');
+  for (const term of waterHtml.split(/ \+ | → /)) {
+    assert.equal(subscriptFollowsLetter(term), true, term);
+  }
+  for (const id of ['water', 'ammonia', 'combustion']) {
+    const view = renderStoich(createStoich(id), 'still');
+    const equation = view.match(/<p class="b-equation">([\s\S]*?)<\/p>/)[1];
+    assert.doesNotMatch(equation, /^<sub>/, id);
+    for (const term of equation.split(/ \+ | → /)) {
+      assert.equal(subscriptFollowsLetter(term), true, `${id}: ${term}`);
+    }
+  }
+});
+
+function subscriptFollowsLetter(term) {
+  const letter = term.search(/[A-Za-z]/);
+  const sub = term.indexOf('<sub>');
+  return letter >= 0 && (sub === -1 || sub > letter);
+}
+
+test('equation coefficients stay full size after +, at the start, and after every arrow', () => {
+  const arrows = [
+    ['2 H2 + O2 → 2 H2O', '2 H₂ + O₂ → 2 H₂O', '2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O'],
+    ['2 H2 + O2 -> 2 H2O', '2 H₂ + O₂ → 2 H₂O', '2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O'],
+    ['N2 + 3 H2 ⇌ 2 NH3', 'N₂ + 3 H₂ ⇌ 2 NH₃', 'N<sub>2</sub> + 3 H<sub>2</sub> ⇌ 2 NH<sub>3</sub>'],
+    ['N2 + 3 H2 <=> 2 NH3', 'N₂ + 3 H₂ ⇌ 2 NH₃', 'N<sub>2</sub> + 3 H<sub>2</sub> ⇌ 2 NH<sub>3</sub>'],
+    ['N2 + 3 H2 = 2 NH3', 'N₂ + 3 H₂ → 2 NH₃', 'N<sub>2</sub> + 3 H<sub>2</sub> → 2 NH<sub>3</sub>'],
+  ];
+  for (const [raw, text, html] of arrows) {
+    assert.equal(equationText(raw), text);
+    assert.equal(equationHtml(raw), html);
+    for (const term of html.split(/\s*(?:-&gt;|→|⇌|\+|=)\s*/)) {
+      assert.equal(subscriptFollowsLetter(term), true, `${raw}: ${term}`);
+    }
+  }
+});
+
+test('equationText turns -> into an arrow', () => {
+  assert.equal(equationText('2 H2 + O2 -> 2 H2O'), '2 H₂ + O₂ → 2 H₂O');
+  assert.equal(equationText('A -> B'), 'A → B');
+  assert.equal(equationHtml('2 H2 + O2 -> 2 H2O'), '2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O');
+  assert.equal(equationText('N2 + 3 H2 = 2 NH3'), 'N₂ + 3 H₂ → 2 NH₃');
+  assert.equal(equationHtml('N2 + 3 H2 = 2 NH3'), 'N<sub>2</sub> + 3 H<sub>2</sub> → 2 NH<sub>3</sub>');
+  assert.equal(equationText('N2 + 3 H2 <=> 2 NH3'), 'N₂ + 3 H₂ ⇌ 2 NH₃');
+  assert.equal(equationText('N2 + 3 H2 ⇌ 2 NH3'), 'N₂ + 3 H₂ ⇌ 2 NH₃');
+});
+
+test('a typed -> answer is still accepted', () => {
+  const check = {
+    kind: 'exact',
+    text: '2 KClO3 -> 2 KCl + 3 O2',
+    case: 'sensitive',
+  };
+  assert.equal(grade('2 KClO3 -> 2 KCl + 3 O2', check).ok, true);
+  assert.equal(equationText(check.text).includes('->'), false);
+});
+
+test('coefficients without a space stay full size', () => {
+  const cases = [
+    ['2H2 + O2 -> 2H2O', '2H₂ + O₂ → 2H₂O', '2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O'],
+    ['N2 + 3H2 ⇌ 2NH3', 'N₂ + 3H₂ ⇌ 2NH₃', 'N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>'],
+    ['2Na + Cl2 = 2NaCl', '2Na + Cl₂ → 2NaCl', '2Na + Cl<sub>2</sub> → 2NaCl'],
+    ['10H2O', '10H₂O', '10H<sub>2</sub>O'],
+    ['12H2 + 100O2 -> 12H2O', '12H₂ + 100O₂ → 12H₂O', '12H<sub>2</sub> + 100O<sub>2</sub> → 12H<sub>2</sub>O'],
+    ['10Na + Cl2 = 10NaCl', '10Na + Cl₂ → 10NaCl', '10Na + Cl<sub>2</sub> → 10NaCl'],
+  ];
+  for (const [raw, text, html] of cases) {
+    assert.equal(equationText(raw), text);
+    assert.equal(equationHtml(raw), html);
+  }
+});
+
+test('a number after a hydrate dot stays full size', () => {
+  assert.equal(equationText('CuSO4·5H2O'), 'CuSO₄·5H₂O');
+  assert.equal(equationHtml('CuSO4·5H2O'), 'CuSO<sub>4</sub>·5H<sub>2</sub>O');
+  assert.equal(equationText('CuSO4.5H2O'), 'CuSO₄.5H₂O');
+  assert.equal(equationHtml('CuSO4.5H2O'), 'CuSO<sub>4</sub>.5H<sub>2</sub>O');
+  assert.equal(equationText('CuSO4*5H2O'), 'CuSO₄*5H₂O');
+  assert.equal(equationHtml('CuSO4*5H2O'), 'CuSO<sub>4</sub>*5H<sub>2</sub>O');
+  assert.equal(equationText('2 CuSO4·5H2O'), '2 CuSO₄·5H₂O');
 });
 
 test('orbital filling enforces Aufbau, Hund, and the chromium exception', () => {

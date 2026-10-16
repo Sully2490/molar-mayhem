@@ -1,6 +1,6 @@
 /**
  * One renderer for on-screen chemistry text.
- * Plain text in, HTML out: Z^2, 2.179e-18, H2O, n_low, Ca(OH)2.
+ * Plain text in, HTML out: Z^2, 2.179e-18, H2O, n_low, Ca(OH)2, sp3d2, A -> B.
  * Call it on text, not on a string that already has tags.
  */
 
@@ -160,6 +160,33 @@ function readUnderscore(source, index) {
   return { html, length: match[0].length };
 }
 
+const SUPER_DIGITS = '⁰¹²³⁴⁵⁶⁷⁸⁹';
+
+/** sp, sp2, sp3, sp3d2. Digits become superscripts. A bare sp stays sp. */
+function readHybrid(source, index) {
+  if (index > 0 && /[A-Za-z0-9_]/.test(source[index - 1])) return null;
+  const match = /^sp([23])?(d([2]))?(?![A-Za-z0-9_])/.exec(source.slice(index));
+  if (!match) return null;
+  let html = 'sp';
+  if (match[1]) html += sup(match[1]);
+  if (match[2]) html += `d${sup('2')}`;
+  return { html, length: match[0].length };
+}
+
+function readArrow(source, index) {
+  if (!source.startsWith('->', index)) return null;
+  return { html: '→', length: 2 };
+}
+
+function hybridUnicode(source) {
+  return source.replace(/\bsp([23])?(d([2]))?\b/g, (_full, pCount, dOrbital) => {
+    let text = 'sp';
+    if (pCount) text += SUPER_DIGITS[pCount];
+    if (dOrbital) text += `d${SUPER_DIGITS[2]}`;
+    return text;
+  });
+}
+
 /** Turn chemistry plain text into sup/sub/×10ⁿ HTML. */
 export function renderMath(text) {
   const source = String(text ?? '');
@@ -176,6 +203,12 @@ export function renderMath(text) {
     if (times) {
       html += times.html;
       index += times.length;
+      continue;
+    }
+    const hybrid = readHybrid(source, index);
+    if (hybrid) {
+      html += hybrid.html;
+      index += hybrid.length;
       continue;
     }
     const formula = readFormula(source, index);
@@ -196,8 +229,19 @@ export function renderMath(text) {
       index += under.length;
       continue;
     }
+    const arrow = readArrow(source, index);
+    if (arrow) {
+      html += arrow.html;
+      index += arrow.length;
+      continue;
+    }
     html += escapeHtml(source[index]);
     index += 1;
   }
   return html;
+}
+
+/** Plain-text formulas for nodes that cannot use innerHTML, such as search titles. */
+export function toUnicodeFormula(text) {
+  return hybridUnicode(String(text ?? '').replaceAll('->', '→'));
 }

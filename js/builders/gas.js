@@ -81,7 +81,8 @@ export function challengeById(id) {
 
 export function createGas(challengeId = 'find-volume') {
   return {
-    values: { P: 1, V: 22.4, T: 298, n: 1 },
+    // 1 mol at 1 atm and 298 K is about 24.5 L, so PV starts near nRT.
+    values: { P: 1, V: 24.5, T: 298, n: 1 },
     playing: true,
     phase: 0,
     challengeId,
