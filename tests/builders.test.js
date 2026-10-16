@@ -316,6 +316,21 @@ test('a typed -> answer is still accepted', () => {
   assert.equal(equationText(check.text).includes('->'), false);
 });
 
+test('coefficients without a space stay full size', () => {
+  const cases = [
+    ['2H2 + O2 -> 2H2O', '2H₂ + O₂ → 2H₂O', '2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O'],
+    ['N2 + 3H2 ⇌ 2NH3', 'N₂ + 3H₂ ⇌ 2NH₃', 'N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>'],
+    ['2Na + Cl2 = 2NaCl', '2Na + Cl₂ → 2NaCl', '2Na + Cl<sub>2</sub> → 2NaCl'],
+    ['10H2O', '10H₂O', '10H<sub>2</sub>O'],
+    ['12H2 + 100O2 -> 12H2O', '12H₂ + 100O₂ → 12H₂O', '12H<sub>2</sub> + 100O<sub>2</sub> → 12H<sub>2</sub>O'],
+    ['10Na + Cl2 = 10NaCl', '10Na + Cl₂ → 10NaCl', '10Na + Cl<sub>2</sub> → 10NaCl'],
+  ];
+  for (const [raw, text, html] of cases) {
+    assert.equal(equationText(raw), text);
+    assert.equal(equationHtml(raw), html);
+  }
+});
+
 test('a number after a hydrate dot stays full size', () => {
   assert.equal(equationText('CuSO4·5H2O'), 'CuSO₄·5H₂O');
   assert.equal(equationHtml('CuSO4·5H2O'), 'CuSO<sub>4</sub>·5H<sub>2</sub>O');
