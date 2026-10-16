@@ -17,6 +17,8 @@ test('the hint comes first and the answer waits until the third miss', () => {
     showAnswer: false,
     text: 'Correct.',
   });
+  assert.match(feedbackPlan(1, true, 'Add the two masses. Then stop.').text, /^Correct\. Add the two masses\./);
+  assert.doesNotMatch(feedbackPlan(1, true, 'Add the two masses. Then stop.').text, /Then stop/);
   assert.equal(feedbackPlan(1, false).showAnswer, false);
   assert.equal(feedbackPlan(2, false).showAnswer, false);
   assert.equal(feedbackPlan(3, false).showAnswer, true);
@@ -70,10 +72,12 @@ test('Your turn hides the hint and answer until the student asks or misses', () 
   upgradeYourTurn(doc.body);
   const freshInput = fresh.querySelector('input');
   const freshCheck = fresh.querySelectorAll('button').find((button) => button.textContent === 'Check');
+  fresh.dataset.why = 'Add the two masses. Then stop.';
   freshInput.value = '4';
   freshCheck.dispatchEvent({ type: 'click' });
   assert.equal(freshAnswer.hidden, true);
-  assert.equal(fresh.querySelector('[data-your-turn-live]').textContent, 'Correct.');
+  assert.match(fresh.querySelector('[data-your-turn-live]').textContent, /^Correct\. Add the two masses\./);
+  assert.doesNotMatch(fresh.querySelector('[data-your-turn-live]').textContent, /Then stop/);
 });
 
 function fakeDoc() {

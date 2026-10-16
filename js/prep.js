@@ -1,5 +1,10 @@
 import { grade } from './grade.js';
+import { renderMath } from './math/render.js';
+import { readProgress } from './progress.js';
 import { validateProblem } from './schema.js';
+
+/** Short untimed drill. The timed final still uses the full practice-final set. */
+export const PREP_COUNT = 10;
 
 const CHAPTER_TITLES = {
   1: 'Essential ideas',
@@ -150,31 +155,93 @@ export function renderSummary(rows) {
     <h2>Corrections</h2>
     <p class="feedback" data-score>${correct} of ${rows.length} match the key. ${missLine}</p>
     ${cards}
-    <p><button type="button" class="table-btn" data-retry>Try the final again</button></p>
+    <p><button type="button" class="table-btn" data-retry>Try the drill again</button></p>
   `;
 }
 
-export function renderPrepPage(problems = [], message = '') {
-  loadedProblems = problems;
+/** How many times this problem id was missed. `progress.misses` is id → count. */
+export function missCount(progress, id) {
+  const count = progress?.misses?.[id];
+  if (!Number.isFinite(count) || count <= 0) return 0;
+  return Math.floor(count);
+}
+
+export function randomFromSeed(seed) {
+  let state = (Number(seed) >>> 0) || 1;
+  return function random() {
+    state = (state + 0x6D2B79F5) | 0;
+    let t = Math.imul(state ^ (state >>> 15), 1 | state);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function weightedSample(pool, count, random) {
+  const bag = pool.map((entry) => ({ ...entry }));
+  const chosen = [];
+  const limit = Math.min(count, bag.length);
+  while (chosen.length < limit) {
+    const total = bag.reduce((sum, entry) => sum + entry.weight, 0);
+    let ticket = random() * total;
+    let index = bag.length - 1;
+    for (let i = 0; i < bag.length; i += 1) {
+      ticket -= bag[i].weight;
+      if (ticket <= 0) {
+        index = i;
+        break;
+      }
+    }
+    chosen.push(bag[index]);
+    bag.splice(index, 1);
+  }
+  return chosen;
+}
+
+/**
+ * About 10 mixed questions from the practice-final bank.
+ * Each question's weight is 1 plus its own miss count. The same seed draws the same set.
+ * A bank of 10 or fewer is returned in full, still untimed.
+ */
+export function selectPrep(problems, progress = {}, options = {}) {
+  const list = [...(problems ?? [])];
+  const count = Math.min(options.count ?? PREP_COUNT, list.length);
+  if (count === list.length) return list;
+  const random = options.random
+    ?? (options.seed == null ? Math.random : randomFromSeed(options.seed));
+  const pool = list
+    .map((item) => ({ item, weight: 1 + missCount(progress, item.id) }))
+    .sort((left, right) => String(left.item.id).localeCompare(String(right.item.id)));
+  return weightedSample(pool, count, random)
+    .map((entry) => entry.item)
+    .sort((left, right) => (
+      (Number(left.ch) || 0) - (Number(right.ch) || 0)
+      || String(left.id).localeCompare(String(right.id))
+    ));
+}
+
+export function renderPrepPage(problems = [], message = '', options = {}) {
+  const progress = options.progress ?? readProgress();
+  const drawn = selectPrep(problems, progress, options);
+  loadedProblems = drawn;
   const notice = message
     ? `<p class="feedback" data-prep-status>${escapeHtml(message)}</p>`
     : '';
-  if (problems.length === 0) {
+  if (drawn.length === 0) {
     return `
       <section class="page" data-route="Prep">
         <p class="kicker">Practice final</p>
-        <h1>Chapters 1–9</h1>
-        <p>This final is untimed. Questions load from the practice-final folder.</p>
+        <h1>Short drill</h1>
+        <p>This drill is untimed. It draws about 10 mixed questions from the practice final.</p>
         ${notice}
         <p data-prep-empty>No practice-final questions are published yet.</p>
         <div class="feedback" data-summary hidden aria-live="polite"></div>
       </section>`;
   }
 
-  const sections = groupProblems(problems).map(([ch, items]) => {
+  const sections = groupProblems(drawn).map(([ch, items]) => {
     const questions = items.map((item) => `
       <div class="final-q">
-        <p><strong>${item.number}.</strong> ${escapeHtml(item.q)}</p>
+        <p><strong>${item.number}.</strong> ${renderMath(item.q)}</p>
         <label class="answer-label" for="final-${item.number}">Your answer</label>
         <input id="final-${item.number}" name="${escapeHtml(item.id)}" data-qid="${escapeHtml(item.id)}" autocomplete="off" autocapitalize="off" spellcheck="false">
       </div>`).join('');
@@ -184,16 +251,22 @@ export function renderPrepPage(problems = [], message = '') {
     return `<section class="final-ch">${heading}${questions}</section>`;
   }).join('');
 
+  const countLabel = drawn.length === 1 ? '1 mixed question' : `${drawn.length} mixed questions`;
   return `
     <section class="page" data-route="Prep">
       <p class="kicker">Practice final</p>
-      <h1>Chapters 1–9</h1>
-      <p>This final is untimed. Work each item by hand, then submit once.</p>
+      <h1>Short drill</h1>
+      <p>This drill is untimed. You get ${countLabel} from the practice final. Practice-final questions you have missed show up more often.</p>
+      <ol data-prep-plan>
+        <li>Work each question by hand.</li>
+        <li>Submit once. The worked solution is under each item.</li>
+        <li>Take the timed final when you want every question.</li>
+      </ol>
       <p class="fine">Original problems. Textbook reference: OpenStax Chemistry: Atoms First 2e.</p>
       ${notice}
-      <form data-final>
+      <form data-final data-prep-count="${drawn.length}">
         ${sections}
-        <p><button type="submit" class="table-btn">Submit the final</button></p>
+        <p><button type="submit" class="table-btn">Submit the drill</button></p>
       </form>
       <div class="feedback" data-summary hidden aria-live="polite"></div>
     </section>`;

@@ -1,9 +1,10 @@
 import { showToast } from './celebrate.js';
 import { diagnose } from './diagnose.js';
 import { generateFromSeed } from './generate.js';
-import { grade } from './grade.js';
+import { consumesAttempt, correctLine, grade, SIGFIG_HINT } from './grade.js';
 import { keypadFor } from './learn.js';
-import { awardXp, readProgress, writeProgress } from './progress.js';
+import { renderMath } from './math/render.js';
+import { awardXp, readProgress, recordMiss, writeProgress } from './progress.js';
 import { mulberry32 } from './rng.js';
 
 const FINAL_TOPICS = new Set([
@@ -96,28 +97,33 @@ function escapeHtml(text) {
     .replaceAll('"', '&quot;');
 }
 
-export function renderDrillQueue(item, note = '') {
+export function renderDrillQueue(item, note = '', mode = '') {
   const noteHtml = `<p class="feedback" data-drill-note aria-live="polite">${escapeHtml(note)}</p>`;
   if (!item) {
     return `<section data-drill-queue><h2>Extra practice</h2>${noteHtml}<p data-drill-empty>Queue clear.</p></section>`;
   }
   const inputId = `drill-${item.id}`;
   const liveId = `drill-live-${item.id}`;
-  return `
-    <section data-drill-queue>
-      <h2>Extra practice</h2>
-      <p>A miss comes back sooner, and it shows up more than once.</p>
-      ${noteHtml}
-      <form class="problem" data-drill="${escapeHtml(item.id)}">
-        <p id="q-${escapeHtml(item.id)}">${escapeHtml(item.q)}</p>
-        <div class="answer-row">
+  const solved = mode === 'solved';
+  const controls = solved
+    ? `<button type="button" data-drill-next>Next</button>`
+    : `<div class="answer-row">
           <div class="answer-field">
             <label class="answer-label" for="${inputId}">Your answer</label>
             <input id="${inputId}" name="answer" autocomplete="off" autocapitalize="off" spellcheck="false"${keypadFor(item)} aria-describedby="${liveId}">
           </div>
           <button type="submit">Check</button>
         </div>
-        <p class="feedback" id="${liveId}" aria-live="polite"></p>
+        <p class="feedback" id="${liveId}" aria-live="polite"></p>`;
+  const solvedAttr = solved ? ' data-drill-solved="true"' : '';
+  return `
+    <section data-drill-queue>
+      <h2>Extra practice</h2>
+      <p>A miss comes back sooner, and it shows up more than once.</p>
+      ${noteHtml}
+      <form class="problem" data-drill="${escapeHtml(item.id)}"${solvedAttr}>
+        <p id="q-${escapeHtml(item.id)}">${renderMath(item.q)}</p>
+        ${controls}
       </form>
     </section>
   `;
@@ -132,10 +138,25 @@ export function bindDrill(root, storage, items = []) {
   let queue = bank.map((item) => item.id);
   const misses = new Map();
 
+  root.addEventListener('click', (event) => {
+    const button = event.target?.closest?.('[data-drill-next]');
+    if (!button || !root.contains(button)) return;
+    const form = button.closest?.('[data-drill]');
+    const host = root.querySelector('[data-drill-queue]');
+    if (!form || !host) return;
+    const id = form.getAttribute('data-drill');
+    const used = misses.get(id) ?? 0;
+    queue = nextQueue(queue, id, false, used);
+    misses.delete(id);
+    const next = bank.find((entry) => entry.id === queue[0]) ?? null;
+    host.outerHTML = renderDrillQueue(next);
+  });
+
   root.addEventListener('submit', (event) => {
     const form = event.target.closest?.('[data-drill]');
     if (!form || !root.contains(form) || form.hasAttribute('data-unit-problem')) return;
     event.preventDefault();
+    if (form.hasAttribute('data-drill-solved')) return;
     const host = root.querySelector('[data-drill-queue]');
     if (!host) return;
     const id = form.getAttribute('data-drill');
@@ -147,22 +168,27 @@ export function bindDrill(root, storage, items = []) {
       const progress = awardXp(readProgress(storage), 10);
       writeProgress(progress, storage);
       queue = nextQueue(queue, id, true);
-      showToast(root, 'Correct. +10 XP.');
-      host.outerHTML = renderDrillQueue(bank.find((entry) => entry.id === queue[0]) ?? null, 'Correct. +10 XP.');
+      misses.delete(id);
+      const note = `${correctLine(item.why)} +10 XP.`;
+      showToast(root, note);
+      host.outerHTML = renderDrillQueue(bank.find((entry) => entry.id === queue[0]) ?? null, note);
+      return;
+    }
+    if (!consumesAttempt(result)) {
+      host.outerHTML = renderDrillQueue(item, result.hint || SIGFIG_HINT);
       return;
     }
     const used = (misses.get(id) ?? 0) + 1;
     misses.set(id, used);
+    writeProgress(recordMiss(readProgress(storage), id), storage);
+    if (used >= 3) {
+      const solution = `Solution: ${item.a}. ${item.why}`;
+      host.outerHTML = renderDrillQueue(item, solution, 'solved');
+      return;
+    }
     const found = diagnose(input?.value ?? '', item.check, item.mistakes ?? [], {});
     const stepHint = item.hints[Math.min(used - 1, item.hints.length - 1)] ?? item.hints[0];
-    const hint = used >= 3
-      ? `Solution: ${item.a}. ${item.why}`
-      : found?.message
-        ? `${found.message} ${stepHint}`
-        : `Not yet. ${item.hints[0]}`;
-    const drop = used >= 3;
-    queue = nextQueue(queue, id, drop, used);
-    const next = bank.find((entry) => entry.id === queue[0]) ?? null;
-    host.outerHTML = renderDrillQueue(next, hint);
+    const hint = found?.message ? `${found.message} ${stepHint}` : `Not yet. ${stepHint}`;
+    host.outerHTML = renderDrillQueue(item, hint);
   });
 }

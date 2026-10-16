@@ -14,7 +14,9 @@ import {
   noteDay,
   openLesson,
   previousDay,
+  normalizeProgress,
   readProgress,
+  recordMiss,
   reviewCard,
   todayKey,
   writeProgress,
@@ -73,6 +75,38 @@ test('lessons, mastery, and cards save XP in localStorage', () => {
   writeProgress(drilled, store);
   assert.equal(readProgress(store).xp, 40);
   assert.equal(ATTEMPTS, 3);
+});
+
+test('miss counts save and survive normalize', () => {
+  const store = memory();
+  const saved = writeProgress({
+    xp: 4,
+    misses: {
+      'ch01-a': 2,
+      frac: 2.9,
+      zero: 0,
+      negative: -3,
+      text: '1',
+      '': 4,
+    },
+  }, store);
+  assert.deepEqual(saved.misses, { 'ch01-a': 2, frac: 2 });
+  assert.equal(readProgress(store).misses['ch01-a'], 2);
+  assert.equal(readProgress(store).xp, 4);
+  const kept = normalizeProgress({
+    misses: { keep: 1, drop: false },
+    lessons: { a: 'practicing' },
+  });
+  assert.deepEqual(kept.misses, { keep: 1 });
+  assert.equal(kept.lessons.a, 'practicing');
+  assert.deepEqual(normalizeProgress(null).misses, {});
+  assert.deepEqual(normalizeProgress({ misses: ['nope'] }).misses, {});
+  const bumped = writeProgress(recordMiss(readProgress(store), 'ch01-a', '2026-10-16'), store);
+  assert.equal(bumped.misses['ch01-a'], 3);
+  assert.equal(readProgress(store).misses['ch01-a'], 3);
+  const imported = importCode(exportCode(bumped));
+  assert.equal(imported.ok, true);
+  assert.equal(imported.progress.misses['ch01-a'], 3);
 });
 
 test('a sync code round-trips and a #sync= link imports locally', () => {

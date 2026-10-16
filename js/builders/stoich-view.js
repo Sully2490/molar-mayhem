@@ -1,4 +1,4 @@
-import { escapeHtml, formulaHtml, formulaText } from './html.js';
+import { escapeHtml, equationHtml, equationText, formulaHtml, formulaText } from './html.js';
 import { ensureBuilderCss, on, reducedFrom, restoreFocus } from './dom.js';
 import { motionMode } from './motion.js';
 import { missFeedback } from './feedback.js';
@@ -57,7 +57,7 @@ export function renderStoich(state, motion = 'still') {
   const groups = particleGroups(reaction, state.amounts, state.shown);
   const dots = layoutParticles(groups);
   const reactions = REACTIONS.map((item) => (
-    `<option value="${item.id}" ${item.id === reaction.id ? 'selected' : ''}>${escapeHtml(formulaText(item.equation))}</option>`
+    `<option value="${item.id}" ${item.id === reaction.id ? 'selected' : ''}>${escapeHtml(equationText(item.equation))}</option>`
   )).join('');
   const circles = dots.map((dot) => (
     `<g transform="translate(${dot.x.toFixed(1)} ${dot.y.toFixed(1)})"><circle r="12" fill="${dot.color}"/><text y="4" text-anchor="middle" font-size="8" font-weight="700" fill="#fffaf2">${escapeHtml(formulaText(dot.formula))}</text></g>`
@@ -77,7 +77,7 @@ export function renderStoich(state, motion = 'still') {
         ${amountFields(reaction, state)}
         <button type="button" data-action="run" data-focus="run">${state.shown === 'after' ? 'Show the start' : 'Run the reaction'}</button>
       </div>
-      <p class="b-equation">${formulaHtml(reaction.equation)}</p>
+      <p class="b-equation">${equationHtml(reaction.equation)}</p>
       <svg class="b-svg" viewBox="0 0 320 180" role="img" aria-labelledby="stoich-summary">
         <rect width="320" height="180" fill="#fffaf2" rx="16"/>
         ${circles}

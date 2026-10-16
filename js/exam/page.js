@@ -65,15 +65,19 @@ export function examOutcome(root, problems) {
   let done = 0;
   let correct = 0;
   const misses = [];
+  const flags = [];
   for (const problem of problems ?? []) {
     const form = forms.find((item) => item.getAttribute?.('data-exam3') === problem.id);
     const status = form?.getAttribute?.('data-done') ?? '';
     if (!status) continue;
     done += 1;
     if (status === 'correct') correct += 1;
-    else misses.push(problem);
+    else if (status === 'sigfigs') {
+      correct += 0.5;
+      flags.push(problem);
+    } else misses.push(problem);
   }
-  return { done, correct, total, misses, finished: total > 0 && done === total };
+  return { done, correct, total, misses, flags, finished: total > 0 && done === total };
 }
 
 export function paintExamChrome(root, problems) {

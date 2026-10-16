@@ -28,12 +28,12 @@
   "problems": [
     {
       "id": "ch5-mb-c2h4-pi",
-      "q": "In C2H4, the pi bond is overlap of which orbitals?",
+      "q": "In C3H6, the pi bond is overlap of which orbitals?",
       "a": "unhybridized p",
-      "why": "Each carbon in C2H4 is sp2 and has one p orbital left over. Side-by-side overlap of those unhybridized p orbitals is the pi bond.",
+      "why": "Each double-bonded carbon in C3H6 is sp2 and has one p orbital left over. Side-by-side overlap of those unhybridized p orbitals is the pi bond.",
       "hints": [
-        "Each carbon in C2H4 uses sp2 hybrids for its three sigma bonds and keeps one p orbital out.",
-        "The pi bond in C2H4 is overlap of those unhybridized p orbitals."
+        "Each double-bonded carbon in C3H6 uses sp2 hybrids for its sigma bonds and keeps one p orbital out.",
+        "The pi bond in C3H6 is overlap of those unhybridized p orbitals."
       ],
       "check": {
         "kind": "exact",

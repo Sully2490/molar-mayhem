@@ -1079,17 +1079,17 @@
       "group": "light-review",
       "points": 1,
       "openstax_section": "OpenStax AF2e §5.4",
-      "q": "What is the molecular-orbital bond order of F2? F2 has 14 valence electrons, with 8 in bonding orbitals and 6 in antibonding orbitals. Give 4 significant figures and do not write a unit.",
-      "why": "OpenStax AF2e §5.4. Bond order = 1/2 (bonding electrons − antibonding electrons) = 1/2 (8 − 6) = 1.000.",
+      "q": "What is the molecular-orbital bond order of F2? F2 has 14 valence electrons, with 8 in bonding orbitals and 6 in antibonding orbitals. Write a whole number and do not write a unit.",
+      "why": "OpenStax AF2e §5.4. Bond order = 1/2 (bonding electrons − antibonding electrons) = 1/2 (8 − 6) = 1.",
       "hints": [
         "Subtract the antibonding count from the bonding count, then multiply by 1/2."
       ],
-      "a": "1.000",
+      "a": "1",
       "check": {
         "kind": "numeric",
         "value": 1,
         "tolerance": 0.5,
-        "sigFigs": 4,
+        "sigFigs": null,
         "unit": null
       }
     },
