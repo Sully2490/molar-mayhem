@@ -284,7 +284,8 @@ test('equation coefficients stay full size after +, at the start, and after ever
     ['2 H2 + O2 → 2 H2O', '2 H₂ + O₂ → 2 H₂O', '2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O'],
     ['2 H2 + O2 -> 2 H2O', '2 H₂ + O₂ → 2 H₂O', '2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O'],
     ['N2 + 3 H2 ⇌ 2 NH3', 'N₂ + 3 H₂ ⇌ 2 NH₃', 'N<sub>2</sub> + 3 H<sub>2</sub> ⇌ 2 NH<sub>3</sub>'],
-    ['N2 + 3 H2 = 2 NH3', 'N₂ + 3 H₂ ⇌ 2 NH₃', 'N<sub>2</sub> + 3 H<sub>2</sub> ⇌ 2 NH<sub>3</sub>'],
+    ['N2 + 3 H2 <=> 2 NH3', 'N₂ + 3 H₂ ⇌ 2 NH₃', 'N<sub>2</sub> + 3 H<sub>2</sub> ⇌ 2 NH<sub>3</sub>'],
+    ['N2 + 3 H2 = 2 NH3', 'N₂ + 3 H₂ → 2 NH₃', 'N<sub>2</sub> + 3 H<sub>2</sub> → 2 NH<sub>3</sub>'],
   ];
   for (const [raw, text, html] of arrows) {
     assert.equal(equationText(raw), text);
@@ -299,7 +300,10 @@ test('equationText turns -> into an arrow', () => {
   assert.equal(equationText('2 H2 + O2 -> 2 H2O'), '2 H₂ + O₂ → 2 H₂O');
   assert.equal(equationText('A -> B'), 'A → B');
   assert.equal(equationHtml('2 H2 + O2 -> 2 H2O'), '2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O');
-  assert.equal(equationText('N2 + 3 H2 = 2 NH3'), 'N₂ + 3 H₂ ⇌ 2 NH₃');
+  assert.equal(equationText('N2 + 3 H2 = 2 NH3'), 'N₂ + 3 H₂ → 2 NH₃');
+  assert.equal(equationHtml('N2 + 3 H2 = 2 NH3'), 'N<sub>2</sub> + 3 H<sub>2</sub> → 2 NH<sub>3</sub>');
+  assert.equal(equationText('N2 + 3 H2 <=> 2 NH3'), 'N₂ + 3 H₂ ⇌ 2 NH₃');
+  assert.equal(equationText('N2 + 3 H2 ⇌ 2 NH3'), 'N₂ + 3 H₂ ⇌ 2 NH₃');
 });
 
 test('a typed -> answer is still accepted', () => {

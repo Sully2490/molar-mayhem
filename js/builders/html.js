@@ -29,9 +29,9 @@ export function formulaHtml(formula) {
   return escapeHtml(formula).replace(/(\d+)/g, '<sub>$1</sub>');
 }
 
-/** A term starts at the beginning, or after +, →, ->, ⇌, or =. */
+/** A term starts at the beginning, or after +, →, ->, =, ⇌, or <=>. */
 function equationParts(equation) {
-  return String(equation).split(/(\s*(?:->|→|⇌|\+|=)\s*)/g);
+  return String(equation).split(/(\s*(?:<=>|->|→|⇌|\+|=)\s*)/g);
 }
 
 /** A leading integer is the coefficient. Digits after that belong to the formula. */
@@ -71,15 +71,16 @@ function joinEquation(equation, formatFormula, formatPlain) {
   }).join('');
 }
 
-/** Display arrows only. Graders still accept a typed -> or =. */
+/** Display arrows only. = and -> mean yields. <=> is equilibrium. Graders are unchanged. */
 function plainEquation(value) {
-  return String(value).replaceAll('->', '→').replaceAll('=', '⇌');
+  return String(value).replaceAll('<=>', '⇌').replaceAll('->', '→').replaceAll('=', '→');
 }
 
 /**
  * Equation text with full-size coefficients and subscripted formula digits.
  * `2 H2 + O2 -> 2 H2O` becomes `2 H₂ + O₂ → 2 H₂O`.
- * `N2 + 3 H2 = 2 NH3` becomes `N₂ + 3 H₂ ⇌ 2 NH₃`.
+ * `N2 + 3 H2 = 2 NH3` becomes `N₂ + 3 H₂ → 2 NH₃`.
+ * `N2 + 3 H2 <=> 2 NH3` becomes `N₂ + 3 H₂ ⇌ 2 NH₃`.
  */
 export function equationText(equation) {
   return joinEquation(equation, formulaText, plainEquation);
