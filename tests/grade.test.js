@@ -1,6 +1,16 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { canonicalUnit, countSigFigs, grade, parseAnswer } from '../js/grade.js';
+import {
+  canonicalUnit,
+  consumesAttempt,
+  correctLine,
+  countSigFigs,
+  examCredit,
+  firstSentence,
+  grade,
+  parseAnswer,
+  SIGFIG_HINT,
+} from '../js/grade.js';
 import { generateProblem } from '../js/generate.js';
 import { LESSON_FIELDS, validateLesson, validateProblem } from '../js/schema.js';
 
@@ -101,12 +111,43 @@ test('numeric tolerance is a relative percent and defaults to about 0.5%', () =>
   assert.equal(grade('100.2', tight).reason, 'tolerance');
 });
 
-test('a sig fig mismatch returns a hint and still counts', () => {
-  const result = grade('1.5 g', numeric);
-  assert.equal(result.ok, true);
-  assert.equal(result.reason, undefined);
-  assert.match(result.hint, /significant figures/i);
-  assert.match(result.hint, /3/);
+test('a right value with the wrong sig figs is not correct', () => {
+  const titration = { kind: 'numeric', value: 0.12, sigFigs: 4, unit: 'M' };
+  const result = grade('0.12 M', titration);
+  assert.equal(result.ok, false);
+  assert.equal(result.reason, 'sigfigs');
+  assert.equal(result.hint, SIGFIG_HINT);
+  assert.match(result.hint, /check sig figs/i);
+  assert.equal(result.credit, 0.5);
+  assert.equal(result.flag, 'sigfigs');
+  assert.equal(consumesAttempt(result), false);
+  assert.deepEqual(grade('0.1200 M', titration), { ok: true });
+  assert.equal(consumesAttempt(grade('0.1200 M', titration)), false);
+  assert.equal(consumesAttempt(grade('1.5 g', numeric)), false);
+  assert.equal(consumesAttempt(grade('9 M', titration)), true);
+
+  const loose = grade('1.5 g', numeric);
+  assert.equal(loose.ok, false);
+  assert.equal(loose.reason, 'sigfigs');
+  assert.equal(loose.hint, 'Check sig figs.');
+});
+
+test('exam credit gives half for a sig-fig miss and never zero', () => {
+  const titration = { kind: 'numeric', value: 0.12, sigFigs: 4, unit: 'M' };
+  const half = examCredit(grade('0.12 M', titration), 1);
+  assert.deepEqual(half, { points: 0.5, fraction: 0.5, flag: 'sigfigs' });
+  assert.notEqual(half.points, 0);
+  assert.deepEqual(examCredit(grade('0.12 M', titration), 2), { points: 1, fraction: 0.5, flag: 'sigfigs' });
+  assert.deepEqual(examCredit(grade('0.1200 M', titration), 2), { points: 2, fraction: 1, flag: null });
+  assert.deepEqual(examCredit(grade('4 M', titration), 2), { points: 0, fraction: 0, flag: null });
+});
+
+test('correct feedback uses the first sentence of the reason', () => {
+  assert.equal(firstSentence('Divide moles by liters. The quotient uses four figures.'), 'Divide moles by liters.');
+  assert.equal(firstSentence('Mass = 19.3 g/cm³ × 2.50 cm³ = 48.3 g.'), 'Mass = 19.3 g/cm³ × 2.50 cm³ = 48.3 g.');
+  assert.equal(firstSentence(''), '');
+  assert.equal(correctLine('Divide moles by liters. Then stop.'), 'Correct. Divide moles by liters.');
+  assert.equal(correctLine(''), 'Correct.');
 });
 
 test('scientific notation accepts a times sign and a superscript exponent', () => {

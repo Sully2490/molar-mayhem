@@ -160,6 +160,29 @@ test('a miss shows the hint, and the third miss reveals the next step', () => {
   assert.equal(finish.xp, STEP_XP);
 });
 
+test('a right value with wrong sig figs does not spend a step try', () => {
+  const problem = sampleProblem();
+  problem.guided[0].why = 'Add 273.15 to the Celsius temperature. Do not multiply.';
+  const session = createSession(problem);
+  const loose = submitStep(problem, session, '4.0 g');
+  assert.equal(loose.ok, false);
+  assert.match(loose.feedback, /Check sig figs/);
+  assert.equal(loose.revealed, false);
+  assert.equal(session.misses, 0);
+  assert.equal(session.index, 0);
+  assert.equal(session.revealedAny, false);
+  submitStep(problem, session, '4.0 g');
+  submitStep(problem, session, '4.00 g');
+  assert.equal(session.misses, 0);
+  assert.equal(session.index, 0);
+  const right = submitStep(problem, session, '4.000 g');
+  assert.equal(right.ok, true);
+  assert.match(right.feedback, /^Correct\. Add 273\.15 to the Celsius temperature\./);
+  assert.doesNotMatch(right.feedback, /Do not multiply/);
+  assert.equal(session.index, 1);
+  assert.equal(session.misses, 0);
+});
+
 test('a clean finish awards problem XP and a revealed step does not', () => {
   const problem = sampleProblem();
   const clean = createSession(problem);

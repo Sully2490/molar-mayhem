@@ -44,12 +44,21 @@ const UNIT_ALIASES = new Map([
 /** Relative percent used when a numeric check omits tolerance. 0.5 means ±0.5%. */
 export const DEFAULT_RELATIVE_PERCENT = 0.5;
 
+/**
+ * Shown when the value is right and the significant figures are not.
+ * Learn, Drill, and guided steps keep the box open and do not spend a try.
+ */
+export const SIGFIG_HINT = 'Check sig figs.';
+
 const SUBSCRIPTS = '₀₁₂₃₄₅₆₇₈₉';
 const SUPERSCRIPTS = '⁰¹²³⁴⁵⁶⁷⁸⁹';
 
 /**
  * Grade a student answer against a check descriptor.
- * Numeric tolerance is a relative percent. Sig-fig mismatches hint instead of failing.
+ * Numeric tolerance is a relative percent. A right value with the wrong
+ * significant figures is not correct (`reason: 'sigfigs'`). It does not
+ * spend a try in Learn, Drill, or guided steps. Exam 3 and the practice
+ * final should call `examCredit`, which awards half credit and a flag.
  * Exact checks fold Unicode digits and charges. The default case is formula:
  * element symbols stay capitalized, so Co, CO, and co are different.
  * Use case "insensitive" only for element names and ordinary words.
@@ -90,11 +99,61 @@ export function gradeNumeric(input, check) {
   }
   if (check.sigFigs != null && parsed.sigFigs !== check.sigFigs) {
     return {
-      ok: true,
-      hint: `The value is right. Check significant figures: this answer uses ${check.sigFigs}.`,
+      ok: false,
+      reason: 'sigfigs',
+      hint: SIGFIG_HINT,
+      credit: 0.5,
+      flag: 'sigfigs',
     };
   }
   return { ok: true };
+}
+
+/**
+ * True when this result should spend one of the three tries.
+ * A correct answer and a sig-fig miss both leave the try count unchanged.
+ * @param {{ ok?: boolean, reason?: string }} result
+ */
+export function consumesAttempt(result) {
+  return result?.ok !== true && result?.reason !== 'sigfigs';
+}
+
+/**
+ * Points for one Exam 3 or practice-final item.
+ * A sig-fig miss earns half credit and is flagged. It never scores as 0
+ * when the item is worth points. Other misses score 0.
+ * Lane D should use this instead of `result.ok ? points : 0`.
+ * @param {{ ok?: boolean, reason?: string }} result
+ * @param {number} [points=1]
+ * @returns {{ points: number, fraction: number, flag: 'sigfigs' | null }}
+ */
+export function examCredit(result, points = 1) {
+  const total = Number(points);
+  const base = Number.isFinite(total) ? total : 0;
+  if (result?.reason === 'sigfigs') {
+    return { points: base * 0.5, fraction: 0.5, flag: 'sigfigs' };
+  }
+  if (result?.ok) return { points: base, fraction: 1, flag: null };
+  return { points: 0, fraction: 0, flag: null };
+}
+
+/** First sentence of a worked reason. Decimal points inside numbers stay put. */
+export function firstSentence(text) {
+  const raw = String(text ?? '').replace(/\s+/g, ' ').trim();
+  if (!raw) return '';
+  for (let index = 0; index < raw.length; index += 1) {
+    const mark = raw[index];
+    if (mark !== '.' && mark !== '!' && mark !== '?') continue;
+    const next = raw[index + 1];
+    if (next == null || next === ' ') return raw.slice(0, index + 1);
+  }
+  return raw;
+}
+
+/** One-line praise that includes the reason when the problem has one. */
+export function correctLine(why) {
+  const sentence = firstSentence(why);
+  return sentence ? `Correct. ${sentence}` : 'Correct.';
 }
 
 export function withinRelativePercent(actual, expected, percent) {

@@ -1,4 +1,4 @@
-import { grade, withinRelativePercent, DEFAULT_RELATIVE_PERCENT } from '../grade.js';
+import { correctLine, grade, SIGFIG_HINT, withinRelativePercent, DEFAULT_RELATIVE_PERCENT } from '../grade.js';
 import { diagnose } from '../diagnose.js';
 
 /** Same attempt count as the Learn player. The third miss reveals the step. */
@@ -85,13 +85,23 @@ export function submitStep(problem, session, input) {
   const step = steps[session.index];
   const check = stepCheck(step);
   const result = grade(input, check);
+  if (result.reason === 'sigfigs') {
+    return {
+      ok: false,
+      feedback: result.hint || SIGFIG_HINT,
+      diagnosis: null,
+      revealed: false,
+      finished: false,
+      attempt: session.misses,
+      xp: STEP_XP,
+    };
+  }
   if (result.ok) {
     session.correct[session.index] = true;
-    const note = result.hint ? ` ${result.hint}` : '';
     advance(session, problem);
     return {
       ok: true,
-      feedback: `Correct.${note}`,
+      feedback: correctLine(step.why),
       diagnosis: null,
       revealed: false,
       finished: session.finished,
