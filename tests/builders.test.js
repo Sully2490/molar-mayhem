@@ -278,6 +278,22 @@ function subscriptFollowsLetter(term) {
   return letter >= 0 && (sub === -1 || sub > letter);
 }
 
+test('equation coefficients stay full size after +, at the start, and after every arrow', () => {
+  const arrows = [
+    ['2 H2 + O2 → 2 H2O', '2 H₂ + O₂ → 2 H₂O', '2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O'],
+    ['2 H2 + O2 -> 2 H2O', '2 H₂ + O₂ -> 2 H₂O', '2 H<sub>2</sub> + O<sub>2</sub> -&gt; 2 H<sub>2</sub>O'],
+    ['N2 + 3 H2 ⇌ 2 NH3', 'N₂ + 3 H₂ ⇌ 2 NH₃', 'N<sub>2</sub> + 3 H<sub>2</sub> ⇌ 2 NH<sub>3</sub>'],
+    ['N2 + 3 H2 = 2 NH3', 'N₂ + 3 H₂ = 2 NH₃', 'N<sub>2</sub> + 3 H<sub>2</sub> = 2 NH<sub>3</sub>'],
+  ];
+  for (const [raw, text, html] of arrows) {
+    assert.equal(equationText(raw), text);
+    assert.equal(equationHtml(raw), html);
+    for (const term of html.split(/\s*(?:-&gt;|→|⇌|\+|=)\s*/)) {
+      assert.equal(subscriptFollowsLetter(term), true, `${raw}: ${term}`);
+    }
+  }
+});
+
 test('orbital filling enforces Aufbau, Hund, and the chromium exception', () => {
   assert.equal(groundOccupancy(6)['2p'], 2);
   assert.equal(groundOccupancy(8)['2p'], 4);

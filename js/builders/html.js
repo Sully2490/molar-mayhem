@@ -29,44 +29,36 @@ export function formulaHtml(formula) {
   return escapeHtml(formula).replace(/(\d+)/g, '<sub>$1</sub>');
 }
 
-const EQUATION_GAP = / \+ | → /g;
-
-function equationPieces(equation) {
-  const source = String(equation);
-  const pieces = [];
-  let last = 0;
-  for (const match of source.matchAll(EQUATION_GAP)) {
-    pieces.push({ term: source.slice(last, match.index), gap: match[0] });
-    last = match.index + match[0].length;
-  }
-  pieces.push({ term: source.slice(last), gap: '' });
-  return pieces;
+/** A term starts at the beginning, or after +, →, ->, ⇌, or =. */
+function equationParts(equation) {
+  return String(equation).split(/(\s*(?:->|→|⇌|\+|=)\s*)/g);
 }
 
 /** A leading integer is the coefficient. Digits after that belong to the formula. */
 function splitCoefficient(term) {
-  const match = /^(\d+) ([\s\S]+)$/.exec(term);
-  if (!match) return { coefficient: '', formula: term };
-  return { coefficient: match[1], formula: match[2] };
+  const match = /^(\d+)(\s+)([\s\S]+)$/.exec(term);
+  if (!match) return { coefficient: '', space: '', formula: term };
+  return { coefficient: match[1], space: match[2], formula: match[3] };
+}
+
+function joinEquation(equation, formatFormula, formatPlain) {
+  return equationParts(equation).map((part, index) => {
+    if (index % 2 === 1) return formatPlain(part);
+    const { coefficient, space, formula } = splitCoefficient(part);
+    const lead = coefficient ? `${formatPlain(coefficient)}${formatPlain(space)}` : '';
+    return `${lead}${formatFormula(formula)}`;
+  }).join('');
 }
 
 /**
  * Equation text with full-size coefficients and subscripted formula digits.
- * `2 H2 + O2 → 2 H2O` becomes `2 H₂ + O₂ → 2 H₂O`.
+ * `2 H2 + O2 -> 2 H2O` becomes `2 H₂ + O₂ -> 2 H₂O`.
  */
 export function equationText(equation) {
-  return equationPieces(equation).map(({ term, gap }) => {
-    const { coefficient, formula } = splitCoefficient(term);
-    const lead = coefficient ? `${coefficient} ` : '';
-    return `${lead}${formulaText(formula)}${gap}`;
-  }).join('');
+  return joinEquation(equation, formulaText, (value) => value);
 }
 
 /** Same split as equationText, with formula digits in `<sub>` tags. */
 export function equationHtml(equation) {
-  return equationPieces(equation).map(({ term, gap }) => {
-    const { coefficient, formula } = splitCoefficient(term);
-    const lead = coefficient ? `${escapeHtml(coefficient)} ` : '';
-    return `${lead}${formulaHtml(formula)}${escapeHtml(gap)}`;
-  }).join('');
+  return joinEquation(equation, formulaHtml, escapeHtml);
 }
