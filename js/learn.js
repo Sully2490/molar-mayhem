@@ -445,7 +445,7 @@ export function bindLearn(root, lessons, storage) {
     const next = spent ? used + 1 : used;
     if (spent) {
       attempts.set(id, next);
-      writeProgress(recordMiss(readProgress(storage), id), storage);
+      writeProgress(recordMiss(readProgress(storage), id, problem.topic), storage);
     }
     const message = feedbackFor(result, next, problem);
     live.dataset.status = message.status;

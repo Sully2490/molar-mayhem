@@ -27,14 +27,16 @@ export function drillsFromLessons(lessons) {
       const hints = Array.isArray(problem.hints) && problem.hints.length
         ? problem.hints
         : ['Check the lesson and try again.'];
-      items.push({
+      const item = {
         id: problem.id,
         q: problem.q,
         a: problem.a,
         why: typeof problem.why === 'string' ? problem.why : '',
         hints,
         check: problem.check,
-      });
+      };
+      if (typeof problem.topic === 'string' && problem.topic.length > 0) item.topic = problem.topic;
+      items.push(item);
     }
   }
   return items;
@@ -180,7 +182,7 @@ export function bindDrill(root, storage, items = []) {
     }
     const used = (misses.get(id) ?? 0) + 1;
     misses.set(id, used);
-    writeProgress(recordMiss(readProgress(storage), id), storage);
+    writeProgress(recordMiss(readProgress(storage), id, item.topic), storage);
     if (used >= 3) {
       const solution = `Solution: ${item.a}. ${item.why}`;
       host.outerHTML = renderDrillQueue(item, solution, 'solved');

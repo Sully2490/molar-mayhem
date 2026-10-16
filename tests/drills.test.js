@@ -10,6 +10,7 @@ const koh = {
   why: 'Divide moles by liters. The quotient uses four figures.',
   hints: ['Divide the moles by the liters.', 'Count four figures in the molarity.'],
   check: { kind: 'numeric', value: 0.12, sigFigs: 4, unit: 'M' },
+  topic: 'molarity',
 };
 
 const water = {
@@ -154,9 +155,11 @@ test('a drill miss is saved and a sig-fig warning is not', () => {
   view.submit('0.12 M');
   view.submit('0.12 M');
   assert.equal(readProgress(view.store).misses[koh.id], undefined);
+  assert.equal(readProgress(view.store).missesByTopic.molarity, undefined);
   view.submit('9 M');
   view.submit('8 M');
   assert.equal(readProgress(view.store).misses[koh.id], 2);
+  assert.equal(readProgress(view.store).missesByTopic.molarity, 2);
   assert.equal(readProgress(view.store).misses[water.id], undefined);
 });
 

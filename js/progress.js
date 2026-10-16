@@ -1,7 +1,7 @@
 export const PROGRESS_KEY = 'mm-progress';
 
 export function emptyProgress() {
-  return { xp: 0, streak: 0, lastDay: '', lessons: {}, cards: {}, misses: {} };
+  return { xp: 0, streak: 0, lastDay: '', lessons: {}, cards: {}, misses: {}, missesByTopic: {} };
 }
 
 export function todayKey(date = new Date()) {
@@ -34,14 +34,21 @@ export function normalizeProgress(raw) {
       if (done === true) next.cards[id] = true;
     }
   }
-  if (raw.misses && typeof raw.misses === 'object' && !Array.isArray(raw.misses)) {
-    for (const [id, count] of Object.entries(raw.misses)) {
-      if (typeof id !== 'string' || id.length === 0) continue;
-      if (!Number.isFinite(count) || count <= 0) continue;
-      next.misses[id] = Math.floor(count);
-    }
-  }
+  next.misses = copyCounts(raw.misses);
+  next.missesByTopic = copyCounts(raw.missesByTopic);
   return next;
+}
+
+/** Keep positive finite counts. Drop empty keys, zeroes, and non-numbers. */
+function copyCounts(raw) {
+  const counts = {};
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return counts;
+  for (const [id, count] of Object.entries(raw)) {
+    if (typeof id !== 'string' || id.length === 0) continue;
+    if (!Number.isFinite(count) || count <= 0) continue;
+    counts[id] = Math.floor(count);
+  }
+  return counts;
 }
 
 /** Advance the streak when this local day is new. Same day leaves the count alone. */
@@ -107,11 +114,14 @@ export function masterLesson(progress, id, day = todayKey()) {
   };
 }
 
-/** Add one miss for a problem. Lane D reads `progress.misses` to weight Prep. */
-export function recordMiss(progress, id, day = todayKey()) {
+/** Add one miss for a problem. Lane D reads both maps to weight Prep. */
+export function recordMiss(progress, id, topic, day = todayKey()) {
   const next = noteDay(progress, day);
   if (typeof id !== 'string' || id.length === 0) return next;
   next.misses[id] = (next.misses[id] ?? 0) + 1;
+  if (typeof topic === 'string' && topic.length > 0) {
+    next.missesByTopic[topic] = (next.missesByTopic[topic] ?? 0) + 1;
+  }
   return next;
 }
 

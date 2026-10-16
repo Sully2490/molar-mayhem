@@ -91,6 +91,7 @@ test('miss counts save and survive normalize', () => {
     },
   }, store);
   assert.deepEqual(saved.misses, { 'ch01-a': 2, frac: 2 });
+  assert.deepEqual(saved.missesByTopic, {});
   assert.equal(readProgress(store).misses['ch01-a'], 2);
   assert.equal(readProgress(store).xp, 4);
   const kept = normalizeProgress({
@@ -101,12 +102,43 @@ test('miss counts save and survive normalize', () => {
   assert.equal(kept.lessons.a, 'practicing');
   assert.deepEqual(normalizeProgress(null).misses, {});
   assert.deepEqual(normalizeProgress({ misses: ['nope'] }).misses, {});
-  const bumped = writeProgress(recordMiss(readProgress(store), 'ch01-a', '2026-10-16'), store);
+  const bumped = writeProgress(recordMiss(readProgress(store), 'ch01-a', '', '2026-10-16'), store);
   assert.equal(bumped.misses['ch01-a'], 3);
+  assert.deepEqual(bumped.missesByTopic, {});
   assert.equal(readProgress(store).misses['ch01-a'], 3);
   const imported = importCode(exportCode(bumped));
   assert.equal(imported.ok, true);
   assert.equal(imported.progress.misses['ch01-a'], 3);
+});
+
+test('topic miss counts save and survive normalize', () => {
+  const store = memory();
+  const saved = writeProgress({
+    missesByTopic: {
+      'gas laws': 2,
+      density: 2.9,
+      zero: 0,
+      negative: -3,
+      text: '1',
+      '': 4,
+    },
+  }, store);
+  assert.deepEqual(saved.missesByTopic, { 'gas laws': 2, density: 2 });
+  assert.deepEqual(normalizeProgress({ xp: 3 }).missesByTopic, {});
+  assert.deepEqual(normalizeProgress({ missesByTopic: ['nope'] }).missesByTopic, {});
+  const first = recordMiss(emptyProgress(), 'ch08-a', 'gas laws', '2026-10-16');
+  const second = recordMiss(first, 'ch08-b', 'gas laws', '2026-10-16');
+  assert.equal(second.misses['ch08-a'], 1);
+  assert.equal(second.misses['ch08-b'], 1);
+  assert.equal(second.missesByTopic['gas laws'], 2);
+  const plain = recordMiss(second, 'ch01-a', undefined, '2026-10-16');
+  assert.equal(plain.misses['ch01-a'], 1);
+  assert.deepEqual(plain.missesByTopic, { 'gas laws': 2 });
+  const written = writeProgress(plain, store);
+  const imported = importCode(exportCode(written));
+  assert.equal(imported.ok, true);
+  assert.equal(imported.progress.missesByTopic['gas laws'], 2);
+  assert.equal(imported.progress.missesByTopic.density, undefined);
 });
 
 test('a sync code round-trips and a #sync= link imports locally', () => {
