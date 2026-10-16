@@ -1,4 +1,6 @@
-/** Similar-problem block: hint and answer stay hidden until the student asks or misses. */
+import { correctLine } from '../grade.js';
+
+/** Similar-problem block: hint stays hidden until the student asks. The answer starts closed. */
 
 export const YOUR_TURN_ATTEMPTS = 3;
 
@@ -14,8 +16,8 @@ export function answersMatch(typed, expected) {
   return left.length > 0 && left === right;
 }
 
-export function feedbackPlan(attempt, correct) {
-  if (correct) return { done: true, showHint: false, showAnswer: false, text: 'Correct.' };
+export function feedbackPlan(attempt, correct, why = '') {
+  if (correct) return { done: true, showHint: false, showAnswer: false, text: correctLine(why) };
   const showAnswer = attempt >= YOUR_TURN_ATTEMPTS;
   return {
     done: showAnswer,
@@ -34,6 +36,26 @@ function answerText(paragraph) {
 function isLabeled(paragraph, label) {
   const strong = paragraph?.querySelector?.('strong');
   return String(strong?.textContent ?? '').trim().toLowerCase().startsWith(label);
+}
+
+function answerDetails(answer) {
+  return answer?.closest?.('details') ?? null;
+}
+
+/** A closed details block already hides the answer. A bare paragraph is hidden. */
+function concealAnswer(answer) {
+  const details = answerDetails(answer);
+  if (details) {
+    details.open = false;
+    return;
+  }
+  answer.hidden = true;
+}
+
+function revealAnswer(answer) {
+  answer.hidden = false;
+  const details = answerDetails(answer);
+  if (details) details.open = true;
 }
 
 /**
@@ -61,7 +83,7 @@ export function upgradeYourTurn(root) {
       section.className = `${section.className} mm-your-turn`.trim();
     }
     hint.hidden = true;
-    answer.hidden = true;
+    concealAnswer(answer);
 
     const controls = doc.createElement('div');
     controls.className = 'mm-your-turn-controls';
@@ -98,9 +120,9 @@ export function upgradeYourTurn(root) {
       const correct = answersMatch(input.value, section.dataset.answer);
       const attempt = correct ? Number(section.dataset.attempts || '0') : Number(section.dataset.attempts || '0') + 1;
       if (!correct) section.dataset.attempts = String(attempt);
-      const plan = feedbackPlan(attempt, correct);
+      const plan = feedbackPlan(attempt, correct, section.dataset?.why ?? '');
       if (plan.showHint) hint.hidden = false;
-      if (plan.showAnswer) answer.hidden = false;
+      if (plan.showAnswer) revealAnswer(answer);
       if (plan.done) {
         section.dataset.done = 'true';
         input.disabled = true;

@@ -220,6 +220,26 @@ test('a mount point under the title keeps search there after a route change', ()
   assert.equal(ui.root.parentNode, slot);
 });
 
+test('a search title for sp3d2-hybrid shows the superscript form', () => {
+  const doc = createDoc();
+  const ui = mountSearch(doc, { load: async () => [] });
+  ui.setIndex([
+    {
+      id: 'term:sp3d2-hybrid',
+      kind: 'term',
+      title: 'sp3d2 hybrid orbital',
+      text: 'An sp3d2 hybrid set is six orbitals.',
+      href: '#Learn/ch5-hybridization',
+      chapter: 5,
+    },
+  ]);
+  ui.input.value = 'sp3d2-hybrid';
+  ui.input.dispatchEvent({ type: 'input' });
+  const title = ui.list.querySelector('.mm-search-title');
+  assert.match(title.textContent, /sp³d²/);
+  assert.equal(title.textContent.includes('sp3d2'), false);
+});
+
 test('focus mode still shows the toggle when search lives inside the page', () => {
   const css = readFileSync(new URL('../css/search/search.css', import.meta.url), 'utf8');
   assert.match(css, /:not\(\.mm-focus-keep\):not\(\.mm-tools\)/);

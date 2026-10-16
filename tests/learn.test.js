@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readdirSync, readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import { bindLearn, chapterFolder, feedbackFor, labelFor, LESSON_FILES, loadLessons, renderLearn } from '../js/learn.js';
+import { readProgress } from '../js/progress.js';
 import { lessonIdFromHash } from '../js/routes.js';
 
 const readLesson = (path) => JSON.parse(readFileSync(new URL(`../${path}`, import.meta.url), 'utf8'));
@@ -62,9 +63,15 @@ test('a wrong answer gets a hint, then the solution on the third miss', () => {
   assert.equal(last.done, true);
   assert.equal(last.status, 'solution');
   assert.match(last.text, new RegExp(`Solution: ${item.a}`));
-  const right = feedbackFor({ ok: true, hint: 'Check the significant figures.' }, 1, item);
+  const right = feedbackFor({ ok: true }, 1, item);
+  assert.equal(right.done, true);
   assert.equal(right.status, 'correct');
-  assert.match(right.text, /significant figures/);
+  assert.match(right.text, /^Correct\. Helium is only one kind of atom, so it is an element\./);
+  const figs = feedbackFor({ ok: false, reason: 'sigfigs', hint: 'Check sig figs.' }, 3, item);
+  assert.equal(figs.done, false);
+  assert.equal(figs.status, 'sig');
+  assert.match(figs.text, /Check sig figs/);
+  assert.doesNotMatch(figs.text, /Solution:/);
 });
 
 test('binding Learn twice does not spend three tries on one submit', () => {
@@ -102,6 +109,151 @@ test('binding Learn twice does not spend three tries on one submit', () => {
   assert.equal(live.dataset.status, 'miss');
   assert.equal(input.disabled, false);
   assert.doesNotMatch(live.textContent, /Solution:/);
+});
+
+test('Your turn keeps its answer inside a closed details block', () => {
+  const lesson = readLesson('content/ch01/classify.json');
+  const html = renderLearn([lesson], lesson.id);
+  const worked = html.slice(html.indexOf('<h2>Worked example</h2>'), html.indexOf('<h2>Your turn</h2>'));
+  const yourTurn = html.slice(html.indexOf('<h2>Your turn</h2>'), html.indexOf('<h2>Practice</h2>'));
+  assert.match(worked, /<strong>Answer:<\/strong>/);
+  assert.doesNotMatch(worked, /<details>/);
+  assert.match(yourTurn, /<details>\s*<summary>Show answer<\/summary>[\s\S]*<strong>Answer:<\/strong>[\s\S]*<\/details>/);
+  const beforeDetails = yourTurn.slice(0, yourTurn.indexOf('<details>'));
+  assert.doesNotMatch(beforeDetails, /<strong>Answer:<\/strong>/);
+});
+
+test('a sig-fig miss in Learn does not spend a try', () => {
+  const problem = {
+    id: 'sig-demo',
+    q: 'What is the molarity?',
+    a: '0.1200 M',
+    why: 'Divide moles by liters. The quotient uses four figures.',
+    hints: ['Divide the moles by the liters.', 'Count four figures in the molarity.'],
+    check: { kind: 'numeric', value: 0.12, sigFigs: 4, unit: 'M' },
+  };
+  const lesson = { id: 'demo', problems: [problem] };
+  const input = { value: '0.12', disabled: false };
+  const unit = { value: 'M', disabled: false };
+  const live = { dataset: {}, textContent: '' };
+  const form = {
+    closest(selector) {
+      return selector === '[data-problem]' ? form : null;
+    },
+    getAttribute(name) {
+      return name === 'data-problem' ? problem.id : null;
+    },
+    querySelector(selector) {
+      if (selector === 'input[name="answer"]' || selector === 'input') return input;
+      if (selector === 'input[name="unit"]') return unit;
+      if (selector === '.feedback') return live;
+      return null;
+    },
+  };
+  const listeners = [];
+  const root = {
+    dataset: {},
+    addEventListener(_type, handler) {
+      listeners.push(handler);
+    },
+  };
+  bindLearn(root, [lesson]);
+  const submit = () => listeners[0]({ target: form, preventDefault() {} });
+  submit();
+  submit();
+  submit();
+  assert.match(live.textContent, /Check sig figs/);
+  assert.equal(input.disabled, false);
+  assert.equal(unit.disabled, false);
+  assert.doesNotMatch(live.textContent, /Solution:/);
+  input.value = '9';
+  submit();
+  assert.match(live.textContent, /Divide the moles by the liters/);
+  assert.doesNotMatch(live.textContent, /Count four figures/);
+  assert.equal(input.disabled, false);
+  input.value = '8';
+  submit();
+  assert.match(live.textContent, /Count four figures/);
+  input.value = '7';
+  submit();
+  assert.match(live.textContent, /Solution: 0\.1200 M/);
+  assert.equal(input.disabled, true);
+  const fresh = { value: '0.1200', disabled: false };
+  const freshUnit = { value: 'M', disabled: false };
+  const freshLive = { dataset: {}, textContent: '' };
+  const freshForm = {
+    closest(selector) {
+      return selector === '[data-problem]' ? freshForm : null;
+    },
+    getAttribute(name) {
+      return name === 'data-problem' ? problem.id : null;
+    },
+    querySelector(selector) {
+      if (selector === 'input[name="answer"]' || selector === 'input') return fresh;
+      if (selector === 'input[name="unit"]') return freshUnit;
+      if (selector === '.feedback') return freshLive;
+      return null;
+    },
+  };
+  const again = {
+    dataset: {},
+    addEventListener(_type, handler) {
+      handler({ target: freshForm, preventDefault() {} });
+    },
+  };
+  bindLearn(again, [lesson]);
+  assert.match(freshLive.textContent, /^Correct\. Divide moles by liters\./);
+  assert.doesNotMatch(freshLive.textContent, /four figures/);
+  assert.equal(fresh.disabled, true);
+});
+
+test('Learn saves a miss and leaves a sig-fig warning uncounted', () => {
+  const problem = {
+    id: 'sig-demo',
+    q: 'What is the molarity?',
+    a: '0.1200 M',
+    why: 'Divide moles by liters.',
+    hints: ['Divide the moles by the liters.'],
+    check: { kind: 'numeric', value: 0.12, sigFigs: 4, unit: 'M' },
+  };
+  const data = new Map();
+  const storage = {
+    getItem: (key) => (data.has(key) ? data.get(key) : null),
+    setItem: (key, value) => data.set(key, String(value)),
+  };
+  const input = { value: '0.12', disabled: false };
+  const unit = { value: 'M', disabled: false };
+  const live = { dataset: {}, textContent: '' };
+  const form = {
+    closest(selector) {
+      return selector === '[data-problem]' ? form : null;
+    },
+    getAttribute(name) {
+      return name === 'data-problem' ? problem.id : null;
+    },
+    querySelector(selector) {
+      if (selector === 'input[name="answer"]' || selector === 'input') return input;
+      if (selector === 'input[name="unit"]') return unit;
+      if (selector === '.feedback') return live;
+      return null;
+    },
+  };
+  const root = {
+    dataset: {},
+    addEventListener(_type, handler) {
+      root.submit = handler;
+    },
+  };
+  bindLearn(root, [{ id: 'demo', problems: [problem] }], storage);
+  root.submit({ target: form, preventDefault() {} });
+  assert.equal(readProgress(storage).misses[problem.id], undefined);
+  input.value = '9';
+  root.submit({ target: form, preventDefault() {} });
+  root.submit({ target: form, preventDefault() {} });
+  assert.equal(readProgress(storage).misses[problem.id], 2);
+  input.value = '0.1200';
+  root.submit({ target: form, preventDefault() {} });
+  assert.equal(readProgress(storage).misses[problem.id], 2);
 });
 
 test('lesson links stay on the Learn route', () => {

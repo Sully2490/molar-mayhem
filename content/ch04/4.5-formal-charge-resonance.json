@@ -42,13 +42,14 @@
     },
     {
       "id": "ch04-45-02",
-      "q": "What is the formal charge on carbon in CO2? Carbon has two double bonds and no lone pair.",
-      "a": "0",
-      "why": "Carbon has 4 valence electrons and 4 bonds, with no lone pair. Formal charge = 4 − 0 − 4 = 0.",
-      "hints": ["Carbon’s valence count is 4, and the two double bonds are 4 sticks. Subtract those sticks from 4."],
+      "q": "What is the formal charge on carbon in CO? Carbon has one lone pair and a triple bond. Write the sign.",
+      "a": "-1",
+      "why": "Carbon has 4 valence electrons, 2 electrons in its lone pair, and 3 bonds. Formal charge = 4 − 2 − 3 = −1.",
+      "hints": ["Carbon’s valence count is 4. Subtract the 2 lone-pair electrons and the 3 bonds of the triple bond."],
       "check": {
         "kind": "exact",
-        "text": "0",
+        "text": "-1",
+        "answers": ["1-"],
         "case": "insensitive"
       }
     },

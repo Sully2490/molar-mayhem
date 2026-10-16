@@ -1,7 +1,7 @@
 import { bindSharedKeypad } from './chemkb/keyboard.js';
 import { toastHtml } from './celebrate.js';
 import { renderDrillQueue } from './drills.js';
-import { grade } from './grade.js';
+import { consumesAttempt, correctLine, grade } from './grade.js';
 import { keypadFor } from './learn.js';
 
 export const ATTEMPTS = 3;
@@ -34,10 +34,10 @@ function escapeHtml(text) {
 }
 
 export function feedbackForUnit(result, attempt, problem) {
-  if (result.ok && result.hint) {
-    return { done: true, status: 'sig', text: result.hint };
+  if (result.reason === 'sigfigs') {
+    return { done: false, status: 'sig', text: result.hint || 'Check sig figs.' };
   }
-  if (result.ok) return { done: true, status: 'correct', text: 'Correct.' };
+  if (result.ok) return { done: true, status: 'correct', text: correctLine(problem?.why) };
   if (attempt >= ATTEMPTS) {
     return { done: true, status: 'solution', text: `Solution: ${problem.a}. ${problem.why}` };
   }
@@ -103,8 +103,9 @@ export function bindUnitEntry(root, problems = UNIT_PROBLEMS) {
     const unit = form.querySelector('[name="unit"]');
     const live = form.querySelector('.feedback');
     const result = grade(`${value.value} ${unit.value}`.trim(), problem.check);
-    const next = result.ok ? used : used + 1;
-    if (!result.ok) attempts.set(id, next);
+    const spent = consumesAttempt(result);
+    const next = spent ? used + 1 : used;
+    if (spent) attempts.set(id, next);
     const message = feedbackForUnit(result, next, problem);
     live.dataset.status = message.status;
     live.textContent = message.text;

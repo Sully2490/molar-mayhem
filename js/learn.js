@@ -1,5 +1,5 @@
 import { videos as publishedVideos } from '../content/videos/catalog.js';
-import { grade } from './grade.js';
+import { consumesAttempt, correctLine, grade } from './grade.js';
 import {
   chapterByNumber,
   CHAPTERS,
@@ -10,7 +10,7 @@ import {
 } from './home/chapters.js';
 import { ensureLearnCss } from './home/css.js';
 import { continueCardHtml, moduleGridHtml, moduleHref } from './home/modules.js';
-import { chapterStats, readProgress } from './progress.js';
+import { chapterStats, readProgress, recordMiss, writeProgress } from './progress.js';
 import { progressRingHtml } from './home/ring.js';
 import { termsByChapter } from './terms/catalog.js';
 
@@ -142,8 +142,10 @@ export function labelFor(problem) {
  */
 export function feedbackFor(result, attempt, problem) {
   if (result.ok) {
-    const extra = result.hint ? ` ${result.hint}` : '';
-    return { done: true, status: 'correct', text: `Correct.${extra}` };
+    return { done: true, status: 'correct', text: correctLine(problem?.why) };
+  }
+  if (result.reason === 'sigfigs') {
+    return { done: false, status: 'sig', text: result.hint || 'Check sig figs.' };
   }
   if (attempt >= ATTEMPTS) {
     return {
@@ -371,11 +373,14 @@ function renderLesson(lesson) {
       <p>${escapeHtml(example.q)}</p>
       <p><strong>Answer:</strong> ${escapeHtml(example.answer)}</p>
     </section>
-    <section class="problem">
+    <section class="problem"${similar.why ? ` data-why="${escapeHtml(similar.why)}"` : ''}>
       <h2>Your turn</h2>
       <p>${escapeHtml(similar.q)}</p>
       <p><strong>Hint:</strong> ${escapeHtml(similar.hint)}</p>
-      <p><strong>Answer:</strong> ${escapeHtml(similar.answer)}</p>
+      <details>
+        <summary>Show answer</summary>
+        <p><strong>Answer:</strong> ${escapeHtml(similar.answer)}</p>
+      </details>
     </section>
     <h2>Practice</h2>
     ${problems}
@@ -414,7 +419,7 @@ function renderProblem(problem) {
   `;
 }
 
-export function bindLearn(root, lessons) {
+export function bindLearn(root, lessons, storage) {
   ensureLearnCss();
   lessonsByRoot.set(root, lessons);
   if (attemptsByRoot.has(root)) return;
@@ -436,8 +441,12 @@ export function bindLearn(root, lessons) {
     const live = form.querySelector('.feedback');
     const typed = unitInput && unitInput.value.trim() ? `${input.value.trim()} ${unitInput.value.trim()}` : input.value;
     const result = grade(typed, problem.check);
-    const next = result.ok ? used : used + 1;
-    if (!result.ok) attempts.set(id, next);
+    const spent = consumesAttempt(result);
+    const next = spent ? used + 1 : used;
+    if (spent) {
+      attempts.set(id, next);
+      writeProgress(recordMiss(readProgress(storage), id), storage);
+    }
     const message = feedbackFor(result, next, problem);
     live.dataset.status = message.status;
     live.textContent = message.text;

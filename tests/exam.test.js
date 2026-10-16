@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
-import { PROGRESS_KEY } from '../js/progress.js';
+import { PROGRESS_KEY, readProgress } from '../js/progress.js';
 import {
   answerFields,
   choiceSet,
@@ -387,4 +387,41 @@ test('Exam 3 shows progress and a summary only after every question is checked',
   assert.match(summary, /data-exam-miss="yn"/);
   assert.doesNotMatch(summary, /data-exam-miss="mag"/);
   assert.match(summary, /<sup>/);
+});
+
+test('the exam report saves a miss count and skips a sig-fig warning', () => {
+  const data = new Map();
+  const storage = {
+    getItem: (key) => (data.has(key) ? data.get(key) : null),
+    setItem: (key, value) => data.set(key, String(value)),
+  };
+  const problems = [
+    {
+      id: 'titration',
+      ch: 7,
+      q: 'What is the molarity?',
+      a: '0.1200 M',
+      why: 'Divide moles by liters.',
+      hints: [],
+      check: { kind: 'numeric', value: 0.12, sigFigs: 4, unit: 'M' },
+    },
+    {
+      id: 'gas',
+      ch: 8,
+      q: 'Name the unit.',
+      a: 'atm',
+      why: 'Pressure uses atmospheres here.',
+      hints: [],
+      check: { kind: 'exact', text: 'atm', case: 'insensitive' },
+    },
+  ];
+  scoreReport(problems, { titration: '0.12 M', gas: 'atm' }, [], storage);
+  assert.equal(readProgress(storage).misses.titration, undefined);
+  assert.equal(readProgress(storage).misses.gas, undefined);
+  scoreReport(problems, { titration: '9 M', gas: 'atm' }, [], storage);
+  assert.equal(readProgress(storage).misses.titration, 1);
+  assert.equal(readProgress(storage).misses.gas, undefined);
+  scoreReport(problems, { titration: '8 M', gas: 'torr' }, [], storage);
+  assert.equal(readProgress(storage).misses.titration, 2);
+  assert.equal(readProgress(storage).misses.gas, 1);
 });

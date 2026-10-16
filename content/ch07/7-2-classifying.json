@@ -31,15 +31,15 @@
   "problems": [
     {
       "id": "ch07-ox-sulfur",
-      "q": "What is the oxidation number of S in H2SO4? Enter the number only.",
-      "a": "6",
-      "why": "Two H are +2 and four O are -8. The molecule is neutral, so S is +6. Enter 6.",
-      "hints": ["Two H are +2 and four O are -8. Sulfur is whatever makes a neutral molecule."],
-      "check": { "kind": "numeric", "value": 6, "tolerance": 0, "sigFigs": 1, "unit": null },
+      "q": "What is the oxidation number of S in SO2? Enter the number only.",
+      "a": "4",
+      "why": "Each oxygen is −2, so two O atoms are −4. The molecule is neutral, so S is +4. Enter 4.",
+      "hints": ["Two O atoms contribute −4. Sulfur is whatever makes a neutral SO2 molecule."],
+      "check": { "kind": "numeric", "value": 4, "tolerance": 0, "sigFigs": 1, "unit": null },
       "guided": [
         {
-          "prompt": "In H2SO4, what is the total oxidation contribution of the two H atoms? Enter the number only.",
-          "hint": "Each H is +1, so two H contribute +2.",
+          "prompt": "In SO2, how many oxygen atoms are there? Enter the number only.",
+          "hint": "The subscript on O in SO2 is 2.",
           "answer": "2",
           "expected": "2",
           "check": {
@@ -51,13 +51,13 @@
           }
         },
         {
-          "prompt": "What is the total oxidation contribution of the four O atoms? Enter the number only.",
-          "hint": "Each O is −2, so four O contribute −8.",
-          "answer": "-8",
-          "expected": "-8",
+          "prompt": "What is the total oxidation contribution of the two O atoms? Enter the number only.",
+          "hint": "Each O is −2, so two O contribute −4.",
+          "answer": "-4",
+          "expected": "-4",
           "check": {
             "kind": "numeric",
-            "value": -8,
+            "value": -4,
             "tolerance": 0.5,
             "sigFigs": 1,
             "unit": null
@@ -65,12 +65,12 @@
         },
         {
           "prompt": "The molecule is neutral. What is the oxidation number of S? Enter the number only.",
-          "hint": "S + 2 + (−8) = 0, so S is +6.",
-          "answer": "6",
-          "expected": "6",
+          "hint": "S + (−4) = 0, so S is +4.",
+          "answer": "4",
+          "expected": "4",
           "check": {
             "kind": "numeric",
-            "value": 6,
+            "value": 4,
             "tolerance": 0,
             "sigFigs": 1,
             "unit": null
@@ -80,7 +80,7 @@
       "mistakes": [
         {
           "id": "sign",
-          "describe": "Oxygen is −2, not +2. Four O atoms contribute −8, so sulfur is +6.",
+          "describe": "Oxygen is −2, not +2. Two O atoms contribute −4, so sulfur is +4.",
           "wrong": "−2"
         }
       ]

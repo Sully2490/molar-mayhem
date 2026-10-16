@@ -1,10 +1,10 @@
 import { grade } from './grade.js';
-import { PROGRESS_KEY } from './progress.js';
+import { renderMath } from './math/render.js';
+import { readProgress } from './progress.js';
 import { validateProblem } from './schema.js';
 
 /** Short untimed drill. The timed final still uses the full practice-final set. */
 export const PREP_COUNT = 10;
-const WEAK_WEIGHT = 5;
 
 const CHAPTER_TITLES = {
   1: 'Essential ideas',
@@ -159,25 +159,11 @@ export function renderSummary(rows) {
   `;
 }
 
-/**
- * Problem ids the student has missed. `progress.missed` is a list of ids.
- * `progress.misses` may be that list or a map of id to count.
- * readProgress() drops these fields, so callers can pass the raw saved object.
- */
-export function missedIdsFrom(progress) {
-  const ids = new Set();
-  const add = (id) => {
-    if (typeof id === 'string' && id) ids.add(id);
-  };
-  if (Array.isArray(progress?.missed)) progress.missed.forEach(add);
-  const misses = progress?.misses;
-  if (Array.isArray(misses)) misses.forEach(add);
-  else if (misses && typeof misses === 'object') {
-    for (const [id, count] of Object.entries(misses)) {
-      if (count) add(id);
-    }
-  }
-  return ids;
+/** How many times this problem id was missed. `progress.misses` is id → count. */
+export function missCount(progress, id) {
+  const count = progress?.misses?.[id];
+  if (!Number.isFinite(count) || count <= 0) return 0;
+  return Math.floor(count);
 }
 
 export function randomFromSeed(seed) {
@@ -213,7 +199,7 @@ function weightedSample(pool, count, random) {
 
 /**
  * About 10 mixed questions from the practice-final bank.
- * Missed ids weigh more than the rest. The same seed draws the same set.
+ * Each question's weight is 1 plus its own miss count. The same seed draws the same set.
  * A bank of 10 or fewer is returned in full, still untimed.
  */
 export function selectPrep(problems, progress = {}, options = {}) {
@@ -222,9 +208,8 @@ export function selectPrep(problems, progress = {}, options = {}) {
   if (count === list.length) return list;
   const random = options.random
     ?? (options.seed == null ? Math.random : randomFromSeed(options.seed));
-  const weak = missedIdsFrom(progress);
   const pool = list
-    .map((item) => ({ item, weight: weak.has(item.id) ? WEAK_WEIGHT : 1 }))
+    .map((item) => ({ item, weight: 1 + missCount(progress, item.id) }))
     .sort((left, right) => String(left.item.id).localeCompare(String(right.item.id)));
   return weightedSample(pool, count, random)
     .map((entry) => entry.item)
@@ -234,21 +219,8 @@ export function selectPrep(problems, progress = {}, options = {}) {
     ));
 }
 
-function readStoredProgress() {
-  try {
-    const store = globalThis.localStorage;
-    if (!store) return {};
-    const raw = store.getItem(PROGRESS_KEY);
-    if (!raw) return {};
-    const parsed = JSON.parse(raw);
-    return parsed && typeof parsed === 'object' ? parsed : {};
-  } catch {
-    return {};
-  }
-}
-
 export function renderPrepPage(problems = [], message = '', options = {}) {
-  const progress = options.progress ?? readStoredProgress();
+  const progress = options.progress ?? readProgress();
   const drawn = selectPrep(problems, progress, options);
   loadedProblems = drawn;
   const notice = message
@@ -269,7 +241,7 @@ export function renderPrepPage(problems = [], message = '', options = {}) {
   const sections = groupProblems(drawn).map(([ch, items]) => {
     const questions = items.map((item) => `
       <div class="final-q">
-        <p><strong>${item.number}.</strong> ${escapeHtml(item.q)}</p>
+        <p><strong>${item.number}.</strong> ${renderMath(item.q)}</p>
         <label class="answer-label" for="final-${item.number}">Your answer</label>
         <input id="final-${item.number}" name="${escapeHtml(item.id)}" data-qid="${escapeHtml(item.id)}" autocomplete="off" autocapitalize="off" spellcheck="false">
       </div>`).join('');
@@ -284,7 +256,7 @@ export function renderPrepPage(problems = [], message = '', options = {}) {
     <section class="page" data-route="Prep">
       <p class="kicker">Practice final</p>
       <h1>Short drill</h1>
-      <p>This drill is untimed. You get ${countLabel} from the practice final. Questions you have missed show up more often. The timed final is the full set.</p>
+      <p>This drill is untimed. You get ${countLabel} from the practice final. Practice-final questions you have missed show up more often.</p>
       <ol data-prep-plan>
         <li>Work each question by hand.</li>
         <li>Submit once. The worked solution is under each item.</li>

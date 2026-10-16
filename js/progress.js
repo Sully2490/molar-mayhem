@@ -1,7 +1,7 @@
 export const PROGRESS_KEY = 'mm-progress';
 
 export function emptyProgress() {
-  return { xp: 0, streak: 0, lastDay: '', lessons: {}, cards: {} };
+  return { xp: 0, streak: 0, lastDay: '', lessons: {}, cards: {}, misses: {} };
 }
 
 export function todayKey(date = new Date()) {
@@ -32,6 +32,13 @@ export function normalizeProgress(raw) {
   if (raw.cards && typeof raw.cards === 'object') {
     for (const [id, done] of Object.entries(raw.cards)) {
       if (done === true) next.cards[id] = true;
+    }
+  }
+  if (raw.misses && typeof raw.misses === 'object' && !Array.isArray(raw.misses)) {
+    for (const [id, count] of Object.entries(raw.misses)) {
+      if (typeof id !== 'string' || id.length === 0) continue;
+      if (!Number.isFinite(count) || count <= 0) continue;
+      next.misses[id] = Math.floor(count);
     }
   }
   return next;
@@ -98,6 +105,14 @@ export function masterLesson(progress, id, day = todayKey()) {
       ? `Already mastered. Streak ${next.streak}.`
       : `Mastered. +25 XP. Streak ${next.streak}.`,
   };
+}
+
+/** Add one miss for a problem. Lane D reads `progress.misses` to weight Prep. */
+export function recordMiss(progress, id, day = todayKey()) {
+  const next = noteDay(progress, day);
+  if (typeof id !== 'string' || id.length === 0) return next;
+  next.misses[id] = (next.misses[id] ?? 0) + 1;
+  return next;
 }
 
 export function awardXp(progress, amount, day = todayKey()) {

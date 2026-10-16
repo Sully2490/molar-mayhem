@@ -1,4 +1,5 @@
-import { grade } from '../grade.js';
+import { consumesAttempt, examCredit, grade } from '../grade.js';
+import { readProgress, recordMiss, writeProgress } from '../progress.js';
 
 const CHAPTER_TITLES = {
   1: 'Essential ideas',
@@ -42,14 +43,9 @@ function pointsOf(problem) {
   return Number.isFinite(points) && points > 0 ? points : 1;
 }
 
-/**
- * Half credit for a right value with the wrong significant figures.
- * Lane B's grade() sets `reason` to `sigfigs` and `ok` to false.
- * Until that lands, grade() still returns ok with a significant-figures hint.
- */
+/** Half credit when examCredit flags a right value with the wrong sig figs. */
 export function isSigFigCredit(result) {
-  if (result?.reason === 'sigfigs') return true;
-  return result?.ok === true && /significant figures/i.test(String(result?.hint ?? ''));
+  return examCredit(result).flag === 'sigfigs';
 }
 
 function chapterOf(problem) {
@@ -62,7 +58,7 @@ function chapterOf(problem) {
  * Score a finished exam. Bonus points stay off the main total.
  * A section is weak when any of its points were missed.
  */
-export function scoreReport(problems, answers, lessons = []) {
+export function scoreReport(problems, answers, lessons = [], storage) {
   const chapters = new Map();
   const sections = new Map();
   let earned = 0;
@@ -70,6 +66,8 @@ export function scoreReport(problems, answers, lessons = []) {
   let bonusEarned = 0;
   let bonusPossible = 0;
   const misses = [];
+  let progress = readProgress(storage);
+  let recorded = false;
 
   const flags = [];
 
@@ -77,8 +75,8 @@ export function scoreReport(problems, answers, lessons = []) {
     const points = pointsOf(problem);
     const given = answerText(answers?.[problem.id]);
     const result = grade(given, problem.check);
-    const sigfigs = isSigFigCredit(result);
-    const got = sigfigs ? points / 2 : (result.ok ? points : 0);
+    const credit = examCredit(result, points);
+    const got = credit.points;
     const chapter = chapterOf(problem);
     const section = problem.openstax_section || `Chapter ${chapter}`;
     if (problem.bonus) {
@@ -106,9 +104,14 @@ export function scoreReport(problems, answers, lessons = []) {
     sectionBucket.earned += got;
     sectionBucket.possible += points;
     sections.set(section, sectionBucket);
-    if (sigfigs) flags.push({ problem, given, result, reason: 'sigfigs', earned: got });
+    if (credit.flag === 'sigfigs') flags.push({ problem, given, result, reason: 'sigfigs', earned: got });
     else if (!result.ok) misses.push({ problem, given, result });
+    if (consumesAttempt(result) && typeof problem.id === 'string' && problem.id) {
+      progress = recordMiss(progress, problem.id);
+      recorded = true;
+    }
   }
+  if (recorded) writeProgress(progress, storage);
 
   const weak = [...sections.values()]
     .filter((row) => row.earned < row.possible)

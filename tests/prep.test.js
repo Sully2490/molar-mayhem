@@ -106,36 +106,51 @@ test('the prep page is untimed and labels every loaded answer', () => {
   assert.equal(/class="answer-label"/.test(empty), false);
 });
 
-test('prep draws 10 untimed questions and favors missed ids for a fixed seed', () => {
+test('prep draws 10 untimed questions for a fixed seed', () => {
   const problems = Array.from({ length: 30 }, (_, index) => problem(`p${String(index).padStart(2, '0')}`, {
     ch: (index % 9) + 1,
   }));
-  const weak = ['p00', 'p01'];
-  const progress = { missed: weak };
+  const progress = { misses: { p00: 4 } };
   const first = selectPrep(problems, progress, { seed: 7 });
   const second = selectPrep(problems, progress, { seed: 7 });
   assert.equal(first.length, PREP_COUNT);
   assert.deepEqual(first.map((item) => item.id), second.map((item) => item.id));
   assert.notDeepEqual(first.map((item) => item.id), problems.map((item) => item.id));
 
-  const counts = new Map();
-  for (let trial = 0; trial < 200; trial += 1) {
-    const drawn = selectPrep(problems, progress, { seed: 1000 + trial });
-    assert.equal(drawn.length, 10);
-    for (const item of drawn) counts.set(item.id, (counts.get(item.id) ?? 0) + 1);
-  }
-  const weakRate = weak.reduce((sum, id) => sum + (counts.get(id) ?? 0), 0) / weak.length;
-  const others = problems.map((item) => item.id).filter((id) => !weak.includes(id));
-  const otherRate = others.reduce((sum, id) => sum + (counts.get(id) ?? 0), 0) / others.length;
-  assert.ok(weakRate > otherRate, `weak ${weakRate}, other ${otherRate}`);
-
   const html = renderPrepPage(problems, '', { progress, seed: 7 });
-  assert.match(html, /data-route="Prep"/);
+  assert.match(html, /Practice-final questions you have missed show up more often/);
   assert.match(html, /untimed/);
   assert.equal(/name="timed"|data-timer|countdown/i.test(html), false);
   const ids = [...html.matchAll(/data-qid="([^"]+)"/g)].map((match) => match[1]);
   assert.equal(ids.length, 10);
   assert.deepEqual(ids, first.map((item) => item.id));
+});
+
+test('a practice-final id with misses is drawn more often', async () => {
+  const finalPath = new URL('../content/final/practice-final.json', import.meta.url);
+  const problems = await loadFinalProblems(async (url) => {
+    assert.equal(url, 'content/final/practice-final.json');
+    return readFile(finalPath, 'utf8');
+  });
+  const missedId = 'final-l20';
+  assert.ok(problems.some((item) => item.id === missedId));
+  const progress = { misses: { [missedId]: 6 } };
+  const counts = new Map();
+  for (let trial = 0; trial < 200; trial += 1) {
+    const drawn = selectPrep(problems, progress, { seed: 2000 + trial });
+    assert.equal(drawn.length, PREP_COUNT);
+    for (const item of drawn) counts.set(item.id, (counts.get(item.id) ?? 0) + 1);
+  }
+  const missedRate = counts.get(missedId) ?? 0;
+  const others = problems.map((item) => item.id).filter((id) => id !== missedId);
+  const otherRate = others.reduce((sum, id) => sum + (counts.get(id) ?? 0), 0) / others.length;
+  assert.ok(missedRate > otherRate, `${missedId} ${missedRate}, other ${otherRate}`);
+});
+
+test('prep question text renders formulas', () => {
+  const html = renderPrepPage([problem('ion', { q: 'What is the charge of CO3^2−?' })]);
+  assert.match(html, /CO<sub>3<\/sub><sup>2−<\/sup>/);
+  assert.doesNotMatch(html, /CO3\^2−/);
 });
 
 test('prep problem ids are not the full practice final', async () => {
@@ -144,7 +159,7 @@ test('prep problem ids are not the full practice final', async () => {
     assert.equal(url, 'content/final/practice-final.json');
     return readFile(finalPath, 'utf8');
   });
-  const html = renderPrepPage(problems, '', { seed: 3, progress: { missed: ['final-l20'] } });
+  const html = renderPrepPage(problems, '', { seed: 3, progress: { misses: { 'final-l20': 3 } } });
   const ids = [...html.matchAll(/data-qid="([^"]+)"/g)].map((match) => match[1]);
   assert.equal(ids.length, PREP_COUNT);
   assert.notDeepEqual(ids, problems.map((item) => item.id));
