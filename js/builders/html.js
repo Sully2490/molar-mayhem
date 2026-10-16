@@ -71,15 +71,19 @@ function joinEquation(equation, formatFormula, formatPlain) {
   }).join('');
 }
 
+function plainEquation(value) {
+  return String(value).replaceAll('->', '→');
+}
+
 /**
  * Equation text with full-size coefficients and subscripted formula digits.
- * `2 H2 + O2 -> 2 H2O` becomes `2 H₂ + O₂ -> 2 H₂O`.
+ * `2 H2 + O2 -> 2 H2O` becomes `2 H₂ + O₂ → 2 H₂O`.
  */
 export function equationText(equation) {
-  return joinEquation(equation, formulaText, (value) => value);
+  return joinEquation(equation, formulaText, plainEquation);
 }
 
 /** Same split as equationText, with formula digits in `<sub>` tags. */
 export function equationHtml(equation) {
-  return joinEquation(equation, formulaHtml, escapeHtml);
+  return joinEquation(equation, formulaHtml, (value) => escapeHtml(plainEquation(value)));
 }
