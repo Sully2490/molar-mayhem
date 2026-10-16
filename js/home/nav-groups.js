@@ -36,7 +36,7 @@ export const NAV_GROUPS = Object.freeze([
     blurb: 'Checks for chapters 5 and 7, then the whole course.',
     items: Object.freeze([
       { id: 'Exam3', label: 'Exam 3', href: '#Exam3', blurb: 'Chapters 5 and 7', kind: 'route' },
-      { id: 'Prep', label: 'Prep', href: '#Prep', blurb: 'Study plan', kind: 'route' },
+      { id: 'Prep', label: 'Prep', href: '#Prep', blurb: 'Short untimed drill', kind: 'route' },
       { id: 'Final', label: 'Final', href: '#Final', blurb: 'Timed practice final', kind: 'route' },
     ]),
   },

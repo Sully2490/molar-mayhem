@@ -180,9 +180,10 @@ test('the practice final stays untimed until submit, then reports weak sections'
   const setup = renderSimulator(freshSession(finalFile.problems, lessons));
   assert.match(setup, /data-phase="setup"/);
   assert.match(setup, /Use a timer/);
-  assert.match(renderSetup(freshSession([])), /name="timed"/);
-  assert.doesNotMatch(renderSetup(freshSession([])), /checked/);
-  assert.match(setup, /disabled/);
+  const setupForm = renderSetup(freshSession([]));
+  assert.match(setupForm, /name="timed"[^>]*checked/);
+  assert.match(setupForm, /value="50"/);
+  assert.doesNotMatch(setupForm, /disabled/);
 
   const running = startSession(freshSession(finalFile.problems, lessons), { timed: false });
   assert.equal(running.timed, false);
@@ -252,7 +253,7 @@ test('a correct answer scores its chapter and a miss links that section', () => 
   assert.equal(report.weak[0].lessons.length, 0);
 });
 
-test('the timer submits when it reaches zero and stays off by default', () => {
+test('the timer submits when it reaches zero and stays off when unchecked', () => {
   const problem = exact('t1', 'lesson', 5, 'sp');
   const quiet = startSession(freshSession([problem], []), { timed: false, minutes: 10 });
   assert.equal(tickSession(quiet, 50).phase, 'run');
@@ -266,6 +267,69 @@ test('the timer submits when it reaches zero and stays off by default', () => {
   assert.equal(finished.report.earned, 1);
   assert.equal(finished.report.possible, 1);
   assert.equal(finished.report.weak.length, 0);
+});
+
+test('Final setup checks the timer by default', () => {
+  const html = renderSetup(freshSession([]));
+  assert.match(html, /name="timed"/);
+  assert.match(html, /name="timed"[^>]*checked/);
+  assert.match(html, /value="50"/);
+  assert.match(html, /The timer is on/);
+});
+
+test('a formula choice renders subscripts and keeps the value plain', () => {
+  const html = answerFields({
+    id: 'ion',
+    choices: ['CO3^2−', 'NO3−'],
+    check: { kind: 'exact', text: 'CO3^2−', case: 'formula' },
+  });
+  assert.match(html, /<span>CO<sub>3<\/sub><sup>2−<\/sup><\/span>/);
+  assert.match(html, /value="CO3\^2−"/);
+  assert.doesNotMatch(html, /value="[^"]*<sub>/);
+});
+
+test('a right value with wrong sig figs scores half and is flagged', () => {
+  const problem = {
+    id: 'sf',
+    ch: 7,
+    points: 1,
+    openstax_section: 'OpenStax AF2e §7.5',
+    q: 'What is the molarity of the KOH?',
+    a: '0.1200 M',
+    why: 'The titration uses four figures.',
+    hints: ['Check the buret reading.'],
+    check: { kind: 'numeric', value: 0.12, sigFigs: 4, unit: 'M' },
+  };
+  const report = scoreReport([problem], { sf: '0.12 M' });
+  assert.equal(report.earned, 0.5);
+  assert.equal(report.possible, 1);
+  assert.equal(report.misses.length, 0);
+  assert.equal(report.flags.length, 1);
+  assert.equal(report.flags[0].reason, 'sigfigs');
+  assert.equal(report.flags[0].earned, 0.5);
+  assert.equal(report.flags[0].problem.id, 'sf');
+  const html = renderReport(report);
+  assert.match(html, /data-flag="sigfigs"/);
+  assert.match(html, /data-score>0\.5 \/ 1/);
+  const feedback = gradeExam3(problem, '0.12 M', 1);
+  assert.equal(feedback.done, true);
+  assert.equal(feedback.status, 'sigfigs');
+  assert.equal(feedback.credit, 0.5);
+  assert.match(feedback.text, /Half credit/);
+  assert.doesNotMatch(feedback.text, /^Correct/);
+  const exact = scoreReport([problem], { sf: '0.1200 M' });
+  assert.equal(exact.earned, 1);
+  assert.equal(exact.flags.length, 0);
+  const forms = [{
+    getAttribute: (name) => (name === 'data-exam3' ? 'sf' : name === 'data-done' ? 'sigfigs' : null),
+  }];
+  const outcome = examOutcome({ querySelectorAll: () => forms }, [problem]);
+  assert.equal(outcome.correct, 0.5);
+  assert.equal(outcome.flags[0].id, 'sf');
+  assert.equal(outcome.misses.length, 0);
+  const summary = renderExamSummary(outcome);
+  assert.match(summary, /data-exam-flag="sigfigs"/);
+  assert.match(summary, /0\.5 \/ 1 correct/);
 });
 
 test('categorical Exam 3 answers are choice buttons', () => {

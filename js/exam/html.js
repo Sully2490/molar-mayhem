@@ -2,7 +2,7 @@ import { feedbackFor, keypadFor } from '../learn.js';
 import { grade } from '../grade.js';
 import { renderMath } from '../math/render.js';
 import { masteryWord } from './mastery.js';
-import { answerText, scoreReport } from './report.js';
+import { answerText, isSigFigCredit, scoreReport } from './report.js';
 
 const CHOICE_SETS = [
   ['paramagnetic', 'diamagnetic'],
@@ -18,6 +18,9 @@ function foldWord(text) {
 export function choiceSet(problem) {
   const check = problem?.check;
   if (!check || check.kind === 'numeric' || check.kind === 'config' || check.kind === 'set') return null;
+  if (Array.isArray(problem.choices) && problem.choices.length > 1) {
+    return problem.choices.map((choice) => String(choice));
+  }
   const texts = [];
   if (typeof check.text === 'string') texts.push(check.text);
   if (Array.isArray(check.answers)) texts.push(...check.answers);
@@ -32,7 +35,7 @@ function choiceFields(problem, choices) {
   const buttons = choices.map((choice) => `
     <label class="mm-choice">
       <input type="radio" name="answer" value="${escapeHtml(choice)}" autocomplete="off" autocapitalize="off" spellcheck="false">
-      <span>${escapeHtml(choice)}</span>
+      <span>${renderMath(choice)}</span>
     </label>
   `).join('');
   return `<div class="mm-choices" role="radiogroup" aria-label="Choose an answer">${buttons}</div>`;
@@ -108,20 +111,30 @@ export function renderExamProgress(done, total) {
   `;
 }
 
-export function renderExamSummary({ correct, total, misses }) {
+export function renderExamSummary({ correct, total, misses, flags }) {
   const missItems = (misses ?? []).map((problem) => `
     <li data-exam-miss="${escapeHtml(problem.id)}">
       <p>${renderMath(problem.q)}</p>
       <p><strong>Answer:</strong> ${renderMath(problem.a)}</p>
     </li>
   `).join('');
+  const flagItems = (flags ?? []).map((problem) => `
+    <li data-exam-flag="sigfigs" data-exam-flag-id="${escapeHtml(problem.id)}">
+      <p>${renderMath(problem.q)}</p>
+      <p>Half credit. The value is right. Check significant figures.</p>
+    </li>
+  `).join('');
+  const flagBlock = flagItems
+    ? `<h3>Check significant figures</h3><ul data-exam-flags>${flagItems}</ul>`
+    : '';
   const missBlock = missItems
     ? `<h3>Review</h3><ol data-exam-misses>${missItems}</ol>`
-    : '<p data-exam-clear>Every question was right.</p>';
+    : (flagItems ? '' : '<p data-exam-clear>Every question was right.</p>');
   return `
     <section data-exam-summary>
       <h2>Exam summary</h2>
       <p data-exam-score>${correct} / ${total} correct</p>
+      ${flagBlock}
       ${missBlock}
     </section>
   `;
@@ -183,11 +196,15 @@ export function formatClock(seconds) {
 
 export function renderSetup(session) {
   const minutes = Number(session.minutes) > 0 ? Math.floor(session.minutes) : 50;
+  const timed = session.timed !== false;
+  const clock = timed
+    ? 'The timer is on. Uncheck it to work with no clock.'
+    : 'The timer is off until you turn it on.';
   return `
     <form class="mm-setup" data-exam-setup>
-      <p>The timer is off until you turn it on.</p>
-      <label class="mm-check"><input type="checkbox" name="timed"> Use a timer</label>
-      <label class="mm-minutes">Minutes <input name="minutes" type="number" min="1" max="180" value="${minutes}" disabled></label>
+      <p>${clock}</p>
+      <label class="mm-check"><input type="checkbox" name="timed"${timed ? ' checked' : ''}> Use a timer</label>
+      <label class="mm-minutes">Minutes <input name="minutes" type="number" min="1" max="180" value="${minutes}"${timed ? '' : ' disabled'}></label>
       <button type="submit">Start</button>
       <p class="feedback" data-setup-note aria-live="polite"></p>
     </form>
@@ -238,6 +255,15 @@ export function renderReport(report) {
   const weakBlock = weak
     ? `<h2>Weak sections</h2><ul data-weak-sections>${weak}</ul>`
     : '<p data-weak-none>No weak section. Every scored section was right.</p>';
+  const flagged = (report.flags ?? []).map(({ problem }) => `
+    <li data-flag="sigfigs" data-flag-id="${escapeHtml(problem.id)}">
+      <p>${renderMath(problem.q)}</p>
+      <p>Half credit. The value is right. Check significant figures.</p>
+    </li>
+  `).join('');
+  const flagBlock = flagged
+    ? `<h2>Check significant figures</h2><ul data-sigfig-flags>${flagged}</ul>`
+    : '';
   const misses = (report.misses ?? []).map(({ problem }) => `
     <li>
       <p>${renderMath(problem.q)}</p>
@@ -251,6 +277,7 @@ export function renderReport(report) {
       <h2>Score</h2>
       <p data-score>${report.earned} / ${report.possible}</p>
       ${bonus}
+      ${flagBlock}
       <h2>By chapter</h2>
       <ul>${chapters}</ul>
       ${weakBlock}
@@ -276,7 +303,7 @@ export function renderSimulator(session) {
 export function freshSession(problems, lessons = [], minutes = 50) {
   return {
     phase: 'setup',
-    timed: false,
+    timed: true,
     minutes,
     secondsLeft: null,
     problems: problems ?? [],
@@ -320,5 +347,9 @@ export function submitSession(session, answers, lessons = session.lessons) {
 
 export function gradeExam3(problem, input, attempt) {
   const result = grade(answerText(input), problem.check);
+  if (isSigFigCredit(result)) {
+    const hint = result.hint || 'The value is right. Check significant figures.';
+    return { done: true, status: 'sigfigs', credit: 0.5, text: `Half credit. ${hint}` };
+  }
   return feedbackFor(result, attempt, problem);
 }
