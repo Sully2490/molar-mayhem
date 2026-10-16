@@ -1,3 +1,4 @@
+import { toUnicodeFormula } from '../math/render.js';
 import { bindFocusModeKeys, enterFocusMode, exitFocusMode, focusModeIsOn } from './focus.js';
 import { buildIndex, search } from './rank.js';
 import { loadRecords } from './records.js';
@@ -160,7 +161,7 @@ function paint(doc, list, results) {
     link.setAttribute('role', 'option');
     const title = doc.createElement('span');
     title.className = 'mm-search-title';
-    title.textContent = result.title;
+    title.textContent = toUnicodeFormula(result.title);
     const meta = doc.createElement('span');
     meta.className = 'mm-search-meta';
     const bits = [KIND_LABEL[result.kind] || 'Result'];

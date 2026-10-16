@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { escapeHtml, renderMath } from '../js/math/render.js';
+import { escapeHtml, renderMath, toUnicodeFormula } from '../js/math/render.js';
 import { upgradeMath } from '../js/math/upgrade.js';
 import { renderExam3 } from '../js/exam/html.js';
 import { renderGuided } from '../js/steps/render.js';
@@ -15,7 +15,11 @@ test('one renderer turns powers, scientific notation, and formulas into HTML', (
   assert.equal(renderMath('SO4^2-'), 'SO<sub>4</sub><sup>2−</sup>');
   assert.equal(renderMath('O2−'), 'O<sub>2</sub>−');
   assert.equal(renderMath('O2^2−'), 'O<sub>2</sub><sup>2−</sup>');
-  assert.equal(renderMath('sp3'), 'sp3');
+  assert.equal(renderMath('sp3'), 'sp<sup>3</sup>');
+  assert.match(renderMath('sp3d2'), /sp<sup>3<\/sup>d<sup>2<\/sup>/);
+  assert.match(renderMath('A -> B'), /→/);
+  assert.equal(toUnicodeFormula('sp3d2-hybrid'), 'sp³d²-hybrid');
+  assert.equal(renderMath('specific heat'), 'specific heat');
   assert.equal(renderMath('OpenStax AF2e §5.4'), 'OpenStax AF2e §5.4');
   assert.equal(renderMath('He+'), 'He+');
   assert.equal(renderMath('Be careful'), 'Be careful');
