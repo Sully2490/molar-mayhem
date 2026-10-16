@@ -103,12 +103,12 @@
     },
     {
       "id": "ch5-sig-h2",
-      "q": "How many sigma and pi bonds are in H2?",
+      "q": "How many sigma and pi bonds are in Cl2?",
       "a": "1 sigma, 0 pi",
-      "why": "H2 has one single bond. That is 1 sigma and 0 pi.",
+      "why": "Cl2 has one single bond. That is 1 sigma and 0 pi.",
       "hints": [
-        "H2 has one single bond, so count only a sigma bond.",
-        "That one H–H bond is 1 sigma and 0 pi."
+        "Cl2 has one single bond, so count only a sigma bond.",
+        "That one Cl–Cl bond is 1 sigma and 0 pi."
       ],
       "check": {
         "kind": "exact",

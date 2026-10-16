@@ -29,34 +29,34 @@
   "problems": [
     {
       "id": "ch07-titrate-hcl",
-      "q": "25.00 mL of HCl is titrated with 18.40 mL of 0.1000 M NaOH. HCl + NaOH -> NaCl + H2O. What is the molarity of the HCl?",
-      "a": "0.07360 M",
-      "why": "Moles of NaOH = 0.01840 times 0.1000 = 0.001840 mol. The ratio is 1 to 1. Molarity of HCl = 0.001840 / 0.02500 = 0.07360 M.",
-      "hints": ["Moles of NaOH are 0.01840 L times 0.1000 mol/L. The HCl sample volume is 0.02500 L."],
-      "check": { "kind": "numeric", "value": 0.0736, "tolerance": 0.5, "sigFigs": 4, "unit": "M" },
+      "q": "30.00 mL of HCl is titrated with 22.50 mL of 0.1500 M NaOH. HCl + NaOH -> NaCl + H2O. What is the molarity of the HCl?",
+      "a": "0.1125 M",
+      "why": "Moles of NaOH = 0.02250 times 0.1500 = 0.003375 mol. The ratio is 1 to 1. Molarity of HCl = 0.003375 / 0.03000 = 0.1125 M.",
+      "hints": ["Moles of NaOH are 0.02250 L times 0.1500 mol/L. The HCl sample volume is 0.03000 L."],
+      "check": { "kind": "numeric", "value": 0.1125, "tolerance": 0.5, "sigFigs": 4, "unit": "M" },
       "guided": [
         {
-          "prompt": "How many moles of NaOH are in 18.40 mL of 0.1000 M NaOH?",
-          "hint": "Use 0.01840 L × 0.1000 mol/L.",
-          "answer": "0.001840 mol",
-          "expected": "0.001840 mol",
+          "prompt": "How many moles of NaOH are in 22.50 mL of 0.1500 M NaOH?",
+          "hint": "Use 0.02250 L × 0.1500 mol/L.",
+          "answer": "0.003375 mol",
+          "expected": "0.003375 mol",
           "unit": "mol",
           "check": {
             "kind": "numeric",
-            "value": 0.00184,
+            "value": 0.003375,
             "tolerance": 0.5,
             "sigFigs": 4,
             "unit": "mol"
           }
         },
         {
-          "prompt": "The acid ratio is 1 to 1. What is the molarity of HCl in the 25.00 mL sample?",
-          "hint": "Divide the moles of HCl by 0.02500 L.",
-          "answer": "0.07360 M",
-          "expected": "0.07360 M",
+          "prompt": "The acid ratio is 1 to 1. What is the molarity of HCl in the 30.00 mL sample?",
+          "hint": "Divide the moles of HCl by 0.03000 L.",
+          "answer": "0.1125 M",
+          "expected": "0.1125 M",
           "check": {
             "kind": "numeric",
-            "value": 0.0736,
+            "value": 0.1125,
             "tolerance": 0.5,
             "sigFigs": 4,
             "unit": "M"

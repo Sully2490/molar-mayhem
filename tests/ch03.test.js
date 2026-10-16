@@ -428,7 +428,7 @@ const CONFIG_JOBS = [
   ['ch03-s34-cfg-Na', 11, 0],
   ['ch03-s34-cfg-P', 15, 0],
   ['ch03-s34-cfg-Ca', 20, 0],
-  ['ch03-s34-cfg-Fe', 26, 0],
+  ['ch03-s34-cfg-Ni', 28, 0],
   ['ch03-s34-cfg-Cr', 24, 0],
   ['ch03-s34-cfg-Cu', 29, 0],
   ['ch03-s34-cfg-Br', 35, 0],
