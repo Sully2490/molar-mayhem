@@ -294,6 +294,16 @@ test('equation coefficients stay full size after +, at the start, and after ever
   }
 });
 
+test('a number after a hydrate dot stays full size', () => {
+  assert.equal(equationText('CuSO4·5H2O'), 'CuSO₄·5H₂O');
+  assert.equal(equationHtml('CuSO4·5H2O'), 'CuSO<sub>4</sub>·5H<sub>2</sub>O');
+  assert.equal(equationText('CuSO4.5H2O'), 'CuSO₄.5H₂O');
+  assert.equal(equationHtml('CuSO4.5H2O'), 'CuSO<sub>4</sub>.5H<sub>2</sub>O');
+  assert.equal(equationText('CuSO4*5H2O'), 'CuSO₄*5H₂O');
+  assert.equal(equationHtml('CuSO4*5H2O'), 'CuSO<sub>4</sub>*5H<sub>2</sub>O');
+  assert.equal(equationText('2 CuSO4·5H2O'), '2 CuSO₄·5H₂O');
+});
+
 test('orbital filling enforces Aufbau, Hund, and the chromium exception', () => {
   assert.equal(groundOccupancy(6)['2p'], 2);
   assert.equal(groundOccupancy(8)['2p'], 4);

@@ -41,12 +41,33 @@ function splitCoefficient(term) {
   return { coefficient: match[1], space: match[2], formula: match[3] };
 }
 
+/** · is the hydrate dot. '.' and '*' count when they introduce the water number. */
+function hydrateParts(formula) {
+  return String(formula).split(/(\s*[·*]\s*|\s*\.(?=\s*\d)\s*)/g);
+}
+
+function formatHydratePiece(part, formatFormula, formatPlain) {
+  const match = /^(\d+)(\s*)([\s\S]*)$/.exec(part);
+  if (!match) return formatFormula(part);
+  return `${formatPlain(match[1])}${formatPlain(match[2])}${formatFormula(match[3])}`;
+}
+
+function formatFormulaBody(formula, formatFormula, formatPlain) {
+  const parts = hydrateParts(formula);
+  return parts.map((part, index) => {
+    if (index % 2 === 1) return formatPlain(part);
+    if (index > 0) return formatHydratePiece(part, formatFormula, formatPlain);
+    if (parts.length > 1 && /^\d+$/.test(part)) return formatPlain(part);
+    return formatFormula(part);
+  }).join('');
+}
+
 function joinEquation(equation, formatFormula, formatPlain) {
   return equationParts(equation).map((part, index) => {
     if (index % 2 === 1) return formatPlain(part);
     const { coefficient, space, formula } = splitCoefficient(part);
     const lead = coefficient ? `${formatPlain(coefficient)}${formatPlain(space)}` : '';
-    return `${lead}${formatFormula(formula)}`;
+    return `${lead}${formatFormulaBody(formula, formatFormula, formatPlain)}`;
   }).join('');
 }
 
