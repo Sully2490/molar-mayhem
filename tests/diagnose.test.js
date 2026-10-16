@@ -80,10 +80,13 @@ test('wrongAnswerFn supplies the named value, and a throw is skipped', () => {
   assert.equal(skipped.id, 'skip-moles');
 });
 
-test('correct answers, including a sig-fig pass, are never diagnosed', () => {
+test('correct answers are not diagnosed, and a sig-fig miss is not another mistake', () => {
   const check = numeric(1.5, { sigFigs: 2 });
-  assert.equal(grade('1.50', check).ok, true);
+  const loose = grade('1.50', check);
+  assert.equal(loose.ok, false);
+  assert.equal(loose.reason, 'sigfigs');
   assert.equal(diagnose('1.50', check, [{ id: 'sign', describe: 'Nope.', value: -1.5 }]), null);
+  assert.equal(grade('1.5', check).ok, true);
   assert.equal(diagnose('1.5', check), null);
   assert.equal(diagnose('20 kg', numeric(20, { unit: 'g' })), null);
 });

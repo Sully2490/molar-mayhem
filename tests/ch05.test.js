@@ -318,8 +318,9 @@ test('numeric keys use 4 sig figs with about 0.5% tolerance', () => {
       const sloppy = String(problem.check.value);
       if (countSigFigs(sloppy) !== 4) {
         const hinted = grade(sloppy, problem.check);
-        assert.equal(hinted.ok, true, problem.id);
-        assert.equal(typeof hinted.hint, 'string', problem.id);
+        assert.equal(hinted.ok, false, problem.id);
+        assert.equal(hinted.reason, 'sigfigs', problem.id);
+        assert.match(hinted.hint, /check sig figs/i);
       }
     }
   }
