@@ -3,7 +3,7 @@ import { diagnose } from './diagnose.js';
 import { generateFromSeed } from './generate.js';
 import { consumesAttempt, correctLine, grade, SIGFIG_HINT } from './grade.js';
 import { keypadFor } from './learn.js';
-import { awardXp, readProgress, writeProgress } from './progress.js';
+import { awardXp, readProgress, recordMiss, writeProgress } from './progress.js';
 import { mulberry32 } from './rng.js';
 
 const FINAL_TOPICS = new Set([
@@ -179,6 +179,7 @@ export function bindDrill(root, storage, items = []) {
     }
     const used = (misses.get(id) ?? 0) + 1;
     misses.set(id, used);
+    writeProgress(recordMiss(readProgress(storage), id), storage);
     if (used >= 3) {
       const solution = `Solution: ${item.a}. ${item.why}`;
       host.outerHTML = renderDrillQueue(item, solution, 'solved');

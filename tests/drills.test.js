@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { bindDrill, renderDrillQueue } from '../js/drills.js';
+import { readProgress } from '../js/progress.js';
 
 const koh = {
   id: 'koh',
@@ -30,6 +31,7 @@ function memory() {
 
 function mount(items) {
   const listeners = {};
+  const store = memory();
   let html = renderDrillQueue(items[0]);
   const host = {
     get outerHTML() {
@@ -51,7 +53,7 @@ function mount(items) {
       return true;
     },
   };
-  bindDrill(root, memory(), items);
+  bindDrill(root, store, items);
 
   function currentId() {
     const match = html.match(/data-drill="([^"]*)"/);
@@ -80,6 +82,7 @@ function mount(items) {
   }
 
   return {
+    store,
     get html() {
       return html;
     },
@@ -138,6 +141,17 @@ test('a drill miss stays on the same question until the worked solution', () => 
   assert.equal(view.id, 'water');
   assert.match(view.html, /Write the formula for water/);
   assert.doesNotMatch(view.html, /Solution:/);
+});
+
+test('a drill miss is saved and a sig-fig warning is not', () => {
+  const view = mount([koh, water]);
+  view.submit('0.12 M');
+  view.submit('0.12 M');
+  assert.equal(readProgress(view.store).misses[koh.id], undefined);
+  view.submit('9 M');
+  view.submit('8 M');
+  assert.equal(readProgress(view.store).misses[koh.id], 2);
+  assert.equal(readProgress(view.store).misses[water.id], undefined);
 });
 
 test('a correct drill note includes the first sentence of why', () => {

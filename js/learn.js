@@ -10,7 +10,7 @@ import {
 } from './home/chapters.js';
 import { ensureLearnCss } from './home/css.js';
 import { continueCardHtml, moduleGridHtml, moduleHref } from './home/modules.js';
-import { chapterStats, readProgress } from './progress.js';
+import { chapterStats, readProgress, recordMiss, writeProgress } from './progress.js';
 import { progressRingHtml } from './home/ring.js';
 import { termsByChapter } from './terms/catalog.js';
 
@@ -419,7 +419,7 @@ function renderProblem(problem) {
   `;
 }
 
-export function bindLearn(root, lessons) {
+export function bindLearn(root, lessons, storage) {
   ensureLearnCss();
   lessonsByRoot.set(root, lessons);
   if (attemptsByRoot.has(root)) return;
@@ -443,7 +443,10 @@ export function bindLearn(root, lessons) {
     const result = grade(typed, problem.check);
     const spent = consumesAttempt(result);
     const next = spent ? used + 1 : used;
-    if (spent) attempts.set(id, next);
+    if (spent) {
+      attempts.set(id, next);
+      writeProgress(recordMiss(readProgress(storage), id), storage);
+    }
     const message = feedbackFor(result, next, problem);
     live.dataset.status = message.status;
     live.textContent = message.text;

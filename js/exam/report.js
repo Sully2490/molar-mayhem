@@ -1,4 +1,5 @@
-import { grade } from '../grade.js';
+import { consumesAttempt, grade } from '../grade.js';
+import { readProgress, recordMiss, writeProgress } from '../progress.js';
 
 const CHAPTER_TITLES = {
   1: 'Essential ideas',
@@ -52,7 +53,7 @@ function chapterOf(problem) {
  * Score a finished exam. Bonus points stay off the main total.
  * A section is weak when any of its points were missed.
  */
-export function scoreReport(problems, answers, lessons = []) {
+export function scoreReport(problems, answers, lessons = [], storage) {
   const chapters = new Map();
   const sections = new Map();
   let earned = 0;
@@ -60,6 +61,8 @@ export function scoreReport(problems, answers, lessons = []) {
   let bonusEarned = 0;
   let bonusPossible = 0;
   const misses = [];
+  let progress = readProgress(storage);
+  let recorded = false;
 
   for (const problem of problems ?? []) {
     const points = pointsOf(problem);
@@ -94,7 +97,12 @@ export function scoreReport(problems, answers, lessons = []) {
     sectionBucket.possible += points;
     sections.set(section, sectionBucket);
     if (!result.ok) misses.push({ problem, given, result });
+    if (consumesAttempt(result) && typeof problem.id === 'string' && problem.id) {
+      progress = recordMiss(progress, problem.id);
+      recorded = true;
+    }
   }
+  if (recorded) writeProgress(progress, storage);
 
   const weak = [...sections.values()]
     .filter((row) => row.earned < row.possible)

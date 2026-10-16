@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readdirSync, readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import { bindLearn, chapterFolder, feedbackFor, labelFor, LESSON_FILES, loadLessons, renderLearn } from '../js/learn.js';
+import { readProgress } from '../js/progress.js';
 import { lessonIdFromHash } from '../js/routes.js';
 
 const readLesson = (path) => JSON.parse(readFileSync(new URL(`../${path}`, import.meta.url), 'utf8'));
@@ -204,6 +205,55 @@ test('a sig-fig miss in Learn does not spend a try', () => {
   assert.match(freshLive.textContent, /^Correct\. Divide moles by liters\./);
   assert.doesNotMatch(freshLive.textContent, /four figures/);
   assert.equal(fresh.disabled, true);
+});
+
+test('Learn saves a miss and leaves a sig-fig warning uncounted', () => {
+  const problem = {
+    id: 'sig-demo',
+    q: 'What is the molarity?',
+    a: '0.1200 M',
+    why: 'Divide moles by liters.',
+    hints: ['Divide the moles by the liters.'],
+    check: { kind: 'numeric', value: 0.12, sigFigs: 4, unit: 'M' },
+  };
+  const data = new Map();
+  const storage = {
+    getItem: (key) => (data.has(key) ? data.get(key) : null),
+    setItem: (key, value) => data.set(key, String(value)),
+  };
+  const input = { value: '0.12', disabled: false };
+  const unit = { value: 'M', disabled: false };
+  const live = { dataset: {}, textContent: '' };
+  const form = {
+    closest(selector) {
+      return selector === '[data-problem]' ? form : null;
+    },
+    getAttribute(name) {
+      return name === 'data-problem' ? problem.id : null;
+    },
+    querySelector(selector) {
+      if (selector === 'input[name="answer"]' || selector === 'input') return input;
+      if (selector === 'input[name="unit"]') return unit;
+      if (selector === '.feedback') return live;
+      return null;
+    },
+  };
+  const root = {
+    dataset: {},
+    addEventListener(_type, handler) {
+      root.submit = handler;
+    },
+  };
+  bindLearn(root, [{ id: 'demo', problems: [problem] }], storage);
+  root.submit({ target: form, preventDefault() {} });
+  assert.equal(readProgress(storage).misses[problem.id], undefined);
+  input.value = '9';
+  root.submit({ target: form, preventDefault() {} });
+  root.submit({ target: form, preventDefault() {} });
+  assert.equal(readProgress(storage).misses[problem.id], 2);
+  input.value = '0.1200';
+  root.submit({ target: form, preventDefault() {} });
+  assert.equal(readProgress(storage).misses[problem.id], 2);
 });
 
 test('lesson links stay on the Learn route', () => {
