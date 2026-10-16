@@ -26,12 +26,12 @@
   "problems": [
     {
       "id": "ch5-hyb-ch4",
-      "q": "What hybridization does C use in CH4?",
+      "q": "What hybridization does C use in CH2Cl2?",
       "a": "sp3",
-      "why": "Carbon in CH4 has four single bonds and no lone pair. Four groups use sp3 hybrids.",
+      "why": "Carbon in CH2Cl2 has four single bonds and no lone pair. Four groups use sp3 hybrids.",
       "hints": [
-        "Carbon in CH4 has four single bonds and no lone pair.",
-        "Those four groups on carbon use sp3 hybrids."
+        "Carbon in CH2Cl2 has four single bonds and no lone pair on that carbon.",
+        "Four groups around the carbon in CH2Cl2 use sp3 hybrids."
       ],
       "check": { "kind": "exact", "text": "sp3", "case": "insensitive" }
     },

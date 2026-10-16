@@ -28,21 +28,21 @@
   "problems": [
     {
       "id": "ch07-stoich-water-4",
-      "q": "How many grams of H2O form when 4.000 g of H2 burns in excess O2? 2 H2 + O2 -> 2 H2O. Include the unit g.",
-      "a": "35.74 g",
-      "why": "Moles of H2 = 4.000 / 2.016 = 1.984 mol. The ratio to water is 1 to 1. Mass of H2O = 1.984 mol times 18.015 g/mol = 35.74 g.",
-      "hints": ["Divide 4.000 g by the molar mass of H2, 2.016 g/mol, then multiply by 18.015 g/mol of water."],
-      "check": { "kind": "numeric", "value": 35.74, "tolerance": 0.5, "sigFigs": 4, "unit": "g" },
+      "q": "How many grams of H2O form when 6.500 g of H2 burns in excess O2? 2 H2 + O2 -> 2 H2O. Include the unit g.",
+      "a": "58.08 g",
+      "why": "Moles of H2 = 6.500 / 2.016 = 3.224 mol. The ratio to water is 1 to 1. Mass of H2O = 3.224 mol times 18.015 g/mol = 58.08 g.",
+      "hints": ["Divide 6.500 g by the molar mass of H2, 2.016 g/mol, then multiply by 18.015 g/mol of water."],
+      "check": { "kind": "numeric", "value": 58.08, "tolerance": 0.5, "sigFigs": 4, "unit": "g" },
       "guided": [
         {
-          "prompt": "How many moles of H2 are in 4.000 g? Molar mass of H2 is 2.016 g/mol.",
-          "hint": "Divide 4.000 g by 2.016 g/mol.",
-          "answer": "1.984 mol",
-          "expected": "1.984 mol",
+          "prompt": "How many moles of H2 are in 6.500 g? Molar mass of H2 is 2.016 g/mol.",
+          "hint": "Divide 6.500 g by 2.016 g/mol.",
+          "answer": "3.224 mol",
+          "expected": "3.224 mol",
           "unit": "mol",
           "check": {
             "kind": "numeric",
-            "value": 1.984,
+            "value": 3.224,
             "tolerance": 0.5,
             "sigFigs": 4,
             "unit": "mol"
@@ -51,12 +51,12 @@
         {
           "prompt": "The equation is 2 H2 + O2 → 2 H2O. How many moles of H2O form?",
           "hint": "The coefficients are equal, so the moles of water stay the same.",
-          "answer": "1.984 mol",
-          "expected": "1.984 mol",
+          "answer": "3.224 mol",
+          "expected": "3.224 mol",
           "unit": "mol",
           "check": {
             "kind": "numeric",
-            "value": 1.984,
+            "value": 3.224,
             "tolerance": 0.5,
             "sigFigs": 4,
             "unit": "mol"
@@ -65,11 +65,11 @@
         {
           "prompt": "How many grams of H2O is that? Molar mass of water is 18.015 g/mol.",
           "hint": "Multiply the moles of water by 18.015 g/mol.",
-          "answer": "35.74 g",
-          "expected": "35.74 g",
+          "answer": "58.08 g",
+          "expected": "58.08 g",
           "check": {
             "kind": "numeric",
-            "value": 35.74,
+            "value": 58.08,
             "tolerance": 0.5,
             "sigFigs": 4,
             "unit": "g"
@@ -81,8 +81,8 @@
         {
           "id": "skip-moles",
           "describe": "You went straight from grams to grams. Convert to moles first.",
-          "wrong": "72.06 g",
-          "value": 72.06,
+          "wrong": "117.1 g",
+          "value": 117.1,
           "unit": "g"
         }
       ]

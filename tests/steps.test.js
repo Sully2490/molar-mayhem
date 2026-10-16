@@ -307,19 +307,22 @@ test('the guided form reveals after three misses and focuses the next input', ()
 });
 
 const MAIN_LESSON_HASHES = {
-  'content/ch05/5a-hybridization.json': '89898cce77a7430a0ce4da5bf08dad7b04579bc28bd0b2d2bbb5192d717a0bf8',
-  'content/ch05/5b-sigma-pi.json': '3765196db18303ee44c28947a7c5d357bd77db301e734dd0baf07ace67be4f1b',
+  // Lane C gave new inputs to practice items that copied the worked example.
+  'content/ch05/5a-hybridization.json': '5c98873b512d10d5e214d3b17f3e8143e75441fbaa33ec4137e5cf81dbd998d5',
+  'content/ch05/5b-sigma-pi.json': '0b28a2f4160140786f89af569c2d562192ec13c3a7a09dafcf19452e0cb8c68d',
   // Bond order is a plain decimal (1, 0.5, 2.5), not 4 significant figures.
   'content/ch05/5c-molecular-orbitals.json': 'd8496d1d3bac8ae0f7d31e19c3b3943c63ea0be077cc08fd650aa3b614ed96eb',
-  'content/ch05/5d-multiple-bonds.json': 'd6090d826dc000757511d7abbb48e6f8ca2c6d48faa02b2fd9058c805dc70cff',
-  'content/ch07/7-1-balancing.json': '9359e2096a912cec2ed39cf625cfeab679499b66c6aac08a54fb87f0e4907e52',
-  'content/ch07/7-2-classifying.json': '5df23d01ad75b0a0f5a1deba191db4f61e95b0cd8290325bdd27b9109f70c32c',
-  'content/ch07/7-3-stoichiometry.json': 'e04ac5e74f5ff9a7f8c2f6b3bd627479078f0e884d82194dd3ff5dbc5986cb97',
+  'content/ch05/5d-multiple-bonds.json': '56d8779fff9a8c0cbaf89d4efd100a8625a7541b7559a7012eb8f2dde0cd914c',
+  'content/ch07/7-1-balancing.json': '01d96511ae6b6432be2dcb13c373a9c3a1e05963363d8424b32a184d4792b13c',
+  'content/ch07/7-2-classifying.json': 'f08137d635f4d819b9a34c65ec2e664525f7ca19525a7f6d404b88eae96d63f2',
+  'content/ch07/7-3-stoichiometry.json': '5271fd52092cfd31a6abe4e7544ef96f703f974fe090ba69d3d4b3a8583d6703',
   // Intentional change from main: ch07-limit-hydrogen explains
   // "20.00 / 28.014 = 0.7139 mol, which needs 2.142 mol of H2."
-  'content/ch07/7-4-yields.json': '8704f001534a18062191f6eb00cbd35f0a5f0b4ef9dc335462523768843bb91a',
-  // mL-to-L note is inside mistakes, so this lesson hash stays the same.
-  'content/ch07/7-5-analysis.json': '5352245ba29f87c0c16614ff7e87620000333d8c8f8319faba7ffd531a70364f',
+  // Lane C also changed ch07-limit-nitrogen to 16.00 g N2 and 2.000 g H2.
+  'content/ch07/7-4-yields.json': 'c3f75b31b168cd80976bec667f46f2d5fb678e11d3a9aa58bbcbe1ceda8d677f',
+  // mL-to-L note is inside mistakes, so that note does not affect this hash.
+  // Lane C changed ch07-titrate-hcl to 30.00 mL, 22.50 mL, and 0.1500 M.
+  'content/ch07/7-5-analysis.json': '20c3dc5e38e734a431e0c351cbe7e27993a19be8c18952ccdd43c5afb8ffd00d',
   // Strong-base hint: Ca, Sr, and Ba hydroxides dissolve only slightly.
   'content/ch07/cards.json': 'e14b536ce76126830d7ff664fb5538c883c4a379a9faf9b44798898218cfd263',
   'content/ch08/8.1-pressure.json': '987c09b57fbc4be5b5ea89f6a0a98bdb49265238bad50ecac93e05a6009e4aa6',

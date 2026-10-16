@@ -138,13 +138,13 @@
     },
     {
       "id": "ch04-42-10",
-      "q": "In an H–Cl bond, which atom is δ−? Write the element symbol. H is 2.1 and Cl is 3.0.",
-      "a": "Cl",
-      "why": "ΔEN = 3.0 − 2.1 = 0.9. Chlorine has the larger electronegativity, so the shared electrons spend more time on Cl. Chlorine is δ−.",
-      "hints": ["Subtract 2.1 from 3.0 only to see that the bond is polar. The δ− sign goes on the atom with the larger Pauling value."],
+      "q": "In a C–F bond, which atom is δ−? Write the element symbol. C is 2.5 and F is 4.0.",
+      "a": "F",
+      "why": "ΔEN = 4.0 − 2.5 = 1.5. Fluorine has the larger electronegativity, so the shared electrons spend more time on F. Fluorine is δ−.",
+      "hints": ["Subtract 2.5 from 4.0 only to see that the bond is polar. The δ− sign goes on the atom with the larger Pauling value."],
       "check": {
         "kind": "exact",
-        "text": "Cl",
+        "text": "F",
         "case": "sensitive"
       }
     },
@@ -336,13 +336,13 @@
     },
     {
       "id": "ch04-42-25",
-      "q": "In an N–H bond, which atom is δ−? Write the element symbol. N is 3.0 and H is 2.1.",
-      "a": "N",
-      "why": "ΔEN = 3.0 − 2.1 = 0.9. Nitrogen has the higher electronegativity, so the shared electrons sit closer to N. Nitrogen is δ−.",
-      "hints": ["Compare 3.0 with 2.1. The δ− label goes on the atom with the higher Pauling value."],
+      "q": "In an S–O bond, which atom is δ−? Write the element symbol. S is 2.5 and O is 3.5.",
+      "a": "O",
+      "why": "ΔEN = 3.5 − 2.5 = 1.0. Oxygen has the higher electronegativity, so the shared electrons sit closer to O. Oxygen is δ−.",
+      "hints": ["Compare 2.5 with 3.5. The δ− label goes on oxygen, the atom with the higher Pauling value."],
       "check": {
         "kind": "exact",
-        "text": "N",
+        "text": "O",
         "case": "sensitive"
       }
     },

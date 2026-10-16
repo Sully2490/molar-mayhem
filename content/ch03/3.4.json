@@ -100,16 +100,16 @@
       }
     },
     {
-      "id": "ch03-s34-cfg-Fe",
-      "q": "Write the electron configuration of iron (Fe). Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
-      "a": "[Ar] 4s2 3d6",
-      "why": "Iron has atomic number 26, so the neutral atom has 26 electrons. Filled in order, that is [Ar] 4s2 3d6.",
+      "id": "ch03-s34-cfg-Ni",
+      "q": "Write the electron configuration of nickel (Ni). Separate orbitals with spaces, like 1s2 2s2 2p6. A noble-gas core such as [Ne] is also fine.",
+      "a": "[Ar] 4s2 3d8",
+      "why": "Nickel has atomic number 28, so the neutral atom has 28 electrons. Filled in order, that is [Ar] 4s2 3d8.",
       "hints": [
-        "Iron finishes 4s and then places six electrons in 3d. Do not remove 4s for a neutral atom."
+        "Nickel finishes 4s and then places eight electrons in 3d. Do not remove 4s for a neutral atom."
       ],
       "check": {
         "kind": "config",
-        "text": "[Ar] 4s2 3d6",
+        "text": "[Ar] 4s2 3d8",
         "case": "sensitive"
       }
     },
