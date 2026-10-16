@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { test } from 'node:test';
 import { equationHtml, equationText } from '../js/builders/html.js';
+import { grade } from '../js/grade.js';
 import { missFeedback } from '../js/builders/feedback.js';
 import { prefersReducedMotion } from '../js/builders/motion.js';
 import {
@@ -283,7 +284,7 @@ test('equation coefficients stay full size after +, at the start, and after ever
     ['2 H2 + O2 → 2 H2O', '2 H₂ + O₂ → 2 H₂O', '2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O'],
     ['2 H2 + O2 -> 2 H2O', '2 H₂ + O₂ → 2 H₂O', '2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O'],
     ['N2 + 3 H2 ⇌ 2 NH3', 'N₂ + 3 H₂ ⇌ 2 NH₃', 'N<sub>2</sub> + 3 H<sub>2</sub> ⇌ 2 NH<sub>3</sub>'],
-    ['N2 + 3 H2 = 2 NH3', 'N₂ + 3 H₂ = 2 NH₃', 'N<sub>2</sub> + 3 H<sub>2</sub> = 2 NH<sub>3</sub>'],
+    ['N2 + 3 H2 = 2 NH3', 'N₂ + 3 H₂ ⇌ 2 NH₃', 'N<sub>2</sub> + 3 H<sub>2</sub> ⇌ 2 NH<sub>3</sub>'],
   ];
   for (const [raw, text, html] of arrows) {
     assert.equal(equationText(raw), text);
@@ -298,6 +299,17 @@ test('equationText turns -> into an arrow', () => {
   assert.equal(equationText('2 H2 + O2 -> 2 H2O'), '2 H₂ + O₂ → 2 H₂O');
   assert.equal(equationText('A -> B'), 'A → B');
   assert.equal(equationHtml('2 H2 + O2 -> 2 H2O'), '2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O');
+  assert.equal(equationText('N2 + 3 H2 = 2 NH3'), 'N₂ + 3 H₂ ⇌ 2 NH₃');
+});
+
+test('a typed -> answer is still accepted', () => {
+  const check = {
+    kind: 'exact',
+    text: '2 KClO3 -> 2 KCl + 3 O2',
+    case: 'sensitive',
+  };
+  assert.equal(grade('2 KClO3 -> 2 KCl + 3 O2', check).ok, true);
+  assert.equal(equationText(check.text).includes('->'), false);
 });
 
 test('a number after a hydrate dot stays full size', () => {

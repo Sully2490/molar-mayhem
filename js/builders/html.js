@@ -71,13 +71,15 @@ function joinEquation(equation, formatFormula, formatPlain) {
   }).join('');
 }
 
+/** Display arrows only. Graders still accept a typed -> or =. */
 function plainEquation(value) {
-  return String(value).replaceAll('->', '→');
+  return String(value).replaceAll('->', '→').replaceAll('=', '⇌');
 }
 
 /**
  * Equation text with full-size coefficients and subscripted formula digits.
  * `2 H2 + O2 -> 2 H2O` becomes `2 H₂ + O₂ → 2 H₂O`.
+ * `N2 + 3 H2 = 2 NH3` becomes `N₂ + 3 H₂ ⇌ 2 NH₃`.
  */
 export function equationText(equation) {
   return joinEquation(equation, formulaText, plainEquation);
