@@ -16,6 +16,7 @@ export {
   answerText,
   chapterTitle,
   lessonsForSection,
+  isSigFigCredit,
   scoreReport,
   sectionNumber,
 } from './report.js';

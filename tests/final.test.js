@@ -86,7 +86,9 @@ test('every problem cites a section, has one unique hint, and matches the grader
     seen.set(hint, problem.id);
     if (problem.check.kind === 'numeric') {
       assert.equal(problem.check.tolerance, 0.5, problem.id);
-      assert.equal(problem.check.sigFigs, 4, problem.id);
+      const integerBond = /bond order/i.test(problem.q) && Number.isInteger(problem.check.value);
+      if (integerBond) assert.equal(problem.check.sigFigs, null, problem.id);
+      else assert.equal(problem.check.sigFigs, 4, problem.id);
     }
   }
 });
@@ -107,6 +109,25 @@ test('every key answer grades correct and a wrong answer fails', async () => {
     assert.equal(wrong.ok, false, `${problem.id} accepted ${wrongInput(problem)}`);
   }
   assert.ok(checked >= exam.problems.length);
+});
+
+test('an integer bond order does not ask for extra sig figs', async () => {
+  const exam = await loadExam();
+  const bond = exam.problems.filter((problem) => /bond order/i.test(problem.q));
+  assert.ok(bond.length >= 1);
+  for (const problem of bond) {
+    assert.doesNotMatch(problem.q, /significant figures/i, problem.id);
+    if (problem.check.sigFigs > 1) {
+      assert.equal(Number.isInteger(problem.check.value), false, problem.id);
+    }
+  }
+  const f2 = exam.problems.find((problem) => problem.id === 'final-l20');
+  assert.equal(f2.check.sigFigs, null);
+  assert.equal(f2.check.value, 1);
+  assert.equal(f2.a, '1');
+  const result = grade('1', f2.check);
+  assert.equal(result.ok, true);
+  assert.equal(result.hint, undefined);
 });
 
 test('the strong-acid bonus accepts the six acids and rejects HClO3', async () => {

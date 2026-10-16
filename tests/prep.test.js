@@ -4,7 +4,15 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 import { grade } from '../js/grade.js';
-import { expandFinalIndex, loadFinalProblems, renderPrepPage, renderSummary, scoreFinal } from '../js/prep.js';
+import {
+  PREP_COUNT,
+  expandFinalIndex,
+  loadFinalProblems,
+  renderPrepPage,
+  renderSummary,
+  scoreFinal,
+  selectPrep,
+} from '../js/prep.js';
 
 function problem(id, overrides = {}) {
   return {
@@ -96,6 +104,52 @@ test('the prep page is untimed and labels every loaded answer', () => {
   const empty = renderPrepPage([]);
   assert.match(empty, /No practice-final questions are published yet/);
   assert.equal(/class="answer-label"/.test(empty), false);
+});
+
+test('prep draws 10 untimed questions and favors missed ids for a fixed seed', () => {
+  const problems = Array.from({ length: 30 }, (_, index) => problem(`p${String(index).padStart(2, '0')}`, {
+    ch: (index % 9) + 1,
+  }));
+  const weak = ['p00', 'p01'];
+  const progress = { missed: weak };
+  const first = selectPrep(problems, progress, { seed: 7 });
+  const second = selectPrep(problems, progress, { seed: 7 });
+  assert.equal(first.length, PREP_COUNT);
+  assert.deepEqual(first.map((item) => item.id), second.map((item) => item.id));
+  assert.notDeepEqual(first.map((item) => item.id), problems.map((item) => item.id));
+
+  const counts = new Map();
+  for (let trial = 0; trial < 200; trial += 1) {
+    const drawn = selectPrep(problems, progress, { seed: 1000 + trial });
+    assert.equal(drawn.length, 10);
+    for (const item of drawn) counts.set(item.id, (counts.get(item.id) ?? 0) + 1);
+  }
+  const weakRate = weak.reduce((sum, id) => sum + (counts.get(id) ?? 0), 0) / weak.length;
+  const others = problems.map((item) => item.id).filter((id) => !weak.includes(id));
+  const otherRate = others.reduce((sum, id) => sum + (counts.get(id) ?? 0), 0) / others.length;
+  assert.ok(weakRate > otherRate, `weak ${weakRate}, other ${otherRate}`);
+
+  const html = renderPrepPage(problems, '', { progress, seed: 7 });
+  assert.match(html, /data-route="Prep"/);
+  assert.match(html, /untimed/);
+  assert.equal(/name="timed"|data-timer|countdown/i.test(html), false);
+  const ids = [...html.matchAll(/data-qid="([^"]+)"/g)].map((match) => match[1]);
+  assert.equal(ids.length, 10);
+  assert.deepEqual(ids, first.map((item) => item.id));
+});
+
+test('prep problem ids are not the full practice final', async () => {
+  const finalPath = new URL('../content/final/practice-final.json', import.meta.url);
+  const problems = await loadFinalProblems(async (url) => {
+    assert.equal(url, 'content/final/practice-final.json');
+    return readFile(finalPath, 'utf8');
+  });
+  const html = renderPrepPage(problems, '', { seed: 3, progress: { missed: ['final-l20'] } });
+  const ids = [...html.matchAll(/data-qid="([^"]+)"/g)].map((match) => match[1]);
+  assert.equal(ids.length, PREP_COUNT);
+  assert.notDeepEqual(ids, problems.map((item) => item.id));
+  assert.match(html, /untimed/);
+  assert.equal(/name="timed"/.test(html), false);
 });
 
 test('published practice-final.json keys all grade correct', async () => {

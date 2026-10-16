@@ -30,7 +30,7 @@ const ROUTES = {
         <a class="route-card" href="#Videos"><strong>Videos</strong><span>Public clips</span></a>
         <a class="route-card" href="#Exam3"><strong>Exam 3</strong><span>Chapters 5 and 7</span></a>
         <a class="route-card" href="#Weak"><strong>Weak spots</strong><span>Lessons still open</span></a>
-        <a class="route-card" href="#Prep"><strong>Prep</strong><span>Study plan and a practice final</span></a>
+        <a class="route-card" href="#Prep"><strong>Prep</strong><span>Short untimed drill</span></a>
         <a class="route-card" href="#Final"><strong>Final</strong><span>Timed practice final</span></a>
       </div>
       <p><button type="button" class="table-btn" data-open-tray>Open the periodic table</button></p>
@@ -58,7 +58,7 @@ const ROUTES = {
     body: `
       <p class="kicker">Coming soon</p>
       <h1>Prep</h1>
-      <p>Exam prep is not here yet. It will hold a study plan and a practice final.</p>
+      <p>This drill is untimed. It draws about 10 mixed questions from the practice final.</p>
     `,
   },
   Cards: {

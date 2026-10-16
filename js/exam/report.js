@@ -42,6 +42,16 @@ function pointsOf(problem) {
   return Number.isFinite(points) && points > 0 ? points : 1;
 }
 
+/**
+ * Half credit for a right value with the wrong significant figures.
+ * Lane B's grade() sets `reason` to `sigfigs` and `ok` to false.
+ * Until that lands, grade() still returns ok with a significant-figures hint.
+ */
+export function isSigFigCredit(result) {
+  if (result?.reason === 'sigfigs') return true;
+  return result?.ok === true && /significant figures/i.test(String(result?.hint ?? ''));
+}
+
 function chapterOf(problem) {
   if (Number.isInteger(problem.ch)) return problem.ch;
   const match = String(problem.openstax_section ?? '').match(/(\d+)\.\d+/);
@@ -61,11 +71,14 @@ export function scoreReport(problems, answers, lessons = []) {
   let bonusPossible = 0;
   const misses = [];
 
+  const flags = [];
+
   for (const problem of problems ?? []) {
     const points = pointsOf(problem);
     const given = answerText(answers?.[problem.id]);
     const result = grade(given, problem.check);
-    const got = result.ok ? points : 0;
+    const sigfigs = isSigFigCredit(result);
+    const got = sigfigs ? points / 2 : (result.ok ? points : 0);
     const chapter = chapterOf(problem);
     const section = problem.openstax_section || `Chapter ${chapter}`;
     if (problem.bonus) {
@@ -93,7 +106,8 @@ export function scoreReport(problems, answers, lessons = []) {
     sectionBucket.earned += got;
     sectionBucket.possible += points;
     sections.set(section, sectionBucket);
-    if (!result.ok) misses.push({ problem, given, result });
+    if (sigfigs) flags.push({ problem, given, result, reason: 'sigfigs', earned: got });
+    else if (!result.ok) misses.push({ problem, given, result });
   }
 
   const weak = [...sections.values()]
@@ -112,5 +126,6 @@ export function scoreReport(problems, answers, lessons = []) {
     chapters: [...chapters.values()].sort((left, right) => left.chapter - right.chapter),
     weak,
     misses,
+    flags,
   };
 }
