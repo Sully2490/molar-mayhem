@@ -340,7 +340,6 @@ test('the exam report saves a miss count and skips a sig-fig warning', () => {
       why: 'Divide moles by liters.',
       hints: [],
       check: { kind: 'numeric', value: 0.12, sigFigs: 4, unit: 'M' },
-      topic: 'titration',
     },
     {
       id: 'gas',
@@ -350,21 +349,15 @@ test('the exam report saves a miss count and skips a sig-fig warning', () => {
       why: 'Pressure uses atmospheres here.',
       hints: [],
       check: { kind: 'exact', text: 'atm', case: 'insensitive' },
-      topic: 'gas laws',
     },
   ];
   scoreReport(problems, { titration: '0.12 M', gas: 'atm' }, [], storage);
   assert.equal(readProgress(storage).misses.titration, undefined);
   assert.equal(readProgress(storage).misses.gas, undefined);
-  assert.equal(readProgress(storage).missesByTopic.titration, undefined);
   scoreReport(problems, { titration: '9 M', gas: 'atm' }, [], storage);
   assert.equal(readProgress(storage).misses.titration, 1);
   assert.equal(readProgress(storage).misses.gas, undefined);
-  assert.equal(readProgress(storage).missesByTopic.titration, 1);
-  assert.equal(readProgress(storage).missesByTopic['gas laws'], undefined);
   scoreReport(problems, { titration: '8 M', gas: 'torr' }, [], storage);
   assert.equal(readProgress(storage).misses.titration, 2);
   assert.equal(readProgress(storage).misses.gas, 1);
-  assert.equal(readProgress(storage).missesByTopic.titration, 2);
-  assert.equal(readProgress(storage).missesByTopic['gas laws'], 1);
 });

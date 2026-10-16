@@ -215,7 +215,6 @@ test('Learn saves a miss and leaves a sig-fig warning uncounted', () => {
     why: 'Divide moles by liters.',
     hints: ['Divide the moles by the liters.'],
     check: { kind: 'numeric', value: 0.12, sigFigs: 4, unit: 'M' },
-    topic: 'molarity',
   };
   const data = new Map();
   const storage = {
@@ -248,16 +247,13 @@ test('Learn saves a miss and leaves a sig-fig warning uncounted', () => {
   bindLearn(root, [{ id: 'demo', problems: [problem] }], storage);
   root.submit({ target: form, preventDefault() {} });
   assert.equal(readProgress(storage).misses[problem.id], undefined);
-  assert.equal(readProgress(storage).missesByTopic.molarity, undefined);
   input.value = '9';
   root.submit({ target: form, preventDefault() {} });
   root.submit({ target: form, preventDefault() {} });
   assert.equal(readProgress(storage).misses[problem.id], 2);
-  assert.equal(readProgress(storage).missesByTopic.molarity, 2);
   input.value = '0.1200';
   root.submit({ target: form, preventDefault() {} });
   assert.equal(readProgress(storage).misses[problem.id], 2);
-  assert.equal(readProgress(storage).missesByTopic.molarity, 2);
 });
 
 test('lesson links stay on the Learn route', () => {

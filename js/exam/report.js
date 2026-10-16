@@ -98,7 +98,7 @@ export function scoreReport(problems, answers, lessons = [], storage) {
     sections.set(section, sectionBucket);
     if (!result.ok) misses.push({ problem, given, result });
     if (consumesAttempt(result) && typeof problem.id === 'string' && problem.id) {
-      progress = recordMiss(progress, problem.id, problem.topic);
+      progress = recordMiss(progress, problem.id);
       recorded = true;
     }
   }
