@@ -3,6 +3,7 @@ import { diagnose } from './diagnose.js';
 import { generateFromSeed } from './generate.js';
 import { consumesAttempt, correctLine, grade, SIGFIG_HINT } from './grade.js';
 import { keypadFor } from './learn.js';
+import { renderMath } from './math/render.js';
 import { awardXp, readProgress, recordMiss, writeProgress } from './progress.js';
 import { mulberry32 } from './rng.js';
 
@@ -121,7 +122,7 @@ export function renderDrillQueue(item, note = '', mode = '') {
       <p>A miss comes back sooner, and it shows up more than once.</p>
       ${noteHtml}
       <form class="problem" data-drill="${escapeHtml(item.id)}"${solvedAttr}>
-        <p id="q-${escapeHtml(item.id)}">${escapeHtml(item.q)}</p>
+        <p id="q-${escapeHtml(item.id)}">${renderMath(item.q)}</p>
         ${controls}
       </form>
     </section>

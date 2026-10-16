@@ -111,6 +111,12 @@ function mount(items) {
   };
 }
 
+test('a drill question renders formulas', () => {
+  const html = renderDrillQueue({ ...water, q: 'How many atoms are in one H2O molecule?' });
+  assert.match(html, /How many atoms are in one H<sub>2<\/sub>O molecule\?/);
+  assert.doesNotMatch(html, /H2O/);
+});
+
 test('a drill miss stays on the same question until the worked solution', () => {
   const view = mount([koh, water]);
   view.submit('0.12 M');
